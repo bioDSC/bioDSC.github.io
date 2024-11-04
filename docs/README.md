@@ -1,4 +1,4 @@
-# This is the homepage of bioDSC.nl hosted at bioDSC.github.io
+# This is the homepage of bioDSC.nl (docs folder) hosted at github
 
 ## Topics
 * Test 1
