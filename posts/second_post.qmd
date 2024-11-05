@@ -1,6 +1,6 @@
 ---
-title: "The bioDSC blog: a new post"
-date: 2024-10-30
+title: "The bioDSC blog: Quarto?"
+date: 2024-11-05
 description: "Why in Quarto?"
 author: Frans
 categories: [why, quarto]
