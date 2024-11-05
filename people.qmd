@@ -15,7 +15,7 @@ I obtained my BSc at the Noordelijke Hogeschool (NHL) in Leeuwarden majoring in 
 
 Current activities concern administration and implementation of a local Galaxy Server. Development of a database to store meta-data on samples/measurements (Metatree). Deployment of DL tools in the deconvolution of HRMS data and learning from DL models in general.
 
-My main interest is in (pre)processing of large data-sets (with a preference for high resolution mass spectrometry data) and the development and implementation of data analysis and pre-processing tools are often further complicated because of these large data sizes.
+My main interest is in (pre)processing of large data-sets (with a preference for high resolution mass spectrometry data) and the development and implementation of data-analysis and pre-processing tools that is often further complicated because of these large data sizes.
 
 #### Keywords:
 Python, C++, C, Matlab, (R), Java, Galaxy(project), Metabolomics, MS, (multivariate) data analysis, (learning from) DL models.
