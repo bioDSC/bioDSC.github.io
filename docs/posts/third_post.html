@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Frans">
+<meta name="dcterms.date" content="2024-12-05">
+<meta name="description" content="Does this appear after a single iteration?">
 
-<title>The bioDSC blog – Biological Data Science Center</title>
+<title>added post? – Biological Data Science Center</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f87010e8dfb3af472fe17481d701378f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f87010e8dfb3af472fe17481d701378f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,65 +68,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-date','listing-author','listing-categories','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -136,10 +79,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/bioDSC-logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/bioDSC-logo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Biological Data Science Center</span>
     </a>
   </div>
@@ -150,34 +93,34 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./workshops.html"> 
+    <a class="nav-link" href="../workshops.html"> 
 <span class="menu-text">Workshops</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./people.html"> 
+    <a class="nav-link" href="../people.html"> 
 <span class="menu-text">People</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorials.html"> 
+    <a class="nav-link" href="../tutorials.html"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./further-reading.html"> 
+    <a class="nav-link" href="../further-reading.html"> 
 <span class="menu-text">Further reading</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="https://www.uva.nl" target="_blank"> 
-<span class="menu-text"><img src="./images/uva-logo.png" height="30"></span></a>
+<span class="menu-text"><img src="../images/uva-logo.png" height="30"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -191,21 +134,50 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="YXJhYmlkb3BzaXM=">arabidopsis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y29tcGFyYXRpdmUgZ2Vub21pY3M=">comparative genomics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y3J1bmNob21pY3M=">crunchomics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VuZXJhbA==">general <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW50cm8=">intro <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cXVhcnRv">quarto <span class="quarto-category-count">(2)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#heading-1" id="toc-heading-1" class="nav-link active" data-scroll-target="#heading-1">Heading 1</a>
+  <ul class="collapse">
+  <li><a href="#heading-2" id="toc-heading-2" class="nav-link" data-scroll-target="#heading-2">Heading 2</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The bioDSC blog</h1>
-</div>
+<h1 class="title">added post?</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">quarto</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Does this appear after a single iteration?
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Frans </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">December 5, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -215,138 +187,17 @@ window.Quarto = {
 </header>
 
 
+<section id="heading-1" class="level1">
+<h1>Heading 1</h1>
+<section id="heading-2" class="level2">
+<h2 class="anchored" data-anchor-id="heading-2">Heading 2</h2>
+<p><em>bio</em>DSC</p>
 
 
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="cXVhcnRv" data-listing-date-sort="1733353200000" data-listing-file-modified-sort="1730801174268" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="4">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/third_post.html" class="no-external">added post?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/third_post.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('cXVhcnRv'); return false;">
-quarto
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/third_post.html" class="no-external">Does this appear after a single iteration?</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/third_post.html" class="no-external">
-<div class="listing-date">
-Dec 5, 2024
-</div>
-<div class="listing-author">
-Frans
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="cXVhcnRv" data-listing-date-sort="1730761200000" data-listing-file-modified-sort="1730801082507" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="8">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/second_post.html" class="no-external">is this post updating?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/second_post.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('cXVhcnRv'); return false;">
-quarto
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/second_post.html" class="no-external">Why in Quarto?</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/second_post.html" class="no-external">
-<div class="listing-date">
-Nov 5, 2024
-</div>
-<div class="listing-author">
-Frans
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Y29tcGFyYXRpdmUgZ2Vub21pY3MsYXJhYmlkb3BzaXMsY3J1bmNob21pY3M=" data-listing-date-sort="1730674800000" data-listing-file-modified-sort="1730790566375" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1046">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Ath_synteny.html" class="no-external">Visualizing Arabidopsis whole-genome alignments</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/Ath_synteny.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Y29tcGFyYXRpdmUgZ2Vub21pY3M='); return false;">
-comparative genomics
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('YXJhYmlkb3BzaXM='); return false;">
-arabidopsis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Y3J1bmNob21pY3M='); return false;">
-crunchomics
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/Ath_synteny.html" class="no-external">Learn how to plot genome rearrangements in this blog.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/Ath_synteny.html" class="no-external">
-<div class="listing-date">
-Nov 4, 2024
-</div>
-<div class="listing-author">
-Misha Paauw
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="aW50cm8sZ2VuZXJhbA==" data-listing-date-sort="1730242800000" data-listing-file-modified-sort="1730790566375" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="159">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/introduction.html" class="no-external">The bioDSC blog: first post</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/introduction.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('aW50cm8='); return false;">
-intro
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Z2VuZXJhbA=='); return false;">
-general
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/introduction.html" class="no-external">An introduction to the blog and its purpose.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/introduction.html" class="no-external">
-<div class="listing-date">
-Oct 30, 2024
-</div>
-<div class="listing-author">
-Misha Paauw
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -774,7 +625,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>The <em>bio</em>DSC is an initiative from the University of Amsterdam <img src="./images/uva-logo.png" height="25"></p>
+<p>The <em>bio</em>DSC is an initiative from the University of Amsterdam <img src="../images/uva-logo.png" height="25"></p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

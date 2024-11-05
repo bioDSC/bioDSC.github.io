@@ -1,11 +1,11 @@
 ---
-title: "The bioDSC blog: Quarto?"
+title: "is this post updating?"
 date: 2024-11-05
 description: "Why in Quarto?"
 author: Frans
-categories: [why, quarto]
+categories: [quarto]
 ---
 
-## Why a Quarto blog?
+## A Quarto post - is it updating ?
 
-I'm not convinced about the ease of use of Quarto. 
+Is this post updating after a single render?
