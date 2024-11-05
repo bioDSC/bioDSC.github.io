@@ -215,5 +215,19 @@
     "title": "Biological Data Science Center",
     "section": "",
     "text": "Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.\n\n\n\nCrunchomics documentation\nThe IBED bioinformatics support page\n\n\n\n\n\nDataViz protocols by Joachim Goedhart\nFundamentals of Data Visualization by Claus Wilke\nAn introduction to good color schemes"
+  },
+  {
+    "objectID": "posts/second_post.html",
+    "href": "posts/second_post.html",
+    "title": "The bioDSC blog: a new post",
+    "section": "",
+    "text": "I’m not convinced about the ease of use of Quarto."
+  },
+  {
+    "objectID": "posts/second_post.html#why-a-quarto-blog",
+    "href": "posts/second_post.html#why-a-quarto-blog",
+    "title": "The bioDSC blog: a new post",
+    "section": "",
+    "text": "I’m not convinced about the ease of use of Quarto."
   }
 ]

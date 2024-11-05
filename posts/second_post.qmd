@@ -1,0 +1,11 @@
+---
+title: "The bioDSC blog: a new post"
+date: 2024-10-30
+description: "Why in Quarto?"
+author: Frans
+categories: [why, quarto]
+---
+
+## Why a Quarto blog?
+
+I'm not convinced about the ease of use of Quarto. 
