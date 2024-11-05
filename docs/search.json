@@ -23,14 +23,14 @@
   {
     "objectID": "tutorials.html",
     "href": "tutorials.html",
-    "title": "bioDSC",
+    "title": "*bio*DSC",
     "section": "",
     "text": "Tutorial pages will be uploaded to this section of the site! Stay tuned!"
   },
   {
     "objectID": "tutorials.html#tutorials",
     "href": "tutorials.html#tutorials",
-    "title": "bioDSC",
+    "title": "*bio*DSC",
     "section": "",
     "text": "Tutorial pages will be uploaded to this section of the site! Stay tuned!"
   },
@@ -98,13 +98,6 @@
     "text": "Further reading\n\nsyri, a software package to identify structural rearrangements.\nplotsr, a software package to plot the rearrangements detected by syri.\nLian et al 2024 Nature Genetics.\nclinker, a versatile synteny visualization tool that works on smaller scales (gene clusters)."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "The biological Data Science Center",
-    "section": "",
-    "text": "As a biologist at the Science Park of the University of Amsterdam, it’s likely that you will generate large amounts of data. The biological Data Science Center (bioDSC) was initiated to help you analyse that data.\nOur aim is to enable you to perform analyses yourself, which is why we offer workshops, on-line tutorials and in-person mentoring. We have an open-door policy: we encourage you to send an email or drop by one of our desks when you need help or input with your data analysis problem. For quick questions, check out our Slack channel!\nSend an email Drop by Slack"
-  },
-  {
     "objectID": "index.html#our-approach",
     "href": "index.html#our-approach",
     "title": "The biological Data Science Center",
@@ -142,14 +135,14 @@
   {
     "objectID": "further-reading.html",
     "href": "further-reading.html",
-    "title": "bioDSC",
+    "title": "*bio*DSC",
     "section": "",
     "text": "Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.\n\n\n\nCrunchomics documentation\nThe IBED bioinformatics support page\n\n\n\n\n\nDataViz protocols by Joachim Goedhart\nFundamentals of Data Visualization by Claus Wilke\nAn introduction to good color schemes\n\n\n\n\n\nMeta-Omics tutorials"
   },
   {
     "objectID": "further-reading.html#further-reading",
     "href": "further-reading.html#further-reading",
-    "title": "bioDSC",
+    "title": "*bio*DSC",
     "section": "",
     "text": "Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.\n\n\n\nCrunchomics documentation\nThe IBED bioinformatics support page\n\n\n\n\n\nDataViz protocols by Joachim Goedhart\nFundamentals of Data Visualization by Claus Wilke\nAn introduction to good color schemes\n\n\n\n\n\nMeta-Omics tutorials"
   },
@@ -158,7 +151,7 @@
     "href": "people.html",
     "title": "bioDSC core team",
     "section": "",
-    "text": "The bioDSC core team consists of three members; Frans van der Kloet, Martijn Wehrens, and Misha Paauw."
+    "text": "Our core team consists of three members; Frans van der Kloet, Martijn Wehrens and Misha Paauw."
   },
   {
     "objectID": "people.html#frans-van-der-kloet",

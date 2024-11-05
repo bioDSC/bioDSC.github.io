@@ -6,7 +6,7 @@ website:
   search:
       location: navbar
       type: textbox
-  title: bioDSC
+  title: "*bio*DSC"
   navbar:    
     logo: "images/bioDSC-logo.png"
     background: "primary"

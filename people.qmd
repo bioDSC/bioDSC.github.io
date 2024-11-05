@@ -1,9 +1,11 @@
 ---
-title: "bioDSC core team"
+title: "*bio*DSC core team"
 toc: false
 ---
 
-The *bio*DSC core team consists of three members; Frans van der Kloet, Martijn Wehrens, and Misha Paauw. 
+Our core team consists of three members; [Frans van der Kloet](#frans), [Martijn Wehrens](#martijn) and [Misha Paauw](#misha). 
+
+<a name="frans"></a>
 
 ## Frans van der Kloet
 
@@ -25,6 +27,8 @@ Group: Biosystems Data Analysis
 Office: SP C2-205  
 Email: f.m.vanderkloet@uva.nl  
 
+<a name="martijn"></a>
+
 ## Martijn Wehrens
 
 <img src="images/Martijn-Wehrens-300x300.jpg" width="250" height="250" />
@@ -35,6 +39,8 @@ Email: f.m.vanderkloet@uva.nl
 Group: Molecular Cytology  
 Office: SP C2-???  
 Email: m.wehrens@uva.nl  
+
+<a name="misha"></a>
 
 ## Misha Paauw
 

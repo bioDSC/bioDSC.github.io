@@ -3,7 +3,9 @@ title: "The *biological* Data Science Center"
 toc: false
 ---
 
-![](/images/landing_page-01.png)
+#
+#
+
 
 **As a biologist at the Science Park of the University of Amsterdam, it’s likely that you will generate large amounts of data. The *biological* Data Science Center (*bio*DSC) was initiated to help you analyse that data.**
 
