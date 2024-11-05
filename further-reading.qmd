@@ -14,4 +14,4 @@ Here, we will provide links to other useful pages on the intersection between bi
 * [An introduction to good color schemes](https://personal.sron.nl/~pault/)
 
 ### Omics analysis
-* [Meta-Omics tutorials](https://staff.fnwi.uva.nl/a.u.s.heintzbuschart/)
+* [Meta-Omics tutorials by Anna Heintz-Buschart](https://staff.fnwi.uva.nl/a.u.s.heintzbuschart/)
