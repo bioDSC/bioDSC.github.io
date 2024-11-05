@@ -1,5 +1,5 @@
 ---
-title: "The bioDSC blog"
+title: "The *bio*DSC blog"
 listing:
   contents: posts         # Points to the directory where your posts are located
   sort: "date desc"

@@ -23,14 +23,14 @@
   {
     "objectID": "tutorials.html",
     "href": "tutorials.html",
-    "title": "Biological Data Science Center",
+    "title": "bioDSC",
     "section": "",
     "text": "Tutorial pages will be uploaded to this section of the site! Stay tuned!"
   },
   {
     "objectID": "tutorials.html#tutorials",
     "href": "tutorials.html#tutorials",
-    "title": "Biological Data Science Center",
+    "title": "bioDSC",
     "section": "",
     "text": "Tutorial pages will be uploaded to this section of the site! Stay tuned!"
   },
@@ -100,35 +100,35 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "The Biological Data Science Center",
+    "title": "The biological Data Science Center",
     "section": "",
-    "text": "As a biologist at the Science Park of the University of Amsterdam, it’s likely that you will generate large amounts of data. The Biological Data Science Center (bioDSC) was initiated to help you analyse that data.\nOur aim is to enable you to perform analyses yourself, which is why we offer workshops, on-line tutorials and in-person mentoring. We have an open-door policy: we encourage you to send an email or drop by one of our desks when you need help or input with your data analysis problem. For quick questions, check out our Slack channel!\nSend an email Drop by Slack"
+    "text": "As a biologist at the Science Park of the University of Amsterdam, it’s likely that you will generate large amounts of data. The biological Data Science Center (bioDSC) was initiated to help you analyse that data.\nOur aim is to enable you to perform analyses yourself, which is why we offer workshops, on-line tutorials and in-person mentoring. We have an open-door policy: we encourage you to send an email or drop by one of our desks when you need help or input with your data analysis problem. For quick questions, check out our Slack channel!\nSend an email Drop by Slack"
   },
   {
     "objectID": "index.html#our-approach",
     "href": "index.html#our-approach",
-    "title": "The Biological Data Science Center",
+    "title": "The biological Data Science Center",
     "section": "Our approach",
     "text": "Our approach\nThe bioDSC was initiated in September ’24, and we are currently finding out what works best to optimally support people with their data analyses.\nOur core members are embedded in several research groups at the Swammerdam Institute for Life Sciences (SILS), to be integrated in the community of researchers at Science Park. In addition, other researchers at SILS sometimes volunteer to further support data analyses and good practices."
   },
   {
     "objectID": "index.html#check-out-our-online-resources",
     "href": "index.html#check-out-our-online-resources",
-    "title": "The Biological Data Science Center",
+    "title": "The biological Data Science Center",
     "section": "Check out our online resources",
     "text": "Check out our online resources\nCheck out our blog for quick reads on coding, which maybe inspiring for your research. Check out our tutorials for full protocols on analyses that are often performed by biologists at the UvA Science Park, such as RNA-seq.\nBlog Tutorials Further reading"
   },
   {
     "objectID": "index.html#check-out-our-workshops",
     "href": "index.html#check-out-our-workshops",
-    "title": "The Biological Data Science Center",
+    "title": "The biological Data Science Center",
     "section": "Check out our workshops",
     "text": "Check out our workshops\nOur aim is to organize workshops on topics researchers are interested in and that will help them. We’re currently working on composing a list of workshops and will start to organize them soon. Check out our workshop page to see whether we already have a workshop that is of interest to you. If you’re interested in a topic that’s not on the list, don’t hesitate to send us an email or drop by. We can either help you out with your specific problem, or organize a workshop if it’s a topic of potential interest to many researchers.\nWorkshops"
   },
   {
     "objectID": "index.html#history",
     "href": "index.html#history",
-    "title": "The Biological Data Science Center",
+    "title": "The biological Data Science Center",
     "section": "History",
     "text": "History\nAt the University of Amsterdam Science Park, enthusiastic researchers started the Science Park Study Group in 2017. The idea was to create a local culture of connecting and sharing knowledge with regard to coding in the biological sciences. Having started in September ’24 with the bioDSC, we aim to further boast this initiative and spirit.\nThe original website of the Science Park Study group can be found here."
   },
@@ -137,21 +137,21 @@
     "href": "blog.html",
     "title": "The bioDSC blog",
     "section": "",
-    "text": "is this post updating?\n\n\n\n\n\n\nquarto\n\n\n\nWhy in Quarto?\n\n\n\n\n\nNov 5, 2024\n\n\nFrans\n\n\n\n\n\n\n\nVisualizing Arabidopsis whole-genome alignments\n\n\n\n\n\n\ncomparative genomics\n\n\narabidopsis\n\n\ncrunchomics\n\n\n\nLearn how to plot genome rearrangements in this blog.\n\n\n\n\n\nNov 4, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\n\nThe bioDSC blog: first post\n\n\n\n\n\n\nintro\n\n\ngeneral\n\n\n\nAn introduction to the blog and its purpose.\n\n\n\n\n\nOct 30, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\n\nadded post?\n\n\n\n\n\n\nquarto\n\n\n\nDoes this appear after a single iteration?\n\n\n\n\n\nJun 11, 2024\n\n\nFrans\n\n\n\n\n\n\nNo matching items"
+    "text": "added post?\n\n\n\n\n\n\nquarto\n\n\n\nDoes this appear after a single iteration?\n\n\n\n\n\nNov 6, 2024\n\n\nFrans\n\n\n\n\n\n\n\nis this post updating?\n\n\n\n\n\n\nquarto\n\n\n\nWhy in Quarto?\n\n\n\n\n\nNov 5, 2024\n\n\nFrans\n\n\n\n\n\n\n\nVisualizing Arabidopsis whole-genome alignments\n\n\n\n\n\n\ncomparative genomics\n\n\narabidopsis\n\n\ncrunchomics\n\n\n\nLearn how to plot genome rearrangements in this blog.\n\n\n\n\n\nNov 4, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\n\nThe bioDSC blog: first post\n\n\n\n\n\n\nintro\n\n\ngeneral\n\n\n\nAn introduction to the blog and its purpose.\n\n\n\n\n\nOct 30, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "further-reading.html",
     "href": "further-reading.html",
-    "title": "Biological Data Science Center",
+    "title": "bioDSC",
     "section": "",
-    "text": "Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.\n\n\n\nCrunchomics documentation\nThe IBED bioinformatics support page\n\n\n\n\n\nDataViz protocols by Joachim Goedhart\nFundamentals of Data Visualization by Claus Wilke\nAn introduction to good color schemes"
+    "text": "Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.\n\n\n\nCrunchomics documentation\nThe IBED bioinformatics support page\n\n\n\n\n\nDataViz protocols by Joachim Goedhart\nFundamentals of Data Visualization by Claus Wilke\nAn introduction to good color schemes\n\n\n\n\n\nMeta-Omics tutorials"
   },
   {
     "objectID": "further-reading.html#further-reading",
     "href": "further-reading.html#further-reading",
-    "title": "Biological Data Science Center",
+    "title": "bioDSC",
     "section": "",
-    "text": "Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.\n\n\n\nCrunchomics documentation\nThe IBED bioinformatics support page\n\n\n\n\n\nDataViz protocols by Joachim Goedhart\nFundamentals of Data Visualization by Claus Wilke\nAn introduction to good color schemes"
+    "text": "Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.\n\n\n\nCrunchomics documentation\nThe IBED bioinformatics support page\n\n\n\n\n\nDataViz protocols by Joachim Goedhart\nFundamentals of Data Visualization by Claus Wilke\nAn introduction to good color schemes\n\n\n\n\n\nMeta-Omics tutorials"
   },
   {
     "objectID": "people.html",

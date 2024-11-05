@@ -1,21 +1,21 @@
 ---
-title: "The Biological Data Science Center"
+title: "The *biological* Data Science Center"
 toc: false
 ---
 
 ![](/images/landing_page-01.png)
 
-**As a biologist at the Science Park of the University of Amsterdam, it’s likely that you will generate large amounts of data. The Biological Data Science Center (bioDSC) was initiated to help you analyse that data.**
+**As a biologist at the Science Park of the University of Amsterdam, it’s likely that you will generate large amounts of data. The *biological* Data Science Center (*bio*DSC) was initiated to help you analyse that data.**
 
 Our aim is to enable you to perform analyses yourself, which is why we offer workshops, on-line tutorials and in-person mentoring. We have an open-door policy: we encourage you to send an email or drop by one of our desks when you need help or input with your data analysis problem. For quick questions, check out our Slack channel!
 
-[Send an email](mailto:mail@biodsc.nl){.btn .btn-primary target="_blank"}
+[Send an email](mailto:info@biodsc.nl){.btn .btn-primary target="_blank"}
 [Drop by](people.qmd){.btn .btn-primary}
 [Slack](https://app.slack.com/client/T07UH6D0XL6/C07UPNUB91R){.btn .btn-primary target="_blank"}
 
 ## Our approach
 
-The bioDSC was initiated in September ’24, and we are currently finding out what works best to optimally support people with their data analyses.
+The *bio*DSC was initiated in September ’24, and we are currently finding out what works best to optimally support people with their data analyses.
 
 Our core members are embedded in several research groups at the Swammerdam Institute for Life Sciences (SILS), to be integrated in the community of researchers at Science Park. In addition, other researchers at SILS sometimes volunteer to further support data analyses and good practices.
 

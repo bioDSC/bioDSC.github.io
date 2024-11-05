@@ -12,3 +12,6 @@ Here, we will provide links to other useful pages on the intersection between bi
 * [DataViz protocols by Joachim Goedhart](https://joachimgoedhart.github.io/DataViz-protocols/)
 * [Fundamentals of Data Visualization by Claus Wilke](https://clauswilke.com/dataviz/)
 * [An introduction to good color schemes](https://personal.sron.nl/~pault/)
+
+### Omics analysis
+* [Meta-Omics tutorials](https://staff.fnwi.uva.nl/a.u.s.heintzbuschart/)

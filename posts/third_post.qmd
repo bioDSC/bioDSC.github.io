@@ -1,6 +1,6 @@
 ---
 title: "added post?"
-date: 2024-06-11
+date: 2024-11-6
 description: "Does this appear after a single iteration?"
 author: Frans
 categories: [quarto]

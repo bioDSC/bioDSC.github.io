@@ -6,8 +6,8 @@ website:
   search:
       location: navbar
       type: textbox
-  title: Biological Data Science Center
-  navbar:
+  title: bioDSC
+  navbar:    
     logo: "images/bioDSC-logo.png"
     background: "primary"
     left:
@@ -28,13 +28,25 @@ website:
         href: https://www.uva.nl
         target: "_blank"
   page-footer: |
-    The *bio*DSC is an initiative from the University of Amsterdam ![](/images/uva-logo.png){height=25px}
+    The *bio*DSC is an initiative from the University of Amsterdam  ![](/images/uva-logo.png){height=25px}
+
+# format:
+#   html:
+#     theme: flatly            
+#     toc: true    
+#     grid:
+#       sidebar-width: 300px
+#       body-width: 1200px
+#       margin-width: 300px
+#       gutter-width: 1.5rem
+
+
 format:
-  html:
-    theme: 
-      - sandstone
-      - styles.css
-    toc: true
-
-
-
+  html: 
+    theme: flatly
+    page-layout: full
+    grid:
+      sidebar-width: 300px
+      body-width: 900px
+      margin-width: 300px
+      gutter-width: 1.5rem
