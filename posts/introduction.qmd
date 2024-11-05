@@ -1,0 +1,20 @@
+---
+title: "The bioDSC blog: first post"
+date: 2024-10-30
+description: "An introduction to the blog and its purpose."
+author: Misha Paauw
+categories: [intro, general]
+---
+
+## Why a blog?
+
+We want to use this blog to share, every now and then, what's on our minds. For example, let's say we read a few interesting papers on a new bioinformatics technique. Sometimes we install the tools, to see if we can get it to work on our own data, or on a small test dataset. It might not develop into a full tutorial or protocol, but instead of keeping it to ourselves, we will share it here on this blog. Who knows, maybe it's useful for someone in the future!
+
+Topics we aim to cover:
+
+* Bioinformatics, from RNA-seq to comparative genomics and anything beyond that
+* Data visualization, focussing on the `ggplot` universe in `R`
+* Crunchomics, tips and tricks to use the high-performance compute cluster of the University of Amsterdam
+* Data management and archiving
+
+Do not hesitate to send us an email if you have ideas for new topics, or if you want to contribute to the blog by co-authoring a post!

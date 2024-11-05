@@ -1,0 +1,219 @@
+[
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "The bioDSC blog",
+    "section": "",
+    "text": "Visualizing Arabidopsis whole-genome alignments\n\n\n\n\n\n\ncomparative genomics\n\n\narabidopsis\n\n\ncrunchomics\n\n\n\nLearn how to plot genome rearrangements in this blog.\n\n\n\n\n\nNov 4, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\n\nThe bioDSC blog: first post\n\n\n\n\n\n\nintro\n\n\ngeneral\n\n\n\nAn introduction to the blog and its purpose.\n\n\n\n\n\nOct 30, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "tutorials.html",
+    "href": "tutorials.html",
+    "title": "Biological Data Science Center",
+    "section": "",
+    "text": "Tutorial pages will be uploaded to this section of the site! Stay tuned!"
+  },
+  {
+    "objectID": "tutorials.html#tutorials",
+    "href": "tutorials.html#tutorials",
+    "title": "Biological Data Science Center",
+    "section": "",
+    "text": "Tutorial pages will be uploaded to this section of the site! Stay tuned!"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "The Biological Data Science Center",
+    "section": "",
+    "text": "As a biologist at the Science Park of the University of Amsterdam, it’s likely that you will generate large amounts of data. The Biological Data Science Center (bioDSC) was initiated to help you analyse that data.\nOur aim is to enable you to perform analyses yourself, which is why we offer workshops, on-line tutorials and in-person mentoring. We have an open-door policy: we encourage you to send an email or drop by one of our desks when you need help or input with your data analysis problem. For quick questions, check out our Slack channel!\nSend an email Drop by Slack"
+  },
+  {
+    "objectID": "index.html#our-approach",
+    "href": "index.html#our-approach",
+    "title": "The Biological Data Science Center",
+    "section": "Our approach",
+    "text": "Our approach\nThe bioDSC was initiated in September ’24, and we are currently finding out what works best to optimally support people with their data analyses.\nOur core members are embedded in several research groups at the Swammerdam Institute for Life Sciences (SILS), to be integrated in the community of researchers at Science Park. In addition, other researchers at SILS sometimes volunteer to further support data analyses and good practices."
+  },
+  {
+    "objectID": "index.html#check-out-our-online-resources",
+    "href": "index.html#check-out-our-online-resources",
+    "title": "The Biological Data Science Center",
+    "section": "Check out our online resources",
+    "text": "Check out our online resources\nCheck out our blog for quick reads on coding, which maybe inspiring for your research. Check out our tutorials for full protocols on analyses that are often performed by biologists at the UvA Science Park, such as RNA-seq.\nBlog Tutorials Further reading"
+  },
+  {
+    "objectID": "index.html#check-out-our-workshops",
+    "href": "index.html#check-out-our-workshops",
+    "title": "The Biological Data Science Center",
+    "section": "Check out our workshops",
+    "text": "Check out our workshops\nOur aim is to organize workshops on topics researchers are interested in and that will help them. We’re currently working on composing a list of workshops and will start to organize them soon. Check out our workshop page to see whether we already have a workshop that is of interest to you. If you’re interested in a topic that’s not on the list, don’t hesitate to send us an email or drop by. We can either help you out with your specific problem, or organize a workshop if it’s a topic of potential interest to many researchers.\nWorkshops"
+  },
+  {
+    "objectID": "index.html#history",
+    "href": "index.html#history",
+    "title": "The Biological Data Science Center",
+    "section": "History",
+    "text": "History\nAt the University of Amsterdam Science Park, enthusiastic researchers started the Science Park Study Group in 2017. The idea was to create a local culture of connecting and sharing knowledge with regard to coding in the biological sciences. Having started in September ’24 with the bioDSC, we aim to further boast this initiative and spirit.\nThe original website of the Science Park Study group can be found here."
+  },
+  {
+    "objectID": "posts/introduction.html",
+    "href": "posts/introduction.html",
+    "title": "The bioDSC blog: first post",
+    "section": "",
+    "text": "We want to use this blog to share, every now and then, what’s on our minds. For example, let’s say we read a few interesting papers on a new bioinformatics technique. Sometimes we install the tools, to see if we can get it to work on our own data, or on a small test dataset. It might not develop into a full tutorial or protocol, but instead of keeping it to ourselves, we will share it here on this blog. Who knows, maybe it’s useful for someone in the future!\nTopics we aim to cover:\n\nBioinformatics, from RNA-seq to comparative genomics and anything beyond that\nData visualization, focussing on the ggplot universe in R\nCrunchomics, tips and tricks to use the high-performance compute cluster of the University of Amsterdam\nData management and archiving\n\nDo not hesitate to send us an email if you have ideas for new topics, or if you want to contribute to the blog by co-authoring a post!"
+  },
+  {
+    "objectID": "posts/introduction.html#why-a-blog",
+    "href": "posts/introduction.html#why-a-blog",
+    "title": "The bioDSC blog: first post",
+    "section": "",
+    "text": "We want to use this blog to share, every now and then, what’s on our minds. For example, let’s say we read a few interesting papers on a new bioinformatics technique. Sometimes we install the tools, to see if we can get it to work on our own data, or on a small test dataset. It might not develop into a full tutorial or protocol, but instead of keeping it to ourselves, we will share it here on this blog. Who knows, maybe it’s useful for someone in the future!\nTopics we aim to cover:\n\nBioinformatics, from RNA-seq to comparative genomics and anything beyond that\nData visualization, focussing on the ggplot universe in R\nCrunchomics, tips and tricks to use the high-performance compute cluster of the University of Amsterdam\nData management and archiving\n\nDo not hesitate to send us an email if you have ideas for new topics, or if you want to contribute to the blog by co-authoring a post!"
+  },
+  {
+    "objectID": "workshops/test-workshop2.html",
+    "href": "workshops/test-workshop2.html",
+    "title": "25 october 2024: RNA-seq workshop",
+    "section": "",
+    "text": "The bioDSC will organize a workshop on RNA-seq."
+  },
+  {
+    "objectID": "workshops/test-workshop2.html#rna-seq-workshop",
+    "href": "workshops/test-workshop2.html#rna-seq-workshop",
+    "title": "25 october 2024: RNA-seq workshop",
+    "section": "",
+    "text": "The bioDSC will organize a workshop on RNA-seq."
+  },
+  {
+    "objectID": "workshops/test-workshop.html",
+    "href": "workshops/test-workshop.html",
+    "title": "16-17 december 2024: RNA-seq workshop",
+    "section": "",
+    "text": "The bioDSC will organize a workshop on RNA-seq."
+  },
+  {
+    "objectID": "workshops/test-workshop.html#rna-seq-workshop",
+    "href": "workshops/test-workshop.html#rna-seq-workshop",
+    "title": "16-17 december 2024: RNA-seq workshop",
+    "section": "",
+    "text": "The bioDSC will organize a workshop on RNA-seq."
+  },
+  {
+    "objectID": "posts/Ath_synteny.html",
+    "href": "posts/Ath_synteny.html",
+    "title": "Visualizing Arabidopsis whole-genome alignments",
+    "section": "",
+    "text": "Interesting phenotypes can be encoded in the genome of organisms. Therefore, it is often interesting to visualize differences between genomes of different species, or of individuals within the same species. These differences could be small, such as single nucleotide polymorphisms, but can also be structural rearrangements of entire chromosomes.\nIn a recent publication, Lian et al 2024 Nature Genetics investigated structural rearrangements in a panel of 69 Arabidopsis thaliana accessions (Fig 3). In addition, they published a chromosome level assembly of Arabidopsis accession Oy-0. This accession is used in several research groups of the University of Amsterdam, so it is interesting to show genome rearrangements between this accession, and the model accession Col-0. The paper uses plotsr software to plot synteny across chromosomes. The syntenic regions are first identified using syri.\nSoftware used:\n\nsyri, a software package to identify structural rearrangements.\nplotsr, a software package to plot the rearrangements detected by syri.\nminimap2, a fast aligner, used here to align the two genomes of interest."
+  },
+  {
+    "objectID": "posts/Ath_synteny.html#introduction",
+    "href": "posts/Ath_synteny.html#introduction",
+    "title": "Visualizing Arabidopsis whole-genome alignments",
+    "section": "",
+    "text": "Interesting phenotypes can be encoded in the genome of organisms. Therefore, it is often interesting to visualize differences between genomes of different species, or of individuals within the same species. These differences could be small, such as single nucleotide polymorphisms, but can also be structural rearrangements of entire chromosomes.\nIn a recent publication, Lian et al 2024 Nature Genetics investigated structural rearrangements in a panel of 69 Arabidopsis thaliana accessions (Fig 3). In addition, they published a chromosome level assembly of Arabidopsis accession Oy-0. This accession is used in several research groups of the University of Amsterdam, so it is interesting to show genome rearrangements between this accession, and the model accession Col-0. The paper uses plotsr software to plot synteny across chromosomes. The syntenic regions are first identified using syri.\nSoftware used:\n\nsyri, a software package to identify structural rearrangements.\nplotsr, a software package to plot the rearrangements detected by syri.\nminimap2, a fast aligner, used here to align the two genomes of interest."
+  },
+  {
+    "objectID": "posts/Ath_synteny.html#the-data",
+    "href": "posts/Ath_synteny.html#the-data",
+    "title": "Visualizing Arabidopsis whole-genome alignments",
+    "section": "The data",
+    "text": "The data\nI downloaded the Arabidopsis Col-0 TAIR10.1 and Oy-0 genome assemblies with the following script, moved them to a folder called data, and unzipped them:\n(syri) [mpaauw@omics-h0 02_Ath_synteny]$ cat download_genoomes.sh \nwget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/036/927/085/GCA_036927085.1_ASM3692708v1/GCA_036927085.1_ASM3692708v1_genomic.fna.gz\nwget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/735/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_genomic.fna.gz\n\nmv GC* data/\ncd data/\ngunzip *.gz\nThe synteny software expects that homologous chromosomes in the two genomes have exactly the same chromosome id. Unfortunately, this is almost never the case if you download genomes from different organisms and from different sources. To rename the fasta headers, I used the following sed commands. In addition, I removed the mitochondrial and chromosomal DNA sequences.\n(syri) [mpaauw@omics-h0 data]$ cat chromosome_renamer.sh \nsed -i 's/CM072627.1.*chromosome 1.*/Chr1/' GCA_036927085.1_ASM3692708v1_genomic.fna\nsed -i 's/CM072628.1.*chromosome 2.*/Chr2/' GCA_036927085.1_ASM3692708v1_genomic.fna\nsed -i 's/CM072629.1.*chromosome 3.*/Chr3/' GCA_036927085.1_ASM3692708v1_genomic.fna\nsed -i 's/CM072630.1.*chromosome 4.*/Chr4/' GCA_036927085.1_ASM3692708v1_genomic.fna\nsed -i 's/CM072631.1.*chromosome 5.*/Chr5/' GCA_036927085.1_ASM3692708v1_genomic.fna\n\nsed -i 's/NC_003070.9.*chromosome 1.*/Chr1/' GCF_000001735.4_TAIR10.1_genomic.fna\nsed -i 's/NC_003071.7.*chromosome 2.*/Chr2/' GCF_000001735.4_TAIR10.1_genomic.fna\nsed -i 's/NC_003074.8.*chromosome 3.*/Chr3/' GCF_000001735.4_TAIR10.1_genomic.fna\nsed -i 's/NC_003075.7.*chromosome 4.*/Chr4/' GCF_000001735.4_TAIR10.1_genomic.fna\nsed -i 's/NC_003076.8.*chromosome 5.*/Chr5/' GCF_000001735.4_TAIR10.1_genomic.fna\n\n(syri) [mpaauw@omics-h0 data]$ cat contig_remover.sh \nsed -i '/&gt;JAWQTX010000006.1/,/^&gt;/d' GCA_036927085.1_ASM3692708v1_genomic.fna\nsed -i '/&gt;JAWQTX010000007.1/,/^&gt;/d' GCA_036927085.1_ASM3692708v1_genomic.fna\n\nsed -i '/&gt;NC_037304.1/,/^&gt;/d' GCF_000001735.4_TAIR10.1_genomic.fna\nsed -i '/&gt;NC_000932.1/,/^&gt;/d' GCF_000001735.4_TAIR10.1_genomic.fna\nLet’s do sanity check: did this work? We do this by using grep, a sophisticated command line search tool, to search for the character &gt;, in all files that are called G*.fna. Note that the * is used as a ‘wildcard’ and we match both genomes with this statement.\n(syri) [mpaauw@omics-h0 data]$ grep \"&gt;\" G*.fna\nGCA_036927085.1_ASM3692708v1_genomic.fna:&gt;Chr1\nGCA_036927085.1_ASM3692708v1_genomic.fna:&gt;Chr2\nGCA_036927085.1_ASM3692708v1_genomic.fna:&gt;Chr3\nGCA_036927085.1_ASM3692708v1_genomic.fna:&gt;Chr4\nGCA_036927085.1_ASM3692708v1_genomic.fna:&gt;Chr5\nGCF_000001735.4_TAIR10.1_genomic.fna:&gt;Chr1\nGCF_000001735.4_TAIR10.1_genomic.fna:&gt;Chr2\nGCF_000001735.4_TAIR10.1_genomic.fna:&gt;Chr3\nGCF_000001735.4_TAIR10.1_genomic.fna:&gt;Chr4\nGCF_000001735.4_TAIR10.1_genomic.fna:&gt;Chr5\nThat looks good. In both genomes, the chromosomes are called Chr1, and so forth."
+  },
+  {
+    "objectID": "posts/Ath_synteny.html#aligning-the-genomes",
+    "href": "posts/Ath_synteny.html#aligning-the-genomes",
+    "title": "Visualizing Arabidopsis whole-genome alignments",
+    "section": "Aligning the genomes",
+    "text": "Aligning the genomes\nThe first step is to do a whole-genome alignment between the two genomes. I followed the instructions at plotsr github to do this. We use the software minimap2. This is a quick sequence alignment program and is in installed in base environment on Crunchomics. The alignments are sorted and indexed using samtools. Then syri is used to call structural variants based on the alignment between the two genomes.\nminimap2 -ax asm5 -t 16 --eqx data/GCF_000001735.4_TAIR10.1_genomic.fna data/GCA_036927085.1_ASM3692708v1_genomic.fna | samtools sort -O BAM &gt; Col_Oy.bam\nsamtools index Col_Oy.bam\nsyri -c Col_Oy.bam -r data/GCF_000001735.4_TAIR10.1_genomic.fna -q data/GCA_036927085.1_ASM3692708v1_genomic.fna -F B --prefix Col_Oy\nThis produces several output files:\n(syri) [mpaauw@omics-h0 02_Ath_synteny]$ ls Col_Oysyri.*\nCol_Oysyri.log  Col_Oysyri.out  Col_Oysyri.summary  Col_Oysyri.vcf\nLet’s have a look at the summary.\n(syri) [mpaauw@omics-h0 02_Ath_synteny]$ cat Col_Oysyri.summary \n#Structural annotations\n#Variation_type Count   Length_ref  Length_qry\nSyntenic regions    95  107247075   107294458\nInversions  14  1504073 2295146\nTranslocations  110 566651  566464\nDuplications (reference)    62  267859  -\nDuplications (query)    528 -   898113\nNot aligned (reference) 250 9765159 -\nNot aligned (query) 696 -   20371617\n\n\n#Sequence annotations\n#Variation_type Count   Length_ref  Length_qry\nSNPs    405790  405790  405790\nInsertions  42410   -   904020\nDeletions   41893   867402  -\nCopygains   26  -   485440\nCopylosses  11  15494   -\nHighly diverged 3961    18041314    18376872\nTandem repeats  2   518 599\nOk, so there are quite a few structural variants between Col-0 and Oy-0! The syri.out file contains the details of all the variants individually."
+  },
+  {
+    "objectID": "posts/Ath_synteny.html#plotting-the-structural-variants",
+    "href": "posts/Ath_synteny.html#plotting-the-structural-variants",
+    "title": "Visualizing Arabidopsis whole-genome alignments",
+    "section": "Plotting the structural variants",
+    "text": "Plotting the structural variants\nWe can then go ahead and visualize the structural variants using the plotsr software. First we create the genomes.txt file containing info about where the software can find both genomes, how to call them, and specify how they should be plotted.\n(syri) [mpaauw@omics-h0 02_Ath_synteny]$ cat genomes.txt \n#file   name    tags\ndata/GCF_000001735.4_TAIR10.1_genomic.fna   Col lw:1.5\ndata/GCA_036927085.1_ASM3692708v1_genomic.fna   Oy  lw:1.5\n\n# then we run the software: all chromosomes\n(syri) [mpaauw@omics-h0 02_Ath_synteny]$ plotsr --sr Col_Oysyri.out --genomes genomes.txt -o all_chromosomes.png\n\n# or just chromosome 4\n(syri) [mpaauw@omics-h0 02_Ath_synteny]$ plotsr --sr Col_Oysyri.out --genomes genomes.txt --chr Chr4 -o chr4.png\n\nSo, while most of the Chr 4 of the two accessions are syntenic, we can find two inversions, a translocation, and some parts that don’t have a match at all at the chromosome of the other accession."
+  },
+  {
+    "objectID": "posts/Ath_synteny.html#adding-tracks-with-other-data",
+    "href": "posts/Ath_synteny.html#adding-tracks-with-other-data",
+    "title": "Visualizing Arabidopsis whole-genome alignments",
+    "section": "Adding tracks with other data",
+    "text": "Adding tracks with other data\nYou can add tracks of data, such as gene annotations, or SNP density, across the genomes. Perhaps you can then discover interesting genomic features that colocalize with the structural variant breakpoints. Here, we have a dataset of short sequences (k-mers) that were mapped to the Col-0 reference genome using the mapping software bowtie. We need to transform the .bam file with the mappings to a .bed file. Then, we need to add “Chr” to the chromosome identifiers in the bed file.\nbedtools bamtobed -i mapping.sorted.bam &gt; mapping.sorted.bed\nawk '{print \"Chr\"$1 \"\\t\" $2 \"\\t\" $3 \"\\t\" $4}' mapping.sorted.bed &gt; mapping.sorted.chr.bed\n(syri) [mpaauw@omics-h0 02_Ath_synteny]$ head mapping.sorted.chr.bed \nChr1    753215  753246  sequence_1703\nChr1    753216  753247  sequence_761\nChr1    753217  753248  sequence_1521\nLet’s continue by generating a tracks.txt file, similar to the genomes.txt file to tell plotsr where to find the track data, how to call the track, and some graphical settings of the track.\n(syri) [mpaauw@omics-h0 02_Ath_synteny]$ cat tracks.txt \n#file   name    tags\nmapping.sorted.chr.bed    sig_kmers   bw:10000;nc:black;ns:8;lc:sienna;lw:1;bc:peachpuff;ba:0.7\n\n(syri) [mpaauw@omics-h0 02_Ath_synteny]$ plotsr --sr Col_Oysyri.out --genomes genomes.txt --tracks tracks.txt --chr Chr5 -W 6 -o Chr5_kmertrack.png\n\nCool! In this case, there is no clear association between our mapped k-mers and structural variation between Col-0 and Oy-0 on this chromosome."
+  },
+  {
+    "objectID": "posts/Ath_synteny.html#further-reading",
+    "href": "posts/Ath_synteny.html#further-reading",
+    "title": "Visualizing Arabidopsis whole-genome alignments",
+    "section": "Further reading",
+    "text": "Further reading\n\nsyri, a software package to identify structural rearrangements.\nplotsr, a software package to plot the rearrangements detected by syri.\nLian et al 2024 Nature Genetics.\nclinker, a versatile synteny visualization tool that works on smaller scales (gene clusters)."
+  },
+  {
+    "objectID": "workshops.html",
+    "href": "workshops.html",
+    "title": "Workshops & events",
+    "section": "",
+    "text": "Workshops will be announced on this page! Stay tuned!"
+  },
+  {
+    "objectID": "workshops.html#upcoming-workshops",
+    "href": "workshops.html#upcoming-workshops",
+    "title": "Workshops & events",
+    "section": "Upcoming workshops",
+    "text": "Upcoming workshops\n\n\n\n\n\n16-17 december 2024: RNA-seq workshop\n\n\n\n\n\nLearn the basics of RNA-seq analysis in this workshop\n\n\n\n\n\nDec 16, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "workshops.html#past-workshops",
+    "href": "workshops.html#past-workshops",
+    "title": "Workshops & events",
+    "section": "Past workshops",
+    "text": "Past workshops\n\n\n\n\n\n25 october 2024: RNA-seq workshop\n\n\n\n\n\nAn RNA-seq workshop\n\n\n\n\n\nOct 25, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "bioDSC core team",
+    "section": "",
+    "text": "The bioDSC core team consists of Frans van der Kloet, Martijn Wehrens, and Misha Paauw."
+  },
+  {
+    "objectID": "people.html#frans-van-der-kloet",
+    "href": "people.html#frans-van-der-kloet",
+    "title": "bioDSC core team",
+    "section": "Frans van der Kloet",
+    "text": "Frans van der Kloet\n\ninsert bio here\nGroup: Biosystems Data Analysis\nOffice: SP C2-205\nEmail: f.m.vanderkloet@uva.nl"
+  },
+  {
+    "objectID": "people.html#martijn-wehrens",
+    "href": "people.html#martijn-wehrens",
+    "title": "bioDSC core team",
+    "section": "Martijn Wehrens",
+    "text": "Martijn Wehrens\n\ninsert bio here\nGroup: Molecular Cytology\nOffice: SP C2-???\nEmail: m.wehrens@uva.nl"
+  },
+  {
+    "objectID": "people.html#misha-paauw",
+    "href": "people.html#misha-paauw",
+    "title": "bioDSC core team",
+    "section": "Misha Paauw",
+    "text": "Misha Paauw\n\ninsert bio here\nGroup: Plant Physiology, Green Life Sciences\nOffice: SP C2-207\nEmail: m.m.paauw@uva.nl"
+  },
+  {
+    "objectID": "people.html#other-contributers",
+    "href": "people.html#other-contributers",
+    "title": "bioDSC core team",
+    "section": "Other contributers",
+    "text": "Other contributers\n\nAnna Heintz-Buschart (BDA, SILS)\nTijs Bliek (PDEG, SILS)\nNina Dombrowski (IBED)\nWim de Leeuw (MAD, SILS)"
+  },
+  {
+    "objectID": "further-reading.html",
+    "href": "further-reading.html",
+    "title": "Biological Data Science Center",
+    "section": "",
+    "text": "Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.\n\n\n\nCrunchomics documentation\nThe IBED bioinformatics support page\n\n\n\n\n\nDataViz protocols by Joachim Goedhart\nFundamentals of Data Visualization by Claus Wilke\nAn introduction to good color schemes"
+  },
+  {
+    "objectID": "further-reading.html#further-reading",
+    "href": "further-reading.html#further-reading",
+    "title": "Biological Data Science Center",
+    "section": "",
+    "text": "Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.\n\n\n\nCrunchomics documentation\nThe IBED bioinformatics support page\n\n\n\n\n\nDataViz protocols by Joachim Goedhart\nFundamentals of Data Visualization by Claus Wilke\nAn introduction to good color schemes"
+  }
+]

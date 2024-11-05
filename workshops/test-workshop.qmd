@@ -1,0 +1,11 @@
+---
+title: "16-17 december 2024: RNA-seq workshop"
+date: 2024-12-16
+author: Misha Paauw
+description: "Learn the basics of RNA-seq analysis in this workshop"
+categories: [upcoming]
+---
+
+## RNA-Seq workshop
+
+The bioDSC will organize a workshop on RNA-seq. 

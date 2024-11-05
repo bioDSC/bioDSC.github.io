@@ -1,0 +1,43 @@
+---
+title: "bioDSC core team"
+toc: false
+---
+
+The bioDSC core team consists of Frans van der Kloet, Martijn Wehrens, and Misha Paauw. 
+
+## Frans van der Kloet
+
+![](images/frans-214x300.png)
+
+*insert bio here*
+
+Group: Biosystems Data Analysis  
+Office: SP C2-205  
+Email: f.m.vanderkloet@uva.nl  
+
+## Martijn Wehrens
+
+![](images/Martijn-Wehrens-300x300.jpg)
+
+*insert bio here*
+
+Group: Molecular Cytology  
+Office: SP C2-???  
+Email: m.wehrens@uva.nl  
+
+## Misha Paauw
+
+![](images/Misha-Paauw-300x300.jpg)
+
+*insert bio here*
+
+Group: Plant Physiology, Green Life Sciences  
+Office: SP C2-207  
+Email: m.m.paauw@uva.nl  
+
+## Other contributers
+
+- Anna Heintz-Buschart (BDA, SILS)
+- Tijs Bliek (PDEG, SILS)
+- Nina Dombrowski (IBED)
+- Wim de Leeuw (MAD, SILS)

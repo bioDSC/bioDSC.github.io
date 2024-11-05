@@ -1,0 +1,14 @@
+## Further reading
+
+Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.
+
+### Bioinformatics
+
+* [Crunchomics documentation](https://crunchomics-documentation.readthedocs.io/en/latest/index.html)
+* [The IBED bioinformatics support page](https://scienceparkstudygroup.github.io/ibed-bioinformatics-page/)
+
+### Data visualisation
+
+* [DataViz protocols by Joachim Goedhart](https://joachimgoedhart.github.io/DataViz-protocols/)
+* [Fundamentals of Data Visualization by Claus Wilke](https://clauswilke.com/dataviz/)
+* [An introduction to good color schemes](https://personal.sron.nl/~pault/)

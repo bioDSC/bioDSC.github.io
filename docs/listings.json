@@ -1,0 +1,16 @@
+[
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/Ath_synteny.html",
+      "/posts/introduction.html"
+    ]
+  },
+  {
+    "listing": "/workshops.html",
+    "items": [
+      "/workshops/test-workshop.html",
+      "/workshops/test-workshop2.html"
+    ]
+  }
+]

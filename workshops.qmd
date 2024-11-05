@@ -1,0 +1,31 @@
+---
+title: "Workshops & events"
+toc: false
+listing:
+  - id: upcoming
+    contents: workshops
+    sort: "date desc"
+    categories: false
+    fields: [title, author, date, description]
+    include:
+        categories: [upcoming]
+  - id: past
+    contents: workshops
+    sort: "date desc"
+    categories: false
+    fields: [title, author, date, description]
+    include:
+        categories: [past]
+---
+
+Workshops will be announced on this page! Stay tuned!
+
+## Upcoming workshops
+
+:::{#upcoming}
+:::
+
+## Past workshops
+
+:::{#past}
+:::
