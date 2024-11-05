@@ -50,6 +50,6 @@ format:
     page-layout: full
     grid:
       sidebar-width: 300px
-      body-width: 900px
+      body-width: 800px
       margin-width: 300px
       gutter-width: 1.5rem
