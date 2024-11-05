@@ -28,7 +28,7 @@ website:
         href: https://www.uva.nl
         target: "_blank"
   page-footer: |
-    The bioDSC is an initiative from the University of Amsterdam ![](/images/uva-logo.png){height=25px}
+    The *bio*DSC is an initiative from the University of Amsterdam ![](/images/uva-logo.png){height=25px}
 format:
   html:
     theme: 
