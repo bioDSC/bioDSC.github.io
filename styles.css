@@ -1,28 +1,28 @@
 /*-- scss:defaults --*/
 
+/*-- scss:rules --*/
 bs-link-color-rgb {
     color: #FF0000;   
 }
 
-header#quarto-header.headroom {
-    padding-left:100px;
-    padding-top:50px;
-    padding-bottom: 25px;
-    padding-right:100px;
-}
+link { color: #FF0000; } /* CSS link color */
+a { color: #10683c;}
 
 .nav-footer {
     p.last-child {
         element {
-            padding-right: 100px;
+            padding-right: 50px;
         }
     }
 }
-/*-- scss:rules --*/
 
-navbar-container container-fluid {
-    width:1000px;
+header#quarto-header.headroom {
+    padding-top:10px;
+    padding-bottom: 15px;
 }
 
-link { color: #FF0000; } /* CSS link color */
-a { color: #10683c;}
+#quarto-header {
+    width: 90%;
+    margin: auto
+}
+

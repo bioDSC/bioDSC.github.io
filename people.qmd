@@ -22,7 +22,7 @@ My main interest is in (pre)processing of large data-sets (with a preference for
 #### Keywords:
 Python, C++, C, Matlab, (R), Java, Galaxy(project), Metabolomics, MS, (multivariate) data analysis, (learning from) DL models.
 
-#### Contact
+#### Contact:
 Group: Biosystems Data Analysis  
 Office: SP C2-205  
 Email: f.m.vanderkloet@uva.nl  
@@ -34,8 +34,7 @@ Email: f.m.vanderkloet@uva.nl
 <img src="images/Martijn-Wehrens-300x300.jpg" width="250" height="250" />
 
 
-*insert bio here*
-
+#### Contact:
 Group: Molecular Cytology  
 Office: SP C2-???  
 Email: m.wehrens@uva.nl  
@@ -46,9 +45,15 @@ Email: m.wehrens@uva.nl
 
 <img src="images/Misha-Paauw-300x300.jpg" width="250" height="250" />
 
+#### Info
+After a broad training in biology during my BSc and MSc, ranging from ecology to bioinformatics to molecular plant biology, I started my PhD in the Molecular Plant Pathology group of the University of Amsterdam in 2019. In my PhD research, I worked on the molecular interactions between plants and a pathogenic bacterium, called *Xanthomonas campestris* pv. *campestris* (Xcc). By studying the 'pangenome' of Xcc, I reconstructed the evolutionary history of Xcc and pinpointed the genes required for the specific infection strategy of Xcc.
 
-*insert bio here*
+In my current role as data scientist I support molecular biologists in their data-heavy projects by providing individual consultancy and organizing workshops via the *bio*DSC.
 
+#### Keywords:
+Python, R, bash, data visualisation, comparative genomics, microbial genomics, molecular (plant) biology.
+
+#### Contact:
 Group: Plant Physiology, Green Life Sciences  
 Office: SP C2-207  
 Email: m.m.paauw@uva.nl  
@@ -56,6 +61,6 @@ Email: m.m.paauw@uva.nl
 ## Other contributors
 
 - [Anna Heintz-Buschart (BDA, SILS)](https://bdagroup.nl/?employee=anna-heintz-buschart){target="_blank"}
-- Tijs Bliek (PDEG, SILS)
-- Nina Dombrowski (IBED)
-- Wim de Leeuw (MAD, SILS)
+- [Tijs Bliek (PDEG, SILS)](https://www.uva.nl/profiel/b/l/m.bliek/m.bliek.html){target="_blank"}
+- [Nina Dombrowski (IBED)](https://www.uva.nl/en/profile/d/o/n.dombrowski/n.dombrowski.html){target="_blank"}
+- [Wim de Leeuw (MAD, SILS)](https://www.uva.nl/profiel/l/e/w.c.deleeuw/w.c.deleeuw.html){target="_blank"}

@@ -2,8 +2,6 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/third_post.html",
-      "/posts/second_post.html",
       "/posts/Ath_synteny.html",
       "/posts/introduction.html"
     ]

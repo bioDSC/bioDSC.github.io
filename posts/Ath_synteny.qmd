@@ -4,7 +4,6 @@ author: "Misha Paauw"
 date: 2024-11-04
 categories: [comparative genomics, arabidopsis, crunchomics]
 description: "Learn how to plot genome rearrangements in this blog."
-freeze: true
 ---
 
 ## Introduction

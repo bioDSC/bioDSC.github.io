@@ -32,17 +32,6 @@ website:
     left: "[Copyright 2024]{style='padding-left:100px'}"
     right: "The *bio*DSC is an initiative of the [University of Amsterdam](https://uva.nl){target='_blank'} ![](/images/uva-logo.png){height=25px style='padding-left:5px;padding-right:100px'}"
 
-# format:
-#   html:
-#     theme: flatly            
-#     toc: true    
-#     grid:
-#       sidebar-width: 300px
-#       body-width: 1200px
-#       margin-width: 300px
-#       gutter-width: 1.5rem
-
-
 format:
   html: 
     css: styles.css
@@ -50,6 +39,6 @@ format:
     page-layout: full
     grid:
       sidebar-width: 300px
-      body-width: 800px
+      body-width: 700px
       margin-width: 300px
       gutter-width: 1.5rem

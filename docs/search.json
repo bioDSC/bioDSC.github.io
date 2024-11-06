@@ -4,119 +4,63 @@
     "href": "blog.html",
     "title": "The bioDSC blog",
     "section": "",
-    "text": "added post?\n\n\n\n\n\n\nquarto\n\n\n\nDoes this appear after a single iteration?\n\n\n\n\n\nNov 6, 2024\n\n\nFrans\n\n\n\n\n\n\n\nis this post updating?\n\n\n\n\n\n\nquarto\n\n\n\nWhy in Quarto?\n\n\n\n\n\nNov 5, 2024\n\n\nFrans\n\n\n\n\n\n\n\nVisualizing Arabidopsis whole-genome alignments\n\n\n\n\n\n\ncomparative genomics\n\n\narabidopsis\n\n\ncrunchomics\n\n\n\nLearn how to plot genome rearrangements in this blog.\n\n\n\n\n\nNov 4, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\n\nThe bioDSC blog: first post\n\n\n\n\n\n\nintro\n\n\ngeneral\n\n\n\nAn introduction to the blog and its purpose.\n\n\n\n\n\nOct 30, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
+    "text": "Visualizing Arabidopsis whole-genome alignments\n\n\n\n\n\n\ncomparative genomics\n\n\narabidopsis\n\n\ncrunchomics\n\n\n\nLearn how to plot genome rearrangements in this blog.\n\n\n\n\n\nNov 4, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\n\nThe bioDSC blog: first post\n\n\n\n\n\n\nintro\n\n\ngeneral\n\n\n\nAn introduction to the blog and its purpose.\n\n\n\n\n\nOct 30, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "further-reading.html",
-    "href": "further-reading.html",
+    "objectID": "tutorials.html",
+    "href": "tutorials.html",
     "title": "*bio*DSC",
     "section": "",
-    "text": "Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.\n\n\n\nCrunchomics documentation\nThe IBED bioinformatics support page\n\n\n\n\n\nDataViz protocols by Joachim Goedhart\nFundamentals of Data Visualization by Claus Wilke\nAn introduction to good color schemes\n\n\n\n\n\nMeta-Omics tutorials"
+    "text": "Tutorial pages will be uploaded to this section of the site! Stay tuned!"
   },
   {
-    "objectID": "further-reading.html#further-reading",
-    "href": "further-reading.html#further-reading",
+    "objectID": "tutorials.html#tutorials",
+    "href": "tutorials.html#tutorials",
     "title": "*bio*DSC",
     "section": "",
-    "text": "Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.\n\n\n\nCrunchomics documentation\nThe IBED bioinformatics support page\n\n\n\n\n\nDataViz protocols by Joachim Goedhart\nFundamentals of Data Visualization by Claus Wilke\nAn introduction to good color schemes\n\n\n\n\n\nMeta-Omics tutorials"
+    "text": "Tutorial pages will be uploaded to this section of the site! Stay tuned!"
   },
   {
-    "objectID": "people.html",
-    "href": "people.html",
-    "title": "bioDSC core team",
+    "objectID": "index.html#our-approach",
+    "href": "index.html#our-approach",
+    "title": "The biological Data Science Center",
+    "section": "Our approach",
+    "text": "Our approach\nThe bioDSC was initiated in September ’24, and we are currently finding out what works best to optimally support people with their data analyses.\nOur core members are embedded in several research groups at the Swammerdam Institute for Life Sciences (SILS), to be integrated in the community of researchers at Science Park. In addition, other researchers at SILS sometimes volunteer to further support data analyses and good practices."
+  },
+  {
+    "objectID": "index.html#check-out-our-online-resources",
+    "href": "index.html#check-out-our-online-resources",
+    "title": "The biological Data Science Center",
+    "section": "Check out our online resources",
+    "text": "Check out our online resources\nCheck out our blog for quick reads on coding, which maybe inspiring for your research. Check out our tutorials for full protocols on analyses that are often performed by biologists at the UvA Science Park, such as RNA-seq.\nBlog Tutorials Further reading"
+  },
+  {
+    "objectID": "index.html#check-out-our-workshops",
+    "href": "index.html#check-out-our-workshops",
+    "title": "The biological Data Science Center",
+    "section": "Check out our workshops",
+    "text": "Check out our workshops\nOur aim is to organize workshops on topics researchers are interested in and that will help them. We’re currently working on composing a list of workshops and will start to organize them soon. Check out our workshop page to see whether we already have a workshop that is of interest to you. If you’re interested in a topic that’s not on the list, don’t hesitate to send us an email or drop by. We can either help you out with your specific problem, or organize a workshop if it’s a topic of potential interest to many researchers.\nWorkshops"
+  },
+  {
+    "objectID": "index.html#history",
+    "href": "index.html#history",
+    "title": "The biological Data Science Center",
+    "section": "History",
+    "text": "History\nAt the University of Amsterdam Science Park, enthusiastic researchers started the Science Park Study Group in 2017. The idea was to create a local culture of connecting and sharing knowledge with regard to coding in the biological sciences. Having started in September ’24 with the bioDSC, we aim to further boast this initiative and spirit.\nThe original website of the Science Park Study group can be found here."
+  },
+  {
+    "objectID": "posts/introduction.html",
+    "href": "posts/introduction.html",
+    "title": "The bioDSC blog: first post",
     "section": "",
-    "text": "Our core team consists of three members; Frans van der Kloet, Martijn Wehrens and Misha Paauw."
+    "text": "We want to use this blog to share, every now and then, what’s on our minds. For example, let’s say we read a few interesting papers on a new bioinformatics technique. Sometimes we install the tools, to see if we can get it to work on our own data, or on a small test dataset. It might not develop into a full tutorial or protocol, but instead of keeping it to ourselves, we will share it here on this blog. Who knows, maybe it’s useful for someone in the future!\nTopics we aim to cover:\n\nBioinformatics, from RNA-seq to comparative genomics and anything beyond that\nData visualization, focussing on the ggplot universe in R\nCrunchomics, tips and tricks to use the high-performance compute cluster of the University of Amsterdam\nData management and archiving\n\nDo not hesitate to send us an email if you have ideas for new topics, or if you want to contribute to the blog by co-authoring a post!"
   },
   {
-    "objectID": "people.html#frans-van-der-kloet",
-    "href": "people.html#frans-van-der-kloet",
-    "title": "bioDSC core team",
-    "section": "Frans van der Kloet",
-    "text": "Frans van der Kloet\n\n\nInfo\nI obtained my BSc at the Noordelijke Hogeschool (NHL) in Leeuwarden majoring in analytical chemistry and got my MSc in Computational Chemistry at the Radboud University in Nijmegen. After several jobs in commercial companies I continued my academic career in 2009 and obtained my PhD at the Leiden University on quantitative aspects in/of high resolution mass spectrometry data in metabolomics in 2014. In that same year I started as a post-doc at the BDA group working on aspects of multi-block/view solutions like JIVE, DISCO and OnPLS and incorporating these types of methods in the prediction/classification of in-vivo transcriptome data. After another PD position at the Amsterdam Medical Center I started as a data scientist in the BDA group in 2019.\nCurrent activities concern administration and implementation of a local Galaxy Server. Development of a database to store meta-data on samples/measurements (Metatree). Deployment of DL tools in the deconvolution of HRMS data and learning from DL models in general.\nMy main interest is in (pre)processing of large data-sets (with a preference for high resolution mass spectrometry data) and the development and implementation of data-analysis and pre-processing tools that is often further complicated because of these large data sizes.\n\n\nKeywords:\nPython, C++, C, Matlab, (R), Java, Galaxy(project), Metabolomics, MS, (multivariate) data analysis, (learning from) DL models.\n\n\nContact\nGroup: Biosystems Data Analysis\nOffice: SP C2-205\nEmail: f.m.vanderkloet@uva.nl"
-  },
-  {
-    "objectID": "people.html#martijn-wehrens",
-    "href": "people.html#martijn-wehrens",
-    "title": "bioDSC core team",
-    "section": "Martijn Wehrens",
-    "text": "Martijn Wehrens\n\ninsert bio here\nGroup: Molecular Cytology\nOffice: SP C2-???\nEmail: m.wehrens@uva.nl"
-  },
-  {
-    "objectID": "people.html#misha-paauw",
-    "href": "people.html#misha-paauw",
-    "title": "bioDSC core team",
-    "section": "Misha Paauw",
-    "text": "Misha Paauw\n\ninsert bio here\nGroup: Plant Physiology, Green Life Sciences\nOffice: SP C2-207\nEmail: m.m.paauw@uva.nl"
-  },
-  {
-    "objectID": "people.html#other-contributors",
-    "href": "people.html#other-contributors",
-    "title": "bioDSC core team",
-    "section": "Other contributors",
-    "text": "Other contributors\n\nAnna Heintz-Buschart (BDA, SILS)\nTijs Bliek (PDEG, SILS)\nNina Dombrowski (IBED)\nWim de Leeuw (MAD, SILS)"
-  },
-  {
-    "objectID": "workshops.html",
-    "href": "workshops.html",
-    "title": "Workshops & events",
+    "objectID": "posts/introduction.html#why-a-blog",
+    "href": "posts/introduction.html#why-a-blog",
+    "title": "The bioDSC blog: first post",
     "section": "",
-    "text": "Workshops will be announced on this page! Stay tuned!"
-  },
-  {
-    "objectID": "workshops.html#upcoming-workshops",
-    "href": "workshops.html#upcoming-workshops",
-    "title": "Workshops & events",
-    "section": "Upcoming workshops",
-    "text": "Upcoming workshops\n\n\n\n\n\n16-17 december 2024: RNA-seq workshop\n\n\n\n\n\nLearn the basics of RNA-seq analysis in this workshop\n\n\n\n\n\nDec 16, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "workshops.html#past-workshops",
-    "href": "workshops.html#past-workshops",
-    "title": "Workshops & events",
-    "section": "Past workshops",
-    "text": "Past workshops\n\n\n\n\n\n25 october 2024: RNA-seq workshop\n\n\n\n\n\nAn RNA-seq workshop\n\n\n\n\n\nOct 25, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/second_post.html",
-    "href": "posts/second_post.html",
-    "title": "is this post updating?",
-    "section": "",
-    "text": "Is this post updating after a single render?"
-  },
-  {
-    "objectID": "posts/second_post.html#a-quarto-post---is-it-updating",
-    "href": "posts/second_post.html#a-quarto-post---is-it-updating",
-    "title": "is this post updating?",
-    "section": "",
-    "text": "Is this post updating after a single render?"
-  },
-  {
-    "objectID": "posts/third_post.html",
-    "href": "posts/third_post.html",
-    "title": "added post?",
-    "section": "",
-    "text": "bioDSC"
-  },
-  {
-    "objectID": "posts/third_post.html#heading-2",
-    "href": "posts/third_post.html#heading-2",
-    "title": "added post?",
-    "section": "",
-    "text": "bioDSC"
-  },
-  {
-    "objectID": "workshops/test-workshop.html",
-    "href": "workshops/test-workshop.html",
-    "title": "16-17 december 2024: RNA-seq workshop",
-    "section": "",
-    "text": "The bioDSC will organize a workshop on RNA-seq."
-  },
-  {
-    "objectID": "workshops/test-workshop.html#rna-seq-workshop",
-    "href": "workshops/test-workshop.html#rna-seq-workshop",
-    "title": "16-17 december 2024: RNA-seq workshop",
-    "section": "",
-    "text": "The bioDSC will organize a workshop on RNA-seq."
+    "text": "We want to use this blog to share, every now and then, what’s on our minds. For example, let’s say we read a few interesting papers on a new bioinformatics technique. Sometimes we install the tools, to see if we can get it to work on our own data, or on a small test dataset. It might not develop into a full tutorial or protocol, but instead of keeping it to ourselves, we will share it here on this blog. Who knows, maybe it’s useful for someone in the future!\nTopics we aim to cover:\n\nBioinformatics, from RNA-seq to comparative genomics and anything beyond that\nData visualization, focussing on the ggplot universe in R\nCrunchomics, tips and tricks to use the high-performance compute cluster of the University of Amsterdam\nData management and archiving\n\nDo not hesitate to send us an email if you have ideas for new topics, or if you want to contribute to the blog by co-authoring a post!"
   },
   {
     "objectID": "workshops/test-workshop2.html",
@@ -129,6 +73,20 @@
     "objectID": "workshops/test-workshop2.html#rna-seq-workshop",
     "href": "workshops/test-workshop2.html#rna-seq-workshop",
     "title": "25 october 2024: RNA-seq workshop",
+    "section": "",
+    "text": "The bioDSC will organize a workshop on RNA-seq."
+  },
+  {
+    "objectID": "workshops/test-workshop.html",
+    "href": "workshops/test-workshop.html",
+    "title": "16-17 december 2024: RNA-seq workshop",
+    "section": "",
+    "text": "The bioDSC will organize a workshop on RNA-seq."
+  },
+  {
+    "objectID": "workshops/test-workshop.html#rna-seq-workshop",
+    "href": "workshops/test-workshop.html#rna-seq-workshop",
+    "title": "16-17 december 2024: RNA-seq workshop",
     "section": "",
     "text": "The bioDSC will organize a workshop on RNA-seq."
   },
@@ -182,66 +140,73 @@
     "text": "Further reading\n\nsyri, a software package to identify structural rearrangements.\nplotsr, a software package to plot the rearrangements detected by syri.\nLian et al 2024 Nature Genetics.\nclinker, a versatile synteny visualization tool that works on smaller scales (gene clusters)."
   },
   {
-    "objectID": "posts/introduction.html",
-    "href": "posts/introduction.html",
-    "title": "The bioDSC blog: first post",
+    "objectID": "workshops.html",
+    "href": "workshops.html",
+    "title": "Workshops & events",
     "section": "",
-    "text": "We want to use this blog to share, every now and then, what’s on our minds. For example, let’s say we read a few interesting papers on a new bioinformatics technique. Sometimes we install the tools, to see if we can get it to work on our own data, or on a small test dataset. It might not develop into a full tutorial or protocol, but instead of keeping it to ourselves, we will share it here on this blog. Who knows, maybe it’s useful for someone in the future!\nTopics we aim to cover:\n\nBioinformatics, from RNA-seq to comparative genomics and anything beyond that\nData visualization, focussing on the ggplot universe in R\nCrunchomics, tips and tricks to use the high-performance compute cluster of the University of Amsterdam\nData management and archiving\n\nDo not hesitate to send us an email if you have ideas for new topics, or if you want to contribute to the blog by co-authoring a post!"
+    "text": "Workshops will be announced on this page! Stay tuned!"
   },
   {
-    "objectID": "posts/introduction.html#why-a-blog",
-    "href": "posts/introduction.html#why-a-blog",
-    "title": "The bioDSC blog: first post",
+    "objectID": "workshops.html#upcoming-workshops",
+    "href": "workshops.html#upcoming-workshops",
+    "title": "Workshops & events",
+    "section": "Upcoming workshops",
+    "text": "Upcoming workshops\n\n\n\n\n\n16-17 december 2024: RNA-seq workshop\n\n\n\n\n\nLearn the basics of RNA-seq analysis in this workshop\n\n\n\n\n\nDec 16, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "workshops.html#past-workshops",
+    "href": "workshops.html#past-workshops",
+    "title": "Workshops & events",
+    "section": "Past workshops",
+    "text": "Past workshops\n\n\n\n\n\n25 october 2024: RNA-seq workshop\n\n\n\n\n\nAn RNA-seq workshop\n\n\n\n\n\nOct 25, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "people.html",
+    "href": "people.html",
+    "title": "bioDSC core team",
     "section": "",
-    "text": "We want to use this blog to share, every now and then, what’s on our minds. For example, let’s say we read a few interesting papers on a new bioinformatics technique. Sometimes we install the tools, to see if we can get it to work on our own data, or on a small test dataset. It might not develop into a full tutorial or protocol, but instead of keeping it to ourselves, we will share it here on this blog. Who knows, maybe it’s useful for someone in the future!\nTopics we aim to cover:\n\nBioinformatics, from RNA-seq to comparative genomics and anything beyond that\nData visualization, focussing on the ggplot universe in R\nCrunchomics, tips and tricks to use the high-performance compute cluster of the University of Amsterdam\nData management and archiving\n\nDo not hesitate to send us an email if you have ideas for new topics, or if you want to contribute to the blog by co-authoring a post!"
+    "text": "Our core team consists of three members; Frans van der Kloet, Martijn Wehrens and Misha Paauw."
   },
   {
-    "objectID": "index.html#our-approach",
-    "href": "index.html#our-approach",
-    "title": "The biological Data Science Center",
-    "section": "Our approach",
-    "text": "Our approach\nThe bioDSC was initiated in September ’24, and we are currently finding out what works best to optimally support people with their data analyses.\nOur core members are embedded in several research groups at the Swammerdam Institute for Life Sciences (SILS), to be integrated in the community of researchers at Science Park. In addition, other researchers at SILS sometimes volunteer to further support data analyses and good practices."
+    "objectID": "people.html#frans-van-der-kloet",
+    "href": "people.html#frans-van-der-kloet",
+    "title": "bioDSC core team",
+    "section": "Frans van der Kloet",
+    "text": "Frans van der Kloet\n\n\nInfo\nI obtained my BSc at the Noordelijke Hogeschool (NHL) in Leeuwarden majoring in analytical chemistry and got my MSc in Computational Chemistry at the Radboud University in Nijmegen. After several jobs in commercial companies I continued my academic career in 2009 and obtained my PhD at the Leiden University on quantitative aspects in/of high resolution mass spectrometry data in metabolomics in 2014. In that same year I started as a post-doc at the BDA group working on aspects of multi-block/view solutions like JIVE, DISCO and OnPLS and incorporating these types of methods in the prediction/classification of in-vivo transcriptome data. After another PD position at the Amsterdam Medical Center I started as a data scientist in the BDA group in 2019.\nCurrent activities concern administration and implementation of a local Galaxy Server. Development of a database to store meta-data on samples/measurements (Metatree). Deployment of DL tools in the deconvolution of HRMS data and learning from DL models in general.\nMy main interest is in (pre)processing of large data-sets (with a preference for high resolution mass spectrometry data) and the development and implementation of data-analysis and pre-processing tools that is often further complicated because of these large data sizes.\n\n\nKeywords:\nPython, C++, C, Matlab, (R), Java, Galaxy(project), Metabolomics, MS, (multivariate) data analysis, (learning from) DL models.\n\n\nContact:\nGroup: Biosystems Data Analysis\nOffice: SP C2-205\nEmail: f.m.vanderkloet@uva.nl"
   },
   {
-    "objectID": "index.html#check-out-our-online-resources",
-    "href": "index.html#check-out-our-online-resources",
-    "title": "The biological Data Science Center",
-    "section": "Check out our online resources",
-    "text": "Check out our online resources\nCheck out our blog for quick reads on coding, which maybe inspiring for your research. Check out our tutorials for full protocols on analyses that are often performed by biologists at the UvA Science Park, such as RNA-seq.\nBlog Tutorials Further reading"
+    "objectID": "people.html#martijn-wehrens",
+    "href": "people.html#martijn-wehrens",
+    "title": "bioDSC core team",
+    "section": "Martijn Wehrens",
+    "text": "Martijn Wehrens\n\n\nContact:\nGroup: Molecular Cytology\nOffice: SP C2-???\nEmail: m.wehrens@uva.nl"
   },
   {
-    "objectID": "index.html#check-out-our-workshops",
-    "href": "index.html#check-out-our-workshops",
-    "title": "The biological Data Science Center",
-    "section": "Check out our workshops",
-    "text": "Check out our workshops\nOur aim is to organize workshops on topics researchers are interested in and that will help them. We’re currently working on composing a list of workshops and will start to organize them soon. Check out our workshop page to see whether we already have a workshop that is of interest to you. If you’re interested in a topic that’s not on the list, don’t hesitate to send us an email or drop by. We can either help you out with your specific problem, or organize a workshop if it’s a topic of potential interest to many researchers.\nWorkshops"
+    "objectID": "people.html#misha-paauw",
+    "href": "people.html#misha-paauw",
+    "title": "bioDSC core team",
+    "section": "Misha Paauw",
+    "text": "Misha Paauw\n\n\nInfo\nAfter a broad training in biology during my BSc and MSc, ranging from ecology to bioinformatics to molecular plant biology, I started my PhD in the Molecular Plant Pathology group of the University of Amsterdam in 2019. In my PhD research, I worked on the molecular interactions between plants and a pathogenic bacterium, called Xanthomonas campestris pv. campestris (Xcc). By studying the ‘pangenome’ of Xcc, I reconstructed the evolutionary history of Xcc and pinpointed the genes required for the specific infection strategy of Xcc.\nIn my current role as data scientist I support molecular biologists in their data-heavy projects by providing individual consultancy and organizing workshops via the bioDSC.\n\n\nKeywords:\nPython, R, bash, data visualisation, comparative genomics, microbial genomics, molecular (plant) biology.\n\n\nContact:\nGroup: Plant Physiology, Green Life Sciences\nOffice: SP C2-207\nEmail: m.m.paauw@uva.nl"
   },
   {
-    "objectID": "index.html#history",
-    "href": "index.html#history",
-    "title": "The biological Data Science Center",
-    "section": "History",
-    "text": "History\nAt the University of Amsterdam Science Park, enthusiastic researchers started the Science Park Study Group in 2017. The idea was to create a local culture of connecting and sharing knowledge with regard to coding in the biological sciences. Having started in September ’24 with the bioDSC, we aim to further boast this initiative and spirit.\nThe original website of the Science Park Study group can be found here."
+    "objectID": "people.html#other-contributors",
+    "href": "people.html#other-contributors",
+    "title": "bioDSC core team",
+    "section": "Other contributors",
+    "text": "Other contributors\n\nAnna Heintz-Buschart (BDA, SILS)\nTijs Bliek (PDEG, SILS)\nNina Dombrowski (IBED)\nWim de Leeuw (MAD, SILS)"
   },
   {
-    "objectID": "tutorials.html",
-    "href": "tutorials.html",
+    "objectID": "further-reading.html",
+    "href": "further-reading.html",
     "title": "*bio*DSC",
     "section": "",
-    "text": "Tutorial pages will be uploaded to this section of the site! Stay tuned!"
+    "text": "Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.\n\n\n\nCrunchomics documentation\nThe IBED bioinformatics support page\n\n\n\n\n\nDataViz protocols by Joachim Goedhart\nFundamentals of Data Visualization by Claus Wilke\nAn introduction to good color schemes\n\n\n\n\n\nMeta-Omics tutorials by Anna Heintz-Buschart"
   },
   {
-    "objectID": "tutorials.html#tutorials",
-    "href": "tutorials.html#tutorials",
+    "objectID": "further-reading.html#further-reading",
+    "href": "further-reading.html#further-reading",
     "title": "*bio*DSC",
     "section": "",
-    "text": "Tutorial pages will be uploaded to this section of the site! Stay tuned!"
-  },
-  {
-    "objectID": "test.html",
-    "href": "test.html",
-    "title": "dit is de heading?",
-    "section": "",
-    "text": "dit is de heading?"
+    "text": "Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.\n\n\n\nCrunchomics documentation\nThe IBED bioinformatics support page\n\n\n\n\n\nDataViz protocols by Joachim Goedhart\nFundamentals of Data Visualization by Claus Wilke\nAn introduction to good color schemes\n\n\n\n\n\nMeta-Omics tutorials by Anna Heintz-Buschart"
   }
 ]
