@@ -8,12 +8,15 @@ bs-link-color-rgb {
 link { color: #FF0000; } /* CSS link color */
 a { color: #10683c;}
 
-.nav-footer {
-    p.last-child {
-        element {
-            padding-right: 50px;
-        }
-    }
+
+
+body > footer{
+    margin:0px;
+    padding:100px;
+    min-width:100%;
+    max-width:100%;
+    background:#ffffff;
+    height:auto;
 }
 
 header#quarto-header.headroom {
