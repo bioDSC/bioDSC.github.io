@@ -33,9 +33,9 @@ Email: f.m.vanderkloet@uva.nl
 
 <img src="images/Martijn-Wehrens-300x300.jpg" width="250" height="250" />
 
-After studying biology and chemistry in Nijmegen (BSc, RU), I obtained a degree in theoretical chemistry at the UvA (MSc). Remaining in Amsterdam, I obtained my PhD at AMOLF, where I worked on tracking single bacteria using time lapse microscopy to understand gene regulation at the single cell. I then moved to the Hubrecht Institute in Utrecht to further work on understanding cells at the fundamental level by using RNA-seq to understand heart disease as a postdoc.
+After studying biology and chemistry in Nijmegen (BSc, RU), I obtained a MSc degree in theoretical chemistry at the University of Amsterdam, during which I focussed on simulations of biomolecular networks. Remaining in Amsterdam, I then obtained my PhD at AMOLF, where I worked on tracking single bacteria using time lapse microscopy to understand gene regulation at the single cell. After finishing my PhD, I moved to the Hubrecht Institute in Utrecht where I used RNA-sequencing to investigate the pathogenesis of heart disease as a postdoc. 
 
-At the bioDSC, I have fun writing scripts and lending my expertise to further understand all the amazing biological processes that occur in cells.
+At the bioDSC, I have fun writing scripts and lending my various computational and quantitative expertise to further understand all the amazing biological processes that occur in cells.
 
 #### Keywords:
 
