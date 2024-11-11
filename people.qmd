@@ -42,8 +42,8 @@ At the bioDSC, I have fun writing scripts and lending my various computational a
 Image analysis, quantitative biology, RNA-seq and sequencing pipelines, data analysis in Python and R.
 
 #### Contact:
-Group: Molecular Cytology
-Office: SP C2.267a
+Group: Molecular Cytology  
+Office: SP C2.267a  
 Email: m.wehrens@uva.nl  
 
 <a name="misha"></a>
