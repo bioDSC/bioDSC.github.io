@@ -3,12 +3,19 @@ project:
   output-dir: docs
 
 website:
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: "**Input wanted** - what are you ideas regarding the *bio*DSC? We are gathering input from researchers at the UvA: please fill in this <a href='https://docs.google.com/forms/d/e/1FAIpQLSfjQy9BJ9XJLcIHI-yWa3KLk7dtNoGnAoZiB2jTNQJjZ4N4ug/viewform' target='_blank'> questionnaire </a>. Thanks in advance!"
+    type: success
+    position: below-navbar
+  favicon: "images/bioDSC-without-dots-transparent.png"
   search:
       location: navbar
       type: textbox
   title: "*bio*DSC"
   navbar:    
-    logo: "images/bioDSC-logo.png"
+    logo: "images/bioDSC-without-dots-transparent.png"
     background: "primary"
     left:
       - href: index.qmd
@@ -43,20 +50,15 @@ website:
   #         - further-reading.qmd
 
   page-footer:
-  
-    left: "<p>an <i>initiative</i> of the <a href='https://uva.nl' target='_blank'>University of Amsterdam <img src='/images/uva-logo.png' height=25px;></a></p>"
-    right: "Copyright 2024"
+    right: "<p> <img src='/images/uva-logo.png' height=25px;> an <i>initiative</i> of the <a href='https://uva.nl' target='_blank'>University of Amsterdam </a></p>"
     
-
 format:
   html: 
     css: styles.css
     theme: flatly
-    
-    
     page-layout: full
     grid:
-      sidebar-width: 300px
+      sidebar-width: 10px
       body-width: 700px
       margin-width: 300px
       gutter-width: 1.5rem

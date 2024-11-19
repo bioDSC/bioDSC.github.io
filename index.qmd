@@ -3,9 +3,8 @@ title: "The *biological* Data Science Center"
 toc: false
 ---
 
-#
-#
-
+::: {.grid}
+::: {.g-col-9}
 
 **As a biologist at the Science Park of the University of Amsterdam, it’s likely that you will generate large amounts of data. The *biological* Data Science Center (*bio*DSC) was initiated to help you analyse that data.**
 
@@ -15,11 +14,28 @@ Our aim is to enable you to perform analyses yourself, which is why we offer wor
 [Drop by](people.qmd){.btn .btn-primary}
 [Slack](https://app.slack.com/client/T07UH6D0XL6/C07UPNUB91R){.btn .btn-primary target="_blank"}
 
+:::
+::: {.g-col-3}
+![](/images/bioDSC-with-dots-transparant.png){width=200 fig-align="center"}
+:::
+:::
+
 ## Our approach
 
-The *bio*DSC was initiated in September ’24, and we are currently finding out what works best to optimally support people with their data analyses.
+::: {.grid}
+::: {.g-col-9}
+
+The bioDSC was initiated in September ’24, and we are currently finding out what works best to optimally support people with their data analyses.
 
 Our core members are embedded in several research groups at the Swammerdam Institute for Life Sciences (SILS), to be integrated in the community of researchers at Science Park. In addition, other researchers at SILS sometimes volunteer to further support data analyses and good practices.
+
+:::
+::: {.g-col-3}
+
+![](/images/helping-v2.jpg){width=150 fig-align="center"}
+
+:::
+:::
 
 ## Check out our online resources
 
@@ -37,6 +53,15 @@ Our aim is to organize workshops on topics researchers are interested in and tha
 
 ## History
 
+::: {.grid}
+::: {.g-col-9}
+
 At the University of Amsterdam Science Park, enthusiastic researchers started the Science Park Study Group in 2017. The idea was to create a local culture of connecting and sharing knowledge with regard to coding in the biological sciences. Having started in September ’24 with the bioDSC, we aim to further boast this initiative and spirit.
 
 The original website of the Science Park Study group can be found [here](https://scienceparkstudygroup.info/who-we-are/).
+
+:::
+::: {.g-col-3}
+![](/images/typewriter.jpg){width=150 fig-align="center"}
+:::
+:::
