@@ -8,7 +8,7 @@ website:
   announcement: 
     icon: info-circle
     dismissable: true
-    content: "**Input wanted** - what are you ideas regarding the *bio*DSC? We are gathering input from researchers at the UvA: please fill in this <a href='https://docs.google.com/forms/d/e/1FAIpQLSfjQy9BJ9XJLcIHI-yWa3KLk7dtNoGnAoZiB2jTNQJjZ4N4ug/viewform' target='_blank'> questionnaire </a>. Thanks in advance!"
+    content: "**Workshop announcement** - We are excited to announce our first workshop: 'Introduction to R' which will take place on 15 and 17 january 2025. Sign up [here](/workshops/2025-introduction-R.qmd)!"
     type: success
     position: below-navbar
   favicon: "images/bioDSC-without-dots-transparent.png"

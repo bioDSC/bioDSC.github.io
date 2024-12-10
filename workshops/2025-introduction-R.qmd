@@ -1,0 +1,39 @@
+---
+title: "15 and 17 January 2025: Introduction to R"
+date: 2025-01-15
+author: Misha Paauw
+description: "Learn the basics of data analysis and visualisation in R in this workshop."
+categories: [upcoming]
+---
+
+### An introduction to R
+
+The *bio*DSC organizes an introductory course on data analysis and visualisation in R. R is a programming language for statistical programming and data visualation, and is very popular in the field of biology. Chances are high that those nice figures you see in papers were generated in R! In addition, understanding the basics of R sets you up for more complex data-heavy analysis such as the analysis of RNA-seq data. 
+
+This workshop assumes **no prior knowledge** on R or programming! 
+
+### Workshop learning outcomes
+
+After this workshop, you will be familiar with R, RStudio, and programming in general. More specifically, you will learn about:
+
+* Basic R syntax, how to write your first scripts
+* Loading datasets and manipulating data
+* Make plots based on your data (using `ggplot2`)
+
+### Workshop logistics
+
+The course will be given by Martijn Wehrens and Misha Paauw from the *bio*DSC. There is room for 4-12 participants. You have to bring your own laptop, with and R and RStudio installed: [instructions can be found here under section "Setup instructions"](https://datacarpentry.github.io/r-socialsci/index.html#setup-instructions){target="_blank"}. If you run into problems installing R before the workshop, please come in 30 minutes in advance so we can help you set-up your laptop for the workshop.
+
+We will use course materials from [The Carpentries](https://carpentries.org/about-us/){target="_blank"}, an initiative to teach foundational coding and data science skills to researchers worldwide.
+
+### Workshop schedule
+
+| Date | Time | Location | Topic |
+| ---- | ---- | -------  | ----- |
+| 15 january | 12:30 - 13:00 | Science Park B0.201 | Walk-in and R installation helpdesk |
+| 15 january | 13:00 - 17:00 | Science Park B0.201 | Introduction to R, part 1 |
+| 17 january | 13:00 - 17:00 | Science Park B0.201 | Introduction to R, part 2 | 
+
+### Sign up
+
+Sign up [in this Google Form](https://forms.gle/n9Ly5RRFEQAoJ3nJ7){target="_blank"}. **Sign up deadline: 8th of january!**

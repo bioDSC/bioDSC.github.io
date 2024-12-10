@@ -18,8 +18,6 @@ listing:
         categories: [past]
 ---
 
-Workshops will be announced on this page! Stay tuned!
-
 ## Upcoming workshops
 
 :::{#upcoming}
