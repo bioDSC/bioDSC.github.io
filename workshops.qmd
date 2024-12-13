@@ -16,11 +16,23 @@ listing:
     fields: [title, author, date, description]
     include:
         categories: [past]
+  - id: TBA
+    contents: workshops
+    sort: "date desc"
+    categories: false
+    fields: [title, author, date, description]
+    include:
+        categories: [TBA]
 ---
 
 ## Upcoming workshops
 
 :::{#upcoming}
+:::
+
+## Stay tuned
+
+:::{#TBA}
 :::
 
 ## Past workshops

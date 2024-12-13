@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Martijn Wehrens">
+<meta name="dcterms.date" content="2025-03-01">
+<meta name="description" content="Workshops we are currently developing that are coming soon.">
 
-<title>The bioDSC blog – *bio*DSC</title>
+<title>Workshops to be announced soon – bioDSC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/bioDSC-without-dots-transparent.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/bioDSC-without-dots-transparent.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,67 +69,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-date','listing-author','listing-categories','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -138,10 +81,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/bioDSC-without-dots-transparent.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/bioDSC-without-dots-transparent.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title"><em>bio</em>DSC</span>
     </a>
   </div>
@@ -152,34 +95,34 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./workshops.html"> 
+    <a class="nav-link" href="../workshops.html"> 
 <span class="menu-text">Workshops</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./people.html"> 
+    <a class="nav-link" href="../people.html"> 
 <span class="menu-text">People</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorials.html"> 
+    <a class="nav-link" href="../tutorials.html"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./further-reading.html"> 
+    <a class="nav-link" href="../further-reading.html"> 
 <span class="menu-text">Further reading</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="https://www.uva.nl" target="_blank"> 
-<span class="menu-text"><img src="./images/uva-logo.png" height="30"></span></a>
+<span class="menu-text"><img src="../images/uva-logo.png" height="30"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -188,29 +131,47 @@ window.Quarto = {
       </div> <!-- /container-fluid -->
     </nav>
   <div id="quarto-announcement" data-announcement-id="b04be3e6b3c8fd1fdb4fabd5655e6577" class="alert alert-success hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p><strong>Workshop announcement</strong> - We are excited to announce our first workshop: ‘Introduction to R’ which will take place on 15 and 17 january 2025. Sign up <a href="./workshops/2025-introduction-R.html">here</a>!</p>
+<p><strong>Workshop announcement</strong> - We are excited to announce our first workshop: ‘Introduction to R’ which will take place on 15 and 17 january 2025. Sign up <a href="../workshops/2025-introduction-R.html">here</a>!</p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="YXJhYmlkb3BzaXM=">arabidopsis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y29tcGFyYXRpdmUgZ2Vub21pY3M=">comparative genomics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y3J1bmNob21pY3M=">crunchomics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VuZXJhbA==">general <span class="quarto-category-count">(2)</span></div><div class="category" data-category="aW50cm8=">intro <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d29ya3Nob3AtcmVsYXRlZA==">workshop-related <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The <em>bio</em>DSC blog</h1>
+<h1 class="title">Workshops to be announced soon</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">TBA</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Workshops we are currently developing that are coming soon.
+  </div>
 </div>
 
 
+<div class="quarto-title-meta column-page">
 
-<div class="quarto-title-meta column-page-left">
-
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Martijn Wehrens </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 1, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -220,113 +181,45 @@ window.Quarto = {
 </header>
 
 
+<section id="workshops-were-working-on" class="level3">
+<h3 class="anchored" data-anchor-id="workshops-were-working-on">Workshops we’re working on</h3>
+<p>We are currently aiming to soon offer the following workshops:</p>
+<ul>
+<li>An introduction to R (already planned for Jan 2025)
+<ul>
+<li>Basics of R</li>
+<li>Importing, manipulating and analyzing data (mostly using dataframes).</li>
+<li>Plotting using ggplot.</li>
+</ul></li>
+<li>An introduction to Python, will likely cover
+<ul>
+<li>Equivalents of concepts mentioned in the R intro course mentioned above.</li>
+</ul></li>
+<li>Image analysis with python, will likely cover:
+<ul>
+<li>Basics of working with images</li>
+<li>Image manipulation, cellular segmentation, and other often-used concepts.</li>
+<li>(..)</li>
+</ul></li>
+<li>Analysis of RNA-sequencing data using R
+<ul>
+<li>(..)</li>
+</ul></li>
+</ul>
+<p>We aim to give workshops based on demand. So if there’s enough people interested, workshops will be recurring.</p>
+</section>
+<section id="should-i-learn-python-or-r" class="level2">
+<h2 class="anchored" data-anchor-id="should-i-learn-python-or-r">Should I learn Python or R?</h2>
+<p>See the blog post about <a href="../posts/python-or-R.html">Python vs.&nbsp;R</a> in case you’re wondering whether you should start learning: R, or Python.</p>
+</section>
+<section id="timing-pilot" class="level2">
+<h2 class="anchored" data-anchor-id="timing-pilot">Timing, pilot</h2>
+<p>We’re currently working on the <a href="../workshops/2025-introduction-R.html">Introduction to R</a> workshop. This will be the first (pilot) workshop we’ll be organizing, and it will give us better estimates of how long it takes to develop the course and prepare for the workshop. After this, we’ll start planning more workshops. We aim to offer more workshops ±4-6 weeks after the one in Jan 2025, but this is a rough estimate.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Z2VuZXJhbCx3b3Jrc2hvcC1yZWxhdGVk" data-listing-date-sort="1734044400000" data-listing-file-modified-sort="1734102548492" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="570">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/python-or-R.html" class="no-external">Should I learn Python or R?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/python-or-R.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Z2VuZXJhbA=='); return false;">
-general
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('d29ya3Nob3AtcmVsYXRlZA=='); return false;">
-workshop-related
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/python-or-R.html" class="no-external">When you haven’t had any exposure to scripting languages, but know some type of scripting language might be convenient to analyze your data, it might be hard to determine…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/python-or-R.html" class="no-external">
-<div class="listing-date">
-Dec 13, 2024
-</div>
-<div class="listing-author">
-Martijn Wehrens
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Y29tcGFyYXRpdmUgZ2Vub21pY3MsYXJhYmlkb3BzaXMsY3J1bmNob21pY3M=" data-listing-date-sort="1730674800000" data-listing-file-modified-sort="1731337257094" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1046">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Ath_synteny.html" class="no-external">Visualizing Arabidopsis whole-genome alignments</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/Ath_synteny.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Y29tcGFyYXRpdmUgZ2Vub21pY3M='); return false;">
-comparative genomics
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('YXJhYmlkb3BzaXM='); return false;">
-arabidopsis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Y3J1bmNob21pY3M='); return false;">
-crunchomics
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/Ath_synteny.html" class="no-external">Learn how to plot genome rearrangements in this blog.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/Ath_synteny.html" class="no-external">
-<div class="listing-date">
-Nov 4, 2024
-</div>
-<div class="listing-author">
-Misha Paauw
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="aW50cm8sZ2VuZXJhbA==" data-listing-date-sort="1730242800000" data-listing-file-modified-sort="1731337257094" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="159">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/introduction.html" class="no-external">The bioDSC blog: first post</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/introduction.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('aW50cm8='); return false;">
-intro
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Z2VuZXJhbA=='); return false;">
-general
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/introduction.html" class="no-external">An introduction to the blog and its purpose.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/introduction.html" class="no-external">
-<div class="listing-date">
-Oct 30, 2024
-</div>
-<div class="listing-author">
-Misha Paauw
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -758,7 +651,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
     <div class="nav-footer-right">
 <p>
-<img src="./images/uva-logo.png" height="25px;"> an <i>initiative</i> of the <a href="https://uva.nl" target="_blank">University of Amsterdam </a>
+<img src="../images/uva-logo.png" height="25px;"> an <i>initiative</i> of the <a href="https://uva.nl" target="_blank">University of Amsterdam </a>
 </p>
 </div>
   </div>

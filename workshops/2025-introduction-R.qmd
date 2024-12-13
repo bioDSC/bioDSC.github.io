@@ -34,6 +34,10 @@ We will use course materials from [The Carpentries](https://carpentries.org/abou
 | 15 january | 13:00 - 17:00 | Science Park B0.201 | Introduction to R, part 1 |
 | 17 january | 13:00 - 17:00 | Science Park B0.201 | Introduction to R, part 2 | 
 
+## Should I learn Python or R?
+
+See the blog post about [Python vs. R](../posts/python-or-R.qmd) in case you're wondering whether you should start learning: R, or Python. We have more workshops about Python and R [coming soon](../workshops.qmd).
+
 ### Sign up
 
 Sign up [here](https://forms.office.com/e/upm3MEcnKg){target="_blank"}. **Sign up deadline: 8th of january!**

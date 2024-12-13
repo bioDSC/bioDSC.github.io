@@ -1,0 +1,68 @@
+---
+title: "Should I learn Python or R?"
+date: 2024-12-13
+description: ""
+author: Martijn Wehrens
+categories: [general, workshop-related]
+---
+
+## Motivation for writing this blog post
+
+When you haven't had any exposure to scripting languages, but know some type of scripting language might be convenient to analyze your data, it might be hard to determine which language (R, Python, Javascript, ..) you should look into.
+
+In this blog post I list some typical use cases of Python and R such that you have an impression which language you use for what.
+
+## Python versus R
+
+When analyzing scientific data, there are multiple tools available. For simple analyses, Excel, GraphPad or FIJI/ImageJ may suffice. 
+When handling large amounts of data, or when you demand more specialized, custom types of analyses, it becomes convenient to use scripting languages such as Python or R.
+Many programming and scripting languages exist, but the main ones many researchers use are R and Python, on which I'll focus here.
+
+Below a list of what people typically use R and Python for.
+
+### R
+
+Typical use cases for R include:
+
+- bioinformatics, including specialized packages for
+    - genomics, transcriptomics, proteomics, e.g.
+        - Gene annotation (GO terms) 
+        - Enrichment analyses, differential gene expression
+        - Seurat package for single cell analysis
+- extensive data visualization
+    - (through the ggplot library)
+    - displaying high-dimensional data e.g. in tSNE or UMAPs, PCA analysis etc
+- complex statistical modeling, specialized e.g. for
+    - Ecology
+    - Bioinformatics (as mentioned above)
+
+### Python
+
+- Image analysis
+    - Although MATLAB is a go-to tool for image analysis, Python has become the open-source almost on-par alternative
+    - Multiple libraries are now available that can do pretty much any "classical" image operations to analyze images, e.g. to
+        - Segment your image (identify cells, or other parts of your image that are of interest)
+        - E.g. SciPy, OpenCV, scikit, ..
+    - Multiple tools exist to allow smooth user-interaction, such as Napari
+- Plotting and analyzing large data sets
+    - With the pandas, matplotlib, and seaborn library, large datasets can be imported, manipulated, and visualized
+    - This offers similar capabilities as R
+- Machine learning, neural networks, LLM, AI
+    - Python has become the go-to tool for working with machine learning related tech
+        - E.g. Keras and PyTorch
+- high-throughput data analysis and automation
+    - python is often used to process large amounts of data for further processing (see bio-informatics below)
+- bioinformatics
+    - seems there's less tools available, however offers packages to:
+    - Perform single cell analysis, such as SCANPY
+    - Custom tasks in bioinformatics pipelines (specialized mapping, e.g.) can use python
+
+What ChatGPT had to say about it: "R excels at statistical and visualization tasks, particularly for biostatistics and bioinformatics, while Python is preferred for machine learning, automation, and handling diverse data types in scalable pipelines. Many researchers use both, leveraging each for its strengths."
+
+## So, what should I choose?
+
+If you're uncertain what you should learn, feel free to drop us an email, walk by our desks, or contact us in another way to have a chat about what is most suitable for you!
+
+[Send an email](mailto:info@biodsc.nl){.btn .btn-primary target="_blank"}
+[Drop by](people.qmd){.btn .btn-primary}
+[Slack](https://app.slack.com/client/T07UH6D0XL6/C07UPNUB91R){.btn .btn-primary target="_blank"}

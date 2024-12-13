@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "The bioDSC blog",
     "section": "",
-    "text": "Visualizing Arabidopsis whole-genome alignments\n\n\n\n\n\n\ncomparative genomics\n\n\narabidopsis\n\n\ncrunchomics\n\n\n\nLearn how to plot genome rearrangements in this blog.\n\n\n\n\n\nNov 4, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\n\nThe bioDSC blog: first post\n\n\n\n\n\n\nintro\n\n\ngeneral\n\n\n\nAn introduction to the blog and its purpose.\n\n\n\n\n\nOct 30, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
+    "text": "Should I learn Python or R?\n\n\n\n\n\n\ngeneral\n\n\nworkshop-related\n\n\n\n\n\n\n\n\n\nDec 13, 2024\n\n\nMartijn Wehrens\n\n\n\n\n\n\n\nVisualizing Arabidopsis whole-genome alignments\n\n\n\n\n\n\ncomparative genomics\n\n\narabidopsis\n\n\ncrunchomics\n\n\n\nLearn how to plot genome rearrangements in this blog.\n\n\n\n\n\nNov 4, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\n\nThe bioDSC blog: first post\n\n\n\n\n\n\nintro\n\n\ngeneral\n\n\n\nAn introduction to the blog and its purpose.\n\n\n\n\n\nOct 30, 2024\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "tutorials.html",
@@ -56,25 +56,32 @@
     "text": "History\n\n\nAt the University of Amsterdam Science Park, enthusiastic researchers started the Science Park Study Group in 2017. The idea was to create a local culture of connecting and sharing knowledge with regard to coding in the biological sciences. Having started in September ’24 with the bioDSC, we aim to further boast this initiative and spirit.\nThe original website of the Science Park Study group can be found here."
   },
   {
-    "objectID": "posts/introduction.html",
-    "href": "posts/introduction.html",
-    "title": "The bioDSC blog: first post",
+    "objectID": "posts/python-or-R.html",
+    "href": "posts/python-or-R.html",
+    "title": "Should I learn Python or R?",
     "section": "",
-    "text": "We want to use this blog to share, every now and then, what’s on our minds. For example, let’s say we read a few interesting papers on a new bioinformatics technique. Sometimes we install the tools, to see if we can get it to work on our own data, or on a small test dataset. It might not develop into a full tutorial or protocol, but instead of keeping it to ourselves, we will share it here on this blog. Who knows, maybe it’s useful for someone in the future!\nTopics we aim to cover:\n\nBioinformatics, from RNA-seq to comparative genomics and anything beyond that\nData visualization, focussing on the ggplot universe in R\nCrunchomics, tips and tricks to use the high-performance compute cluster of the University of Amsterdam\nData management and archiving\n\nDo not hesitate to send us an email if you have ideas for new topics, or if you want to contribute to the blog by co-authoring a post!"
+    "text": "When you haven’t had any exposure to scripting languages, but know some type of scripting language might be convenient to analyze your data, it might be hard to determine which language (R, Python, Javascript, ..) you should look into.\nIn this blog post I list some typical use cases of Python and R such that you have an impression which language you use for what."
   },
   {
-    "objectID": "posts/introduction.html#why-a-blog",
-    "href": "posts/introduction.html#why-a-blog",
-    "title": "The bioDSC blog: first post",
+    "objectID": "posts/python-or-R.html#motivation-for-writing-this-blog-post",
+    "href": "posts/python-or-R.html#motivation-for-writing-this-blog-post",
+    "title": "Should I learn Python or R?",
     "section": "",
-    "text": "We want to use this blog to share, every now and then, what’s on our minds. For example, let’s say we read a few interesting papers on a new bioinformatics technique. Sometimes we install the tools, to see if we can get it to work on our own data, or on a small test dataset. It might not develop into a full tutorial or protocol, but instead of keeping it to ourselves, we will share it here on this blog. Who knows, maybe it’s useful for someone in the future!\nTopics we aim to cover:\n\nBioinformatics, from RNA-seq to comparative genomics and anything beyond that\nData visualization, focussing on the ggplot universe in R\nCrunchomics, tips and tricks to use the high-performance compute cluster of the University of Amsterdam\nData management and archiving\n\nDo not hesitate to send us an email if you have ideas for new topics, or if you want to contribute to the blog by co-authoring a post!"
+    "text": "When you haven’t had any exposure to scripting languages, but know some type of scripting language might be convenient to analyze your data, it might be hard to determine which language (R, Python, Javascript, ..) you should look into.\nIn this blog post I list some typical use cases of Python and R such that you have an impression which language you use for what."
   },
   {
-    "objectID": "workshops/2025-introduction-R.html",
-    "href": "workshops/2025-introduction-R.html",
-    "title": "15 and 17 January 2025: Introduction to R",
-    "section": "",
-    "text": "An introduction to R\nThe bioDSC organizes an introductory course on data analysis and visualisation in R. R is a programming language for statistical programming and data visualation, and is very popular in the field of biology. Chances are high that those nice figures you see in papers were generated in R! In addition, understanding the basics of R sets you up for more complex data-heavy analysis such as the analysis of RNA-seq data.\nThis workshop assumes no prior knowledge on R or programming!\n\n\nWorkshop learning outcomes\nAfter this workshop, you will be familiar with R, RStudio, and programming in general. More specifically, you will learn about:\n\nBasic R syntax, how to write your first scripts\nLoading datasets and manipulating data\nMake plots based on your data (using ggplot2)\n\n\n\nWorkshop logistics\nThe course will be given by Martijn Wehrens and Misha Paauw from the bioDSC. There is room for 4-12 participants. You have to bring your own laptop, with and R and RStudio installed: instructions can be found here under section “Setup instructions”. If you run into problems installing R before the workshop, please come in 30 minutes in advance so we can help you set-up your laptop for the workshop.\nWe will use course materials from The Carpentries, an initiative to teach foundational coding and data science skills to researchers worldwide.\n\n\nWorkshop schedule\n\n\n\n\n\n\n\n\n\nDate\nTime\nLocation\nTopic\n\n\n\n\n15 january\n12:30 - 13:00\nScience Park B0.201\nWalk-in and R installation helpdesk\n\n\n15 january\n13:00 - 17:00\nScience Park B0.201\nIntroduction to R, part 1\n\n\n17 january\n13:00 - 17:00\nScience Park B0.201\nIntroduction to R, part 2\n\n\n\n\n\nSign up\nSign up here. Sign up deadline: 8th of january!"
+    "objectID": "posts/python-or-R.html#python-versus-r",
+    "href": "posts/python-or-R.html#python-versus-r",
+    "title": "Should I learn Python or R?",
+    "section": "Python versus R",
+    "text": "Python versus R\nWhen analyzing scientific data, there are multiple tools available. For simple analyses, Excel, GraphPad or FIJI/ImageJ may suffice. When handling large amounts of data, or when you demand more specialized, custom types of analyses, it becomes convenient to use scripting languages such as Python or R. Many programming and scripting languages exist, but the main ones many researchers use are R and Python, on which I’ll focus here.\nBelow a list of what people typically use R and Python for.\n\nR\nTypical use cases for R include:\n\nbioinformatics, including specialized packages for\n\ngenomics, transcriptomics, proteomics, e.g.\n\nGene annotation (GO terms)\nEnrichment analyses, differential gene expression\nSeurat package for single cell analysis\n\n\nextensive data visualization\n\n(through the ggplot library)\ndisplaying high-dimensional data e.g. in tSNE or UMAPs, PCA analysis etc\n\ncomplex statistical modeling, specialized e.g. for\n\nEcology\nBioinformatics (as mentioned above)\n\n\n\n\nPython\n\nImage analysis\n\nAlthough MATLAB is a go-to tool for image analysis, Python has become the open-source almost on-par alternative\nMultiple libraries are now available that can do pretty much any “classical” image operations to analyze images, e.g. to\n\nSegment your image (identify cells, or other parts of your image that are of interest)\nE.g. SciPy, OpenCV, scikit, ..\n\nMultiple tools exist to allow smooth user-interaction, such as Napari\n\nPlotting and analyzing large data sets\n\nWith the pandas, matplotlib, and seaborn library, large datasets can be imported, manipulated, and visualized\nThis offers similar capabilities as R\n\nMachine learning, neural networks, LLM, AI\n\nPython has become the go-to tool for working with machine learning related tech\n\nE.g. Keras and PyTorch\n\n\nhigh-throughput data analysis and automation\n\npython is often used to process large amounts of data for further processing (see bio-informatics below)\n\nbioinformatics\n\nseems there’s less tools available, however offers packages to:\nPerform single cell analysis, such as SCANPY\nCustom tasks in bioinformatics pipelines (specialized mapping, e.g.) can use python\n\n\nWhat ChatGPT had to say about it: “R excels at statistical and visualization tasks, particularly for biostatistics and bioinformatics, while Python is preferred for machine learning, automation, and handling diverse data types in scalable pipelines. Many researchers use both, leveraging each for its strengths.”"
+  },
+  {
+    "objectID": "posts/python-or-R.html#so-what-should-i-choose",
+    "href": "posts/python-or-R.html#so-what-should-i-choose",
+    "title": "Should I learn Python or R?",
+    "section": "So, what should I choose?",
+    "text": "So, what should I choose?\nIf you’re uncertain what you should learn, feel free to drop us an email, walk by our desks, or contact us in another way to have a chat about what is most suitable for you!\nSend an email Drop by Slack"
   },
   {
     "objectID": "posts/Ath_synteny.html",
@@ -126,6 +133,55 @@
     "text": "Further reading\n\nsyri, a software package to identify structural rearrangements.\nplotsr, a software package to plot the rearrangements detected by syri.\nLian et al 2024 Nature Genetics.\nclinker, a versatile synteny visualization tool that works on smaller scales (gene clusters)."
   },
   {
+    "objectID": "workshops/2025-working-on.html",
+    "href": "workshops/2025-working-on.html",
+    "title": "Workshops to be announced soon",
+    "section": "",
+    "text": "We are currently aiming to soon offer the following workshops:\n\nAn introduction to R (already planned for Jan 2025)\n\nBasics of R\nImporting, manipulating and analyzing data (mostly using dataframes).\nPlotting using ggplot.\n\nAn introduction to Python, will likely cover\n\nEquivalents of concepts mentioned in the R intro course mentioned above.\n\nImage analysis with python, will likely cover:\n\nBasics of working with images\nImage manipulation, cellular segmentation, and other often-used concepts.\n(..)\n\nAnalysis of RNA-sequencing data using R\n\n(..)\n\n\nWe aim to give workshops based on demand. So if there’s enough people interested, workshops will be recurring."
+  },
+  {
+    "objectID": "workshops/2025-working-on.html#should-i-learn-python-or-r",
+    "href": "workshops/2025-working-on.html#should-i-learn-python-or-r",
+    "title": "Workshops to be announced soon",
+    "section": "Should I learn Python or R?",
+    "text": "Should I learn Python or R?\nSee the blog post about Python vs. R in case you’re wondering whether you should start learning: R, or Python."
+  },
+  {
+    "objectID": "workshops/2025-working-on.html#timing-pilot",
+    "href": "workshops/2025-working-on.html#timing-pilot",
+    "title": "Workshops to be announced soon",
+    "section": "Timing, pilot",
+    "text": "Timing, pilot\nWe’re currently working on the Introduction to R workshop. This will be the first (pilot) workshop we’ll be organizing, and it will give us better estimates of how long it takes to develop the course and prepare for the workshop. After this, we’ll start planning more workshops. We aim to offer more workshops ±4-6 weeks after the one in Jan 2025, but this is a rough estimate."
+  },
+  {
+    "objectID": "workshops/2025-introduction-R.html",
+    "href": "workshops/2025-introduction-R.html",
+    "title": "15 and 17 January 2025: Introduction to R",
+    "section": "",
+    "text": "The bioDSC organizes an introductory course on data analysis and visualisation in R. R is a programming language for statistical programming and data visualation, and is very popular in the field of biology. Chances are high that those nice figures you see in papers were generated in R! In addition, understanding the basics of R sets you up for more complex data-heavy analysis such as the analysis of RNA-seq data.\nThis workshop assumes no prior knowledge on R or programming!"
+  },
+  {
+    "objectID": "workshops/2025-introduction-R.html#should-i-learn-python-or-r",
+    "href": "workshops/2025-introduction-R.html#should-i-learn-python-or-r",
+    "title": "15 and 17 January 2025: Introduction to R",
+    "section": "Should I learn Python or R?",
+    "text": "Should I learn Python or R?\nSee the blog post about Python vs. R in case you’re wondering whether you should start learning: R, or Python. We have more workshops about Python and R coming soon.\n\nSign up\nSign up here. Sign up deadline: 8th of january!"
+  },
+  {
+    "objectID": "posts/introduction.html",
+    "href": "posts/introduction.html",
+    "title": "The bioDSC blog: first post",
+    "section": "",
+    "text": "We want to use this blog to share, every now and then, what’s on our minds. For example, let’s say we read a few interesting papers on a new bioinformatics technique. Sometimes we install the tools, to see if we can get it to work on our own data, or on a small test dataset. It might not develop into a full tutorial or protocol, but instead of keeping it to ourselves, we will share it here on this blog. Who knows, maybe it’s useful for someone in the future!\nTopics we aim to cover:\n\nBioinformatics, from RNA-seq to comparative genomics and anything beyond that\nData visualization, focussing on the ggplot universe in R\nCrunchomics, tips and tricks to use the high-performance compute cluster of the University of Amsterdam\nData management and archiving\n\nDo not hesitate to send us an email if you have ideas for new topics, or if you want to contribute to the blog by co-authoring a post!"
+  },
+  {
+    "objectID": "posts/introduction.html#why-a-blog",
+    "href": "posts/introduction.html#why-a-blog",
+    "title": "The bioDSC blog: first post",
+    "section": "",
+    "text": "We want to use this blog to share, every now and then, what’s on our minds. For example, let’s say we read a few interesting papers on a new bioinformatics technique. Sometimes we install the tools, to see if we can get it to work on our own data, or on a small test dataset. It might not develop into a full tutorial or protocol, but instead of keeping it to ourselves, we will share it here on this blog. Who knows, maybe it’s useful for someone in the future!\nTopics we aim to cover:\n\nBioinformatics, from RNA-seq to comparative genomics and anything beyond that\nData visualization, focussing on the ggplot universe in R\nCrunchomics, tips and tricks to use the high-performance compute cluster of the University of Amsterdam\nData management and archiving\n\nDo not hesitate to send us an email if you have ideas for new topics, or if you want to contribute to the blog by co-authoring a post!"
+  },
+  {
     "objectID": "workshops.html",
     "href": "workshops.html",
     "title": "Workshops & events",
@@ -138,6 +194,13 @@
     "title": "Workshops & events",
     "section": "",
     "text": "Learn the basics of data analysis and visualisation in R in this workshop.\n\n\n\n\n\nJan 15, 2025\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "workshops.html#stay-tuned",
+    "href": "workshops.html#stay-tuned",
+    "title": "Workshops & events",
+    "section": "Stay tuned",
+    "text": "Stay tuned\n\n\n\n\n\nWorkshops to be announced soon\n\n\n\n\n\nWorkshops we are currently developing that are coming soon.\n\n\n\n\n\nMar 1, 2025\n\n\nMartijn Wehrens\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "workshops.html#past-workshops",
