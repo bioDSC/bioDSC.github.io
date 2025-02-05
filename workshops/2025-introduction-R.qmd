@@ -3,7 +3,7 @@ title: "15 and 17 January 2025: Introduction to R"
 date: 2025-01-15
 author: Misha Paauw
 description: "Learn the basics of data analysis and visualisation in R in this workshop."
-categories: [upcoming]
+categories: [past]
 ---
 
 ### An introduction to R

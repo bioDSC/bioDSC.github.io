@@ -137,7 +137,7 @@
     "href": "workshops/2025-working-on.html",
     "title": "Workshops to be announced soon",
     "section": "",
-    "text": "We are currently aiming to soon offer the following workshops:\n\nAn introduction to R (already planned for Jan 2025)\n\nBasics of R\nImporting, manipulating and analyzing data (mostly using dataframes).\nPlotting using ggplot.\n\nAn introduction to Python, will likely cover\n\nEquivalents of concepts mentioned in the R intro course mentioned above.\n\nImage analysis with python, will likely cover:\n\nBasics of working with images\nImage manipulation, cellular segmentation, and other often-used concepts.\n(..)\n\nAnalysis of RNA-sequencing data using R\n\n(..)\n\n\nWe aim to give workshops based on demand. So if there’s enough people interested, workshops will be recurring."
+    "text": "We are currently aiming to soon offer the following workshops:\n\nAn introduction to R (Jan 2025)\n\nBasics of R\nImporting, manipulating and analyzing data (mostly using dataframes).\nPlotting using ggplot.\n\nAn introduction to Python (planning: early march 2025).\n\nEquivalents of concepts mentioned in the R intro course mentioned above.\n\nImage analysis with Python (planning: April/May 2025).\n\nBasics of working with images\nImage manipulation, cellular segmentation, and other often-used concepts.\n(..)\n\nAnalysis of RNA-sequencing data (planning: April/May 2025)\n\nRead quality control\nMapping reads to a reference genome\nDifferentially expressed gene analysis using DEseq2 in R.\n\n\nWe aim to give workshops based on demand. So if there’s enough people interested, workshops will be recurring."
   },
   {
     "objectID": "workshops/2025-working-on.html#should-i-learn-python-or-r",
@@ -152,6 +152,48 @@
     "title": "Workshops to be announced soon",
     "section": "Timing, pilot",
     "text": "Timing, pilot\nWe’re currently working on the Introduction to R workshop. This will be the first (pilot) workshop we’ll be organizing, and it will give us better estimates of how long it takes to develop the course and prepare for the workshop. After this, we’ll start planning more workshops. We aim to offer more workshops ±4-6 weeks after the one in Jan 2025, but this is a rough estimate."
+  },
+  {
+    "objectID": "workshops/2025-BYOD-1.html",
+    "href": "workshops/2025-BYOD-1.html",
+    "title": "24 February 2025: Bring Your Own Data",
+    "section": "",
+    "text": "The bioDSC organizes a “Bring Your Own Data” data visualization workshop. In this workshop, you will work on your own dataset and make insightful visualizations using ggplot2 in R. All datasets are welcome, ranging from a small pilot experiment to large-scale experimental assays.\nThe aims of this workshop are:\n\nTo make (publication-quality) plots of your dataset\nTo write reusable scripts to generate more plots later with new datasets\nTo become more experienced and confident in using R and ggplot2"
+  },
+  {
+    "objectID": "workshops/2025-BYOD-1.html#bring-your-own-data-data-visualization-workshop",
+    "href": "workshops/2025-BYOD-1.html#bring-your-own-data-data-visualization-workshop",
+    "title": "24 February 2025: Bring Your Own Data",
+    "section": "",
+    "text": "The bioDSC organizes a “Bring Your Own Data” data visualization workshop. In this workshop, you will work on your own dataset and make insightful visualizations using ggplot2 in R. All datasets are welcome, ranging from a small pilot experiment to large-scale experimental assays.\nThe aims of this workshop are:\n\nTo make (publication-quality) plots of your dataset\nTo write reusable scripts to generate more plots later with new datasets\nTo become more experienced and confident in using R and ggplot2"
+  },
+  {
+    "objectID": "workshops/2025-BYOD-1.html#prior-experience",
+    "href": "workshops/2025-BYOD-1.html#prior-experience",
+    "title": "24 February 2025: Bring Your Own Data",
+    "section": "Prior experience",
+    "text": "Prior experience\nFor this workshop, we assume that you have some experience with data manipulation and visualisation in R, using the tidyverse packages dplyr, tidyr and ggplot2. For example, you have followed our recent workshop Introduction to R where we covered the materials of R for Social Scientists. Alternatively, you have similar experience from other courses or your own explorations."
+  },
+  {
+    "objectID": "workshops/2025-BYOD-1.html#workshop-logistics",
+    "href": "workshops/2025-BYOD-1.html#workshop-logistics",
+    "title": "24 February 2025: Bring Your Own Data",
+    "section": "Workshop logistics",
+    "text": "Workshop logistics\nIn this workshop, you will work by yourself on your own dataset. Martijn Wehrens, Misha Paauw, and Frans van der Kloet from the bioDSC will be available to help you with all the problems you encounter along the way. There is room for 4-12 participants. You have to bring your own laptop, with and R and RStudio installed, including the tidyverse package."
+  },
+  {
+    "objectID": "workshops/2025-BYOD-1.html#workshop-schedule",
+    "href": "workshops/2025-BYOD-1.html#workshop-schedule",
+    "title": "24 February 2025: Bring Your Own Data",
+    "section": "Workshop schedule",
+    "text": "Workshop schedule\n\n\n\n\n\n\n\n\n\nDate\nTime\nLocation\nTopic\n\n\n\n\nMonday 24 february\n13:00 - 16:00\nScience Park B0.206\nVisualisation of datasets"
+  },
+  {
+    "objectID": "workshops/2025-BYOD-1.html#sign-up",
+    "href": "workshops/2025-BYOD-1.html#sign-up",
+    "title": "24 February 2025: Bring Your Own Data",
+    "section": "Sign up",
+    "text": "Sign up\nSign up by sending an email to info@biodsc.nl.\nIn your email, please include the following:\n\nYour research group\nYour dataset in comma separated, tab separated, or excel table format (.csv, .tsv, .xlsx).\nA brief explanation of your dataset and the plots you want to make\nIdeally, a quick sketch of the plot you want to make\n\nSign up deadline: 19th of february!"
   },
   {
     "objectID": "workshops/2025-introduction-R.html",
@@ -186,14 +228,14 @@
     "href": "workshops.html",
     "title": "Workshops & events",
     "section": "",
-    "text": "Learn the basics of data analysis and visualisation in R in this workshop.\n\n\n\n\n\nJan 15, 2025\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
+    "text": "Bring your own dataset and make publication-quality figures.\n\n\n\n\n\nFeb 24, 2025\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "workshops.html#upcoming-workshops",
     "href": "workshops.html#upcoming-workshops",
     "title": "Workshops & events",
     "section": "",
-    "text": "Learn the basics of data analysis and visualisation in R in this workshop.\n\n\n\n\n\nJan 15, 2025\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
+    "text": "Bring your own dataset and make publication-quality figures.\n\n\n\n\n\nFeb 24, 2025\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "workshops.html#stay-tuned",
@@ -207,7 +249,7 @@
     "href": "workshops.html#past-workshops",
     "title": "Workshops & events",
     "section": "Past workshops",
-    "text": "Past workshops\n\n\n\n\n\nNo matching items"
+    "text": "Past workshops\n\n\n\n\n\n15 and 17 January 2025: Introduction to R\n\n\n\n\n\nLearn the basics of data analysis and visualisation in R in this workshop.\n\n\n\n\n\nJan 15, 2025\n\n\nMisha Paauw\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "people.html",

@@ -10,18 +10,20 @@ categories: [TBA]
 
 We are currently aiming to soon offer the following workshops:
 
-- An introduction to R (already planned for Jan 2025)
+- [An introduction to R](2025-introduction-R.qmd) (Jan 2025)
     - Basics of R
     - Importing, manipulating and analyzing data (mostly using dataframes). 
     - Plotting using ggplot.
-- An introduction to Python, will likely cover 
+- An introduction to Python (planning: early march 2025). 
     - Equivalents of concepts mentioned in the R intro course mentioned above.
-- Image analysis with python, will likely cover:
+- Image analysis with Python (planning: April/May 2025).
     - Basics of working with images
     - Image manipulation, cellular segmentation, and other often-used concepts.
     - (..)
-- Analysis of RNA-sequencing data using R
-    - (..)
+- Analysis of RNA-sequencing data (planning: April/May 2025)
+    - Read quality control
+    - Mapping reads to a reference genome
+    - Differentially expressed gene analysis using `DEseq2` in R.
 
 We aim to give workshops based on demand. So if there's enough people interested, workshops will be recurring.
 

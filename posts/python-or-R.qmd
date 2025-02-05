@@ -64,5 +64,5 @@ What ChatGPT had to say about it: "R excels at statistical and visualization tas
 If you're uncertain what you should learn, feel free to drop us an email, walk by our desks, or contact us in another way to have a chat about what is most suitable for you!
 
 [Send an email](mailto:info@biodsc.nl){.btn .btn-primary target="_blank"}
-[Drop by](people.qmd){.btn .btn-primary}
+[Drop by](../people.qmd){.btn .btn-primary}
 [Slack](https://app.slack.com/client/T07UH6D0XL6/C07UPNUB91R){.btn .btn-primary target="_blank"}

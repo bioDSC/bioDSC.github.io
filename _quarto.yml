@@ -8,7 +8,7 @@ website:
   announcement: 
     icon: info-circle
     dismissable: true
-    content: "**Workshop announcement** - We are excited to announce our first workshop: 'Introduction to R' which will take place on 15 and 17 january 2025. Sign up [here](/workshops/2025-introduction-R.qmd)!"
+    content: "**Workshop announcement** - Do you have a dataset and you don't know how to visualize it? Join our ['Bring Your Own Data' data visualisation workshop](/workshops/2025-BYOD-1.qmd) on February 24!"
     type: success
     position: below-navbar
   favicon: "images/bioDSC-without-dots-transparent.png"
