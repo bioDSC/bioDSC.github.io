@@ -16,6 +16,8 @@ The aims of this workshop are to help you with:
 -	Writing reusable scripts to generate more plots later with new datasets
 -	Becoming more experienced and confident in using `R` and `ggplot2`
 
+![Boxplots, barplots, and lineplots made in `ggplot2`, taken from [Paauw *et al*, 2024.](https://www.biorxiv.org/content/10.1101/2024.10.09.617435v1)](../images/BYOD-image.jpg){fig-align="left"}
+
 ## Prior experience
 
 For this workshop, we assume that you have **some** experience with data manipulation and visualisation in `R`, using the `tidyverse` packages `dplyr`, `tidyr` and `ggplot2`. For example, you have followed our recent workshop [Introduction to R](2025-introduction-R.qmd) where we covered the materials of [R for Social Scientists](https://datacarpentry.github.io/r-socialsci/). Alternatively, you have similar experience from other courses or your own explorations.
