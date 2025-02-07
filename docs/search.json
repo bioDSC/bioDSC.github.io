@@ -158,14 +158,14 @@
     "href": "workshops/2025-BYOD-1.html",
     "title": "24 February 2025: Bring Your Own Data",
     "section": "",
-    "text": "The bioDSC organizes a “Bring Your Own Data” data visualization workshop. In this workshop, you will work on your own dataset and make insightful visualizations using ggplot2 in R. All datasets are welcome, ranging from a small pilot experiment to large-scale experimental assays.\nThe aims of this workshop are:\n\nTo make (publication-quality) plots of your dataset\nTo write reusable scripts to generate more plots later with new datasets\nTo become more experienced and confident in using R and ggplot2"
+    "text": "The bioDSC organizes a “Bring Your Own Data” data visualization workshop. In this workshop, we will offer help and guidance to turn your own dataset into insightful visualizations using ggplot2 in R. You are expected to bring your own table with data to work on, ranging from a small pilot experiment to large-scale experimental assays. We can help improving your existing plotting scripts, or build one from scratch.\nThe aims of this workshop are to help you with:\n\nMaking (publication-quality) plots of your dataset\nWriting reusable scripts to generate more plots later with new datasets\nBecoming more experienced and confident in using R and ggplot2"
   },
   {
     "objectID": "workshops/2025-BYOD-1.html#bring-your-own-data-data-visualization-workshop",
     "href": "workshops/2025-BYOD-1.html#bring-your-own-data-data-visualization-workshop",
     "title": "24 February 2025: Bring Your Own Data",
     "section": "",
-    "text": "The bioDSC organizes a “Bring Your Own Data” data visualization workshop. In this workshop, you will work on your own dataset and make insightful visualizations using ggplot2 in R. All datasets are welcome, ranging from a small pilot experiment to large-scale experimental assays.\nThe aims of this workshop are:\n\nTo make (publication-quality) plots of your dataset\nTo write reusable scripts to generate more plots later with new datasets\nTo become more experienced and confident in using R and ggplot2"
+    "text": "The bioDSC organizes a “Bring Your Own Data” data visualization workshop. In this workshop, we will offer help and guidance to turn your own dataset into insightful visualizations using ggplot2 in R. You are expected to bring your own table with data to work on, ranging from a small pilot experiment to large-scale experimental assays. We can help improving your existing plotting scripts, or build one from scratch.\nThe aims of this workshop are to help you with:\n\nMaking (publication-quality) plots of your dataset\nWriting reusable scripts to generate more plots later with new datasets\nBecoming more experienced and confident in using R and ggplot2"
   },
   {
     "objectID": "workshops/2025-BYOD-1.html#prior-experience",
@@ -179,7 +179,7 @@
     "href": "workshops/2025-BYOD-1.html#workshop-logistics",
     "title": "24 February 2025: Bring Your Own Data",
     "section": "Workshop logistics",
-    "text": "Workshop logistics\nIn this workshop, you will work by yourself on your own dataset. Martijn Wehrens, Misha Paauw, and Frans van der Kloet from the bioDSC will be available to help you with all the problems you encounter along the way. There is room for 4-12 participants. You have to bring your own laptop, with and R and RStudio installed, including the tidyverse package."
+    "text": "Workshop logistics\nIn this workshop, you will work by yourself on your own dataset. Martijn Wehrens, Misha Paauw, and Frans van der Kloet from the bioDSC will be available to discuss your approach and help you with all the problems you encounter along the way. There is room for 4-12 participants. You have to bring your own laptop, with and R and RStudio installed, including the tidyverse package."
   },
   {
     "objectID": "workshops/2025-BYOD-1.html#workshop-schedule",
