@@ -29,3 +29,8 @@ header#quarto-header.headroom {
     margin: auto
 }
 
+.mw-infoblock {
+    margin-left: 40px; 
+    font-size: 90%;
+}
+

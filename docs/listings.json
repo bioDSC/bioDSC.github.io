@@ -10,6 +10,7 @@
   {
     "listing": "/workshops.html",
     "items": [
+      "/workshops/2025-introduction-python.html",
       "/workshops/2025-BYOD-1.html",
       "/workshops/2025-introduction-R.html",
       "/workshops/2025-working-on.html"

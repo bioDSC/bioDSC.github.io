@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Martijn Wehrens">
-<meta name="dcterms.date" content="2024-12-13">
+<meta name="dcterms.date" content="2025-03-12">
+<meta name="description" content="Get introduced to the Python from simple basics to functions, dataframes and plotting.">
 
-<title>Should I learn Python or R? – bioDSC</title>
+<title>March 12 and 14 (2025): Introduction to Python – bioDSC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -143,13 +144,17 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Should I learn Python or R?</h1>
+<h1 class="title">March 12 and 14 (2025): Introduction to Python</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">general</div>
-    <div class="quarto-category">workshop-related</div>
+    <div class="quarto-category">upcoming</div>
   </div>
   </div>
 
+<div>
+  <div class="description">
+    Get introduced to the Python from simple basics to functions, dataframes and plotting.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta column-page">
@@ -164,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">December 13, 2024</p>
+      <p class="date">March 12, 2025</p>
     </div>
   </div>
   
@@ -176,86 +181,130 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="motivation-for-writing-this-blog-post" class="level2">
-<h2 class="anchored" data-anchor-id="motivation-for-writing-this-blog-post">Motivation for writing this blog post</h2>
-<p>When you haven’t had any exposure to scripting languages, but know some type of scripting language might be convenient to analyze your data, it might be hard to determine which language (R, Python, Javascript, ..) you should look into.</p>
-<p>In this blog post I list some typical use cases of Python and R such that you have an impression which language you use for what.</p>
+<section id="about-python" class="level3">
+<h3 class="anchored" data-anchor-id="about-python">About Python</h3>
+<p>Python is a computer script language that has become a workhorse of data analysis throughout many fields and disciplines. It can process and analyze big data sets, perform image analysis, and create great visualizations.</p>
+<p>See below for <a href="#use-cases">small overview of what Python is typically used for</a>.</p>
 </section>
-<section id="python-versus-r" class="level2">
-<h2 class="anchored" data-anchor-id="python-versus-r">Python versus R</h2>
-<p>When analyzing scientific data, there are multiple tools available. For simple analyses, Excel, GraphPad or FIJI/ImageJ may suffice. When handling large amounts of data, or when you demand more specialized, custom types of analyses, it becomes convenient to use scripting languages such as Python or R. Many programming and scripting languages exist, but the main ones many researchers use are R and Python, on which I’ll focus here.</p>
-<p>Below a list of what people typically use R and Python for.</p>
-<section id="r" class="level3">
-<h3 class="anchored" data-anchor-id="r">R</h3>
-<p>Typical use cases for R include:</p>
+<section id="this-workshop" class="level3">
+<h3 class="anchored" data-anchor-id="this-workshop">This workshop</h3>
+<section id="workshop-goals" class="level4">
+<h4 class="anchored" data-anchor-id="workshop-goals">Workshop goals</h4>
+<p>After this workshop, you’ll be familiar with Python basics. We’ll discuss and let you practice on:</p>
+<div class="mw-infoblock">
 <ul>
-<li>bioinformatics, including specialized packages for
+<li>Using Python (Jupyter notebooks, VS Studio code, Spyder)
 <ul>
-<li>genomics, transcriptomics, proteomics, e.g.
-<ul>
-<li>Gene annotation (GO terms)</li>
-<li>Enrichment analyses, differential gene expression</li>
-<li>Seurat package for single cell analysis</li>
+<li>Throughout the workshop, we’ll use an online version of Jupyter notebook to avoid installation issues)</li>
 </ul></li>
-</ul></li>
-<li>extensive data visualization
-<ul>
-<li>(through the ggplot library)</li>
-<li>displaying high-dimensional data e.g.&nbsp;in tSNE or UMAPs, PCA analysis etc</li>
-</ul></li>
-<li>complex statistical modeling, specialized e.g.&nbsp;for
-<ul>
-<li>Ecology</li>
-<li>Bioinformatics (as mentioned above)</li>
-</ul></li>
+<li>Variables, types, basic commands, functions, libraries.</li>
+<li>Working with tabular data (Pandas).</li>
+<li>Plotting (matplotlib).</li>
+<li>Using loops and conditionals.</li>
+<li>Writing functions.</li>
+<li>Good practices in programming and software engineering.</li>
 </ul>
+</div>
+<p>This workshop will largely (&gt;95%) follow the Carpentries training material “Plotting and programming in Python”. All training material can be found at:</p>
+<ul>
+<li><a href="https://swcarpentry.github.io/python-novice-gapminder/" target="_blank">https://swcarpentry.github.io/python-novice-gapminder/</a></li>
+</ul>
+<p>See <a href="https://swcarpentry.github.io/python-novice-gapminder/instructor/design.html#stage-2-desired-results" target="_blank">this workshop page</a> for a summary of desired learning results. The materials we’ll use do not use examples specific to biology, but instead use the “Gapminder” dataset (see <a href="https://www.kaggle.com/datasets/albertovidalrod/gapminder-dataset" target="_blank">[1]</a> and <a href="https://www.gapminder.org/about/" target="_blank">[2]</a>). We think this offers thorough insights into how Python works. Follow-up courses, e.g.&nbsp;into image analysis, will be delve into more biological datasets.</p>
+<p>If you have any questions regarding whether this course is relevant for you, please send us an email (<a href="mailto:info@biodsc.nl">info@biodsc.nl</a>) or walk by our <a href="../people.html">desks</a>.</p>
 </section>
-<section id="python" class="level3">
-<h3 class="anchored" data-anchor-id="python">Python</h3>
+<section id="requirements" class="level4">
+<h4 class="anchored" data-anchor-id="requirements">Requirements</h4>
+<p>This workshop assumes <strong>no prior knowledge</strong> on R or programming!</p>
+</section>
+</section>
+<section id="workshop-logistics" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-logistics">Workshop logistics</h3>
+<p>The course will be given by Martijn Wehrens and Misha Paauw from the <em>bio</em>DSC. There is room for 4-12 participants. You have to bring your own laptop, we’ll use an online version of Python, so there are no software installation requirements.</p>
+<p>As mentioned, the contents of this workshops are almost completely based on: <a href="https://swcarpentry.github.io/python-novice-gapminder/" target="_blank">https://swcarpentry.github.io/python-novice-gapminder/</a></p>
+</section>
+<section id="workshop-schedule" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-schedule">Workshop schedule</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 35%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Time</th>
+<th>Location</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>12 March</td>
+<td>12:30 - 17:30</td>
+<td>TBA</td>
+<td>Introduction to Python, episodes 1-9</td>
+</tr>
+<tr class="even">
+<td>14 March</td>
+<td>12:30 - 17:30</td>
+<td>TBA</td>
+<td>Introduction to Python, episodes 11-18</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sign-up" class="level3">
+<h3 class="anchored" data-anchor-id="sign-up">Sign up</h3>
+<p>Sign up <a href="https://forms.office.com/e/zhXNMWzFEk" target="_blank">using this link</a>. <strong>Sign up deadline: 28th of February!</strong></p>
+</section>
+<div id="use-cases">
+<section id="typical-use-cases-for-python" class="level3">
+<h3 class="anchored" data-anchor-id="typical-use-cases-for-python">Typical use cases for Python</h3>
+<p>Python is a scripting language, meaning that your write a file with commands for the computer to execute. This allows you to perform complicated tasks, such as:</p>
+<div class="mw-infoblock">
 <ul>
-<li>Image analysis
-<ul>
-<li>Although MATLAB is a go-to tool for image analysis, Python has become the open-source almost on-par alternative</li>
-<li>Multiple libraries are now available that can do pretty much any “classical” image operations to analyze images, e.g.&nbsp;to
-<ul>
-<li>Segment your image (identify cells, or other parts of your image that are of interest)</li>
-<li>E.g. SciPy, OpenCV, scikit, ..</li>
-</ul></li>
-<li>Multiple tools exist to allow smooth user-interaction, such as Napari</li>
-</ul></li>
 <li>Plotting and analyzing large data sets
 <ul>
 <li>With the pandas, matplotlib, and seaborn library, large datasets can be imported, manipulated, and visualized</li>
-<li>This offers similar capabilities as R</li>
+</ul></li>
+<li>Image analysis
+<ul>
+<li>Python has become a great open-source tool for image analysis</li>
+<li>Multiple libraries are now available that can do pretty much any “classical” image operations to analyze images. You can:
+<ul>
+<li>Segment your image (identify cells, or other parts of your image that are of interest)</li>
+<li>Extract summary parameters relevant for your analysis.</li>
+<li>Relalted libraries: scikit-image, SciPy, OpenCV, ..</li>
+</ul></li>
+<li>Multiple tools exist to allow smooth user-interaction, such as Napari</li>
 </ul></li>
 <li>Machine learning, neural networks, LLM, AI
 <ul>
 <li>Python has become the go-to tool for working with machine learning related tech
 <ul>
-<li>E.g. Keras and PyTorch</li>
+<li>Libraries: E.g. Keras and PyTorch</li>
 </ul></li>
 </ul></li>
-<li>high-throughput data analysis and automation
+<li>High-throughput data analysis and automation
 <ul>
-<li>python is often used to process large amounts of data for further processing (see bio-informatics below)</li>
+<li>Python is often used to process large amounts of data for further processing (see bio-informatics below)</li>
 </ul></li>
-<li>bioinformatics
+<li>Bioinformatics
 <ul>
-<li>seems there’s less tools available, however offers packages to:</li>
-<li>Perform single cell analysis, such as SCANPY</li>
-<li>Custom tasks in bioinformatics pipelines (specialized mapping, e.g.) can use python</li>
+<li>Can be used to handle, manipulate, process, quantify raw sequence data or similar.</li>
+<li>Perform single cell analysis, e.g.&nbsp;using the SCANPY lirbary.</li>
+<li><strong>Not</strong> the tool for RNA-seq statistics and gene expression analysis, for which R is superior.</li>
 </ul></li>
+<li>Much more ..</li>
 </ul>
-<p>What ChatGPT had to say about it: “R excels at statistical and visualization tasks, particularly for biostatistics and bioinformatics, while Python is preferred for machine learning, automation, and handling diverse data types in scalable pipelines. Many researchers use both, leveraging each for its strengths.”</p>
+</div>
+<p>See also the post I wrote earlier to decide <a href="../posts/python-or-r.html">whether you should Python or R</a>.</p>
 </section>
-</section>
-<section id="so-what-should-i-choose" class="level2">
-<h2 class="anchored" data-anchor-id="so-what-should-i-choose">So, what should I choose?</h2>
-<p>If you’re uncertain what you should learn, feel free to drop us an email, walk by our desks, or contact us in another way to have a chat about what is most suitable for you!</p>
-<p><a href="mailto:info@biodsc.nl" class="btn btn-primary" target="_blank">Send an email</a> <a href="../people.html" class="btn btn-primary">Drop by</a> <a href="https://app.slack.com/client/T07UH6D0XL6/C07UPNUB91R" class="btn btn-primary" target="_blank">Slack</a></p>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

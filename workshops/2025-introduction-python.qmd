@@ -1,0 +1,99 @@
+---
+title: "March 12 and 14 (2025): Introduction to Python"
+date: 2025-03-12
+author: Martijn Wehrens
+description: "Get introduced to the Python from simple basics to functions, dataframes and plotting."
+categories: [upcoming]
+---
+
+### About Python
+
+Python is a computer script language that has become a workhorse of data analysis throughout many fields and disciplines. It can process and analyze big data sets, perform image analysis, and create great visualizations.
+
+See below for [small overview of what Python is typically used for](#use-cases).
+
+### This workshop
+
+#### Workshop goals
+
+After this workshop, you'll be familiar with Python basics. We'll discuss and let you practice on:
+
+::: {.mw-infoblock}
+- Using Python (Jupyter notebooks, VS Studio code, Spyder)
+    - Throughout the workshop, we'll use an online version of Jupyter notebook to avoid installation issues)
+- Variables, types, basic commands, functions, libraries.
+- Working with tabular data (Pandas).
+- Plotting (matplotlib).
+- Using loops and conditionals.
+- Writing functions.
+- Good practices in programming and software engineering.
+:::
+
+This workshop will largely (>95%) follow the Carpentries training material "Plotting and programming in Python". All training material can be found at:
+
+- [https://swcarpentry.github.io/python-novice-gapminder/](https://swcarpentry.github.io/python-novice-gapminder/){target="_blank"}
+
+
+See [this workshop page](https://swcarpentry.github.io/python-novice-gapminder/instructor/design.html#stage-2-desired-results){target="_blank"} for a summary of desired learning results.
+The materials we'll use do not use examples specific to biology, but instead use the "Gapminder" dataset (see [[1]](https://www.kaggle.com/datasets/albertovidalrod/gapminder-dataset){target="_blank"} and [[2]](https://www.gapminder.org/about/){target="_blank"}). 
+We think this offers thorough insights into how Python works.
+Follow-up courses, e.g. into image analysis, will be delve into more biological datasets.
+
+If you have any questions regarding whether this course is relevant for you, please send us an email ([info@biodsc.nl](mailto:info@biodsc.nl)) or walk by our [desks](../people.html).
+
+#### Requirements
+
+This workshop assumes **no prior knowledge** on R or programming! 
+
+### Workshop logistics
+
+The course will be given by Martijn Wehrens and Misha Paauw from the *bio*DSC. There is room for 4-12 participants. 
+You have to bring your own laptop, we'll use an online version of Python, so there are no software installation requirements.
+
+As mentioned, the contents of this workshops are almost completely based on:
+[https://swcarpentry.github.io/python-novice-gapminder/](https://swcarpentry.github.io/python-novice-gapminder/){target="_blank"}
+
+### Workshop schedule
+
+| Date | Time | Location | Topic |
+| ---- | ---- | -------  | ----- |
+| 12 March | 12:30 - 17:30 | TBA | Introduction to Python, episodes 1-9 |
+| 14 March | 12:30 - 17:30 | TBA | Introduction to Python, episodes 11-18 | 
+
+
+### Sign up
+
+Sign up [using this link](https://forms.office.com/e/zhXNMWzFEk){target="_blank"}. **Sign up deadline: 28th of February!**
+
+
+::: {#use-cases}
+### Typical use cases for Python
+
+Python is a scripting language, meaning that your write a file with commands for the computer to execute.
+This allows you to perform complicated tasks, such as: 
+
+::: {.mw-infoblock}
+- Plotting and analyzing large data sets
+    - With the pandas, matplotlib, and seaborn library, large datasets can be imported, manipulated, and visualized
+- Image analysis
+    - Python has become a great open-source tool for image analysis
+    - Multiple libraries are now available that can do pretty much any "classical" image operations to analyze images. You can:
+        - Segment your image (identify cells, or other parts of your image that are of interest)
+        - Extract summary parameters relevant for your analysis.
+        - Relalted libraries: scikit-image, SciPy, OpenCV, ..
+    - Multiple tools exist to allow smooth user-interaction, such as Napari
+- Machine learning, neural networks, LLM, AI
+    - Python has become the go-to tool for working with machine learning related tech
+        - Libraries: E.g. Keras and PyTorch
+- High-throughput data analysis and automation
+    - Python is often used to process large amounts of data for further processing (see bio-informatics below)
+- Bioinformatics
+    - Can be used to handle, manipulate, process, quantify raw sequence data or similar.
+    - Perform single cell analysis, e.g. using the SCANPY lirbary.
+    - **Not** the tool for RNA-seq statistics and gene expression analysis, for which R is superior.
+- Much more ..
+:::
+
+See also the post I wrote earlier to decide [whether you should Python or R](../posts/python-or-r.html).
+:::
+
