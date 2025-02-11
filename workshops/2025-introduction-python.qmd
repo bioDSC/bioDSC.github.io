@@ -27,8 +27,6 @@ After this workshop, you'll be familiar with Python basics. We'll discuss and le
 - Using loops and conditionals.
 - Writing functions.
 - Good practices in programming and software engineering.
-
-*Disclaimer: Some minor updates might occur during our teaching preparations.*
 :::
 
 This workshop will largely (>95%) follow the Carpentries training material "Plotting and programming in Python". All training material can be found at:
@@ -59,8 +57,8 @@ As mentioned, the contents of this workshops are almost completely based on:
 
 | Date | Time | Location | Topic |
 | ---- | ---- | -------  | ----- |
-| 12 March | 12:30 - 17:30 | TBA | Introduction to Python, part 1 |
-| 14 March | 12:30 - 17:30 | TBA | Introduction to Python, part 2 | 
+| 12 March | 12:30 - 17:30 | TBA | Introduction to Python, episodes 1-9 |
+| 14 March | 12:30 - 17:30 | TBA | Introduction to Python, episodes 11-18 | 
 
 
 ### Sign up

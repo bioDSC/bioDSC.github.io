@@ -1,21 +1,27 @@
 ---
-title: "Workshops to be announced soon"
+title: "List of past and upcoming workshops"
 date: 03-01-2025
 author: Martijn Wehrens
 description: "Workshops we are currently developing that are coming soon."
 categories: [TBA]
 ---
 
-### Workshops we're working on
+### Workshops we gave and workshops we're working on
 
-We are currently aiming to soon offer the following workshops:
+Below a list of planned workshops:
 
 - [An introduction to R](2025-introduction-R.qmd) (Jan 2025)
     - Basics of R
     - Importing, manipulating and analyzing data (mostly using dataframes). 
     - Plotting using ggplot.
-- An introduction to Python (planning: early march 2025). 
-    - Equivalents of concepts mentioned in the R intro course mentioned above.
+- [Bring your own data](2025-BYOD-1.html) (February 25th, 2025)
+    - Bring your own dataset and make publication-quality figures.
+- [An introduction to Python](2025-introduction-python.html) (March 12 & 14, 2025). 
+    - Variables, types, basic commands, functions, libraries.
+    - Working with tabular data (Pandas).
+    - Plotting (matplotlib).
+    - Using loops and conditionals, writing functions.
+    - Good practices in programming and software engineering.
 - Image analysis with Python (planning: April/May 2025).
     - Basics of working with images
     - Image manipulation, cellular segmentation, and other often-used concepts.
@@ -31,6 +37,8 @@ We aim to give workshops based on demand. So if there's enough people interested
 
 See the blog post about [Python vs. R](../posts/python-or-R.qmd) in case you're wondering whether you should start learning: R, or Python.
 
+<!--
 ## Timing, pilot
 
 We're currently working on the [Introduction to R](2025-introduction-R.qmd) workshop. This will be the first (pilot) workshop we'll be organizing, and it will give us better estimates of how long it takes to develop the course and prepare for the workshop. After this, we'll start planning more workshops. We aim to offer more workshops ±4-6 weeks after the one in Jan 2025, but this is a rough estimate.
+-->
