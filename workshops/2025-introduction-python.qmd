@@ -6,15 +6,17 @@ description: "Get introduced to the Python from simple basics to functions, data
 categories: [upcoming]
 ---
 
-### About Python
+### An introduction to Python
 
-Python is a computer script language that has become a workhorse of data analysis throughout many fields and disciplines. It can process and analyze big data sets, perform image analysis, and create great visualizations.
+The *bio*DSC organizes an introductory workshop that will cover basic functionalities of Python.
 
-See below for [small overview of what Python is typically used for](#use-cases).
+Python is a computer script language that has become a workhorse of data analysis throughout many fields and disciplines. 
+It can process and analyze big data sets, perform image analysis, and create great visualizations.
 
-### This workshop
+See below for [small overview of what types of tasks can be done using Python](#use-cases).
 
-#### Workshop goals
+
+### Workshop goals
 
 After this workshop, you'll be familiar with Python basics. We'll discuss and let you practice on:
 
@@ -41,9 +43,9 @@ Follow-up courses, e.g. into image analysis, will be delve into more biological 
 
 If you have any questions regarding whether this course is relevant for you, please send us an email ([info@biodsc.nl](mailto:info@biodsc.nl)) or walk by our [desks](../people.html).
 
-#### Requirements
+### Requirements
 
-This workshop assumes **no prior knowledge** on R or programming! 
+This workshop assumes **no prior knowledge** on Python or programming! 
 
 ### Workshop logistics
 
@@ -57,8 +59,8 @@ As mentioned, the contents of this workshops are almost completely based on:
 
 | Date | Time | Location | Topic |
 | ---- | ---- | -------  | ----- |
-| 12 March | 12:30 - 17:30 | TBA | Introduction to Python, episodes 1-9 |
-| 14 March | 12:30 - 17:30 | TBA | Introduction to Python, episodes 11-18 | 
+| 12 March | 12:30 - 17:30 | SP A1.06 | Introduction to Python, episodes 1-9 |
+| 14 March | 12:30 - 17:30 | SP B0.209 | Introduction to Python, episodes 11-18 | 
 
 
 ### Sign up
@@ -80,7 +82,7 @@ This allows you to perform complicated tasks, such as:
     - Multiple libraries are now available that can do pretty much any "classical" image operations to analyze images. You can:
         - Segment your image (identify cells, or other parts of your image that are of interest)
         - Extract summary parameters relevant for your analysis.
-        - Relalted libraries: scikit-image, SciPy, OpenCV, ..
+        - Related libraries: scikit-image, SciPy, OpenCV, ..
     - Multiple tools exist to allow smooth user-interaction, such as Napari
 - Machine learning, neural networks, LLM, AI
     - Python has become the go-to tool for working with machine learning related tech
