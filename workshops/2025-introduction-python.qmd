@@ -6,6 +6,14 @@ description: "Get introduced to the Python from simple basics to functions, data
 categories: [upcoming]
 ---
 
+::: {.callout-important}
+## This workshop is full.
+
+12 people have registered, we do not have place for more participants. Unfortunately, you cannot register any more.
+
+Please send us an [email](mailto:info@biodsc.nl) in case you were interested in signing up, such that we know to organize more workshops soon.
+:::
+
 ### An introduction to Python
 
 The *bio*DSC organizes an introductory workshop that will cover basic functionalities of Python.
@@ -65,8 +73,15 @@ As mentioned, the contents of this workshops are almost completely based on:
 
 ### Sign up
 
-Sign up [using this link](https://forms.office.com/e/zhXNMWzFEk){target="_blank"}. **Sign up deadline: 28th of February!**
+<!--Sign up [using this link](https://forms.office.com/e/zhXNMWzFEk){target="_blank"}. **Sign up deadline: 28th of February!**-->
 
+::: {.callout-important}
+## This workshop is full.
+
+12 people have registered, we do not have place for more participants. Unfortunately, you cannot register any more.
+
+Please send us an [email](mailto:info@biodsc.nl) in case you were interested in signing up, such that we know to organize more workshops soon.
+:::
 
 ::: {#use-cases}
 ### Typical use cases for Python
