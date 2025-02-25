@@ -5,12 +5,13 @@ project:
   output-dir: docs
 
 website:
-  announcement: 
-    icon: info-circle
-    dismissable: true
-    content: "**Workshop announcement** - Do you have a dataset and you don't know how to visualize it? Join our ['Bring Your Own Data' data visualisation workshop](/workshops/2025-BYOD-1.qmd) on February 24!"
-    type: success
-    position: below-navbar
+  # Uncomment the following if you want to enable the announcement bar:
+  # announcement: 
+  #   icon: info-circle
+  #   dismissable: true
+  #   content: "**Workshop announcement** - Do you have a dataset and you don't know how to visualize it? Join our ['Bring Your Own Data' data visualisation workshop](/workshops/2025-BYOD-1.qmd) on February 24!"
+  #   type: success
+  #   position: below-navbar
   favicon: "images/bioDSC-without-dots-transparent.png"
   search:
       location: navbar

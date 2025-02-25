@@ -3,7 +3,7 @@ title: "24 February 2025: Bring Your Own Data"
 date: 2025-02-24
 author: Misha Paauw
 description: "Bring your own dataset and make publication-quality figures."
-categories: [upcoming]
+categories: [past]
 ---
 
 ## "Bring Your Own Data" data visualization workshop
