@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Martijn Wehrens">
+<meta name="dcterms.date" content="2025-04-02">
+<meta name="description" content="Get introduced to the Python from simple basics to functions, dataframes and plotting.">
 
-<title>Workshops &amp; events – bioDSC</title>
+<title>April 2 and 4 (2025): Introduction to Python – bioDSC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/bioDSC-without-dots-transparent.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/bioDSC-without-dots-transparent.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,123 +69,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-upcoming .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-upcoming'] = new List('listing-upcoming', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-past .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-past'] = new List('listing-past', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-TBA .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-TBA'] = new List('listing-TBA', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -194,10 +81,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/bioDSC-without-dots-transparent.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/bioDSC-without-dots-transparent.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title"><em>bio</em>DSC</span>
     </a>
   </div>
@@ -208,34 +95,34 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./workshops.html" aria-current="page"> 
+    <a class="nav-link" href="../workshops.html"> 
 <span class="menu-text">Workshops</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./people.html"> 
+    <a class="nav-link" href="../people.html"> 
 <span class="menu-text">People</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorials.html"> 
+    <a class="nav-link" href="../tutorials.html"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./further-reading.html"> 
+    <a class="nav-link" href="../further-reading.html"> 
 <span class="menu-text">Further reading</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="https://www.uva.nl" target="_blank"> 
-<span class="menu-text"><img src="./images/uva-logo.png" height="30"></span></a>
+<span class="menu-text"><img src="../images/uva-logo.png" height="30"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -254,14 +141,34 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Workshops &amp; events</h1>
-</div>
+<h1 class="title">April 2 and 4 (2025): Introduction to Python</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">upcoming</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Get introduced to the Python from simple basics to functions, dataframes and plotting.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta column-page">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Martijn Wehrens </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 2, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -271,154 +178,150 @@ window.Quarto = {
 </header>
 
 
-<section id="upcoming-workshops" class="level2">
-<h2 class="anchored" data-anchor-id="upcoming-workshops">Upcoming workshops</h2>
-<div id="listing-upcoming" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="dXBjb21pbmc=" data-listing-date-sort="1743544800000" data-listing-file-modified-sort="1741367598622" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="758">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./workshops/2025-introduction-python-2.html" class="no-external">April 2 and 4 (2025): Introduction to Python</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./workshops/2025-introduction-python-2.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./workshops/2025-introduction-python-2.html" class="no-external">Get introduced to the Python from simple basics to functions, dataframes and plotting.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./workshops/2025-introduction-python-2.html" class="no-external">
-<div class="listing-date">
-Apr 2, 2025
-</div>
-<div class="listing-author">
-Martijn Wehrens
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="dXBjb21pbmc=" data-listing-date-sort="1741734000000" data-listing-file-modified-sort="1741341358423" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="733">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./workshops/2025-introduction-python.html" class="no-external">March 12 and 14 (2025): Introduction to Python</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./workshops/2025-introduction-python.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./workshops/2025-introduction-python.html" class="no-external">Get introduced to the Python from simple basics to functions, dataframes and plotting.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./workshops/2025-introduction-python.html" class="no-external">
-<div class="listing-date">
-Mar 12, 2025
-</div>
-<div class="listing-author">
-Martijn Wehrens
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
+<!--
+::: {.callout-important}
+## This workshop is full.
+
+12 people have registered, we do not have place for more participants. Unfortunately, you cannot register any more.
+
+Please send us an [email](mailto:info@biodsc.nl) in case you were interested in signing up, such that we know to organize more workshops soon.
+:::
+-->
+<section id="an-introduction-to-python" class="level3">
+<h3 class="anchored" data-anchor-id="an-introduction-to-python">An introduction to Python</h3>
+<p>The <em>bio</em>DSC organizes an introductory workshop that will cover basic functionalities of Python.</p>
+<p>Python is a computer script language that has become a workhorse of data analysis throughout many fields and disciplines. It can process and analyze big data sets, perform image analysis, and create great visualizations.</p>
+<p>See below for <a href="#use-cases">small overview of what types of tasks can be done using Python</a>.</p>
+<section id="nd-session" class="level4">
+<h4 class="anchored" data-anchor-id="nd-session">2nd session</h4>
+<p>This workshop will be exactly the same as the <a href="../workshops/2025-introduction-python.html">previous one</a>. We are simply organizing another session since the previous workshop was booked completely full.</p>
 </section>
-<section id="stay-tuned" class="level2">
-<h2 class="anchored" data-anchor-id="stay-tuned">Stay tuned</h2>
-<div id="listing-TBA" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="VEJB" data-listing-date-sort="1740783600000" data-listing-file-modified-sort="1741341358423" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="293">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./workshops/2025-working-on.html" class="no-external">List of past and upcoming workshops</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./workshops/2025-working-on.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./workshops/2025-working-on.html" class="no-external">Workshops we are currently developing that are coming soon.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./workshops/2025-working-on.html" class="no-external">
-<div class="listing-date">
-Mar 1, 2025
-</div>
-<div class="listing-author">
-Martijn Wehrens
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
 </section>
-<section id="past-workshops" class="level2">
-<h2 class="anchored" data-anchor-id="past-workshops">Past workshops</h2>
-<div id="listing-past" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="cGFzdA==" data-listing-date-sort="1740351600000" data-listing-file-modified-sort="1741341358423" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="336">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./workshops/2025-BYOD-1.html" class="no-external">24 February 2025: Bring Your Own Data</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./workshops/2025-BYOD-1.html" class="no-external"></a>
+<section id="workshop-goals" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-goals">Workshop goals</h3>
+<p>After this workshop, you’ll be familiar with Python basics. We’ll discuss and let you practice on:</p>
+<div class="mw-infoblock">
+<ul>
+<li>Using Python (Jupyter notebooks, VS Studio code, Spyder)
+<ul>
+<li>Throughout the workshop, we’ll use an online version of Jupyter notebook to avoid installation issues)</li>
+</ul></li>
+<li>Variables, types, basic commands, functions, libraries.</li>
+<li>Working with tabular data (Pandas).</li>
+<li>Plotting (matplotlib).</li>
+<li>Using loops and conditionals.</li>
+<li>Writing functions.</li>
+<li>Good practices in programming and software engineering.</li>
+</ul>
 </div>
-<div class="listing-description">
-<a href="./workshops/2025-BYOD-1.html" class="no-external">Bring your own dataset and make publication-quality figures.</a>
+<p>This workshop will largely (&gt;95%) follow the Carpentries training material “Plotting and programming in Python”. All training material can be found at:</p>
+<ul>
+<li><a href="https://swcarpentry.github.io/python-novice-gapminder/" target="_blank">https://swcarpentry.github.io/python-novice-gapminder/</a></li>
+</ul>
+<p>See <a href="https://swcarpentry.github.io/python-novice-gapminder/instructor/design.html#stage-2-desired-results" target="_blank">this workshop page</a> for a summary of desired learning results. The materials we’ll use do not use examples specific to biology, but instead use the “Gapminder” dataset (see <a href="https://www.kaggle.com/datasets/albertovidalrod/gapminder-dataset" target="_blank">[1]</a> and <a href="https://www.gapminder.org/about/" target="_blank">[2]</a>). We think this offers thorough insights into how Python works. Follow-up courses, e.g.&nbsp;into image analysis, will be delve into more biological datasets.</p>
+<p>If you have any questions regarding whether this course is relevant for you, please send us an email (<a href="mailto:info@biodsc.nl">info@biodsc.nl</a>) or walk by our <a href="../people.html">desks</a>.</p>
+</section>
+<section id="requirements" class="level3">
+<h3 class="anchored" data-anchor-id="requirements">Requirements</h3>
+<p>This workshop assumes <strong>no prior knowledge</strong> on Python or programming!</p>
+</section>
+<section id="workshop-logistics" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-logistics">Workshop logistics</h3>
+<p>The course will be given by Martijn Wehrens and Misha Paauw from the <em>bio</em>DSC. There is room for 4-12 participants. You have to bring your own laptop, we’ll use an online version of Python, so there are no software installation requirements.</p>
+<p>As mentioned, the contents of this workshops are almost completely based on: <a href="https://swcarpentry.github.io/python-novice-gapminder/" target="_blank">https://swcarpentry.github.io/python-novice-gapminder/</a></p>
+</section>
+<section id="workshop-schedule" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-schedule">Workshop schedule</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 35%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Time</th>
+<th>Location</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>April 2</td>
+<td>13:00 - 17:30</td>
+<td>SP L1.13</td>
+<td>Introduction to Python, episodes 1-9</td>
+</tr>
+<tr class="even">
+<td>April 4</td>
+<td>12:30 - 17:30</td>
+<td>SP L2.06</td>
+<td>Introduction to Python, episodes 11-18</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sign-up" class="level3">
+<h3 class="anchored" data-anchor-id="sign-up">Sign up</h3>
+<p>Sign up <a href="https://forms.office.com/e/xe92R6gF8e" target="_blank">using this link</a>. <!--**Sign up deadline: 28th of February!**--></p>
+<!--
+::: {.callout-important}
+## This workshop is full.
+
+12 people have registered, we do not have place for more participants. Unfortunately, you cannot register any more.
+
+Please send us an [email](mailto:info@biodsc.nl) in case you were interested in signing up, such that we know to organize more workshops soon.
+:::
+-->
+</section>
+<div id="use-cases">
+<section id="typical-use-cases-for-python" class="level3">
+<h3 class="anchored" data-anchor-id="typical-use-cases-for-python">Typical use cases for Python</h3>
+<p>Python is a scripting language, meaning that your write a file with commands for the computer to execute. This allows you to perform complicated tasks, such as:</p>
+<div class="mw-infoblock">
+<ul>
+<li>Plotting and analyzing large data sets
+<ul>
+<li>With the pandas, matplotlib, and seaborn library, large datasets can be imported, manipulated, and visualized</li>
+</ul></li>
+<li>Image analysis
+<ul>
+<li>Python has become a great open-source tool for image analysis</li>
+<li>Multiple libraries are now available that can do pretty much any “classical” image operations to analyze images. You can:
+<ul>
+<li>Segment your image (identify cells, or other parts of your image that are of interest)</li>
+<li>Extract summary parameters relevant for your analysis.</li>
+<li>Related libraries: scikit-image, SciPy, OpenCV, ..</li>
+</ul></li>
+<li>Multiple tools exist to allow smooth user-interaction, such as Napari</li>
+</ul></li>
+<li>Machine learning, neural networks, LLM, AI
+<ul>
+<li>Python has become the go-to tool for working with machine learning related tech
+<ul>
+<li>Libraries: E.g. Keras and PyTorch</li>
+</ul></li>
+</ul></li>
+<li>High-throughput data analysis and automation
+<ul>
+<li>Python is often used to process large amounts of data for further processing (see bio-informatics below)</li>
+</ul></li>
+<li>Bioinformatics
+<ul>
+<li>Can be used to handle, manipulate, process, quantify raw sequence data or similar.</li>
+<li>Perform single cell analysis, e.g.&nbsp;using the SCANPY lirbary.</li>
+<li><strong>Not</strong> the tool for RNA-seq statistics and gene expression analysis, for which R is superior.</li>
+</ul></li>
+<li>Much more ..</li>
+</ul>
 </div>
-</div>
-<div class="metadata">
-<a href="./workshops/2025-BYOD-1.html" class="no-external">
-<div class="listing-date">
-Feb 24, 2025
-</div>
-<div class="listing-author">
-Misha Paauw
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="cGFzdA==" data-listing-date-sort="1736895600000" data-listing-file-modified-sort="1739265148172" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="332">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./workshops/2025-introduction-R.html" class="no-external">15 and 17 January 2025: Introduction to R</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./workshops/2025-introduction-R.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./workshops/2025-introduction-R.html" class="no-external">Learn the basics of data analysis and visualisation in R in this workshop.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./workshops/2025-introduction-R.html" class="no-external">
-<div class="listing-date">
-Jan 15, 2025
-</div>
-<div class="listing-author">
-Misha Paauw
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<p>See also the post I wrote earlier to decide <a href="../posts/python-or-r.html">whether you should Python or R</a>.</p>
+</section>
 </div>
 
 
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -852,7 +755,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
     <div class="nav-footer-right">
 <p>
-<img src="./images/uva-logo.png" height="25px;"> an <i>initiative</i> of the <a href="https://uva.nl" target="_blank">University of Amsterdam </a>
+<img src="../images/uva-logo.png" height="25px;"> an <i>initiative</i> of the <a href="https://uva.nl" target="_blank">University of Amsterdam </a>
 </p>
 </div>
   </div>
