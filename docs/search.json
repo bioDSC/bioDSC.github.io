@@ -133,6 +133,13 @@
     "text": "Further reading\n\nsyri, a software package to identify structural rearrangements.\nplotsr, a software package to plot the rearrangements detected by syri.\nLian et al 2024 Nature Genetics.\nclinker, a versatile synteny visualization tool that works on smaller scales (gene clusters)."
   },
   {
+    "objectID": "workshop-materials/py-intro/plot.html",
+    "href": "workshop-materials/py-intro/plot.html",
+    "title": "Workshop image",
+    "section": "",
+    "text": "Workshop image\n\n\n\nGDP of European countries 1952-2007."
+  },
+  {
     "objectID": "workshops/2025-introduction-R.html",
     "href": "workshops/2025-introduction-R.html",
     "title": "15 and 17 January 2025: Introduction to R",
@@ -210,11 +217,39 @@
     "text": "Should I learn Python or R?\nSee the blog post about Python vs. R in case you’re wondering whether you should start learning: R, or Python."
   },
   {
-    "objectID": "workshop-materials/plot.html",
-    "href": "workshop-materials/plot.html",
-    "title": "Workshop image",
+    "objectID": "workshop-materials/py-intro/additional_exercises.html",
+    "href": "workshop-materials/py-intro/additional_exercises.html",
+    "title": "Additional exercises for fast participants",
     "section": "",
-    "text": "Workshop image\n\n\n\nGDP of European countries 1952-2007."
+    "text": "What’s happening here:\n\n# use Google or chatGPT if you don't know the answers\n# if you're at the end, try to play around more\n\ngreetings_strings = ['hello', 'bye', 'later']\nprint(greetings_strings[0])\nprint(greetings_strings[1][2])\n    # (list of lists)\n\nprint([greetings_strings[idx] for idx in [0, 2]])\nprint([greetings_strings[0][idx] for idx in [0, 2, 4]])\nprint([greetings_strings[0][idx] for idx in range(0,4,2)])\n    # using a loop (will be covered later) / list comprehension\n\nsquare_values = [number**2 for number in range(10)]\nsquare_values_string = [str(number**2) for number in range(10)]\nprint(square_values)\nprint(square_values_string)\n    # types will be the topic of the next lesson\n\nspecies_name = \"Acacia buxifolia\"\nprint(\"\".join([species_name[i] for i in range(10, 2, -1)]))\n    # convenient command when working with strings\n\nprint(species_name.replace('Aca', 'Bole'))\n    # another convenient command\n\n# Exercise:\nlist_of_species = ['','','','']\nlist_of_species = ['Homo sapiens', 'Escherichia Coli', 'Pan troglodytes', 'Canis lupus', 'Felis catus']\n# Create a new lists, where you remove all letters 'e'"
+  },
+  {
+    "objectID": "workshop-materials/py-intro/additional_exercises.html#lesson-2",
+    "href": "workshop-materials/py-intro/additional_exercises.html#lesson-2",
+    "title": "Additional exercises for fast participants",
+    "section": "",
+    "text": "What’s happening here:\n\n# use Google or chatGPT if you don't know the answers\n# if you're at the end, try to play around more\n\ngreetings_strings = ['hello', 'bye', 'later']\nprint(greetings_strings[0])\nprint(greetings_strings[1][2])\n    # (list of lists)\n\nprint([greetings_strings[idx] for idx in [0, 2]])\nprint([greetings_strings[0][idx] for idx in [0, 2, 4]])\nprint([greetings_strings[0][idx] for idx in range(0,4,2)])\n    # using a loop (will be covered later) / list comprehension\n\nsquare_values = [number**2 for number in range(10)]\nsquare_values_string = [str(number**2) for number in range(10)]\nprint(square_values)\nprint(square_values_string)\n    # types will be the topic of the next lesson\n\nspecies_name = \"Acacia buxifolia\"\nprint(\"\".join([species_name[i] for i in range(10, 2, -1)]))\n    # convenient command when working with strings\n\nprint(species_name.replace('Aca', 'Bole'))\n    # another convenient command\n\n# Exercise:\nlist_of_species = ['','','','']\nlist_of_species = ['Homo sapiens', 'Escherichia Coli', 'Pan troglodytes', 'Canis lupus', 'Felis catus']\n# Create a new lists, where you remove all letters 'e'"
+  },
+  {
+    "objectID": "workshop-materials/py-intro/additional_exercises.html#exercises-for-fast-participants-1",
+    "href": "workshop-materials/py-intro/additional_exercises.html#exercises-for-fast-participants-1",
+    "title": "Additional exercises for fast participants",
+    "section": "Exercises for fast participants",
+    "text": "Exercises for fast participants\n\nCreate a plain text file on your computer, and give it the extension .csv.\nFind out what the comma-separated format looks like.\nUse your imagination to complete the following table and put it in the .csv file.\n\n\n\n\nreplicate\ncond1\ncond2\n\n\n\n\n\n10\n\n\n\n\n11\n\n\n\n\n10\n\n\n\n\n12\n\n\n\n\n13\n\n\n\n\n13\n\n\n\n\n\nNow try to read in that table in your python notebook.\nGet the following code to run on your dataframe (referred to as df below):\n\nfrom scipy.stats import ttest_ind\nt_stat, p_value = ttest_ind(df['cond1'], df['cond2'])\nprint(f\"T-statistic: {t_stat}, P-value: {p_value}\")\n\nWhat does that code do?\nDo a “Diederik Stapel” and tweak the csv such that you get a significant p-val."
+  },
+  {
+    "objectID": "workshop-materials/py-intro/additional_exercises.html#additional-exercises-for-fast-participants-1",
+    "href": "workshop-materials/py-intro/additional_exercises.html#additional-exercises-for-fast-participants-1",
+    "title": "Additional exercises for fast participants",
+    "section": "Additional exercises for fast participants",
+    "text": "Additional exercises for fast participants\n\nGDPs\n\nBetween ’87 and ’92 the GDP of most countries took a hit. Are there any countries which had a positive increase between those two years? Which ones?\nCalculate the average GDP between all European countries per year.\n\nNormalize the dataframe by this trend.\n\n\n\n\nGene expression\n\nConvert the data below to a csv file, import it to a pandas df, and determine the following:\n\nThe average CRP gene expression per condion.\nThe corresponding standard deviations.\nThe log2-fold change between WT, condition A, and condition B.\nDo the same for ACTA1.\nNormalize all gene expression levels to their average respective wild type levels.\n\n\ngene    expression  condition\nCRP 873 WT\nCRP 324 WT\nCRP 214 WT\nCRP 151 WT\nCRP 1220    A\nCRP 450 A\nCRP 300 A\nCRP 210 A\nCRP 800 B\nCRP 200 B\nCRP 200 B\nCRP 130 B\nACTA1   7457    WT\nACTA1   2342    WT\nACTA1   8000    WT\nACTA1   9000    WT\nACTA1   6500    A\nACTA1   2200    A\nACTA1   7500    A\nACTA1   8000    A\nACTA1   1000    B\nACTA1   1123    B\nACTA1   3211    B\nACTA1   1231    B"
+  },
+  {
+    "objectID": "workshop-materials/py-intro/additional_exercises.html#exercises-for-fast-participants-2",
+    "href": "workshop-materials/py-intro/additional_exercises.html#exercises-for-fast-participants-2",
+    "title": "Additional exercises for fast participants",
+    "section": "Exercises for fast participants",
+    "text": "Exercises for fast participants\n\nNormalized dataframe\n\nIn the previous exercise, we normalized the GDP data against the average trend. Plot the data from this normalized dataframe.\n\nIs this helpful in any way?\n\n\n\n\nCrude oil\nCrude oil prices can be found at: https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=F000000__3&f=A\nThis gives the data below:\nDecade  Year-0  Year-1  Year-2  Year-3  Year-4  Year-5  Year-6  Year-7  Year-8  Year-9\n  1850's                                        16.00\n  1860's    9.59    0.49    1.05    3.15    8.06    6.59    3.74    2.41    3.62    5.64\n  1870's    3.86    4.34    3.64    1.83    1.17    1.35    2.52    2.38    1.17    0.86\n  1880's    0.94    0.92    0.78    1.10    0.85    0.88    0.71    0.67    0.65    0.77\n  1890's    0.77    0.56    0.51    0.60    0.72    1.09    0.96    0.68    0.80    1.13\n  1900's    1.19    0.96    0.80    0.94    0.86    0.62    0.73    0.72    0.72    0.70\n  1910's    0.61    0.61    0.74    0.95    0.81    0.64    1.10    1.56    1.98    2.01\n  1920's    3.07    1.73    1.61    1.34    1.43    1.68    1.88    1.30    1.17    1.27\n  1930's    1.19    0.65    0.87    0.67    1.00    0.97    1.09    1.18    1.13    1.02\n  1940's    1.02    1.14    1.19    1.20    1.21    1.22    1.41    1.93    2.60    2.54\n  1950's    2.51    2.53    2.53    2.68    2.78    2.77    2.79    3.09    3.01    2.90\n  1960's    2.88    2.89    2.90    2.89    2.88    2.86    2.88    2.92    2.94    3.09\n  1970's    3.18    3.39    3.39    3.89    6.87    7.67    8.19    8.57    9.00    12.64\n  1980's    21.59   31.77   28.52   26.19   25.88   24.09   12.51   15.40   12.58   15.86\n  1990's    20.03   16.54   15.99   14.25   13.19   14.62   18.46   17.23   10.87   15.56\n  2000's    26.72   21.84   22.51   27.56   36.77   50.28   59.69   66.52   94.04   56.35\n  2010's    74.71   95.73   94.52   95.99   87.39   44.39   38.29   48.05   61.40   55.59\n  2020's    36.86   65.84   93.97   76.10                       \nSave that data to a .tsv file, and upload it.\nNow try to understand the code below:\nimport pandas as pd\n\n# Load the data\ndf_crudeoil = \\\n    pd.read_csv('/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/crude_oil/crude_oil_prices.tsv', sep='\\t')\n\n# reshape the data, such that it becomes a long list\ndf_crudeoil_melted = df_crudeoil.melt(id_vars='Decade', var_name='lastdigit')\n\n# now reformat the year information\n# search and replace first\ndf_crudeoil_melted.loc[:,'Decade'] = df_crudeoil_melted.loc[:,'Decade'].str.replace(\"0's\",'')\ndf_crudeoil_melted.loc[:,'lastdigit'] = df_crudeoil_melted.loc[:,'lastdigit'].str.replace('Year-','')\n# now combine information to create a new column \"Year\"\ndf_crudeoil_melted.loc[:,'Year'] = df_crudeoil_melted.loc[:,'Decade'] + df_crudeoil_melted.loc[:,'lastdigit']\n# Inspect the result\nprint(df_crudeoil_melted.head())\nUsing your plotting skills, compare this data against the trends in the Asian GDPs showed earlier.\n\n\nEven more correlations\nIn the “More Correlations” exercise, try to add the following lines to the plotting code:\nplt.text(df_all.loc['United States','gdpPercap_2007'], df_all.loc['United States','lifeExp_2007'], 'United States')\nplt.text(df_all.loc['Netherlands','gdpPercap_2007'], df_all.loc['Netherlands','lifeExp_2007'], 'Netherlands')\n\nWhat’s happening here?\nPerhaps also add your favorite country too?\nHow would you add labels for the top 10 GDP countries?\n\nNote: in the next lessons, we’ll learn how to automate your code. This will be very useful for this particular challenge.\n\n\n\n\nSeaborn\n\nMatplotlib.pyplot can in principle cater all your needs. A nice addition however is Seaborn.\n\nThis is another plotting tool is seaborn, which works well with matplotlib and pandas dataframes\nGo to https://seaborn.pydata.org/examples/index.html\nTry to use seaborn to make some nice plots of the data we’ve been looking at using those examples"
   },
   {
     "objectID": "posts/introduction.html",

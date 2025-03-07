@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>additional_exercises – *bio*DSC</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/bioDSC-without-dots-transparent.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/bioDSC-without-dots-transparent.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title"><em>bio</em>DSC</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../workshops.html"> 
+<span class="menu-text">Workshops</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../people.html"> 
+<span class="menu-text">People</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../tutorials.html"> 
+<span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../further-reading.html"> 
+<span class="menu-text">Further reading</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://www.uva.nl" target="_blank"> 
+<span class="menu-text"><img src="../../images/uva-logo.png" height="30"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="additional-exercises-for-fast-participants" class="level1">
+<h1>Additional exercises for fast participants</h1>
+<section id="lesson-2" class="level2">
+<h2 class="anchored" data-anchor-id="lesson-2">Lesson 2</h2>
+<section id="extra-code-to-chew-on" class="level3">
+<h3 class="anchored" data-anchor-id="extra-code-to-chew-on">Extra code to chew on</h3>
+<p>What’s happening here:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># use Google or chatGPT if you don't know the answers</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># if you're at the end, try to play around more</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>greetings_strings <span class="op">=</span> [<span class="st">'hello'</span>, <span class="st">'bye'</span>, <span class="st">'later'</span>]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(greetings_strings[<span class="dv">0</span>])</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(greetings_strings[<span class="dv">1</span>][<span class="dv">2</span>])</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># (list of lists)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([greetings_strings[idx] <span class="cf">for</span> idx <span class="kw">in</span> [<span class="dv">0</span>, <span class="dv">2</span>]])</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([greetings_strings[<span class="dv">0</span>][idx] <span class="cf">for</span> idx <span class="kw">in</span> [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>]])</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([greetings_strings[<span class="dv">0</span>][idx] <span class="cf">for</span> idx <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">2</span>)])</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># using a loop (will be covered later) / list comprehension</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>square_values <span class="op">=</span> [number<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>square_values_string <span class="op">=</span> [<span class="bu">str</span>(number<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square_values)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square_values_string)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># types will be the topic of the next lesson</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>species_name <span class="op">=</span> <span class="st">"Acacia buxifolia"</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">""</span>.join([species_name[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)]))</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># convenient command when working with strings</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(species_name.replace(<span class="st">'Aca'</span>, <span class="st">'Bole'</span>))</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># another convenient command</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise:</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>list_of_species <span class="op">=</span> [<span class="st">''</span>,<span class="st">''</span>,<span class="st">''</span>,<span class="st">''</span>]</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>list_of_species <span class="op">=</span> [<span class="st">'Homo sapiens'</span>, <span class="st">'Escherichia Coli'</span>, <span class="st">'Pan troglodytes'</span>, <span class="st">'Canis lupus'</span>, <span class="st">'Felis catus'</span>]</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new lists, where you remove all letters 'e'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+<section id="lesson-3" class="level1">
+<h1>Lesson 3</h1>
+<section id="dict" class="level3">
+<h3 class="anchored" data-anchor-id="dict">Dict</h3>
+<p>Python has more types. A <code>dict</code> is sometimes very convenient, and is also used later with creating tables.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>experimental_replicate_list <span class="op">=</span> {<span class="st">'WT'</span>: <span class="dv">12</span>, <span class="st">'mut'</span>: <span class="dv">32</span>, <span class="st">'WT.cond1'</span>: <span class="dv">10</span>, <span class="st">'mut.cond1'</span>: <span class="dv">12</span>}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(experimental_replicte_list)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(experimental_replicate_list[<span class="st">'WT'</span>])</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise:</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Edit the following code such that we get replicate numbers for conditions involving WT</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>my_keys <span class="op">=</span> experimental_replicate_list.keys()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_keys)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>my_keys_of_interest <span class="op">=</span> [the_key <span class="cf">for</span> the_key <span class="kw">in</span> my_keys <span class="cf">if</span> <span class="st">'mut'</span> <span class="kw">in</span> the_key] <span class="co"># edit this line</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_keys_of_interest)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([experimental_replicate_list[sel_key] <span class="cf">for</span> sel_key <span class="kw">in</span> my_keys_of_interest])</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># The above code uses several lines, can you do this in one line?</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(...) <span class="co"># edit this line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="np.array" class="level3">
+<h3 class="anchored" data-anchor-id="np.array">np.array</h3>
+<p>Arrays can be a useful tool, but for example in image analysis, don’t offer the full mathematical options one might like. <code>numpy</code> arrays introduce a new type of array, in which you can do more manipulations. See some examples below:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>my_array <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>my_array_np <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>])</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># what's the difference here:</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># my_array+1 # commented because gives error, why?</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>my_array_np<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># what's the difference here:</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>my_array <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>my_array_np <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># more:</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>my_array <span class="op">+</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>my_array_np <span class="op">+</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>])</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>np.sin(my_array_np)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co"># numpy-specific things, what is happening?</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>my_array_np[<span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">2</span>)]</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>my_array_np[my_array_np<span class="op">&gt;</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="lesson-4" class="level1">
+<h1>Lesson 4</h1>
+<p>(Non yet for this lesson, maybe look at the other exercises here?)</p>
+</section>
+<section id="lesson-5" class="level1">
+<h1>Lesson 5</h1>
+<p>(This is a break.)</p>
+</section>
+<section id="lesson-6" class="level1">
+<h1>Lesson 6</h1>
+</section>
+<section id="exercises-for-fast-participants" class="level1">
+<h1>Exercises for fast participants</h1>
+<section id="write-your-own" class="level4">
+<h4 class="anchored" data-anchor-id="write-your-own">Write your own</h4>
+<p>When you have a notebook file, you can also create another file, with a .py extension, and write functions in that file. The .py file can be imported like a library, and the functions in the file can be used as if they came from a library.</p>
+<section id="exercise" class="level5">
+<h5 class="anchored" data-anchor-id="exercise">Exercise</h5>
+<p>Using the information below, try to - create two files, one <code>.ipynb</code> (notebook) file and one <code>.py</code> (python plain text code) file. - rename the <code>myfunctionname</code> functions in the <code>.py</code> file and use them in the notebook. - create a third function, which returns C when you provide A and B, assuming <code>A^2+B^2 = C^2</code>, and use it in your notebook.</p>
+<p>Useful things to know: - You can make a .py file with <code>file &gt; new &gt; python file</code>. - Unlike notebooks, every text here is assumed to be python code. - Save the file to <code>myfilename.py</code> (replacing myfilename with your own favorite name). - You can import your file in a python notebook using: - <code>import myfilename</code> where <code>myfilename.py</code> should exist and hold your code.</p>
+<p>You can write a function using the following template:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> myfunctionname():</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"hello world"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> myfunctionname2(input1, input2):</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"input 1 = "</span>, input1, <span class="st">', input 2 = '</span>, input2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+<section id="lesson-7" class="level1">
+<h1>Lesson 7</h1>
+<section id="exercises-for-fast-participants-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercises-for-fast-participants-1">Exercises for fast participants</h2>
+<ul>
+<li>Create a plain text file on your computer, and give it the extension <code>.csv</code>.</li>
+<li>Find out what the comma-separated format looks like.</li>
+<li>Use your imagination to complete the following table and put it in the <code>.csv</code> file.</li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>replicate</th>
+<th>cond1</th>
+<th>cond2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>10</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>11</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>10</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>12</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>13</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>13</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Now try to read in that table in your python notebook.</li>
+<li>Get the following code to run on your dataframe (referred to as <code>df</code> below):</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_ind</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>t_stat, p_value <span class="op">=</span> ttest_ind(df[<span class="st">'cond1'</span>], df[<span class="st">'cond2'</span>])</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"T-statistic: </span><span class="sc">{</span>t_stat<span class="sc">}</span><span class="ss">, P-value: </span><span class="sc">{</span>p_value<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>What does that code do?</li>
+<li>Do a “Diederik Stapel” and tweak the csv such that you get a significant p-val.</li>
+</ul>
+</section>
+</section>
+<section id="lesson-8" class="level1">
+<h1>Lesson 8</h1>
+<section id="additional-exercises-for-fast-participants-1" class="level2">
+<h2 class="anchored" data-anchor-id="additional-exercises-for-fast-participants-1">Additional exercises for fast participants</h2>
+<section id="gdps" class="level3">
+<h3 class="anchored" data-anchor-id="gdps">GDPs</h3>
+<ul>
+<li>Between ’87 and ’92 the GDP of most countries took a hit. Are there any countries which had a positive increase between those two years? Which ones?</li>
+<li>Calculate the average GDP between all European countries per year.
+<ul>
+<li>Normalize the dataframe by this trend.</li>
+</ul></li>
+</ul>
+</section>
+<section id="gene-expression" class="level3">
+<h3 class="anchored" data-anchor-id="gene-expression">Gene expression</h3>
+<ul>
+<li>Convert the data below to a csv file, import it to a pandas df, and determine the following:
+<ul>
+<li>The average CRP gene expression per condion.</li>
+<li>The corresponding standard deviations.</li>
+<li>The log2-fold change between WT, condition A, and condition B.</li>
+<li>Do the same for ACTA1.</li>
+<li>Normalize all gene expression levels to their average respective wild type levels.</li>
+</ul></li>
+</ul>
+<pre><code>gene    expression  condition
+CRP 873 WT
+CRP 324 WT
+CRP 214 WT
+CRP 151 WT
+CRP 1220    A
+CRP 450 A
+CRP 300 A
+CRP 210 A
+CRP 800 B
+CRP 200 B
+CRP 200 B
+CRP 130 B
+ACTA1   7457    WT
+ACTA1   2342    WT
+ACTA1   8000    WT
+ACTA1   9000    WT
+ACTA1   6500    A
+ACTA1   2200    A
+ACTA1   7500    A
+ACTA1   8000    A
+ACTA1   1000    B
+ACTA1   1123    B
+ACTA1   3211    B
+ACTA1   1231    B</code></pre>
+</section>
+</section>
+</section>
+<section id="lesson-9" class="level1">
+<h1>Lesson 9</h1>
+<section id="exercises-for-fast-participants-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercises-for-fast-participants-2">Exercises for fast participants</h2>
+<section id="normalized-dataframe" class="level3">
+<h3 class="anchored" data-anchor-id="normalized-dataframe">Normalized dataframe</h3>
+<ul>
+<li>In the previous exercise, we normalized the GDP data against the average trend. Plot the data from this normalized dataframe.
+<ul>
+<li>Is this helpful in any way?</li>
+</ul></li>
+</ul>
+</section>
+<section id="crude-oil" class="level3">
+<h3 class="anchored" data-anchor-id="crude-oil">Crude oil</h3>
+<p>Crude oil prices can be found at: https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&amp;s=F000000__3&amp;f=A</p>
+<p>This gives the data below:</p>
+<pre><code>Decade  Year-0  Year-1  Year-2  Year-3  Year-4  Year-5  Year-6  Year-7  Year-8  Year-9
+  1850's                                        16.00
+  1860's    9.59    0.49    1.05    3.15    8.06    6.59    3.74    2.41    3.62    5.64
+  1870's    3.86    4.34    3.64    1.83    1.17    1.35    2.52    2.38    1.17    0.86
+  1880's    0.94    0.92    0.78    1.10    0.85    0.88    0.71    0.67    0.65    0.77
+  1890's    0.77    0.56    0.51    0.60    0.72    1.09    0.96    0.68    0.80    1.13
+  1900's    1.19    0.96    0.80    0.94    0.86    0.62    0.73    0.72    0.72    0.70
+  1910's    0.61    0.61    0.74    0.95    0.81    0.64    1.10    1.56    1.98    2.01
+  1920's    3.07    1.73    1.61    1.34    1.43    1.68    1.88    1.30    1.17    1.27
+  1930's    1.19    0.65    0.87    0.67    1.00    0.97    1.09    1.18    1.13    1.02
+  1940's    1.02    1.14    1.19    1.20    1.21    1.22    1.41    1.93    2.60    2.54
+  1950's    2.51    2.53    2.53    2.68    2.78    2.77    2.79    3.09    3.01    2.90
+  1960's    2.88    2.89    2.90    2.89    2.88    2.86    2.88    2.92    2.94    3.09
+  1970's    3.18    3.39    3.39    3.89    6.87    7.67    8.19    8.57    9.00    12.64
+  1980's    21.59   31.77   28.52   26.19   25.88   24.09   12.51   15.40   12.58   15.86
+  1990's    20.03   16.54   15.99   14.25   13.19   14.62   18.46   17.23   10.87   15.56
+  2000's    26.72   21.84   22.51   27.56   36.77   50.28   59.69   66.52   94.04   56.35
+  2010's    74.71   95.73   94.52   95.99   87.39   44.39   38.29   48.05   61.40   55.59
+  2020's    36.86   65.84   93.97   76.10                       </code></pre>
+<p>Save that data to a .tsv file, and upload it.</p>
+<p>Now try to understand the code below:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>df_crudeoil <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    pd.read_csv(<span class="st">'/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/crude_oil/crude_oil_prices.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># reshape the data, such that it becomes a long list</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>df_crudeoil_melted <span class="op">=</span> df_crudeoil.melt(id_vars<span class="op">=</span><span class="st">'Decade'</span>, var_name<span class="op">=</span><span class="st">'lastdigit'</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># now reformat the year information</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># search and replace first</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>df_crudeoil_melted.loc[:,<span class="st">'Decade'</span>] <span class="op">=</span> df_crudeoil_melted.loc[:,<span class="st">'Decade'</span>].<span class="bu">str</span>.replace(<span class="st">"0's"</span>,<span class="st">''</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>df_crudeoil_melted.loc[:,<span class="st">'lastdigit'</span>] <span class="op">=</span> df_crudeoil_melted.loc[:,<span class="st">'lastdigit'</span>].<span class="bu">str</span>.replace(<span class="st">'Year-'</span>,<span class="st">''</span>)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="co"># now combine information to create a new column "Year"</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>df_crudeoil_melted.loc[:,<span class="st">'Year'</span>] <span class="op">=</span> df_crudeoil_melted.loc[:,<span class="st">'Decade'</span>] <span class="op">+</span> df_crudeoil_melted.loc[:,<span class="st">'lastdigit'</span>]</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the result</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_crudeoil_melted.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Using your plotting skills, compare this data against the trends in the Asian GDPs showed earlier.</p>
+</section>
+<section id="even-more-correlations" class="level3">
+<h3 class="anchored" data-anchor-id="even-more-correlations">Even more correlations</h3>
+<p>In the “More Correlations” exercise, try to add the following lines to the plotting code:</p>
+<pre><code>plt.text(df_all.loc['United States','gdpPercap_2007'], df_all.loc['United States','lifeExp_2007'], 'United States')
+plt.text(df_all.loc['Netherlands','gdpPercap_2007'], df_all.loc['Netherlands','lifeExp_2007'], 'Netherlands')</code></pre>
+<ul>
+<li>What’s happening here?</li>
+<li>Perhaps also add your favorite country too?</li>
+<li>How would you add labels for the top 10 GDP countries?
+<ul>
+<li>Note: in the next lessons, we’ll learn how to automate your code. This will be very useful for this particular challenge.</li>
+</ul></li>
+</ul>
+</section>
+<section id="seaborn" class="level3">
+<h3 class="anchored" data-anchor-id="seaborn">Seaborn</h3>
+<ul>
+<li>Matplotlib.pyplot can in principle cater all your needs. A nice addition however is Seaborn.
+<ul>
+<li>This is another plotting tool is seaborn, which works well with matplotlib and pandas dataframes</li>
+<li>Go to https://seaborn.pydata.org/examples/index.html</li>
+<li>Try to use seaborn to make some nice plots of the data we’ve been looking at using those examples</li>
+</ul></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="lesson-10" class="level1">
+<h1>Lesson 10</h1>
+<p>(Break.)</p>
+</section>
+<section id="lesson-11" class="level1">
+<h1>Lesson 11</h1>
+</section>
+<section id="extra-exercises-for-fast-participants" class="level1">
+<h1>Extra exercises for fast participants</h1>
+<section id="go-to-lesson-3" class="level3">
+<h3 class="anchored" data-anchor-id="go-to-lesson-3">Go to lesson 3</h3>
+<ul>
+<li>Do the extra exercises of lesson 3 if you haven’t already.</li>
+</ul>
+</section>
+<section id="more-list-comprehensions-and-filtering" class="level3">
+<h3 class="anchored" data-anchor-id="more-list-comprehensions-and-filtering">More list comprehensions and filtering</h3>
+<ul>
+<li>Edit the following code such that the list consists of values <code>2x+x^2-1</code> where x is the index of the list element.</li>
+</ul>
+<p><code>[x for x in range(10)]</code></p>
+<ul>
+<li>Now from that list, select values that are &gt; 10, by modifying the following code:</li>
+</ul>
+<p><code>[x for x in your_list if ______]</code></p>
+<ul>
+<li><p>Convert your list to a np.array, and do the same in a more elegant way.</p></li>
+<li><p>Given: <code>list_withtop = [1000+-10*(x-7)**2 for x in range(20)]</code></p>
+<ul>
+<li>Find the position of the maximum value in this array.</li>
+<li>Edit the code above such that the maximum value shifts to an index of your choice.
+<ul>
+<li>Check whether you succeedded by finding the maximum value.</li>
+</ul></li>
+<li>Multiply your list with <code>-1</code>, and put the result in another list.
+<ul>
+<li>Where are now the maximum and minimum values?</li>
+<li>Does this make sense?</li>
+</ul></li>
+<li><code>list_line = [70*x-1000 for x in range(20)]</code>
+<ul>
+<li>What’s the biggest value, either negative or positive, in this list?</li>
+<li>And the index of that number?</li>
+<li>What’s the standard deviation?</li>
+<li>Can you calculate the correlation between list_withtop and list_line?</li>
+<li>Can you make a scatter plot of list_withtop versus list_line?</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="lesson-12" class="level1">
+<h1>Lesson 12</h1>
+</section>
+<section id="exercises-for-fast-participants-3" class="level1">
+<h1>Exercises for fast participants</h1>
+<section id="plotting-and-looping" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-and-looping">Plotting and looping</h3>
+<p>In the scatter plot created below, add top 10 GDP countries in the graph. Use a loop.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>data_all <span class="op">=</span> pd.read_csv(<span class="st">'/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/data/gapminder_all.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>data_all.plot(kind<span class="op">=</span><span class="st">'scatter'</span>, x<span class="op">=</span><span class="st">'gdpPercap_2007'</span>, y<span class="op">=</span><span class="st">'lifeExp_2007'</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>              s<span class="op">=</span>data_all[<span class="st">'pop_2007'</span>]<span class="op">/</span><span class="fl">1e6</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>plt.text(data_all.loc[<span class="st">'United States'</span>,<span class="st">'gdpPercap_2007'</span>], data_all.loc[<span class="st">'United States'</span>,<span class="st">'lifeExp_2007'</span>], <span class="st">'United States'</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>plt.text(data_all.loc[<span class="st">'Netherlands'</span>,<span class="st">'gdpPercap_2007'</span>], data_all.loc[<span class="st">'Netherlands'</span>,<span class="st">'lifeExp_2007'</span>], <span class="st">'Netherlands'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="nested-loops" class="level3">
+<h3 class="anchored" data-anchor-id="nested-loops">Nested loops</h3>
+<p>Explain the output of the following code:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx1 <span class="kw">in</span> [<span class="dv">1</span>,<span class="dv">2</span>]:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> idx2 <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> idx3 <span class="kw">in</span> [<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">0</span>]:</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">'product = '</span>, idx1<span class="op">*</span>idx2<span class="op">*</span>idx3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="using-subplots-nested-loops" class="level3">
+<h3 class="anchored" data-anchor-id="using-subplots-nested-loops">Using subplots, nested loops</h3>
+<p>We’ll be trying to recreate the following plot: https://www.biodsc.nl/workshop-materials/plot.html</p>
+<section id="a" class="level4">
+<h4 class="anchored" data-anchor-id="a">A</h4>
+<p><code>matplotlib.pyplot</code>s method <code>subplots()</code> has a convenient way of generating multiple plot panels, i.e.:</p>
+<div style="width: 50%;">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Plot 1</th>
+<th>Plot 2</th>
+<th>Plot 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Plot 4</td>
+<td>Plot 5</td>
+<td>Plot 6</td>
+</tr>
+<tr class="even">
+<td>Plot 7</td>
+<td>Plot 8</td>
+<td>..</td>
+</tr>
+<tr class="odd">
+<td>———</td>
+<td>——–</td>
+<td>——–</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The two dimensions can be any length.</p>
+<p>Check out the following code:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>data_europe <span class="op">=</span> pd.read_csv(<span class="st">'/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>data_europe.shape</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(data_europe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>How many panels would you need to create a separate GDP trend subplot for each country of Europe?</p>
+</section>
+<section id="b" class="level4">
+<h4 class="anchored" data-anchor-id="b">B</h4>
+<p>Play with the following code to add some random x,y data to a subplot:</p>
+<pre><code>fig, ax = plt.subplots(6,5, figsize=(10/2.54,10/2.54)) # 2.54 = cm to inch factor
+
+# Looping to create data
+counter=0
+# Go over panels
+for idx_i in range(6):
+    for idx_j in range(5):  
+
+        ax[idx_i, idx_j].plot(x,y)
+</code></pre>
+</section>
+</section>
+<section id="c" class="level3">
+<h3 class="anchored" data-anchor-id="c">C</h3>
+<p>Study the code below and try to understand what happens:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Reshape the dataframe to long format </span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># transpose</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>data_europe_tranposed <span class="op">=</span> data_europe.T</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add year as int</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>data_europe_tranposed[<span class="st">'Year'</span>] <span class="op">=</span> data_europe.columns.<span class="bu">str</span>.replace(<span class="st">'gdpPercap_'</span>, <span class="st">''</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># actual reshape to long format</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>data_europe_tranposed_melted <span class="op">=</span> data_europe_tranposed.melt(id_vars<span class="op">=</span><span class="st">'Year'</span>, var_name<span class="op">=</span><span class="st">'Country'</span>, value_name<span class="op">=</span><span class="st">'GDP'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Remember: running code is free. Try to run code and check out what’s in parameters too see what happens.</p>
+</section>
+<section id="d" class="level3">
+<h3 class="anchored" data-anchor-id="d">D</h3>
+<p>Edit the code below to reproduce the plot in: https://www.biodsc.nl/workshop-materials/plot.html</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># get all countries</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>countries_europe <span class="op">=</span> ____</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Start figure</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">6</span>,<span class="dv">5</span>, figsize<span class="op">=</span>(<span class="dv">10</span><span class="op">/</span><span class="fl">2.54</span>,<span class="dv">10</span><span class="op">/</span><span class="fl">2.54</span>)) <span class="co"># 2.54 = cm to inch factor</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Looping to create data</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>counter<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Go over panels</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx_i <span class="kw">in</span> <span class="bu">range</span>(___):</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> idx_j <span class="kw">in</span> <span class="bu">range</span>(___):                </span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Determine which part dataframe we need</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>        current_selection <span class="op">=</span> data_europe_tranposed_melted[<span class="st">'Country'</span>]<span class="op">==</span>countries_europe[counter]</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Make the plot</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># IMPORTANT ARGUMENT: ax=ax[idx_i,idx_j]</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>        data_europe_tranposed_melted.loc[___].plot(x<span class="op">=</span>___, y<span class="op">=</span>___, ax<span class="op">=</span>ax[idx_i,idx_j])</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Add title</span></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>        ax[idx_i, idx_j].set_title(___, fontsize<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># remove all labels except title</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>        ax[idx_i, idx_j].set_xlabel(<span class="st">''</span>)</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>        _____</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>        ax[idx_i, idx_j].set_xticks([])</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>        _____</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># remove legend</span></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>        _____ <span class="co"># google this?</span></span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Administration for which country we are at</span></span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>        counter <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Saving            </span></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()            </span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a><span class="co"># save to pdf and png</span></span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">'202503_example-advanced.pdf'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">'202503_example-advanced.png'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.show()</span></span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.close('all')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="lesson-13" class="level1">
+<h1>Lesson 13</h1>
+</section>
+<section id="exercises-for-fast-participants-4" class="level1">
+<h1>Exercises for fast participants</h1>
+<section id="list-comprehension" class="level3">
+<h3 class="anchored" data-anchor-id="list-comprehension">List comprehension</h3>
+<section id="a-1" class="level4">
+<h4 class="anchored" data-anchor-id="a-1">A</h4>
+<p>Adapt the following code to select only positive values:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>example_list <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">34</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">10</span>, <span class="dv">39</span>]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>example_list_pos <span class="op">=</span> [___ <span class="cf">for</span> item <span class="kw">in</span> example_list <span class="cf">if</span> ___]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(example_list_pos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="b-1" class="level4">
+<h4 class="anchored" data-anchor-id="b-1">B</h4>
+<p>Use the same code, but: - select values between 30 and 40 - select items &lt;0 or &gt;10</p>
+</section>
+<section id="c-1" class="level4">
+<h4 class="anchored" data-anchor-id="c-1">C</h4>
+<p>Use a np.array to do the same more elegantly.</p>
+</section>
+</section>
+<section id="enumerate-zip" class="level3">
+<h3 class="anchored" data-anchor-id="enumerate-zip">Enumerate, zip</h3>
+<p>These exercises introduce two new concepts. You might need google.</p>
+<section id="a-2" class="level4">
+<h4 class="anchored" data-anchor-id="a-2">A</h4>
+<p>What does the following code do? What is the meaning of the output?</p>
+<pre><code>for idx, item in enumerate([1,2,3,4,-5,1,34,6,-10]):
+    
+    if item&gt;5:
+        print(idx)</code></pre>
+</section>
+<section id="b-2" class="level4">
+<h4 class="anchored" data-anchor-id="b-2">B</h4>
+<p>Modify the following code such that it will compare each item i in apples with each item i in pears, and tell you which one is heavier. You need to edit the code.</p>
+<pre><code>apples = [123, 436, 123, 654, 117, 193, 120]
+pears  = [543, 163, 178, 165, 123, 187, 190]
+
+for apple_weight, pear_weight in zip(apples, pears):
+    print('='*10)
+    print('weigth apple: ', apple_weight)
+    print('weigth pear: ',pear_weight)
+    
+    print('the XXX is heavier')</code></pre>
+</section>
+</section>
+</section>
+<section id="lesson-14" class="level1">
+<h1>Lesson 14</h1>
+<p>Non yet. Though perhaps some of the original exercises were optional; look at those. Otherwise look at other exercises on this page?</p>
+</section>
+<section id="lesson-15" class="level1">
+<h1>Lesson 15</h1>
+<p>(Non yet)</p>
+</section>
+<section id="lesson-16" class="level1">
+<h1>Lesson 16</h1>
+<section id="ideas-for-exercises" class="level4">
+<h4 class="anchored" data-anchor-id="ideas-for-exercises">Ideas for exercises:</h4>
+<ul>
+<li><em>function returning primes</em></li>
+<li><em>square root</em>
+<ul>
+<li><em>use breaks</em></li>
+<li><em>use while</em></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="lesson-17-18-19" class="level1">
+<h1>Lesson 17, 18, 19</h1>
+<p>(Non yet.)</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>
+<img src="../../images/uva-logo.png" height="25px;"> an <i>initiative</i> of the <a href="https://uva.nl" target="_blank">University of Amsterdam </a>
+</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
