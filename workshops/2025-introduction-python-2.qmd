@@ -63,7 +63,7 @@ This workshop assumes **no prior knowledge** on Python or programming!
 
 ### Workshop logistics
 
-The course will be given by Martijn Wehrens and Misha Paauw from the *bio*DSC. There is room for 4-12 participants. 
+The course will be given by Misha Paauw, Martijn Wehrens and Frans van der Kloet from the *bio*DSC. There is room for 4-12 participants. 
 You have to bring your own laptop, we'll use an online version of Python, so there are no software installation requirements.
 
 As mentioned, the contents of this workshops are almost completely based on:
