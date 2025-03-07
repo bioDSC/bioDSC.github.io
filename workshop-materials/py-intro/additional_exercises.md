@@ -1,0 +1,573 @@
+
+
+# Additional exercises for fast participants
+
+
+## Lesson 2
+
+### Extra code to chew on
+
+What's happening here:
+
+```Python
+
+# use Google or chatGPT if you don't know the answers
+# if you're at the end, try to play around more
+
+greetings_strings = ['hello', 'bye', 'later']
+print(greetings_strings[0])
+print(greetings_strings[1][2])
+    # (list of lists)
+
+print([greetings_strings[idx] for idx in [0, 2]])
+print([greetings_strings[0][idx] for idx in [0, 2, 4]])
+print([greetings_strings[0][idx] for idx in range(0,4,2)])
+    # using a loop (will be covered later) / list comprehension
+
+square_values = [number**2 for number in range(10)]
+square_values_string = [str(number**2) for number in range(10)]
+print(square_values)
+print(square_values_string)
+    # types will be the topic of the next lesson
+
+species_name = "Acacia buxifolia"
+print("".join([species_name[i] for i in range(10, 2, -1)]))
+    # convenient command when working with strings
+
+print(species_name.replace('Aca', 'Bole'))
+    # another convenient command
+
+# Exercise:
+list_of_species = ['','','','']
+list_of_species = ['Homo sapiens', 'Escherichia Coli', 'Pan troglodytes', 'Canis lupus', 'Felis catus']
+# Create a new lists, where you remove all letters 'e'
+```
+
+# Lesson 3
+
+### Dict
+
+Python has more types. A `dict` is sometimes very convenient, and is also used later with creating tables.
+
+```Python
+experimental_replicate_list = {'WT': 12, 'mut': 32, 'WT.cond1': 10, 'mut.cond1': 12}
+print(experimental_replicte_list)
+
+print(experimental_replicate_list['WT'])
+
+# Exercise:
+# Edit the following code such that we get replicate numbers for conditions involving WT
+my_keys = experimental_replicate_list.keys()
+print(my_keys)
+my_keys_of_interest = [the_key for the_key in my_keys if 'mut' in the_key] # edit this line
+print(my_keys_of_interest)
+print([experimental_replicate_list[sel_key] for sel_key in my_keys_of_interest])
+
+# The above code uses several lines, can you do this in one line?
+print(...) # edit this line
+```
+
+### np.array
+
+Arrays can be a useful tool, but for example in image analysis, don't offer the full mathematical options one might like. `numpy` arrays introduce a new type of array, in which you can do more manipulations. See some examples below:
+
+```Python
+import numpy as np
+my_array = [1,2,3,5]
+my_array_np = np.array([1,2,3,5])
+
+# what's the difference here:
+# my_array+1 # commented because gives error, why?
+my_array_np+1
+
+# what's the difference here:
+my_array * 3
+my_array_np * 3
+
+# more:
+my_array + [1,2,3,4]
+my_array_np + np.array([1,2,3,4])
+np.sin(my_array_np)
+
+# numpy-specific things, what is happening?
+my_array_np[range(1,4,2)]
+my_array_np[my_array_np>1]
+```
+
+# Lesson 4
+
+(Non yet for this lesson, maybe look at the other exercises here?)
+
+# Lesson 5
+
+(This is a break.)
+
+# Lesson 6
+
+# Exercises for fast participants
+
+#### Write your own
+
+When you have a notebook file, you can also create another file, with a .py extension, and write functions in that file. The .py file can be imported like a library, and the functions in the file can be used as if they came from a library.
+
+##### Exercise
+
+Using the information below, try to 
+- create two files, one `.ipynb` (notebook) file and one `.py` (python plain text code) file.
+- rename the `myfunctionname` functions in the `.py` file and use them in the notebook.
+- create a third function, which returns C when you provide A and B, assuming `A^2+B^2 = C^2`, and use it in your notebook.
+
+Useful things to know:
+- You can make a .py file with `file > new > python file`.
+    - Unlike notebooks, every text here is assumed to be python code.
+    - Save the file to `myfilename.py` (replacing myfilename with your own favorite name).
+- You can import your file in a python notebook using:
+    - `import myfilename` where `myfilename.py` should exist and hold your code.
+
+You can write a function using the following template:
+
+```Python
+
+def myfunctionname():
+    print("hello world")
+    
+def myfunctionname2(input1, input2):
+    print("input 1 = ", input1, ', input 2 = ', input2)
+
+```
+
+# Lesson 7
+
+## Exercises for fast participants
+
+- Create a plain text file on your computer, and give it the extension `.csv`.
+- Find out what the comma-separated format looks like.
+- Use your imagination to complete the following table and put it in the `.csv` file. 
+
+|replicate| cond1   |  cond2 |
+|---|---|---|
+|   | 10  |   |
+|   | 11 |   |
+|   | 10  |   |
+|   | 12  |   |
+|   | 13  |   |
+|   | 13  |   |
+
+- Now try to read in that table in your python notebook.
+- Get the following code to run on your dataframe (referred to as `df` below):
+```python
+from scipy.stats import ttest_ind
+t_stat, p_value = ttest_ind(df['cond1'], df['cond2'])
+print(f"T-statistic: {t_stat}, P-value: {p_value}")
+```
+- What does that code do? 
+- Do a "Diederik Stapel" and tweak the csv such that you get a significant p-val.
+
+# Lesson 8
+
+## Additional exercises for fast participants
+
+### GDPs
+
+- Between '87 and '92 the GDP of most countries took a hit. Are there any countries which had a positive increase between those two years? Which ones?
+- Calculate the average GDP between all European countries per year.
+    - Normalize the dataframe by this trend.
+
+### Gene expression
+
+- Convert the data below to a csv file, import it to a pandas df, and determine the following:
+    - The average CRP gene expression per condion.
+    - The corresponding standard deviations.
+    - The log2-fold change between WT, condition A, and condition B.
+    - Do the same for ACTA1.
+    - Normalize all gene expression levels to their average respective wild type levels.
+
+```
+gene	expression	condition
+CRP	873	WT
+CRP	324	WT
+CRP	214	WT
+CRP	151	WT
+CRP	1220	A
+CRP	450	A
+CRP	300	A
+CRP	210	A
+CRP	800	B
+CRP	200	B
+CRP	200	B
+CRP	130	B
+ACTA1	7457	WT
+ACTA1	2342	WT
+ACTA1	8000	WT
+ACTA1	9000	WT
+ACTA1	6500	A
+ACTA1	2200	A
+ACTA1	7500	A
+ACTA1	8000	A
+ACTA1	1000	B
+ACTA1	1123	B
+ACTA1	3211	B
+ACTA1	1231	B
+```
+
+# Lesson 9
+
+## Exercises for fast participants
+
+
+
+### Normalized dataframe
+
+- In the previous exercise, we normalized the GDP data against the average trend. Plot the data from this normalized dataframe.
+    - Is this helpful in any way?
+
+    
+### Crude oil
+
+Crude oil prices can be found at:
+https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=F000000__3&f=A
+
+This gives the data below:
+
+```
+Decade	Year-0	Year-1	Year-2	Year-3	Year-4	Year-5	Year-6	Year-7	Year-8	Year-9
+  1850's										16.00
+  1860's	9.59	0.49	1.05	3.15	8.06	6.59	3.74	2.41	3.62	5.64
+  1870's	3.86	4.34	3.64	1.83	1.17	1.35	2.52	2.38	1.17	0.86
+  1880's	0.94	0.92	0.78	1.10	0.85	0.88	0.71	0.67	0.65	0.77
+  1890's	0.77	0.56	0.51	0.60	0.72	1.09	0.96	0.68	0.80	1.13
+  1900's	1.19	0.96	0.80	0.94	0.86	0.62	0.73	0.72	0.72	0.70
+  1910's	0.61	0.61	0.74	0.95	0.81	0.64	1.10	1.56	1.98	2.01
+  1920's	3.07	1.73	1.61	1.34	1.43	1.68	1.88	1.30	1.17	1.27
+  1930's	1.19	0.65	0.87	0.67	1.00	0.97	1.09	1.18	1.13	1.02
+  1940's	1.02	1.14	1.19	1.20	1.21	1.22	1.41	1.93	2.60	2.54
+  1950's	2.51	2.53	2.53	2.68	2.78	2.77	2.79	3.09	3.01	2.90
+  1960's	2.88	2.89	2.90	2.89	2.88	2.86	2.88	2.92	2.94	3.09
+  1970's	3.18	3.39	3.39	3.89	6.87	7.67	8.19	8.57	9.00	12.64
+  1980's	21.59	31.77	28.52	26.19	25.88	24.09	12.51	15.40	12.58	15.86
+  1990's	20.03	16.54	15.99	14.25	13.19	14.62	18.46	17.23	10.87	15.56
+  2000's	26.72	21.84	22.51	27.56	36.77	50.28	59.69	66.52	94.04	56.35
+  2010's	74.71	95.73	94.52	95.99	87.39	44.39	38.29	48.05	61.40	55.59
+  2020's	36.86	65.84	93.97	76.10						
+```
+
+Save that data to a .tsv file, and upload it.
+
+Now try to understand the code below:
+
+```python
+import pandas as pd
+
+# Load the data
+df_crudeoil = \
+    pd.read_csv('/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/crude_oil/crude_oil_prices.tsv', sep='\t')
+
+# reshape the data, such that it becomes a long list
+df_crudeoil_melted = df_crudeoil.melt(id_vars='Decade', var_name='lastdigit')
+
+# now reformat the year information
+# search and replace first
+df_crudeoil_melted.loc[:,'Decade'] = df_crudeoil_melted.loc[:,'Decade'].str.replace("0's",'')
+df_crudeoil_melted.loc[:,'lastdigit'] = df_crudeoil_melted.loc[:,'lastdigit'].str.replace('Year-','')
+# now combine information to create a new column "Year"
+df_crudeoil_melted.loc[:,'Year'] = df_crudeoil_melted.loc[:,'Decade'] + df_crudeoil_melted.loc[:,'lastdigit']
+# Inspect the result
+print(df_crudeoil_melted.head())
+```
+
+Using your plotting skills, compare this data against the trends in the Asian GDPs showed earlier.
+
+### Even more correlations
+
+In the "More Correlations" exercise, try to add the following lines to the plotting code:
+
+```
+plt.text(df_all.loc['United States','gdpPercap_2007'], df_all.loc['United States','lifeExp_2007'], 'United States')
+plt.text(df_all.loc['Netherlands','gdpPercap_2007'], df_all.loc['Netherlands','lifeExp_2007'], 'Netherlands')
+```
+
+- What's happening here?
+- Perhaps also add your favorite country too?
+- How would you add labels for the top 10 GDP countries?
+    - Note: in the next lessons, we'll learn how to automate your code. This will be very useful for this particular challenge.
+
+### Seaborn
+
+- Matplotlib.pyplot can in principle cater all your needs. A nice addition however is Seaborn.
+    - This is another plotting tool is seaborn, which works well with matplotlib and pandas dataframes
+    - Go to https://seaborn.pydata.org/examples/index.html 
+    - Try to use seaborn to make some nice plots of the data we've been looking at using those examples
+
+
+# Lesson 10
+
+(Break.)
+
+# Lesson 11
+
+# Extra exercises for fast participants
+
+### Go to lesson 3
+
+- Do the extra exercises of lesson 3 if you haven't already.
+
+### More list comprehensions and filtering
+
+- Edit the following code such that the list consists of values `2x+x^2-1` where x is the index of the list element.
+
+`[x for x in range(10)]`
+
+- Now from that list, select values that are > 10, by modifying the following code:
+
+`[x for x in your_list if ______]`
+
+- Convert your list to a np.array, and do the same in a more elegant way.
+
+- Given: `list_withtop = [1000+-10*(x-7)**2 for x in range(20)]`
+    - Find the position of the maximum value in this array.
+    - Edit the code above such that the maximum value shifts to an index of your choice.   
+        - Check whether you succeedded by finding the maximum value.
+    - Multiply your list with `-1`, and put the result in another list.
+        - Where are now the maximum and minimum values?
+        - Does this make sense?
+    - `list_line = [70*x-1000 for x in range(20)]`
+        - What's the biggest value, either negative or positive, in this list?
+        - And the index of that number?
+        - What's the standard deviation?
+        - Can you calculate the correlation between list_withtop and list_line?
+        - Can you make a scatter plot of  list_withtop versus list_line?
+
+
+# Lesson 12
+
+# Exercises for fast participants
+
+### Plotting and looping
+
+In the scatter plot created below, add top 10 GDP countries in the graph. Use a loop.
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data_all = pd.read_csv('/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/data/gapminder_all.csv', index_col='country')
+data_all.plot(kind='scatter', x='gdpPercap_2007', y='lifeExp_2007',
+              s=data_all['pop_2007']/1e6)
+
+plt.text(data_all.loc['United States','gdpPercap_2007'], data_all.loc['United States','lifeExp_2007'], 'United States')
+plt.text(data_all.loc['Netherlands','gdpPercap_2007'], data_all.loc['Netherlands','lifeExp_2007'], 'Netherlands')
+```
+
+### Nested loops
+
+Explain the output of the following code:
+
+```python
+for idx1 in [1,2]:
+    for idx2 in range(3):
+        for idx3 in [6,5,0]:
+            print('product = ', idx1*idx2*idx3)
+```
+
+### Using subplots, nested loops
+
+We'll be trying to recreate the following plot:
+https://www.biodsc.nl/workshop-materials/plot.html
+
+#### A
+
+`matplotlib.pyplot`s method `subplots()` has a convenient way of generating multiple plot panels, i.e.:
+
+<div style="width: 50%;">
+| Plot 1  | Plot 2 | Plot 3 |
+|---------|--------|--------|
+| Plot 4  | Plot 5 | Plot 6 |
+| Plot 7  | Plot 8 | ..     |
+|---------|--------|--------|
+</div>
+
+
+
+The two dimensions can be any length.
+
+Check out the following code:
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data_europe = pd.read_csv('/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/data/gapminder_gdp_europe.csv', index_col='country')
+
+data_europe.shape
+len(data_europe)
+```
+
+How many panels would you need to create a separate GDP trend subplot for each country of Europe?
+
+#### B
+
+Play with the following code to add some random x,y data to a subplot:
+
+```
+fig, ax = plt.subplots(6,5, figsize=(10/2.54,10/2.54)) # 2.54 = cm to inch factor
+
+# Looping to create data
+counter=0
+# Go over panels
+for idx_i in range(6):
+    for idx_j in range(5):  
+
+        ax[idx_i, idx_j].plot(x,y)
+
+```
+
+### C
+
+Study the code below and try to understand what happens:
+
+```python
+### Reshape the dataframe to long format 
+# transpose
+data_europe_tranposed = data_europe.T
+# add year as int
+data_europe_tranposed['Year'] = data_europe.columns.str.replace('gdpPercap_', '').astype(int)
+# actual reshape to long format
+data_europe_tranposed_melted = data_europe_tranposed.melt(id_vars='Year', var_name='Country', value_name='GDP')
+```
+
+Remember: running code is free. Try to run code and check out what's in parameters too see what happens.
+
+### D
+
+Edit the code below to reproduce the plot in:
+https://www.biodsc.nl/workshop-materials/plot.html
+
+```python
+
+# get all countries
+countries_europe = ____
+
+# Start figure
+fig, ax = plt.subplots(6,5, figsize=(10/2.54,10/2.54)) # 2.54 = cm to inch factor
+
+# Looping to create data
+counter=0
+# Go over panels
+for idx_i in range(___):
+    for idx_j in range(___):                
+
+        # Determine which part dataframe we need
+        current_selection = data_europe_tranposed_melted['Country']==countries_europe[counter]
+        
+        # Make the plot
+        # IMPORTANT ARGUMENT: ax=ax[idx_i,idx_j]
+        data_europe_tranposed_melted.loc[___].plot(x=___, y=___, ax=ax[idx_i,idx_j])
+        
+        # Add title
+        ax[idx_i, idx_j].set_title(___, fontsize=5)
+        
+        # remove all labels except title
+        ax[idx_i, idx_j].set_xlabel('')
+        _____
+        ax[idx_i, idx_j].set_xticks([])
+        _____
+        # remove legend
+        _____ # google this?
+            
+        # Administration for which country we are at
+        counter += 1
+
+# Saving            
+plt.tight_layout()            
+# save to pdf and png
+fig.savefig('202503_example-advanced.pdf', dpi=300, bbox_inches='tight')
+fig.savefig('202503_example-advanced.png', dpi=300, bbox_inches='tight')
+# plt.show()
+# plt.close('all')
+
+```
+
+# Lesson 13
+
+# Exercises for fast participants
+
+### List comprehension
+
+#### A
+
+Adapt the following code to select only positive values:
+
+```python
+example_list = [1,2,3,4,-5,1,34,6,-10, 39]
+example_list_pos = [___ for item in example_list if ___]
+print(example_list_pos)
+```
+
+#### B
+
+Use the same code, but:
+- select values between 30 and 40
+- select items <0 or >10
+
+#### C
+
+Use a np.array to do the same more elegantly.
+
+### Enumerate, zip
+
+These exercises introduce two new concepts. 
+You might need google.
+
+#### A
+
+What does the following code do? What is the meaning of the output?
+
+```
+for idx, item in enumerate([1,2,3,4,-5,1,34,6,-10]):
+    
+    if item>5:
+        print(idx)
+```
+
+#### B
+
+Modify the following code such that it will compare each item i in apples with each item i in pears, and tell you which one is heavier.
+You need to edit the code.
+
+```
+apples = [123, 436, 123, 654, 117, 193, 120]
+pears  = [543, 163, 178, 165, 123, 187, 190]
+
+for apple_weight, pear_weight in zip(apples, pears):
+    print('='*10)
+    print('weigth apple: ', apple_weight)
+    print('weigth pear: ',pear_weight)
+    
+    print('the XXX is heavier')
+```
+
+
+# Lesson 14
+
+Non yet. Though perhaps some of the original exercises were optional; look at those.
+Otherwise look at other exercises on this page?
+
+# Lesson 15
+
+(Non yet)
+
+# Lesson 16
+
+#### Ideas for exercises:
+- *function returning primes*
+- *square root*
+    - *use breaks*
+    - *use while*
+
+# Lesson 17, 18, 19
+
+(Non yet.)
+
+
+
+
