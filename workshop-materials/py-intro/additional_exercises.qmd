@@ -1,6 +1,7 @@
 
 
-# Additional exercises for fast participants
+# Additional exercises for Python Workshop
+*Complementary to [The Carpentries Python course](https://swcarpentry.github.io/python-novice-gapminder/)*
 
 
 ## Lesson 2
@@ -104,8 +105,6 @@ my_array_np[my_array_np>1]
 
 # Lesson 6
 
-# Exercises for fast participants
-
 #### Write your own
 
 When you have a notebook file, you can also create another file, with a .py extension, and write functions in that file. The .py file can be imported like a library, and the functions in the file can be used as if they came from a library.
@@ -138,7 +137,6 @@ def myfunctionname2(input1, input2):
 
 # Lesson 7
 
-## Exercises for fast participants
 
 - Create a plain text file on your computer, and give it the extension `.csv`.
 - Find out what the comma-separated format looks like.
@@ -165,7 +163,6 @@ print(f"T-statistic: {t_stat}, P-value: {p_value}")
 
 # Lesson 8
 
-## Additional exercises for fast participants
 
 ### GDPs
 
@@ -212,7 +209,6 @@ ACTA1	1231	B
 
 # Lesson 9
 
-## Exercises for fast participants
 
 
 
@@ -305,7 +301,6 @@ plt.text(df_all.loc['Netherlands','gdpPercap_2007'], df_all.loc['Netherlands','l
 
 # Lesson 11
 
-# Extra exercises for fast participants
 
 ### Go to lesson 3
 
@@ -340,7 +335,6 @@ plt.text(df_all.loc['Netherlands','gdpPercap_2007'], df_all.loc['Netherlands','l
 
 # Lesson 12
 
-# Exercises for fast participants
 
 ### Plotting and looping
 
@@ -489,7 +483,6 @@ fig.savefig('202503_example-advanced.png', dpi=300, bbox_inches='tight')
 
 # Lesson 13
 
-# Exercises for fast participants
 
 ### List comprehension
 
