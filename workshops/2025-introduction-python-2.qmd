@@ -77,9 +77,8 @@ As mentioned, the contents of this workshops are almost completely based on:
 
 ### Sign up
 
-<!--
-Sign up [using this link](https://forms.office.com/e/xe92R6gF8e){target="_blank"}. <!--**Sign up deadline: 28th of February!**-->
--->
+<!-- Sign up [using this link](https://forms.office.com/e/xe92R6gF8e){target="_blank"}. -->
+<!--**Sign up deadline: 28th of February!**-->
 
 ::: {.callout-important}
 ## This workshop is full.
