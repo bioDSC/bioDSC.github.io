@@ -6,6 +6,36 @@ author: Martijn Wehrens
 categories: [python, software, installation, tutorial]
 ---
 
+# Summary
+
+Install miniconda through [the official website](https://www.anaconda.com/docs/getting-started/miniconda/install){target="_blank"}, and install either:
+
+**Jupyter labs**
+
+By typing the following in your terminal:
+
+```sh
+conda install conda-forge::jupyterlab
+```
+
+**Spyder**
+
+By typing the following in your terminal:
+
+```sh
+conda install -c conda-forge spyder
+```
+
+**Plus additional libraries you need**
+
+By using google and typing in your terminal:
+
+```sh
+conda install XXXX
+```
+
+See below for detailed instructions.
+
 # Background: what you need.
 
 To be able to write Python code and execute it, it is convenient to install several types of software:
@@ -28,6 +58,7 @@ This way you can write Python code in a pleasant way, and also run it immediatel
 Installing software to manage software installation sounds perhaps a bit complicated, but it'll make your life easier.
 
 Installing Python, its libraries, and code editors, comes challenges, such as:
+
 1. It is tedious to install all these things manually.
 2. You might need a set of libraries for a specific task, which have installation requirements that exclude you from installing other libraries that you might need for another task.
 
@@ -170,7 +201,7 @@ conda install conda-forge::jupyterlab
 
 ([Source](https://anaconda.org/conda-forge/jupyterlab){target=_blank}.). Copy and paste this into a terminal which has conda activated, and press enter to run. (See above.)
 
-To run Jupiter, simply type the following command in your terminal and press enter:
+To run Jupyter, simply type the following command in your terminal and press enter:
 
 ```sh
 jupyter lab
