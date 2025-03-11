@@ -100,7 +100,7 @@ Go to: [https://www.anaconda.com/docs/getting-started/miniconda/install](https:/
 
 This website explains which commands you have to type in the terminal to complete the installation of miniconda.
 
-At this website, using the tabs on the install instructions, go to the operating system you have on your computer.
+At this website, go to "Quickstart install instructions", and using the tabs on the install instructions, go to the operating system you have on your computer.
 Follow the instructions there.
 You need to copy the lines (one by one) in the black box, which are instructions for your terminal.
 You can paste them (one by one) in your terminal, and press enter.
