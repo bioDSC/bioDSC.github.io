@@ -6,6 +6,10 @@ author: Martijn Wehrens
 categories: [python, software, installation, tutorial]
 ---
 
+# About
+
+This tutorial explains how to install software on your computer that allows you to write and run Python scripts.
+
 # Summary
 
 <!--
