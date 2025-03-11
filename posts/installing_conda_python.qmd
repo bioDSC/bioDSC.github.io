@@ -1,0 +1,167 @@
+---
+title: "Installing Python Software"
+date: 2024-03-11
+description: "Installing software that allows you to easily work with Python."
+author: Martijn Wehrens
+categories: [python, software, installation, tutorial]
+---
+
+## Background: what you need.
+
+To be able to write Python code and execute it, it is convenient to install several types of software.
+
+### 1: Python itself
+
+As explained during our workshops, Python itself is a software that interprets written computer code, and uses that to make the computer do things.
+Sometimes Python is already installed on your computer, but often you need to install it.
+
+Python makes use of "libraries" (pre-written code with functions for specific tasks), that you likely need to download/install as well.
+
+### 2: A text editor dedicated to writing Python code
+
+It is convenient to also install another piece of software, in which you can write Python code, and which also allows you to "send" the script towards the actual Python software.
+
+This way you can write Python code in a pleasant way, and also run it immediately. In practice, you'll only interact with this editor.
+
+### 3: Software installing-software.
+
+Installing software to manage software installation sounds perhaps a bit complicated, but it'll make your life easier.
+
+Installing Python, its libraries, and code editors, comes challenges, such as:
+1. It is tedious to install all these things manually.
+2. You might need a set of libraries for a specific task, which have installation requirements that exclude you from installing other libraries that you might need for another task.
+
+These challenges are adressed by software that manages such "dependencies" and "conflicts".
+
+## So, how to do it.
+
+I'll try to keep this brief, so I'll immediately go to our recommendations on what to install and how to do it.
+
+#### Step 1: open the terminal.
+
+During this process we'll be using the "terminal".
+This is a computer program built-in in all operating systems (Windows, MacOS, Linux).
+
+You can type commands here, press enter, and they will be executed.
+This allows you to interact with your computer in a more "advanced" way.
+It is necessary for the installation process we recommend.
+
+Open the terminal window by:
+
+- **MacOS**: open the "terminal" app, e.g. by using the launchpad or spotlight search (press CMD+SPACE). See also [this link](https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac){target="_blank"}
+- **Windows**: open the "powershell". This can be done via the menu. See also [this link](https://www.howtogeek.com/662611/9-ways-to-open-powershell-in-windows-10/){target="_blank"}.
+- **Linux**: open the terminal. See also [this link](https://ubuntu.com/tutorials/command-line-for-beginners#3-opening-a-terminal){target="_blank"}.
+
+It should look somewhat like this:
+
+![A screenshot of my terminal.](post_images/installing-py_screenshot-terminal.png){ width=50% fig-align="left" }
+
+Having started the terminal, we're now good to go.
+
+#### Step 2: Install software-installing software, ie "MiniConda"
+
+The software installing-software I was talking about, is Conda. 
+You have:
+
+- **Miniconda**. We'll use this. It's very minimal.
+- **Anaconda**. We won't use this. It's easier to install and use, but there have been licencing issues even for universities.
+
+::: {.callout-tip}
+## Technical description of Conda
+
+ChatGPT: "Conda is a package and environment manager that allows you to easily install, manage, and isolate software dependencies, making it especially useful for scientific computing and reproducible research."
+:::
+
+#### How to install Conda
+
+Go to: [https://www.anaconda.com/docs/getting-started/miniconda/install](https://www.anaconda.com/docs/getting-started/miniconda/install){target="_blank"}
+
+This website explains which commands you have to type in the terminal to complete the installation of miniconda.
+
+At this website, using the tabs on the install instructions, go to the operating system you have on your computer.
+Follow the instructions there.
+You need to copy the lines (one by one) in the black box, which are instructions for your terminal.
+You can paste them (one by one) in your terminal, and press enter.
+
+![**Miniconda installation instructions from Anaconda.com.**. *Choose the applicable tab and execute the commands in your terminal.*](post_images/installing-py_screenshot-miniconda.png){ width=50% fig-align="left" }
+
+#### Optional: learn to use environments.
+
+Read more about conda environments here: [https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html){target="_blank"}
+
+<!--
+DISCARDED
+#### Installing Miniconda
+
+1. Go to: https://www.anaconda.com/download/success
+    - (Registration can be skipped.)
+2. Scroll down to "Miniconda Installers"
+3. Follow instructions for your operating system.
+
+#### 
+-->
+
+### How to install Python software using Miniconda
+
+#### 1. Open a terminal with Miniconda activated
+
+- In windows, after installing Miniconda, open the “Anaconda Powershell Prompt (miniconda3)”.
+- On a Macbook, if you have followed all the instructions, (close and re-)open the terminal. It should now display "(base)" in front of your username (see screenshot from my terminal above).
+
+#### 2. Install python and libraries.
+
+Python will be automatically installed in step 3.
+However, libraries often need to be installed separately.
+You can do this at any point you like, whenever it turns out you need a library that you haven't installed yet.
+
+This can be done easily using miniconda.
+To install something using Conda, simply open the terminal and type the following command in the terminal, and press enter.
+
+```sh
+conda install XXXX
+```
+
+Where XXXX is the library you want.
+
+You sometimes need to specifiy on which online "database" ("channel") software is found. You also need to know the very specific name of the package.
+
+To address both these questions, it is easiest to just google for "conda install XXX", where XXX is the package you want.
+For example, to install pandas, after Googling, we end up at [this page](https://anaconda.org/anaconda/pandas){target="_blank"}, and see the installation command is:
+
+```sh
+conda install anaconda::pandas
+```
+
+The part `anaconda::` specifies further where to find pandas installation files. 
+
+Simply copy that code into your terminal, and press enter. You will see something like this:
+
+![A 2nd screenshot of my terminal, using conda.](post_images/installing-py_screenshot-terminal2.png){ width=50% fig-align="left" }
+
+Type a "y" and press enter to proceed. 
+This means all the listed libraries will be installed. They are needed because in this case Pandas requires these other libraries to be installed in order to run.
+This is usually the case.
+
+#### 3. Choose the editor software you want and install it
+
+To work with Python, there are multiple options for software to write scripts and run them using Python. I've listed them below.
+
+| Software       | Description                                                                 |
+|:----------------:|-----------------------------------------------------------------------------|
+| **Jupyter<br><br>** ![Jupyter.](post_images/installing-py_logo-jupyter.png){ height=50px fig-align="center"}        | (+) Write code and text in blocks, and see the output directly below in one document. <br>(-) Not suitable for large amounts of code <br>(-) Adds extra layer complexity.  |
+| **Spyder<br>**![Spyder.](post_images/installing-py_logo-spyder.png){ height=50px }        | (+) Easily write simply .py files, inspect parameters. <br>(+) Rstudio or MATLAB like IDE. <br>(-) Lacks some modern features. <br>(-) No co-pilot integration. |
+| **Visual Studio Code<br>**![Visual Studio Code.](post_images/installing-py_logo-VScode.png){ height=50px }        | (+) ±Industry standard, has most advanced features. <br>(+) Plugins for many features. <br>(-) Very counter-intuitive to use. Makes it difficult to use. |
+| **PyCharm<br>**![PyCharm.](post_images/installing-py_logo-pycharm.jpg){ height=50px }        | (We don't have much experience with this, but it's also good and often used.) |
+
+
+For the workshop, we used Jupyter notebooks. We also recommend Spyder.
+
+The installation of both of these can be done through Conda.
+
+##### Installing Jupyter using Conda
+
+Jupyter can be installed using Conda.
+
+On the official website they say use something called "pip" ([link](https://jupyter.org/install){target=_blank}), but we recommend conda.
+
+Install jupyter similar as to how you installed other python libraries (see section "2" above).

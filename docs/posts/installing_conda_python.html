@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Martijn Wehrens">
+<meta name="dcterms.date" content="2024-03-11">
+<meta name="description" content="Installing software that allows you to easily work with Python.">
 
-<title>The bioDSC blog – *bio*DSC</title>
+<title>Installing Python Software – bioDSC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +23,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/bioDSC-without-dots-transparent.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/bioDSC-without-dots-transparent.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,67 +103,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-date','listing-author','listing-categories','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -138,10 +115,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/bioDSC-without-dots-transparent.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/bioDSC-without-dots-transparent.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title"><em>bio</em>DSC</span>
     </a>
   </div>
@@ -152,34 +129,34 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./workshops.html"> 
+    <a class="nav-link" href="../workshops.html"> 
 <span class="menu-text">Workshops</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./people.html"> 
+    <a class="nav-link" href="../people.html"> 
 <span class="menu-text">People</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorials.html"> 
+    <a class="nav-link" href="../tutorials.html"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./further-reading.html"> 
+    <a class="nav-link" href="../further-reading.html"> 
 <span class="menu-text">Further reading</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="https://www.uva.nl" target="_blank"> 
-<span class="menu-text"><img src="./images/uva-logo.png" height="30"></span></a>
+<span class="menu-text"><img src="../images/uva-logo.png" height="30"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -192,22 +169,43 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="YXJhYmlkb3BzaXM=">arabidopsis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y29tcGFyYXRpdmUgZ2Vub21pY3M=">comparative genomics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Y3J1bmNob21pY3M=">crunchomics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2VuZXJhbA==">general <span class="quarto-category-count">(2)</span></div><div class="category" data-category="aW5zdGFsbGF0aW9u">installation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW50cm8=">intro <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHl0aG9u">python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="c29mdHdhcmU=">software <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHV0b3JpYWw=">tutorial <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d29ya3Nob3AtcmVsYXRlZA==">workshop-related <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">The <em>bio</em>DSC blog</h1>
+<h1 class="title">Installing Python Software</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">python</div>
+    <div class="quarto-category">software</div>
+    <div class="quarto-category">installation</div>
+    <div class="quarto-category">tutorial</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Installing software that allows you to easily work with Python.
+  </div>
 </div>
 
 
+<div class="quarto-title-meta column-page">
 
-<div class="quarto-title-meta column-page-left">
-
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Martijn Wehrens </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 11, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -217,150 +215,172 @@ window.Quarto = {
 </header>
 
 
+<section id="background-what-you-need." class="level2">
+<h2 class="anchored" data-anchor-id="background-what-you-need.">Background: what you need.</h2>
+<p>To be able to write Python code and execute it, it is convenient to install several types of software.</p>
+<section id="python-itself" class="level3">
+<h3 class="anchored" data-anchor-id="python-itself">1: Python itself</h3>
+<p>As explained during our workshops, Python itself is a software that interprets written computer code, and uses that to make the computer do things. Sometimes Python is already installed on your computer, but often you need to install it.</p>
+<p>Python makes use of “libraries” (pre-written code with functions for specific tasks), that you likely need to download/install as well.</p>
+</section>
+<section id="a-text-editor-dedicated-to-writing-python-code" class="level3">
+<h3 class="anchored" data-anchor-id="a-text-editor-dedicated-to-writing-python-code">2: A text editor dedicated to writing Python code</h3>
+<p>It is convenient to also install another piece of software, in which you can write Python code, and which also allows you to “send” the script towards the actual Python software.</p>
+<p>This way you can write Python code in a pleasant way, and also run it immediately. In practice, you’ll only interact with this editor.</p>
+</section>
+<section id="software-installing-software." class="level3">
+<h3 class="anchored" data-anchor-id="software-installing-software.">3: Software installing-software.</h3>
+<p>Installing software to manage software installation sounds perhaps a bit complicated, but it’ll make your life easier.</p>
+<p>Installing Python, its libraries, and code editors, comes challenges, such as: 1. It is tedious to install all these things manually. 2. You might need a set of libraries for a specific task, which have installation requirements that exclude you from installing other libraries that you might need for another task.</p>
+<p>These challenges are adressed by software that manages such “dependencies” and “conflicts”.</p>
+</section>
+</section>
+<section id="so-how-to-do-it." class="level2">
+<h2 class="anchored" data-anchor-id="so-how-to-do-it.">So, how to do it.</h2>
+<p>I’ll try to keep this brief, so I’ll immediately go to our recommendations on what to install and how to do it.</p>
+<section id="step-1-open-the-terminal." class="level4">
+<h4 class="anchored" data-anchor-id="step-1-open-the-terminal.">Step 1: open the terminal.</h4>
+<p>During this process we’ll be using the “terminal”. This is a computer program built-in in all operating systems (Windows, MacOS, Linux).</p>
+<p>You can type commands here, press enter, and they will be executed. This allows you to interact with your computer in a more “advanced” way. It is necessary for the installation process we recommend.</p>
+<p>Open the terminal window by:</p>
+<ul>
+<li><strong>MacOS</strong>: open the “terminal” app, e.g.&nbsp;by using the launchpad or spotlight search (press CMD+SPACE). See also <a href="https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac" target="_blank">this link</a></li>
+<li><strong>Windows</strong>: open the “powershell”. This can be done via the menu. See also <a href="https://www.howtogeek.com/662611/9-ways-to-open-powershell-in-windows-10/" target="_blank">this link</a>.</li>
+<li><strong>Linux</strong>: open the terminal. See also <a href="https://ubuntu.com/tutorials/command-line-for-beginners#3-opening-a-terminal" target="_blank">this link</a>.</li>
+</ul>
+<p>It should look somewhat like this:</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="post_images/installing-py_screenshot-terminal.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>A screenshot of my terminal.</figcaption>
+</figure>
+</div>
+<p>Having started the terminal, we’re now good to go.</p>
+</section>
+<section id="step-2-install-software-installing-software-ie-miniconda" class="level4">
+<h4 class="anchored" data-anchor-id="step-2-install-software-installing-software-ie-miniconda">Step 2: Install software-installing software, ie “MiniConda”</h4>
+<p>The software installing-software I was talking about, is Conda. You have:</p>
+<ul>
+<li><strong>Miniconda</strong>. We’ll use this. It’s very minimal.</li>
+<li><strong>Anaconda</strong>. We won’t use this. It’s easier to install and use, but there have been licencing issues even for universities.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Technical description of Conda
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ChatGPT: “Conda is a package and environment manager that allows you to easily install, manage, and isolate software dependencies, making it especially useful for scientific computing and reproducible research.”</p>
+</div>
+</div>
+</section>
+<section id="how-to-install-conda" class="level4">
+<h4 class="anchored" data-anchor-id="how-to-install-conda">How to install Conda</h4>
+<p>Go to: <a href="https://www.anaconda.com/docs/getting-started/miniconda/install" target="_blank">https://www.anaconda.com/docs/getting-started/miniconda/install</a></p>
+<p>This website explains which commands you have to type in the terminal to complete the installation of miniconda.</p>
+<p>At this website, using the tabs on the install instructions, go to the operating system you have on your computer. Follow the instructions there. You need to copy the lines (one by one) in the black box, which are instructions for your terminal. You can paste them (one by one) in your terminal, and press enter.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="post_images/installing-py_screenshot-miniconda.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption><strong>Miniconda installation instructions from Anaconda.com.</strong>. <em>Choose the applicable tab and execute the commands in your terminal.</em></figcaption>
+</figure>
+</div>
+</section>
+<section id="optional-learn-to-use-environments." class="level4">
+<h4 class="anchored" data-anchor-id="optional-learn-to-use-environments.">Optional: learn to use environments.</h4>
+<p>Read more about conda environments here: <a href="https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html" target="_blank">https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html</a></p>
+<!--
+DISCARDED
+#### Installing Miniconda
+
+1. Go to: https://www.anaconda.com/download/success
+    - (Registration can be skipped.)
+2. Scroll down to "Miniconda Installers"
+3. Follow instructions for your operating system.
+
+#### 
+-->
+</section>
+<section id="how-to-install-python-software-using-miniconda" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-install-python-software-using-miniconda">How to install Python software using Miniconda</h3>
+<section id="open-a-terminal-with-miniconda-activated" class="level4">
+<h4 class="anchored" data-anchor-id="open-a-terminal-with-miniconda-activated">1. Open a terminal with Miniconda activated</h4>
+<ul>
+<li>In windows, after installing Miniconda, open the “Anaconda Powershell Prompt (miniconda3)”.</li>
+<li>On a Macbook, if you have followed all the instructions, (close and re-)open the terminal. It should now display “(base)” in front of your username (see screenshot from my terminal above).</li>
+</ul>
+</section>
+<section id="install-python-and-libraries." class="level4">
+<h4 class="anchored" data-anchor-id="install-python-and-libraries.">2. Install python and libraries.</h4>
+<p>Python will be automatically installed in step 3. However, libraries often need to be installed separately. You can do this at any point you like, whenever it turns out you need a library that you haven’t installed yet.</p>
+<p>This can be done easily using miniconda. To install something using Conda, simply open the terminal and type the following command in the terminal, and press enter.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install XXXX</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Where XXXX is the library you want.</p>
+<p>You sometimes need to specifiy on which online “database” (“channel”) software is found. You also need to know the very specific name of the package.</p>
+<p>To address both these questions, it is easiest to just google for “conda install XXX”, where XXX is the package you want. For example, to install pandas, after Googling, we end up at <a href="https://anaconda.org/anaconda/pandas" target="_blank">this page</a>, and see the installation command is:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install anaconda::pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The part <code>anaconda::</code> specifies further where to find pandas installation files.</p>
+<p>Simply copy that code into your terminal, and press enter. You will see something like this:</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="post_images/installing-py_screenshot-terminal2.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>A 2nd screenshot of my terminal, using conda.</figcaption>
+</figure>
+</div>
+<p>Type a “y” and press enter to proceed. This means all the listed libraries will be installed. They are needed because in this case Pandas requires these other libraries to be installed in order to run. This is usually the case.</p>
+</section>
+<section id="choose-the-editor-software-you-want-and-install-it" class="level4">
+<h4 class="anchored" data-anchor-id="choose-the-editor-software-you-want-and-install-it">3. Choose the editor software you want and install it</h4>
+<p>To work with Python, there are multiple options for software to write scripts and run them using Python. I’ve listed them below.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 81%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Software</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>Jupyter<br><br></strong> <img src="post_images/installing-py_logo-jupyter.png" class="quarto-figure quarto-figure-center" height="50" alt="Jupyter."></td>
+<td>(+) Write code and text in blocks, and see the output directly below in one document. <br>(-) Not suitable for large amounts of code <br>(-) Adds extra layer complexity.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>Spyder<br></strong><img src="post_images/installing-py_logo-spyder.png" height="50" alt="Spyder."></td>
+<td>(+) Easily write simply .py files, inspect parameters. <br>(+) Rstudio or MATLAB like IDE. <br>(-) Lacks some modern features. <br>(-) No co-pilot integration.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Visual Studio Code<br></strong><img src="post_images/installing-py_logo-VScode.png" height="50" alt="Visual Studio Code."></td>
+<td>(+) ±Industry standard, has most advanced features. <br>(+) Plugins for many features. <br>(-) Very counter-intuitive to use. Makes it difficult to use.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>PyCharm<br></strong><img src="post_images/installing-py_logo-pycharm.jpg" height="50" alt="PyCharm."></td>
+<td>(We don’t have much experience with this, but it’s also good and often used.)</td>
+</tr>
+</tbody>
+</table>
+<p>For the workshop, we used Jupyter notebooks. We also recommend Spyder.</p>
+<p>The installation of both of these can be done through Conda.</p>
+<section id="installing-jupyter-using-conda" class="level5">
+<h5 class="anchored" data-anchor-id="installing-jupyter-using-conda">Installing Jupyter using Conda</h5>
+<p>Jupyter can be installed using Conda.</p>
+<p>On the official website they say use something called “pip” (<a href="https://jupyter.org/install" target="_blank">link</a>), but we recommend conda.</p>
+<p>Install jupyter similar as to how you installed other python libraries (see section “2” above).</p>
 
 
+</section>
+</section>
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Z2VuZXJhbCx3b3Jrc2hvcC1yZWxhdGVk" data-listing-date-sort="1734044400000" data-listing-file-modified-sort="1739265148172" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="570">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/python-or-R.html" class="no-external">Should I learn Python or R?</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/python-or-R.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Z2VuZXJhbA=='); return false;">
-general
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('d29ya3Nob3AtcmVsYXRlZA=='); return false;">
-workshop-related
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/python-or-R.html" class="no-external">When you haven’t had any exposure to scripting languages, but know some type of scripting language might be convenient to analyze your data, it might be hard to determine…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/python-or-R.html" class="no-external">
-<div class="listing-date">
-Dec 13, 2024
-</div>
-<div class="listing-author">
-Martijn Wehrens
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Y29tcGFyYXRpdmUgZ2Vub21pY3MsYXJhYmlkb3BzaXMsY3J1bmNob21pY3M=" data-listing-date-sort="1730674800000" data-listing-file-modified-sort="1731337257094" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1046">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/Ath_synteny.html" class="no-external">Visualizing Arabidopsis whole-genome alignments</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/Ath_synteny.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Y29tcGFyYXRpdmUgZ2Vub21pY3M='); return false;">
-comparative genomics
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('YXJhYmlkb3BzaXM='); return false;">
-arabidopsis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Y3J1bmNob21pY3M='); return false;">
-crunchomics
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/Ath_synteny.html" class="no-external">Learn how to plot genome rearrangements in this blog.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/Ath_synteny.html" class="no-external">
-<div class="listing-date">
-Nov 4, 2024
-</div>
-<div class="listing-author">
-Misha Paauw
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="aW50cm8sZ2VuZXJhbA==" data-listing-date-sort="1730242800000" data-listing-file-modified-sort="1731337257094" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="159">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/introduction.html" class="no-external">The bioDSC blog: first post</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/introduction.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('aW50cm8='); return false;">
-intro
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Z2VuZXJhbA=='); return false;">
-general
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/introduction.html" class="no-external">An introduction to the blog and its purpose.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/introduction.html" class="no-external">
-<div class="listing-date">
-Oct 30, 2024
-</div>
-<div class="listing-author">
-Misha Paauw
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="cHl0aG9uLHNvZnR3YXJlLGluc3RhbGxhdGlvbix0dXRvcmlhbA==" data-listing-date-sort="1710111600000" data-listing-file-modified-sort="1741695462491" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1144">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/installing_conda_python.html" class="no-external">Installing Python Software</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/installing_conda_python.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('cHl0aG9u'); return false;">
-python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('c29mdHdhcmU='); return false;">
-software
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('aW5zdGFsbGF0aW9u'); return false;">
-installation
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('dHV0b3JpYWw='); return false;">
-tutorial
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/installing_conda_python.html" class="no-external">Installing software that allows you to easily work with Python.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/installing_conda_python.html" class="no-external">
-<div class="listing-date">
-Mar 11, 2024
-</div>
-<div class="listing-author">
-Martijn Wehrens
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -792,7 +812,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
     <div class="nav-footer-right">
 <p>
-<img src="./images/uva-logo.png" height="25px;"> an <i>initiative</i> of the <a href="https://uva.nl" target="_blank">University of Amsterdam </a>
+<img src="../images/uva-logo.png" height="25px;"> an <i>initiative</i> of the <a href="https://uva.nl" target="_blank">University of Amsterdam </a>
 </p>
 </div>
   </div>
