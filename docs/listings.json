@@ -2,10 +2,10 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/installing_conda_python.html",
       "/posts/python-or-R.html",
       "/posts/Ath_synteny.html",
-      "/posts/introduction.html",
-      "/posts/installing_conda_python.html"
+      "/posts/introduction.html"
     ]
   },
   {
