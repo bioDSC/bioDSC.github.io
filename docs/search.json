@@ -84,6 +84,167 @@
     "text": "So, what should I choose?\nIf you’re uncertain what you should learn, feel free to drop us an email, walk by our desks, or contact us in another way to have a chat about what is most suitable for you!\nSend an email Drop by Slack"
   },
   {
+    "objectID": "posts/installing_conda_python.html",
+    "href": "posts/installing_conda_python.html",
+    "title": "Installing Python Software",
+    "section": "",
+    "text": "To be able to write Python code and execute it, it is convenient to install several types of software:"
+  },
+  {
+    "objectID": "posts/installing_conda_python.html#background-what-you-need.",
+    "href": "posts/installing_conda_python.html#background-what-you-need.",
+    "title": "Installing Python Software",
+    "section": "",
+    "text": "To be able to write Python code and execute it, it is convenient to install several types of software:"
+  },
+  {
+    "objectID": "posts/installing_conda_python.html#python-itself",
+    "href": "posts/installing_conda_python.html#python-itself",
+    "title": "Installing Python Software",
+    "section": "1: Python itself",
+    "text": "1: Python itself\nAs explained during our workshops, Python itself is a software that interprets written computer code, and uses that to make the computer do things. Sometimes Python is already installed on your computer, but often you need to install it.\nPython makes use of “libraries” (pre-written code with functions for specific tasks), that you likely need to download/install as well."
+  },
+  {
+    "objectID": "posts/installing_conda_python.html#a-text-editor-dedicated-to-writing-python-code",
+    "href": "posts/installing_conda_python.html#a-text-editor-dedicated-to-writing-python-code",
+    "title": "Installing Python Software",
+    "section": "2: A text editor dedicated to writing Python code",
+    "text": "2: A text editor dedicated to writing Python code\nIt is convenient to also install another piece of software, in which you can write Python code, and which also allows you to “send” the script towards the actual Python software.\nThis way you can write Python code in a pleasant way, and also run it immediately. In practice, you’ll only interact with this editor."
+  },
+  {
+    "objectID": "posts/installing_conda_python.html#software-installing-software.",
+    "href": "posts/installing_conda_python.html#software-installing-software.",
+    "title": "Installing Python Software",
+    "section": "3: Software installing-software.",
+    "text": "3: Software installing-software.\nInstalling software to manage software installation sounds perhaps a bit complicated, but it’ll make your life easier.\nInstalling Python, its libraries, and code editors, comes challenges, such as: 1. It is tedious to install all these things manually. 2. You might need a set of libraries for a specific task, which have installation requirements that exclude you from installing other libraries that you might need for another task.\nThese challenges are adressed by software that manages such “dependencies” and “conflicts”."
+  },
+  {
+    "objectID": "posts/installing_conda_python.html#how-to-install-python-software-using-miniconda",
+    "href": "posts/installing_conda_python.html#how-to-install-python-software-using-miniconda",
+    "title": "Installing Python Software",
+    "section": "How to install Python software using Miniconda",
+    "text": "How to install Python software using Miniconda\n\n1. Open a terminal with Miniconda activated\n\nIn windows, after installing Miniconda, open the “Anaconda Powershell Prompt (miniconda3)”.\nOn a Macbook, if you have followed all the instructions, (close and re-)open the terminal. It should now display “(base)” in front of your username (see screenshot from my terminal above).\n\n\n\n2. Install python and libraries.\nPython will be automatically installed in step 3. However, libraries often need to be installed separately. You can do this at any point you like, whenever it turns out you need a library that you haven’t installed yet.\nThis can be done easily using miniconda. To install something using Conda, simply open the terminal and type the following command in the terminal, and press enter.\nconda install XXXX\nWhere XXXX is the library you want.\nYou sometimes need to specifiy on which online “database” (“channel”) software is found. You also need to know the very specific name of the package.\nTo address both these questions, it is easiest to just google for “conda install XXX”, where XXX is the package you want. For example, to install pandas, after Googling, we end up at this page, and see the installation command is:\nconda install anaconda::pandas\nThe part anaconda:: specifies further where to find pandas installation files.\nSimply copy that code into your terminal, and press enter. You will see something like this:\n\n\n\nA 2nd screenshot of my terminal, using conda.\n\n\nType a “y” and press enter to proceed. This means all the listed libraries will be installed. They are needed because in this case Pandas requires these other libraries to be installed in order to run. This is usually the case.\n\n\n3. Choose the editor software you want and install it\nTo work with Python, there are multiple options for software to write scripts and run them using Python. I’ve listed them below.\n\n\n\n\n\n\n\nSoftware\nDescription\n\n\n\n\nJupyter \n(+) Write code and text in blocks, and see the output directly below in one document. (-) Not suitable for large amounts of code (-) Adds extra layer complexity.\n\n\nSpyder\n(+) Easily write simply .py files, inspect parameters. (+) Rstudio or MATLAB like IDE. (-) Lacks some modern features. (-) No co-pilot integration.\n\n\nVisual Studio Code\n(+) ±Industry standard, has most advanced features. (+) Understands different conda environments. (+) Plugins for many features. (-) Very counter-intuitive to use. Makes it difficult to use.\n\n\nPyCharm\n(We don’t have much experience with this, but it’s also good and often used.)\n\n\n\nFor the workshop, we used Jupyter notebooks. We also recommend Spyder.\nThe installation of both of these can be done through Conda. See below.\n\nInstalling Jupyter using Conda\nJupyter can be installed using Conda. (On the official website they say use something called “pip” (link), but we recommend conda.)\nInstall jupyter similar as to how you installed other python libraries (see section 2 above):\nconda install conda-forge::jupyterlab\n(Source.). Copy and paste this into a terminal which has conda activated, and press enter to run. (See above.)\nTo run Jupiter, simply type the following command in your terminal and press enter:\njupyter lab\nThis will start Jupyter running on your local computer.\n\n\nInstalling spyder using Conda\nSpyder can be installed using Conda.\nInstall Spyder similar as to how you installed other python libraries (see section 2 above). It is also described in detail at: https://docs.spyder-ide.org/current/installation.html\nPaste the following command in your terminal (and hit enter) for an extended installation:\nconda install -c conda-forge spyder numpy scipy pandas matplotlib sympy cython\nPaste the following command in your terminal (and hit enter) for an minimal installation:\nconda install -c conda-forge spyder\n(Note: the official installation instructions use “environments”, if you use the official instructions, read carefully about using environments.)\nTo run, simply open a terminal, and type (+ hit enter afterwards):\nspyder\n\n\nInstalling VS Code\nFollow the instructions at: https://code.visualstudio.com/\n\n\nInstalling PyCharm\nFollow the instructions at: https://www.jetbrains.com/pycharm/"
+  },
+  {
+    "objectID": "posts/installing_conda_python.html#a-final-note-about-this-blog",
+    "href": "posts/installing_conda_python.html#a-final-note-about-this-blog",
+    "title": "Installing Python Software",
+    "section": "A final note about this blog",
+    "text": "A final note about this blog\nThese installation instructions are intended for relative novices to using Python. For intermediates and experts, we recommend to use different conda environments when working with Python. However, for novices, we think it’s better to do everything in the base environment.\nWe do recommend people reading up on how to use conda environments. And while I’m at it, I also recommend people reading up on version tracking using Git and Github. But that’s another topic."
+  },
+  {
+    "objectID": "workshop-materials/py-intro/additional_exercises.html",
+    "href": "workshop-materials/py-intro/additional_exercises.html",
+    "title": "Additional exercises for Python Workshop",
+    "section": "",
+    "text": "Complementary to The Carpentries Python course\n\n\n\n\nWhat’s happening here:\n\n# use Google or chatGPT if you don't know the answers\n# if you're at the end, try to play around more\n\ngreetings_strings = ['hello', 'bye', 'later']\nprint(greetings_strings[0])\nprint(greetings_strings[1][2])\n    # (list of lists)\n\nprint([greetings_strings[idx] for idx in [0, 2]])\nprint([greetings_strings[0][idx] for idx in [0, 2, 4]])\nprint([greetings_strings[0][idx] for idx in range(0,4,2)])\n    # using a loop (will be covered later) / list comprehension\n\nsquare_values = [number**2 for number in range(10)]\nsquare_values_string = [str(number**2) for number in range(10)]\nprint(square_values)\nprint(square_values_string)\n    # types will be the topic of the next lesson\n\nspecies_name = \"Acacia buxifolia\"\nprint(\"\".join([species_name[i] for i in range(10, 2, -1)]))\n    # convenient command when working with strings\n\nprint(species_name.replace('Aca', 'Bole'))\n    # another convenient command\n\n# Exercise:\nlist_of_species = ['','','','']\nlist_of_species = ['Homo sapiens', 'Escherichia Coli', 'Pan troglodytes', 'Canis lupus', 'Felis catus']\n# Create a new lists, where you remove all letters 'e'"
+  },
+  {
+    "objectID": "workshop-materials/py-intro/additional_exercises.html#lesson-2",
+    "href": "workshop-materials/py-intro/additional_exercises.html#lesson-2",
+    "title": "Additional exercises for Python Workshop",
+    "section": "",
+    "text": "What’s happening here:\n\n# use Google or chatGPT if you don't know the answers\n# if you're at the end, try to play around more\n\ngreetings_strings = ['hello', 'bye', 'later']\nprint(greetings_strings[0])\nprint(greetings_strings[1][2])\n    # (list of lists)\n\nprint([greetings_strings[idx] for idx in [0, 2]])\nprint([greetings_strings[0][idx] for idx in [0, 2, 4]])\nprint([greetings_strings[0][idx] for idx in range(0,4,2)])\n    # using a loop (will be covered later) / list comprehension\n\nsquare_values = [number**2 for number in range(10)]\nsquare_values_string = [str(number**2) for number in range(10)]\nprint(square_values)\nprint(square_values_string)\n    # types will be the topic of the next lesson\n\nspecies_name = \"Acacia buxifolia\"\nprint(\"\".join([species_name[i] for i in range(10, 2, -1)]))\n    # convenient command when working with strings\n\nprint(species_name.replace('Aca', 'Bole'))\n    # another convenient command\n\n# Exercise:\nlist_of_species = ['','','','']\nlist_of_species = ['Homo sapiens', 'Escherichia Coli', 'Pan troglodytes', 'Canis lupus', 'Felis catus']\n# Create a new lists, where you remove all letters 'e'"
+  },
+  {
+    "objectID": "workshop-materials/index.html",
+    "href": "workshop-materials/index.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Overview\n\nFor the example plot, see here: link.\nFor additional exercises, see here: additional exercises."
+  },
+  {
+    "objectID": "workshops/2025-working-on.html",
+    "href": "workshops/2025-working-on.html",
+    "title": "List of past and upcoming workshops",
+    "section": "",
+    "text": "Below a list of planned workshops:\n\nAn introduction to R (Jan 2025)\n\nBasics of R\nImporting, manipulating and analyzing data (mostly using dataframes).\nPlotting using ggplot.\n\nBring your own data (February 25th, 2025)\n\nBring your own dataset and make publication-quality figures.\n\nAn introduction to Python (March 12 & 14, 2025).\n\nVariables, types, basic commands, functions, libraries.\nWorking with tabular data (Pandas).\nPlotting (matplotlib).\nUsing loops and conditionals, writing functions.\nGood practices in programming and software engineering.\n\nImage analysis with Python (planning: April/May 2025).\n\nBasics of working with images\nImage manipulation, cellular segmentation, and other often-used concepts.\n(..)\n\nAnalysis of RNA-sequencing data (planning: April/May 2025)\n\nRead quality control\nMapping reads to a reference genome\nDifferentially expressed gene analysis using DEseq2 in R.\n\n\nWe aim to give workshops based on demand. So if there’s enough people interested, workshops will be recurring."
+  },
+  {
+    "objectID": "workshops/2025-working-on.html#should-i-learn-python-or-r",
+    "href": "workshops/2025-working-on.html#should-i-learn-python-or-r",
+    "title": "List of past and upcoming workshops",
+    "section": "Should I learn Python or R?",
+    "text": "Should I learn Python or R?\nSee the blog post about Python vs. R in case you’re wondering whether you should start learning: R, or Python."
+  },
+  {
+    "objectID": "workshops/2025-introduction-python-2.html",
+    "href": "workshops/2025-introduction-python-2.html",
+    "title": "April 2 and 4 (2025): Introduction to Python",
+    "section": "",
+    "text": "This workshop is full.\n\n\n\n12 people have registered (surprisingly fast), we do not have place for more participants. Unfortunately, you cannot register any more.\nPlease send us an email in case you were interested in signing up, such that we know to organize more workshops soon.\n\n\n\nAn introduction to Python\nThe bioDSC organizes an introductory workshop that will cover basic functionalities of Python.\nPython is a computer script language that has become a workhorse of data analysis throughout many fields and disciplines. It can process and analyze big data sets, perform image analysis, and create great visualizations.\nSee below for small overview of what types of tasks can be done using Python.\n\n2nd session\nThis workshop will be exactly the same as the previous one. We are simply organizing another session since the previous workshop was booked completely full.\n\n\n\nWorkshop goals\nAfter this workshop, you’ll be familiar with Python basics. We’ll discuss and let you practice on:\n\n\nUsing Python (Jupyter notebooks, VS Studio code, Spyder)\n\nThroughout the workshop, we’ll use an online version of Jupyter notebook to avoid installation issues)\n\nVariables, types, basic commands, functions, libraries.\nWorking with tabular data (Pandas).\nPlotting (matplotlib).\nUsing loops and conditionals.\nWriting functions.\nGood practices in programming and software engineering.\n\n\nThis workshop will largely (&gt;95%) follow the Carpentries training material “Plotting and programming in Python”. All training material can be found at:\n\nhttps://swcarpentry.github.io/python-novice-gapminder/\n\nSee this workshop page for a summary of desired learning results. The materials we’ll use do not use examples specific to biology, but instead use the “Gapminder” dataset (see [1] and [2]). We think this offers thorough insights into how Python works. Follow-up courses, e.g. into image analysis, will be delve into more biological datasets.\nIf you have any questions regarding whether this course is relevant for you, please send us an email (info@biodsc.nl) or walk by our desks.\n\n\nRequirements\nThis workshop assumes no prior knowledge on Python or programming!\n\n\nWorkshop logistics\nThe course will be given by Misha Paauw, Martijn Wehrens and Frans van der Kloet from the bioDSC. There is room for 4-12 participants. You have to bring your own laptop, we’ll use an online version of Python, so there are no software installation requirements.\nAs mentioned, the contents of this workshops are almost completely based on: https://swcarpentry.github.io/python-novice-gapminder/\n\n\nWorkshop schedule\n\n\n\n\n\n\n\n\n\nDate\nTime\nLocation\nTopic\n\n\n\n\nApril 2\n13:00 - 17:30\nSP L1.13\nIntroduction to Python, episodes 1-9\n\n\nApril 4\n12:30 - 17:30\nSP L2.06\nIntroduction to Python, episodes 11-18\n\n\n\n\n\nSign up\n\n\n\n\n\n\n\n\nThis workshop is full.\n\n\n\n12 people have registered, we do not have place for more participants. Unfortunately, you cannot register any more.\nPlease send us an email in case you were interested in signing up, such that we know to organize more workshops soon.\n\n\n\n\n\nTypical use cases for Python\nPython is a scripting language, meaning that your write a file with commands for the computer to execute. This allows you to perform complicated tasks, such as:\n\n\nPlotting and analyzing large data sets\n\nWith the pandas, matplotlib, and seaborn library, large datasets can be imported, manipulated, and visualized\n\nImage analysis\n\nPython has become a great open-source tool for image analysis\nMultiple libraries are now available that can do pretty much any “classical” image operations to analyze images. You can:\n\nSegment your image (identify cells, or other parts of your image that are of interest)\nExtract summary parameters relevant for your analysis.\nRelated libraries: scikit-image, SciPy, OpenCV, ..\n\nMultiple tools exist to allow smooth user-interaction, such as Napari\n\nMachine learning, neural networks, LLM, AI\n\nPython has become the go-to tool for working with machine learning related tech\n\nLibraries: E.g. Keras and PyTorch\n\n\nHigh-throughput data analysis and automation\n\nPython is often used to process large amounts of data for further processing (see bio-informatics below)\n\nBioinformatics\n\nCan be used to handle, manipulate, process, quantify raw sequence data or similar.\nPerform single cell analysis, e.g. using the SCANPY lirbary.\nNot the tool for RNA-seq statistics and gene expression analysis, for which R is superior.\n\nMuch more ..\n\n\nSee also the post I wrote earlier to decide whether you should Python or R."
+  },
+  {
+    "objectID": "workshops/2025-introduction-python.html",
+    "href": "workshops/2025-introduction-python.html",
+    "title": "March 12 and 14 (2025): Introduction to Python",
+    "section": "",
+    "text": "This workshop is full.\n\n\n\n12 people have registered, we do not have place for more participants. Unfortunately, you cannot register any more.\nPlease send us an email in case you were interested in signing up, such that we know to organize more workshops soon.\n\n\n\nAn introduction to Python\nThe bioDSC organizes an introductory workshop that will cover basic functionalities of Python.\nPython is a computer script language that has become a workhorse of data analysis throughout many fields and disciplines. It can process and analyze big data sets, perform image analysis, and create great visualizations.\nSee below for small overview of what types of tasks can be done using Python.\n\n\nWorkshop goals\nAfter this workshop, you’ll be familiar with Python basics. We’ll discuss and let you practice on:\n\n\nUsing Python (Jupyter notebooks, VS Studio code, Spyder)\n\nThroughout the workshop, we’ll use an online version of Jupyter notebook to avoid installation issues)\n\nVariables, types, basic commands, functions, libraries.\nWorking with tabular data (Pandas).\nPlotting (matplotlib).\nUsing loops and conditionals.\nWriting functions.\nGood practices in programming and software engineering.\n\n\nThis workshop will largely (&gt;95%) follow the Carpentries training material “Plotting and programming in Python”. All training material can be found at:\n\nhttps://swcarpentry.github.io/python-novice-gapminder/\n\nSee this workshop page for a summary of desired learning results. The materials we’ll use do not use examples specific to biology, but instead use the “Gapminder” dataset (see [1] and [2]). We think this offers thorough insights into how Python works. Follow-up courses, e.g. into image analysis, will be delve into more biological datasets.\nIf you have any questions regarding whether this course is relevant for you, please send us an email (info@biodsc.nl) or walk by our desks.\n\n\nRequirements\nThis workshop assumes no prior knowledge on Python or programming!\n\n\nWorkshop logistics\nThe course will be given by Martijn Wehrens and Misha Paauw from the bioDSC. There is room for 4-12 participants. You have to bring your own laptop, we’ll use an online version of Python, so there are no software installation requirements.\nAs mentioned, the contents of this workshops are almost completely based on: https://swcarpentry.github.io/python-novice-gapminder/\n\n\nWorkshop schedule\n\n\n\n\n\n\n\n\n\nDate\nTime\nLocation\nTopic\n\n\n\n\n12 March\n12:30 - 17:30\nSP A1.06\nIntroduction to Python, episodes 1-9\n\n\n14 March\n12:30 - 17:30\nSP B0.209\nIntroduction to Python, episodes 11-18\n\n\n\n\n\nSign up\n\n\n\n\n\n\n\nThis workshop is full.\n\n\n\n12 people have registered, we do not have place for more participants. Unfortunately, you cannot register any more.\nPlease send us an email in case you were interested in signing up, such that we know to organize more workshops soon.\n\n\n\n\n\nTypical use cases for Python\nPython is a scripting language, meaning that your write a file with commands for the computer to execute. This allows you to perform complicated tasks, such as:\n\n\nPlotting and analyzing large data sets\n\nWith the pandas, matplotlib, and seaborn library, large datasets can be imported, manipulated, and visualized\n\nImage analysis\n\nPython has become a great open-source tool for image analysis\nMultiple libraries are now available that can do pretty much any “classical” image operations to analyze images. You can:\n\nSegment your image (identify cells, or other parts of your image that are of interest)\nExtract summary parameters relevant for your analysis.\nRelated libraries: scikit-image, SciPy, OpenCV, ..\n\nMultiple tools exist to allow smooth user-interaction, such as Napari\n\nMachine learning, neural networks, LLM, AI\n\nPython has become the go-to tool for working with machine learning related tech\n\nLibraries: E.g. Keras and PyTorch\n\n\nHigh-throughput data analysis and automation\n\nPython is often used to process large amounts of data for further processing (see bio-informatics below)\n\nBioinformatics\n\nCan be used to handle, manipulate, process, quantify raw sequence data or similar.\nPerform single cell analysis, e.g. using the SCANPY lirbary.\nNot the tool for RNA-seq statistics and gene expression analysis, for which R is superior.\n\nMuch more ..\n\n\nSee also the post I wrote earlier to decide whether you should Python or R."
+  },
+  {
+    "objectID": "workshops/2025-BYOD-1.html",
+    "href": "workshops/2025-BYOD-1.html",
+    "title": "24 February 2025: Bring Your Own Data",
+    "section": "",
+    "text": "The bioDSC organizes a “Bring Your Own Data” data visualization workshop. In this workshop, we will offer help and guidance to turn your own dataset into insightful visualizations using ggplot2 in R. You are expected to bring your own table with data to work on, ranging from a small pilot experiment to large-scale experimental assays. We can help improving your existing plotting scripts, or build one from scratch.\nThe aims of this workshop are to help you with:\n\nMaking (publication-quality) plots of your dataset\nWriting reusable scripts to generate more plots later with new datasets\nBecoming more experienced and confident in using R and ggplot2\n\n\n\n\nBoxplots, barplots, and lineplots made in ggplot2, taken from Paauw et al, 2024."
+  },
+  {
+    "objectID": "workshops/2025-BYOD-1.html#bring-your-own-data-data-visualization-workshop",
+    "href": "workshops/2025-BYOD-1.html#bring-your-own-data-data-visualization-workshop",
+    "title": "24 February 2025: Bring Your Own Data",
+    "section": "",
+    "text": "The bioDSC organizes a “Bring Your Own Data” data visualization workshop. In this workshop, we will offer help and guidance to turn your own dataset into insightful visualizations using ggplot2 in R. You are expected to bring your own table with data to work on, ranging from a small pilot experiment to large-scale experimental assays. We can help improving your existing plotting scripts, or build one from scratch.\nThe aims of this workshop are to help you with:\n\nMaking (publication-quality) plots of your dataset\nWriting reusable scripts to generate more plots later with new datasets\nBecoming more experienced and confident in using R and ggplot2\n\n\n\n\nBoxplots, barplots, and lineplots made in ggplot2, taken from Paauw et al, 2024."
+  },
+  {
+    "objectID": "workshops/2025-BYOD-1.html#prior-experience",
+    "href": "workshops/2025-BYOD-1.html#prior-experience",
+    "title": "24 February 2025: Bring Your Own Data",
+    "section": "Prior experience",
+    "text": "Prior experience\nFor this workshop, we assume that you have some experience with data manipulation and visualisation in R, using the tidyverse packages dplyr, tidyr and ggplot2. For example, you have followed our recent workshop Introduction to R where we covered the materials of R for Social Scientists. Alternatively, you have similar experience from other courses or your own explorations."
+  },
+  {
+    "objectID": "workshops/2025-BYOD-1.html#workshop-logistics",
+    "href": "workshops/2025-BYOD-1.html#workshop-logistics",
+    "title": "24 February 2025: Bring Your Own Data",
+    "section": "Workshop logistics",
+    "text": "Workshop logistics\nIn this workshop, you will work by yourself on your own dataset. Martijn Wehrens, Misha Paauw, and Frans van der Kloet from the bioDSC will be available to discuss your approach and help you with all the problems you encounter along the way. There is room for 4-12 participants. You have to bring your own laptop, with and R and RStudio installed, including the tidyverse package."
+  },
+  {
+    "objectID": "workshops/2025-BYOD-1.html#workshop-schedule",
+    "href": "workshops/2025-BYOD-1.html#workshop-schedule",
+    "title": "24 February 2025: Bring Your Own Data",
+    "section": "Workshop schedule",
+    "text": "Workshop schedule\n\n\n\n\n\n\n\n\n\nDate\nTime\nLocation\nTopic\n\n\n\n\nMonday 24 february\n13:00 - 16:00\nScience Park B0.206\nVisualisation of datasets"
+  },
+  {
+    "objectID": "workshops/2025-BYOD-1.html#sign-up",
+    "href": "workshops/2025-BYOD-1.html#sign-up",
+    "title": "24 February 2025: Bring Your Own Data",
+    "section": "Sign up",
+    "text": "Sign up\nSign up by sending an email to info@biodsc.nl.\nIn your email, please include the following:\n\nYour research group\nYour dataset in comma separated, tab separated, or excel table format (.csv, .tsv, .xlsx).\nA brief explanation of your dataset and the plots you want to make\nIdeally, a quick sketch of the plot you want to make\n\nSign up deadline: 19th of february!"
+  },
+  {
+    "objectID": "workshops/2025-introduction-R.html",
+    "href": "workshops/2025-introduction-R.html",
+    "title": "15 and 17 January 2025: Introduction to R",
+    "section": "",
+    "text": "The bioDSC organizes an introductory course on data analysis and visualisation in R. R is a programming language for statistical programming and data visualation, and is very popular in the field of biology. Chances are high that those nice figures you see in papers were generated in R! In addition, understanding the basics of R sets you up for more complex data-heavy analysis such as the analysis of RNA-seq data.\nThis workshop assumes no prior knowledge on R or programming!"
+  },
+  {
+    "objectID": "workshops/2025-introduction-R.html#should-i-learn-python-or-r",
+    "href": "workshops/2025-introduction-R.html#should-i-learn-python-or-r",
+    "title": "15 and 17 January 2025: Introduction to R",
+    "section": "Should I learn Python or R?",
+    "text": "Should I learn Python or R?\nSee the blog post about Python vs. R in case you’re wondering whether you should start learning: R, or Python. We have more workshops about Python and R coming soon.\n\nSign up\nSign up here. Sign up deadline: 8th of january!"
+  },
+  {
+    "objectID": "workshop-materials/py-intro/plot.html",
+    "href": "workshop-materials/py-intro/plot.html",
+    "title": "Workshop image",
+    "section": "",
+    "text": "Workshop image\n\n\n\nGDP of European countries 1952-2007."
+  },
+  {
     "objectID": "posts/Ath_synteny.html",
     "href": "posts/Ath_synteny.html",
     "title": "Visualizing Arabidopsis whole-genome alignments",
@@ -131,118 +292,6 @@
     "title": "Visualizing Arabidopsis whole-genome alignments",
     "section": "Further reading",
     "text": "Further reading\n\nsyri, a software package to identify structural rearrangements.\nplotsr, a software package to plot the rearrangements detected by syri.\nLian et al 2024 Nature Genetics.\nclinker, a versatile synteny visualization tool that works on smaller scales (gene clusters)."
-  },
-  {
-    "objectID": "workshop-materials/py-intro/plot.html",
-    "href": "workshop-materials/py-intro/plot.html",
-    "title": "Workshop image",
-    "section": "",
-    "text": "Workshop image\n\n\n\nGDP of European countries 1952-2007."
-  },
-  {
-    "objectID": "workshops/2025-introduction-R.html",
-    "href": "workshops/2025-introduction-R.html",
-    "title": "15 and 17 January 2025: Introduction to R",
-    "section": "",
-    "text": "The bioDSC organizes an introductory course on data analysis and visualisation in R. R is a programming language for statistical programming and data visualation, and is very popular in the field of biology. Chances are high that those nice figures you see in papers were generated in R! In addition, understanding the basics of R sets you up for more complex data-heavy analysis such as the analysis of RNA-seq data.\nThis workshop assumes no prior knowledge on R or programming!"
-  },
-  {
-    "objectID": "workshops/2025-introduction-R.html#should-i-learn-python-or-r",
-    "href": "workshops/2025-introduction-R.html#should-i-learn-python-or-r",
-    "title": "15 and 17 January 2025: Introduction to R",
-    "section": "Should I learn Python or R?",
-    "text": "Should I learn Python or R?\nSee the blog post about Python vs. R in case you’re wondering whether you should start learning: R, or Python. We have more workshops about Python and R coming soon.\n\nSign up\nSign up here. Sign up deadline: 8th of january!"
-  },
-  {
-    "objectID": "workshops/2025-BYOD-1.html",
-    "href": "workshops/2025-BYOD-1.html",
-    "title": "24 February 2025: Bring Your Own Data",
-    "section": "",
-    "text": "The bioDSC organizes a “Bring Your Own Data” data visualization workshop. In this workshop, we will offer help and guidance to turn your own dataset into insightful visualizations using ggplot2 in R. You are expected to bring your own table with data to work on, ranging from a small pilot experiment to large-scale experimental assays. We can help improving your existing plotting scripts, or build one from scratch.\nThe aims of this workshop are to help you with:\n\nMaking (publication-quality) plots of your dataset\nWriting reusable scripts to generate more plots later with new datasets\nBecoming more experienced and confident in using R and ggplot2\n\n\n\n\nBoxplots, barplots, and lineplots made in ggplot2, taken from Paauw et al, 2024."
-  },
-  {
-    "objectID": "workshops/2025-BYOD-1.html#bring-your-own-data-data-visualization-workshop",
-    "href": "workshops/2025-BYOD-1.html#bring-your-own-data-data-visualization-workshop",
-    "title": "24 February 2025: Bring Your Own Data",
-    "section": "",
-    "text": "The bioDSC organizes a “Bring Your Own Data” data visualization workshop. In this workshop, we will offer help and guidance to turn your own dataset into insightful visualizations using ggplot2 in R. You are expected to bring your own table with data to work on, ranging from a small pilot experiment to large-scale experimental assays. We can help improving your existing plotting scripts, or build one from scratch.\nThe aims of this workshop are to help you with:\n\nMaking (publication-quality) plots of your dataset\nWriting reusable scripts to generate more plots later with new datasets\nBecoming more experienced and confident in using R and ggplot2\n\n\n\n\nBoxplots, barplots, and lineplots made in ggplot2, taken from Paauw et al, 2024."
-  },
-  {
-    "objectID": "workshops/2025-BYOD-1.html#prior-experience",
-    "href": "workshops/2025-BYOD-1.html#prior-experience",
-    "title": "24 February 2025: Bring Your Own Data",
-    "section": "Prior experience",
-    "text": "Prior experience\nFor this workshop, we assume that you have some experience with data manipulation and visualisation in R, using the tidyverse packages dplyr, tidyr and ggplot2. For example, you have followed our recent workshop Introduction to R where we covered the materials of R for Social Scientists. Alternatively, you have similar experience from other courses or your own explorations."
-  },
-  {
-    "objectID": "workshops/2025-BYOD-1.html#workshop-logistics",
-    "href": "workshops/2025-BYOD-1.html#workshop-logistics",
-    "title": "24 February 2025: Bring Your Own Data",
-    "section": "Workshop logistics",
-    "text": "Workshop logistics\nIn this workshop, you will work by yourself on your own dataset. Martijn Wehrens, Misha Paauw, and Frans van der Kloet from the bioDSC will be available to discuss your approach and help you with all the problems you encounter along the way. There is room for 4-12 participants. You have to bring your own laptop, with and R and RStudio installed, including the tidyverse package."
-  },
-  {
-    "objectID": "workshops/2025-BYOD-1.html#workshop-schedule",
-    "href": "workshops/2025-BYOD-1.html#workshop-schedule",
-    "title": "24 February 2025: Bring Your Own Data",
-    "section": "Workshop schedule",
-    "text": "Workshop schedule\n\n\n\n\n\n\n\n\n\nDate\nTime\nLocation\nTopic\n\n\n\n\nMonday 24 february\n13:00 - 16:00\nScience Park B0.206\nVisualisation of datasets"
-  },
-  {
-    "objectID": "workshops/2025-BYOD-1.html#sign-up",
-    "href": "workshops/2025-BYOD-1.html#sign-up",
-    "title": "24 February 2025: Bring Your Own Data",
-    "section": "Sign up",
-    "text": "Sign up\nSign up by sending an email to info@biodsc.nl.\nIn your email, please include the following:\n\nYour research group\nYour dataset in comma separated, tab separated, or excel table format (.csv, .tsv, .xlsx).\nA brief explanation of your dataset and the plots you want to make\nIdeally, a quick sketch of the plot you want to make\n\nSign up deadline: 19th of february!"
-  },
-  {
-    "objectID": "workshops/2025-introduction-python.html",
-    "href": "workshops/2025-introduction-python.html",
-    "title": "March 12 and 14 (2025): Introduction to Python",
-    "section": "",
-    "text": "This workshop is full.\n\n\n\n12 people have registered, we do not have place for more participants. Unfortunately, you cannot register any more.\nPlease send us an email in case you were interested in signing up, such that we know to organize more workshops soon.\n\n\n\nAn introduction to Python\nThe bioDSC organizes an introductory workshop that will cover basic functionalities of Python.\nPython is a computer script language that has become a workhorse of data analysis throughout many fields and disciplines. It can process and analyze big data sets, perform image analysis, and create great visualizations.\nSee below for small overview of what types of tasks can be done using Python.\n\n\nWorkshop goals\nAfter this workshop, you’ll be familiar with Python basics. We’ll discuss and let you practice on:\n\n\nUsing Python (Jupyter notebooks, VS Studio code, Spyder)\n\nThroughout the workshop, we’ll use an online version of Jupyter notebook to avoid installation issues)\n\nVariables, types, basic commands, functions, libraries.\nWorking with tabular data (Pandas).\nPlotting (matplotlib).\nUsing loops and conditionals.\nWriting functions.\nGood practices in programming and software engineering.\n\n\nThis workshop will largely (&gt;95%) follow the Carpentries training material “Plotting and programming in Python”. All training material can be found at:\n\nhttps://swcarpentry.github.io/python-novice-gapminder/\n\nSee this workshop page for a summary of desired learning results. The materials we’ll use do not use examples specific to biology, but instead use the “Gapminder” dataset (see [1] and [2]). We think this offers thorough insights into how Python works. Follow-up courses, e.g. into image analysis, will be delve into more biological datasets.\nIf you have any questions regarding whether this course is relevant for you, please send us an email (info@biodsc.nl) or walk by our desks.\n\n\nRequirements\nThis workshop assumes no prior knowledge on Python or programming!\n\n\nWorkshop logistics\nThe course will be given by Martijn Wehrens and Misha Paauw from the bioDSC. There is room for 4-12 participants. You have to bring your own laptop, we’ll use an online version of Python, so there are no software installation requirements.\nAs mentioned, the contents of this workshops are almost completely based on: https://swcarpentry.github.io/python-novice-gapminder/\n\n\nWorkshop schedule\n\n\n\n\n\n\n\n\n\nDate\nTime\nLocation\nTopic\n\n\n\n\n12 March\n12:30 - 17:30\nSP A1.06\nIntroduction to Python, episodes 1-9\n\n\n14 March\n12:30 - 17:30\nSP B0.209\nIntroduction to Python, episodes 11-18\n\n\n\n\n\nSign up\n\n\n\n\n\n\n\nThis workshop is full.\n\n\n\n12 people have registered, we do not have place for more participants. Unfortunately, you cannot register any more.\nPlease send us an email in case you were interested in signing up, such that we know to organize more workshops soon.\n\n\n\n\n\nTypical use cases for Python\nPython is a scripting language, meaning that your write a file with commands for the computer to execute. This allows you to perform complicated tasks, such as:\n\n\nPlotting and analyzing large data sets\n\nWith the pandas, matplotlib, and seaborn library, large datasets can be imported, manipulated, and visualized\n\nImage analysis\n\nPython has become a great open-source tool for image analysis\nMultiple libraries are now available that can do pretty much any “classical” image operations to analyze images. You can:\n\nSegment your image (identify cells, or other parts of your image that are of interest)\nExtract summary parameters relevant for your analysis.\nRelated libraries: scikit-image, SciPy, OpenCV, ..\n\nMultiple tools exist to allow smooth user-interaction, such as Napari\n\nMachine learning, neural networks, LLM, AI\n\nPython has become the go-to tool for working with machine learning related tech\n\nLibraries: E.g. Keras and PyTorch\n\n\nHigh-throughput data analysis and automation\n\nPython is often used to process large amounts of data for further processing (see bio-informatics below)\n\nBioinformatics\n\nCan be used to handle, manipulate, process, quantify raw sequence data or similar.\nPerform single cell analysis, e.g. using the SCANPY lirbary.\nNot the tool for RNA-seq statistics and gene expression analysis, for which R is superior.\n\nMuch more ..\n\n\nSee also the post I wrote earlier to decide whether you should Python or R."
-  },
-  {
-    "objectID": "workshops/2025-introduction-python-2.html",
-    "href": "workshops/2025-introduction-python-2.html",
-    "title": "April 2 and 4 (2025): Introduction to Python",
-    "section": "",
-    "text": "This workshop is full.\n\n\n\n12 people have registered (surprisingly fast), we do not have place for more participants. Unfortunately, you cannot register any more.\nPlease send us an email in case you were interested in signing up, such that we know to organize more workshops soon.\n\n\n\nAn introduction to Python\nThe bioDSC organizes an introductory workshop that will cover basic functionalities of Python.\nPython is a computer script language that has become a workhorse of data analysis throughout many fields and disciplines. It can process and analyze big data sets, perform image analysis, and create great visualizations.\nSee below for small overview of what types of tasks can be done using Python.\n\n2nd session\nThis workshop will be exactly the same as the previous one. We are simply organizing another session since the previous workshop was booked completely full.\n\n\n\nWorkshop goals\nAfter this workshop, you’ll be familiar with Python basics. We’ll discuss and let you practice on:\n\n\nUsing Python (Jupyter notebooks, VS Studio code, Spyder)\n\nThroughout the workshop, we’ll use an online version of Jupyter notebook to avoid installation issues)\n\nVariables, types, basic commands, functions, libraries.\nWorking with tabular data (Pandas).\nPlotting (matplotlib).\nUsing loops and conditionals.\nWriting functions.\nGood practices in programming and software engineering.\n\n\nThis workshop will largely (&gt;95%) follow the Carpentries training material “Plotting and programming in Python”. All training material can be found at:\n\nhttps://swcarpentry.github.io/python-novice-gapminder/\n\nSee this workshop page for a summary of desired learning results. The materials we’ll use do not use examples specific to biology, but instead use the “Gapminder” dataset (see [1] and [2]). We think this offers thorough insights into how Python works. Follow-up courses, e.g. into image analysis, will be delve into more biological datasets.\nIf you have any questions regarding whether this course is relevant for you, please send us an email (info@biodsc.nl) or walk by our desks.\n\n\nRequirements\nThis workshop assumes no prior knowledge on Python or programming!\n\n\nWorkshop logistics\nThe course will be given by Misha Paauw, Martijn Wehrens and Frans van der Kloet from the bioDSC. There is room for 4-12 participants. You have to bring your own laptop, we’ll use an online version of Python, so there are no software installation requirements.\nAs mentioned, the contents of this workshops are almost completely based on: https://swcarpentry.github.io/python-novice-gapminder/\n\n\nWorkshop schedule\n\n\n\n\n\n\n\n\n\nDate\nTime\nLocation\nTopic\n\n\n\n\nApril 2\n13:00 - 17:30\nSP L1.13\nIntroduction to Python, episodes 1-9\n\n\nApril 4\n12:30 - 17:30\nSP L2.06\nIntroduction to Python, episodes 11-18\n\n\n\n\n\nSign up\n\n\n\n\n\n\n\n\nThis workshop is full.\n\n\n\n12 people have registered, we do not have place for more participants. Unfortunately, you cannot register any more.\nPlease send us an email in case you were interested in signing up, such that we know to organize more workshops soon.\n\n\n\n\n\nTypical use cases for Python\nPython is a scripting language, meaning that your write a file with commands for the computer to execute. This allows you to perform complicated tasks, such as:\n\n\nPlotting and analyzing large data sets\n\nWith the pandas, matplotlib, and seaborn library, large datasets can be imported, manipulated, and visualized\n\nImage analysis\n\nPython has become a great open-source tool for image analysis\nMultiple libraries are now available that can do pretty much any “classical” image operations to analyze images. You can:\n\nSegment your image (identify cells, or other parts of your image that are of interest)\nExtract summary parameters relevant for your analysis.\nRelated libraries: scikit-image, SciPy, OpenCV, ..\n\nMultiple tools exist to allow smooth user-interaction, such as Napari\n\nMachine learning, neural networks, LLM, AI\n\nPython has become the go-to tool for working with machine learning related tech\n\nLibraries: E.g. Keras and PyTorch\n\n\nHigh-throughput data analysis and automation\n\nPython is often used to process large amounts of data for further processing (see bio-informatics below)\n\nBioinformatics\n\nCan be used to handle, manipulate, process, quantify raw sequence data or similar.\nPerform single cell analysis, e.g. using the SCANPY lirbary.\nNot the tool for RNA-seq statistics and gene expression analysis, for which R is superior.\n\nMuch more ..\n\n\nSee also the post I wrote earlier to decide whether you should Python or R."
-  },
-  {
-    "objectID": "workshops/2025-working-on.html",
-    "href": "workshops/2025-working-on.html",
-    "title": "List of past and upcoming workshops",
-    "section": "",
-    "text": "Below a list of planned workshops:\n\nAn introduction to R (Jan 2025)\n\nBasics of R\nImporting, manipulating and analyzing data (mostly using dataframes).\nPlotting using ggplot.\n\nBring your own data (February 25th, 2025)\n\nBring your own dataset and make publication-quality figures.\n\nAn introduction to Python (March 12 & 14, 2025).\n\nVariables, types, basic commands, functions, libraries.\nWorking with tabular data (Pandas).\nPlotting (matplotlib).\nUsing loops and conditionals, writing functions.\nGood practices in programming and software engineering.\n\nImage analysis with Python (planning: April/May 2025).\n\nBasics of working with images\nImage manipulation, cellular segmentation, and other often-used concepts.\n(..)\n\nAnalysis of RNA-sequencing data (planning: April/May 2025)\n\nRead quality control\nMapping reads to a reference genome\nDifferentially expressed gene analysis using DEseq2 in R.\n\n\nWe aim to give workshops based on demand. So if there’s enough people interested, workshops will be recurring."
-  },
-  {
-    "objectID": "workshops/2025-working-on.html#should-i-learn-python-or-r",
-    "href": "workshops/2025-working-on.html#should-i-learn-python-or-r",
-    "title": "List of past and upcoming workshops",
-    "section": "Should I learn Python or R?",
-    "text": "Should I learn Python or R?\nSee the blog post about Python vs. R in case you’re wondering whether you should start learning: R, or Python."
-  },
-  {
-    "objectID": "workshop-materials/index.html",
-    "href": "workshop-materials/index.html",
-    "title": "Overview",
-    "section": "",
-    "text": "Overview\n\nFor the example plot, see here: link.\nFor additional exercises, see here: additional exercises."
-  },
-  {
-    "objectID": "workshop-materials/py-intro/additional_exercises.html",
-    "href": "workshop-materials/py-intro/additional_exercises.html",
-    "title": "Additional exercises for Python Workshop",
-    "section": "",
-    "text": "Complementary to The Carpentries Python course\n\n\n\n\nWhat’s happening here:\n\n# use Google or chatGPT if you don't know the answers\n# if you're at the end, try to play around more\n\ngreetings_strings = ['hello', 'bye', 'later']\nprint(greetings_strings[0])\nprint(greetings_strings[1][2])\n    # (list of lists)\n\nprint([greetings_strings[idx] for idx in [0, 2]])\nprint([greetings_strings[0][idx] for idx in [0, 2, 4]])\nprint([greetings_strings[0][idx] for idx in range(0,4,2)])\n    # using a loop (will be covered later) / list comprehension\n\nsquare_values = [number**2 for number in range(10)]\nsquare_values_string = [str(number**2) for number in range(10)]\nprint(square_values)\nprint(square_values_string)\n    # types will be the topic of the next lesson\n\nspecies_name = \"Acacia buxifolia\"\nprint(\"\".join([species_name[i] for i in range(10, 2, -1)]))\n    # convenient command when working with strings\n\nprint(species_name.replace('Aca', 'Bole'))\n    # another convenient command\n\n# Exercise:\nlist_of_species = ['','','','']\nlist_of_species = ['Homo sapiens', 'Escherichia Coli', 'Pan troglodytes', 'Canis lupus', 'Felis catus']\n# Create a new lists, where you remove all letters 'e'"
-  },
-  {
-    "objectID": "workshop-materials/py-intro/additional_exercises.html#lesson-2",
-    "href": "workshop-materials/py-intro/additional_exercises.html#lesson-2",
-    "title": "Additional exercises for Python Workshop",
-    "section": "",
-    "text": "What’s happening here:\n\n# use Google or chatGPT if you don't know the answers\n# if you're at the end, try to play around more\n\ngreetings_strings = ['hello', 'bye', 'later']\nprint(greetings_strings[0])\nprint(greetings_strings[1][2])\n    # (list of lists)\n\nprint([greetings_strings[idx] for idx in [0, 2]])\nprint([greetings_strings[0][idx] for idx in [0, 2, 4]])\nprint([greetings_strings[0][idx] for idx in range(0,4,2)])\n    # using a loop (will be covered later) / list comprehension\n\nsquare_values = [number**2 for number in range(10)]\nsquare_values_string = [str(number**2) for number in range(10)]\nprint(square_values)\nprint(square_values_string)\n    # types will be the topic of the next lesson\n\nspecies_name = \"Acacia buxifolia\"\nprint(\"\".join([species_name[i] for i in range(10, 2, -1)]))\n    # convenient command when working with strings\n\nprint(species_name.replace('Aca', 'Bole'))\n    # another convenient command\n\n# Exercise:\nlist_of_species = ['','','','']\nlist_of_species = ['Homo sapiens', 'Escherichia Coli', 'Pan troglodytes', 'Canis lupus', 'Felis catus']\n# Create a new lists, where you remove all letters 'e'"
   },
   {
     "objectID": "posts/introduction.html",
@@ -334,47 +383,5 @@
     "title": "*bio*DSC",
     "section": "",
     "text": "Here, we will provide links to other useful pages on the intersection between biology and data science. Send us an email if you maintain a page or blog with useful biology-related programming tips and tricks, and wish to be included in these lists.\n\n\n\nCrunchomics documentation\nThe IBED bioinformatics support page\n\n\n\n\n\nDataViz protocols by Joachim Goedhart\nFundamentals of Data Visualization by Claus Wilke\nAn introduction to good color schemes\n\n\n\n\n\nMeta-Omics tutorials by Anna Heintz-Buschart"
-  },
-  {
-    "objectID": "posts/installing_conda_python.html",
-    "href": "posts/installing_conda_python.html",
-    "title": "Installing Python Software",
-    "section": "",
-    "text": "To be able to write Python code and execute it, it is convenient to install several types of software.\n\n\nAs explained during our workshops, Python itself is a software that interprets written computer code, and uses that to make the computer do things. Sometimes Python is already installed on your computer, but often you need to install it.\nPython makes use of “libraries” (pre-written code with functions for specific tasks), that you likely need to download/install as well.\n\n\n\nIt is convenient to also install another piece of software, in which you can write Python code, and which also allows you to “send” the script towards the actual Python software.\nThis way you can write Python code in a pleasant way, and also run it immediately. In practice, you’ll only interact with this editor.\n\n\n\nInstalling software to manage software installation sounds perhaps a bit complicated, but it’ll make your life easier.\nInstalling Python, its libraries, and code editors, comes challenges, such as: 1. It is tedious to install all these things manually. 2. You might need a set of libraries for a specific task, which have installation requirements that exclude you from installing other libraries that you might need for another task.\nThese challenges are adressed by software that manages such “dependencies” and “conflicts”."
-  },
-  {
-    "objectID": "posts/installing_conda_python.html#how-to-install-python",
-    "href": "posts/installing_conda_python.html#how-to-install-python",
-    "title": "Installing Python Software",
-    "section": "",
-    "text": "To be able to write Python code and execute it, it is convenient to install several types of software.\n\n\nAs explained during our workshops, Python itself is a software that interprets written computer code, and uses that to make the computer do things. Sometimes Python is already installed on your computer, but often you need to install it.\nPython makes use of “libraries” (pre-written code with functions for specific tasks), that you likely need to download/install as well.\n\n\n\nIt is convenient to also install another piece of software, in which you can write Python code, and which also allows you to “send” the script towards the actual Python software.\nThis way you can write Python code in a pleasant way, and also run it immediately. In practice, you’ll only interact with this editor.\n\n\n\nInstalling software to manage software installation sounds perhaps a bit complicated, but it’ll make your life easier.\nInstalling Python, its libraries, and code editors, comes challenges, such as: 1. It is tedious to install all these things manually. 2. You might need a set of libraries for a specific task, which have installation requirements that exclude you from installing other libraries that you might need for another task.\nThese challenges are adressed by software that manages such “dependencies” and “conflicts”."
-  },
-  {
-    "objectID": "posts/installing_conda_python.html#so-what-should-i-install-and-how",
-    "href": "posts/installing_conda_python.html#so-what-should-i-install-and-how",
-    "title": "Installing Python Software",
-    "section": "So, what should I install and how?",
-    "text": "So, what should I install and how?"
-  },
-  {
-    "objectID": "posts/installing_conda_python.html#what-you-need.",
-    "href": "posts/installing_conda_python.html#what-you-need.",
-    "title": "Installing Python Software",
-    "section": "",
-    "text": "To be able to write Python code and execute it, it is convenient to install several types of software.\n\n\nAs explained during our workshops, Python itself is a software that interprets written computer code, and uses that to make the computer do things. Sometimes Python is already installed on your computer, but often you need to install it.\nPython makes use of “libraries” (pre-written code with functions for specific tasks), that you likely need to download/install as well.\n\n\n\nIt is convenient to also install another piece of software, in which you can write Python code, and which also allows you to “send” the script towards the actual Python software.\nThis way you can write Python code in a pleasant way, and also run it immediately. In practice, you’ll only interact with this editor.\n\n\n\nInstalling software to manage software installation sounds perhaps a bit complicated, but it’ll make your life easier.\nInstalling Python, its libraries, and code editors, comes challenges, such as: 1. It is tedious to install all these things manually. 2. You might need a set of libraries for a specific task, which have installation requirements that exclude you from installing other libraries that you might need for another task.\nThese challenges are adressed by software that manages such “dependencies” and “conflicts”."
-  },
-  {
-    "objectID": "posts/installing_conda_python.html#background-what-you-need.",
-    "href": "posts/installing_conda_python.html#background-what-you-need.",
-    "title": "Installing Python Software",
-    "section": "",
-    "text": "To be able to write Python code and execute it, it is convenient to install several types of software.\n\n\nAs explained during our workshops, Python itself is a software that interprets written computer code, and uses that to make the computer do things. Sometimes Python is already installed on your computer, but often you need to install it.\nPython makes use of “libraries” (pre-written code with functions for specific tasks), that you likely need to download/install as well.\n\n\n\nIt is convenient to also install another piece of software, in which you can write Python code, and which also allows you to “send” the script towards the actual Python software.\nThis way you can write Python code in a pleasant way, and also run it immediately. In practice, you’ll only interact with this editor.\n\n\n\nInstalling software to manage software installation sounds perhaps a bit complicated, but it’ll make your life easier.\nInstalling Python, its libraries, and code editors, comes challenges, such as: 1. It is tedious to install all these things manually. 2. You might need a set of libraries for a specific task, which have installation requirements that exclude you from installing other libraries that you might need for another task.\nThese challenges are adressed by software that manages such “dependencies” and “conflicts”."
-  },
-  {
-    "objectID": "posts/installing_conda_python.html#so-how-to-do-it.",
-    "href": "posts/installing_conda_python.html#so-how-to-do-it.",
-    "title": "Installing Python Software",
-    "section": "So, how to do it.",
-    "text": "So, how to do it.\nI’ll try to keep this brief, so I’ll immediately go to our recommendations on what to install and how to do it.\n\nStep 1: open the terminal.\nDuring this process we’ll be using the “terminal”. This is a computer program built-in in all operating systems (Windows, MacOS, Linux).\nYou can type commands here, press enter, and they will be executed. This allows you to interact with your computer in a more “advanced” way. It is necessary for the installation process we recommend.\nOpen the terminal window by:\n\nMacOS: open the “terminal” app, e.g. by using the launchpad or spotlight search (press CMD+SPACE). See also this link\nWindows: open the “powershell”. This can be done via the menu. See also this link.\nLinux: open the terminal. See also this link.\n\nIt should look somewhat like this:\n\n\n\nA screenshot of my terminal.\n\n\nHaving started the terminal, we’re now good to go.\n\n\nStep 2: Install software-installing software, ie “MiniConda”\nThe software installing-software I was talking about, is Conda. You have:\n\nMiniconda. We’ll use this. It’s very minimal.\nAnaconda. We won’t use this. It’s easier to install and use, but there have been licencing issues even for universities.\n\n\n\n\n\n\n\nTechnical description of Conda\n\n\n\nChatGPT: “Conda is a package and environment manager that allows you to easily install, manage, and isolate software dependencies, making it especially useful for scientific computing and reproducible research.”\n\n\n\n\nHow to install Conda\nGo to: https://www.anaconda.com/docs/getting-started/miniconda/install\nThis website explains which commands you have to type in the terminal to complete the installation of miniconda.\nAt this website, using the tabs on the install instructions, go to the operating system you have on your computer. Follow the instructions there. You need to copy the lines (one by one) in the black box, which are instructions for your terminal. You can paste them (one by one) in your terminal, and press enter.\n\n\n\nMiniconda installation instructions from Anaconda.com.. Choose the applicable tab and execute the commands in your terminal.\n\n\n\n\nOptional: learn to use environments.\nRead more about conda environments here: https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html\n\n\n\nHow to install Python software using Miniconda\n\n1. Open a terminal with Miniconda activated\n\nIn windows, after installing Miniconda, open the “Anaconda Powershell Prompt (miniconda3)”.\nOn a Macbook, if you have followed all the instructions, (close and re-)open the terminal. It should now display “(base)” in front of your username (see screenshot from my terminal above).\n\n\n\n2. Install python and libraries.\nPython will be automatically installed in step 3. However, libraries often need to be installed separately. You can do this at any point you like, whenever it turns out you need a library that you haven’t installed yet.\nThis can be done easily using miniconda. To install something using Conda, simply open the terminal and type the following command in the terminal, and press enter.\nconda install XXXX\nWhere XXXX is the library you want.\nYou sometimes need to specifiy on which online “database” (“channel”) software is found. You also need to know the very specific name of the package.\nTo address both these questions, it is easiest to just google for “conda install XXX”, where XXX is the package you want. For example, to install pandas, after Googling, we end up at this page, and see the installation command is:\nconda install anaconda::pandas\nThe part anaconda:: specifies further where to find pandas installation files.\nSimply copy that code into your terminal, and press enter. You will see something like this:\n\n\n\nA 2nd screenshot of my terminal, using conda.\n\n\nType a “y” and press enter to proceed. This means all the listed libraries will be installed. They are needed because in this case Pandas requires these other libraries to be installed in order to run. This is usually the case.\n\n\n3. Choose the editor software you want and install it\nTo work with Python, there are multiple options for software to write scripts and run them using Python. I’ve listed them below.\n\n\n\n\n\n\n\nSoftware\nDescription\n\n\n\n\nJupyter \n(+) Write code and text in blocks, and see the output directly below in one document. (-) Not suitable for large amounts of code (-) Adds extra layer complexity.\n\n\nSpyder\n(+) Easily write simply .py files, inspect parameters. (+) Rstudio or MATLAB like IDE. (-) Lacks some modern features. (-) No co-pilot integration.\n\n\nVisual Studio Code\n(+) ±Industry standard, has most advanced features. (+) Plugins for many features. (-) Very counter-intuitive to use. Makes it difficult to use.\n\n\nPyCharm\n(We don’t have much experience with this, but it’s also good and often used.)\n\n\n\nFor the workshop, we used Jupyter notebooks. We also recommend Spyder.\nThe installation of both of these can be done through Conda.\n\nInstalling Jupyter using Conda\nJupyter can be installed using Conda.\nOn the official website they say use something called “pip” (link), but we recommend conda.\nInstall jupyter similar as to how you installed other python libraries (see section “2” above)."
   }
 ]
