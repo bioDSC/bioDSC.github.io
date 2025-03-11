@@ -88,35 +88,28 @@
     "href": "posts/installing_conda_python.html",
     "title": "Installing Python Software",
     "section": "",
-    "text": "To be able to write Python code and execute it, it is convenient to install several types of software:"
-  },
-  {
-    "objectID": "posts/installing_conda_python.html#background-what-you-need.",
-    "href": "posts/installing_conda_python.html#background-what-you-need.",
-    "title": "Installing Python Software",
-    "section": "",
-    "text": "To be able to write Python code and execute it, it is convenient to install several types of software:"
+    "text": "To be able to write Python code and execute it, it is convenient to install several types of software:\n\n\nAs explained during our workshops, Python itself is a software that interprets written computer code, and uses that to make the computer do things. Sometimes Python is already installed on your computer, but often you need to install it.\nPython makes use of “libraries” (pre-written code with functions for specific tasks), that you likely need to download/install as well.\n\n\n\nIt is convenient to also install another piece of software, in which you can write Python code, and which also allows you to “send” the script towards the actual Python software.\nThis way you can write Python code in a pleasant way, and also run it immediately. In practice, you’ll only interact with this editor.\n\n\n\nInstalling software to manage software installation sounds perhaps a bit complicated, but it’ll make your life easier.\nInstalling Python, its libraries, and code editors, comes challenges, such as: 1. It is tedious to install all these things manually. 2. You might need a set of libraries for a specific task, which have installation requirements that exclude you from installing other libraries that you might need for another task.\nThese challenges are adressed by software that manages such “dependencies” and “conflicts”."
   },
   {
     "objectID": "posts/installing_conda_python.html#python-itself",
     "href": "posts/installing_conda_python.html#python-itself",
     "title": "Installing Python Software",
-    "section": "1: Python itself",
-    "text": "1: Python itself\nAs explained during our workshops, Python itself is a software that interprets written computer code, and uses that to make the computer do things. Sometimes Python is already installed on your computer, but often you need to install it.\nPython makes use of “libraries” (pre-written code with functions for specific tasks), that you likely need to download/install as well."
+    "section": "",
+    "text": "As explained during our workshops, Python itself is a software that interprets written computer code, and uses that to make the computer do things. Sometimes Python is already installed on your computer, but often you need to install it.\nPython makes use of “libraries” (pre-written code with functions for specific tasks), that you likely need to download/install as well."
   },
   {
     "objectID": "posts/installing_conda_python.html#a-text-editor-dedicated-to-writing-python-code",
     "href": "posts/installing_conda_python.html#a-text-editor-dedicated-to-writing-python-code",
     "title": "Installing Python Software",
-    "section": "2: A text editor dedicated to writing Python code",
-    "text": "2: A text editor dedicated to writing Python code\nIt is convenient to also install another piece of software, in which you can write Python code, and which also allows you to “send” the script towards the actual Python software.\nThis way you can write Python code in a pleasant way, and also run it immediately. In practice, you’ll only interact with this editor."
+    "section": "",
+    "text": "It is convenient to also install another piece of software, in which you can write Python code, and which also allows you to “send” the script towards the actual Python software.\nThis way you can write Python code in a pleasant way, and also run it immediately. In practice, you’ll only interact with this editor."
   },
   {
     "objectID": "posts/installing_conda_python.html#software-installing-software.",
     "href": "posts/installing_conda_python.html#software-installing-software.",
     "title": "Installing Python Software",
-    "section": "3: Software installing-software.",
-    "text": "3: Software installing-software.\nInstalling software to manage software installation sounds perhaps a bit complicated, but it’ll make your life easier.\nInstalling Python, its libraries, and code editors, comes challenges, such as: 1. It is tedious to install all these things manually. 2. You might need a set of libraries for a specific task, which have installation requirements that exclude you from installing other libraries that you might need for another task.\nThese challenges are adressed by software that manages such “dependencies” and “conflicts”."
+    "section": "",
+    "text": "Installing software to manage software installation sounds perhaps a bit complicated, but it’ll make your life easier.\nInstalling Python, its libraries, and code editors, comes challenges, such as: 1. It is tedious to install all these things manually. 2. You might need a set of libraries for a specific task, which have installation requirements that exclude you from installing other libraries that you might need for another task.\nThese challenges are adressed by software that manages such “dependencies” and “conflicts”."
   },
   {
     "objectID": "posts/installing_conda_python.html#how-to-install-python-software-using-miniconda",

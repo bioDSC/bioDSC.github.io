@@ -6,7 +6,7 @@ author: Martijn Wehrens
 categories: [python, software, installation, tutorial]
 ---
 
-## Background: what you need.
+# Background: what you need.
 
 To be able to write Python code and execute it, it is convenient to install several types of software:
 
