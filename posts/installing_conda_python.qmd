@@ -1,6 +1,6 @@
 ---
 title: "Installing Python Software"
-date: 2024-03-11
+date: 2025-03-11
 description: "Installing software that allows you to easily work with Python."
 author: Martijn Wehrens
 categories: [python, software, installation, tutorial]
