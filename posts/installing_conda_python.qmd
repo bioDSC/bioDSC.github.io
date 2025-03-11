@@ -8,33 +8,24 @@ categories: [python, software, installation, tutorial]
 
 # Summary
 
+<!--
+::: {.callout-warning}
+## This is a summary
+
+This is a summary section. See below for detailed instructions.
+:::
+-->
+
+*This section gives a brief summary, see below for more details.*
+
 Install miniconda through [the official website](https://www.anaconda.com/docs/getting-started/miniconda/install){target="_blank"}, and install either:
 
-**Jupyter labs**
+- **Jupyter labs**, by typing the following in your terminal: `conda install conda-forge::jupyterlab`
+- **Spyder**, by typing the following in your terminal: `conda install -c conda-forge spyder`
 
-By typing the following in your terminal:
+Plus:
 
-```sh
-conda install conda-forge::jupyterlab
-```
-
-**Spyder**
-
-By typing the following in your terminal:
-
-```sh
-conda install -c conda-forge spyder
-```
-
-**Plus additional libraries you need**
-
-By using google and typing in your terminal:
-
-```sh
-conda install XXXX
-```
-
-See below for detailed instructions.
+- **Additional libraries you need**, by using google and typing in your terminal: `conda install XXXX`
 
 # Background: what you need.
 
