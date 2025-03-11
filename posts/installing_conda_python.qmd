@@ -37,7 +37,7 @@ These challenges are adressed by software that manages such "dependencies" and "
 
 I'll try to keep this brief, so I'll immediately go to our recommendations on what to install and how to do it.
 
-### Step 1: open the terminal {#terminal}.
+### Step 1: open the terminal
 
 During this process we'll be using the "terminal".
 This is a computer program built-in in all operating systems (Windows, MacOS, Linux).
