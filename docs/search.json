@@ -88,7 +88,7 @@
     "href": "posts/installing_conda_python.html",
     "title": "Installing Python Software",
     "section": "",
-    "text": "Install miniconda through the official website, and install either:\nJupyter labs\nBy typing the following in your terminal:\nconda install conda-forge::jupyterlab\nSpyder\nBy typing the following in your terminal:\nconda install -c conda-forge spyder\nPlus additional libraries you need\nBy using google and typing in your terminal:\nconda install XXXX\nSee below for detailed instructions."
+    "text": "This section gives a brief summary, see below for more details.\nInstall miniconda through the official website, and install either:\n\nJupyter labs, by typing the following in your terminal: conda install conda-forge::jupyterlab\nSpyder, by typing the following in your terminal: conda install -c conda-forge spyder\n\nPlus:\n\nAdditional libraries you need, by using google and typing in your terminal: conda install XXXX"
   },
   {
     "objectID": "posts/installing_conda_python.html#python-itself",

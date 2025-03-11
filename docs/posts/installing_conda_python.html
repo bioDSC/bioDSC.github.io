@@ -217,17 +217,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="summary" class="level1">
 <h1>Summary</h1>
+<!--
+::: {.callout-warning}
+## This is a summary
+
+This is a summary section. See below for detailed instructions.
+:::
+-->
+<p><em>This section gives a brief summary, see below for more details.</em></p>
 <p>Install miniconda through <a href="https://www.anaconda.com/docs/getting-started/miniconda/install" target="_blank">the official website</a>, and install either:</p>
-<p><strong>Jupyter labs</strong></p>
-<p>By typing the following in your terminal:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install conda-forge::jupyterlab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Spyder</strong></p>
-<p>By typing the following in your terminal:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge spyder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Plus additional libraries you need</strong></p>
-<p>By using google and typing in your terminal:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install XXXX</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>See below for detailed instructions.</p>
+<ul>
+<li><strong>Jupyter labs</strong>, by typing the following in your terminal: <code>conda install conda-forge::jupyterlab</code></li>
+<li><strong>Spyder</strong>, by typing the following in your terminal: <code>conda install -c conda-forge spyder</code></li>
+</ul>
+<p>Plus:</p>
+<ul>
+<li><strong>Additional libraries you need</strong>, by using google and typing in your terminal: <code>conda install XXXX</code></li>
+</ul>
 </section>
 <section id="background-what-you-need." class="level1">
 <h1>Background: what you need.</h1>
@@ -336,11 +342,11 @@ DISCARDED
 <h3 class="anchored" data-anchor-id="sec2">2. Install python and libraries.</h3>
 <p>Python will be automatically installed in step 3. However, libraries often need to be installed separately. You can do this at any point you like, whenever it turns out you need a library that you haven’t installed yet.</p>
 <p>This can be done easily using miniconda. To install something using Conda, simply open the terminal and type the following command in the terminal, and press enter.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install XXXX</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install XXXX</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Where XXXX is the library you want.</p>
 <p>You sometimes need to specifiy on which online “database” (“channel”) software is found. You also need to know the very specific name of the package.</p>
 <p>To address both these questions, it is easiest to just google for “conda install XXX”, where XXX is the package you want. For example, to install pandas, after Googling, we end up at <a href="https://anaconda.org/anaconda/pandas" target="_blank">this page</a>, and see the installation command is:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install anaconda::pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install anaconda::pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The part <code>anaconda::</code> specifies further where to find pandas installation files.</p>
 <p>Simply copy that code into your terminal, and press enter. You will see something like this:</p>
 <div class="quarto-figure quarto-figure-left">
@@ -390,10 +396,10 @@ DISCARDED
 <h4 class="anchored" data-anchor-id="installing-jupyter-using-conda">Installing Jupyter using Conda</h4>
 <p>Jupyter can be installed using Conda. (On the official website they say use something called “pip” (<a href="https://jupyter.org/install" target="_blank">link</a>), but we recommend conda.)</p>
 <p>Install jupyter similar as to how you installed other python libraries (see <a href="#sec2">section 2</a> above):</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install conda-forge::jupyterlab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install conda-forge::jupyterlab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>(<a href="https://anaconda.org/conda-forge/jupyterlab" target="_blank">Source</a>.). Copy and paste this into a terminal which has conda activated, and press enter to run. (See above.)</p>
 <p>To run Jupyter, simply type the following command in your terminal and press enter:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will start Jupyter running on your local computer.</p>
 </section>
 <section id="installing-spyder-using-conda" class="level4">
@@ -401,12 +407,12 @@ DISCARDED
 <p>Spyder can be installed using Conda.</p>
 <p>Install Spyder similar as to how you installed other python libraries (see <a href="#sec2">section 2</a> above). It is also described in detail at: <a href="https://docs.spyder-ide.org/current/installation.html" target="_blank">https://docs.spyder-ide.org/current/installation.html</a></p>
 <p>Paste the following command in your terminal (and hit enter) for an extended installation:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge spyder numpy scipy pandas matplotlib sympy cython</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge spyder numpy scipy pandas matplotlib sympy cython</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Paste the following command in your terminal (and hit enter) for an minimal installation:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge spyder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge spyder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>(Note: the official installation instructions use “environments”, if you use the official instructions, read carefully about using environments.)</p>
 <p>To run, simply open a terminal, and type (+ hit enter afterwards):</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spyder</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spyder</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="installing-vs-code" class="level4">
 <h4 class="anchored" data-anchor-id="installing-vs-code">Installing VS Code</h4>
