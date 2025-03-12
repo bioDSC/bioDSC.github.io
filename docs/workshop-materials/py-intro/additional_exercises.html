@@ -492,6 +492,13 @@ plt.text(df_all.loc['Netherlands','gdpPercap_2007'], df_all.loc['Netherlands','l
 <li>Do the extra exercises of lesson 3 if you haven’t already.</li>
 </ul>
 </section>
+<section id="negative-slicing" class="level3">
+<h3 class="anchored" data-anchor-id="negative-slicing">Negative slicing</h3>
+<!-- Exercise by Frans -->
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>element <span class="op">=</span> <span class="st">'lithium'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What does <code>element[-7:3]</code> print and why?</p>
+<p><strong>Explanation:</strong> https://www.geeksforgeeks.org/slicing-with-negative-numbers-in-python/</p>
+</section>
 <section id="more-list-comprehensions-and-filtering" class="level3">
 <h3 class="anchored" data-anchor-id="more-list-comprehensions-and-filtering">More list comprehensions and filtering</h3>
 <ul>
@@ -530,26 +537,32 @@ plt.text(df_all.loc['Netherlands','gdpPercap_2007'], df_all.loc['Netherlands','l
 </section>
 <section id="lesson-12" class="level1">
 <h1>Lesson 12</h1>
+<section id="advanced-way-to-rgb" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-way-to-rgb">Advanced way to RGB</h3>
+<!-- Exercise by Frans -->
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">'red'</span>, <span class="st">'green'</span>, <span class="st">'blue'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Combine/edit the functions <code>x.join()</code>, <code>x.upper()</code> and the list comprehension <code>[w for w in words]</code> to create the string “RGB” in one line of code.</p>
+</section>
 <section id="plotting-and-looping" class="level3">
 <h3 class="anchored" data-anchor-id="plotting-and-looping">Plotting and looping</h3>
 <p>In the scatter plot created below, add top 10 GDP countries in the graph. Use a loop.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>data_all <span class="op">=</span> pd.read_csv(<span class="st">'/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/data/gapminder_all.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>data_all.plot(kind<span class="op">=</span><span class="st">'scatter'</span>, x<span class="op">=</span><span class="st">'gdpPercap_2007'</span>, y<span class="op">=</span><span class="st">'lifeExp_2007'</span>,</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>              s<span class="op">=</span>data_all[<span class="st">'pop_2007'</span>]<span class="op">/</span><span class="fl">1e6</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>plt.text(data_all.loc[<span class="st">'United States'</span>,<span class="st">'gdpPercap_2007'</span>], data_all.loc[<span class="st">'United States'</span>,<span class="st">'lifeExp_2007'</span>], <span class="st">'United States'</span>)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>plt.text(data_all.loc[<span class="st">'Netherlands'</span>,<span class="st">'gdpPercap_2007'</span>], data_all.loc[<span class="st">'Netherlands'</span>,<span class="st">'lifeExp_2007'</span>], <span class="st">'Netherlands'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>data_all <span class="op">=</span> pd.read_csv(<span class="st">'/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/data/gapminder_all.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>data_all.plot(kind<span class="op">=</span><span class="st">'scatter'</span>, x<span class="op">=</span><span class="st">'gdpPercap_2007'</span>, y<span class="op">=</span><span class="st">'lifeExp_2007'</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>              s<span class="op">=</span>data_all[<span class="st">'pop_2007'</span>]<span class="op">/</span><span class="fl">1e6</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>plt.text(data_all.loc[<span class="st">'United States'</span>,<span class="st">'gdpPercap_2007'</span>], data_all.loc[<span class="st">'United States'</span>,<span class="st">'lifeExp_2007'</span>], <span class="st">'United States'</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>plt.text(data_all.loc[<span class="st">'Netherlands'</span>,<span class="st">'gdpPercap_2007'</span>], data_all.loc[<span class="st">'Netherlands'</span>,<span class="st">'lifeExp_2007'</span>], <span class="st">'Netherlands'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="nested-loops" class="level3">
 <h3 class="anchored" data-anchor-id="nested-loops">Nested loops</h3>
 <p>Explain the output of the following code:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx1 <span class="kw">in</span> [<span class="dv">1</span>,<span class="dv">2</span>]:</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> idx2 <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> idx3 <span class="kw">in</span> [<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">0</span>]:</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">'product = '</span>, idx1<span class="op">*</span>idx2<span class="op">*</span>idx3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx1 <span class="kw">in</span> [<span class="dv">1</span>,<span class="dv">2</span>]:</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> idx2 <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> idx3 <span class="kw">in</span> [<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">0</span>]:</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">'product = '</span>, idx1<span class="op">*</span>idx2<span class="op">*</span>idx3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="using-subplots-nested-loops" class="level3">
 <h3 class="anchored" data-anchor-id="using-subplots-nested-loops">Using subplots, nested loops</h3>
@@ -587,13 +600,13 @@ plt.text(df_all.loc['Netherlands','gdpPercap_2007'], df_all.loc['Netherlands','l
 </div>
 <p>The two dimensions can be any length.</p>
 <p>Check out the following code:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>data_europe <span class="op">=</span> pd.read_csv(<span class="st">'/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>data_europe.shape</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(data_europe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>data_europe <span class="op">=</span> pd.read_csv(<span class="st">'/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>data_europe.shape</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(data_europe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>How many panels would you need to create a separate GDP trend subplot for each country of Europe?</p>
 </section>
 <section id="b" class="level4">
@@ -614,59 +627,59 @@ for idx_i in range(6):
 <section id="c" class="level3">
 <h3 class="anchored" data-anchor-id="c">C</h3>
 <p>Study the code below and try to understand what happens:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Reshape the dataframe to long format </span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># transpose</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>data_europe_tranposed <span class="op">=</span> data_europe.T</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add year as int</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>data_europe_tranposed[<span class="st">'Year'</span>] <span class="op">=</span> data_europe.columns.<span class="bu">str</span>.replace(<span class="st">'gdpPercap_'</span>, <span class="st">''</span>).astype(<span class="bu">int</span>)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># actual reshape to long format</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>data_europe_tranposed_melted <span class="op">=</span> data_europe_tranposed.melt(id_vars<span class="op">=</span><span class="st">'Year'</span>, var_name<span class="op">=</span><span class="st">'Country'</span>, value_name<span class="op">=</span><span class="st">'GDP'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Reshape the dataframe to long format </span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># transpose</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>data_europe_tranposed <span class="op">=</span> data_europe.T</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add year as int</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>data_europe_tranposed[<span class="st">'Year'</span>] <span class="op">=</span> data_europe.columns.<span class="bu">str</span>.replace(<span class="st">'gdpPercap_'</span>, <span class="st">''</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># actual reshape to long format</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>data_europe_tranposed_melted <span class="op">=</span> data_europe_tranposed.melt(id_vars<span class="op">=</span><span class="st">'Year'</span>, var_name<span class="op">=</span><span class="st">'Country'</span>, value_name<span class="op">=</span><span class="st">'GDP'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Remember: running code is free. Try to run code and check out what’s in parameters too see what happens.</p>
 </section>
 <section id="d" class="level3">
 <h3 class="anchored" data-anchor-id="d">D</h3>
 <p>Edit the code below to reproduce the plot in: https://www.biodsc.nl/workshop-materials/plot.html</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># get all countries</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>countries_europe <span class="op">=</span> ____</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Start figure</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">6</span>,<span class="dv">5</span>, figsize<span class="op">=</span>(<span class="dv">10</span><span class="op">/</span><span class="fl">2.54</span>,<span class="dv">10</span><span class="op">/</span><span class="fl">2.54</span>)) <span class="co"># 2.54 = cm to inch factor</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Looping to create data</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>counter<span class="op">=</span><span class="dv">0</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Go over panels</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx_i <span class="kw">in</span> <span class="bu">range</span>(___):</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> idx_j <span class="kw">in</span> <span class="bu">range</span>(___):                </span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Determine which part dataframe we need</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>        current_selection <span class="op">=</span> data_europe_tranposed_melted[<span class="st">'Country'</span>]<span class="op">==</span>countries_europe[counter]</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Make the plot</span></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># IMPORTANT ARGUMENT: ax=ax[idx_i,idx_j]</span></span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>        data_europe_tranposed_melted.loc[___].plot(x<span class="op">=</span>___, y<span class="op">=</span>___, ax<span class="op">=</span>ax[idx_i,idx_j])</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Add title</span></span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>        ax[idx_i, idx_j].set_title(___, fontsize<span class="op">=</span><span class="dv">5</span>)</span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># remove all labels except title</span></span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>        ax[idx_i, idx_j].set_xlabel(<span class="st">''</span>)</span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>        _____</span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>        ax[idx_i, idx_j].set_xticks([])</span>
-<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>        _____</span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># remove legend</span></span>
-<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>        _____ <span class="co"># google this?</span></span>
-<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Administration for which country we are at</span></span>
-<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>        counter <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Saving            </span></span>
-<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()            </span>
-<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a><span class="co"># save to pdf and png</span></span>
-<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">'202503_example-advanced.pdf'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
-<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">'202503_example-advanced.png'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
-<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.show()</span></span>
-<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.close('all')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># get all countries</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>countries_europe <span class="op">=</span> ____</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Start figure</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">6</span>,<span class="dv">5</span>, figsize<span class="op">=</span>(<span class="dv">10</span><span class="op">/</span><span class="fl">2.54</span>,<span class="dv">10</span><span class="op">/</span><span class="fl">2.54</span>)) <span class="co"># 2.54 = cm to inch factor</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Looping to create data</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>counter<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Go over panels</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx_i <span class="kw">in</span> <span class="bu">range</span>(___):</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> idx_j <span class="kw">in</span> <span class="bu">range</span>(___):                </span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Determine which part dataframe we need</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>        current_selection <span class="op">=</span> data_europe_tranposed_melted[<span class="st">'Country'</span>]<span class="op">==</span>countries_europe[counter]</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Make the plot</span></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># IMPORTANT ARGUMENT: ax=ax[idx_i,idx_j]</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>        data_europe_tranposed_melted.loc[___].plot(x<span class="op">=</span>___, y<span class="op">=</span>___, ax<span class="op">=</span>ax[idx_i,idx_j])</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Add title</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>        ax[idx_i, idx_j].set_title(___, fontsize<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># remove all labels except title</span></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>        ax[idx_i, idx_j].set_xlabel(<span class="st">''</span>)</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>        _____</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>        ax[idx_i, idx_j].set_xticks([])</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>        _____</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># remove legend</span></span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>        _____ <span class="co"># google this?</span></span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Administration for which country we are at</span></span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>        counter <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Saving            </span></span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()            </span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a><span class="co"># save to pdf and png</span></span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">'202503_example-advanced.pdf'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">'202503_example-advanced.png'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.show()</span></span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.close('all')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="lesson-13" class="level1">
@@ -676,9 +689,9 @@ for idx_i in range(6):
 <section id="a-1" class="level4">
 <h4 class="anchored" data-anchor-id="a-1">A</h4>
 <p>Adapt the following code to select only positive values:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>example_list <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">34</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">10</span>, <span class="dv">39</span>]</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>example_list_pos <span class="op">=</span> [___ <span class="cf">for</span> item <span class="kw">in</span> example_list <span class="cf">if</span> ___]</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(example_list_pos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>example_list <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">34</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">10</span>, <span class="dv">39</span>]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>example_list_pos <span class="op">=</span> [___ <span class="cf">for</span> item <span class="kw">in</span> example_list <span class="cf">if</span> ___]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(example_list_pos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="b-1" class="level4">
 <h4 class="anchored" data-anchor-id="b-1">B</h4>
