@@ -306,6 +306,19 @@ plt.text(df_all.loc['Netherlands','gdpPercap_2007'], df_all.loc['Netherlands','l
 
 - Do the extra exercises of lesson 3 if you haven't already.
 
+### Negative slicing
+<!-- Exercise by Frans -->
+
+```python
+element = 'lithium'
+```
+
+What does `element[-7:3]` print and why?
+
+**Explanation:** https://www.geeksforgeeks.org/slicing-with-negative-numbers-in-python/
+
+
+
 ### More list comprehensions and filtering
 
 - Edit the following code such that the list consists of values `2x+x^2-1` where x is the index of the list element.
@@ -335,6 +348,14 @@ plt.text(df_all.loc['Netherlands','gdpPercap_2007'], df_all.loc['Netherlands','l
 
 # Lesson 12
 
+### Advanced way to RGB
+<!-- Exercise by Frans -->
+
+```python
+words = ['red', 'green', 'blue']
+```
+
+Combine/edit the functions `x.join()`, `x.upper()` and the list comprehension `[w for w in words]` to create the string "RGB" in one line of code.
 
 ### Plotting and looping
 
