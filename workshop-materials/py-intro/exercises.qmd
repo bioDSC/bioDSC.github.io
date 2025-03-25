@@ -967,17 +967,6 @@ for ____ in ____:
 print(result)
 ```
 
-### Identifying Item Errors
-
-- Read the code below and try to identify what the errors are without running it.
-- Run the code, and read the error message. What type of error is it?
-- Fix the error.
-
-```python
-seasons = ['Spring', 'Summer', 'Fall', 'Winter']
-print('My favorite season is ', seasons[4])
-```
-
 ##################################################
 ---
 
@@ -1008,6 +997,16 @@ Create an acronym: Starting from the list ["red", "green", "blue"], create the a
 - **bioDSC remark**: Note the capitals in "RGB"!
 - **Hint**: You may need to use a string method to properly format the acronym.
 
+### Identifying Item Errors
+
+- Read the code below and try to identify what the errors are without running it.
+- Run the code, and read the error message. What type of error is it?
+- Fix the error.
+
+```python
+seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+print('My favorite season is ', seasons[4])
+```
 
 ### Cumulative Sum (code puzzle)
 
@@ -1044,8 +1043,348 @@ print(message)
 
 Is an indentation error a syntax error or a runtime error?
 
+##################################################
+---
+
+# Exercises Lesson 13, Conditionals
+
+### Tracing Execution
+
+What does this program print?
+
+```python
+pressure = 71.9
+if pressure > 50.0:
+    pressure = 25.0
+elif pressure <= 50.0:
+    pressure = 0.0
+print(pressure)
+```
+
+### Trimming Values
+
+Fill in the blanks so that this program creates a new list containing zeroes where the original list’s values were negative and ones where the original list’s values were positive.
+
+```python
+original = [-1.5, 0.2, 0.4, 0.0, -1.3, 0.4]
+result = ____
+for value in original:
+    if ____:
+        result.append(0)
+    else:
+        ____
+print(result)
+```
+
+Desired output:
+```
+[0, 1, 1, 1, 0, 1]
+```
+
+### Processing Small Files
+
+Modify this program so that it only processes files with fewer than 50 records.
+
+```python
+import glob
+import pandas as pd
+for filename in glob.glob('data/*.csv'):
+    contents = pd.read_csv(filename)
+    ____:
+        print(filename, len(contents))
+```        
+
+
+##################################################
+---
+
+# Additional Exercises Lesson 13, Conditionals
+
+### List comprehension (bioDSC)
+
+#### A
+
+Adapt the following code to select only positive values:
+
+```python
+example_list = [1,2,3,4,-5,1,34,6,-10, 39]
+example_list_pos = [___ for item in example_list if ___]
+print(example_list_pos)
+```
+
+#### B
+
+Use the same code, but:
+- select values between 30 and 40
+- select items <0 or >10
+
+#### C
+
+Use a np.array (see additional exercises Lesson 3) to do the same more elegantly.
+
+### Enumerate, zip (bioDSC)
+
+These exercises introduce two new concepts. 
+You might need google.
+
+#### A
+
+What does the following code do? What is the meaning of the output?
+
+```
+for idx, item in enumerate([1,2,3,4,-5,1,34,6,-10]):
+    
+    if item>5:
+        print(idx)
+```
+
+#### B
+
+Modify the following code such that it will compare each item i in apples with each item i in pears, and tell you which one is heavier.
+You need to edit the code.
+
+```
+apples = [123, 436, 123, 654, 117, 193, 120]
+pears  = [543, 163, 178, 165, 123, 187, 190]
+
+for apple_weight, pear_weight in zip(apples, pears):
+    print('='*10)
+    print('weigth apple: ', apple_weight)
+    print('weigth pear: ',pear_weight)
+    
+    print('the XXX is heavier')
+```
+
+
+### Initializing
+
+Modify this program so that it finds the largest and smallest values in the list no matter what the range of values originally is.
+
+```python
+values = [...some test data...]
+smallest, largest = None, None
+for v in values:
+    if ____:
+        smallest, largest = v, v
+    ____:
+        smallest = min(____, v)
+        largest = max(____, v)
+print(smallest, largest)
+```
+
+What are the advantages and disadvantages of using this method to find the range of the data?
+
+
+**bioDSC hints**
+
+The loop could also look as follows:
+
+```python
+values = [...some test data...]
+smallest, largest = None, None
+for v in values:
+    smallest = min(____, v)
+    largest = max(____, v)
+```
+
+Why wouldn't this work?
+
+This is why the if statement is needed. 
+
+How can we test whether we are in the first iteration?
 
 
 
 
+
+
+##################################################
+---
+
+# Exercises Lesson 14, Looping over data
+
+### Determining Matches
+
+Which of these files is not matched by the expression glob.glob('data/*as*.csv')?
+
+```
+data/gapminder_gdp_africa.csv
+data/gapminder_gdp_americas.csv
+data/gapminder_gdp_asia.csv
+```
+
+### Minimum File Size
+
+Modify this program so that it prints the number of records in the file that has the fewest records.
+
+```python
+import glob
+import pandas as pd
+fewest = ____
+for filename in glob.glob('data/*.csv'):
+    dataframe = pd.____(filename)
+    fewest = min(____, dataframe.shape[0])
+print('smallest file has', fewest, 'records')
+```
+
+Note that the DataFrame.shape() method returns a tuple with the number of rows and columns of the data frame.
+
+##################################################
+---
+
+# Additional Exercises Lesson 14, Looping over data
+
+### Comparing Data
+
+Write a program that reads in the regional data sets and plots the average GDP per capita for each region over time in a single chart. 
+
+Pandas will raise an error if it encounters non-numeric columns in a dataframe computation so you may need to either filter out those columns or tell pandas to ignore them.
+
+
+##################################################
+---
+
+*(Lesson 15 is a break.)*
+
+##################################################
+---
+
+# Exercises Lesson 16, Functions
+
+### Identifying Syntax Errors
+
+Read the code below and try to identify what the errors are without running it.
+Run the code and read the error message. Is it a SyntaxError or an IndentationError?
+Fix the error.
+
+```
+def another_function
+  print("Syntax errors are annoying.")
+   print("But at least python tells us about them!")
+  print("So they are usually not too hard to fix.")
+```
+
+### What does the following program print?
+
+```python
+def report(pressure):
+    print('pressure is', pressure)
+
+print('calling', report, 22.5)
+```
+
+### Encapsulation
+
+Fill in the blanks to create a function that takes a single filename as an argument, loads the data in the file named by the argument, and returns the minimum value in that data.
+
+```python
+import pandas as pd
+
+def min_in_data(____):
+    data = ____
+    return ____
+```
+
+##################################################
+---
+
+# Additional Exercises Lesson 16, Functions
+
+### Order of Operations
+
+What’s wrong in this example?
+
+```python
+result = print_time(11, 37, 59)
+
+def print_time(hour, minute, second):
+   time_string = str(hour) + ':' + str(minute) + ':' + str(second)
+   print(time_string)
+```
+
+After fixing the problem above, explain why running this example code:
+
+```PYTHON
+result = print_time(11, 37, 59)
+print('result of call is:', result)
+```
+
+gives this output:
+
+```
+11:37:59
+result of call is: None
+```
+
+Why is the result of the call None?
+
+
+### Find the First
+
+Fill in the blanks to create a function that takes a list of numbers as an argument and returns the first negative value in the list. What does your function do if the list is empty? What if the list has no negative numbers?
+
+```python
+def first_negative(values):
+    for v in ____:
+        if ____:
+            return ____
+```
+
+### Calling by Name
+Earlier we saw this function:
+
+```python
+def print_date(year, month, day):
+    joined = str(year) + '/' + str(month) + '/' + str(day)
+    print(joined)
+```
+
+We saw that we can call the function using named arguments, like this:
+```python
+print_date(day=1, month=2, year=2003)
+```
+
+- What does `print_date(day=1, month=2, year=2003)` print?
+- When have you seen a function call like this before?
+- When and why is it useful to call functions this way?
+
+### Omitted exercises
+
+Continue with more exercises at:
+https://swcarpentry.github.io/python-novice-gapminder/instructor/16-writing-functions.html
+
+(See: "Encapsulation of an If/Print Block".)
+
+### Primes
+
+Write a function that looks as follows:
+```
+def calculate_primes(N):
+    ...
+```
+that returns an array with prime numbers between 0 and N.
+
+Hints:
+- Start with writing a function `is_number_prime(X)`, that checks whether $X$ is a prime number.
+- You probably need the following ingredients for that function: 
+    - How to test if a number is divisible by any number?
+    - Use a for loop to test whether $X$ can be divided by all numbers $<X$.
+    - Could be convenient to make smart use of the `return` function.
+    
+```
+def is_number_prime(X):
+    
+    # <insert explanatory comment>
+    for y in range(X):
+    
+        # <insert explanatory comment>
+        if ...:
+            return False
+    
+    # <insert explanatory comment>
+    return True
+
+def calculate_primes(N):
+    ...
+```
 

@@ -101,6 +101,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -1084,16 +1113,6 @@ list to string: gold</code></pre>
 <span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ____ <span class="kw">in</span> ____:</span>
 <span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>    ____</span>
 <span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="identifying-item-errors" class="level3">
-<h3 class="anchored" data-anchor-id="identifying-item-errors">Identifying Item Errors</h3>
-<ul>
-<li>Read the code below and try to identify what the errors are without running it.</li>
-<li>Run the code, and read the error message. What type of error is it?</li>
-<li>Fix the error.</li>
-</ul>
-<div class="sourceCode" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>seasons <span class="op">=</span> [<span class="st">'Spring'</span>, <span class="st">'Summer'</span>, <span class="st">'Fall'</span>, <span class="st">'Winter'</span>]</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'My favorite season is '</span>, seasons[<span class="dv">4</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="section-18" class="level50">
 <p class="heading"></p>
 <hr>
@@ -1119,6 +1138,16 @@ print(result)</code></pre>
 <li><strong>bioDSC remark</strong>: Note the capitals in “RGB”!</li>
 <li><strong>Hint</strong>: You may need to use a string method to properly format the acronym.</li>
 </ul>
+</section>
+<section id="identifying-item-errors" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-item-errors">Identifying Item Errors</h3>
+<ul>
+<li>Read the code below and try to identify what the errors are without running it.</li>
+<li>Run the code, and read the error message. What type of error is it?</li>
+<li>Fix the error.</li>
+</ul>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>seasons <span class="op">=</span> [<span class="st">'Spring'</span>, <span class="st">'Summer'</span>, <span class="st">'Fall'</span>, <span class="st">'Winter'</span>]</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'My favorite season is '</span>, seasons[<span class="dv">4</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="cumulative-sum-code-puzzle" class="level3">
 <h3 class="anchored" data-anchor-id="cumulative-sum-code-puzzle">Cumulative Sum (code puzzle)</h3>
@@ -1150,6 +1179,267 @@ print(result)</code></pre>
 <section id="classifying-errors" class="level3">
 <h3 class="anchored" data-anchor-id="classifying-errors">Classifying Errors</h3>
 <p>Is an indentation error a syntax error or a runtime error?</p>
+<section id="section-19" class="level50">
+<p class="heading"></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="exercises-lesson-13-conditionals" class="level1">
+<h1>Exercises Lesson 13, Conditionals</h1>
+<section id="tracing-execution-1" class="level3">
+<h3 class="anchored" data-anchor-id="tracing-execution-1">Tracing Execution</h3>
+<p>What does this program print?</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>pressure <span class="op">=</span> <span class="fl">71.9</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> pressure <span class="op">&gt;</span> <span class="fl">50.0</span>:</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>    pressure <span class="op">=</span> <span class="fl">25.0</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> pressure <span class="op">&lt;=</span> <span class="fl">50.0</span>:</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>    pressure <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(pressure)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="trimming-values" class="level3">
+<h3 class="anchored" data-anchor-id="trimming-values">Trimming Values</h3>
+<p>Fill in the blanks so that this program creates a new list containing zeroes where the original list’s values were negative and ones where the original list’s values were positive.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> [<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.0</span>, <span class="op">-</span><span class="fl">1.3</span>, <span class="fl">0.4</span>]</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> ____</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> original:</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ____:</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>        result.append(<span class="dv">0</span>)</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>        ____</span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Desired output:</p>
+<pre><code>[0, 1, 1, 1, 0, 1]</code></pre>
+</section>
+<section id="processing-small-files" class="level3">
+<h3 class="anchored" data-anchor-id="processing-small-files">Processing Small Files</h3>
+<p>Modify this program so that it only processes files with fewer than 50 records.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> glob.glob(<span class="st">'data/*.csv'</span>):</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>    contents <span class="op">=</span> pd.read_csv(filename)</span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>    ____:</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(filename, <span class="bu">len</span>(contents))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="section-20" class="level50">
+<p class="heading"></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="additional-exercises-lesson-13-conditionals" class="level1">
+<h1>Additional Exercises Lesson 13, Conditionals</h1>
+<section id="list-comprehension-biodsc" class="level3">
+<h3 class="anchored" data-anchor-id="list-comprehension-biodsc">List comprehension (bioDSC)</h3>
+<section id="a-3" class="level4">
+<h4 class="anchored" data-anchor-id="a-3">A</h4>
+<p>Adapt the following code to select only positive values:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>example_list <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">34</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">10</span>, <span class="dv">39</span>]</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>example_list_pos <span class="op">=</span> [___ <span class="cf">for</span> item <span class="kw">in</span> example_list <span class="cf">if</span> ___]</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(example_list_pos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="b-3" class="level4">
+<h4 class="anchored" data-anchor-id="b-3">B</h4>
+<p>Use the same code, but: - select values between 30 and 40 - select items &lt;0 or &gt;10</p>
+</section>
+<section id="c-2" class="level4">
+<h4 class="anchored" data-anchor-id="c-2">C</h4>
+<p>Use a np.array (see additional exercises Lesson 3) to do the same more elegantly.</p>
+</section>
+</section>
+<section id="enumerate-zip-biodsc" class="level3">
+<h3 class="anchored" data-anchor-id="enumerate-zip-biodsc">Enumerate, zip (bioDSC)</h3>
+<p>These exercises introduce two new concepts. You might need google.</p>
+<section id="a-4" class="level4">
+<h4 class="anchored" data-anchor-id="a-4">A</h4>
+<p>What does the following code do? What is the meaning of the output?</p>
+<pre><code>for idx, item in enumerate([1,2,3,4,-5,1,34,6,-10]):
+    
+    if item&gt;5:
+        print(idx)</code></pre>
+</section>
+<section id="b-4" class="level4">
+<h4 class="anchored" data-anchor-id="b-4">B</h4>
+<p>Modify the following code such that it will compare each item i in apples with each item i in pears, and tell you which one is heavier. You need to edit the code.</p>
+<pre><code>apples = [123, 436, 123, 654, 117, 193, 120]
+pears  = [543, 163, 178, 165, 123, 187, 190]
+
+for apple_weight, pear_weight in zip(apples, pears):
+    print('='*10)
+    print('weigth apple: ', apple_weight)
+    print('weigth pear: ',pear_weight)
+    
+    print('the XXX is heavier')</code></pre>
+</section>
+</section>
+<section id="initializing" class="level3">
+<h3 class="anchored" data-anchor-id="initializing">Initializing</h3>
+<p>Modify this program so that it finds the largest and smallest values in the list no matter what the range of values originally is.</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [...some test data...]</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>smallest, largest <span class="op">=</span> <span class="va">None</span>, <span class="va">None</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> v <span class="kw">in</span> values:</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ____:</span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>        smallest, largest <span class="op">=</span> v, v</span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>    ____:</span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>        smallest <span class="op">=</span> <span class="bu">min</span>(____, v)</span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>        largest <span class="op">=</span> <span class="bu">max</span>(____, v)</span>
+<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(smallest, largest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What are the advantages and disadvantages of using this method to find the range of the data?</p>
+<p><strong>bioDSC hints</strong></p>
+<p>The loop could also look as follows:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [...some test data...]</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>smallest, largest <span class="op">=</span> <span class="va">None</span>, <span class="va">None</span></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> v <span class="kw">in</span> values:</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>    smallest <span class="op">=</span> <span class="bu">min</span>(____, v)</span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>    largest <span class="op">=</span> <span class="bu">max</span>(____, v)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Why wouldn’t this work?</p>
+<p>This is why the if statement is needed.</p>
+<p>How can we test whether we are in the first iteration?</p>
+<section id="section-21" class="level50">
+<p class="heading"></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="exercises-lesson-14-looping-over-data" class="level1">
+<h1>Exercises Lesson 14, Looping over data</h1>
+<section id="determining-matches" class="level3">
+<h3 class="anchored" data-anchor-id="determining-matches">Determining Matches</h3>
+<p>Which of these files is not matched by the expression glob.glob(‘data/<em>as</em>.csv’)?</p>
+<pre><code>data/gapminder_gdp_africa.csv
+data/gapminder_gdp_americas.csv
+data/gapminder_gdp_asia.csv</code></pre>
+</section>
+<section id="minimum-file-size" class="level3">
+<h3 class="anchored" data-anchor-id="minimum-file-size">Minimum File Size</h3>
+<p>Modify this program so that it prints the number of records in the file that has the fewest records.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>fewest <span class="op">=</span> ____</span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> glob.glob(<span class="st">'data/*.csv'</span>):</span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>    dataframe <span class="op">=</span> pd.____(filename)</span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>    fewest <span class="op">=</span> <span class="bu">min</span>(____, dataframe.shape[<span class="dv">0</span>])</span>
+<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'smallest file has'</span>, fewest, <span class="st">'records'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that the DataFrame.shape() method returns a tuple with the number of rows and columns of the data frame.</p>
+<section id="section-22" class="level50">
+<p class="heading"></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="additional-exercises-lesson-14-looping-over-data" class="level1">
+<h1>Additional Exercises Lesson 14, Looping over data</h1>
+<section id="comparing-data" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-data">Comparing Data</h3>
+<p>Write a program that reads in the regional data sets and plots the average GDP per capita for each region over time in a single chart.</p>
+<p>Pandas will raise an error if it encounters non-numeric columns in a dataframe computation so you may need to either filter out those columns or tell pandas to ignore them.</p>
+<section id="section-23" class="level50">
+<p class="heading"></p>
+<hr>
+<p><em>(Lesson 15 is a break.)</em></p>
+</section>
+<section id="section-24" class="level50">
+<p class="heading"></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="exercises-lesson-16-functions" class="level1">
+<h1>Exercises Lesson 16, Functions</h1>
+<section id="identifying-syntax-errors" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-syntax-errors">Identifying Syntax Errors</h3>
+<p>Read the code below and try to identify what the errors are without running it. Run the code and read the error message. Is it a SyntaxError or an IndentationError? Fix the error.</p>
+<pre><code>def another_function
+  print("Syntax errors are annoying.")
+   print("But at least python tells us about them!")
+  print("So they are usually not too hard to fix.")</code></pre>
+</section>
+<section id="what-does-the-following-program-print" class="level3">
+<h3 class="anchored" data-anchor-id="what-does-the-following-program-print">What does the following program print?</h3>
+<div class="sourceCode" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> report(pressure):</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'pressure is'</span>, pressure)</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'calling'</span>, report, <span class="fl">22.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="encapsulation" class="level3">
+<h3 class="anchored" data-anchor-id="encapsulation">Encapsulation</h3>
+<p>Fill in the blanks to create a function that takes a single filename as an argument, loads the data in the file named by the argument, and returns the minimum value in that data.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> min_in_data(____):</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> ____</span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="section-25" class="level50">
+<p class="heading"></p>
+<hr>
+</section>
+</section>
+</section>
+<section id="additional-exercises-lesson-16-functions" class="level1">
+<h1>Additional Exercises Lesson 16, Functions</h1>
+<section id="order-of-operations" class="level3">
+<h3 class="anchored" data-anchor-id="order-of-operations">Order of Operations</h3>
+<p>What’s wrong in this example?</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> print_time(<span class="dv">11</span>, <span class="dv">37</span>, <span class="dv">59</span>)</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_time(hour, minute, second):</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>   time_string <span class="op">=</span> <span class="bu">str</span>(hour) <span class="op">+</span> <span class="st">':'</span> <span class="op">+</span> <span class="bu">str</span>(minute) <span class="op">+</span> <span class="st">':'</span> <span class="op">+</span> <span class="bu">str</span>(second)</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(time_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After fixing the problem above, explain why running this example code:</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> print_time(<span class="dv">11</span>, <span class="dv">37</span>, <span class="dv">59</span>)</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'result of call is:'</span>, result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>gives this output:</p>
+<pre><code>11:37:59
+result of call is: None</code></pre>
+<p>Why is the result of the call None?</p>
+</section>
+<section id="find-the-first" class="level3">
+<h3 class="anchored" data-anchor-id="find-the-first">Find the First</h3>
+<p>Fill in the blanks to create a function that takes a list of numbers as an argument and returns the first negative value in the list. What does your function do if the list is empty? What if the list has no negative numbers?</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> first_negative(values):</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> v <span class="kw">in</span> ____:</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> ____:</span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> ____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="calling-by-name" class="level3">
+<h3 class="anchored" data-anchor-id="calling-by-name">Calling by Name</h3>
+<p>Earlier we saw this function:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_date(year, month, day):</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>    joined <span class="op">=</span> <span class="bu">str</span>(year) <span class="op">+</span> <span class="st">'/'</span> <span class="op">+</span> <span class="bu">str</span>(month) <span class="op">+</span> <span class="st">'/'</span> <span class="op">+</span> <span class="bu">str</span>(day)</span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(joined)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We saw that we can call the function using named arguments, like this:</p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>print_date(day<span class="op">=</span><span class="dv">1</span>, month<span class="op">=</span><span class="dv">2</span>, year<span class="op">=</span><span class="dv">2003</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>What does <code>print_date(day=1, month=2, year=2003)</code> print?</li>
+<li>When have you seen a function call like this before?</li>
+<li>When and why is it useful to call functions this way?</li>
+</ul>
+</section>
+<section id="omitted-exercises" class="level3">
+<h3 class="anchored" data-anchor-id="omitted-exercises">Omitted exercises</h3>
+<p>Continue with more exercises at: https://swcarpentry.github.io/python-novice-gapminder/instructor/16-writing-functions.html</p>
+<p>(See: “Encapsulation of an If/Print Block”.)</p>
+</section>
+<section id="primes" class="level3">
+<h3 class="anchored" data-anchor-id="primes">Primes</h3>
+<p>Write a function that looks as follows:</p>
+<pre><code>def calculate_primes(N):
+    ...</code></pre>
+<p>that returns an array with prime numbers between 0 and N.</p>
+<p>Hints: - Start with writing a function <code>is_number_prime(X)</code>, that checks whether <span class="math inline">\(X\)</span> is a prime number. - You probably need the following ingredients for that function: - How to test if a number is divisible by any number? - Use a for loop to test whether <span class="math inline">\(X\)</span> can be divided by all numbers <span class="math inline">\(&lt;X\)</span>. - Could be convenient to make smart use of the <code>return</code> function.</p>
+<pre><code>def is_number_prime(X):
+    
+    # &lt;insert explanatory comment&gt;
+    for y in range(X):
+    
+        # &lt;insert explanatory comment&gt;
+        if ...:
+            return False
+    
+    # &lt;insert explanatory comment&gt;
+    return True
+
+def calculate_primes(N):
+    ...</code></pre>
 
 
 </section>
