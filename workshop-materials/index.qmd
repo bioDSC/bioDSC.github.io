@@ -2,6 +2,8 @@
 
 # Overview 
 
+- For the python workshop exercises, see here: [exercises](py-intro/exercises.qmd).
 - For the example plot, see here: [link](py-intro/plot.qmd).
-- For additional exercises, see here: [additional exercises](py-intro/additional_exercises.qmd).
+
+<!-- - For additional exercises, see here: [additional exercises](py-intro/additional_exercises.qmd). -->
 
