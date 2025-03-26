@@ -3,7 +3,9 @@
 # Overview 
 
 - For the python workshop exercises, see here: [exercises](py-intro/exercises.qmd).
+- For the RNA-seq dataset from [Kohela et al.](https://doi.org/10.1126/scitranslmed.abf2750) (GSE149331), click [this link](py-intro/kohela-et-al.csv).
 - For the example plot, see here: [link](py-intro/plot.qmd).
+
 
 <!-- - For additional exercises, see here: [additional exercises](py-intro/additional_exercises.qmd). -->
 
