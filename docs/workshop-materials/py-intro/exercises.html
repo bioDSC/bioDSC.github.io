@@ -909,11 +909,12 @@ ACTA1   1231    B</code></pre>
 <p><strong>Modified by bioDSC</strong></p>
 <section id="minima-and-maxima-carpentries-modified" class="level3">
 <h3 class="anchored" data-anchor-id="minima-and-maxima-carpentries-modified">Minima and Maxima (Carpentries, modified)</h3>
-<p>Fill in the blanks below to plot the minimum GDP per capita over time for all the countries in Europe. Modify it again to plot the maximum GDP per capita over time for Europe.</p>
+<p>Fill in the blanks below to plot the minimum GDP per capita over time for all the countries in Europe.</p>
+<p>Modify it again to plot the maximum GDP per capita over time for Europe, you need to edit the code beyond the <code>___</code> for this.</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>data_europe <span class="op">=</span> pd.read_csv(<span class="st">'/Users/m.wehrens/Desktop/python_course/data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>data_europe_transposed <span class="op">=</span> data_europe.T</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>data_europe_transposed[<span class="st">'min'</span>] <span class="op">=</span> data_europe_transposed.____</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>data_europe_transposed[<span class="st">'min'</span>] <span class="op">=</span> data_europe.____</span>
 <span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>data_europe_transposed[<span class="st">'max'</span>] <span class="op">=</span> ____</span>
 <span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>data_europe_transposed[<span class="st">'year'</span>] <span class="op">=</span> ____</span>
 <span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a></span>
@@ -928,15 +929,19 @@ ACTA1   1231    B</code></pre>
 <p>Use the kohela data again:</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data, note the ".T" at the end here</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>df_kohela <span class="op">=</span> pd.read_csv(<span class="st">'data/kohela-et-al.csv'</span>, index_col<span class="op">=</span><span class="dv">0</span>).T</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add cell type</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>df_kohela[<span class="st">'Celltype'</span>] <span class="op">=</span> <span class="st">'unknown'</span></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>df_kohela.loc[epicardial_cells,<span class="st">'Celltype'</span>] <span class="op">=</span> <span class="st">'epicardial'</span></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>df_kohela.loc[fibroblast_cells, <span class="st">'Celltype'</span>] <span class="op">=</span> <span class="st">'fibroblast'</span></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>df_kohela.loc[fat_cells, <span class="st">'Celltype'</span>] <span class="op">=</span> <span class="st">'fat'</span></span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Add conditions</span></span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>df_kohela[<span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'unknown'</span></span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>df_kohela.loc[df_kohela.index.<span class="bu">str</span>.contains(<span class="st">'WT_'</span>), <span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'WT'</span></span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>df_kohela.loc[df_kohela.index.<span class="bu">str</span>.contains(<span class="st">'mutant_'</span>), <span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'mutant'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># create new 'masks'</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>epicardial_cells <span class="op">=</span> df_kohela[<span class="st">'WT1'</span>]<span class="op">&gt;</span><span class="dv">3</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>fibroblast_cells <span class="op">=</span> df_kohela[<span class="st">'COL2A1'</span>]<span class="op">&gt;</span><span class="dv">30</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>fat_cells <span class="op">=</span> df_kohela[<span class="st">'PPARG'</span>]<span class="op">&gt;</span><span class="dv">2</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Add cell type</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>df_kohela[<span class="st">'Celltype'</span>] <span class="op">=</span> <span class="st">'unknown'</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>df_kohela.loc[epicardial_cells,<span class="st">'Celltype'</span>] <span class="op">=</span> <span class="st">'epicardial'</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>df_kohela.loc[fibroblast_cells, <span class="st">'Celltype'</span>] <span class="op">=</span> <span class="st">'fibroblast'</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>df_kohela.loc[fat_cells, <span class="st">'Celltype'</span>] <span class="op">=</span> <span class="st">'fat'</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Add conditions</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>df_kohela[<span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'unknown'</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>df_kohela.loc[df_kohela.index.<span class="bu">str</span>.contains(<span class="st">'WT_'</span>), <span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'WT'</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>df_kohela.loc[df_kohela.index.<span class="bu">str</span>.contains(<span class="st">'mutant_'</span>), <span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'mutant'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="a-4" class="level3">
 <h3 class="anchored" data-anchor-id="a-4">A</h3>
