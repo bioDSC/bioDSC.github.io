@@ -968,7 +968,7 @@ sns.scatterplot(df_kohela, x='WT1', y='TBX18')
 <h3 class="anchored" data-anchor-id="d">D</h3>
 <p>Calculate the total RNA-seq reads per cell, and make a violin plot per condition for these total reads.</p>
 <p>Some code to start with:</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>df_kohela[<span class="st">'Total_reads'</span>] <span class="op">=</span> df_kohela.iloc[:,<span class="st">'A1BG'</span>:<span class="st">'ZZZ3'</span>].____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>df_kohela[<span class="st">'Total_reads'</span>] <span class="op">=</span> df_kohela.loc[:,<span class="st">'A1BG'</span>:<span class="st">'ZZZ3'</span>].____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>What does the violin plot tell us?</p>
 </section>
 <section id="more-correlations-carpentries-modified" class="level3">
