@@ -81,8 +81,8 @@ You have to bring your own laptop, we'll use an online version of Python, so the
 | Date | Time | Location | Topic |
 | ---- | ---- | ----  | ---------- |
 | May 19 (Mon) | 13:00 - 17:00 | SP L1.13 | The basics, episodes 1-6 |
-| May 21 (Wed) | 13:00 - 17:00 | SP L2.06 | Dataframes and plotting, episodes 7-9 | 
-| May 26 (Mon) | 13:00 - 17:00 | SP L2.06 | Programming concepts, episodes 11-16 | 
+| May 21 (Wed) | 13:00 - 17:00 | SP L1.13 | Dataframes and plotting, episodes 7-9 | 
+| May 26 (Mon) | 13:00 - 17:00 | SP L1.12 | Programming concepts, episodes 11-16 | 
 
 ### Sign up
 
