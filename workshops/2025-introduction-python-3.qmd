@@ -44,8 +44,8 @@ After this workshop, you'll be familiar with Python basics. We'll discuss and le
 
 ##### Contents
 This workshop will largely (>80%) follow the Carpentries training material ["Plotting and programming in Python"](https://swcarpentry.github.io/python-novice-gapminder/){target="_blank"}.
-We customized materials for lessons 8 and 9 (dataframes and plotting, see below) to include biological examples and plotting with Seaborn. We are working to publish these materials online too.
-The course does not address specific programming solutions for common biological challenges. Follow-up courses, e.g. about RNA-seq analysis and image analysis, will be delve into more biological programming topics.
+We customized materials for lessons 8 and 9 (dataframes and plotting, see below) to include biological examples. We are working to publish these materials online too.
+The course does not address specific programming solutions for common biological challenges. Follow-up courses, e.g. about RNA-seq analysis and image analysis, will delve into more biological programming topics.
 
 <!--
 See [this workshop page](https://swcarpentry.github.io/python-novice-gapminder/instructor/design.html#stage-2-desired-results){target="_blank"} for a summary of desired learning results.
@@ -60,7 +60,7 @@ which will highlight Python functionalities through biological examples.
 ##### Changes compared previous workshops
 
 This workshop will be similar to previous Python workshops \[[1](2025-introduction-python.qmd)\], \[[2](2025-introduction-python-2.qmd)\].
-We changed the scheduling (3 shorter timeslots instead of 2), and edited the materials to include Seaborn and more biologically relevant examples.
+We changed the scheduling (3 shorter timeslots instead of 2), and edited the materials to include more biologically relevant examples (and plotting with Seaborn).
 
 ##### Questions
 If you have any questions regarding whether this course is relevant for you, please send us an email ([info@biodsc.nl](mailto:info@biodsc.nl)) or walk by our [desks](../people.html).
