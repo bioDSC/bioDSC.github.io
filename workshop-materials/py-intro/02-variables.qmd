@@ -7,9 +7,8 @@
 
 
 ### 1. Order of things
-#### A
 ::: {.callout-tip icon="false"}
-## Question
+## Question A
 Fill the table showing the values of the variables in this program after each statement is executed.
 
 ```Python
@@ -35,67 +34,8 @@ y = swap   #              #              #               #
 
 :::
 
-
-#### A
-Fill the table showing the values of the variables in this program after each statement is executed.
-
-```Python
-# Command  # Value of x   # Value of y   # Value of swap #
-x = 1.0    #              #              #               #
-y = 3.0    #              #              #               #
-swap = x   #              #              #               #
-x = y      #              #              #               #
-y = swap   #              #              #               #
-```
-
-::: {.callout-caution collapse="true" icon="false"}
-## Answer
-
-| Command  | Value of x  | Value of y | Value of swap |
-|----------|------------|----------|--------------|
-| x = 1.0 | 1 | None | None |
-| y = 3.0 | 1 | 3 | None |
-| swap = x | 1 | 3 | 1 |
-| x = y | 3|3|1|
-| y = swap | 3 | 1 | 1|
-
-:::
-
-
-
-
-
-#### A
-::: {.callout-caution icon="false"}
-## Question
-Fill the table showing the values of the variables in this program after each statement is executed.
-
-```Python
-# Command  # Value of x   # Value of y   # Value of swap #
-x = 1.0    #              #              #               #
-y = 3.0    #              #              #               #
-swap = x   #              #              #               #
-x = y      #              #              #               #
-y = swap   #              #              #               #
-```
-:::
-
-::: {.callout-caution collapse="true" icon="false"}
-## Answer
-
-| Command  | Value of x  | Value of y | Value of swap |
-|----------|------------|----------|--------------|
-| x = 1.0 | 1 | None | None |
-| y = 3.0 | 1 | 3 | None |
-| swap = x | 1 | 3 | 1 |
-| x = y | 3|3|1|
-| y = swap | 3 | 1 | 1|
-
-:::
-
-#### B
-::: {.callout-caution icon="false"}
-## Question
+::: {.callout-tip icon="false"}
+## Question B
 What is the final value of position in the program below? (Try to predict the value without running the program, then check your prediction.)
 
 ```Python
@@ -109,35 +49,8 @@ initial = 'right'
 'left'
 :::
 
-
-::: callout-note
-## BWA alignment options
-
-BWA consists of three algorithms: BWA-backtrack, BWA-SW and BWA-MEM. The first algorithm is designed for Illumina sequence reads up to 100bp, while the other two are for sequences ranging from 70bp to 1Mbp. BWA-MEM and BWA-SW share similar features such as long-read support and split alignment, but BWA-MEM, which is the latest, is generally recommended for high-quality queries as it is faster and more accurate.
-:::
-
-
-::: {.callout-caution icon="false"}
-## Exercise
-
-Visualize the alignment of the reads for our SRR2584866 sample. What variant is present at position 4377265? What is the canonical nucleotide in that position?
-:::
-
-::: callout-important
-## Key points
-
--   Bioinformatic command line tools are collections of commands that can be used to carry out bioinformatic analyses.
--   To use most powerful bioinformatic tools, you will need to use the command line.
--   There are many different file formats for storing genomics data. It is important to understand what type of information is contained in each file, and how it was derived.
-:::
-
-::: callout-tip
-*Always read the manual page for any tool before using and make sure the options you use are appropriate for your data.*
-:::
-
-::: callout-tip
-### "Challenge"
-
+::: {.callout-tip icon="false"}
+### Challenge question
 If you assign a = 123, what happens if you try to get the second digit of a via a[1]?
 :::
 ::: {.callout-caution collapse="true" icon="false"}
@@ -147,10 +60,9 @@ Numbers are not strings or sequences and Python will raise an error if you try t
 a = 123
 print(a[1])
 ```
-
 TypeError: 'int' object is not subscriptable
 :::
-### Slicing
+### 2. Slicing
 
 <!-- REMOVED TO SAVE TIME
 ##### A
@@ -165,13 +77,14 @@ print('atom_name[1:3] is:', atom_name[1:3])
 ###### B
 -->
 
+::: {.callout-tip icon="false"}
+## Question C
+
 Given the following string:
 ```Python
 species_name = "Acacia buxifolia"
 ```
 
-::: {.callout-caution icon="false"}
-## Question
 What would these expressions return?
 
 ```Python
@@ -196,8 +109,8 @@ species_name[-5:-3] also returns the substring 'fo', from the fifth last positio
 ```
 :::
 
-::: {.callout-caution icon="false"}
-## Question
+::: {.callout-tip icon="false"}
+## Question D
 What happens when you choose a stop value which is out of range? (i.e., try species_name[0:20] or species_name[:103])
 :::
 ::: {.callout-caution collapse="true" icon="false"}
@@ -208,11 +121,11 @@ If a part of the slice is out of range, the operation does not fail. species_nam
 ############################################################
 ---
 
-# Lesson 2, additional exercises 
+# Additional exercises 
 
 ### Naming (Carpentries)
-::: {.callout-caution icon="false"}
-### "Question"
+::: {.callout-tip icon="false"}
+### Question E
 Which is a better variable name, m, min, or minutes? Why? Hint: think about which code you would rather inherit from someone who is leaving the lab:
 
 ```Python
@@ -229,8 +142,8 @@ minutes is better because min might mean something like “minimum” (and actua
 
 ### A very challenging set of additional exercises (bioDSC)
 
-::: {.callout-caution icon="false"}
-### "Question"
+::: {.callout-tip icon="false"}
+### Question F
 What's happening here:
 
 ```Python

@@ -3,11 +3,10 @@
 
 # Exercises Lesson 3, types
 
-### Types
+### 1. Types
 
-#### A
-::: {.callout-caution icon="false"}
-### "Question"
+::: {.callout-tip icon="false"}
+### Question A
 What type of value is 3.4? How can you find out?
 :::
 
@@ -21,9 +20,9 @@ print(type(3.4))
 <class 'float'>
 ```
 :::
-#### B
-::: {.callout-caution icon="false"}
-### "Question"
+#### 
+::: {.callout-tip icon="false"}
+### Question B
 What type of value is 3.25 + 4?
 :::
 
@@ -39,9 +38,8 @@ print(result, 'is', type(result))
 ```
 :::
 
-#### C 
-::: {.callout-caution icon="false"}
-### "Question"
+::: {.callout-tip icon="false"}
+### Question C
 What type of value (integer, floating point number, or character string) would you use to represent each of the following? Try to come up with more than one good answer for each problem. For example, in # 1, when would counting days with a floating point variable make more sense than using an integer?
 
 1. Number of days since the start of the year.
@@ -63,17 +61,16 @@ The answers to the questions are:
 6. Floating point number, since an average is likely to have a fractional part. 
 :::
 
-#### D (added bioDSC)
-::: {.callout-caution icon="false"}
-### "Question"
+::: {.callout-tip icon="false"}
+### Question D (bio*DSC*)
 Why wouldn't you always use floats, and never use integers?
 :::
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
-Integer has exact precision and a larger range, whereas float has limited precision and can represent numbers with a decimal part. (Google search)
+An integer has exact precision and a larger range, whereas float has limited precision and can represent numbers with a decimal part. 
 :::
 
-### Strings to numbers
+### 2. Strings to numbers
 
 Where reasonable, float() will convert a string to a floating point number, and int() will convert a floating point number to an integer:
 
@@ -92,8 +89,8 @@ If the conversion doesn’t make sense, however, an error message will occur.
 ```Python
 print("string to float:", float("Hello world!"))
 ```
-::: {.callout-caution icon="false"}
-### "Question"
+::: {.callout-tip icon="false"}
+### Question E
 1. What do you expect the following program to do?
 2. What does it actually do?
 3. Why do you think it does that?
@@ -126,8 +123,8 @@ print(int(float("3.4")))
 ```
 :::
 
-::: {.callout-caution icon="false"}
-### "Question"
+::: {.callout-tip icon="false"}
+### Question F
 Which of the following will return the floating point number 2.0? Note: there may be more than one right answer.
 
 ```Python
@@ -159,14 +156,12 @@ So, 1 and 4
 :::
 
 
-
-
 ############################################################
 ---
 
-# Lesson 3, additional exercises
+# Additional exercises
 
-### Lists
+### 3. Lists
 
 We'll cover lists later in lesson 11, but let's already take a brief look.
 
@@ -180,12 +175,19 @@ physical_constants = ['pi', 3.14, 'c', 299_792_458, 'mole', 6.022e23]
 
 Elements can be accessed the same way as we saw with strings.
 
-#### A
 
+
+::: {.callout-tip icon="false"}
+#### Question G
 What will `numbers[1]` return? And `physical_constants[2:4]`?
+:::
 
-#### B
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+:::
 
+::: {.callout-tip icon="false"}
+#### Question H
 What is the type of 
 
 - `numbers`?
@@ -196,12 +198,27 @@ What is the type of
 - `physical_constants[3]`?
 - `fruits`?
 - `fruits[1]`?
+:::
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+:::
 
-#### C
+
+
+
+::: {.callout-tip icon="false"}
+#### Question I
 
 Can the elements in a list have different types? (This can be seen from the previous answer.)
+:::
 
-### np.array
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+:::
+
+
+
+### 3. np.array
 
 Lists can be a useful tool, but for example in image analysis, don't offer the full mathematical options one might like. `numpy` arrays introduce a new type of series, in which you can do more manipulations. See some examples below:
 
@@ -233,18 +250,20 @@ np.array([1,2,3,'4'])
 np.array([1,2,3,'hello'])
 ```
 
-### Dict
+### 4. Dict(ionary)
 
-Python has more types. A `dict` is sometimes very convenient, and is also used later with creating tables.
+Python has more types. A `dict` is sometimes very convenient, and is also used later, when creating tables.
 
 ```Python
 experimental_replicate_list = {'WT': 12, 'mut': 32, 'WT.cond1': 10, 'mut.cond1': 12}
 print(experimental_replicte_list)
-
 print(experimental_replicate_list['WT'])
+```
+::: {.callout-tip icon="false"}
+#### Question ...
+Edit the following code such that we get replicate numbers for conditions involving WT
 
-# Exercise:
-# Edit the following code such that we get replicate numbers for conditions involving WT
+```Python
 my_keys = experimental_replicate_list.keys()
 print(my_keys)
 my_keys_of_interest = [the_key for the_key in my_keys if 'mut' in the_key] # edit this line
@@ -254,6 +273,11 @@ print([experimental_replicate_list[sel_key] for sel_key in my_keys_of_interest])
 # The above code uses several lines, can you do this in one line?
 print(...) # edit this line
 ```
+:::
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+:::
+
 
 ### Special maths (Carpentries)
 
