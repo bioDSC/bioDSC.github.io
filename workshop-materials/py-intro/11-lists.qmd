@@ -1,0 +1,225 @@
+
+############################################################
+---
+
+
+# Exercises Lesson 11, Lists
+
+### Fill in the blanks
+
+Fill in the blanks so that the program below produces the output shown.
+
+```python
+values = ____
+values.____(1)
+values.____(3)
+values.____(5)
+print('first time:', values)
+values = values[____]
+print('second time:', values)
+```
+
+Output:
+```
+first time: [1, 3, 5]
+second time: [3, 5]
+```
+
+### How Large is a Slice?
+
+If start and stop are both non-negative integers, how long is the list values[start:stop]?
+
+### From Strings to Lists and Back
+
+Given this:
+
+```python
+print('string to list:', list('tin'))
+print('list to string:', ''.join(['g', 'o', 'l', 'd']))
+```
+
+OUTPUT:
+```
+string to list: ['t', 'i', 'n']
+list to string: gold
+```
+
+- What does list('some string') do?
+- What does '-'.join(['x', 'y', 'z']) generate?
+
+### Working With the End
+
+What does the following program print?
+
+```python
+element = 'helium'
+print(element[-1])
+```
+
+- How does Python interpret a negative index?
+- If a list or string has N elements, what is the most negative index that can safely be used with it, and what location does that index represent?
+- If values is a list, what does del values[-1] do?
+- How can you display all elements but the last one without changing values? (Hint: you will need to combine slicing and negative indexing.)
+
+### Stepping Through a List
+
+What does the following program print?
+
+```python
+element = 'fluorine'
+print(element[::2])
+print(element[::-1])
+```
+
+- If we write a slice as low:high:stride, what does stride do?
+- What expression would select all of the even-numbered items from a collection?
+
+##################################################
+---
+
+# Additional Exercises Lesson 11, Lists
+
+### Slice Bounds
+
+What does the following program print?
+
+```python
+element = 'lithium'
+print(element[0:20])
+print(element[-1:3])
+```
+
+### Sort and Sorted
+
+What do these two programs print? In simple terms, explain the difference between sorted(letters) and letters.sort().
+
+```python
+# Program A
+letters = list('gold')
+result = sorted(letters)
+print('letters is', letters, 'and result is', result)
+```
+
+```python
+# Program B
+letters = list('gold')
+result = letters.sort()
+print('letters is', letters, 'and result is', result)
+```
+
+### Copying (or Not)
+What do these two programs print? In simple terms, explain the difference between new = old and new = old[:].
+
+```python
+# Program A
+old = list('gold')
+new = old      # simple assignment
+new[0] = 'D'
+print('new is', new, 'and old is', old)
+```
+
+```python
+# Program B
+old = list('gold')
+new = old[:]   # assigning a slice
+new[0] = 'D'
+print('new is', new, 'and old is', old)
+```
+
+### Go to lesson 3 (bioDSC)
+
+- Do the additional exercises of lesson 3 if you haven't already.
+
+### Negative slicing (bioDSC)
+
+```python
+element = 'lithium'
+```
+
+What does `element[-7:3]` print and why?
+
+**Explanation:** https://www.geeksforgeeks.org/slicing-with-negative-numbers-in-python/
+
+### More list comprehensions and filtering (bioDSC)
+
+- Edit the following code such that the list consists of values `2x+x^2-1` where x is the index of the list element.
+
+`[x for x in range(10)]`
+
+- Now from that list, select values that are > 10, by modifying the following code:
+
+`[x for x in your_list if ______]`
+
+- Convert your list to a np.array, and do the same in a more elegant way.
+
+- Given: `list_withtop = [1000+-10*(x-7)**2 for x in range(20)]`
+    - Find the position of the maximum value in this array.
+    - Edit the code above such that the maximum value shifts to an index of your choice.   
+        - Check whether you succeedded by finding the maximum value.
+    - Multiply your list with `-1`, and put the result in another list.
+        - Where are now the maximum and minimum values?
+        - Does this make sense?
+    - `list_line = [70*x-1000 for x in range(20)]`
+        - What's the biggest value, either negative or positive, in this list?
+        - And the index of that number?
+        - What's the standard deviation?
+        - Can you calculate the correlation between list_withtop and list_line?
+        - Can you make a scatter plot of  list_withtop versus list_line?
+
+
+##################################################
+---
+
+# Exercises Lesson 12, Loops
+
+### Tracing Execution
+
+Create a table showing the numbers of the lines that are executed when this program runs, and the values of the variables after each line is executed.
+
+```python
+total = 0
+for char in "tin":
+    total = total + 1
+```
+
+|Step  | Line Number | Variable Values       |
+|------|-------------|-----------------------|
+|1 | 1           | total = 0             |
+|2 | ..           | total = 0, char = 't' |
+|3 | ..           | .. |
+|4 | ..           | .. |
+|5 | ..           | .. |
+|.. | ..           | .. |
+
+
+### Practice Accumulating
+Fill in the blanks in each of the programs below to produce the indicated result.
+
+```python
+# Total length of the strings in the list: ["red", "green", "blue"] => 12
+total = 0
+for word in ["red", "green", "blue"]:
+    ____ = ____ + len(word)
+print(total)
+```
+
+### Practice Accumulating 2 (continued)
+
+```python
+# List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
+lengths = ____
+for word in ["red", "green", "blue"]:
+    lengths.____(____)
+print(lengths)
+```
+
+### Practice Accumulating 3 (continued)
+
+```python
+# Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
+words = ["red", "green", "blue"]
+result = ____
+for ____ in ____:
+    ____
+print(result)
+```

@@ -1,0 +1,136 @@
+############################################################
+---
+
+# Exercises Lesson 6, libraries
+
+
+### Explore
+
+- What function from the math module can you use to calculate a square root without using sqrt?
+- Since the library contains this function, why does sqrt exist?
+
+### Find the right module
+
+You want to select a random character from a string:
+
+```Python
+bases = 'ACTTGCTTGAC'
+```
+
+- Which standard library module could help you?
+- Which function would you select from that module? Are there alternatives?
+- Try to write a program that uses the function.
+
+
+### Help!
+
+When a colleague of yours types help(math), Python reports an error:
+
+```
+NameError: name 'math' is not defined
+```
+
+What has your colleague forgotten to do?
+
+### Importing with aliases
+
+- Fill in the blanks so that the program below prints 90.0.
+- Rewrite the program so that it uses import without as.
+- Which form do you find easier to read?
+
+```Python
+import math as m
+angle = ____.degrees(____.pi / 2)
+print(____)
+```
+
+### Multiple ways of importing
+
+Match the following print statements with the appropriate library calls.
+
+Print commands:
+
+- `print("sin(pi/2) =", sin(pi/2))`
+- `print("sin(pi/2) =", m.sin(m.pi/2))`
+- `print("sin(pi/2) =", math.sin(math.pi/2))`
+
+Library calls:
+
+- `from math import sin, pi`
+- `import math`
+- `import math as m`
+- `from math import *`
+
+
+############################################################
+---
+
+# Additional Exercises Lesson 6, Libraries
+
+### "Jigsaw": progamming example
+
+Rearrange the following statements so that a random DNA base is printed and its index in the string. Not all statements may be needed. Feel free to use/add intermediate variables.
+
+```Python
+bases="ACTTGCTTGAC"
+import math
+import random
+___ = random.randrange(n_bases)
+___ = len(bases)
+print("random base ", bases[___], "base index", ___)
+```
+
+### Importing specific items
+
+- Fill in the blanks so that the program below prints 90.0.
+- Do you find this version easier to read than preceding ones?
+- Why wouldn’t programmers always use this form of import?
+
+```Python
+____ math import ____, ____
+angle = degrees(pi / 2)
+print(angle)
+```
+
+### Reading error messages
+
+Read the code below and try to identify what the errors are without running it.
+Run the code, and read the error message. What type of error is it?
+
+```Python
+from math import log
+log(0)
+```
+
+### Write your own function and import it (bioDSC)
+
+When you have a notebook file, you can also create another file, with a .py extension, and write functions in that file. The .py file can be imported like a library, and the functions in the file can be used as if they came from a library.
+
+#### Exercise
+
+Using the information below, try to 
+- create two files, one `.ipynb` (notebook) file and one `.py` (python plain text code) file.
+- rename the `myfunctionname` functions in the `.py` file and use them in the notebook.
+- create a third function, which returns C when you provide A and B, assuming `A^2+B^2 = C^2`, and use it in your notebook.
+
+Useful things to know:
+- You can also make `.py` files. Unlike notebooks, every text here is assumed to be python code.
+- *For Jypiter notebooks*: 
+    - You can make a .py file with `file > new > python file`.        
+        - Save the file to `myfilename.py` (replacing myfilename with your own favorite name).
+- *For Google colabs: 
+    - To create a `.py` file, right click in the file overview (where you also put the gapminder `.csv` files), and select 'new file'. Then create a file 'myfilename.py' and double click to edit it.*
+- You can import your file in a python notebook using:
+    - `import myfilename` where `myfilename.py` should exist and hold your code. You can also put your file in a directory, but then you need to import it like `import mydirectoryname.myfilename`.
+
+You can write a function using the following template:
+
+```Python
+
+def myfunctionname():
+    print("hello world")
+    
+def myfunctionname2(input1, input2):
+    print("input 1 = ", input1, ', input 2 = ', input2)
+
+```

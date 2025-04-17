@@ -1,0 +1,64 @@
+############################################################
+---
+
+# Exercises lesson 7, dataframes (1)
+
+### Reading other data
+
+Read the data in gapminder_gdp_americas.csv (which should be in the same directory as gapminder_gdp_oceania.csv) into a variable called data_americas and display its summary statistics.
+
+### Inspecting data
+
+After reading the data for the Americas, use help(data_americas.head) and help(data_americas.tail) to find out what DataFrame.head and DataFrame.tail do.
+
+- What method call will display the first three rows of this data?
+- What method call will display the last three columns of this data? (Hint: you may need to change your view of the data.)
+
+
+### Navigating directories
+
+The data for your current project is stored in a file called microbes.csv, which is located in a folder called field_data. You are doing analysis in a notebook called analysis.ipynb in a sibling folder called thesis:
+
+```
+your_home_directory
++-- field_data/
+|   +-- microbes.csv
++-- thesis/
+    +-- analysis.ipynb
+```
+
+What value(s) should you pass to read_csv to read microbes.csv in analysis.ipynb?
+
+### Writing data
+
+As well as the read_csv function for reading data from a file, Pandas provides a to_csv function to write dataframes to files. Applying what you’ve learned about reading from files, write one of your dataframes to a file called processed.csv. You can use help to get information on how to use to_csv.
+
+##################################################
+---
+
+# Additional exercises for Lesson 7, dataframes (1)
+
+
+- Create a plain text file on your computer, and give it the extension `.csv`.
+- Find out what the comma-separated format looks like.
+- Use your imagination to complete the following table and put it in the `.csv` file. 
+
+|replicate| cond1   |  cond2 |
+|---|---|---|
+|   | 10  |   |
+|   | 11 |   |
+|   | 10  |   |
+|   | 12  |   |
+|   | 13  |   |
+|   | 13  |   |
+
+- Now try to read in that table in your python notebook.
+- Get the following code to run on your dataframe (referred to as `df` below):
+```python
+from scipy.stats import ttest_ind
+t_stat, p_value = ttest_ind(df['cond1'], df['cond2'])
+print(f"T-statistic: {t_stat}, P-value: {p_value}")
+```
+- What does that code do? 
+- Let's do some unethical data massaging, and tweak the csv such that you get a significant p-val.
+

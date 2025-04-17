@@ -1,0 +1,117 @@
+
+##################################################
+---
+
+# Additional exercises Lesson 8, dataframes (2)
+
+
+### Epicardial cells
+
+#### A
+
+In the RNA-seq data, we can create another column that reflects the condition
+of the cells, WT or mutant. Fill in the blanks to achieve this:
+
+```python
+df_cells_kohela2['Condition'] = ____
+
+df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('WT_'), 'Condition'] = ____
+df_cells_kohela2.loc[df_cells_kohela2.index._______, _________] = ______
+```
+
+<!--
+# SOLUTION
+df_cells_kohela2['Condition'] = 'unknown'
+df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('WT_'), 'Condition'] = 'WT'
+df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('mutant_'), 'Condition'] = 'mutant'
+-->
+
+#### B
+
+What is the difference between str.contains and str.match?
+
+#### C
+
+Now again calculate the mean value of TFAP2A expression in WT cells vs. mutant cells. 
+Does there appear to be more TFAP2A expression in the mutant cells?
+
+<!--
+# SOLUTION
+df_cells_kohela2.loc[:,['TFAP2A','Condition']].groupby('Condition').mean()
+-->
+
+### Gene expression (bioDSC)
+
+- Convert the data below to a file you can import (e.g.: csv, tsv), import it to a pandas df, and determine the following:
+    - The average CRP gene expression per condion.
+    - The corresponding standard deviations.
+    - The log2-fold change between WT, condition A, and condition B.
+    - Do the same for ACTA1.
+    - Normalize all gene expression levels to their average respective wild type levels.
+
+```
+gene	expression	condition
+CRP	873	WT
+CRP	324	WT
+CRP	214	WT
+CRP	151	WT
+CRP	1220	A
+CRP	450	A
+CRP	300	A
+CRP	210	A
+CRP	800	B
+CRP	200	B
+CRP	200	B
+CRP	130	B
+ACTA1	7457	WT
+ACTA1	2342	WT
+ACTA1	8000	WT
+ACTA1	9000	WT
+ACTA1	6500	A
+ACTA1	2200	A
+ACTA1	7500	A
+ACTA1	8000	A
+ACTA1	1000	B
+ACTA1	1123	B
+ACTA1	3211	B
+ACTA1	1231	B
+```
+
+### GDPs (bioDSC)
+
+- Between '87 and '92 the GDP of most countries took a hit. Are there any countries which had a positive increase between those two years? Which ones?
+- Calculate the average GDP between all European countries per year.
+    - Normalize the dataframe by this trend.
+
+
+### Exploring available methods using the dir() function
+
+Python includes a dir() function that can be used to display all of the available methods (functions) that are built into a data object. In Episode 4, we used some methods with a string. But we can see many more are available by using dir():
+
+```python
+my_string = 'Hello world!'   # creation of a string object 
+dir(my_string)
+```
+
+This command returns:
+
+```python
+['__add__',
+...
+'__subclasshook__',
+'capitalize',
+'casefold',
+'center',
+...
+'upper',
+'zfill']
+```
+
+You can use help() or Shift+Tab to get more information about what these methods do.
+
+Assume Pandas has been imported and the Gapminder GDP data for Europe has been loaded as data. Then, use dir() to find the function that prints out the median per-capita GDP across all European countries for each year that information is available.
+
+### Interpretation
+
+Poland’s borders have been stable since 1945, but changed several times in the years before then. How would you handle this if you were creating a table of GDP per capita for Poland for the entire twentieth century?
+

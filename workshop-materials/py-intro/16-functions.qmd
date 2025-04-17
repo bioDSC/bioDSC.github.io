@@ -1,0 +1,146 @@
+##################################################
+---
+
+# Exercises Lesson 16, Functions
+
+### Identifying Syntax Errors
+
+Read the code below and try to identify what the errors are without running it.
+Run the code and read the error message. Is it a SyntaxError or an IndentationError?
+Fix the error.
+
+```
+def another_function
+  print("Syntax errors are annoying.")
+   print("But at least python tells us about them!")
+  print("So they are usually not too hard to fix.")
+```
+
+### What does the following program print?
+
+```python
+def report(pressure):
+    print('pressure is', pressure)
+
+print('calling', report, 22.5)
+```
+
+### Encapsulation
+
+Fill in the blanks to create a function that takes a single filename as an argument, loads the data in the file named by the argument, and returns the minimum value in that data.
+
+```python
+import pandas as pd
+
+def min_in_data(____):
+    data = ____
+    return ____
+```
+
+##################################################
+---
+
+# Additional Exercises Lesson 16, Functions
+
+### Order of Operations
+
+What’s wrong in this example?
+
+```python
+result = print_time(11, 37, 59)
+
+def print_time(hour, minute, second):
+   time_string = str(hour) + ':' + str(minute) + ':' + str(second)
+   print(time_string)
+```
+
+After fixing the problem above, explain why running this example code:
+
+```PYTHON
+result = print_time(11, 37, 59)
+print('result of call is:', result)
+```
+
+gives this output:
+
+```
+11:37:59
+result of call is: None
+```
+
+Why is the result of the call None?
+
+
+### Find the First
+
+Fill in the blanks to create a function that takes a list of numbers as an argument and returns the first negative value in the list. What does your function do if the list is empty? What if the list has no negative numbers?
+
+```python
+def first_negative(values):
+    for v in ____:
+        if ____:
+            return ____
+```
+
+### Calling by Name
+Earlier we saw this function:
+
+```python
+def print_date(year, month, day):
+    joined = str(year) + '/' + str(month) + '/' + str(day)
+    print(joined)
+```
+
+We saw that we can call the function using named arguments, like this:
+```python
+print_date(day=1, month=2, year=2003)
+```
+
+- What does `print_date(day=1, month=2, year=2003)` print?
+- When have you seen a function call like this before?
+- When and why is it useful to call functions this way?
+
+### Write your own function
+
+See the exercise "Write your own function and import it" from the additional exercises in lesson 6.
+
+### Omitted exercises
+
+Continue with more exercises at:
+https://swcarpentry.github.io/python-novice-gapminder/instructor/16-writing-functions.html
+
+(See: "Encapsulation of an If/Print Block".)
+
+### Primes
+
+Write a function that looks as follows:
+```
+def calculate_primes(N):
+    ...
+```
+that returns an array with prime numbers between 0 and N.
+
+Hints:
+- Start with writing a function `is_number_prime(X)`, that checks whether $X$ is a prime number.
+- You probably need the following ingredients for that function: 
+    - How to test if a number is divisible by any number?
+    - Use a for loop to test whether $X$ can be divided by all numbers $<X$.
+    - Could be convenient to make smart use of the `return` function.
+    
+```
+def is_number_prime(X):
+    
+    # <insert explanatory comment>
+    for y in range(X):
+    
+        # <insert explanatory comment>
+        if ...:
+            return False
+    
+    # <insert explanatory comment>
+    return True
+
+def calculate_primes(N):
+    ...
+```
+

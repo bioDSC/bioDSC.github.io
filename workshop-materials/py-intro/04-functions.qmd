@@ -1,0 +1,40 @@
+
+# Exercises Lesson 4, functions (1)
+
+### Order
+
+- Explain in simple terms the order of operations in the following program: when does the addition happen, when does the subtraction happen, when is each function called, etc.
+- What is the final value of radiance?
+
+```Python
+radiance = 1.0
+radiance = max(2.1, 2.0 + min(radiance, 1.1 * radiance - 0.5))
+```
+
+### Last string character
+
+If Python starts counting from zero, and len returns the number of characters in a string, what index expression will get the last character in the string name? (Note: we will see a simpler way to do this in a later episode.)
+
+############################################################
+---
+
+# Additional exercises Lesson 4
+
+### Why not?
+
+Why is it that max and min do not return None when they are called with no arguments?
+
+### Spot the difference
+
+Predict what each of the print statements in the program below will print.
+Does max(len(rich), poor) run or produce an error message? If it runs, does its result make any sense?
+
+```Python
+easy_string = "abc"
+print(max(easy_string))
+rich = "gold"
+poor = "tin"
+print(max(rich, poor))
+print(max(len(rich), len(poor)))
+```
+

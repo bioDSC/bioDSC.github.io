@@ -1,0 +1,101 @@
+##################################################
+---
+
+# Additional Exercises Lesson 13, Conditionals
+
+### List comprehension (bioDSC)
+
+#### A
+
+Adapt the following code to select only positive values:
+
+```python
+example_list = [1,2,3,4,-5,1,34,6,-10, 39]
+example_list_pos = [___ for item in example_list if ___]
+print(example_list_pos)
+```
+
+#### B
+
+Use the same code, but:
+- select values between 30 and 40
+- select items <0 or >10
+
+#### C
+
+Use a np.array (see additional exercises Lesson 3) to do the same more elegantly.
+
+### Enumerate, zip (bioDSC)
+
+These exercises introduce two new concepts. 
+You might need google.
+
+#### A
+
+What does the following code do? What is the meaning of the output?
+
+```
+for idx, item in enumerate([1,2,3,4,-5,1,34,6,-10]):
+    
+    if item>5:
+        print(idx)
+```
+
+#### B
+
+Modify the following code such that it will compare each item i in apples with each item i in pears, and tell you which one is heavier.
+You need to edit the code.
+
+```
+apples = [123, 436, 123, 654, 117, 193, 120]
+pears  = [543, 163, 178, 165, 123, 187, 190]
+
+for apple_weight, pear_weight in zip(apples, pears):
+    print('='*10)
+    print('weigth apple: ', apple_weight)
+    print('weigth pear: ',pear_weight)
+    
+    print('the XXX is heavier')
+```
+
+
+### Initializing
+
+Modify this program so that it finds the largest and smallest values in the list no matter what the range of values originally is.
+
+```python
+values = [...some test data...]
+smallest, largest = None, None
+for v in values:
+    if ____:
+        smallest, largest = v, v
+    ____:
+        smallest = min(____, v)
+        largest = max(____, v)
+print(smallest, largest)
+```
+
+What are the advantages and disadvantages of using this method to find the range of the data?
+
+
+**bioDSC hints**
+
+The loop could also look as follows:
+
+```python
+values = [...some test data...]
+smallest, largest = None, None
+for v in values:
+    smallest = min(____, v)
+    largest = max(____, v)
+```
+
+Why wouldn't this work?
+
+This is why the if statement is needed. 
+
+How can we test whether we are in the first iteration?
+
+
+
+
