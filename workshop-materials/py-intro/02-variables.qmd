@@ -7,7 +7,7 @@
 
 
 ### 1. Order of things
-
+#### A
 ::: callout-tip
 ## Question
 Fill the table showing the values of the variables in this program after each statement is executed.
@@ -36,7 +36,7 @@ y = swap   #              #              #               #
 :::
 
 
-
+#### A
 Fill the table showing the values of the variables in this program after each statement is executed.
 
 ```Python
