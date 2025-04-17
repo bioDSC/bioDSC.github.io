@@ -8,8 +8,64 @@
 
 ### 1. Order of things
 
-#### A
+::: callout-tip
+## Question
+Fill the table showing the values of the variables in this program after each statement is executed.
 
+```Python
+# Command  # Value of x   # Value of y   # Value of swap #
+x = 1.0    #              #              #               #
+y = 3.0    #              #              #               #
+swap = x   #              #              #               #
+x = y      #              #              #               #
+y = swap   #              #              #               #
+```
+:::
+
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+
+| Command  | Value of x  | Value of y | Value of swap |
+|----------|------------|----------|--------------|
+| x = 1.0 | 1 | None | None |
+| y = 3.0 | 1 | 3 | None |
+| swap = x | 1 | 3 | 1 |
+| x = y | 3|3|1|
+| y = swap | 3 | 1 | 1|
+
+:::
+
+
+
+Fill the table showing the values of the variables in this program after each statement is executed.
+
+```Python
+# Command  # Value of x   # Value of y   # Value of swap #
+x = 1.0    #              #              #               #
+y = 3.0    #              #              #               #
+swap = x   #              #              #               #
+x = y      #              #              #               #
+y = swap   #              #              #               #
+```
+
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+
+| Command  | Value of x  | Value of y | Value of swap |
+|----------|------------|----------|--------------|
+| x = 1.0 | 1 | None | None |
+| y = 3.0 | 1 | 3 | None |
+| swap = x | 1 | 3 | 1 |
+| x = y | 3|3|1|
+| y = swap | 3 | 1 | 1|
+
+:::
+
+
+
+
+
+#### A
 ::: {.callout-caution icon="false"}
 ## Question
 Fill the table showing the values of the variables in this program after each statement is executed.
