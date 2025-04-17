@@ -8,7 +8,7 @@
 
 ### 1. Order of things
 #### A
-::: callout-tip
+::: {.callout-tip icon="false"}
 ## Question
 Fill the table showing the values of the variables in this program after each statement is executed.
 
