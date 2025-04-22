@@ -4,10 +4,24 @@
 # Exercises Lesson 6, libraries
 
 
-### Explore
+::: {.callout-tip icon="false"}
+### Question A: Explore
 
-- What function from the math module can you use to calculate a square root without using sqrt?
-- Since the library contains this function, why does sqrt exist?
+1. What function from the math module can you use to calculate a square root without using sqrt?
+2. Since the library contains this function, why does sqrt exist?
+
+
+:::
+
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+
+1. Using help(math) we see that we’ve got pow(x,y) in addition to sqrt(x), so we could use pow(x, 0.5) to find a square root.
+2. The sqrt(x) function is arguably more readable than pow(x, 0.5) when implementing equations. Readability is a cornerstone of good programming, so it makes sense to provide a special function for this specific common case.
+
+Also, the design of Python’s math library has its origin in the C standard, which includes both sqrt(x) and pow(x,y), so a little bit of the history of programming is showing in Python’s function names.
+:::
+
 
 ### Find the right module
 
