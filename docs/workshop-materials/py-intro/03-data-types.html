@@ -465,7 +465,8 @@ Answer
 </div>
 <div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>numbers[<span class="dv">1</span>] will <span class="cf">return</span> <span class="dv">1</span> because <span class="kw">in</span> Python indexing vectors starts at position <span class="dv">0</span> (<span class="op">=</span><span class="dv">0</span><span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>numbers[<span class="dv">2</span>:<span class="dv">4</span>] returns [<span class="st">'c'</span>,<span class="dv">299792458</span>] because indexing starts at the <span class="dv">3</span><span class="er">rd</span> position (<span class="op">=</span><span class="dv">2</span><span class="op">+</span><span class="dv">1</span>) <span class="kw">and</span> the slicing parameters stops at the position <span class="dv">4</span><span class="op">-</span><span class="dv">1</span> (<span class="op">=</span><span class="dv">3</span><span class="op">+</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -504,7 +505,16 @@ Answer
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<ul>
+<li><code>type(numbers) &lt;class 'list'&gt;</code></li>
+<li><code>type(numbers[1]) &lt;class 'int'&gt;</code></li>
+<li><code>type(physical_constants) &lt;class 'list'&gt;</code></li>
+<li><code>type(physical_constants[1]) &lt;class 'float'&gt;</code></li>
+<li><code>type(physical_constants[2]) &lt;class 'str'&gt;</code></li>
+<li><code>type(physical_constants[3]) &lt;class 'int'&gt;</code></li>
+<li><code>type(fruits) &lt;class 'list'&gt;</code></li>
+<li><code>type(fruits[1]) &lt;class 'str'&gt;</code></li>
+</ul>
 </div>
 </div>
 </div>
@@ -533,7 +543,7 @@ Answer
 </div>
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<p>Yes, a single list may contain numbers, strings, and anything else.</p>
 </div>
 </div>
 </div>
@@ -541,57 +551,24 @@ Answer
 <section id="np.array" class="level3">
 <h3 class="anchored" data-anchor-id="np.array">3. np.array</h3>
 <p>Lists can be a useful tool, but for example in image analysis, don’t offer the full mathematical options one might like. <code>numpy</code> arrays introduce a new type of series, in which you can do more manipulations. See some examples below:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>my_array <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>]</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>my_array_np <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>])</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># what's the difference here:</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># my_array+1 # commented because gives error, why?</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>my_array_np<span class="op">+</span><span class="dv">1</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co"># what's the difference here:</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>my_array <span class="op">*</span> <span class="dv">3</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>my_array_np <span class="op">*</span> <span class="dv">3</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co"># more:</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>my_array <span class="op">+</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>]</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>my_array_np <span class="op">+</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>])</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>np.sin(my_array_np)</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="co"># numpy-specific things, what is happening?</span></span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>my_array_np[<span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">2</span>)]</span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>my_array_np[my_array_np<span class="op">&gt;</span><span class="dv">1</span>]</span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Can numpy arrays have different types?</span></span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a><span class="co"># What is the type of the elements in these two arrays?</span></span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="st">'4'</span>])</span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="st">'hello'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="dictionary" class="level3">
-<h3 class="anchored" data-anchor-id="dictionary">4. Dict(ionary)</h3>
-<p>Python has more types. A <code>dict</code> is sometimes very convenient, and is also used later, when creating tables.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>experimental_replicate_list <span class="op">=</span> {<span class="st">'WT'</span>: <span class="dv">12</span>, <span class="st">'mut'</span>: <span class="dv">32</span>, <span class="st">'WT.cond1'</span>: <span class="dv">10</span>, <span class="st">'mut.cond1'</span>: <span class="dv">12</span>}</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(experimental_replicte_list)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(experimental_replicate_list[<span class="st">'WT'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>my_array <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>my_array_np <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question …
+Question I
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Edit the following code such that we get replicate numbers for conditions involving WT</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>my_keys <span class="op">=</span> experimental_replicate_list.keys()</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_keys)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>my_keys_of_interest <span class="op">=</span> [the_key <span class="cf">for</span> the_key <span class="kw">in</span> my_keys <span class="cf">if</span> <span class="st">'mut'</span> <span class="kw">in</span> the_key] <span class="co"># edit this line</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_keys_of_interest)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([experimental_replicate_list[sel_key] <span class="cf">for</span> sel_key <span class="kw">in</span> my_keys_of_interest])</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># The above code uses several lines, can you do this in one line?</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(...) <span class="co"># edit this line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>what’s the difference here:</p>
+<ul>
+<li><code>my_array+1</code></li>
+<li><code>my_array_np+1</code></li>
+</ul>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -606,7 +583,233 @@ Answer
 </div>
 <div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<ul>
+<li><code>my_array+1</code>, throws an error message because there is no operator defined that accepts a list type <strong>and</strong> an int type. If you want to concatenate the two, use my_array+[1]</li>
+<li><code>my_array_np+1</code>, returns array([2, 3, 4, 6]), an np.array where every element from my_array_np has been increased by 1</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question J
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>what’s the difference here:</p>
+<ul>
+<li><code>my_array * 3</code></li>
+<li><code>my_array_np * 3</code></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>my_array * 3</code>, returns [1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5] because the * operator repeats the list 3 times</li>
+<li><code>my_array_np * 3</code>, returns array([3, 6, 9, 15]) because in numpy, the * multplies the value of each element 3 times</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question K
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>what’s the difference here:</p>
+<ul>
+<li><code>my_array + [1,2,3,4]</code></li>
+<li><code>my_array_np + np.array([1, 2, 3, 4])</code></li>
+<li><code>np.sin(my_array_np)</code></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>my_array + [1,2,3,4]</code>, returns a concatenated list [1, 2, 3, 5, 1, 2, 3, 4]. Like in question J, the + operator concatenates two lists.</li>
+<li><code>my_array_np + np.array([1, 2, 3, 4])</code>, returns the element wise sum of both vectors, so array([2, 4 ,6 ,9])</li>
+<li><code>np.sin(my_array_np)</code>, returns the result of applying the sin function to each element in my_array_np, array([ 0.84147098, 0.90929743, 0.14112001, -0.95892427])</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question L
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>numpy-specific things, what is happening?</p>
+<ul>
+<li><code>my_array_np[range(1,4,2)]</code></li>
+<li><code>my_array_np[my_array_np&gt;1]</code></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>my_array_np[range(1,4,2)]</code>, returns array([2,5]), the second and fourth element of my_array_np. range(1, 4, 2) generates numbers from 1 to 4 with a stepsize of 2</li>
+<li><code>my_array_np[my_array_np&gt;1]</code>, returns array([2,3,5]), the &gt; 1 clause only selects those elements whos values is larger than 1.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question M
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Can numpy arrays have different types? What is the type of the elements in these two arrays?</p>
+<ul>
+<li><code>np.array([1,2,3,'4'])</code></li>
+<li><code>np.array([1,2,3,'hello'])</code></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>np.array([1,2,3,'4'])</code>, returns array([‘1’, ‘2’, ‘3’, ‘4’], dtype=‘&lt;U21’)</li>
+<li><code>np.array([1,2,3,'hello'])</code>, returns array([‘1’, ‘2’, ‘3’, ‘hello’], dtype=‘&lt;U21’)</li>
+</ul>
+<p>The elements of a NumPy array must all be of the same type, whereas the elements of a Python list can be of completely different types.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="dictionary" class="level3">
+<h3 class="anchored" data-anchor-id="dictionary">4. Dict(ionary)</h3>
+<p>Python has more types. A <code>dict</code> is sometimes very convenient, and is also used later, when creating tables.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>experimental_replicate_list <span class="op">=</span> {<span class="st">'WT'</span>: <span class="dv">12</span>, <span class="st">'mut'</span>: <span class="dv">32</span>, <span class="st">'WT.cond1'</span>: <span class="dv">10</span>, <span class="st">'mut.cond1'</span>: <span class="dv">12</span>}</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(experimental_replicate_list)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(experimental_replicate_list[<span class="st">'WT'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question N
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Edit the following code such that we get the associated numbers for conditions involving WT</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>my_keys <span class="op">=</span> experimental_replicate_list.keys()</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_keys)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>my_keys_of_interest <span class="op">=</span> [the_key <span class="cf">for</span> the_key <span class="kw">in</span> my_keys <span class="cf">if</span> <span class="st">'mut'</span> <span class="kw">in</span> the_key] <span class="co"># edit this line</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_keys_of_interest)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([experimental_replicate_list[sel_key] <span class="cf">for</span> sel_key <span class="kw">in</span> my_keys_of_interest])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>my_keys_of_interest = [the_key for the_key in my_keys if 'WT' in the_key]</code></li>
+<li><code>print(my_keys_of_interest)</code>, returns [‘WT’, ‘WT.cond1’]</li>
+<li><code>print([experimental_replicate_list[sel_key] for sel_key in my_keys_of_interest])</code>, returns [12,10]</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question O
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The above code uses several lines, can you do this in one line?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>print([experimental_replicate_list[key] for key in experimental_replicate_list.keys() if 'WT' in key])</code></li>
+</ul>
 </div>
 </div>
 </div>
@@ -614,9 +817,9 @@ Answer
 <section id="special-maths-carpentries" class="level3">
 <h3 class="anchored" data-anchor-id="special-maths-carpentries">Special maths (Carpentries)</h3>
 <p>In Python 3, the <code>//</code> operator performs integer (whole-number) floor division, the <code>/</code> operator performs floating-point division, and the <code>%</code> (or modulo) operator calculates and returns the remainder from integer division:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'5 // 3:'</span>, <span class="dv">5</span> <span class="op">//</span> <span class="dv">3</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'5 / 3:'</span>, <span class="dv">5</span> <span class="op">/</span> <span class="dv">3</span>)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'5 % 3:'</span>, <span class="dv">5</span> <span class="op">%</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'5 // 3:'</span>, <span class="dv">5</span> <span class="op">//</span> <span class="dv">3</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'5 / 3:'</span>, <span class="dv">5</span> <span class="op">/</span> <span class="dv">3</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'5 % 3:'</span>, <span class="dv">5</span> <span class="op">%</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>OUTPUT:
 5 // 3: 1
 5 / 3: 1.6666666666666667
@@ -626,19 +829,48 @@ Answer
 <section id="complex-numbers-carpentries" class="level3">
 <h3 class="anchored" data-anchor-id="complex-numbers-carpentries">Complex numbers (Carpentries)</h3>
 <p>Python provides complex numbers, which are written as 1.0+2.0j. If val is a complex number, its real and imaginary parts can be accessed using dot notation as val.real and val.imag.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>a_complex_number <span class="op">=</span> <span class="dv">6</span> <span class="op">+</span> <span class="ot">2j</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_complex_number.real)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_complex_number.imag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="questions" class="level5">
-<h5 class="anchored" data-anchor-id="questions">Questions:</h5>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>a_complex_number <span class="op">=</span> <span class="dv">6</span> <span class="op">+</span> <span class="ot">2j</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_complex_number.real)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_complex_number.imag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question P
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
 <li>Why do you think Python uses j instead of i for the imaginary part?</li>
 <li>What do you expect 1 + 2j + 3 to produce?</li>
 <li>What do you expect 4j to be? What about 4 j or 4 + j?</li>
 </ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Python uses the symbol ‘j’ for the imaginary part of complex numbers instead of ‘i’ to prevent confusion with electric current, which is represented by ‘i’ in electrical engineering. This choice caters to the professional background of many Python developers.</li>
+<li>4 + 2j, the real parts can be added and the imaginary part remains the same</li>
+<li>4j is 4 times the complex number j (4*1j), 4 j will generate a syntax error, it’s missing an operator. 4 + j will treat j as a variable and try to take the sum of both but throws an error if j is not defined or of the wrong type.</li>
+</ol>
+</div>
+</div>
+</div>
 
 
-</section>
 </section>
 </section>
 
