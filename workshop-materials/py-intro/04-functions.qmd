@@ -1,8 +1,9 @@
-
+############################################################
+---
 # Exercises Lesson 4, functions (1)
 
-### Order
-
+::: {.callout-tip icon="false"}
+### Question A: Order
 - Explain in simple terms the order of operations in the following program: when does the addition happen, when does the subtraction happen, when is each function called, etc.
 - What is the final value of radiance?
 
@@ -10,22 +11,48 @@
 radiance = 1.0
 radiance = max(2.1, 2.0 + min(radiance, 1.1 * radiance - 0.5))
 ```
+:::
 
-### Last string character
 
-If Python starts counting from zero, and len returns the number of characters in a string, what index expression will get the last character in the string name? (Note: we will see a simpler way to do this in a later episode.)
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+`radiance = max(2.1, 2.0 + min(radiance, 1.1 * radiance - 0.5))`
 
-############################################################
----
+Division and multiplication precede subtraction and addtition. The use of parentheses can change the evaluation order. In this example the order of operations:
+
+1. 1.1 * radiance = 1.1
+2. 1.1 - 0.5 = 0.6
+3. min(radiance, 0.6) = 0.6
+4. 2.0 + 0.6 = 2.6
+5. max(2.1, 2.6) = 2.6
+6. At the end, radiance = 2.6
+:::
+
+::: {.callout-tip icon="false"}
+### Question B: Last string character
+If Python starts counting from zero, and len returns the number of characters in a string, what index expression will get the last character in the string **name**? (Note: we will see a simpler way to do this in a later episode.)
+:::
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+`name[len(name) - 1]`
+:::
 
 # Additional exercises Lesson 4
 
-### Why not?
-
+### Last string character
+::: {.callout-tip icon="false"}
+### Question C: Why not?
 Why is it that max and min do not return None when they are called with no arguments?
+:::
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+max and min return TypeErrors in this case because the correct number of parameters was not supplied. If it just returned None, the error would be much harder to trace as it would likely be stored into a variable and used later in the program, only to likely throw a runtime error.
+:::
 
-### Spot the difference
 
+
+::: {.callout-tip icon="false"}
+### Question D: Spot the difference
 Predict what each of the print statements in the program below will print.
 Does max(len(rich), poor) run or produce an error message? If it runs, does its result make any sense?
 
@@ -37,4 +64,14 @@ poor = "tin"
 print(max(rich, poor))
 print(max(len(rich), len(poor)))
 ```
+:::
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+- ```print(max(easy_string))```, returns **c**, the largest of the characters (in Unicode values) in the string
+- ```print(max(rich, poor))```, returns **tin**, the string that contains the largest character (in Unicode values)
+- ```print(max(len(rich), len(poor)))```, returns 4, the length of the string that contains the most characters (i.e. **rich**)
 
+
+
+
+:::
