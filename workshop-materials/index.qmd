@@ -2,7 +2,7 @@
 
 # Overview 
 
-- For the python workshop exercises, see here: [exercises](py-intro/exercises.qmd).
+<!-- - For the python workshop exercises, see here: [exercises](py-intro/exercises.qmd). -->
 - Python workshop exercises:
     - [Lesson 2 - variables](py-intro/02-variables.qmd) 
     - [Lesson 3 - data-types](py-intro/03-data-types.qmd)
