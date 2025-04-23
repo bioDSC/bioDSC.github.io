@@ -1,6 +1,6 @@
 ::: {.callout-note}
 ## disclaimer
-Most questions are copied from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
 :::
 ---
 
