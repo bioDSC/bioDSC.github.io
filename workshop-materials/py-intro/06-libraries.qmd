@@ -1,11 +1,16 @@
-############################################################
+
+::: {.callout-note}
+## disclaimer
+Most questions are copied from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+:::
 ---
 
 # Exercises Lesson 6, libraries
 
+#### Explore
 
 ::: {.callout-tip icon="false"}
-### Question A: Explore
+### Question A
 
 1. What function from the math module can you use to calculate a square root without using sqrt?
 2. Since the library contains this function, why does sqrt exist?
@@ -23,7 +28,7 @@ Also, the design of Python’s math library has its origin in the C standard, wh
 :::
 
 
-### Find the right module
+#### Find the right module
 
 You want to select a random character from a string:
 
@@ -31,10 +36,43 @@ You want to select a random character from a string:
 bases = 'ACTTGCTTGAC'
 ```
 
-- Which standard library module could help you?
-- Which function would you select from that module? Are there alternatives?
-- Try to write a program that uses the function.
+::: {.callout-tip icon="false"}
+### Question B
 
+Which standard library module could help you? Which function would you select from that module? Are there alternatives? Try to write a program that uses the function.
+:::
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+1. The random module seems like it could help.
+
+The string has 11 characters, each having a positional index from 0 to 10. You could use the random.randrange or random.randint functions to get a random integer between 0 and 10, and then select the bases character at that index:
+
+```Python
+from random import randrange
+random_index = randrange(len(bases))
+print(bases[random_index])
+```
+or more compactly:
+```Python
+from random import randrange
+print(bases[randrange(len(bases))])
+```
+
+Perhaps you found the **random.sample** function? It allows for slightly less typing but might be a bit harder to understand just by reading:
+```Python
+from random import sample
+print(sample(bases, 1)[0])
+```
+Note that this function returns a list of values. We will learn about lists in episode 11.
+
+The simplest and shortest solution is the **random.choice** function that does exactly what we want:
+```Python
+from random import choice
+print(choice(bases))
+```
+
+
+:::
 
 ### Help!
 
@@ -44,43 +82,89 @@ When a colleague of yours types help(math), Python reports an error:
 NameError: name 'math' is not defined
 ```
 
+::: {.callout-tip icon="false"}
+### Question C
 What has your colleague forgotten to do?
+:::
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+Your colleague forgot to import the math module (import math)
+:::
+
 
 ### Importing with aliases
 
-- Fill in the blanks so that the program below prints 90.0.
-- Rewrite the program so that it uses import without as.
-- Which form do you find easier to read?
+::: {.callout-tip icon="false"}
+### Question D
+1. Fill in the blanks so that the program below prints 90.0.
+2. Rewrite the program so that it uses import without as.
+3. Which form do you find easier to read?
 
 ```Python
 import math as m
 angle = ____.degrees(____.pi / 2)
 print(____)
 ```
+:::
 
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+1. Filling in the blanks
+```Python
+import math as m
+angle = m.degrees(m.pi / 2)
+print(angle)
+```
+
+2. can be written as:
+```Python
+import math
+angle = math.degrees(math.pi / 2)
+print(angle)
+```
+
+3. Since you just wrote the code and are familiar with it, you might actually find the first version easier to read. But when trying to read a huge piece of code written by someone else, or when getting back to your own huge piece of code after several months, non-abbreviated names are often easier, except where there are clear abbreviation conventions.
+:::
+
+
+::: {.callout-tip icon="false"}
+### Question E
 ### Multiple ways of importing
 
 Match the following print statements with the appropriate library calls.
 
 Print commands:
 
-- `print("sin(pi/2) =", sin(pi/2))`
-- `print("sin(pi/2) =", m.sin(m.pi/2))`
-- `print("sin(pi/2) =", math.sin(math.pi/2))`
+1. `print("sin(pi/2) =", sin(pi/2))`
+2. `print("sin(pi/2) =", m.sin(m.pi/2))`
+3. `print("sin(pi/2) =", math.sin(math.pi/2))`
 
 Library calls:
 
-- `from math import sin, pi`
-- `import math`
-- `import math as m`
-- `from math import *`
+1. `from math import sin, pi`
+2. `import math`
+3. `import math as m`
+4. `from math import *`
+:::
+
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+
+1. Library calls 1 and 4. In order to directly refer to sin and pi without the library name as prefix, you need to use the from ... import ... statement. Whereas library call 1 specifically imports the two functions sin and pi, library call 4 imports all functions in the math module.
+2. Library call 3. Here sin and pi are referred to with a shortened library name m instead of math. Library call 3 does exactly that using the import ... as ... syntax - it creates an alias for math in the form of the shortened name m.
+3. Library call 2. Here sin and pi are referred to with the regular library name math, so the regular import ... call suffices.
+
+**Note**: although library call 4 works, importing all names from a module using a wildcard import is not recommended as it makes it unclear which names from the module are used in the code. In general it is best to make your imports as specific as possible and to only import what your code uses. In library call 1, the import statement explicitly tells us that the sin function is imported from the math module, but library call 4 does not convey this information.
 
 
-############################################################
----
+:::
+
+
 
 # Additional Exercises Lesson 6, Libraries
 
+::: {.callout-tip icon="false"}
+### Question F
 ### "Jigsaw": progamming example
 
 Rearrange the following statements so that a random DNA base is printed and its index in the string. Not all statements may be needed. Feel free to use/add intermediate variables.
@@ -93,9 +177,26 @@ ___ = random.randrange(n_bases)
 ___ = len(bases)
 print("random base ", bases[___], "base index", ___)
 ```
+:::
+
+
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+
+```Python
+import math 
+import random
+bases = "ACTTGCTTGAC" 
+n_bases = len(bases)
+idx = random.randrange(n_bases)
+print("random base", bases[idx], "base index", idx)
+```
+:::
+
 
 ### Importing specific items
-
+::: {.callout-tip icon="false"}
+### Question G
 - Fill in the blanks so that the program below prints 90.0.
 - Do you find this version easier to read than preceding ones?
 - Why wouldn’t programmers always use this form of import?
@@ -105,22 +206,56 @@ ____ math import ____, ____
 angle = degrees(pi / 2)
 print(angle)
 ```
+:::
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+```Python
+from math import degrees, pi
+angle = degrees(pi / 2)
+print(angle)
+```
+:::
+
 
 ### Reading error messages
-
-Read the code below and try to identify what the errors are without running it.
-Run the code, and read the error message. What type of error is it?
+::: {.callout-tip icon='false'}
+## Question H
+1. Read the code below and try to identify what the errors are without running it.
+2. Run the code, and read the error message. What type of error is it?
 
 ```Python
 from math import log
 log(0)
 ```
+:::
 
-### Write your own function and import it (bioDSC)
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+```Python
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-1-d72e1d780bab> in <module>
+      1 from math import log
+----> 2 log(0)
+
+ValueError: math domain error
+```
+   1. The logarithm of x is only defined for x > 0, so 0 is outside the domain of the function.
+   2. You get an error of type ValueError, indicating that the function received an inappropriate argument value. The additional message "math domain error" makes it clearer what the problem is.
+
+:::
+
+
+
+
+### Write your own function and import it
 
 When you have a notebook file, you can also create another file, with a .py extension, and write functions in that file. The .py file can be imported like a library, and the functions in the file can be used as if they came from a library.
 
-#### Exercise
+### Exercise
+::: {.callout-tip icon='false'}
+## Question I
+
 
 Using the information below, try to 
 - create two files, one `.ipynb` (notebook) file and one `.py` (python plain text code) file.
@@ -129,13 +264,13 @@ Using the information below, try to
 
 Useful things to know:
 - You can also make `.py` files. Unlike notebooks, every text here is assumed to be python code.
-- *For Jypiter notebooks*: 
+- *For Jupyter notebooks*: 
     - You can make a .py file with `file > new > python file`.        
         - Save the file to `myfilename.py` (replacing myfilename with your own favorite name).
 - *For Google colabs: 
     - To create a `.py` file, right click in the file overview (where you also put the gapminder `.csv` files), and select 'new file'. Then create a file 'myfilename.py' and double click to edit it.*
 - You can import your file in a python notebook using:
-    - `import myfilename` where `myfilename.py` should exist and hold your code. You can also put your file in a directory, but then you need to import it like `import mydirectoryname.myfilename`.
+    - `import myfilename` where `myfilename.py` should exist and hold your code. You can also put your file in a different directory, but then you need to import it like `import mydirectoryname.myfilename`.
 
 You can write a function using the following template:
 
@@ -148,3 +283,4 @@ def myfunctionname2(input1, input2):
     print("input 1 = ", input1, ', input 2 = ', input2)
 
 ```
+:::

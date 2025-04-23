@@ -173,19 +173,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="section" class="level60">
-<p class="heading"></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+disclaimer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Most questions are copied from the carpentry lesson <a href="http://swcarpentry.github.io/python-novice-gapminder/">“Plotting and Programming in Python”</a></p>
+</div>
+</div>
 <hr>
-</section>
 <section id="exercises-lesson-4-functions-1" class="level1">
 <h1>Exercises Lesson 4, functions (1)</h1>
+<section id="order" class="level3">
+<h3 class="anchored" data-anchor-id="order">Order</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question A: Order
+Question A
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -198,7 +210,7 @@ Question A: Order
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -207,7 +219,7 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><code>radiance = max(2.1, 2.0 + min(radiance, 1.1 * radiance - 0.5))</code></p>
 <p>Division and multiplication precede subtraction and addtition. The use of parentheses can change the evaluation order. In this example the order of operations:</p>
@@ -222,38 +234,7 @@ Answer
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Question B: Last string character
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If Python starts counting from zero, and len returns the number of characters in a string, what index expression will get the last character in the string <strong>name</strong>? (Note: we will see a simpler way to do this in a later episode.)</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><code>name[len(name) - 1]</code></p>
-</div>
-</div>
-</div>
 </section>
-<section id="additional-exercises-lesson-4" class="level1">
-<h1>Additional exercises Lesson 4</h1>
 <section id="last-string-character" class="level3">
 <h3 class="anchored" data-anchor-id="last-string-character">Last string character</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -262,15 +243,15 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question C: Why not?
+Question B
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Why is it that max and min do not return None when they are called with no arguments?</p>
+<p>If Python starts counting from zero, and len returns the number of characters in a string, what index expression will get the last character in the string <strong>name</strong>? (Note: we will see a simpler way to do this in a later episode.)</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -279,19 +260,57 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>max and min return TypeErrors in this case because the correct number of parameters was not supplied. If it just returned None, the error would be much harder to trace as it would likely be stored into a variable and used later in the program, only to likely throw a runtime error.</p>
+<p><code>name[len(name) - 1]</code></p>
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="additional-exercises-lesson-4" class="level1">
+<h1>Additional exercises Lesson 4</h1>
+<section id="why-not" class="level3">
+<h3 class="anchored" data-anchor-id="why-not">Why not?</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question D: Spot the difference
+Question C
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Why is it that max and min do not return None when they are called with no arguments?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>max and min return TypeErrors in this case because the correct number of parameters was not supplied. If it just returned None, the error would be much harder to trace as it would likely be stored into a variable and used later in the program, only to likely throw a runtime error.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="spot-the-difference" class="level3">
+<h3 class="anchored" data-anchor-id="spot-the-difference">Spot the difference</h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question D
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -305,7 +324,7 @@ Question D: Spot the difference
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -314,7 +333,7 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
 <li><code>print(max(easy_string))</code>, returns <strong>c</strong>, the largest of the characters (in Unicode values) in the string</li>

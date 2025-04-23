@@ -1,9 +1,13 @@
-############################################################
+::: {.callout-note}
+## disclaimer
+Most questions are copied from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+:::
 ---
 # Exercises Lesson 4, functions (1)
 
+### Order
 ::: {.callout-tip icon="false"}
-### Question A: Order
+## Question A
 - Explain in simple terms the order of operations in the following program: when does the addition happen, when does the subtraction happen, when is each function called, etc.
 - What is the final value of radiance?
 
@@ -28,8 +32,9 @@ Division and multiplication precede subtraction and addtition. The use of parent
 6. At the end, radiance = 2.6
 :::
 
+### Last string character
 ::: {.callout-tip icon="false"}
-### Question B: Last string character
+### Question B
 If Python starts counting from zero, and len returns the number of characters in a string, what index expression will get the last character in the string **name**? (Note: we will see a simpler way to do this in a later episode.)
 :::
 ::: {.callout-caution collapse="true" icon="false"}
@@ -39,20 +44,23 @@ If Python starts counting from zero, and len returns the number of characters in
 
 # Additional exercises Lesson 4
 
-### Last string character
+### Why not?
 ::: {.callout-tip icon="false"}
-### Question C: Why not?
+### Question C
+
 Why is it that max and min do not return None when they are called with no arguments?
 :::
+
+
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
 max and min return TypeErrors in this case because the correct number of parameters was not supplied. If it just returned None, the error would be much harder to trace as it would likely be stored into a variable and used later in the program, only to likely throw a runtime error.
 :::
 
 
-
+### Spot the difference
 ::: {.callout-tip icon="false"}
-### Question D: Spot the difference
+### Question D
 Predict what each of the print statements in the program below will print.
 Does max(len(rich), poor) run or produce an error message? If it runs, does its result make any sense?
 
