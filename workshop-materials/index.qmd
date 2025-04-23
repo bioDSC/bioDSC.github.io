@@ -4,18 +4,18 @@
 
 - For the python workshop exercises, see here: [exercises](py-intro/exercises.qmd).
 - Python workshop exercises:
-    - [variables](py-intro/02-variables.qmd) 
-    - [data-types](py-intro/03-data-types.qmd)
-    - [built-in functions](py-intro/04-functions.qmd)
-    - [libraries](py-intro/06-libraries.qmd)
-    - [dataframes part-1](py-intro/07-dataframes-1.qmd)
-    - [dataframes part-2](py-intro/08-dataframes-2.qmd)
-    - [plotting](py-intro/09-plotting.qmd)
-    - [lists](py-intro/11-lists.qmd)
-    - [loops](py-intro/12-loops.qmd)
-    - [conditionals](py-intro/13-conditionals.qmd)
-    - [looping over data](py-intro/14-looping-over-data.qmd)
-    - [writing functions](py-intro/16-functions.qmd)
+    - [Lesson 2 - variables](py-intro/02-variables.qmd) 
+    - [Lesson 3 - data-types](py-intro/03-data-types.qmd)
+    - [Lesson 4 - built-in functions](py-intro/04-functions.qmd)
+    - [Lesson 6 - libraries](py-intro/06-libraries.qmd)
+    - [Lesson 7 - dataframes part-1](py-intro/07-dataframes-1.qmd)
+    - [Lesson 8 - dataframes part-2](py-intro/08-dataframes-2.qmd)
+    - [Lesson 9 - plotting](py-intro/09-plotting.qmd)
+    - [Lesson 11 - lists](py-intro/11-lists.qmd)
+    - [Lesson 12 - loops](py-intro/12-loops.qmd)
+    - [Lesson 13 - conditionals](py-intro/13-conditionals.qmd)
+    - [Lesson 14 - looping over data](py-intro/14-looping-over-data.qmd)
+    - [Lesson 16 - writing functions](py-intro/16-functions.qmd)
 - For the RNA-seq dataset from [Kohela et al.](https://doi.org/10.1126/scitranslmed.abf2750) (GSE149331), click [this link](py-intro/kohela-et-al.csv).
 - For the example plot, see here: [link](py-intro/plot.qmd).
 

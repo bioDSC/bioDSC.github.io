@@ -242,7 +242,7 @@
     "href": "workshop-materials/index.html",
     "title": "Overview",
     "section": "",
-    "text": "Overview\n\nFor the python workshop exercises, see here: exercises.\nPython workshop exercises:\n\nvariables\ndata-types\nbuilt-in functions\nlibraries\ndataframes part-1\ndataframes part-2\nplotting\nlists\nloops\nconditionals\nlooping over data\nwriting functions\n\nFor the RNA-seq dataset from Kohela et al. (GSE149331), click this link.\nFor the example plot, see here: link."
+    "text": "Overview\n\nFor the python workshop exercises, see here: exercises.\nPython workshop exercises:\n\nLesson 2 - variables\nLesson 3 - data-types\nLesson 4 - built-in functions\nLesson 6 - libraries\nLesson 7 - dataframes part-1\nLesson 8 - dataframes part-2\nLesson 9 - plotting\nLesson 11 - lists\nLesson 12 - loops\nLesson 13 - conditionals\nLesson 14 - looping over data\nLesson 16 - writing functions\n\nFor the RNA-seq dataset from Kohela et al. (GSE149331), click this link.\nFor the example plot, see here: link."
   },
   {
     "objectID": "workshop-materials/py-intro/exercises.html",
