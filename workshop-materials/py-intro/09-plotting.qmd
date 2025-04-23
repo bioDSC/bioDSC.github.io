@@ -29,13 +29,26 @@ plt.legend(loc='best')
 plt.xticks(rotation=90)
 ```
 
-bioDSC HINT: if you don't see the solution, take it step by step. Break down the task in subtasks, and adress the first step towards the solution first. Try that first. Running code is free.
+HINT: if you don't see the solution, take it step by step. Break down the task in subtasks, and adress the first step towards the solution first. Try that first. Running code is free.
 :::
 
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
+```python
+data_europe = pd.read_csv('data/data/gapminder_gdp_europe.csv', index_col='country')
+data_europe_transposed = data_europe.T
+
+data_europe_transposed['min'] = data_europe.min()
+data_europe_transposed['max'] = data_europe.max()
+data_europe_transposed['year'] = data_europe_transposed.index.str.replace("gdpPercap_","")
+
+sns.lineplot(data_europe_transposed, x='year', y='min')
+sns.lineplot(data_europe_transposed, x='year', y='max')
+plt.legend(loc='best')
+plt.xticks(rotation=90)
+```
 :::
 
 
@@ -69,8 +82,11 @@ What information can be extracted from this plot?
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
-sns.stripplot(df_kohela, x='Celltype', y='WT1', jitter=True)
-sns.stripplot(df_kohela, x='Celltype', y='TBX18', jitter=True)
+```python
+sns.stripplot(df_kohela, x='Celltype', y='TBX18', jitter=True, color='red')
+sns.stripplot(df_kohela, x='Celltype', y='WT1', jitter=True, color='blue')
+```
+The plot shows that the expression in the epicardial and unknown types is the largest and that comparatively the fat and fibroblasts have low expression levels.
 :::
 
 
@@ -83,19 +99,26 @@ What does this tell us?
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+```python
 sns.scatterplot(df_kohela, x='WT1', y='TBX18')
+```
+From the plot it is clear that there is no correlation between the two expression levels.
+
 :::
 
 
 
 ::: {.callout-tip icon='false'}
-## Question D
+## Question D, CHECK fibroblasts & fatty cells. There are almost not visible
 Color the scatter plot per cell type.
 What does this tell us?
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
-
+```python
+sns.scatterplot(df_kohela, x='WT1', y='TBX18', hue='Celltype')
+```
+Most of the cells are of epicardial or unknown type. In both cases there is no clear correlation. The others cells types are too few or are obfuscated by the other points.
 :::
 
 
@@ -116,9 +139,13 @@ df_kohela['Total_reads'] = df_kohela.loc[:,'A1BG':'ZZZ3']._.____
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 :::
-
-
-
+1. ```python
+df_kohela['Total_reads'] = df_kohela.loc[:,'A1BG':'ZZZ3'].sum(axis=1)
+```
+2. ```python
+sns.violinplot(df_kohela,x='Celltype',y='Total_reads')
+```
+This plot tells us that for each cell type the average total number of reads are comparable. However, there are some fibrobblast cells that show a very large read-count. Perhaps remove them or look closer which genes are responsible for this?
 
 
 ### More Correlations
@@ -441,7 +468,7 @@ import pandas as pd
 
 # Load the data
 df_crudeoil = \
-    pd.read_csv('/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/crude_oil/crude_oil_prices.tsv', sep='\t')
+    pd.read_csv('data//crude_oil.tsv', sep='\t')
 
 # reshape the data, such that it becomes a long list
 df_crudeoil_melted = df_crudeoil.melt(id_vars='Decade', var_name='lastdigit')

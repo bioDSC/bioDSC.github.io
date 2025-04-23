@@ -105,7 +105,7 @@ ACTA1	1231	B
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
-We saved the data as tab-separated-value (tsv) [file](gene_expression.tsv) and load it into a dataframe using the read_csv command but now specify the tab character (**\\t**) as the value separator:
+We saved the data as tab-separated-value (tsv) [file](data/gene_expression.tsv) and load it into a dataframe using the read_csv command but now specify the tab character (**\\t**) as the value separator:
 
 ```Python
 df = pd.read_csv('gene_expression.tsv',header=0, sep='\t')
@@ -187,6 +187,10 @@ Assume Pandas has been imported and the Gapminder GDP data for Europe has been l
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+Among many choices, dir() lists the median() function as a possibility. Thus,
+```Python
+data.median()
+```
 :::
 
 ### Interpretation
@@ -197,4 +201,5 @@ Poland’s borders have been stable since 1945, but changed several times in the
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+I would make a remark that this is the case. The GDP per capita is no average over the years. 
 :::

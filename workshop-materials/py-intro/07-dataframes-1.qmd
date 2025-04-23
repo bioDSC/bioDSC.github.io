@@ -25,8 +25,6 @@ data_americas.describe()
 :::
 
 
-
-
 ### Inspecting data
 ::: {.callout-tip icon='false'}
 ## Question B
@@ -189,7 +187,7 @@ print(f"T-statistic: {t_stat}, P-value: {p_value}")
 ## Answer
 
 1. In a csv file, the values are separated by a comma. As an example we compare cond1 vs cond2 for 6 replicate samples (R1 through R6).
-A possible data file (saved as [mydata.csv](mydata.csv)) could look like:
+A possible data file (saved as [mydata.csv](data/mydata.csv)) could look like:
 
 ```bash
 replicate,cond1,cond2
