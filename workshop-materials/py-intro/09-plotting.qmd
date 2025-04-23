@@ -1,17 +1,22 @@
-##################################################
+
+
+::: {.callout-note}
+## disclaimer
+Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+:::
 ---
 
 # Exercises Lesson 9, plotting
-**Modified by bioDSC**
 
-### Minima and Maxima (Carpentries, modified)
-
+### Minima and Maxima 
+::: {#question-minmax .callout-tip icon='false'}
+## Question A
 Fill in the blanks below to plot the minimum GDP per capita over time for all the countries in Europe. 
 
 Modify it again to plot the maximum GDP per capita over time for Europe, you need to edit the code beyond the `___` for this.
 
 ```python
-data_europe = pd.read_csv('/Users/m.wehrens/Desktop/python_course/data/gapminder_gdp_europe.csv', index_col='country')
+data_europe = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 data_europe_transposed = data_europe.T
 
 data_europe_transposed['min'] = data_europe.____
@@ -25,9 +30,17 @@ plt.xticks(rotation=90)
 ```
 
 bioDSC HINT: if you don't see the solution, take it step by step. Break down the task in subtasks, and adress the first step towards the solution first. Try that first. Running code is free.
+:::
 
 
-### Mean gene expression (bioDSC)
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+:::
+
+
+
+### Mean gene expression
 
 Use the kohela data again:
 
@@ -49,126 +62,173 @@ df_kohela.loc[df_kohela.index.str.contains('WT_'), 'Condition'] = 'WT'
 df_kohela.loc[df_kohela.index.str.contains('mutant_'), 'Condition'] = 'mutant'
 ```
 
-### A
-
+::: {.callout-tip icon='false'}
+## Question B
 Use seaborn to create a 'stripplot' plot for WT1 expression per cell type. Then create a similar plot for TBX18. (Epicardial cell markers.)
 What information can be extracted from this plot?
-
-<!--
-# SOLUTION
+:::
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
 sns.stripplot(df_kohela, x='Celltype', y='WT1', jitter=True)
 sns.stripplot(df_kohela, x='Celltype', y='TBX18', jitter=True)
--->
+:::
 
-### B
 
+
+
+::: {.callout-tip icon='false'}
+## Question C
 Now create a scatter plot, showing WT1 expression vs. TBX18 expression across all cells.
 What does this tell us?
-
-<!--
-# SOLUTION
+:::
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
 sns.scatterplot(df_kohela, x='WT1', y='TBX18')
--->
+:::
 
-### C
 
+
+::: {.callout-tip icon='false'}
+## Question D
 Color the scatter plot per cell type.
 What does this tell us?
+:::
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
 
-### D
+:::
 
-Calculate the total RNA-seq reads per cell, and make a violin plot per condition for these total reads.
+
+
+::: {.callout-tip icon='false'}
+## Question E
+1. Calculate the total RNA-seq reads per cell, and make a violin plot per condition for these total reads.
 
 Some code to start with:
 ```python
 df_kohela['Total_reads'] = df_kohela.loc[:,'A1BG':'ZZZ3']._.____
 ```
 
-What does the violin plot tell us?
+2. What does the violin plot tell us?
 
-### More Correlations (Carpentries, modified)
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+:::
+
+
+
+
+
+### More Correlations
 
 This short program creates a plot showing the correlation between GDP and life expectancy for 2007, normalizing marker size by population:
 
-```python
+```Python
 data_all = pd.read_csv('data/gapminder_all.csv', index_col='country')
 sns.scatterplot(data_all, x='gdpPercap_2007', y='lifeExp_2007', s=data_all['pop_2007']/1e6)
 ```
-
+::: {.callout-tip icon='false'}
+## Question F
 Using online help and other resources, explain what each argument to plot does.
+:::
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
 
+:::
 
-### Even more correlations (bioDSC)
+### Even more correlations 
 
-#### A
+::: {.callout-tip icon='false'}
+## Question G
 
 Use the code from the "More Correlations" exercise, and try to add the following lines to the plotting code:
 
-```
+```Python
 plt.text(data_all.loc['United States','gdpPercap_2007'], data_all.loc['United States','lifeExp_2007'], 'United States')
 plt.text(data_all.loc['Netherlands','gdpPercap_2007'], data_all.loc['Netherlands','lifeExp_2007'], 'Netherlands')
 ```
 
 - What's happening here? (You might need to use Google.)
 - Add your favorite country too.
+:::
 
-#### B 
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+:::
+
+
+::: {.callout-tip icon='false'}
+## Question H
 
 How would you add labels for the top 10 GDP countries?
+:::
 
-***Answer***: this would be very tedious with what you learned currently! In the next lessons (particularly lesson 12), we'll learn how to automate your code. This will be very useful for this particular challenge.
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+This would be very tedious with what you learned currently! In the next lessons (particularly lesson 12), we'll learn how to automate your code. This will be very useful for this particular challenge.
+:::
 
 
-##################################################
 ---
-
-# Additional Exercises Lesson 9, plotting
-**Modified by bioDSC**
+# Additional Exercises
 
 ### Subselection and melting
 
-#### A
-
+::: {.callout-tip icon='false'}
+## Question I
 Using the kohela data, first create a new dataframe `df_kohela_sel` with only a selection of a few genes, and the condition and cell type columns.
 
 Select the following genes: `['WT1', 'TBX18', 'TFAP2A', 'COL2A1', 'ACTA2', 'PPARG', 'CEBPA']`. These are epicardial markers (WT1, TBX18), a transcription factor (TFAP2A), fibroblast markers (COL2A1, ACTA2), and fat markers (PPARG, CEBPA).
-
-<!--
-#SOLUTION
+:::
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
 df_kohela_sel = df_kohela.loc[:,['WT1', 'TBX18', 'TFAP2A', 'COL2A1', 'ACTA2', 'PPARG', 'CEBPA','Celltype','Condition']]
--->
-
-#### B 
+:::
+::: {.callout-tip icon='false'}
+## Question J
 
 Now melt this dataframe using `pd.melt()`, and use cell type and condition as identifier variables.
 What will happen to the gene expression values?
 What is sensible input for the `var_name` and `value_name` parameters?
 Why is this useful? (For answer, see next questions.)
+:::
 
-<!--
-# SOLUTION
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
 df_kohela_melted = pd.melt(df_kohela_sel, id_vars=['Celltype','Condition'], var_name='Gene', value_name='Expression')
--->
+:::
 
-#### C
-
+::: {.callout-tip icon='false'}
+## Question K, Is this a question?
 Use `df_kohela_melted.head()` to check whether the output is as expected.
+:::
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+:::
 
-#### D
 
-Now make a violin or stripplot, with as x-axis the genes, expression on the y-axis, and colored for condition.
+
+::: {.callout-tip icon='false'}
+## Question L
+Make a violin or stripplot, with as x-axis the genes, expression on the y-axis, and colored for condition.
 Is there an issue with this plot?
+:::
 
-<!--
-# SOLUTION
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
 sns.violinplot(df_kohela_melted, x='Gene', y='Expression', hue='Condition')
--->
+:::
 
-#### E
+::: {.callout-tip icon='false'}
+## Question M
 
 Look at the following example:
 
-```
+```Python
 import numpy as np
 
 # A custom function, which normalizes a series by its mean
@@ -189,15 +249,23 @@ df_kohela_subset2_normalized = df_kohela_subset2.transform(gene_normalization)
 print(df_kohela_subset2_normalized)
 ```
 
-- Check out what `gene_normalization(df_kohela_subset2['WT1'])` does.
-- What does the transform method do in the above code?
+1. Check out what `gene_normalization(df_kohela_subset2['WT1'])` does.
+2. What does the transform method do in the above code?
 
-#### F
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+:::
+
+::: {.callout-tip icon='false'}
+## Question N
 
 Edit the following code (replacing blanks by code) to normalize the gene expression by the total expression of each gene.
 Hint: look at exercise E.
 
-```
+```Python
 df_kohela_grouped = df_kohela_melted.groupby(_______)
 df_kohela_melted['Expression_normalized'] = df_kohela_grouped['Expression']._______(gene_normalization)
 ```
@@ -207,13 +275,17 @@ For the stripplot, use the additional parameter `dodge=True`.
 
 The barplot looks nice, but does it contain all information?
 
-<!--
-# SOLUTION
+::: 
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
 sns.barplot(df_kohela_melted, x='Gene', y='Expression_normalized', hue='Condition')
 sns.stripplot(df_kohela_melted, x='Gene', y='Expression_normalized', hue='Condition', dodge=True)
--->
+:::
 
-#### G
+
+::: {.callout-tip icon='false'}
+## Question O
 
 Finally, you might want to change the order in these plots. Use the following line:
 
@@ -224,10 +296,21 @@ df_kohela_melted['Condition'] = pd.Categorical(df_kohela_melted['Condition'], ca
 And then run your plotting code again.
 What has happened?
 
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+:::
+
+
 ### Saving your plot
 
 You might want to save your plot.
 You can use the `plt.savefig` function for this.
+
+
+::: {.callout-note icon='false'}
+## Exercise
 
 Check out this code with some additional convenient options.
 Change `'/your/location/your-filename.pdf'` to a convenient path where you save your figure.
@@ -265,13 +348,29 @@ plt.close(fig)
 # Use this command to show the figure when not using (Jupyter) notebooks.
 # plt.show()
 ```
+:::
 
-### Correlations (Carpentries, modified)
 
-Modify the code from "Minima and Maxima" exercise to create a scatter plot showing the relationship between the minimum and maximum GDP per capita across the countries in Asia, with each point in the plot corresponding to a year. What relationship do you see (if any)?
 
-### Correlations (continued) (Carpentries, modified)
 
+### Correlations 
+
+
+::: {.callout-tip icon='false'}
+## Question P
+
+Modify the code from "Minima and Maxima" exercise (Exercise A) to create a scatter plot showing the relationship between the minimum and maximum GDP per capita across the countries in Asia, with each point in the plot corresponding to a year. What relationship do you see (if any)?
+:::
+
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+:::
+
+
+### Correlations (continued) 
+::: {.callout-note icon='false'}
+## Exercise
 You might note that the variability in the maximum is much higher than that of the minimum. Take a look at the maximum and the max indexes:
 
 ```python
@@ -287,12 +386,24 @@ print(data_asia.idxmax())
 print(data_asia.idxmin())
 ```
 
-### Normalized dataframe (bioDSC)
+:::
 
-- In the previous lesson about dataframes (in the additional exercises), we normalized the GDP data against the average trend. Plot the data from this normalized dataframe.
-    - Is this helpful in any way?
+### Normalized dataframe
 
-### Crude oil (bioDSC)
+
+
+::: {.callout-tip icon='false'}
+## Question Q
+1. In the previous lesson about dataframes (in the additional exercises), we normalized the GDP data against the average trend. Plot the data from this normalized dataframe.
+2.  Is this helpful in any way?
+
+:::
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+:::
+
+
+### Crude
 
 Crude oil prices can be found at:
 https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=F000000__3&f=A
@@ -345,4 +456,12 @@ df_crudeoil_melted.loc[:,'Year'] = df_crudeoil_melted.loc[:,'Decade'] + df_crude
 print(df_crudeoil_melted.head())
 ```
 
+
+::: {.callout-tip icon='false'}
+## Question R
 Using your new plotting skills, compare this data against the trends in the Asian GDPs showed earlier.
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+:::
