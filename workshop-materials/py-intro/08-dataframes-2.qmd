@@ -1,15 +1,24 @@
 
-##################################################
+::: {.callout-note}
+## disclaimer
+Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+:::
 ---
 
-# Additional exercises Lesson 8, dataframes (2)
+# Additional exercises Lesson 8
 
 
 ### Epicardial cells
+::: {.callout-note appearance="simple"}
+## To load the data from the kohela study we can also use its origin from a website directly
 
-#### A
-
-In the RNA-seq data, we can create another column that reflects the condition
+```Python
+df_cells_kohela2 = pd.read_csv("https://www.biodsc.nl/workshop-materials/py-intro/kohela-et-al.csv",header=0,index_col=0)
+```
+:::
+::: {.callout-tip icon='false'}
+## Question A
+In the [RNA-seq data](https://www.biodsc.nl/workshop-materials/py-intro/kohela-et-al.csv), we can create another column that reflects the condition
 of the cells, WT or mutant. Fill in the blanks to achieve this:
 
 ```python
@@ -18,36 +27,50 @@ df_cells_kohela2['Condition'] = ____
 df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('WT_'), 'Condition'] = ____
 df_cells_kohela2.loc[df_cells_kohela2.index._______, _________] = ______
 ```
+:::
 
-<!--
-# SOLUTION
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+```Python
 df_cells_kohela2['Condition'] = 'unknown'
 df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('WT_'), 'Condition'] = 'WT'
 df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('mutant_'), 'Condition'] = 'mutant'
--->
+```
 
-#### B
+:::
 
+::: {.callout-tip icon='false'}
+## Question B
 What is the difference between str.contains and str.match?
+:::
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+**str.match** is only true when the whole string is the same. **str.match** returns true if the specified part is found in the string.
+:::
 
-#### C
+
+::: {.callout-tip icon='false'}
+## Question C.. CHECK THIS .. NO TFAP2A defined!!!
 
 Now again calculate the mean value of TFAP2A expression in WT cells vs. mutant cells. 
 Does there appear to be more TFAP2A expression in the mutant cells?
-
-<!--
-# SOLUTION
+:::
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
 df_cells_kohela2.loc[:,['TFAP2A','Condition']].groupby('Condition').mean()
--->
+:::
 
-### Gene expression (bioDSC)
+### Gene expression
 
+::: {.callout-tip icon='false'}
+## Question D ... DOUBLE CHECK THIS ... WHY SEPARATE CRP & ACTA1??? 
 - Convert the data below to a file you can import (e.g.: csv, tsv), import it to a pandas df, and determine the following:
-    - The average CRP gene expression per condion.
-    - The corresponding standard deviations.
-    - The log2-fold change between WT, condition A, and condition B.
-    - Do the same for ACTA1.
-    - Normalize all gene expression levels to their average respective wild type levels.
+    1. The average CRP gene expression per condion.
+    2. The corresponding standard deviations.
+    3. The log2-fold change between WT, condition A, and condition B.
+    4. Do the same for ACTA1.
+    5. Normalize all gene expression levels to their average respective wild type levels.
 
 ```
 gene	expression	condition
@@ -77,11 +100,59 @@ ACTA1	3211	B
 ACTA1	1231	B
 ```
 
-### GDPs (bioDSC)
+:::
 
-- Between '87 and '92 the GDP of most countries took a hit. Are there any countries which had a positive increase between those two years? Which ones?
-- Calculate the average GDP between all European countries per year.
-    - Normalize the dataframe by this trend.
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+We saved the data as tab-separated-value (tsv) [file](gene_expression.tsv) and load it into a dataframe using the read_csv command but now specify the tab character (**\\t**) as the value separator:
+
+```Python
+df = pd.read_csv('gene_expression.tsv',header=0, sep='\t')
+```
+
+1. 
+```Python
+df[df.gene=='CRP'].groupby(['gene','condition'])['expression'].mean()
+```
+2. 
+```Python
+df.groupby(['gene','condition'])['expression'].std()
+```
+
+3. & 4.
+```Python
+dfmean = df.groupby(['gene','condition'])['expression'].mean().to_frame()
+WT = dfmean.index.get_level_values(1)=='WT'
+ratios = dfmean.loc[~WT].reset_index(level=1,drop=True)/dfmean.loc[WT].reset_index(level=1,drop=True)
+ratios.index=dfmean[~WT].index
+print(np.log2(ratios))
+```
+
+5. 
+```Python
+dfw = df.copy()
+CRP = dfw.gene=='CRP'
+dfw.loc[ CRP,'expression']  = dfw.loc[CRP,'expression']/dfmean.loc[('CRP','WT')].values
+dfw.loc[~CRP,'expression'] = dfw.loc[~CRP,'expression']/dfmean.loc[('ACTA1','WT')].values
+```
+:::
+
+
+
+### GDPs
+::: {.callout-tip icon='false'}
+## Question E
+
+1. Between '87 and '92 the GDP of most countries took a hit. Are there any countries which had a positive increase between those two years? Which ones?
+2. Calculate the average GDP between all European countries per year.
+3. Normalize the dataframe by this trend.
+:::
+
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+:::
 
 
 ### Exploring available methods using the dir() function
@@ -109,9 +180,21 @@ This command returns:
 
 You can use help() or Shift+Tab to get more information about what these methods do.
 
+::: {.callout-tip icon='false'}
+## Question E
 Assume Pandas has been imported and the Gapminder GDP data for Europe has been loaded as data. Then, use dir() to find the function that prints out the median per-capita GDP across all European countries for each year that information is available.
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+:::
 
 ### Interpretation
-
+::: {.callout-tip icon='false'}
+## Question F
 Poland’s borders have been stable since 1945, but changed several times in the years before then. How would you handle this if you were creating a table of GDP per capita for Poland for the entire twentieth century?
+:::
 
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+:::
