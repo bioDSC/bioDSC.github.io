@@ -201,5 +201,5 @@ Poland’s borders have been stable since 1945, but changed several times in the
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
-I would make a remark that this is the case. The GDP per capita is no average over the years. 
+???
 :::
