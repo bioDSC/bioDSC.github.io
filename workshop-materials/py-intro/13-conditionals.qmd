@@ -123,15 +123,22 @@ print(example_list_pos)
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
+```python
+example_list = [1,2,3,4,-5,1,34,6,-10, 39]
+example_list_pos = [item for item in example_list if item>0]
+print(example_list_pos)
+```
+```
+[1, 2, 3, 4, 1, 34, 6, 39]
+```
 :::
-
-
 
 ::: {.callout-tip icon='false'}
 ## Question E
 
 Use the same code, but:
-1. select values between 30 and 40
+
+1. select items between 30 and 40 
 2. select items <0 or >10
 
 :::
@@ -139,8 +146,29 @@ Use the same code, but:
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
-:::
+1. 
+```python
+example_list = [1,2,3,4,-5,1,34,6,-10, 39]
+example_list_1 = [item for item in example_list if item>30 and item<40 ]
+print(example_list_1)
+```
+```
+[34 39]
+```
 
+2. 
+```python
+example_list = [1,2,3,4,-5,1,34,6,-10, 39]
+example_list_2 = [item for item in example_list if item<0 or item>10 ]
+print(example_list_2)
+```
+
+```
+[ -5  34 -10  39]
+```
+
+
+:::
 
 ::: {.callout-tip icon='false'}
 ## Question F
@@ -149,7 +177,40 @@ Use a np.array (see additional exercises Lesson 3) to do the same more elegantly
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+1.
+```python
+import numpy as np
+example_list = np.array([1,2,3,4,-5,1,34,6,-10, 39])
+print(example_list[(example_list>30) & (example_list<40)])
+```
+```
+[34 39]
+```
+Note that in this case we have to use the **bitwise** `&` operator because the evaluation of `example_list>30` and `example_list<40` returns a vector of True and False values, so we need to compare two vectors instead of two values.
+
+
+1.
+```python
+import numpy as np
+example_list = np.array([1,2,3,4,-5,1,34,6,-10, 39])
+print(example_list[(example_list<0) | (example_list>10)])
+```
+```
+[ -5  34 -10  39]
+
+```
+Note that in this case we have to use the **bitwise** `|` operator because the evaluation of `example_list<0` and `example_lis>10` returns a vector of True and False values, so we need to compare two vectors instead of two values.
+
+
+
+
+
+
+
+
 :::
+
+
 
 ### Enumerate, zip 
 
@@ -171,7 +232,11 @@ for idx, item in enumerate([1,2,3,4,-5,1,34,6,-10]):
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
-
+The program prints the index when the value in the array is larger than 5, so in this case
+```
+6
+7
+```
 :::
 
 
@@ -189,7 +254,7 @@ pears  = [543, 163, 178, 165, 123, 187, 190]
 for apple_weight, pear_weight in zip(apples, pears):
     print('='*10)
     print('weigth apple: ', apple_weight)
-    print('weigth pear: ',pear_weight)
+    print('weigth pear:  ', pear_weight)
     
     print('the XXX is heavier')
 ```
@@ -198,7 +263,48 @@ for apple_weight, pear_weight in zip(apples, pears):
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+```python
+apples = [123, 436, 123, 654, 117, 193, 120]
+pears  = [543, 163, 178, 165, 123, 187, 190]
 
+for apple_weight, pear_weight in zip(apples, pears):
+    print('='*10)
+    print('weigth apple: ', apple_weight)
+    print('weigth pear:  ', pear_weight)
+    XXX = 'apple' if apple_weight>pear_weight else 'pear'
+    print(f"the {XXX} is heavier")
+```
+
+```
+==========
+weigth apple:  123
+weigth pear:   543
+the pear is heavier
+==========
+weigth apple:  436
+weigth pear:   163
+the apple is heavier
+==========
+weigth apple:  123
+weigth pear:   178
+the pear is heavier
+==========
+weigth apple:  654
+weigth pear:   165
+the apple is heavier
+==========
+weigth apple:  117
+weigth pear:   123
+the pear is heavier
+==========
+weigth apple:  193
+weigth pear:   187
+the apple is heavier
+==========
+weigth apple:  120
+weigth pear:   190
+the pear is heavier
+```
 :::
 
 
