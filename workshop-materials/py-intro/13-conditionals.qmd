@@ -189,7 +189,7 @@ print(example_list[(example_list>30) & (example_list<40)])
 Note that in this case we have to use the **bitwise** `&` operator because the evaluation of `example_list>30` and `example_list<40` returns a vector of True and False values, so we need to compare two vectors instead of two values.
 
 
-1.
+2.
 ```python
 import numpy as np
 example_list = np.array([1,2,3,4,-5,1,34,6,-10, 39])
