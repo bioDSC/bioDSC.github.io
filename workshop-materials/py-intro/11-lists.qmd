@@ -273,7 +273,31 @@ What does `element[-7:3]` print and why?
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
-**Explanation:** https://www.geeksforgeeks.org/slicing-with-negative-numbers-in-python/
+From [geeksforgeeks](https://www.geeksforgeeks.org/slicing-with-negative-numbers-in-python/)
+
+The slicing operator ":" has the following syntax
+
+    sequence[Start : End : Step]
+
+    Parameters:
+
+        Start: It is the starting point of the slice or substring.
+        End: It is the ending point of the slice or substring but it does not include the last index.
+        Step: It is number of steps it takes.
+
+In the world of programming, indexing starts at 0, and Python also follows 0-indexing what makes Python different is that Python also follows negative indexing which starts from -1. -1 denotes the last index, -2, denotes the second last index, -3 denotes the third last index, and so on. 
+
+If we look at the image below we can see that `-7` points to the letter 'L'.
+
+![](lithium.png){width="50%"}
+
+The second index `3` points to the endpoint but does not include it so the output will be 
+```
+lit
+```
+
+
+
 :::
 
 

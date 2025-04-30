@@ -571,7 +571,20 @@ Answer
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>Explanation:</strong> https://www.geeksforgeeks.org/slicing-with-negative-numbers-in-python/</p>
+<p>From <a href="https://www.geeksforgeeks.org/slicing-with-negative-numbers-in-python/">geeksforgeeks</a></p>
+<p>The slicing operator “:” has the following syntax</p>
+<pre><code>sequence[Start : End : Step]
+
+Parameters:
+
+    Start: It is the starting point of the slice or substring.
+    End: It is the ending point of the slice or substring but it does not include the last index.
+    Step: It is number of steps it takes.</code></pre>
+<p>In the world of programming, indexing starts at 0, and Python also follows 0-indexing what makes Python different is that Python also follows negative indexing which starts from -1. -1 denotes the last index, -2, denotes the second last index, -3 denotes the third last index, and so on.</p>
+<p>If we look at the image below we can see that <code>-7</code> points to the letter ‘L’.</p>
+<p><img src="lithium.png" class="img-fluid" style="width:50.0%"></p>
+<p>The second index <code>3</code> points to the endpoint but does not include it so the output will be</p>
+<pre><code>lit</code></pre>
 </div>
 </div>
 </div>
@@ -589,7 +602,7 @@ Question …
 </div>
 <div class="callout-body-container callout-body">
 <p>Edit the following code such that the list consists of values <code>2x+x^2-1</code> where x is the index of the list element.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>[x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>[x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -619,7 +632,7 @@ Question …
 </div>
 <div class="callout-body-container callout-body">
 <p>Now from that list, select values that are &gt; 10, by modifying the following code:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>[x <span class="cf">for</span> x <span class="kw">in</span> your_list <span class="cf">if</span> ______]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>[x <span class="cf">for</span> x <span class="kw">in</span> your_list <span class="cf">if</span> ______]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -678,7 +691,7 @@ Question …
 </div>
 <div class="callout-body-container callout-body">
 <p>Given:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>list_withtop <span class="op">=</span> [<span class="dv">1000</span><span class="op">+-</span><span class="dv">10</span><span class="op">*</span>(x<span class="op">-</span><span class="dv">7</span>)<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>list_withtop <span class="op">=</span> [<span class="dv">1000</span><span class="op">+-</span><span class="dv">10</span><span class="op">*</span>(x<span class="op">-</span><span class="dv">7</span>)<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>1. Find the position of the maximum value in this array.
 2. Edit the code above such that the maximum value shifts to an index of your choice.   
       Check whether you succeedded by finding the maximum value.
