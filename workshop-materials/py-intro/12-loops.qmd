@@ -1,5 +1,9 @@
-##################################################
+::: {.callout-note}
+## Note
+Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+:::
 ---
+
 
 # Exercises Lesson 12, Loops
 

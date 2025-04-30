@@ -1,5 +1,5 @@
 ::: {.callout-note}
-## disclaimer
+## Note
 Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
 :::
 ---
@@ -8,6 +8,8 @@ Most questions originate from the carpentry lesson ["Plotting and Programming in
 
 ### Fill in the blanks
 
+::: {.callout-tip icon='false'}
+## Question A
 Fill in the blanks so that the program below produces the output shown.
 
 ```python
@@ -26,45 +28,101 @@ first time: [1, 3, 5]
 second time: [3, 5]
 ```
 
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+```python
+values = []
+values.append(1)
+values.append(3)
+values.append(5)
+print('first time:', values)
+values = values[1:]
+print('second time:', values)
+```
+:::
+
+
 ### How Large is a Slice?
 
-If start and stop are both non-negative integers, how long is the list values[start:stop]?
+::: {.callout-tip icon='false'}
+## Question B
+If start and stop are both non-negative integers, how long is the list `values[start:stop]`?
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+The list `values[start:stop]` has up to `stop - start` elements. For example, `values[1:4]` has the 3 elements `values[1]`, `values[2]`, and `values[3]`. Why 'up to'? As we saw in episode 2, if stop is greater than the total length of the list values, we will still get a list back but it will be shorter than expected.
+:::
+
+
+
 
 ### From Strings to Lists and Back
 
-Given this:
-
+Given this code:
 ```python
 print('string to list:', list('tin'))
 print('list to string:', ''.join(['g', 'o', 'l', 'd']))
 ```
-
-OUTPUT:
-```
+which outputs:
+```python
 string to list: ['t', 'i', 'n']
 list to string: gold
 ```
+::: {.callout-tip icon='false'}
+## Question ...
+1. What does list('some string') do?
+2. What does '-'.join(['x', 'y', 'z']) generate?\
+:::
 
-- What does list('some string') do?
-- What does '-'.join(['x', 'y', 'z']) generate?
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+1. `list('some string')` converts a string into a list containing all of its characters.
+2. join returns a string that is the concatenation of each string element in the list and adds the separator between each element in the list. This results in `x-y-z`. The separator between the elements is the string that provides this method.
+
+:::
 
 ### Working With the End
 
-What does the following program print?
+::: {.callout-tip icon='false'}
+## Question C
+1. What does the following program print?
 
 ```python
 element = 'helium'
 print(element[-1])
 ```
 
-- How does Python interpret a negative index?
-- If a list or string has N elements, what is the most negative index that can safely be used with it, and what location does that index represent?
-- If values is a list, what does del values[-1] do?
-- How can you display all elements but the last one without changing values? (Hint: you will need to combine slicing and negative indexing.)
+2. How does Python interpret a negative index?
+3. If a list or string has N elements, what is the most negative index that can safely be used with it, and what location does that index represent?
+4. If values is a list, what does del values[-1] do?
+5. How can you display all elements but the last one without changing values? (Hint: you will need to combine slicing and negative indexing.)
+:::
+
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+1. The program prints m.
+
+2. Python interprets a negative index as starting from the end (as opposed to starting from the beginning). The last element is -1.
+3. The last index that can safely be used with a list of N elements is element -N, which represents the first element.
+4. del values[-1] removes the last element from the list.
+5. values[:-1]
+
+
+
+:::
+
+
 
 ### Stepping Through a List
 
-What does the following program print?
+::: {.callout-tip icon='false'}
+## Question D
+1. What does the following program print?
 
 ```python
 element = 'fluorine'
@@ -72,16 +130,34 @@ print(element[::2])
 print(element[::-1])
 ```
 
-- If we write a slice as low:high:stride, what does stride do?
-- What expression would select all of the even-numbered items from a collection?
+2. If we write a slice as `low:high:stride`, what does `stride` do?
+3. What expression would select all of the even-numbered items from a collection?
 
-##################################################
+:::
+
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+1. The program prints 
+```
+furn
+eniroulf
+```
+2. `stride` is the step size of the slice.
+3. The slice `1::2` selects all even-numbered items from a collection: it starts with element 1 (which is the second element, since indexing starts at 0), goes on until the end (since no end is given), and uses a step size of 2 (i.e., selects every second element).
+:::
+
+
+
+
 ---
 
-# Additional Exercises Lesson 11, Lists
+# Additional Exercises
 
 ### Slice Bounds
 
+::: {.callout-tip icon='false'}
+## Question E
 What does the following program print?
 
 ```python
@@ -90,8 +166,21 @@ print(element[0:20])
 print(element[-1:3])
 ```
 
+:::
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+```
+lithium
+
+```
+The first statement prints the whole string, since the slice goes beyond the total length of the string. The second statement returns an empty string, because the slice goes "out of bounds" of the string.
+:::
+
+
 ### Sort and Sorted
 
+::: {.callout-tip icon='false'}
+## Question F
 What do these two programs print? In simple terms, explain the difference between sorted(letters) and letters.sort().
 
 ```python
@@ -108,9 +197,34 @@ result = letters.sort()
 print('letters is', letters, 'and result is', result)
 ```
 
+:::
+
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+Program A prints:
+```
+letters is ['g', 'o', 'l', 'd'] and result is ['d', 'g', 'l', 'o']
+```
+
+Program B prints:
+
+```
+letters is ['d', 'g', 'l', 'o'] and result is None
+```
+
+`sorted(letters)` returns a sorted copy of the list letters (the original list letters remains unchanged), while `letters.sort()` sorts the list letters in-place and does not return anything.
+:::
+
+
 ### Copying (or Not)
+
+
 What do these two programs print? In simple terms, explain the difference between new = old and new = old[:].
 
+::: {.callout-tip icon='false'}
+## Question G
 ```python
 # Program A
 old = list('gold')
@@ -127,100 +241,113 @@ new[0] = 'D'
 print('new is', new, 'and old is', old)
 ```
 
-### Go to lesson 3 (bioDSC)
+:::
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+Program A prints:
+```
+new is ['D', 'o', 'l', 'd'] and old is ['D', 'o', 'l', 'd']
+```
+Program B outputs:
+```
+new is ['D', 'o', 'l', 'd'] and old is ['g', 'o', 'l', 'd']
+```
 
-- Do the additional exercises of lesson 3 if you haven't already.
+`new = old` makes new a reference to the list `old`; `new` and `old` point towards the same object.
 
-### Negative slicing (bioDSC)
+`new = old[:]` however creates a new list object new containing all elements from the list `old`; `new` and `old` are different objects.
+:::
 
+
+### Negative slicing
+
+::: {.callout-tip icon='false'}
+## Question ...
 ```python
 element = 'lithium'
 ```
 
 What does `element[-7:3]` print and why?
 
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
 **Explanation:** https://www.geeksforgeeks.org/slicing-with-negative-numbers-in-python/
-
-### More list comprehensions and filtering (bioDSC)
-
-- Edit the following code such that the list consists of values `2x+x^2-1` where x is the index of the list element.
-
-`[x for x in range(10)]`
-
-- Now from that list, select values that are > 10, by modifying the following code:
-
-`[x for x in your_list if ______]`
-
-- Convert your list to a np.array, and do the same in a more elegant way.
-
-- Given: `list_withtop = [1000+-10*(x-7)**2 for x in range(20)]`
-    - Find the position of the maximum value in this array.
-    - Edit the code above such that the maximum value shifts to an index of your choice.   
-        - Check whether you succeedded by finding the maximum value.
-    - Multiply your list with `-1`, and put the result in another list.
-        - Where are now the maximum and minimum values?
-        - Does this make sense?
-    - `list_line = [70*x-1000 for x in range(20)]`
-        - What's the biggest value, either negative or positive, in this list?
-        - And the index of that number?
-        - What's the standard deviation?
-        - Can you calculate the correlation between list_withtop and list_line?
-        - Can you make a scatter plot of  list_withtop versus list_line?
+:::
 
 
-##################################################
----
 
-# Exercises Lesson 12, Loops
+### More list comprehensions and filtering
 
-### Tracing Execution
-
-Create a table showing the numbers of the lines that are executed when this program runs, and the values of the variables after each line is executed.
+::: {.callout-tip icon='false'}
+## Question ...
+Edit the following code such that the list consists of values `2x+x^2-1` where x is the index of the list element.
 
 ```python
-total = 0
-for char in "tin":
-    total = total + 1
+[x for x in range(10)]
 ```
 
-|Step  | Line Number | Variable Values       |
-|------|-------------|-----------------------|
-|1 | 1           | total = 0             |
-|2 | ..           | total = 0, char = 't' |
-|3 | ..           | .. |
-|4 | ..           | .. |
-|5 | ..           | .. |
-|.. | ..           | .. |
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+:::
 
 
-### Practice Accumulating
-Fill in the blanks in each of the programs below to produce the indicated result.
+::: {.callout-tip icon='false'}
+## Question ...
+Now from that list, select values that are > 10, by modifying the following code:
 
 ```python
-# Total length of the strings in the list: ["red", "green", "blue"] => 12
-total = 0
-for word in ["red", "green", "blue"]:
-    ____ = ____ + len(word)
-print(total)
+[x for x in your_list if ______]
 ```
 
-### Practice Accumulating 2 (continued)
+:::
 
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+:::
+
+
+::: {.callout-tip icon='false'}
+## Question ...
+Convert your list to a **np.array**, and do the same in a more elegant way.
+
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+:::
+
+
+::: {.callout-tip icon='false'}
+## Question ...
+
+Given: 
 ```python
-# List of word lengths: ["red", "green", "blue"] => [3, 5, 4]
-lengths = ____
-for word in ["red", "green", "blue"]:
-    lengths.____(____)
-print(lengths)
+list_withtop = [1000+-10*(x-7)**2 for x in range(20)]
 ```
+    
+    1. Find the position of the maximum value in this array.
+    2. Edit the code above such that the maximum value shifts to an index of your choice.   
+          Check whether you succeedded by finding the maximum value.
+    3. Multiply your list with `-1`, and put the result in another list.
+        1. Where are now the maximum and minimum values?
+        2. Does this make sense?
+    4. `list_line = [70*x-1000 for x in range(20)]`
+        1. What's the biggest value, either negative or positive, in this list?
+        2. And the index of that number?
+        3. What's the standard deviation?
+        4. Can you calculate the correlation between list_withtop and list_line?
+        5. Can you make a scatter plot of  list_withtop versus list_line?
 
-### Practice Accumulating 3 (continued)
+:::
 
-```python
-# Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
-words = ["red", "green", "blue"]
-result = ____
-for ____ in ____:
-    ____
-print(result)
-```
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+:::

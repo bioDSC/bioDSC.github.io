@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>variables – *bio*DSC</title>
+<title>lists – *bio*DSC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -187,10 +187,10 @@ Note
 </div>
 </div>
 <hr>
-<section id="exercises-lesson-2-variables" class="level1">
-<h1>Exercises Lesson 2, variables</h1>
-<section id="order-of-things" class="level3">
-<h3 class="anchored" data-anchor-id="order-of-things">1. Order of things</h3>
+<section id="exercises-lesson-11-lists" class="level1">
+<h1>Exercises Lesson 11, Lists</h1>
+<section id="fill-in-the-blanks" class="level3">
+<h3 class="anchored" data-anchor-id="fill-in-the-blanks">Fill in the blanks</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -201,13 +201,17 @@ Question A
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Fill the table showing the values of the variables in this program after each statement is executed.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Command  # Value of x   # Value of y   # Value of swap #</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">1.0</span>    <span class="co">#              #              #               #</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="fl">3.0</span>    <span class="co">#              #              #               #</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>swap <span class="op">=</span> x   <span class="co">#              #              #               #</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> y      <span class="co">#              #              #               #</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> swap   <span class="co">#              #              #               #</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Fill in the blanks so that the program below produces the output shown.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> ____</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>values.____(<span class="dv">1</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>values.____(<span class="dv">3</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>values.____(<span class="dv">5</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'first time:'</span>, values)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> values[____]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'second time:'</span>, values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Output:</p>
+<pre><code>first time: [1, 3, 5]
+second time: [3, 5]</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -222,51 +226,19 @@ Answer
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Value of x</th>
-<th>Value of y</th>
-<th>Value of swap</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>x = 1.0</td>
-<td>1</td>
-<td>None</td>
-<td>None</td>
-</tr>
-<tr class="even">
-<td>y = 3.0</td>
-<td>1</td>
-<td>3</td>
-<td>None</td>
-</tr>
-<tr class="odd">
-<td>swap = x</td>
-<td>1</td>
-<td>3</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>x = y</td>
-<td>3</td>
-<td>3</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>y = swap</td>
-<td>3</td>
-<td>1</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> []</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>values.append(<span class="dv">1</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>values.append(<span class="dv">3</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>values.append(<span class="dv">5</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'first time:'</span>, values)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> values[<span class="dv">1</span>:]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'second time:'</span>, values)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="how-large-is-a-slice" class="level3">
+<h3 class="anchored" data-anchor-id="how-large-is-a-slice">How Large is a Slice?</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -277,10 +249,7 @@ Question B
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What is the final value of position in the program below? (Try to predict the value without running the program, then check your prediction.)</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">'left'</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>position <span class="op">=</span> initial</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>initial <span class="op">=</span> <span class="st">'right'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If start and stop are both non-negative integers, how long is the list <code>values[start:stop]</code>?</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -295,21 +264,34 @@ Answer
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>‘left’</p>
+<p>The list <code>values[start:stop]</code> has up to <code>stop - start</code> elements. For example, <code>values[1:4]</code> has the 3 elements <code>values[1]</code>, <code>values[2]</code>, and <code>values[3]</code>. Why ‘up to’? As we saw in episode 2, if stop is greater than the total length of the list values, we will still get a list back but it will be shorter than expected.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="from-strings-to-lists-and-back" class="level3">
+<h3 class="anchored" data-anchor-id="from-strings-to-lists-and-back">From Strings to Lists and Back</h3>
+<p>Given this code:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'string to list:'</span>, <span class="bu">list</span>(<span class="st">'tin'</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'list to string:'</span>, <span class="st">''</span>.join([<span class="st">'g'</span>, <span class="st">'o'</span>, <span class="st">'l'</span>, <span class="st">'d'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>which outputs:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>string to <span class="bu">list</span>: [<span class="st">'t'</span>, <span class="st">'i'</span>, <span class="st">'n'</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">list</span> to string: gold</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Challenge question
+Question …
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you assign a = 123, what happens if you try to get the second digit of a via a[1]?</p>
+<ol type="1">
+<li>What does list(‘some string’) do?</li>
+<li>What does ‘-’.join([‘x’, ‘y’, ‘z’]) generate?<br>
+</li>
+</ol>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -324,28 +306,16 @@ Answer
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Numbers are not strings or sequences and Python will raise an error if you try to perform an index operation on a number. In the next lesson on types and type conversion we will learn more about types and how to convert between different types. If you want the Nth digit of a number you can convert it into a string using the str built-in function and then perform an index operation on that string.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">123</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>TypeError: ‘int’ object is not subscriptable</p>
+<ol type="1">
+<li><code>list('some string')</code> converts a string into a list containing all of its characters.</li>
+<li>join returns a string that is the concatenation of each string element in the list and adds the separator between each element in the list. This results in <code>x-y-z</code>. The separator between the elements is the string that provides this method.</li>
+</ol>
 </div>
 </div>
 </div>
 </section>
-<section id="slicing" class="level3">
-<h3 class="anchored" data-anchor-id="slicing">2. Slicing</h3>
-<!-- REMOVED TO SAVE TIME
-##### A
-
-What does the following program print?
-
-```
-atom_name = 'carbon'
-print('atom_name[1:3] is:', atom_name[1:3])
-```
-
-###### B
--->
+<section id="working-with-the-end" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-the-end">Working With the End</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -356,15 +326,17 @@ Question C
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Given the following string:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>species_name <span class="op">=</span> <span class="st">"Acacia buxifolia"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>What would these expressions return?</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.</span> species_name[<span class="dv">2</span>:<span class="dv">8</span>]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fl">2.</span> species_name[<span class="dv">11</span>:] (without a value after the colon)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fl">3.</span> species_name[:<span class="dv">4</span>] (without a value before the colon)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fl">4.</span> species_name[:] (just a colon)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fl">5.</span> species_name[<span class="dv">11</span>:<span class="op">-</span><span class="dv">3</span>]</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fl">6.</span> species_name[<span class="op">-</span><span class="dv">5</span>:<span class="op">-</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>What does the following program print?</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>element <span class="op">=</span> <span class="st">'helium'</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(element[<span class="op">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>How does Python interpret a negative index?</li>
+<li>If a list or string has N elements, what is the most negative index that can safely be used with it, and what location does that index represent?</li>
+<li>If values is a list, what does del values[-1] do?</li>
+<li>How can you display all elements but the last one without changing values? (Hint: you will need to combine slicing and negative indexing.)</li>
+</ol>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -379,16 +351,19 @@ Answer
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<pre><code>species_name[2:8] returns the substring 'acia b'
-species_name[11:] returns the substring 'folia', from position 11 until the end
-species_name[:4] returns the substring 'Acac', from the start up to but not including position 4
-species_name[:] returns the entire string 'Acacia buxifolia'
-species_name[11:-3] returns the substring 'fo', from the 11th position to the third last position
-species_name[-5:-3] also returns the substring 'fo', from the fifth last position to the third last
-</code></pre>
+<ol type="1">
+<li><p>The program prints m.</p></li>
+<li><p>Python interprets a negative index as starting from the end (as opposed to starting from the beginning). The last element is -1.</p></li>
+<li><p>The last index that can safely be used with a list of N elements is element -N, which represents the first element.</p></li>
+<li><p>del values[-1] removes the last element from the list.</p></li>
+<li><p>values[:-1]</p></li>
+</ol>
 </div>
 </div>
 </div>
+</section>
+<section id="stepping-through-a-list" class="level3">
+<h3 class="anchored" data-anchor-id="stepping-through-a-list">Stepping Through a List</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -399,7 +374,16 @@ Question D
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What happens when you choose a stop value which is out of range? (i.e., try species_name[0:20] or species_name[:103])</p>
+<ol type="1">
+<li>What does the following program print?</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>element <span class="op">=</span> <span class="st">'fluorine'</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(element[::<span class="dv">2</span>])</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(element[::<span class="op">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>If we write a slice as <code>low:high:stride</code>, what does <code>stride</code> do?</li>
+<li>What expression would select all of the even-numbered items from a collection?</li>
+</ol>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -414,20 +398,25 @@ Answer
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>If a part of the slice is out of range, the operation does not fail. species_name[0:20] gives the same result as species_name[0:], and species_name[:103] gives the same result as species_name[:]</p>
+<ol type="1">
+<li>The program prints</li>
+</ol>
+<pre><code>furn
+eniroulf</code></pre>
+<ol start="2" type="1">
+<li><code>stride</code> is the step size of the slice.</li>
+<li>The slice <code>1::2</code> selects all even-numbered items from a collection: it starts with element 1 (which is the second element, since indexing starts at 0), goes on until the end (since no end is given), and uses a step size of 2 (i.e., selects every second element).</li>
+</ol>
 </div>
 </div>
 </div>
-<section id="section" class="level60">
-<p class="heading"></p>
 <hr>
 </section>
 </section>
-</section>
 <section id="additional-exercises" class="level1">
-<h1>Additional exercises</h1>
-<section id="naming-carpentries" class="level3">
-<h3 class="anchored" data-anchor-id="naming-carpentries">Naming (Carpentries)</h3>
+<h1>Additional Exercises</h1>
+<section id="slice-bounds" class="level3">
+<h3 class="anchored" data-anchor-id="slice-bounds">Slice Bounds</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -438,10 +427,10 @@ Question E
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Which is a better variable name, m, min, or minutes? Why? Hint: think about which code you would rather inherit from someone who is leaving the lab:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> m <span class="op">*</span> <span class="dv">60</span> <span class="op">+</span> s</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>tot_sec <span class="op">=</span> <span class="bu">min</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">+</span> sec</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>total_seconds <span class="op">=</span> minutes <span class="op">*</span> <span class="dv">60</span> <span class="op">+</span> seconds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What does the following program print?</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>element <span class="op">=</span> <span class="st">'lithium'</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(element[<span class="dv">0</span>:<span class="dv">20</span>])</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(element[<span class="op">-</span><span class="dv">1</span>:<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -456,13 +445,15 @@ Answer
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>minutes is better because min might mean something like “minimum” (and actually is an existing built-in function in Python that we will cover later).</p>
+<pre><code>lithium
+</code></pre>
+<p>The first statement prints the whole string, since the slice goes beyond the total length of the string. The second statement returns an empty string, because the slice goes “out of bounds” of the string.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="a-very-challenging-set-of-additional-exercises-biodsc" class="level3">
-<h3 class="anchored" data-anchor-id="a-very-challenging-set-of-additional-exercises-biodsc">A very challenging set of additional exercises (bioDSC)</h3>
+<section id="sort-and-sorted" class="level3">
+<h3 class="anchored" data-anchor-id="sort-and-sorted">Sort and Sorted</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -473,38 +464,15 @@ Question F
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What’s happening here:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># use Google or chatGPT if you don't know the answers</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># if you're at the end, try to play around more</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>greetings_strings <span class="op">=</span> [<span class="st">'hello'</span>, <span class="st">'bye'</span>, <span class="st">'later'</span>]</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(greetings_strings[<span class="dv">0</span>])</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(greetings_strings[<span class="dv">1</span>][<span class="dv">2</span>])</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># (list of lists)</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([greetings_strings[idx] <span class="cf">for</span> idx <span class="kw">in</span> [<span class="dv">0</span>, <span class="dv">2</span>]])</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([greetings_strings[<span class="dv">0</span>][idx] <span class="cf">for</span> idx <span class="kw">in</span> [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>]])</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([greetings_strings[<span class="dv">0</span>][idx] <span class="cf">for</span> idx <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">2</span>)])</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># using a loop (will be covered later) / list comprehension</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>square_values <span class="op">=</span> [number<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>square_values_string <span class="op">=</span> [<span class="bu">str</span>(number<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square_values)</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square_values_string)</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># types will be the topic of the next lesson</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>species_name <span class="op">=</span> <span class="st">"Acacia buxifolia"</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">""</span>.join([species_name[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)]))</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># convenient command when working with strings</span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(species_name.replace(<span class="st">'Aca'</span>, <span class="st">'Bole'</span>))</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># another convenient command</span></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise:</span></span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>list_of_species <span class="op">=</span> [<span class="st">''</span>,<span class="st">''</span>,<span class="st">''</span>,<span class="st">''</span>]</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>list_of_species <span class="op">=</span> [<span class="st">'Homo sapiens'</span>, <span class="st">'Escherichia Coli'</span>, <span class="st">'Pan troglodytes'</span>, <span class="st">'Canis lupus'</span>, <span class="st">'Felis catus'</span>]</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new lists, where you remove all letters 'e'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What do these two programs print? In simple terms, explain the difference between sorted(letters) and letters.sort().</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Program A</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>letters <span class="op">=</span> <span class="bu">list</span>(<span class="st">'gold'</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> <span class="bu">sorted</span>(letters)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'letters is'</span>, letters, <span class="st">'and result is'</span>, result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Program B</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>letters <span class="op">=</span> <span class="bu">list</span>(<span class="st">'gold'</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> letters.sort()</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'letters is'</span>, letters, <span class="st">'and result is'</span>, result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -518,6 +486,224 @@ Answer
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Program A prints:</p>
+<pre><code>letters is ['g', 'o', 'l', 'd'] and result is ['d', 'g', 'l', 'o']</code></pre>
+<p>Program B prints:</p>
+<pre><code>letters is ['d', 'g', 'l', 'o'] and result is None</code></pre>
+<p><code>sorted(letters)</code> returns a sorted copy of the list letters (the original list letters remains unchanged), while <code>letters.sort()</code> sorts the list letters in-place and does not return anything.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="copying-or-not" class="level3">
+<h3 class="anchored" data-anchor-id="copying-or-not">Copying (or Not)</h3>
+<p>What do these two programs print? In simple terms, explain the difference between new = old and new = old[:].</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question G
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Program A</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>old <span class="op">=</span> <span class="bu">list</span>(<span class="st">'gold'</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>new <span class="op">=</span> old      <span class="co"># simple assignment</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>new[<span class="dv">0</span>] <span class="op">=</span> <span class="st">'D'</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'new is'</span>, new, <span class="st">'and old is'</span>, old)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Program B</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>old <span class="op">=</span> <span class="bu">list</span>(<span class="st">'gold'</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>new <span class="op">=</span> old[:]   <span class="co"># assigning a slice</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>new[<span class="dv">0</span>] <span class="op">=</span> <span class="st">'D'</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'new is'</span>, new, <span class="st">'and old is'</span>, old)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Program A prints:</p>
+<pre><code>new is ['D', 'o', 'l', 'd'] and old is ['D', 'o', 'l', 'd']</code></pre>
+<p>Program B outputs:</p>
+<pre><code>new is ['D', 'o', 'l', 'd'] and old is ['g', 'o', 'l', 'd']</code></pre>
+<p><code>new = old</code> makes new a reference to the list <code>old</code>; <code>new</code> and <code>old</code> point towards the same object.</p>
+<p><code>new = old[:]</code> however creates a new list object new containing all elements from the list <code>old</code>; <code>new</code> and <code>old</code> are different objects.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="negative-slicing" class="level3">
+<h3 class="anchored" data-anchor-id="negative-slicing">Negative slicing</h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question …
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>element <span class="op">=</span> <span class="st">'lithium'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What does <code>element[-7:3]</code> print and why?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Explanation:</strong> https://www.geeksforgeeks.org/slicing-with-negative-numbers-in-python/</p>
+</div>
+</div>
+</div>
+</section>
+<section id="more-list-comprehensions-and-filtering" class="level3">
+<h3 class="anchored" data-anchor-id="more-list-comprehensions-and-filtering">More list comprehensions and filtering</h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question …
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Edit the following code such that the list consists of values <code>2x+x^2-1</code> where x is the index of the list element.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>[x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question …
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Now from that list, select values that are &gt; 10, by modifying the following code:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>[x <span class="cf">for</span> x <span class="kw">in</span> your_list <span class="cf">if</span> ______]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question …
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Convert your list to a <strong>np.array</strong>, and do the same in a more elegant way.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question …
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>list_withtop <span class="op">=</span> [<span class="dv">1000</span><span class="op">+-</span><span class="dv">10</span><span class="op">*</span>(x<span class="op">-</span><span class="dv">7</span>)<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>1. Find the position of the maximum value in this array.
+2. Edit the code above such that the maximum value shifts to an index of your choice.   
+      Check whether you succeedded by finding the maximum value.
+3. Multiply your list with `-1`, and put the result in another list.
+    1. Where are now the maximum and minimum values?
+    2. Does this make sense?
+4. `list_line = [70*x-1000 for x in range(20)]`
+    1. What's the biggest value, either negative or positive, in this list?
+    2. And the index of that number?
+    3. What's the standard deviation?
+    4. Can you calculate the correlation between list_withtop and list_line?
+    5. Can you make a scatter plot of  list_withtop versus list_line?</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 
 </div>
