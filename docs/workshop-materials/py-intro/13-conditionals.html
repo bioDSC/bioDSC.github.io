@@ -438,7 +438,7 @@ Answer
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>example_list <span class="op">=</span> np.array([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">34</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">10</span>, <span class="dv">39</span>])</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(example_list[(example_list<span class="op">&gt;</span><span class="dv">30</span>) <span class="op">&amp;</span> (example_list<span class="op">&lt;</span><span class="dv">40</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>[34 39]</code></pre>
-<p>Note that in this case we have to use the <strong>bitwise</strong> <code>&amp;</code> operator because the evaluation of <code>example_list&gt;30</code> and <code>example_list&lt;40</code> returns a vector of True and False values, so we need to compare two vectors instead of two values.</p>
+<p>Note that in this case we have to use the <code>&amp;</code> operator because this is the <strong>logical and</strong> operation used in numpy.</p>
 <ol start="2" type="1">
 <li></li>
 </ol>
@@ -447,7 +447,7 @@ Answer
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(example_list[(example_list<span class="op">&lt;</span><span class="dv">0</span>) <span class="op">|</span> (example_list<span class="op">&gt;</span><span class="dv">10</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>[ -5  34 -10  39]
 </code></pre>
-<p>Note that in this case we have to use the <strong>bitwise</strong> <code>|</code> operator because the evaluation of <code>example_list&lt;0</code> and <code>example_lis&gt;10</code> returns a vector of True and False values, so we need to compare two vectors instead of two values.</p>
+<p>Note that in this case we have to use the <code>|</code> operator because this is the <strong>logical or</strong> operation in used in numpy.</p>
 </div>
 </div>
 </div>

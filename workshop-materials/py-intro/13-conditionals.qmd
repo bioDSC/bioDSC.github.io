@@ -186,8 +186,7 @@ print(example_list[(example_list>30) & (example_list<40)])
 ```
 [34 39]
 ```
-Note that in this case we have to use the **bitwise** `&` operator because the evaluation of `example_list>30` and `example_list<40` returns a vector of True and False values, so we need to compare two vectors instead of two values.
-
+Note that in this case we have to use the `&` operator because this is the **logical and** operation used in numpy. 
 
 2.
 ```python
@@ -199,14 +198,7 @@ print(example_list[(example_list<0) | (example_list>10)])
 [ -5  34 -10  39]
 
 ```
-Note that in this case we have to use the **bitwise** `|` operator because the evaluation of `example_list<0` and `example_lis>10` returns a vector of True and False values, so we need to compare two vectors instead of two values.
-
-
-
-
-
-
-
+Note that in this case we have to use the `|` operator because this is the **logical or** operation in used in numpy.
 
 :::
 
