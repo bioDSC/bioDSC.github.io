@@ -1,22 +1,45 @@
-##################################################
+::: {.callout-note}
+## Note
+Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+:::
 ---
 
 # Exercises Lesson 16, Functions
 
 ### Identifying Syntax Errors
 
-Read the code below and try to identify what the errors are without running it.
-Run the code and read the error message. Is it a SyntaxError or an IndentationError?
-Fix the error.
-
-```
+::: {.callout-tip icon='false'}
+## Question A
+1. Read the code below and try to identify what the errors are *without* running it.
+2. Run the code and read the error message. Is it a `SyntaxError` or an `IndentationError`?
+3. Fix the error.
+4. Repeat steps 2 and 3 until you have fixed all the errors.
+```python
 def another_function
   print("Syntax errors are annoying.")
    print("But at least python tells us about them!")
   print("So they are usually not too hard to fix.")
 ```
+:::
 
-### What does the following program print?
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+```python
+def another_function():
+  print("Syntax errors are annoying.")
+  print("But at least Python tells us about them!")
+  print("So they are usually not too hard to fix.")
+```
+:::
+
+
+
+### Definition and Use
+
+::: {.callout-tip icon='false'}
+## Question B
+What does the following program print?
 
 ```python
 def report(pressure):
@@ -25,8 +48,30 @@ def report(pressure):
 print('calling', report, 22.5)
 ```
 
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+```
+calling <function report at 0x7fd128ff1bf8> 22.5
+```
+A function call always needs parenthesis, otherwise you get memory address of the function object. So, if we wanted to call the function named report, and give it the value 22.5 to report on, we could have our function call as follows
+
+```python
+print("calling")
+report(22.5)
+```
+which outputs:
+```bash
+calling
+pressure is 22.5
+```
+:::
+
 ### Encapsulation
 
+::: {.callout-tip icon='false'}
+## Question C
 Fill in the blanks to create a function that takes a single filename as an argument, loads the data in the file named by the argument, and returns the minimum value in that data.
 
 ```python
@@ -37,14 +82,29 @@ def min_in_data(____):
     return ____
 ```
 
-##################################################
+:::
+
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+```python
+import pandas as pd
+
+def min_in_data(filename):
+    data = pd.read_csv(filename)
+    return data.min()
+```
+:::
+
 ---
 
-# Additional Exercises Lesson 16, Functions
+# Additional Exercises
 
 ### Order of Operations
 
-What’s wrong in this example?
+::: {.callout-tip icon='false'}
+## Question D
+1.  What’s wrong in this example?
 
 ```python
 result = print_time(11, 37, 59)
@@ -54,9 +114,9 @@ def print_time(hour, minute, second):
    print(time_string)
 ```
 
-After fixing the problem above, explain why running this example code:
+2. After fixing the problem above, explain why running this example code:
 
-```PYTHON
+```python
 result = print_time(11, 37, 59)
 print('result of call is:', result)
 ```
@@ -68,11 +128,27 @@ gives this output:
 result of call is: None
 ```
 
-Why is the result of the call None?
+3. Why is the result of the call None?
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+1. The problem with the example is that the function print_time() is defined after the call to the function is made. Python doesn't know how to resolve the name print_time since it hasn't been defined yet and will raise a NameError e.g., NameError: name 'print_time' is not defined
+
+2. The first line of output 11:37:59 is printed by the first line of code, result = print_time(11, 37, 59) that binds the value returned by invoking print_time to the variable result. The second line is from the second print call to print the contents of the result variable.
+
+3. print_time() does not explicitly return a value, so it automatically returns None.
+
+:::
+
+
 
 
 ### Find the First
 
+::: {.callout-tip icon='false'}
+## Question E
 Fill in the blanks to create a function that takes a list of numbers as an argument and returns the first negative value in the list. What does your function do if the list is empty? What if the list has no negative numbers?
 
 ```python
@@ -81,8 +157,34 @@ def first_negative(values):
         if ____:
             return ____
 ```
+:::
+
+
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+```python
+def first_negative(values):
+    for v in values:
+        if v < 0:
+            return v
+```
+
+If an empty list or a list with all positive values is passed to this function, it returns `None`:
+
+```python
+my_list = []
+print(first_negative(my_list))
+```
+```
+None
+```
+:::
 
 ### Calling by Name
+::: {.callout-tip icon='false'}
+## Question F
 Earlier we saw this function:
 
 ```python
@@ -96,38 +198,43 @@ We saw that we can call the function using named arguments, like this:
 print_date(day=1, month=2, year=2003)
 ```
 
-- What does `print_date(day=1, month=2, year=2003)` print?
-- When have you seen a function call like this before?
-- When and why is it useful to call functions this way?
+1. What does `print_date(day=1, month=2, year=2003)` print?
+2. When have you seen a function call like this before?
+3. When and why is it useful to call functions this way?
 
-### Write your own function
+:::
 
-See the exercise "Write your own function and import it" from the additional exercises in lesson 6.
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
 
-### Omitted exercises
+1. 2003/2/1
+2. We saw examples of using named arguments when working with the pandas library. For example, when reading in a dataset using data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country'), the last argument index_col is a named argument.
+3. Using named arguments can make code more readable since one can see from the function call what name the different arguments have inside the function. It can also reduce the chances of passing arguments in the wrong order, since by using named arguments the order doesn't matter.
 
-Continue with more exercises at:
-https://swcarpentry.github.io/python-novice-gapminder/instructor/16-writing-functions.html
+:::
 
-(See: "Encapsulation of an If/Print Block".)
+
 
 ### Primes
 
+::: {.callout-tip icon='false'}
+## Question ...
 Write a function that looks as follows:
-```
+```python
 def calculate_primes(N):
     ...
 ```
 that returns an array with prime numbers between 0 and N.
 
-Hints:
-- Start with writing a function `is_number_prime(X)`, that checks whether $X$ is a prime number.
+*Hints*:
+- Start with writing a function `is_number_prime(X)`, that checks whether `X` is a prime number.
+
 - You probably need the following ingredients for that function: 
     - How to test if a number is divisible by any number?
-    - Use a for loop to test whether $X$ can be divided by all numbers $<X$.
+    - Use a for loop to test whether `X` can be divided by all numbers `<X`.
     - Could be convenient to make smart use of the `return` function.
     
-```
+```python
 def is_number_prime(X):
     
     # <insert explanatory comment>
@@ -143,4 +250,20 @@ def is_number_prime(X):
 def calculate_primes(N):
     ...
 ```
+
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+:::
+
+
+### Write your own function (SKIP THIS OR MOVE THIS FROM FUNCTIONS???)
+See the exercise ["Write your own function and import it"](06-libraries.qmd){target="_blank"} from the additional exercises in lesson 6.
+
+### Omitted exercises
+
+Continue with [more exercises](https://swcarpentry.github.io/python-novice-gapminder/instructor/16-writing-functions.html){target="_blank"} from the carpentry lessons. (See: "Encapsulation of an If/Print Block".)
+
 
