@@ -5,15 +5,22 @@ Most questions originate from the carpentry lesson ["Plotting and Programming in
 :::
 ---
 
+
+# INSERT THE REGULAR EXERCISES AS WELL!
+
+
+
 # Additional exercises Lesson 8
 
 
 ### Epicardial cells
 ::: {.callout-note appearance="simple"}
-## To load the data from the kohela study we can also use its origin from a website directly
+## To load the data from the kohela study [Kohela et al.](https://doi.org/10.1126/scitranslmed.abf2750) (GSE149331) we can also download it directly from the <i>bio</i>DSC website, and immediately transpose it in one line:
 
 ```Python
-df_cells_kohela2 = pd.read_csv("https://www.biodsc.nl/workshop-materials/py-intro/kohela-et-al.csv",header=0,index_col=0)
+# Import kohela data; note the .T at the end, which immediately transposes!
+df_cells_kohela2 = \
+    pd.read_csv("https://www.biodsc.nl/workshop-materials/py-intro/kohela-et-al.csv",header=0,index_col=0).T
 ```
 :::
 ::: {.callout-tip icon='false'}
@@ -38,6 +45,11 @@ df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('WT_'), 'Condition'] = 
 df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('mutant_'), 'Condition'] = 'mutant'
 ```
 
+You can inspect the values in the new column to check if the contents are as expected:
+```
+df_cells_kohela2['Condition']
+```
+
 :::
 
 ::: {.callout-tip icon='false'}
@@ -46,19 +58,30 @@ What is the difference between str.contains and str.match?
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
-**str.match** is only true when the whole string is the same. **str.match** returns true if the specified part is found in the string.
+See documentation for [str.contains](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.contains.html) and [str.match](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.match.html).
+`str.contains` tests whether the search string is contained in each string (at any location), whilst `str.match` determines if each string starts with a match.
 :::
 
 
 ::: {.callout-tip icon='false'}
-## Question C.. CHECK THIS .. NO TFAP2A defined!!!
+## Question C
 
-Now again calculate the mean value of TFAP2A expression in WT cells vs. mutant cells. 
+Now calculate the mean value of TFAP2A expression in WT cells vs. mutant cells. 
 Does there appear to be more TFAP2A expression in the mutant cells?
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+```
 df_cells_kohela2.loc[:,['TFAP2A','Condition']].groupby('Condition').mean()
+```
+Yields
+```
+             TFAP2A
+Condition          
+WT         1.535655
+mutant     9.601550
+```
+so this indeed appears to be the case.
 :::
 
 ### Gene expression
@@ -109,18 +132,22 @@ We saved the data as tab-separated-value (tsv) [file](data/gene_expression.tsv) 
 
 ```Python
 df = pd.read_csv('gene_expression.tsv',header=0, sep='\t')
+# or alternatively:
+# pd.read_table('gene_expression.tsv')
 ```
 
-1. 
+1. The average CRP gene expression per condion.    
 ```Python
 df[df.gene=='CRP'].groupby(['gene','condition'])['expression'].mean()
 ```
-2. 
+
+2. The corresponding standard deviations.
 ```Python
 df.groupby(['gene','condition'])['expression'].std()
 ```
 
-3. & 4.
+3. The log2-fold change between WT, condition A, and condition B.
+4. Do the same for ACTA1.
 ```Python
 dfmean = df.groupby(['gene','condition'])['expression'].mean().to_frame()
 WT = dfmean.index.get_level_values(1)=='WT'
@@ -129,7 +156,7 @@ ratios.index=dfmean[~WT].index
 print(np.log2(ratios))
 ```
 
-5. 
+5. Normalize all gene expression levels to their average respective wild type levels.
 ```Python
 dfw = df.copy()
 CRP = dfw.gene=='CRP'
