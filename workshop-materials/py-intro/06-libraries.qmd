@@ -43,7 +43,7 @@ Which standard library module could help you? Which function would you select fr
 :::
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
-1. The random module seems like it could help.
+The random module seems like it could help.
 
 The string has 11 characters, each having a positional index from 0 to 10. You could use the random.randrange or random.randint functions to get a random integer between 0 and 10, and then select the bases character at that index:
 
@@ -252,17 +252,18 @@ ValueError: math domain error
 
 When you have a notebook file, you can also create another file, with a .py extension, and write functions in that file. The .py file can be imported like a library, and the functions in the file can be used as if they came from a library.
 
-### Exercise
+### Writing your own function
 ::: {.callout-tip icon='false'}
-## Question I
+## Question
 
 
 Using the information below, try to 
+
 - create two files, one `.ipynb` (notebook) file and one `.py` (python plain text code) file.
 - rename the `myfunctionname` functions in the `.py` file and use them in the notebook.
 - create a third function, which returns C when you provide A and B, assuming `A^2+B^2 = C^2`, and use it in your notebook.
 
-Useful things to know:
+#### Useful information:
 
 - You can also make `.py` files. Unlike notebooks, every text here is assumed to be python code.
 - *For Jupyter notebooks*: 

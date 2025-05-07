@@ -195,7 +195,7 @@ What will `numbers[1]` return? And `physical_constants[2:4]`?
 
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
-- `numbers[1]` will return 1 because in Python indexing vectors start counting at 0. 
+- `numbers[1]` will return 2 because in Python indexing vectors start counting at 0. 
 - `numbers[2:4]` returns `['c',299792458]` because indexing starts at the 3rd position (=2+1) and elements are selected **up to but not including** the 5th element (which has index 4).
 :::
 
@@ -393,6 +393,8 @@ The above code uses several lines, can you do this in one line?
 
 ### Special maths (Carpentries)
 
+::: {.callout-tip icon="false"}
+## Question
 In Python 3, the `//` operator performs integer (whole-number) floor division, the `/` operator performs floating-point division, and the `%` (or modulo) operator calculates and returns the remainder from integer division:
 
 ```Python
@@ -409,6 +411,7 @@ OUTPUT:
 ```
 
 If num_subjects is the number of subjects taking part in a study, and num_per_survey is the number that can take part in a single survey, write an expression that calculates the number of surveys needed to reach everyone once.
+:::
 
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
@@ -425,6 +428,10 @@ print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys)
 
 ### Complex numbers (Carpentries)
 
+
+::: {.callout-tip icon="false"}
+## Question P
+
 Python provides complex numbers, which are written as 1.0+2.0j. If val is a complex number, its real and imaginary parts can be accessed using dot notation as val.real and val.imag.
 
 ```Python
@@ -433,8 +440,6 @@ print(a_complex_number.real)
 print(a_complex_number.imag)
 ```
 
-::: {.callout-tip icon="false"}
-#### Question P
 1. Why do you think Python uses j instead of i for the imaginary part?
 2. What do you expect 1 + 2j + 3 to produce?
 3. What do you expect 4j to be? What about 4 j or 4 + j?

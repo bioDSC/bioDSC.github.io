@@ -490,8 +490,13 @@ df = pd.read_csv('gene_expression.tsv',header=0, sep='\t')
 #### The average CRP gene expression per condion.
 
 
-This can be done in multiple ways. Here's an elegant solution:
+This can be done in multiple ways. Here's an elegant solution that gives
+information about the std and mean in one go:
+```Python
+df_gene_expression.groupby(['gene', 'condition']).describe()
+```
 
+Alternatively, we can do this using group_by, the mean and std function.
 We can use the column names directly as argument for the group by, 
 then apply mean, then apply "reset_index()" to convert the multi-index to columns.
 
@@ -503,7 +508,7 @@ print(df_gene_expression_avg.loc[df_gene_expression_avg['gene']=='CRP',:])
 
 #### The standard deviation
 The corresponding standard deviations can be calculated in a similar way:
-```
+```Python
 df_gene_expression_std = df_gene_expression.groupby(by = ['gene', 'condition']).std().reset_index()
 print(df_gene_expression_std.loc[df_gene_expression_std['gene']=='CRP',:])
 ```
@@ -513,7 +518,7 @@ A disadvantage of this strategy is that for large dataframes, you might be calcu
 that you're not interested in in the end.
 You could also first select the gene of interest.
 
-```
+```Python
 df_gene_expression_avg_CRP = df_gene_expression.loc[df_gene_expression['gene']=='CRP',:].groupby(by = ['gene', 'condition']).mean().reset_index()
 df_gene_expression_std_CRP = df_gene_expression.loc[df_gene_expression['gene']=='CRP',:].groupby(by = ['gene', 'condition']).std().reset_index()
 print(df_gene_expression_avg_CRP)
@@ -533,7 +538,7 @@ corresponds to ACTA1, it will be divided by a record from the denominator's data
 has an ACTA1 index, even if the numerator and denominator's dataframes are of different length.
 This also applies to series.
 
-```
+```Python
 # Calculate averages again, without resetting the index
 gene_expression_avg = df_gene_expression.groupby(['gene','condition'])['expression'].mean()
 # Identify the WT records with a boolean array
@@ -561,7 +566,7 @@ See above.
 
 We can use a same strategy as above.
 
-```
+```Python
 # First set the index to the gene column, then take the expression values
 gene_expression = df_gene_expression.set_index('gene')['expression']
 # Take the average information from above, and also set the index to the gene value,

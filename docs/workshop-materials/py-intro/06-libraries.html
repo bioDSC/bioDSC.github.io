@@ -257,9 +257,7 @@ Answer
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>The random module seems like it could help.</li>
-</ol>
+<p>The random module seems like it could help.</p>
 <p>The string has 11 characters, each having a positional index from 0 to 10. You could use the random.randrange or random.randint functions to get a random integer between 0 and 10, and then select the bases character at that index:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> randrange</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>random_index <span class="op">=</span> randrange(<span class="bu">len</span>(bases))</span>
@@ -549,20 +547,26 @@ Answer
 <h3 class="anchored" data-anchor-id="write-your-own-function-and-import-it">Write your own function and import it</h3>
 <p>When you have a notebook file, you can also create another file, with a .py extension, and write functions in that file. The .py file can be imported like a library, and the functions in the file can be used as if they came from a library.</p>
 </section>
-<section id="exercise" class="level3">
-<h3 class="anchored" data-anchor-id="exercise">Exercise</h3>
+<section id="writing-your-own-function" class="level3">
+<h3 class="anchored" data-anchor-id="writing-your-own-function">Writing your own function</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question I
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Using the information below, try to - create two files, one <code>.ipynb</code> (notebook) file and one <code>.py</code> (python plain text code) file. - rename the <code>myfunctionname</code> functions in the <code>.py</code> file and use them in the notebook. - create a third function, which returns C when you provide A and B, assuming <code>A^2+B^2 = C^2</code>, and use it in your notebook.</p>
-<p>Useful things to know:</p>
+<p>Using the information below, try to</p>
+<ul>
+<li>create two files, one <code>.ipynb</code> (notebook) file and one <code>.py</code> (python plain text code) file.</li>
+<li>rename the <code>myfunctionname</code> functions in the <code>.py</code> file and use them in the notebook.</li>
+<li>create a third function, which returns C when you provide A and B, assuming <code>A^2+B^2 = C^2</code>, and use it in your notebook.</li>
+</ul>
+<section id="useful-information" class="level4">
+<h4 class="anchored" data-anchor-id="useful-information">Useful information:</h4>
 <ul>
 <li>You can also make <code>.py</code> files. Unlike notebooks, every text here is assumed to be python code.</li>
 <li><em>For Jupyter notebooks</em>:
@@ -588,6 +592,7 @@ Question I
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> myfunctionname2(input1, input2):</span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"input 1 = "</span>, input1, <span class="st">', input 2 = '</span>, input2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </div>
 </div>
 
