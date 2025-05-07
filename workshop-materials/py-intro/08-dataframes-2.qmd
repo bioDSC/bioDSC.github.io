@@ -435,7 +435,7 @@ so this indeed appears to be the case.
 ### Gene expression
 
 ::: {.callout-tip icon='false'}
-## Question D ... DOUBLE CHECK THIS ... WHY SEPARATE CRP & ACTA1??? 
+## Question D
 - Convert the data below to a file you can import (e.g.: csv, tsv), import it to a pandas df, and determine the following:
     1. The average CRP gene expression per condion.
     2. The corresponding standard deviations.
