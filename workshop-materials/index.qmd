@@ -16,7 +16,7 @@
     - [Lesson 13 - conditionals](py-intro/13-conditionals.qmd)
     - [Lesson 14 - looping over data](py-intro/14-looping-over-data.qmd)
     - [Lesson 16 - writing functions](py-intro/16-functions.qmd)
-- For the RNA-seq dataset from [Kohela et al.](https://doi.org/10.1126/scitranslmed.abf2750) (GSE149331), click [this link](/data/kohela-et-al.csv).
+- For the RNA-seq dataset from [Kohela et al.](https://doi.org/10.1126/scitranslmed.abf2750) (GSE149331), click [this link](/static/data/kohela-et-al.csv).
 - For the example plot, see here: [link](py-intro/plot.qmd).
 
 
