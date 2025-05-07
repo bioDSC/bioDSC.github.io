@@ -5,8 +5,356 @@ Most questions originate from the carpentry lesson ["Plotting and Programming in
 :::
 ---
 
+<!-- ################################################################################ -->
 
-# INSERT THE REGULAR EXERCISES AS WELL!
+
+# Exercises for lesson 8, dataframes (2)
+
+### Selection individual values
+
+::: {.callout-tip icon='false'}
+## Question 
+Import data for europe:
+
+```python
+import pandas as pd
+data_europe = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
+```
+
+Find the GDP Capita of Serbia in 2007.
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+The selection can be done by using the labels for both the row (“Serbia”) and the column (“gdpPercap_2007”):
+
+```Python
+print(data_europe.loc['Serbia', 'gdpPercap_2007'])
+```
+:::
+
+
+
+### Extent of slicing
+
+::: {.callout-tip icon='false'}
+## Question 
+- Do the two statements below produce the same output?
+- Based on this, what rule governs what is included (or not) in numerical slices and named slices in Pandas?
+
+```python
+print(data_europe.iloc[0:2, 0:2])
+print(data_europe.loc['Albania':'Belgium', 'gdpPercap_1952':'gdpPercap_1962'])
+```
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+No, they do not produce the same output! The output of the first statement is:
+
+```
+        gdpPercap_1952  gdpPercap_1957
+country
+Albania     1601.056136     1942.284244
+Austria     6137.076492     8842.598030
+```
+
+The second statement gives:
+
+```
+        gdpPercap_1952  gdpPercap_1957  gdpPercap_1962
+country
+Albania     1601.056136     1942.284244     2312.888958
+Austria     6137.076492     8842.598030    10750.721110
+Belgium     8343.105127     9714.960623    10991.206760
+```
+
+Clearly, the second statement produces an additional column and an additional row compared to the first statement.
+What conclusion can we draw? We see that a numerical slice, 0:2, omits the final index (i.e. index 2) in the range provided, 
+while a named slice, ‘gdpPercap_1952’:‘gdpPercap_1962’, includes the final element.
+:::
+
+
+### Reconstructing Data
+
+::: {.callout-tip icon='false'}
+## Question 
+Explain what each line in the following short program does: what is in first, second, etc.?
+
+```python
+first = pd.read_csv('data/gapminder_all.csv', index_col='country')
+second = first[first['continent'] == 'Americas']
+third = second.drop('Puerto Rico')
+fourth = third.drop('continent', axis = 1)
+fourth.to_csv('result.csv')
+```
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+Let’s go through this piece of code line by line.
+
+```Python
+first = pd.read_csv('data/gapminder_all.csv', index_col='country')
+```
+This line loads the dataset containing the GDP data from all countries into a dataframe called first. The index_col='country' parameter selects which column to use as the row labels in the dataframe.
+
+
+```Python
+second = first[first['continent'] == 'Americas']
+```
+This line makes a selection: only those rows of first for which the ‘continent’ column matches ‘Americas’ are extracted. Notice how the Boolean expression inside the brackets, first['continent'] == 'Americas', is used to select only those rows where the expression is true. Try printing this expression! Can you print also its individual True/False elements? (hint: first assign the expression to a variable)
+
+
+```Python
+third = second.drop('Puerto Rico')
+```
+As the syntax suggests, this line drops the row from second where the label is ‘Puerto Rico’. The resulting dataframe third has one row less than the original dataframe second.
+
+
+```Python
+fourth = third.drop('continent', axis = 1)
+```
+Again we apply the drop function, but in this case we are dropping not a row but a whole column. To accomplish this, we need to specify also the axis parameter (we want to drop the second column which has index 1).
+
+
+```Python
+fourth.to_csv('result.csv')
+```
+The final step is to write the data that we have been working on to a csv file. Pandas makes this easy with the to_csv() function. The only required argument to the function is the filename. Note that the file will be written in the directory from which you started the Jupyter or Python session.
+
+:::
+
+
+
+### Selecting Indices
+
+::: {.callout-tip icon='false'}
+## Question 
+Explain in simple terms what idxmin and idxmax do in the short program below. When would you use these methods?
+
+```python
+data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
+print(data.idxmin())
+print(data.idxmax())
+```
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+For each column in data, idxmin will return the index value corresponding to each column’s minimum; idxmax will do accordingly the same for each column’s maximum value.
+
+You can use these functions whenever you want to get the row index of the minimum/maximum value and not the actual minimum/maximum value.
+:::
+
+
+### Practice with Selection
+
+::: {.callout-tip icon='false'}
+## Question 
+Assume Pandas has been imported and the Gapminder GDP data for Europe has been loaded. Write an expression to select each of the following:
+
+- GDP per capita for all countries in 1982.
+- GDP per capita for Denmark for all years.
+- GDP per capita for all countries for years after 1985.
+- GDP per capita for each country in 2007 as a multiple of GDP per capita for that country in 1952.
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+1:
+
+```Python
+data['gdpPercap_1982']
+```
+
+2:
+
+```Python
+data.loc['Denmark',:]
+```
+
+3:
+
+```Python
+data.loc[:,'gdpPercap_1985':]
+```
+Pandas is smart enough to recognize the number at the end of the column label and does not give you an error, although no column named gdpPercap_1985 actually exists. This is useful if new columns are added to the CSV file later.
+
+4:
+
+```Python
+data['gdpPercap_2007']/data['gdpPercap_1952']
+```
+:::
+
+
+### Many Ways of Access
+
+::: {.callout-tip icon='false'}
+## Question 
+There are at least two ways of accessing a value or slice of a DataFrame: by name or index. However, there are many others. For example, a single column or row can be accessed either as a DataFrame or a Series object.
+
+Suggest different ways of doing the following operations on a DataFrame:
+
+- Access a single column
+- Access a single row
+- Access an individual DataFrame element
+- Access several columns
+- Access several rows
+- Access a subset of specific rows and columns
+- Access a subset of row and column ranges
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+1. Access a single column:
+
+```Python
+# by name
+data["col_name"]   # as a Series
+data[["col_name"]] # as a DataFrame
+
+# by name using .loc
+data.T.loc["col_name"]  # as a Series
+data.T.loc[["col_name"]].T  # as a DataFrame
+
+# Dot notation (Series)
+data.col_name
+
+# by index (iloc)
+data.iloc[:, col_index]   # as a Series
+data.iloc[:, [col_index]] # as a DataFrame
+
+# using a mask
+data.T[data.T.index == "col_name"].T
+```
+
+2. Access a single row:
+
+```Python
+# by name using .loc
+data.loc["row_name"] # as a Series
+data.loc[["row_name"]] # as a DataFrame
+
+# by name
+data.T["row_name"] # as a Series
+data.T[["row_name"]].T # as a DataFrame
+
+# by index
+data.iloc[row_index]   # as a Series
+data.iloc[[row_index]]   # as a DataFrame
+
+# using mask
+data[data.index == "row_name"]
+```
+
+
+
+3. Access an individual DataFrame element:
+
+```Python
+# by column/row names
+data["column_name"]["row_name"]         # as a Series
+
+data[["col_name"]].loc["row_name"]  # as a Series
+data[["col_name"]].loc[["row_name"]]  # as a DataFrame
+
+data.loc["row_name"]["col_name"]  # as a value
+data.loc[["row_name"]]["col_name"]  # as a Series
+data.loc[["row_name"]][["col_name"]]  # as a DataFrame
+
+data.loc["row_name", "col_name"]  # as a value
+data.loc[["row_name"], "col_name"]  # as a Series. Preserves index. Column name is moved to `.name`.
+data.loc["row_name", ["col_name"]]  # as a Series. Index is moved to `.name.` Sets index to column name.
+data.loc[["row_name"], ["col_name"]]  # as a DataFrame (preserves original index and column name)
+
+# by column/row names: Dot notation
+data.col_name.row_name
+
+# by column/row indices
+data.iloc[row_index, col_index] # as a value
+data.iloc[[row_index], col_index] # as a Series. Preserves index. Column name is moved to `.name`
+data.iloc[row_index, [col_index]] # as a Series. Index is moved to `.name.` Sets index to column name.
+data.iloc[[row_index], [col_index]] # as a DataFrame (preserves original index and column name)
+
+# column name + row index
+data["col_name"][row_index]
+data.col_name[row_index]
+data["col_name"].iloc[row_index]
+
+# column index + row name
+data.iloc[:, [col_index]].loc["row_name"]  # as a Series
+data.iloc[:, [col_index]].loc[["row_name"]]  # as a DataFrame
+
+# using masks
+data[data.index == "row_name"].T[data.T.index == "col_name"].T
+```
+
+
+4. Access several columns:
+
+
+```Python
+# by name
+data[["col1", "col2", "col3"]]
+data.loc[:, ["col1", "col2", "col3"]]
+
+# by index
+data.iloc[:, [col1_index, col2_index, col3_index]]
+```
+
+
+5. Access several rows
+
+```Python
+# by name
+data.loc[["row1", "row2", "row3"]]
+
+# by index
+data.iloc[[row1_index, row2_index, row3_index]]
+```
+
+
+6. Access a subset of specific rows and columns
+
+```Python
+# by names
+data.loc[["row1", "row2", "row3"], ["col1", "col2", "col3"]]
+
+# by indices
+data.iloc[[row1_index, row2_index, row3_index], [col1_index, col2_index, col3_index]]
+
+# column names + row indices
+data[["col1", "col2", "col3"]].iloc[[row1_index, row2_index, row3_index]]
+
+# column indices + row names
+data.iloc[:, [col1_index, col2_index, col3_index]].loc[["row1", "row2", "row3"]]
+```
+
+
+7. Access a subset of row and column ranges
+
+```Python
+# by name
+data.loc["row1":"row2", "col1":"col2"]
+
+# by index
+data.iloc[row1_index:row2_index, col1_index:col2_index]
+
+# column names + row indices
+data.loc[:, "col1_name":"col2_name"].iloc[row1_index:row2_index]
+
+# column indices + row names
+data.iloc[:, col1_index:col2_index].loc["row1":"row2"]
+```
+
+:::
+
+
+
+
+<!-- ################################################################################ --> 
 
 
 
@@ -128,6 +476,9 @@ ACTA1	1231	B
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+
+#### Load the file 
+
 We saved the data as tab-separated-value (tsv) [file](data/gene_expression.tsv) and load it into a dataframe using the read_csv command but now specify the tab character (**\\t**) as the value separator:
 
 ```Python
@@ -135,6 +486,124 @@ df = pd.read_csv('gene_expression.tsv',header=0, sep='\t')
 # or alternatively:
 # pd.read_table('gene_expression.tsv')
 ```
+
+#### The average CRP gene expression per condion.
+
+
+This can be done in multiple ways. Here's an elegant solution:
+
+We can use the column names directly as argument for the group by, 
+then apply mean, then apply "reset_index()" to convert the multi-index to columns.
+
+```Python
+df_gene_expression_avg = df_gene_expression.groupby(by = ['gene', 'condition']).mean().reset_index()
+# CRP expression
+print(df_gene_expression_avg.loc[df_gene_expression_avg['gene']=='CRP',:])
+```
+
+#### The standard deviation
+The corresponding standard deviations can be calculated in a similar way:
+```
+df_gene_expression_std = df_gene_expression.groupby(by = ['gene', 'condition']).std().reset_index()
+print(df_gene_expression_std.loc[df_gene_expression_std['gene']=='CRP',:])
+```
+
+#### An alternative strategy
+A disadvantage of this strategy is that for large dataframes, you might be calculating many mean values
+that you're not interested in in the end.
+You could also first select the gene of interest.
+
+```
+df_gene_expression_avg_CRP = df_gene_expression.loc[df_gene_expression['gene']=='CRP',:].groupby(by = ['gene', 'condition']).mean().reset_index()
+df_gene_expression_std_CRP = df_gene_expression.loc[df_gene_expression['gene']=='CRP',:].groupby(by = ['gene', 'condition']).std().reset_index()
+print(df_gene_expression_avg_CRP)
+print(df_gene_expression_std_CRP)
+```
+
+#### The log2-fold change between WT, condition A, and condition B.
+
+Note that for a real-world analysis, you might use specialized tools for this, which 
+take into account more statistical considerations (e.g. like DESeq2).
+But to directly calculate the log2-fold change, we need to divide mean condition X by mean WT, 
+calculate the ratios, and take the logarithm with base 2.
+
+There are multiple ways to do this. The solution below exploits the fact that when dividing 
+two dataframes, the indices are "aligned". Meaning here that if the index of the numerator dataframe
+corresponds to ACTA1, it will be divided by a record from the denominator's dataframe that's also 
+has an ACTA1 index, even if the numerator and denominator's dataframes are of different length.
+This also applies to series.
+
+```
+# Calculate averages again, without resetting the index
+gene_expression_avg = df_gene_expression.groupby(['gene','condition'])['expression'].mean()
+# Identify the WT records with a boolean array
+WT_records = gene_expression_avg.index.get_level_values(1)=='WT'
+# Select such that we divide a non-WT dataframe by a WT dataframe
+# We use "reset index" to set the index to gene names only, this allows for alignment
+ratios = gene_expression_avg.loc[~WT_records].reset_index(level=1,drop=True)/gene_expression_avg.loc[WT_records].reset_index(level=1,drop=True)
+# The parameters above were series, let's convert back to dataframe
+df_ratios = ratios.to_frame()
+# Now we need to restore the index to identify the conditions
+df_ratios.index=gene_expression_avg[~WT_records].index
+# And we can take the log2
+df_log2fc = np.log2(df_ratios)
+# search for "expression" column name and replace by "log2fc"
+df_log2fc = df_log2fc.rename(columns={'expression':'log2fc'})
+print(df_log2fc)
+```
+
+#### Do the same for ACTA1.
+
+See above.
+
+
+#### Normalize all gene expression levels to their average respective wild type levels.
+
+We can use a same strategy as above.
+
+```
+# First set the index to the gene column, then take the expression values
+gene_expression = df_gene_expression.set_index('gene')['expression']
+# Take the average information from above, and also set the index to the gene value,
+# such that we have average values indexed in the proper way to match the gene_expression.
+wt_avg_values   = gene_expression_avg.loc[WT_records].reset_index(level=1,drop=True)
+# We can now divide one by the other
+gene_expression_normalized = gene_expression/wt_avg_values
+# We can create a new dataframe with normalized data
+df_gene_expression_norm = df_gene_expression.copy()
+df_gene_expression_norm['expression_normalized'] = gene_expression_normalized.values
+```
+
+
+
+#### Alternative strategy for the above two exercises.
+An alternative would be to pivot the dataframe such that it becomes easier to handle.
+This could also be used to calculate log2fc values.
+
+```Python
+# Create a copy of the dataframe to avoid confusion with other exercises.
+df_gene_expression_2 = df_gene_expression.copy()
+# To pivot, it is required to be able to match rows uniquely. Add an index to do this.
+df_gene_expression_2['rows'] = df_gene_expression_2.groupby(['gene','condition']).cumcount()
+# Pivot df_gene_expression_2 such that the gene column is used to expand the 'expression', remove 'rows'
+df_gene_expression_wide = df_gene_expression_2.pivot(index=['condition','rows'], columns='gene', values='expression').reset_index().drop(columns='rows')
+# Now calculate the averages
+df_averages =  df_gene_expression_wide.groupby(['condition']).mean()
+# Now divide df_gene_expression_wide columns by df_averages
+values_WT = df_averages.T['WT'].values
+# We can use the dataframe's division method to divide all columns by the WT averages
+df_gene_expression_norm2 = df_gene_expression_wide.loc[:,'ACTA1':'CRP'].div(values_WT, axis=1)
+# Add annotation condition
+df_gene_expression_norm2['condition'] = df_gene_expression_wide['condition']
+print(df_gene_expression_norm2)
+# Calculate L2FC:
+df_log2fc_2 = df_gene_expression_norm2.groupby(['condition']).mean().apply(np.log2)
+print(df_log2fc_2)
+```
+
+:::
+
+<!-- # Solution by Frans
 
 1. The average CRP gene expression per condion.    
 ```Python
@@ -163,7 +632,7 @@ CRP = dfw.gene=='CRP'
 dfw.loc[ CRP,'expression']  = dfw.loc[CRP,'expression']/dfmean.loc[('CRP','WT')].values
 dfw.loc[~CRP,'expression'] = dfw.loc[~CRP,'expression']/dfmean.loc[('ACTA1','WT')].values
 ```
-:::
+-->
 
 
 
@@ -179,6 +648,7 @@ dfw.loc[~CRP,'expression'] = dfw.loc[~CRP,'expression']/dfmean.loc[('ACTA1','WT'
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+XXXXX Add this!!! XXXX
 :::
 
 
@@ -226,7 +696,7 @@ data.median()
 Poland’s borders have been stable since 1945, but changed several times in the years before then. How would you handle this if you were creating a table of GDP per capita for Poland for the entire twentieth century?
 :::
 
-::: {.callout-caution collapse='true' icon='false'}
+::: {.callout-caution icon='false'}
 ## Answer
-???
+(No answer provided, this is a question to ponder.)
 :::

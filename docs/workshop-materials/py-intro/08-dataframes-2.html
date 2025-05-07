@@ -187,8 +187,384 @@ Note
 </div>
 </div>
 <hr>
-<section id="insert-the-regular-exercises-as-well" class="level1">
-<h1>INSERT THE REGULAR EXERCISES AS WELL!</h1>
+<!-- ################################################################################ -->
+<section id="exercises-for-lesson-8-dataframes-2" class="level1">
+<h1>Exercises for lesson 8, dataframes (2)</h1>
+<section id="selection-individual-values" class="level3">
+<h3 class="anchored" data-anchor-id="selection-individual-values">Selection individual values</h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Import data for europe:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data_europe <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Find the GDP Capita of Serbia in 2007.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The selection can be done by using the labels for both the row (“Serbia”) and the column (“gdpPercap_2007”):</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_europe.loc[<span class="st">'Serbia'</span>, <span class="st">'gdpPercap_2007'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="extent-of-slicing" class="level3">
+<h3 class="anchored" data-anchor-id="extent-of-slicing">Extent of slicing</h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Do the two statements below produce the same output?</li>
+<li>Based on this, what rule governs what is included (or not) in numerical slices and named slices in Pandas?</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_europe.iloc[<span class="dv">0</span>:<span class="dv">2</span>, <span class="dv">0</span>:<span class="dv">2</span>])</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_europe.loc[<span class="st">'Albania'</span>:<span class="st">'Belgium'</span>, <span class="st">'gdpPercap_1952'</span>:<span class="st">'gdpPercap_1962'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>No, they do not produce the same output! The output of the first statement is:</p>
+<pre><code>        gdpPercap_1952  gdpPercap_1957
+country
+Albania     1601.056136     1942.284244
+Austria     6137.076492     8842.598030</code></pre>
+<p>The second statement gives:</p>
+<pre><code>        gdpPercap_1952  gdpPercap_1957  gdpPercap_1962
+country
+Albania     1601.056136     1942.284244     2312.888958
+Austria     6137.076492     8842.598030    10750.721110
+Belgium     8343.105127     9714.960623    10991.206760</code></pre>
+<p>Clearly, the second statement produces an additional column and an additional row compared to the first statement. What conclusion can we draw? We see that a numerical slice, 0:2, omits the final index (i.e.&nbsp;index 2) in the range provided, while a named slice, ‘gdpPercap_1952’:‘gdpPercap_1962’, includes the final element.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="reconstructing-data" class="level3">
+<h3 class="anchored" data-anchor-id="reconstructing-data">Reconstructing Data</h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Explain what each line in the following short program does: what is in first, second, etc.?</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>first <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_all.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>second <span class="op">=</span> first[first[<span class="st">'continent'</span>] <span class="op">==</span> <span class="st">'Americas'</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>third <span class="op">=</span> second.drop(<span class="st">'Puerto Rico'</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>fourth <span class="op">=</span> third.drop(<span class="st">'continent'</span>, axis <span class="op">=</span> <span class="dv">1</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>fourth.to_csv(<span class="st">'result.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let’s go through this piece of code line by line.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>first <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_all.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This line loads the dataset containing the GDP data from all countries into a dataframe called first. The index_col=‘country’ parameter selects which column to use as the row labels in the dataframe.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>second <span class="op">=</span> first[first[<span class="st">'continent'</span>] <span class="op">==</span> <span class="st">'Americas'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This line makes a selection: only those rows of first for which the ‘continent’ column matches ‘Americas’ are extracted. Notice how the Boolean expression inside the brackets, first[‘continent’] == ‘Americas’, is used to select only those rows where the expression is true. Try printing this expression! Can you print also its individual True/False elements? (hint: first assign the expression to a variable)</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>third <span class="op">=</span> second.drop(<span class="st">'Puerto Rico'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>As the syntax suggests, this line drops the row from second where the label is ‘Puerto Rico’. The resulting dataframe third has one row less than the original dataframe second.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fourth <span class="op">=</span> third.drop(<span class="st">'continent'</span>, axis <span class="op">=</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Again we apply the drop function, but in this case we are dropping not a row but a whole column. To accomplish this, we need to specify also the axis parameter (we want to drop the second column which has index 1).</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>fourth.to_csv(<span class="st">'result.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The final step is to write the data that we have been working on to a csv file. Pandas makes this easy with the to_csv() function. The only required argument to the function is the filename. Note that the file will be written in the directory from which you started the Jupyter or Python session.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="selecting-indices" class="level3">
+<h3 class="anchored" data-anchor-id="selecting-indices">Selecting Indices</h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Explain in simple terms what idxmin and idxmax do in the short program below. When would you use these methods?</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.idxmin())</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.idxmax())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For each column in data, idxmin will return the index value corresponding to each column’s minimum; idxmax will do accordingly the same for each column’s maximum value.</p>
+<p>You can use these functions whenever you want to get the row index of the minimum/maximum value and not the actual minimum/maximum value.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="practice-with-selection" class="level3">
+<h3 class="anchored" data-anchor-id="practice-with-selection">Practice with Selection</h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Assume Pandas has been imported and the Gapminder GDP data for Europe has been loaded. Write an expression to select each of the following:</p>
+<ul>
+<li>GDP per capita for all countries in 1982.</li>
+<li>GDP per capita for Denmark for all years.</li>
+<li>GDP per capita for all countries for years after 1985.</li>
+<li>GDP per capita for each country in 2007 as a multiple of GDP per capita for that country in 1952.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>1:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'gdpPercap_1982'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>2:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data.loc[<span class="st">'Denmark'</span>,:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>3:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>data.loc[:,<span class="st">'gdpPercap_1985'</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pandas is smart enough to recognize the number at the end of the column label and does not give you an error, although no column named gdpPercap_1985 actually exists. This is useful if new columns are added to the CSV file later.</p>
+<p>4:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'gdpPercap_2007'</span>]<span class="op">/</span>data[<span class="st">'gdpPercap_1952'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="many-ways-of-access" class="level3">
+<h3 class="anchored" data-anchor-id="many-ways-of-access">Many Ways of Access</h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are at least two ways of accessing a value or slice of a DataFrame: by name or index. However, there are many others. For example, a single column or row can be accessed either as a DataFrame or a Series object.</p>
+<p>Suggest different ways of doing the following operations on a DataFrame:</p>
+<ul>
+<li>Access a single column</li>
+<li>Access a single row</li>
+<li>Access an individual DataFrame element</li>
+<li>Access several columns</li>
+<li>Access several rows</li>
+<li>Access a subset of specific rows and columns</li>
+<li>Access a subset of row and column ranges</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Access a single column:</li>
+</ol>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># by name</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"col_name"</span>]   <span class="co"># as a Series</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>data[[<span class="st">"col_name"</span>]] <span class="co"># as a DataFrame</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># by name using .loc</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>data.T.loc[<span class="st">"col_name"</span>]  <span class="co"># as a Series</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>data.T.loc[[<span class="st">"col_name"</span>]].T  <span class="co"># as a DataFrame</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Dot notation (Series)</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>data.col_name</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co"># by index (iloc)</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>data.iloc[:, col_index]   <span class="co"># as a Series</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>data.iloc[:, [col_index]] <span class="co"># as a DataFrame</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="co"># using a mask</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>data.T[data.T.index <span class="op">==</span> <span class="st">"col_name"</span>].T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Access a single row:</li>
+</ol>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># by name using .loc</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>data.loc[<span class="st">"row_name"</span>] <span class="co"># as a Series</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>data.loc[[<span class="st">"row_name"</span>]] <span class="co"># as a DataFrame</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># by name</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>data.T[<span class="st">"row_name"</span>] <span class="co"># as a Series</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>data.T[[<span class="st">"row_name"</span>]].T <span class="co"># as a DataFrame</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co"># by index</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>data.iloc[row_index]   <span class="co"># as a Series</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>data.iloc[[row_index]]   <span class="co"># as a DataFrame</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co"># using mask</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>data[data.index <span class="op">==</span> <span class="st">"row_name"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Access an individual DataFrame element:</li>
+</ol>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># by column/row names</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"column_name"</span>][<span class="st">"row_name"</span>]         <span class="co"># as a Series</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>data[[<span class="st">"col_name"</span>]].loc[<span class="st">"row_name"</span>]  <span class="co"># as a Series</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>data[[<span class="st">"col_name"</span>]].loc[[<span class="st">"row_name"</span>]]  <span class="co"># as a DataFrame</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>data.loc[<span class="st">"row_name"</span>][<span class="st">"col_name"</span>]  <span class="co"># as a value</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>data.loc[[<span class="st">"row_name"</span>]][<span class="st">"col_name"</span>]  <span class="co"># as a Series</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>data.loc[[<span class="st">"row_name"</span>]][[<span class="st">"col_name"</span>]]  <span class="co"># as a DataFrame</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>data.loc[<span class="st">"row_name"</span>, <span class="st">"col_name"</span>]  <span class="co"># as a value</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>data.loc[[<span class="st">"row_name"</span>], <span class="st">"col_name"</span>]  <span class="co"># as a Series. Preserves index. Column name is moved to `.name`.</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>data.loc[<span class="st">"row_name"</span>, [<span class="st">"col_name"</span>]]  <span class="co"># as a Series. Index is moved to `.name.` Sets index to column name.</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>data.loc[[<span class="st">"row_name"</span>], [<span class="st">"col_name"</span>]]  <span class="co"># as a DataFrame (preserves original index and column name)</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="co"># by column/row names: Dot notation</span></span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>data.col_name.row_name</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a><span class="co"># by column/row indices</span></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>data.iloc[row_index, col_index] <span class="co"># as a value</span></span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>data.iloc[[row_index], col_index] <span class="co"># as a Series. Preserves index. Column name is moved to `.name`</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>data.iloc[row_index, [col_index]] <span class="co"># as a Series. Index is moved to `.name.` Sets index to column name.</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>data.iloc[[row_index], [col_index]] <span class="co"># as a DataFrame (preserves original index and column name)</span></span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="co"># column name + row index</span></span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"col_name"</span>][row_index]</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>data.col_name[row_index]</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>data[<span class="st">"col_name"</span>].iloc[row_index]</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a><span class="co"># column index + row name</span></span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>data.iloc[:, [col_index]].loc[<span class="st">"row_name"</span>]  <span class="co"># as a Series</span></span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>data.iloc[:, [col_index]].loc[[<span class="st">"row_name"</span>]]  <span class="co"># as a DataFrame</span></span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a><span class="co"># using masks</span></span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>data[data.index <span class="op">==</span> <span class="st">"row_name"</span>].T[data.T.index <span class="op">==</span> <span class="st">"col_name"</span>].T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Access several columns:</li>
+</ol>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># by name</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>data[[<span class="st">"col1"</span>, <span class="st">"col2"</span>, <span class="st">"col3"</span>]]</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>data.loc[:, [<span class="st">"col1"</span>, <span class="st">"col2"</span>, <span class="st">"col3"</span>]]</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># by index</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>data.iloc[:, [col1_index, col2_index, col3_index]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="5" type="1">
+<li>Access several rows</li>
+</ol>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># by name</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>data.loc[[<span class="st">"row1"</span>, <span class="st">"row2"</span>, <span class="st">"row3"</span>]]</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># by index</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>data.iloc[[row1_index, row2_index, row3_index]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="6" type="1">
+<li>Access a subset of specific rows and columns</li>
+</ol>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># by names</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>data.loc[[<span class="st">"row1"</span>, <span class="st">"row2"</span>, <span class="st">"row3"</span>], [<span class="st">"col1"</span>, <span class="st">"col2"</span>, <span class="st">"col3"</span>]]</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># by indices</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>data.iloc[[row1_index, row2_index, row3_index], [col1_index, col2_index, col3_index]]</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># column names + row indices</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>data[[<span class="st">"col1"</span>, <span class="st">"col2"</span>, <span class="st">"col3"</span>]].iloc[[row1_index, row2_index, row3_index]]</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co"># column indices + row names</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>data.iloc[:, [col1_index, col2_index, col3_index]].loc[[<span class="st">"row1"</span>, <span class="st">"row2"</span>, <span class="st">"row3"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="7" type="1">
+<li>Access a subset of row and column ranges</li>
+</ol>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># by name</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>data.loc[<span class="st">"row1"</span>:<span class="st">"row2"</span>, <span class="st">"col1"</span>:<span class="st">"col2"</span>]</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># by index</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>data.iloc[row1_index:row2_index, col1_index:col2_index]</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># column names + row indices</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>data.loc[:, <span class="st">"col1_name"</span>:<span class="st">"col2_name"</span>].iloc[row1_index:row2_index]</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co"># column indices + row names</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>data.iloc[:, col1_index:col2_index].loc[<span class="st">"row1"</span>:<span class="st">"row2"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<!-- ################################################################################ -->
+</section>
 </section>
 <section id="additional-exercises-lesson-8" class="level1">
 <h1>Additional exercises Lesson 8</h1>
@@ -204,9 +580,9 @@ To load the data from the kohela study <a href="https://doi.org/10.1126/scitrans
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import kohela data; note the .T at the end, which immediately transposes!</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2 <span class="op">=</span> <span class="op">\</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    pd.read_csv(<span class="st">"https://www.biodsc.nl/workshop-materials/py-intro/kohela-et-al.csv"</span>,header<span class="op">=</span><span class="dv">0</span>,index_col<span class="op">=</span><span class="dv">0</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import kohela data; note the .T at the end, which immediately transposes!</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2 <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    pd.read_csv(<span class="st">"https://www.biodsc.nl/workshop-materials/py-intro/kohela-et-al.csv"</span>,header<span class="op">=</span><span class="dv">0</span>,index_col<span class="op">=</span><span class="dv">0</span>).T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -220,14 +596,14 @@ Question A
 </div>
 <div class="callout-body-container callout-body">
 <p>In the <a href="https://www.biodsc.nl/workshop-materials/py-intro/kohela-et-al.csv">RNA-seq data</a>, we can create another column that reflects the condition of the cells, WT or mutant. Fill in the blanks to achieve this:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2[<span class="st">'Condition'</span>] <span class="op">=</span> ____</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2.loc[df_cells_kohela2.index.<span class="bu">str</span>.contains(<span class="st">'WT_'</span>), <span class="st">'Condition'</span>] <span class="op">=</span> ____</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2.loc[df_cells_kohela2.index._______, _________] <span class="op">=</span> ______</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2[<span class="st">'Condition'</span>] <span class="op">=</span> ____</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2.loc[df_cells_kohela2.index.<span class="bu">str</span>.contains(<span class="st">'WT_'</span>), <span class="st">'Condition'</span>] <span class="op">=</span> ____</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2.loc[df_cells_kohela2.index._______, _________] <span class="op">=</span> ______</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -236,11 +612,11 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2[<span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'unknown'</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2.loc[df_cells_kohela2.index.<span class="bu">str</span>.contains(<span class="st">'WT_'</span>), <span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'WT'</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2.loc[df_cells_kohela2.index.<span class="bu">str</span>.contains(<span class="st">'mutant_'</span>), <span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'mutant'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2[<span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'unknown'</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2.loc[df_cells_kohela2.index.<span class="bu">str</span>.contains(<span class="st">'WT_'</span>), <span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'WT'</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2.loc[df_cells_kohela2.index.<span class="bu">str</span>.contains(<span class="st">'mutant_'</span>), <span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'mutant'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can inspect the values in the new column to check if the contents are as expected:</p>
 <pre><code>df_cells_kohela2['Condition']</code></pre>
 </div>
@@ -260,7 +636,7 @@ Question B
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -269,7 +645,7 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>See documentation for <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.contains.html">str.contains</a> and <a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.str.match.html">str.match</a>. <code>str.contains</code> tests whether the search string is contained in each string (at any location), whilst <code>str.match</code> determines if each string starts with a match.</p>
 </div>
@@ -289,7 +665,7 @@ Question C
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -298,7 +674,7 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <pre><code>df_cells_kohela2.loc[:,['TFAP2A','Condition']].groupby('Condition').mean()</code></pre>
 <p>Yields</p>
@@ -361,7 +737,7 @@ ACTA1   1231    B</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -370,40 +746,131 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<section id="load-the-file" class="level4">
+<h4 class="anchored" data-anchor-id="load-the-file">Load the file</h4>
 <p>We saved the data as tab-separated-value (tsv) <a href="data/gene_expression.tsv">file</a> and load it into a dataframe using the read_csv command but now specify the tab character (<strong>\t</strong>) as the value separator:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'gene_expression.tsv'</span>,header<span class="op">=</span><span class="dv">0</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or alternatively:</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># pd.read_table('gene_expression.tsv')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol type="1">
-<li>The average CRP gene expression per condion.<br>
-</li>
-</ol>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[df.gene<span class="op">==</span><span class="st">'CRP'</span>].groupby([<span class="st">'gene'</span>,<span class="st">'condition'</span>])[<span class="st">'expression'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>The corresponding standard deviations.</li>
-</ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df.groupby([<span class="st">'gene'</span>,<span class="st">'condition'</span>])[<span class="st">'expression'</span>].std()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
-<li>The log2-fold change between WT, condition A, and condition B.</li>
-<li>Do the same for ACTA1.</li>
-</ol>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>dfmean <span class="op">=</span> df.groupby([<span class="st">'gene'</span>,<span class="st">'condition'</span>])[<span class="st">'expression'</span>].mean().to_frame()</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>WT <span class="op">=</span> dfmean.index.get_level_values(<span class="dv">1</span>)<span class="op">==</span><span class="st">'WT'</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ratios <span class="op">=</span> dfmean.loc[<span class="op">~</span>WT].reset_index(level<span class="op">=</span><span class="dv">1</span>,drop<span class="op">=</span><span class="va">True</span>)<span class="op">/</span>dfmean.loc[WT].reset_index(level<span class="op">=</span><span class="dv">1</span>,drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>ratios.index<span class="op">=</span>dfmean[<span class="op">~</span>WT].index</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.log2(ratios))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="5" type="1">
-<li>Normalize all gene expression levels to their average respective wild type levels.</li>
-</ol>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dfw <span class="op">=</span> df.copy()</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>CRP <span class="op">=</span> dfw.gene<span class="op">==</span><span class="st">'CRP'</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>dfw.loc[ CRP,<span class="st">'expression'</span>]  <span class="op">=</span> dfw.loc[CRP,<span class="st">'expression'</span>]<span class="op">/</span>dfmean.loc[(<span class="st">'CRP'</span>,<span class="st">'WT'</span>)].values</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>dfw.loc[<span class="op">~</span>CRP,<span class="st">'expression'</span>] <span class="op">=</span> dfw.loc[<span class="op">~</span>CRP,<span class="st">'expression'</span>]<span class="op">/</span>dfmean.loc[(<span class="st">'ACTA1'</span>,<span class="st">'WT'</span>)].values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'gene_expression.tsv'</span>,header<span class="op">=</span><span class="dv">0</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or alternatively:</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># pd.read_table('gene_expression.tsv')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="the-average-crp-gene-expression-per-condion." class="level4">
+<h4 class="anchored" data-anchor-id="the-average-crp-gene-expression-per-condion.">The average CRP gene expression per condion.</h4>
+<p>This can be done in multiple ways. Here’s an elegant solution:</p>
+<p>We can use the column names directly as argument for the group by, then apply mean, then apply “reset_index()” to convert the multi-index to columns.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df_gene_expression_avg <span class="op">=</span> df_gene_expression.groupby(by <span class="op">=</span> [<span class="st">'gene'</span>, <span class="st">'condition'</span>]).mean().reset_index()</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># CRP expression</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_gene_expression_avg.loc[df_gene_expression_avg[<span class="st">'gene'</span>]<span class="op">==</span><span class="st">'CRP'</span>,:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="the-standard-deviation" class="level4">
+<h4 class="anchored" data-anchor-id="the-standard-deviation">The standard deviation</h4>
+<p>The corresponding standard deviations can be calculated in a similar way:</p>
+<pre><code>df_gene_expression_std = df_gene_expression.groupby(by = ['gene', 'condition']).std().reset_index()
+print(df_gene_expression_std.loc[df_gene_expression_std['gene']=='CRP',:])</code></pre>
+</section>
+<section id="an-alternative-strategy" class="level4">
+<h4 class="anchored" data-anchor-id="an-alternative-strategy">An alternative strategy</h4>
+<p>A disadvantage of this strategy is that for large dataframes, you might be calculating many mean values that you’re not interested in in the end. You could also first select the gene of interest.</p>
+<pre><code>df_gene_expression_avg_CRP = df_gene_expression.loc[df_gene_expression['gene']=='CRP',:].groupby(by = ['gene', 'condition']).mean().reset_index()
+df_gene_expression_std_CRP = df_gene_expression.loc[df_gene_expression['gene']=='CRP',:].groupby(by = ['gene', 'condition']).std().reset_index()
+print(df_gene_expression_avg_CRP)
+print(df_gene_expression_std_CRP)</code></pre>
+</section>
+<section id="the-log2-fold-change-between-wt-condition-a-and-condition-b." class="level4">
+<h4 class="anchored" data-anchor-id="the-log2-fold-change-between-wt-condition-a-and-condition-b.">The log2-fold change between WT, condition A, and condition B.</h4>
+<p>Note that for a real-world analysis, you might use specialized tools for this, which take into account more statistical considerations (e.g.&nbsp;like DESeq2). But to directly calculate the log2-fold change, we need to divide mean condition X by mean WT, calculate the ratios, and take the logarithm with base 2.</p>
+<p>There are multiple ways to do this. The solution below exploits the fact that when dividing two dataframes, the indices are “aligned”. Meaning here that if the index of the numerator dataframe corresponds to ACTA1, it will be divided by a record from the denominator’s dataframe that’s also has an ACTA1 index, even if the numerator and denominator’s dataframes are of different length. This also applies to series.</p>
+<pre><code># Calculate averages again, without resetting the index
+gene_expression_avg = df_gene_expression.groupby(['gene','condition'])['expression'].mean()
+# Identify the WT records with a boolean array
+WT_records = gene_expression_avg.index.get_level_values(1)=='WT'
+# Select such that we divide a non-WT dataframe by a WT dataframe
+# We use "reset index" to set the index to gene names only, this allows for alignment
+ratios = gene_expression_avg.loc[~WT_records].reset_index(level=1,drop=True)/gene_expression_avg.loc[WT_records].reset_index(level=1,drop=True)
+# The parameters above were series, let's convert back to dataframe
+df_ratios = ratios.to_frame()
+# Now we need to restore the index to identify the conditions
+df_ratios.index=gene_expression_avg[~WT_records].index
+# And we can take the log2
+df_log2fc = np.log2(df_ratios)
+# search for "expression" column name and replace by "log2fc"
+df_log2fc = df_log2fc.rename(columns={'expression':'log2fc'})
+print(df_log2fc)</code></pre>
+</section>
+<section id="do-the-same-for-acta1." class="level4">
+<h4 class="anchored" data-anchor-id="do-the-same-for-acta1.">Do the same for ACTA1.</h4>
+<p>See above.</p>
+</section>
+<section id="normalize-all-gene-expression-levels-to-their-average-respective-wild-type-levels." class="level4">
+<h4 class="anchored" data-anchor-id="normalize-all-gene-expression-levels-to-their-average-respective-wild-type-levels.">Normalize all gene expression levels to their average respective wild type levels.</h4>
+<p>We can use a same strategy as above.</p>
+<pre><code># First set the index to the gene column, then take the expression values
+gene_expression = df_gene_expression.set_index('gene')['expression']
+# Take the average information from above, and also set the index to the gene value,
+# such that we have average values indexed in the proper way to match the gene_expression.
+wt_avg_values   = gene_expression_avg.loc[WT_records].reset_index(level=1,drop=True)
+# We can now divide one by the other
+gene_expression_normalized = gene_expression/wt_avg_values
+# We can create a new dataframe with normalized data
+df_gene_expression_norm = df_gene_expression.copy()
+df_gene_expression_norm['expression_normalized'] = gene_expression_normalized.values</code></pre>
+</section>
+<section id="alternative-strategy-for-the-above-two-exercises." class="level4">
+<h4 class="anchored" data-anchor-id="alternative-strategy-for-the-above-two-exercises.">Alternative strategy for the above two exercises.</h4>
+<p>An alternative would be to pivot the dataframe such that it becomes easier to handle. This could also be used to calculate log2fc values.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a copy of the dataframe to avoid confusion with other exercises.</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>df_gene_expression_2 <span class="op">=</span> df_gene_expression.copy()</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co"># To pivot, it is required to be able to match rows uniquely. Add an index to do this.</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>df_gene_expression_2[<span class="st">'rows'</span>] <span class="op">=</span> df_gene_expression_2.groupby([<span class="st">'gene'</span>,<span class="st">'condition'</span>]).cumcount()</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot df_gene_expression_2 such that the gene column is used to expand the 'expression', remove 'rows'</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>df_gene_expression_wide <span class="op">=</span> df_gene_expression_2.pivot(index<span class="op">=</span>[<span class="st">'condition'</span>,<span class="st">'rows'</span>], columns<span class="op">=</span><span class="st">'gene'</span>, values<span class="op">=</span><span class="st">'expression'</span>).reset_index().drop(columns<span class="op">=</span><span class="st">'rows'</span>)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Now calculate the averages</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>df_averages <span class="op">=</span>  df_gene_expression_wide.groupby([<span class="st">'condition'</span>]).mean()</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Now divide df_gene_expression_wide columns by df_averages</span></span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>values_WT <span class="op">=</span> df_averages.T[<span class="st">'WT'</span>].values</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="co"># We can use the dataframe's division method to divide all columns by the WT averages</span></span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>df_gene_expression_norm2 <span class="op">=</span> df_gene_expression_wide.loc[:,<span class="st">'ACTA1'</span>:<span class="st">'CRP'</span>].div(values_WT, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Add annotation condition</span></span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>df_gene_expression_norm2[<span class="st">'condition'</span>] <span class="op">=</span> df_gene_expression_wide[<span class="st">'condition'</span>]</span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_gene_expression_norm2)</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate L2FC:</span></span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>df_log2fc_2 <span class="op">=</span> df_gene_expression_norm2.groupby([<span class="st">'condition'</span>]).mean().<span class="bu">apply</span>(np.log2)</span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_log2fc_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 </div>
 </div>
 </div>
+<!-- # Solution by Frans
+
+1. The average CRP gene expression per condion.    
+```Python
+df[df.gene=='CRP'].groupby(['gene','condition'])['expression'].mean()
+```
+
+2. The corresponding standard deviations.
+```Python
+df.groupby(['gene','condition'])['expression'].std()
+```
+
+3. The log2-fold change between WT, condition A, and condition B.
+4. Do the same for ACTA1.
+```Python
+dfmean = df.groupby(['gene','condition'])['expression'].mean().to_frame()
+WT = dfmean.index.get_level_values(1)=='WT'
+ratios = dfmean.loc[~WT].reset_index(level=1,drop=True)/dfmean.loc[WT].reset_index(level=1,drop=True)
+ratios.index=dfmean[~WT].index
+print(np.log2(ratios))
+```
+
+5. Normalize all gene expression levels to their average respective wild type levels.
+```Python
+dfw = df.copy()
+CRP = dfw.gene=='CRP'
+dfw.loc[ CRP,'expression']  = dfw.loc[CRP,'expression']/dfmean.loc[('CRP','WT')].values
+dfw.loc[~CRP,'expression'] = dfw.loc[~CRP,'expression']/dfmean.loc[('ACTA1','WT')].values
+```
+-->
 </section>
 <section id="gdps" class="level3">
 <h3 class="anchored" data-anchor-id="gdps">GDPs</h3>
@@ -425,7 +892,7 @@ Question E
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -434,9 +901,9 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<p>XXXXX Add this!!! XXXX</p>
 </div>
 </div>
 </div>
@@ -444,18 +911,18 @@ Answer
 <section id="exploring-available-methods-using-the-dir-function" class="level3">
 <h3 class="anchored" data-anchor-id="exploring-available-methods-using-the-dir-function">Exploring available methods using the dir() function</h3>
 <p>Python includes a dir() function that can be used to display all of the available methods (functions) that are built into a data object. In Episode 4, we used some methods with a string. But we can see many more are available by using dir():</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">'Hello world!'</span>   <span class="co"># creation of a string object </span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(my_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">'Hello world!'</span>   <span class="co"># creation of a string object </span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(my_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This command returns:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">'__add__'</span>,</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="st">'__subclasshook__'</span>,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="st">'capitalize'</span>,</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="st">'casefold'</span>,</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="st">'center'</span>,</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="st">'upper'</span>,</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="st">'zfill'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">'__add__'</span>,</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="st">'__subclasshook__'</span>,</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="st">'capitalize'</span>,</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="st">'casefold'</span>,</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="st">'center'</span>,</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="st">'upper'</span>,</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="st">'zfill'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can use help() or Shift+Tab to get more information about what these methods do.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -471,7 +938,7 @@ Question E
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -480,10 +947,10 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Among many choices, dir() lists the median() function as a possibility. Thus,</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>data.median()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>data.median()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -504,19 +971,16 @@ Question F
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Answer
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>???</p>
-</div>
+<p>(No answer provided, this is a question to ponder.)</p>
 </div>
 </div>
 
