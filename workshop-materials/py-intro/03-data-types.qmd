@@ -23,6 +23,8 @@ print(type(3.4))
 <class 'float'>
 ```
 :::
+
+
 #### 
 ::: {.callout-tip icon="false"}
 ### Question B
@@ -41,6 +43,7 @@ print(result, 'is', type(result))
 ```
 :::
 
+
 ::: {.callout-tip icon="false"}
 ### Question C
 What type of value (integer, floating point number, or character string) would you use to represent each of the following? Try to come up with more than one good answer for each problem. For example, in # 1, when would counting days with a floating point variable make more sense than using an integer?
@@ -52,6 +55,7 @@ What type of value (integer, floating point number, or character string) would y
 5. Current population of a city.
 6. Average population of a city over time.
 :::
+
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
 The answers to the questions are:
@@ -92,6 +96,7 @@ If the conversion doesn’t make sense, however, an error message will occur.
 ```Python
 print("string to float:", float("Hello world!"))
 ```
+
 ::: {.callout-tip icon="false"}
 ### Question E
 1. What do you expect the following program to do?
@@ -102,6 +107,7 @@ print("string to float:", float("Hello world!"))
 print("fractional string to int:", int("3.4"))
 ```
 :::
+
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
 1. What do you expect this program to do? It would not be so unreasonable to expect the Python 3 int command to convert the string “3.4” to 3.4 and an additional type conversion to 3. After all, Python 3 performs a lot of other magic - isn’t that part of its charm?
@@ -125,6 +131,8 @@ print(int(float("3.4")))
 3
 ```
 :::
+
+
 
 ::: {.callout-tip icon="false"}
 ### Question F
@@ -187,10 +195,8 @@ What will `numbers[1]` return? And `physical_constants[2:4]`?
 
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
-```Python
-numbers[1] will return 1 because in Python indexing vectors starts at position 0 (=0+1)
-numbers[2:4] returns ['c',299792458] because indexing starts at the 3rd position (=2+1) and the slicing parameters stops at the position 4-1 (=3+1)
-```
+- `numbers[1]` will return 1 because in Python indexing vectors start counting at 0. 
+- `numbers[2:4]` returns `['c',299792458]` because indexing starts at the 3rd position (=2+1) and elements are selected **up to but not including** the 5th element (which has index 4).
 :::
 
 
@@ -218,6 +224,8 @@ What is the type of
 - `type(physical_constants[3]) <class 'int'>`
 - `type(fruits) <class 'list'>`
 - `type(fruits[1]) <class 'str'>`
+
+So list, integer, list, float, string, integer, list and string, respectively.
 
 :::
 
@@ -253,7 +261,10 @@ what's the difference here:
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
 - `my_array+1`, throws an error message because there is no operator defined that accepts a list type **and** an int type. If you want to concatenate the two, use my_array+[1] 
-- `my_array_np+1`, returns array([2, 3, 4, 6]), an np.array where every element from my_array_np has been increased by 1
+- `my_array_np+1`, returns array([2, 3, 4, 6]), an np.array where every element from my_array_np has been increased by 1. 
+
+The effect of the `+` operator thus changes with the type of the parameters it is used for.
+With numpy arrays, you can work more mathematically.
 :::
 
 
@@ -275,7 +286,7 @@ what's the difference here:
 
 ::: {.callout-tip icon="false"}
 #### Question K
-what's the difference here:
+What will happen here?
 
 - `my_array + [1,2,3,4]`
 - `my_array_np + np.array([1, 2, 3, 4])`
@@ -298,8 +309,13 @@ numpy-specific things, what is happening?
 
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
-- `my_array_np[range(1,4,2)]`, returns array([2,5]), the second and fourth element of my_array_np. range(1, 4, 2) generates numbers from 1 to 4 with a stepsize of 2
-- `my_array_np[my_array_np>1]`, returns array([2,3,5]), the > 1 clause only selects those elements whos values is larger than 1.
+- `my_array_np[range(1,4,2)]`, returns array([2,5]), the second and fourth element of my_array_np. range(1, 4, 2) generates numbers from 1 to 4 (not including 4) with a stepsize of 2 (1 and 3 in this case).
+- `my_array_np[my_array_np>1]`, returns array([2,3,5]), the `my_array_np>1` clause allows you to select those elements for which this equation is true (we'll delve into this more later). Respectively
+    - 1>1 is false, 
+    - 2>1 is true, 
+    - 3>1 is true, 
+    - 5>1 is true, 
+    - hence respectively elements 2 to 4 of `my_array_np` are selected.
 :::
 
 
@@ -318,6 +334,20 @@ What is the type of the elements in these two arrays?
 - `np.array([1,2,3,'hello'])`, returns array(['1', '2', '3', 'hello'], dtype='<U21')
 
 The elements of a NumPy array must all be of the same type, whereas the elements of a Python list can be of completely different types.
+Automatic conversion occurs to convert all elements to the same type (in this case string takes presedence). 
+
+You can access the type of elements in a numpy array as follows:
+```
+my_array = np.array([1,2,3,'hello'])
+my_array.dtype
+```
+'<U21' referst to a specific kind of string.
+
+Alternatively
+```
+type(my_array[0])
+```
+will also show it's a numpy string type (`numpy.str_`).
 :::
 
 ### 4. Dict(ionary)
@@ -379,6 +409,19 @@ OUTPUT:
 ```
 
 If num_subjects is the number of subjects taking part in a study, and num_per_survey is the number that can take part in a single survey, write an expression that calculates the number of surveys needed to reach everyone once.
+
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+We want the minimum number of surveys that reaches everyone once, which is the rounded up value of num_subjects/ num_per_survey. This is equivalent to performing a floor division with // and adding 1. Before the division we need to subtract 1 from the number of subjects to deal with the case where num_subjects is evenly divisible by num_per_survey.
+
+```Python
+num_subjects = 600
+num_per_survey = 42
+num_surveys = (num_subjects - 1) // num_per_survey + 1
+
+print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys)
+```
+:::
 
 ### Complex numbers (Carpentries)
 

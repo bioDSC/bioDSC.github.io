@@ -141,11 +141,31 @@ data_microbes = pd.read_csv('../field_data/microbes.csv')
 :::
 
 
-
-
 ### Writing data
-
+::: {.callout-tip icon='false'}
+## Question
 As well as the read_csv function for reading data from a file, Pandas provides a to_csv function to write dataframes to files. Applying what you’ve learned about reading from files, write one of your dataframes to a file called processed.csv. You can use help to get information on how to use to_csv.
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+In order to write the DataFrame data_americas to a file called processed.csv, execute the following command:
+
+```Python
+data_americas.to_csv('processed.csv')
+```
+
+For help on read_csv or to_csv, you could execute, for example:
+
+```Python
+help(data_americas.to_csv)
+help(pd.read_csv)
+```
+
+Note that help(to_csv) or help(pd.to_csv) throws an error! This is due to the fact that to_csv is not a global Pandas function, but a member function of DataFrames. This means you can only call it on an instance of a DataFrame e.g., data_americas.to_csv or data_oceania.to_csv
+
+:::
 
 ##################################################
 ---
@@ -157,9 +177,9 @@ As well as the read_csv function for reading data from a file, Pandas provides a
 ## Question D
 
 1. Create some sample data
-    1. Create a plain text file on your computer, and give it the extension `.csv`. 
-    2. Find out what the comma-separated format looks like. 
-    3. Use your imagination to complete the following table and put it in the `.csv` file. 
+    - Create a plain text file on your computer, and give it the extension `.csv`. 
+    - Find out what the comma-separated format looks like. 
+    - Use your imagination to complete the following table and put it in the `.csv` file. 
 
         |replicate| cond1   |  cond2 |
         |---|---|---|
@@ -169,9 +189,7 @@ As well as the read_csv function for reading data from a file, Pandas provides a
         |   | 12  |   |
         |   | 13  |   |
         |   | 13  |   |
-
-    4. Let's do some unethical data massaging, and tweak the csv such that you get a significant p-val between the two conditions
-
+    
 2. Now try to read in that table in your python notebook.
 3. Get the following code to run on your dataframe (referred to as `df` below):
 ```python
@@ -180,6 +198,7 @@ t_stat, p_value = ttest_ind(df['cond1'], df['cond2'])
 print(f"T-statistic: {t_stat}, P-value: {p_value}")
 ```
 4. What does that code do? 
+5. If you haven't already, let's do some data massaging, and tweak the csv such that you get a significant p-val between the two conditions. (Don't manipulate real data like this ;).)
 :::
 
 
@@ -208,6 +227,6 @@ df = pd.read_csv('mydata.csv',header=0)
 ```python
 T-statistic: 15.076382102391054, P-value: 3.329703635867358e-08
 ```
-4. The code calulates the t-statistic between the two conditions and its associated p-value.
+4. The code calulates the t-statistic between the two conditions (with values for cond1 in column 2, accessed by `df['cond1']`, and values for cond2 in column 3 accessed by `df['cond2']`) and its associated p-value.
 
 :::

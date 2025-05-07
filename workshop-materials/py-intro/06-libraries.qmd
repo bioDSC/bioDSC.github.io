@@ -263,6 +263,7 @@ Using the information below, try to
 - create a third function, which returns C when you provide A and B, assuming `A^2+B^2 = C^2`, and use it in your notebook.
 
 Useful things to know:
+
 - You can also make `.py` files. Unlike notebooks, every text here is assumed to be python code.
 - *For Jupyter notebooks*: 
     - You can make a .py file with `file > new > python file`.        

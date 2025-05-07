@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.32">
+<meta name="generator" content="quarto-1.6.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-04dcaa79d0ad70350f5e3bf1f48cc862.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -168,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
@@ -328,6 +328,8 @@ Answer
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">123</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>TypeError: ‘int’ object is not subscriptable</p>
+<pre><code>a = str(123)
+print(a[1])</code></pre>
 </div>
 </div>
 </div>
@@ -357,14 +359,14 @@ Question C
 </div>
 <div class="callout-body-container callout-body">
 <p>Given the following string:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>species_name <span class="op">=</span> <span class="st">"Acacia buxifolia"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>species_name <span class="op">=</span> <span class="st">"Acacia buxifolia"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>What would these expressions return?</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.</span> species_name[<span class="dv">2</span>:<span class="dv">8</span>]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fl">2.</span> species_name[<span class="dv">11</span>:] (without a value after the colon)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fl">3.</span> species_name[:<span class="dv">4</span>] (without a value before the colon)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fl">4.</span> species_name[:] (just a colon)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fl">5.</span> species_name[<span class="dv">11</span>:<span class="op">-</span><span class="dv">3</span>]</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fl">6.</span> species_name[<span class="op">-</span><span class="dv">5</span>:<span class="op">-</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.</span> species_name[<span class="dv">2</span>:<span class="dv">8</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fl">2.</span> species_name[<span class="dv">11</span>:] (without a value after the colon)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fl">3.</span> species_name[:<span class="dv">4</span>] (without a value before the colon)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fl">4.</span> species_name[:] (just a colon)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fl">5.</span> species_name[<span class="dv">11</span>:<span class="op">-</span><span class="dv">3</span>]</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fl">6.</span> species_name[<span class="op">-</span><span class="dv">5</span>:<span class="op">-</span><span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -439,9 +441,9 @@ Question E
 </div>
 <div class="callout-body-container callout-body">
 <p>Which is a better variable name, m, min, or minutes? Why? Hint: think about which code you would rather inherit from someone who is leaving the lab:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> m <span class="op">*</span> <span class="dv">60</span> <span class="op">+</span> s</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>tot_sec <span class="op">=</span> <span class="bu">min</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">+</span> sec</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>total_seconds <span class="op">=</span> minutes <span class="op">*</span> <span class="dv">60</span> <span class="op">+</span> seconds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> m <span class="op">*</span> <span class="dv">60</span> <span class="op">+</span> s</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>tot_sec <span class="op">=</span> <span class="bu">min</span> <span class="op">*</span> <span class="dv">60</span> <span class="op">+</span> sec</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>total_seconds <span class="op">=</span> minutes <span class="op">*</span> <span class="dv">60</span> <span class="op">+</span> seconds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -461,50 +463,23 @@ Answer
 </div>
 </div>
 </section>
-<section id="a-very-challenging-set-of-additional-exercises-biodsc" class="level3">
-<h3 class="anchored" data-anchor-id="a-very-challenging-set-of-additional-exercises-biodsc">A very challenging set of additional exercises (bioDSC)</h3>
+<section id="very-challenging-additional-exercises-biodsc" class="level3">
+<h3 class="anchored" data-anchor-id="very-challenging-additional-exercises-biodsc">Very challenging additional exercises (bioDSC)</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question F
+Question A
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What’s happening here:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># use Google or chatGPT if you don't know the answers</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># if you're at the end, try to play around more</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>greetings_strings <span class="op">=</span> [<span class="st">'hello'</span>, <span class="st">'bye'</span>, <span class="st">'later'</span>]</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(greetings_strings[<span class="dv">0</span>])</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(greetings_strings[<span class="dv">1</span>][<span class="dv">2</span>])</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># (list of lists)</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([greetings_strings[idx] <span class="cf">for</span> idx <span class="kw">in</span> [<span class="dv">0</span>, <span class="dv">2</span>]])</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([greetings_strings[<span class="dv">0</span>][idx] <span class="cf">for</span> idx <span class="kw">in</span> [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>]])</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>([greetings_strings[<span class="dv">0</span>][idx] <span class="cf">for</span> idx <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">2</span>)])</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># using a loop (will be covered later) / list comprehension</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>square_values <span class="op">=</span> [number<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>square_values_string <span class="op">=</span> [<span class="bu">str</span>(number<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square_values)</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square_values_string)</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># types will be the topic of the next lesson</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>species_name <span class="op">=</span> <span class="st">"Acacia buxifolia"</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">""</span>.join([species_name[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">2</span>, <span class="op">-</span><span class="dv">1</span>)]))</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># convenient command when working with strings</span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(species_name.replace(<span class="st">'Aca'</span>, <span class="st">'Bole'</span>))</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># another convenient command</span></span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise:</span></span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>list_of_species <span class="op">=</span> [<span class="st">''</span>,<span class="st">''</span>,<span class="st">''</span>,<span class="st">''</span>]</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>list_of_species <span class="op">=</span> [<span class="st">'Homo sapiens'</span>, <span class="st">'Escherichia Coli'</span>, <span class="st">'Pan troglodytes'</span>, <span class="st">'Canis lupus'</span>, <span class="st">'Felis catus'</span>]</span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new lists, where you remove all letters 'e'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Try to find out what the following code does. Use Google or chatGPT if you don’t know the answers.</p>
+<p>Lists inside lists:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>greetings_strings <span class="op">=</span> [<span class="st">'hello'</span>, <span class="st">'bye'</span>, <span class="st">'later'</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(greetings_strings[<span class="dv">0</span>])</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(greetings_strings[<span class="dv">1</span>][<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -519,7 +494,147 @@ Answer
 </div>
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<p><code>greetings_strings</code> is a list. Lists and strings can be accessed in a similar way.</p>
+<p><code>print(greetings_strings[0])</code> prints the first element of the list <code>greetings_strings</code>, ie ‘hello’.</p>
+<p><code>greetings_strings[1][2]</code> will access the 2nd element of the list <code>greetings_strings</code>, ie ‘bye’. The 3rd element of ‘bye’ can then be accessed by <code>[2]</code>. Therefor, the answer is ‘e’.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question B
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using a loops will be covered latered, list comprehensions are even a bit more advanced. What does the following code do?</p>
+<pre><code>print([greetings_strings[idx] for idx in [0, 2]])
+print([greetings_strings[0][idx] for idx in [0, 2, 4]])
+print([greetings_strings[0][idx] for idx in range(0,4,2)])</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><code>[greetings_strings[idx] for idx in [0, 2]]</code> will generate a new list. It will make <code>idx</code> equal to 0 and 2, and create two corresponding entries in the new list. Those entries are defined by the code before the keyword <code>for</code>, in this case <code>greetings_strings[idx]</code>. The list will thus consist of <code>greetings_strings[0]</code> and <code>greetings_strings[2]</code>, ie <code>hello</code> and <code>later</code>.</p>
+<p><code>print([greetings_strings[0][idx] for idx in [0, 2, 4]])</code> does the same, but the list now constists of <code>greetings_strings[0][0]</code>, <code>greetings_strings[0][2]</code> and <code>greetings_strings[0][4]</code>, so <code>['h', 'l', 'o']</code>.</p>
+<p><code>range(0,4,2)</code> generates a <code>range</code>, and will result in <code>idx</code> to be set to the values 0, 2 (importantly, not including 4). The result thus is <code>['h', 'l']</code>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question C
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What does the following code do? (Types will be the topic of the next lesson.)</p>
+<pre><code>square_values = [number**2 for number in range(10)]
+square_values_string = [str(number**2) for number in range(10)]
+print(square_values)
+print(square_values_string)</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Similar to above, in the first line, a list is created. <code>**2</code> results in the square of <code>number</code>. <code>number</code> will take values 0..9, and so the list looks like <code>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</code>.</li>
+<li><code>str()</code> converts a number to a string. The list therefor now looks like <code>['0', '1', '4', '9', '16', '25', '36', '49', '64', '81']</code>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question D
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What do <code>.join()</code> and <code>.replace()</code> do? We will delve into this syntax later.</p>
+<pre><code>species_name = "Acacia buxifolia"
+print("".join([species_name[i] for i in range(10, 2, -1)]))
+print(species_name.replace('Aca', 'Bole'))</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>.join()</code> pastes (joins) together elements of a list, and uses the string before the dot to put between the elements.</li>
+<li><code>.replace()</code> performs replacement of text in the string given before the dot. Between the quotes are what to search for and what to replace it with, respectively.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question E
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Now combine the above to create a new list, where you remove all letters ‘e’ from the following list:</p>
+<pre><code>list_of_species = ['Homo sapiens', 'Escherichia Coli', 'Pan troglodytes', 'Canis lupus', 'Felis catus']</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You can combine the above commands:</p>
+<pre><code>new_list = [X.replace('e','') for X in list_of_species]
+print(new_list)
+# result: ['Homo sapins', 'Eschrichia Coli', 'Pan troglodyts', 'Canis lupus', 'Flis catus']</code></pre>
 </div>
 </div>
 </div>

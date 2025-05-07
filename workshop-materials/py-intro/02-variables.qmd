@@ -64,6 +64,10 @@ a = 123
 print(a[1])
 ```
 TypeError: 'int' object is not subscriptable
+```
+a = str(123)
+print(a[1])
+```
 :::
 ### 2. Slicing
 
@@ -143,52 +147,108 @@ total_seconds = minutes * 60 + seconds
 minutes is better because min might mean something like “minimum” (and actually is an existing built-in function in Python that we will cover later).
 :::
 
-### A very challenging set of additional exercises (bioDSC)
+### Very challenging additional exercises (bioDSC)
 
 ::: {.callout-tip icon="false"}
-### Question F
-What's happening here:
+### Question A
 
+Try to find out what the following code does. 
+Use Google or chatGPT if you don't know the answers.
+
+Lists inside lists:
 ```Python
-
-# use Google or chatGPT if you don't know the answers
-# if you're at the end, try to play around more
-
 greetings_strings = ['hello', 'bye', 'later']
 print(greetings_strings[0])
 print(greetings_strings[1][2])
-    # (list of lists)
+```
+:::
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+`greetings_strings` is a list. Lists and strings can be accessed in a similar way.
 
+`print(greetings_strings[0])` prints the first element of the list `greetings_strings`, ie 'hello'.
+
+`greetings_strings[1][2]` will access the 2nd element of the list `greetings_strings`, ie 'bye'.
+The 3rd element of 'bye' can then be accessed by `[2]`. 
+Therefor, the answer is 'e'.
+:::
+
+::: {.callout-tip icon="false"}
+### Question B
+Using a loops will be covered latered, list comprehensions are even a bit more advanced.
+What does the following code do?
+```
 print([greetings_strings[idx] for idx in [0, 2]])
 print([greetings_strings[0][idx] for idx in [0, 2, 4]])
 print([greetings_strings[0][idx] for idx in range(0,4,2)])
-    # using a loop (will be covered later) / list comprehension
+``` 
+:::
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+`[greetings_strings[idx] for idx in [0, 2]]` will generate a new list.
+It will make `idx` equal to 0 and 2, and create two corresponding entries in the new list.
+Those entries are defined by the code before the keyword `for`, in this case `greetings_strings[idx]`.
+The list will thus consist of `greetings_strings[0]` and `greetings_strings[2]`, ie `hello` and `later`.
 
+`print([greetings_strings[0][idx] for idx in [0, 2, 4]])` does the same, but the list now constists of
+`greetings_strings[0][0]`, `greetings_strings[0][2]` and `greetings_strings[0][4]`,
+so `['h', 'l', 'o']`.
+
+`range(0,4,2)` generates a `range`, and will result in `idx` to be set to the values 
+0, 2 (importantly, not including 4).
+The result thus is `['h', 'l']`.
+:::
+
+::: {.callout-tip icon="false"}
+### Question C
+What does the following code do?
+(Types will be the topic of the next lesson.)
+```
 square_values = [number**2 for number in range(10)]
 square_values_string = [str(number**2) for number in range(10)]
 print(square_values)
 print(square_values_string)
-    # types will be the topic of the next lesson
-
-species_name = "Acacia buxifolia"
-print("".join([species_name[i] for i in range(10, 2, -1)]))
-    # convenient command when working with strings
-
-print(species_name.replace('Aca', 'Bole'))
-    # another convenient command
-
-# Exercise:
-list_of_species = ['','','','']
-list_of_species = ['Homo sapiens', 'Escherichia Coli', 'Pan troglodytes', 'Canis lupus', 'Felis catus']
-# Create a new lists, where you remove all letters 'e'
 ```
 :::
-
-
-
-
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
+- Similar to above, in the first line, a list is created. `**2` results in the square of `number`. `number` will take 
+values 0..9, and so the list looks like `[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]`.
+- `str()` converts a number to a string. The list therefor now looks like `['0', '1', '4', '9', '16', '25', '36', '49', '64', '81']`.
+:::
 
+::: {.callout-tip icon="false"}
+### Question D
+What do `.join()` and `.replace()` do? We will delve into this syntax later.
+```
+species_name = "Acacia buxifolia"
+print("".join([species_name[i] for i in range(10, 2, -1)]))
+print(species_name.replace('Aca', 'Bole'))
+```
+:::
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+- `.join()` pastes (joins) together elements of a list, and uses the string before the dot to put between the elements.
+- `.replace()` performs replacement of text in the string given before the dot. Between the quotes are what to search for and what to replace it with, respectively.
+:::
+
+::: {.callout-tip icon="false"}
+### Question E
+Now combine the above to create a new list, where you remove all letters 'e' from the following list:
+```
+list_of_species = ['Homo sapiens', 'Escherichia Coli', 'Pan troglodytes', 'Canis lupus', 'Felis catus']
+```
+:::
+::: {.callout-caution collapse="true" icon="false"}
+## Answer
+You can combine the above commands:
+```
+new_list = [X.replace('e','') for X in list_of_species]
+print(new_list)
+# result: ['Homo sapins', 'Eschrichia Coli', 'Pan troglodyts', 'Canis lupus', 'Flis catus']
+```
 
 :::
+
+
+
