@@ -2,6 +2,7 @@ project:
   type: website
   resources:
     - CNAME
+    - static/**
   output-dir: docs
 
 website:
