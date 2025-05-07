@@ -476,7 +476,7 @@ Answer
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li><code>numbers[1]</code> will return 1 because in Python indexing vectors start counting at 0.</li>
+<li><code>numbers[1]</code> will return 2 because in Python indexing vectors start counting at 0.</li>
 <li><code>numbers[2:4]</code> returns <code>['c',299792458]</code> because indexing starts at the 3rd position (=2+1) and elements are selected <strong>up to but not including</strong> the 5th element (which has index 4).</li>
 </ul>
 </div>
@@ -844,6 +844,16 @@ Answer
 </section>
 <section id="special-maths-carpentries" class="level3">
 <h3 class="anchored" data-anchor-id="special-maths-carpentries">Special maths (Carpentries)</h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>In Python 3, the <code>//</code> operator performs integer (whole-number) floor division, the <code>/</code> operator performs floating-point division, and the <code>%</code> (or modulo) operator calculates and returns the remainder from integer division:</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'5 // 3:'</span>, <span class="dv">5</span> <span class="op">//</span> <span class="dv">3</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'5 / 3:'</span>, <span class="dv">5</span> <span class="op">/</span> <span class="dv">3</span>)</span>
@@ -853,8 +863,10 @@ Answer
 5 / 3: 1.6666666666666667
 5 % 3: 2</code></pre>
 <p>If num_subjects is the number of subjects taking part in a study, and num_per_survey is the number that can take part in a single survey, write an expression that calculates the number of surveys needed to reach everyone once.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -863,7 +875,7 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>We want the minimum number of surveys that reaches everyone once, which is the rounded up value of num_subjects/ num_per_survey. This is equivalent to performing a floor division with // and adding 1. Before the division we need to subtract 1 from the number of subjects to deal with the case where num_subjects is evenly divisible by num_per_survey.</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>num_subjects <span class="op">=</span> <span class="dv">600</span></span>
@@ -877,10 +889,6 @@ Answer
 </section>
 <section id="complex-numbers-carpentries" class="level3">
 <h3 class="anchored" data-anchor-id="complex-numbers-carpentries">Complex numbers (Carpentries)</h3>
-<p>Python provides complex numbers, which are written as 1.0+2.0j. If val is a complex number, its real and imaginary parts can be accessed using dot notation as val.real and val.imag.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>a_complex_number <span class="op">=</span> <span class="dv">6</span> <span class="op">+</span> <span class="ot">2j</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_complex_number.real)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_complex_number.imag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -891,6 +899,10 @@ Question P
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>Python provides complex numbers, which are written as 1.0+2.0j. If val is a complex number, its real and imaginary parts can be accessed using dot notation as val.real and val.imag.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>a_complex_number <span class="op">=</span> <span class="dv">6</span> <span class="op">+</span> <span class="ot">2j</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_complex_number.real)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a_complex_number.imag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol type="1">
 <li>Why do you think Python uses j instead of i for the imaginary part?</li>
 <li>What do you expect 1 + 2j + 3 to produce?</li>
@@ -899,7 +911,7 @@ Question P
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -908,7 +920,7 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-36" class="callout-36-contents callout-collapse collapse">
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Python uses the symbol ‘j’ for the imaginary part of complex numbers instead of ‘i’ to prevent confusion with electric current, which is represented by ‘i’ in electrical engineering. This choice caters to the professional background of many Python developers.</li>
