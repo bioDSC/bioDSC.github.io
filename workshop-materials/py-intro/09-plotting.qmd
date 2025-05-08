@@ -37,18 +37,25 @@ HINT: if you don't see the solution, take it step by step. Break down the task i
 ## Answer
 
 ```python
-data_europe = pd.read_csv('data/data/gapminder_gdp_europe.csv', index_col='country')
+data_europe = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 data_europe_transposed = data_europe.T
 
 data_europe_transposed['min'] = data_europe.min()
 data_europe_transposed['max'] = data_europe.max()
 data_europe_transposed['year'] = data_europe_transposed.index.str.replace("gdpPercap_","")
 
-sns.lineplot(data_europe_transposed, x='year', y='min')
-sns.lineplot(data_europe_transposed, x='year', y='max')
+sns.lineplot(data_europe_transposed, x='year', y='min', label='min')
+sns.lineplot(data_europe_transposed, x='year', y='max', label='max')
+
 plt.legend(loc='best')
 plt.xticks(rotation=90)
 ```
+
+The figure now looks like:
+
+![](/static/plots_pyworkshop/L9_min_max_gdp_europe.png){width=40%}
+
+
 :::
 
 
@@ -75,18 +82,50 @@ df_kohela.loc[df_kohela.index.str.contains('WT_'), 'Condition'] = 'WT'
 df_kohela.loc[df_kohela.index.str.contains('mutant_'), 'Condition'] = 'mutant'
 ```
 
+*Disclaimer: we are analyzing single cell data in this exercise. Within the constraints
+of this introductory course, we don't use proper statistic or methodological approaches
+to analyze the data. These exercises are meant to teach you Python concepts, but also
+give you a flavor of biological data analysis.*
+
 ::: {.callout-tip icon='false'}
 ## Question B
-Use seaborn to create a 'stripplot' plot for WT1 expression per cell type. Then create a similar plot for TBX18. (Epicardial cell markers.)
+Use seaborn to create a 'stripplot' plot for WT1 expression per cell type. Then create a similar plot for TBX18 (both epicardial cell markers).
 What information can be extracted from this plot?
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+
 ```python
 sns.stripplot(df_kohela, x='Celltype', y='TBX18', jitter=True, color='red')
-sns.stripplot(df_kohela, x='Celltype', y='WT1', jitter=True, color='blue')
+plt.tick_params(axis='x', rotation=45)
 ```
-The plot shows that the expression in the epicardial and unknown types is the largest and that comparatively the fat and fibroblasts have low expression levels.
+
+```python
+sns.stripplot(df_kohela, x='Celltype', y='WT1', jitter=True, color='blue')
+plt.tick_params(axis='x', rotation=45)
+```
+
+![](/static/plots_pyworkshop/L9_stripplot_WT1_TBX18.png){width=50%}
+ 
+Since we classified cells with high WT1 levels as epicardial cells, we expected to see
+high WT1 levels in epicardial cells by construction.
+This is indeed the case.
+
+We see one stray fibroblast cell with a high WT1 level. This cell appears to be WT1+ **and** COL2A1+.
+Because of the order in which we executed the code, this cell got classified as fibroblast.
+
+TBX18 is expected to show high expression in epicardial cells too, and, if both WT1 and TBX18 are 
+specific for epicardial cells, they should not occur in other cell types. This also appears to be the 
+case.
+
+Quite some cells still have the 'unknown' phenotype, but otherwise these plots are supportive of
+our strategy of using WT1 and TBX18 as epicardial markers.
+
+For a real experiment, you might use packages like [scanpy](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-017-1382-0) (Python)
+or [Seurat](https://satijalab.org/seurat/) (R) to analyze your data. The authors of the [Kohela et al.](https://doi.org/10.1126/scitranslmed.abf2750) study used [Monocle 2](https://cole-trapnell-lab.github.io/monocle-release/) (R).
+
+
+<!-- The plots shows that the expression in the epicardial and unknown types is the largest and that comparatively the fat and fibroblasts have low expression levels. -->
 :::
 
 
@@ -102,23 +141,95 @@ What does this tell us?
 ```python
 sns.scatterplot(df_kohela, x='WT1', y='TBX18')
 ```
-From the plot it is clear that there is no correlation between the two expression levels.
+
+![](/static/plots_pyworkshop/L9_scatter_WT1_TBX18.png){width=25%}
+
+This plot highlights a few challenges with data analysis.
+
+Single cell RNA-seq data can typically show only a few reads per gene per cell, or even zero, even when the gene is expressed.
+This is a limitation of the RNA-seq technique.
+
+This results in many cells having only few or zero counts for the WT1 and TBX18 gene expression, and many overlapping datapoints.
+It is therefor hard to see any pattern in the data.
+
+Adding `alpha=0.1` as argument to the scatterplot method already helps to visualize the data better:
+
+```
+sns.scatterplot(df_kohela, x='WT1', y='TBX18', alpha=.1)
+```
+
+
+![](/static/plots_pyworkshop/L9_scatter_WT1_TBX18_alpha.png){width=25%}
+
+It appears that there is not much correlation between the TBX18 and WT1 expression.
+This can either be because cells do not typically express both at the same time, or 
+because our detection is not sufficient to identify such a correlation from this plot.
 
 :::
 
 
 
 ::: {.callout-tip icon='false'}
-## Question D, CHECK fibroblasts & fatty cells. There are almost not visible
+## Question D
 Color the scatter plot per cell type.
 What does this tell us?
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+
 ```python
 sns.scatterplot(df_kohela, x='WT1', y='TBX18', hue='Celltype')
 ```
-Most of the cells are of epicardial or unknown type. In both cases there is no clear correlation. The others cells types are too few or are obfuscated by the other points.
+
+# ![](/static/plots_pyworkshop/L9_scatter_WT1_TBX18_Celltype.png){width=40%} 
+
+This plot is still somewhat hard to interpret. Some points are overlaying on top of each other.
+
+One way to disentangle the points, is to plot them separately:
+
+```python
+maxval = np.max(df_kohela.loc[:,['WT1','TBX18']])
+
+plt.title('Epicardial cells')
+sns.scatterplot(df_kohela.loc[df_kohela['Celltype']=='epicardial',:], x='WT1', y='TBX18', alpha=.1)
+plt.xlim([0, maxval+1])
+plt.ylim([0, maxval+1])
+plt.show()
+
+plt.title('Fibroblast cells')
+sns.scatterplot(df_kohela.loc[df_kohela['Celltype']=='fibroblast',:], x='WT1', y='TBX18', alpha=.1)
+plt.xlim([0, maxval+1])
+plt.ylim([0, maxval+1])
+plt.show()
+
+sns.scatterplot(df_kohela.loc[df_kohela['Celltype']=='fat',:], x='WT1', y='TBX18', alpha=.1)
+plt.title('Fat cells')
+plt.xlim([0, maxval+1])
+plt.ylim([0, maxval+1])
+plt.show()
+
+sns.scatterplot(df_kohela.loc[df_kohela['Celltype']=='unknown',:], x='WT1', y='TBX18', alpha=.1)
+plt.title('Unknown cells')
+plt.xlim([0, maxval+1])
+plt.ylim([0, maxval+1])
+plt.show()
+```
+
+![](/static/plots_pyworkshop/L9_scatter_WT1_TBX18_Celltype-fibroblast.png){width=25%} ![](/static/plots_pyworkshop/L9_scatter_WT1_TBX18_Celltype-epicardial.png){width=25%}
+
+![](/static/plots_pyworkshop/L9_scatter_WT1_TBX18_Celltype-fat.png){width=25%} ![](/static/plots_pyworkshop/L9_scatter_WT1_TBX18_Celltype-unknown.png){width=25%}
+
+Interestingly, we now see that fibroblast (COL2A1+) and fat cells (PPARG+) typically don't express
+WT1 or TBX18, whilst epicardial cells (WT1+) do also often show TBX18 expression.
+
+There are nevertheless still WT+ cells that don't show TBX18 expression, 
+and moreover many WT- cells (the unknown cells) that show TBX18 expression, 
+so these plots are not conclusive, and more sophisticated single cell methods
+might be needed to further study these cells.
+
+
+
+
 :::
 
 
@@ -155,14 +266,27 @@ This short program creates a plot showing the correlation between GDP and life e
 
 ```Python
 data_all = pd.read_csv('data/gapminder_all.csv', index_col='country')
-sns.scatterplot(data_all, x='gdpPercap_2007', y='lifeExp_2007', s=data_all['pop_2007']/1e6)
+sns.scatterplot(data_all, x='gdpPercap_2007', y='lifeExp_2007', size='pop_2007', sizes=(1,40**2), legend=False)
 ```
 ::: {.callout-tip icon='false'}
 ## Question F
-Using online help and other resources, explain what each argument to plot does.
+Using online help and other resources, explain what each plotting argument does.
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+
+See e.g. [the scatterplot documentation](https://seaborn.pydata.org/generated/seaborn.scatterplot.html).
+
+- `data_all`: The first argument specifies which dataframe to use as input.
+- `x='gdpPercap_2007'`: The x argument expects the name of the column that holds values to plot on the x-axis.
+- `y='lifeExp_2007'`: Same as x, but for the y axis.
+- `size='pop_2007'`: This tells seaborn to scale the point size with the values in a column, in this case the population sizes of the countries (in 2007).
+- `sizes=(1,40**2)`: This sets the range of the sizes to be used for the points, given as (min, max). These are areas, which is why it's convenient to use the square operator `**2`, such that you can choose a radius (in this case minimally 1 and maximally 40).
+- `legend=False`: This turns off the legend.
+
+The result:
+
+![](/static/plots_pyworkshop/L9_scatter_gdp_lifeexp.png){width=35%}
 
 :::
 
@@ -193,6 +317,23 @@ plt.text(data_all.loc['Netherlands','gdpPercap_2007'], data_all.loc['Netherlands
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
+The function [matplotlib.pyplot.text](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html),
+
+```
+matplotlib.pyplot.text(x, y, s, fontdict=None, **kwargs)
+```
+
+allows you to put text s in your plotting area at location x,y. 
+x, y and s should be single values (not arrays or tables)
+
+- `data_all.loc['United States','gdpPercap_2007']` selects the x value corresponding to the united states.
+- `data_all.loc['United States','lifeExp_2007']` selects the y value corresponding to the united states.
+- `'United states'` provides the label.
+
+The result:
+
+![](/static/plots_pyworkshop/L9_scatter_gdp_lifeexp_label.png){width=40%}
+
 :::
 
 
@@ -219,20 +360,41 @@ Select the following genes: `['WT1', 'TBX18', 'TFAP2A', 'COL2A1', 'ACTA2', 'PPAR
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
-df_kohela_sel = df_kohela.loc[:,['WT1', 'TBX18', 'TFAP2A', 'COL2A1', 'ACTA2', 'PPARG', 'CEBPA','Celltype','Condition']]
+```
+df_kohela_sel = \
+    df_kohela.loc[:,['WT1', 'TBX18', 'TFAP2A', 'COL2A1', 'ACTA2', 'PPARG', 'CEBPA','Celltype','Condition']]
+```
 :::
 ::: {.callout-tip icon='false'}
 ## Question J
 
 Now melt this dataframe using `pd.melt()`, and use cell type and condition as identifier variables.
-What will happen to the gene expression values?
-What is sensible input for the `var_name` and `value_name` parameters?
-Why is this useful? (For answer, see next questions.)
+
+- What will happen to the gene expression values?
+- What is sensible input for the `var_name` and `value_name` parameters?
+- Why is this useful? (For answer, see next questions.)
+
 :::
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+```
 df_kohela_melted = pd.melt(df_kohela_sel, id_vars=['Celltype','Condition'], var_name='Gene', value_name='Expression')
+```
+
+- *What will happen to the gene expression values?*
+    - Expression data that were spread out over multiple columns are now re-organized in one long column. A new column is created
+    alongside the column with all data, that specifies from which column the data originated.
+
+- *What is sensible input for the var_name and value_name parameters?*
+    - The `var_name` is the name of the new column that specifies from which original columns the data came. In this case
+    the original columns corresponded to different genes, and so "Gene" might be a sensible name.
+    - `value_name` is the name of the new column that holds all values previously spread out over multiple columns.
+    The values all related to expression, and so "Expression" seems a good name.
+
+- *Why is this useful? (For answer, see next questions.)*
+    - This is useful because now this dataframe can be easily used as input for the seaborn plots.
+    
 :::
 
 ::: {.callout-tip icon='false'}
@@ -241,6 +403,23 @@ Use `df_kohela_melted.head()` to check whether the output is as expected.
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+
+
+The output was:
+
+```
+  Celltype Condition Gene  Expression
+0  unknown    mutant  WT1           0
+1  unknown    mutant  WT1           0
+2  unknown    mutant  WT1           0
+3  unknown    mutant  WT1           0
+4  unknown    mutant  WT1           1
+```
+
+and indeed, the columns Celltype and Condition were retained, and the expression data was re-organized 
+into one column "Expression", annotated by the new column "Gene" which lists from which original column
+that data originated.
+
 :::
 
 
@@ -253,7 +432,37 @@ Is there an issue with this plot?
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+
+The code:
+
+```
 sns.violinplot(df_kohela_melted, x='Gene', y='Expression', hue='Condition')
+plt.show()
+sns.stripplot(df_kohela_melted, x='Gene', y='Expression', hue='Condition', ax=ax, dodge=1)
+plt.show()
+
+```
+
+###### *For the Violinplot*
+
+![](/static/plots_pyworkshop/L9_violinplot_Gene_Expression_Condition.png){width=40%}
+
+An issue you might have identified is that it is very hard to compare gene expression levels
+because some of these genes have rather high expression levels, thus forcing the expression
+levels of other genes to the very bottom of the plot, making it hard to distinguish differences.
+
+Also some outliers appear to be affecting the scale to a large extend, making it hard to 
+see trends.
+
+Moreover, you can probably not even see the Violins..
+
+###### *For the stripplot*
+
+![](/static/plots_pyworkshop/L9_stripplot_Gene_Expression_Condition.png){width=40%}
+
+This looks better, but it is still hard to see differences between wild type and mutant cell
+gene expression.
+
 :::
 
 ::: {.callout-tip icon='false'}
@@ -290,6 +499,28 @@ print(df_kohela_subset2_normalized)
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
+
+###### *1. Check out what `gene_normalization(df_kohela_subset2['WT1'])` does.*
+
+What `gene_normalization()` is described in the comment above the function, 
+it normalizes a series by its mean. `df_kohela_subset2['WT1']` is the series
+of expression values related to WT1. 
+
+`gene_normalization(df_kohela_subset2['WT1'])` will thus return WT1 expression
+values normalized by their mean.
+
+###### *2. What does the transform method do in the above code?*
+
+Transform applies a function to each of the columns in a dataframe. So in this case
+it will go over each column, which correspond to `df_kohela_subset2['WT1']`,
+`df_kohela_subset2['TBX18']`, `df_kohela_subset2['TFAP2A']` and so forth, and 
+feed that column to the custom function, which in this case will return
+values that are normalized. Those normalized values are then put back in the 
+column the function was applied to.
+
+Thus, the each column will now correspond to mean-divided expression (ie will
+be normalized).
+
 :::
 
 ::: {.callout-tip icon='false'}
@@ -312,8 +543,36 @@ The barplot looks nice, but does it contain all information?
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
-sns.barplot(df_kohela_melted, x='Gene', y='Expression_normalized', hue='Condition')
-sns.stripplot(df_kohela_melted, x='Gene', y='Expression_normalized', hue='Condition', dodge=True)
+
+
+The normalization: 
+
+```python
+df_kohela_grouped = df_kohela_melted.groupby('Gene')
+df_kohela_melted['Expression_normalized'] = df_kohela_grouped['Expression'].transform(gene_normalization)
+```
+
+The bar code hides the information about the distribution of the single data points.
+So perhaps it is best to combine those two plots:
+
+```
+sns.barplot(df_kohela_melted, x='Gene', y='Expression_normalized', 
+            hue='Condition', ci=None)
+sns.stripplot(df_kohela_melted, x='Gene', y='Expression_normalized', 
+              hue='Condition', dodge=True, color='black', alpha=.1, size=4, 
+              legend=False)
+plt.ylim([0,15])
+plt.show()
+plt.close('all')
+```
+
+The plot now looks like:
+
+![](/static/plots_pyworkshop/L9_bar_stripplot_Gene_Expression_Normalized_Condition.png){width=40%}
+
+Note that some data points are now hidden due to the choice of y limits. 
+For a paper, one might need to think more deeply about how to display this data.
+
 :::
 
 
@@ -333,6 +592,17 @@ What has happened?
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+
+This results in the condition becoming a categorical series, which has a specific order, that is 
+translated to the plot. This is very useful if you want to control where the labels go on your
+axes.
+The order of 'WT' and 'mutant' on the x-axis now makes more sense.
+
+The figure now looks like:
+
+![](/static/plots_pyworkshop/L9_bar_stripplot_Gene_Expression_Normalized_Condition_order.png){width=40%}
+
+
 :::
 
 
@@ -398,13 +668,36 @@ Modify the code from "Minima and Maxima" exercise (Exercise A) to create a scatt
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+
+The code:
+
+```python
+data_asia = pd.read_csv('data/gapminder_gdp_asia.csv', index_col='country')
+data_asia_transposed = data_asia.T
+
+data_asia_transposed['min'] = data_asia.min()
+data_asia_transposed['max'] = data_asia.max()
+data_asia_transposed['year'] = data_asia_transposed.index.str.replace("gdpPercap_","")
+
+sns.scatterplot(data_asia_transposed, x='min', y='max', hue='year', palette='viridis', legend=False)
+
+```
+
+Results in the plot:
+
+![](/static/plots_pyworkshop/L9_scatter_min_max_gdp_asia.png){width=25%}
+
+It can be seen that there is no correlation between the minimum GDP and maximum GDP
+for a specific year, indicating that GDPs across asia do not tend to rise and fall together.
+
 :::
 
 
 ### Correlations (continued) 
 ::: {.callout-note icon='false'}
 ## Exercise
-You might note that the variability in the maximum is much higher than that of the minimum. Take a look at the maximum and the max indexes:
+You might note that the variability in the maximum is much higher than that of the minimum. 
+Take a look at the maximum over time and the max indexes:
 
 ```python
 data_asia = pd.read_csv('data/gapminder_gdp_asia.csv', index_col='country')
@@ -421,6 +714,23 @@ print(data_asia.idxmin())
 
 :::
 
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+
+The plot looks like:
+
+![](/static/plots_pyworkshop/L9_plot_max_GDP_asia.png){width=40%}
+
+Seems the variability in this value is due to a sharp drop after 1972. Some geopolitics at play perhaps? Given the dominance of oil producing countries, maybe the Brent crude index would make an interesting comparison? Whilst Myanmar consistently has the lowest GDP, the highest GDP nation has varied more notably.
+
+
+
+:::
+
+
+
 ### Normalized dataframe
 
 
@@ -433,11 +743,34 @@ print(data_asia.idxmin())
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+
+```
+# Copy the df to modify it and not interfer with other code
+data_europe_relative_copy = data_europe_relative.copy()
+# Add the country as column
+data_europe_relative_copy['Country'] = data_europe_relative_copy.index
+# Melt it 
+data_europe_relative_melted = data_europe_relative_copy.melt(id_vars='Country')
+# Add the year as number
+data_europe_relative_melted['year'] = data_europe_relative_melted['variable'].str.replace('gdpPercap_','').astype(int)
+
+# And plot
+sns.lineplot(data_europe_relative_melted, x='year', y='value', hue='Country', legend=False)
+```
+
+We can now visualize the relative position of countries over time.
+Unfortunately, there are a little bit too many countries to clearly identify single ones.
+A solution to this issue is left for another time.
+
+![](/static/plots_pyworkshop/L9_lineplot_europe_relative.png){width=40%}
+
 :::
 
 
-### Crude
+### Crude 
 
+::: {.callout-tip icon='false'}
+## Question 
 Crude oil prices can be found at:
 https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=F000000__3&f=A
 
@@ -474,7 +807,7 @@ import pandas as pd
 
 # Load the data
 df_crudeoil = \
-    pd.read_csv('data//crude_oil.tsv', sep='\t')
+    pd.read_csv('data/crude_oil.tsv', sep='\t')
 
 # reshape the data, such that it becomes a long list
 df_crudeoil_melted = df_crudeoil.melt(id_vars='Decade', var_name='lastdigit')
@@ -484,17 +817,37 @@ df_crudeoil_melted = df_crudeoil.melt(id_vars='Decade', var_name='lastdigit')
 df_crudeoil_melted.loc[:,'Decade'] = df_crudeoil_melted.loc[:,'Decade'].str.replace("0's",'')
 df_crudeoil_melted.loc[:,'lastdigit'] = df_crudeoil_melted.loc[:,'lastdigit'].str.replace('Year-','')
 # now combine information to create a new column "Year"
-df_crudeoil_melted.loc[:,'Year'] = df_crudeoil_melted.loc[:,'Decade'] + df_crudeoil_melted.loc[:,'lastdigit']
+df_crudeoil_melted.loc[:,'Year'] = (df_crudeoil_melted.loc[:,'Decade'] + df_crudeoil_melted.loc[:,'lastdigit']).astype(int)
 # Inspect the result
 print(df_crudeoil_melted.head())
-```
 
+```
+:::
 
 ::: {.callout-tip icon='false'}
-## Question R
+## Question
 Using your new plotting skills, compare this data against the trends in the Asian GDPs showed earlier.
 :::
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+
+We saved to a [tsv file](/static/data/crude_oil.tsv) and ran the code above.
+
+Then, made a plot:
+
+```
+sns.lineplot(df_crudeoil_melted, x='Year', y='value', label='price')
+plt.axvline(x=1972, color='red', linestyle='--', label='1972')
+plt.legend()
+plt.show()
+```
+
+The plot looks like:
+
+![](/static/plots_pyworkshop/L9_lineplot_crudeoil.png){width=40%}
+
+Probably [quite some things happened](https://en.wikipedia.org/wiki/1973_oil_crisis) to Arabian oil countries after '72, 
+related to oil and aformentioned drop in GDP.
+
 :::

@@ -191,18 +191,24 @@ data['gdpPercap_2007']/data['gdpPercap_1952']
 
 
 ### Epicardial cells
+
+*Disclaimer: we are analyzing single cell data in this exercise. Within the constraints
+of this introductory course, we don't use proper statistic or methodological approaches
+to analyze the data. These exercises are meant to teach you Python concepts, but also
+give you a flavor of biological data analysis.*
+
 ::: {.callout-note appearance="simple"}
 ## To load the data from the kohela study [Kohela et al.](https://doi.org/10.1126/scitranslmed.abf2750) (GSE149331) we can also download it directly from the <i>bio</i>DSC website, and immediately transpose it in one line:
 
 ```Python
 # Import kohela data; note the .T at the end, which immediately transposes!
 df_cells_kohela2 = \
-    pd.read_csv("https://www.biodsc.nl/workshop-materials/py-intro/kohela-et-al.csv",header=0,index_col=0).T
+    pd.read_csv("https://biodsc.nl/static/data/kohela-et-al.csv",header=0,index_col=0).T
 ```
 :::
 ::: {.callout-tip icon='false'}
 ## Question A
-In the [RNA-seq data](https://www.biodsc.nl/workshop-materials/py-intro/kohela-et-al.csv), we can create another column that reflects the condition
+In the [RNA-seq data](/static/data/kohela-et-al.csv), we can create another column that reflects the condition
 of the cells, WT or mutant. Fill in the blanks to achieve this:
 
 ```python
@@ -224,7 +230,7 @@ df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('mutant_'), 'Condition'
 
 You can inspect the values in the new column to check if the contents are as expected:
 ```
-df_cells_kohela2['Condition']
+print(df_cells_kohela2['Condition'])
 ```
 
 :::
@@ -441,6 +447,50 @@ data.iloc[:, col1_index:col2_index].loc["row1":"row2"]
 :::
 
 
+
+### GDPs
+::: {.callout-tip icon='false'}
+## Question E
+
+1. Between '87 and '92 the GDP of many countries took a hit. Are there any countries which had an *increase* between those two years? Which ones?
+2. Calculate the average GDP between all European countries per year.
+3. Normalize the dataframe by this trend.
+:::
+
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+
+###### 1. Are there any countries which had a positive increase between those two years? Which ones?
+```
+# First load the data again
+data_europe = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
+
+# We can calculate the difference between those two years
+GDP_change_87_92 = \
+    data_europe.loc[:, 'gdpPercap_1992'] - data_europe.loc[:, 'gdpPercap_1987']
+# And check which countries show a positive change
+print(GDP_change_87_92.index[GDP_change_87_92>0])
+```
+
+###### 2. Calculate the average GDP between all European countries per year.
+```
+data_europe_avgGDPperyear = data_europe.mean()
+```
+
+###### 3. Normalize the dataframe by this trend.
+data_europe_relative = data_europe.div(data_europe_avgGDPperyear, axis=1)
+
+We can now more easily see how countries compared to other countries over 
+the years. Greece, for example, starts out its economy with a GDP of 62%
+of the average European country, but ends up with a GDP that's 110% of 
+the average European country.
+
+:::
+
+
+
 ### Gene expression
 
 ::: {.callout-tip icon='false'}
@@ -486,14 +536,25 @@ ACTA1	1231	B
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
-#### Load the file 
+#### Convert data to .csv and load the file 
 
-We saved the data as tab-separated-value (tsv) [file](data/gene_expression.tsv) and load it into a dataframe using the read_csv command but now specify the tab character (**\\t**) as the value separator:
+This exercise is also meant to illustrate that it can sometimes be tedious to handle data.
+Many data files are however plain text, and you can open them to see what's going on.
+One way to convert the exercise data to a convenient format, could be:
 
+- Open a text editor like Notepad (Windows), TextEdit (Mac), or your own favorite.
+- Copy the text to the text editor.
+- Use search and replace to replace double spaces by single spaces.
+- Repeat this until you only have single spaces.
+- Now replace spaces by commas.
+- You now have a comma separated file, save it e.g. as gene_expression.csv.
+
+See also this example [gene_expression.csv](/static/data/gene_expression.csv).
+
+To load the file, use:
 ```Python
-df = pd.read_csv('gene_expression.tsv',header=0, sep='\t')
-# or alternatively:
-# pd.read_table('gene_expression.tsv')
+df_gene_expression = \
+    pd.read_csv('gene_expression.csv')
 ```
 
 #### The average CRP gene expression per condion.
@@ -548,11 +609,11 @@ has an ACTA1 index, even if the numerator and denominator's dataframes are of di
 This also applies to series.
 
 ```Python
-# Calculate averages again, without resetting the index
+# Calculate averages again: group by, selecting the grouped expression series, calculate the mean
 gene_expression_avg = df_gene_expression.groupby(['gene','condition'])['expression'].mean()
 # Identify the WT records with a boolean array
 WT_records = gene_expression_avg.index.get_level_values(1)=='WT'
-# Select such that we divide a non-WT dataframe by a WT dataframe
+# Select such that we divide a non-WT series by a WT series
 # We use "reset index" to set the index to gene names only, this allows for alignment
 ratios = gene_expression_avg.loc[~WT_records].reset_index(level=1,drop=True)/gene_expression_avg.loc[WT_records].reset_index(level=1,drop=True)
 # The parameters above were series, let's convert back to dataframe
@@ -591,8 +652,8 @@ df_gene_expression_norm['expression_normalized'] = gene_expression_normalized.va
 
 
 #### Alternative strategy for the above two exercises.
-An alternative would be to pivot the dataframe such that it becomes easier to handle.
-This could also be used to calculate log2fc values.
+An alternative could be to pivot the dataframe.
+This can also be used to calculate log2fc values.
 
 ```Python
 # Create a copy of the dataframe to avoid confusion with other exercises.
@@ -609,9 +670,11 @@ values_WT = df_averages.T['WT'].values
 df_gene_expression_norm2 = df_gene_expression_wide.loc[:,'ACTA1':'CRP'].div(values_WT, axis=1)
 # Add annotation condition
 df_gene_expression_norm2['condition'] = df_gene_expression_wide['condition']
+# We now have the normalized dataframe
 print(df_gene_expression_norm2)
 # Calculate L2FC:
 df_log2fc_2 = df_gene_expression_norm2.groupby(['condition']).mean().apply(np.log2)
+# We now have the log2-fold changes:
 print(df_log2fc_2)
 ```
 
@@ -650,20 +713,6 @@ dfw.loc[~CRP,'expression'] = dfw.loc[~CRP,'expression']/dfmean.loc[('ACTA1','WT'
 
 
 
-### GDPs
-::: {.callout-tip icon='false'}
-## Question E
-
-1. Between '87 and '92 the GDP of most countries took a hit. Are there any countries which had a positive increase between those two years? Which ones?
-2. Calculate the average GDP between all European countries per year.
-3. Normalize the dataframe by this trend.
-:::
-
-
-::: {.callout-caution collapse='true' icon='false'}
-## Answer
-XXXXX Add this!!! XXXX
-:::
 
 
 ### Exploring available methods using the dir() function
