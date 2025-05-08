@@ -6,7 +6,7 @@ Most questions originate from the carpentry lesson ["Plotting and Programming in
 
 # Exercises Lesson 16, Functions
 
-### Identifying Syntax Errors
+### Identifying Syntax Errors 
 
 ::: {.callout-tip icon='false'}
 ## Question A

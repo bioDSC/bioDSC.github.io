@@ -617,7 +617,7 @@ Answer
 </div>
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>some_list <span class="op">=</span> [<span class="dv">2</span><span class="op">*</span>x<span class="op">+</span>x<span class="op">**</span><span class="dv">2</span><span class="op">-</span><span class="dv">1</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -632,7 +632,7 @@ Question …
 </div>
 <div class="callout-body-container callout-body">
 <p>Now from that list, select values that are &gt; 10, by modifying the following code:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>[x <span class="cf">for</span> x <span class="kw">in</span> your_list <span class="cf">if</span> ______]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>[x <span class="cf">for</span> x <span class="kw">in</span> your_list <span class="cf">if</span> ______]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -647,7 +647,11 @@ Answer
 </div>
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>some_list_sel <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> some_list <span class="cf">if</span> x<span class="op">&gt;</span><span class="dv">10</span>]</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(some_list)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(some_list_sel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The print statements show it has worked.</p>
 </div>
 </div>
 </div>
@@ -676,7 +680,11 @@ Answer
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>some_list_np <span class="op">=</span> np.array(some_list)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>some_list_np_sel <span class="op">=</span> some_list_np[some_list_np<span class="op">&gt;</span><span class="dv">10</span>]</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(some_list_np_sel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -691,7 +699,7 @@ Question …
 </div>
 <div class="callout-body-container callout-body">
 <p>Given:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>list_withtop <span class="op">=</span> [<span class="dv">1000</span><span class="op">+-</span><span class="dv">10</span><span class="op">*</span>(x<span class="op">-</span><span class="dv">7</span>)<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>list_withtop <span class="op">=</span> [<span class="dv">1000</span><span class="op">+-</span><span class="dv">10</span><span class="op">*</span>(x<span class="op">-</span><span class="dv">7</span>)<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>1. Find the position of the maximum value in this array.
 2. Edit the code above such that the maximum value shifts to an index of your choice.   
       Check whether you succeedded by finding the maximum value.
@@ -718,7 +726,41 @@ Answer
 </div>
 <div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Find the position of the maximum value in this array.</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>list_withtop.argmax()</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Edit the code above such that the maximum value shifts to an index of your choice.   </span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co">#       Check whether you succeedded by finding the maximum value.</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>my_shift <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>list_withtop_2 <span class="op">=</span> np.array([<span class="dv">1000</span><span class="op">+-</span><span class="dv">10</span><span class="op">*</span>(x<span class="op">-</span>my_shift)<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>)])</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>list_withtop_2.argmax()</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Multiply your list with `-1`, and put the result in another list.</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="co">#     1. Where are now the maximum and minimum values?</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="co">#     2. Does this make sense?</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>list_withtop_2_inv <span class="op">=</span> list_withtop_2<span class="op">*-</span><span class="dv">1</span> <span class="co"># inverted list (*-1)</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="co"># The maximum and minimum positions have swapped, as we multiplied by -1.</span></span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>list_withtop_2_inv.argmin()</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>list_withtop_2_inv.argmax()</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. `list_line = [70*x-1000 for x in range(20)]`</span></span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a><span class="co">#     1. What's the biggest value, either negative or positive, in this list?</span></span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>list_line <span class="op">=</span> np.array([<span class="dv">70</span><span class="op">*</span>x<span class="op">-</span><span class="dv">1000</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>)])</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="co"># That number is:</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>list_line[np.argmax(np.<span class="bu">abs</span>(list_line))]</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="co">#     2. And the index of that number?</span></span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>np.argmax(np.<span class="bu">abs</span>(list_line))</span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a><span class="co">#     3. What's the standard deviation?</span></span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>np.std(list_line)</span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a><span class="co">#     4. Can you calculate the correlation between list_withtop and list_line?</span></span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Using np:</span></span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a>R_calculated <span class="op">=</span> np.corrcoef(list_withtop, list_line)[<span class="dv">0</span>,<span class="dv">1</span>]</span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Manually:</span></span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>R_calculated2 <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>    np.<span class="bu">sum</span>((list_withtop<span class="op">-</span>np.mean(list_withtop)) <span class="op">*</span> (list_line<span class="op">-</span>np.mean(list_line))) <span class="op">/</span> <span class="op">\</span></span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a>        np.sqrt(  np.<span class="bu">sum</span>((np.mean(list_withtop)<span class="op">-</span>list_withtop)<span class="op">**</span><span class="dv">2</span>) <span class="op">*</span> np.<span class="bu">sum</span>((np.mean(list_line)<span class="op">-</span>list_line)<span class="op">**</span><span class="dv">2</span>)  )</span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(R_calculated)</span>
+<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(R_calculated2)</span>
+<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a><span class="co">#     5. Can you make a scatter plot of  list_withtop versus list_line?</span></span>
+<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a>plt.scatter(list_withtop, list_line)</span>
+<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'list_withtop'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'list_line'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>

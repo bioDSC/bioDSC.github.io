@@ -229,6 +229,11 @@ The program prints the index when the value in the array is larger than 5, so in
 6
 7
 ```
+
+The enumerate function ensures that in each loop iteration, 
+idx gets the value corresponding to the list's index (enumerating each item from 0 .. length of the list), 
+and item gets the value of that list's element.
+
 :::
 
 
@@ -330,29 +335,72 @@ for v in values:
 ```
 
 2. Why wouldn't this work and is the if statement needed. 
-3. How can we test whether we are in the first iteration? WHY THIS QUESTION?
+3. How can we test whether we are in the first iteration? 
 
 
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+
 ```python
 values = [-2,1,65,78,-54,-24,100]
-smallest, largest = None, None
-for v in values:
-    if smallest is None and largest is None:
-        smallest, largest = v, v
+for idx,v in enumerate(values):
+    if idx == 0:
+        smallest = v
+        largest = v
     else:
         smallest = min(smallest, v)
         largest = max(largest, v)
 print(smallest, largest)
 ```
+
 1. If you wrote `== None` instead of `is None`, that works too, but Python programmers always write `is None` because of the special way `None` works in the language.
 2. The min and max function do not accept `None` as an argument and we need to test for this sitation.
 3. An iterator counter should be added to the for loop.
+
 ```python
-for idx,v in enumerate(values)
+
+values = [-2,1,65,78,-54,-24,100]
+for idx,v in enumerate(values):
+    if idx == 0:
+        smallest = v
+        largets = v
+    else:
+        smallest = min(smallest, v)
+        largest = max(largest, v)
+print(smallest, largest)
 ```
+
+This allows the code to be implemented in a slightly different way, 
+but this is less robust in case there is a None value in the values array.
+
+In some other cases (e.g. when every loop iteration writes something to a file
+and the file needs to be initialized in the first loop iteration) this type
+of looping can be convenient.
+
+Note that these exercises are merely illustrations of looping, the simplest solution
+would be:
+
+```python
+values = [-2,1,65,78,-54,-24,100]
+smallest = min(values)
+largest = max(values)
+print(smallest, largest)
+```
+
+A more efficient loop would be:
+
+```python
+values = [-2,1,65,78,-54,-24,100]
+smallest, largest = None, None
+for v in values:
+    if smallest is None or v < smallest:
+        smallest = v
+    if largest is None or v > largest:
+        largest = v
+print(smallest, largest)
+```
+
 :::
 
 
