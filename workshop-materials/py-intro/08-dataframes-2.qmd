@@ -189,6 +189,95 @@ data['gdpPercap_2007']/data['gdpPercap_1952']
 :::
 
 
+
+### Epicardial cells
+::: {.callout-note appearance="simple"}
+## To load the data from the kohela study [Kohela et al.](https://doi.org/10.1126/scitranslmed.abf2750) (GSE149331) we can also download it directly from the <i>bio</i>DSC website, and immediately transpose it in one line:
+
+```Python
+# Import kohela data; note the .T at the end, which immediately transposes!
+df_cells_kohela2 = \
+    pd.read_csv("https://www.biodsc.nl/workshop-materials/py-intro/kohela-et-al.csv",header=0,index_col=0).T
+```
+:::
+::: {.callout-tip icon='false'}
+## Question A
+In the [RNA-seq data](https://www.biodsc.nl/workshop-materials/py-intro/kohela-et-al.csv), we can create another column that reflects the condition
+of the cells, WT or mutant. Fill in the blanks to achieve this:
+
+```python
+df_cells_kohela2['Condition'] = ____
+
+df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('WT_'), 'Condition'] = ____
+df_cells_kohela2.loc[df_cells_kohela2.index._______, _________] = ______
+```
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+```Python
+df_cells_kohela2['Condition'] = 'unknown'
+df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('WT_'), 'Condition'] = 'WT'
+df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('mutant_'), 'Condition'] = 'mutant'
+```
+
+You can inspect the values in the new column to check if the contents are as expected:
+```
+df_cells_kohela2['Condition']
+```
+
+:::
+
+::: {.callout-tip icon='false'}
+## Question B
+What is the difference between str.contains and str.match?
+:::
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+See documentation for [str.contains](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.contains.html) and [str.match](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.match.html).
+`str.contains` tests whether the search string is contained in each string (at any location), whilst `str.match` determines if each string starts with a match.
+:::
+
+
+::: {.callout-tip icon='false'}
+## Question C
+
+Now calculate the mean value of TFAP2A expression in WT cells vs. mutant cells. 
+Does there appear to be more TFAP2A expression in the mutant cells?
+:::
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+```
+df_cells_kohela2.loc[:,['TFAP2A','Condition']].groupby('Condition').mean()
+```
+Yields
+```
+             TFAP2A
+Condition          
+WT         1.535655
+mutant     9.601550
+```
+so this indeed appears to be the case.
+:::
+
+
+
+
+
+
+
+
+
+
+<!-- ################################################################################ --> 
+
+
+
+# Additional exercises Lesson 8
+
+
+
 ### Many Ways of Access
 
 ::: {.callout-tip icon='false'}
@@ -351,86 +440,6 @@ data.iloc[:, col1_index:col2_index].loc["row1":"row2"]
 
 :::
 
-
-
-
-<!-- ################################################################################ --> 
-
-
-
-# Additional exercises Lesson 8
-
-
-### Epicardial cells
-::: {.callout-note appearance="simple"}
-## To load the data from the kohela study [Kohela et al.](https://doi.org/10.1126/scitranslmed.abf2750) (GSE149331) we can also download it directly from the <i>bio</i>DSC website, and immediately transpose it in one line:
-
-```Python
-# Import kohela data; note the .T at the end, which immediately transposes!
-df_cells_kohela2 = \
-    pd.read_csv("https://www.biodsc.nl/workshop-materials/py-intro/kohela-et-al.csv",header=0,index_col=0).T
-```
-:::
-::: {.callout-tip icon='false'}
-## Question A
-In the [RNA-seq data](https://www.biodsc.nl/workshop-materials/py-intro/kohela-et-al.csv), we can create another column that reflects the condition
-of the cells, WT or mutant. Fill in the blanks to achieve this:
-
-```python
-df_cells_kohela2['Condition'] = ____
-
-df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('WT_'), 'Condition'] = ____
-df_cells_kohela2.loc[df_cells_kohela2.index._______, _________] = ______
-```
-:::
-
-::: {.callout-caution collapse='true' icon='false'}
-## Answer
-
-```Python
-df_cells_kohela2['Condition'] = 'unknown'
-df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('WT_'), 'Condition'] = 'WT'
-df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('mutant_'), 'Condition'] = 'mutant'
-```
-
-You can inspect the values in the new column to check if the contents are as expected:
-```
-df_cells_kohela2['Condition']
-```
-
-:::
-
-::: {.callout-tip icon='false'}
-## Question B
-What is the difference between str.contains and str.match?
-:::
-::: {.callout-caution collapse='true' icon='false'}
-## Answer
-See documentation for [str.contains](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.contains.html) and [str.match](https://pandas.pydata.org/docs/reference/api/pandas.Series.str.match.html).
-`str.contains` tests whether the search string is contained in each string (at any location), whilst `str.match` determines if each string starts with a match.
-:::
-
-
-::: {.callout-tip icon='false'}
-## Question C
-
-Now calculate the mean value of TFAP2A expression in WT cells vs. mutant cells. 
-Does there appear to be more TFAP2A expression in the mutant cells?
-:::
-::: {.callout-caution collapse='true' icon='false'}
-## Answer
-```
-df_cells_kohela2.loc[:,['TFAP2A','Condition']].groupby('Condition').mean()
-```
-Yields
-```
-             TFAP2A
-Condition          
-WT         1.535655
-mutant     9.601550
-```
-so this indeed appears to be the case.
-:::
 
 ### Gene expression
 
@@ -693,15 +702,4 @@ Among many choices, dir() lists the median() function as a possibility. Thus,
 ```Python
 data.median()
 ```
-:::
-
-### Interpretation
-::: {.callout-tip icon='false'}
-## Question F
-Poland’s borders have been stable since 1945, but changed several times in the years before then. How would you handle this if you were creating a table of GDP per capita for Poland for the entire twentieth century?
-:::
-
-::: {.callout-caution icon='false'}
-## Answer
-(No answer provided, this is a question to ponder.)
 :::

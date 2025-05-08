@@ -69,7 +69,7 @@ The answers to the questions are:
 :::
 
 ::: {.callout-tip icon="false"}
-### Question D (bio*DSC*)
+### Question D
 Why wouldn't you always use floats, and never use integers?
 :::
 ::: {.callout-caution collapse="true" icon="false"}

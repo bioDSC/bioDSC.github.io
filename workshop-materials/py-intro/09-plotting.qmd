@@ -122,7 +122,7 @@ Most of the cells are of epicardial or unknown type. In both cases there is no c
 :::
 
 
-
+<!--
 ::: {.callout-tip icon='false'}
 ## Question E
 1. Calculate the total RNA-seq reads per cell, and make a violin plot per condition for these total reads.
@@ -147,6 +147,7 @@ sns.violinplot(df_kohela,x='Celltype',y='Total_reads')
 ```
 This plot tells us that for each cell type the average total number of reads are comparable. However, there are some fibrobblast cells that show a very large read-count. Perhaps remove them or look closer which genes are responsible for this?
 :::
+-->
 
 ### More Correlations
 
@@ -164,6 +165,14 @@ Using online help and other resources, explain what each argument to plot does.
 ## Answer
 
 :::
+
+
+
+
+
+---
+# Additional Exercises
+
 
 ### Even more correlations 
 
@@ -199,9 +208,6 @@ How would you add labels for the top 10 GDP countries?
 This would be very tedious with what you learned currently! In the next lessons (particularly lesson 12), we'll learn how to automate your code. This will be very useful for this particular challenge.
 :::
 
-
----
-# Additional Exercises
 
 ### Subselection and melting
 
