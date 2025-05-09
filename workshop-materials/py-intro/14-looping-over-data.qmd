@@ -1,15 +1,22 @@
+
 ::: {.callout-note}
-## Note
-Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+## Credits & copyright
+Many questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/), some were
+authored by the *bio*DSC. Carpentries website materials are [licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
+which also applies to the contents of this website.
 :::
+
+
 ---
 
 # Exercises Lesson 14, Looping over data
 
+<!-- ####################################################################### -->
+
 ### Determining Matches
 
 ::: {.callout-tip icon='false'}
-## Question A
+## Question 
 Which of these files is *not* matched by the expression glob.glob('data/*as*.csv')?
 
 ```
@@ -24,9 +31,18 @@ Which of these files is *not* matched by the expression glob.glob('data/*as*.csv
 1 is not matched by the glob.
 :::
 
+
+<!-- Carpentries credits L14 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/14-looping-data-sets.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
+
 ### Minimum File Size
 ::: {.callout-tip icon='false'}
-## Question B
+## Question 
 
 Modify this program so that it prints the number of records in the file that has the fewest records.
 
@@ -57,15 +73,24 @@ print('smallest file has', fewest, 'records')
 ```
 :::
 
+<!-- Carpentries credits L14 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/14-looping-data-sets.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+
 
 ---
 
 # Additional Exercises
 
+<!-- ####################################################################### -->
+
 ### Comparing Data
 
 ::: {.callout-tip icon='false'}
-## Question C
+## Question 
 Write a program that reads in the regional data sets and plots the average GDP per capita for each region over time in a single chart. 
 
 *Hint*: Pandas will raise an error if it encounters non-numeric columns in a dataframe computation so you may need to either filter out those columns or tell pandas to ignore them.
@@ -75,4 +100,47 @@ Write a program that reads in the regional data sets and plots the average GDP p
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
+
+```
+import glob
+import pandas as pd
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots(1,1, figsize=(10*cm_to_inch, 5*cm_to_inch))
+for filename in glob.glob(LOCAL_PATH_GAPMINDER+'data/gapminder_gdp*.csv'):
+    # filename = glob.glob(LOCAL_PATH_GAPMINDER+'data/gapminder_gdp*.csv')[0]
+    dataframe = pd.read_csv(filename)
+    # extract <region> from the filename, expected to be in the format 'data/gapminder_gdp_<region>.csv'.
+    # we will split the string using the split method and `_` as our separator,
+    # retrieve the last string in the list that split returns (`<region>.csv`), 
+    # and then remove the `.csv` extension from that string.
+    region = filename.split('_')[-1][:-4]
+
+    # pandas raises errors when it encounters non-numeric columns in a dataframe computation
+    # but we can tell pandas to ignore them with the `numeric_only` parameter
+    mean_values = dataframe.mean(numeric_only=True)
+    years       = pd.Series(mean_values.index.values).str.split('_').str[-1].astype(int)
+    
+    ax.plot(years, mean_values, label=region)
+    # NOTE: another way of doing this selects just the columns with gdp in their name using the filter method
+    # dataframe.filter(like="gdp").mean().plot(ax=ax, label=region)
+# set the title and labels
+ax.set_title('GDP Per Capita for Regions Over Time')
+ax.set_xlabel('Year')
+plt.tight_layout()
+plt.legend()
+
+# Save the plot
+fig.savefig('plots_pyworkshop/L14_meanGDP_regions.png', dpi=600)
+
+```
+
+![](/static/plots_pyworkshop/L14_meanGDP_regions.png){width=50%}
+
+
+
 :::
+
+<!-- Carpentries credits L14, modified -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/14-looping-data-sets.html){style="color: #777777" target=_blank}, adapted by the *bio*DSC.</font>*
+</div>

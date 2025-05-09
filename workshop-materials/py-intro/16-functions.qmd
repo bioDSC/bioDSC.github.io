@@ -1,15 +1,23 @@
+
 ::: {.callout-note}
-## Note
-Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+## Credits & copyright
+Many questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/), some were
+authored by the *bio*DSC. Carpentries website materials are [licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
+which also applies to the contents of this website.
 :::
+
+
 ---
 
 # Exercises Lesson 16, Functions
 
-### Identifying Syntax Errors
+
+<!-- ####################################################################### -->
+
+### Identifying Syntax Errors 
 
 ::: {.callout-tip icon='false'}
-## Question A
+## Question 
 1. Read the code below and try to identify what the errors are *without* running it.
 2. Run the code and read the error message. Is it a `SyntaxError` or an `IndentationError`?
 3. Fix the error.
@@ -33,12 +41,17 @@ def another_function():
 ```
 :::
 
+<!-- Carpentries credits L16 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/16-writing-functions.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
+<!-- ####################################################################### -->
 
 ### Definition and Use
 
 ::: {.callout-tip icon='false'}
-## Question B
+## Question 
 What does the following program print?
 
 ```python
@@ -68,10 +81,17 @@ pressure is 22.5
 ```
 :::
 
+<!-- Carpentries credits L16 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/16-writing-functions.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
+
 ### Encapsulation
 
 ::: {.callout-tip icon='false'}
-## Question C
+## Question 
 Fill in the blanks to create a function that takes a single filename as an argument, loads the data in the file named by the argument, and returns the minimum value in that data.
 
 ```python
@@ -96,14 +116,26 @@ def min_in_data(filename):
 ```
 :::
 
+<!-- Carpentries credits L16 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/16-writing-functions.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
 ---
 
+
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+
 # Additional Exercises
+
+<!-- ####################################################################### -->
 
 ### Order of Operations
 
 ::: {.callout-tip icon='false'}
-## Question D
+## Question 
 1.  What’s wrong in this example?
 
 ```python
@@ -142,13 +174,19 @@ result of call is: None
 
 :::
 
+<!-- Carpentries credits L16 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/16-writing-functions.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
 
+
+<!-- ####################################################################### -->
 
 ### Find the First
 
 ::: {.callout-tip icon='false'}
-## Question E
+## Question 
 Fill in the blanks to create a function that takes a list of numbers as an argument and returns the first negative value in the list. What does your function do if the list is empty? What if the list has no negative numbers?
 
 ```python
@@ -158,7 +196,6 @@ def first_negative(values):
             return ____
 ```
 :::
-
 
 
 ::: {.callout-caution collapse='true' icon='false'}
@@ -182,9 +219,16 @@ None
 ```
 :::
 
+<!-- Carpentries credits L16 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/16-writing-functions.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
+
 ### Calling by Name
 ::: {.callout-tip icon='false'}
-## Question F
+## Question 
 Earlier we saw this function:
 
 ```python
@@ -213,7 +257,12 @@ print_date(day=1, month=2, year=2003)
 
 :::
 
+<!-- Carpentries credits L16 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/16-writing-functions.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
+<!-- ####################################################################### -->
 
 ### Primes
 
@@ -227,8 +276,8 @@ def calculate_primes(N):
 that returns an array with prime numbers between 0 and N.
 
 *Hints*:
-- Start with writing a function `is_number_prime(X)`, that checks whether `X` is a prime number.
 
+- Start with writing a function `is_number_prime(X)`, that checks whether `X` is a prime number.
 - You probably need the following ingredients for that function: 
     - How to test if a number is divisible by any number?
     - Use a for loop to test whether `X` can be divided by all numbers `<X`.
@@ -256,14 +305,95 @@ def calculate_primes(N):
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
+
+```python
+def is_number_prime(X):
+    '''
+    This functions tests whether X is a prime number,
+    and returns either False if not, or True if so.
+    '''
+    
+    # Prime numbers are not divisible by any number
+    # other than 1 and itself.
+    # So if X can be divided by any number between
+    # 1 and X, it is not a prime number.
+    # So we'll test for each number 2 .. (X-1)
+    # whether X can be divided by it.
+    for y in range(2, X):
+    
+        # We test this by checking whether there's 
+        # a remainder after a division.
+        # (E.g. 7/3 has a remainder of 1 as 
+        # 7 = 3 + 3 + 1, and so 7 is not divisible
+        # by 3.)
+        if X % y == 0:
+            # if there's no remainder,
+            # it could be divided, 
+            # and it is not a prime number
+            # --> return false
+            return False
+    
+    # if for all numbers tested a division
+    # wasn't possible, the number is a prime
+    # number --> return true.
+    return True
+
+def calculate_primes(N):
+    '''
+    Returns all prime numbers between
+    0 and N (not including N).
+    '''
+    
+    prime_list = []
+    
+    # Loop over 2..N, and test 
+    # whether the number is prime
+    # and if so add it to the list.
+    # (Note that 1 is excluded since
+    # it's not prime anyways).
+    for X in range(2, N):
+        
+        # Add X to list if it's prime
+        if is_number_prime(X):
+            prime_list.append(X)
+    
+    return(prime_list)
+
+# Check whether it works            
+primes_known_upto100 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+primes_calculated_by_me = calculate_primes(100+1)
+if (primes_known_upto100 == primes_calculated_by_me):
+    print('Hurray it works!')
+else:
+    print('Oh nooo.')
+    
+```
+
+
+
 :::
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
 
-### Write your own function (SKIP THIS OR MOVE THIS FROM FUNCTIONS???)
-See the exercise ["Write your own function and import it"](06-libraries.qmd){target="_blank"} from the additional exercises in lesson 6.
 
-### Omitted exercises
 
-Continue with [more exercises](https://swcarpentry.github.io/python-novice-gapminder/instructor/16-writing-functions.html){target="_blank"} from the carpentry lessons. (See: "Encapsulation of an If/Print Block".)
+<!-- ####################################################################### -->
+
+### Write your own function 
+
+If you still have a taste for exercises, and haven't finished 
+the exercise ["Writing your own function"](06-libraries.qmd){target="_blank"} from the additional exercises in lesson 6,
+maybe check that one out!
+
+<!-- ####################################################################### -->
+
+### Even more exercises
+
+If you even still have a taste for more exercises, check out exercises that the Carpentries drafted,
+[at the section of their workshop materials regarding functions](https://swcarpentry.github.io/python-novice-gapminder/instructor/16-writing-functions.html){target="_blank"}. *(Continue exercises at: "Encapsulation of an If/Print Block".)*
+
 
 

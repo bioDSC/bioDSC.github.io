@@ -1,15 +1,22 @@
+
 ::: {.callout-note}
-## Note
-Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+## Credits & copyright
+Many questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/), some were
+authored by the *bio*DSC. Carpentries website materials are [licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
+which also applies to the contents of this website.
 :::
+
+
 ---
 
 # Exercises Lesson 12, Loops
 
+<!-- ####################################################################### -->
+
 ### Tracing Execution
 
 ::: {.callout-tip icon='false'}
-## Question A
+## Question 
 Create a table showing the numbers of the lines that are executed when this program runs, and the values of the variables after each line is executed.
 
 ```python
@@ -44,10 +51,16 @@ Create a table showing the numbers of the lines that are executed when this prog
 
 :::
 
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
 
 ### Practice Accumulating
 ::: {.callout-tip icon='false'}
-## Question B
+## Question 
 Fill in the blanks in each of the programs below to produce the indicated result.
 
 ```python
@@ -70,11 +83,16 @@ print(total)
 
 :::
 
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
+<!-- ####################################################################### -->
 
 ### Practice Accumulating 2 (continued)
 ::: {.callout-tip icon='false'}
-## Question ...
+## Question 
 Fill in the blanks in each of the programs below to produce the indicated result.
 
 ```python
@@ -98,18 +116,21 @@ print(lengths)
 
 :::
 
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
 
 
 
-
-
+<!-- ####################################################################### -->
 
 ### Practice Accumulating 3 (continued)
 Fill in the blanks in each of the programs below to produce the indicated result.
 
 ::: {.callout-tip icon='false'}
-## Question C
+## Question 
 ```python
 # Concatenate all words: ["red", "green", "blue"] => "redgreenblue"
 words = ["red", "green", "blue"]
@@ -134,23 +155,35 @@ print(result)
 ```
 :::
 
+
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+
+
 ---
 
 # Additional Exercises 
+
+
+<!-- ####################################################################### -->
 
 ### Plotting automation
 
 Remember this code from Lesson 9?
 
 ```python
-data_all = pd.read_csv('data/gapminder_all.csv', index_col='country')
-sns.scatterplot(data_all, x='gdpPercap_2007', y='lifeExp_2007', s=data_all['pop_2007']/1e6)
+df_all = pd.read_csv('data/gapminder_all.csv', index_col='country')
+sns.scatterplot(df_all, x='gdpPercap_2007', y='lifeExp_2007', size='pop_2007', sizes=(1,40**2), legend=False)
 plt.text(df_all.loc['United States','gdpPercap_2007'], df_all.loc['United States','lifeExp_2007'], 'United States')
 plt.text(df_all.loc['Netherlands','gdpPercap_2007'], df_all.loc['Netherlands','lifeExp_2007'], 'Netherlands')
 ```
 
 ::: {.callout-tip icon='false'}
-## Question D
+## Question 
 Try to annotate 10 selected countries automatically.
 
 :::
@@ -158,16 +191,47 @@ Try to annotate 10 selected countries automatically.
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
+```
+
+# Maybe get the top 3 and bottom 3, and some more
+top3_life = df_all.loc[:,'lifeExp_2007'].nlargest(3).index
+bottom3_life = df_all.loc[:,'lifeExp_2007'].nsmallest(3).index
+custom_countries = ['Netherlands','United States']
+# Merge those three lists
+my_countries_to_select = list(top3_life) + list(bottom3_life) + custom_countries
+
+# Plot
+sns.scatterplot(df_all, x='gdpPercap_2007', y='lifeExp_2007', size='pop_2007', sizes=(1,40**2), legend=False)
+# Now add text automatically
+for country in my_countries_to_select:
+    plt.text(df_all.loc[country,'gdpPercap_2007'], df_all.loc[country,'lifeExp_2007'], country, fontsize=5)
+plt.show()
+
+```
+
+
+This plot looks like: 
+
+![](/static/plots_pyworkshop/L12_GDPscatter.png){width=40%}
+
+A bit messy with the overlapping text, but this worked great otherwise!
+
 :::
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
 
+
+<!-- ####################################################################### -->
 
 ### Reversing a String
 
 Fill in the blanks in the program below so that it prints “nit” (the reverse of the original character string “tin”).
 
 ::: {.callout-tip icon='false'}
-## Question E
+## Question 
 ```python
 original = "tin"
 result = ____
@@ -195,10 +259,19 @@ print(result)
 ```
 :::
 
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+
+<!-- ####################################################################### -->
+
 ### Practice Accumulating (continued from above)
 
 ::: {.callout-tip icon='false'}
-## Question F
+## Question 
 Create an acronym: Starting from the list `["red", "green", "blue"]`, create the acronym "RGB" using a for loop.
 
 - **bioDSC remark**: Note the capitals in "RGB"!
@@ -218,11 +291,17 @@ print(acronym)
 
 :::
 
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
 
 ### Identifying Item Errors
 
 ::: {.callout-tip icon='false'}
-## Question G
+## Question 
 Read the code below and try to identify what the errors are without running it.
 2. Run the code, and read the error message. What type of error is it?
 3. Fix the error.
@@ -244,10 +323,16 @@ print('My favorite season is ', seasons[3])
 ```
 :::
 
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
 
 ### Cumulative Sum (code puzzle)
 ::: {.callout-tip icon='false'}
-## Question H
+## Question 
 
 Reorder and properly indent the lines of code below so that they print a list with the cumulative sum of data. The result should be [1, 3, 5, 10].
 
@@ -277,12 +362,17 @@ print(cumulative)
 ```
 :::
 
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
+<!-- ####################################################################### -->
 
 ### Identifying Variable Name Errors
 
 ::: {.callout-tip icon='false'}
-## Question I
+## Question 
 Read the code below and try to identify what the errors are without running it.
 
 1. Run the code and read the error message. What type of NameError do you think this is? Is it a string with no quotes, a misspelled variable, or a variable that should have been defined but was not?
@@ -320,12 +410,17 @@ print(message)
 ```
 :::
 
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
+<!-- ####################################################################### -->
 
 ### Classifying Errors
 
 ::: {.callout-tip icon='false'}
-## Question ...
+## Question 
 Is an indentation error a syntax error or a runtime error?
 :::
 ::: {.callout-caution collapse='true' icon='false'}
@@ -333,3 +428,7 @@ Is an indentation error a syntax error or a runtime error?
 An IndentationError is a syntax error. Programs with syntax errors cannot be started. A program with a runtime error will start but an error will be thrown under certain conditions.
 :::
 
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html){style="color: #777777" target=_blank}.</font>*
+</div>

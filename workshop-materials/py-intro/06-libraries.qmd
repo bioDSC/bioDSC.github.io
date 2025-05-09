@@ -1,16 +1,21 @@
 
 ::: {.callout-note}
-## Note
-Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+## Credits & copyright
+Many questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/), some were
+authored by the *bio*DSC. Carpentries website materials are [licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
+which also applies to the contents of this website.
 :::
+
 ---
 
 # Exercises Lesson 6, libraries
 
-#### Explore
+<!-- ####################################################################### -->
+
+### Explore
 
 ::: {.callout-tip icon="false"}
-### Question A
+### Question 
 
 1. What function from the math module can you use to calculate a square root without using sqrt?
 2. Since the library contains this function, why does sqrt exist?
@@ -27,8 +32,14 @@ Most questions originate from the carpentry lesson ["Plotting and Programming in
 Also, the design of Python’s math library has its origin in the C standard, which includes both sqrt(x) and pow(x,y), so a little bit of the history of programming is showing in Python’s function names.
 :::
 
+<!-- Carpentries credits L6 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/06-libraries.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
-#### Find the right module
+<!-- ####################################################################### -->
+
+### Find the right module
 
 You want to select a random character from a string:
 
@@ -37,7 +48,7 @@ bases = 'ACTTGCTTGAC'
 ```
 
 ::: {.callout-tip icon="false"}
-### Question B
+### Question 
 
 Which standard library module could help you? Which function would you select from that module? Are there alternatives? Try to write a program that uses the function.
 :::
@@ -71,10 +82,22 @@ from random import choice
 print(choice(bases))
 ```
 
-
 :::
 
+
+<!-- Carpentries credits L6 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/06-libraries.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
+
+
 ### Help!
+
+::: {.callout-tip icon="false"}
+## Question
 
 When a colleague of yours types help(math), Python reports an error:
 
@@ -82,20 +105,25 @@ When a colleague of yours types help(math), Python reports an error:
 NameError: name 'math' is not defined
 ```
 
-::: {.callout-tip icon="false"}
-### Question C
 What has your colleague forgotten to do?
 :::
+
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
 Your colleague forgot to import the math module (import math)
 :::
 
+<!-- Carpentries credits L6 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/06-libraries.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
 
 ### Importing with aliases
 
 ::: {.callout-tip icon="false"}
-### Question D
+### Question 
 1. Fill in the blanks so that the program below prints 90.0.
 2. Rewrite the program so that it uses import without as.
 3. Which form do you find easier to read?
@@ -126,10 +154,18 @@ print(angle)
 3. Since you just wrote the code and are familiar with it, you might actually find the first version easier to read. But when trying to read a huge piece of code written by someone else, or when getting back to your own huge piece of code after several months, non-abbreviated names are often easier, except where there are clear abbreviation conventions.
 :::
 
+<!-- Carpentries credits L6 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/06-libraries.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
+
+
+### Multiple ways of importing
 
 ::: {.callout-tip icon="false"}
-### Question E
-### Multiple ways of importing
+## Question 
 
 Match the following print statements with the appropriate library calls.
 
@@ -159,13 +195,24 @@ Library calls:
 
 :::
 
+<!-- Carpentries credits L6 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/06-libraries.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
+
+
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
 
 # Additional Exercises Lesson 6, Libraries
 
-::: {.callout-tip icon="false"}
-### Question F
+<!-- ####################################################################### -->
+
 ### "Jigsaw": progamming example
+
+::: {.callout-tip icon="false"}
+### Question 
 
 Rearrange the following statements so that a random DNA base is printed and its index in the string. Not all statements may be needed. Feel free to use/add intermediate variables.
 
@@ -193,10 +240,16 @@ print("random base", bases[idx], "base index", idx)
 ```
 :::
 
+<!-- Carpentries credits L6 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/06-libraries.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
 
 ### Importing specific items
 ::: {.callout-tip icon="false"}
-### Question G
+### Question 
 - Fill in the blanks so that the program below prints 90.0.
 - Do you find this version easier to read than preceding ones?
 - Why wouldn’t programmers always use this form of import?
@@ -216,10 +269,18 @@ print(angle)
 ```
 :::
 
+<!-- Carpentries credits L6 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/06-libraries.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
 
 ### Reading error messages
+
 ::: {.callout-tip icon='false'}
-## Question H
+## Question 
 1. Read the code below and try to identify what the errors are without running it.
 2. Run the code, and read the error message. What type of error is it?
 
@@ -245,8 +306,14 @@ ValueError: math domain error
 
 :::
 
+<!-- Carpentries credits L6 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/06-libraries.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
 
+
+<!-- ####################################################################### -->
 
 ### Write your own function and import it
 
@@ -286,3 +353,8 @@ def myfunctionname2(input1, input2):
 
 ```
 :::
+
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>

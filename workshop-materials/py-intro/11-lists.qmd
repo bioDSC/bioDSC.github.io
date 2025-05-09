@@ -1,15 +1,22 @@
+
 ::: {.callout-note}
-## Note
-Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+## Credits & copyright
+Many questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/), some were
+authored by the *bio*DSC. Carpentries website materials are [licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
+which also applies to the contents of this website.
 :::
+
+
 ---
 
 # Exercises Lesson 11, Lists
 
+
+<!-- ####################################################################### -->
 ### Fill in the blanks
 
 ::: {.callout-tip icon='false'}
-## Question A
+## Question 
 Fill in the blanks so that the program below produces the output shown.
 
 ```python
@@ -43,11 +50,18 @@ print('second time:', values)
 ```
 :::
 
+<!-- Carpentries credits L11 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/11-lists.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
 
 ### How Large is a Slice?
 
 ::: {.callout-tip icon='false'}
-## Question B
+## Question 
 If start and stop are both non-negative integers, how long is the list `values[start:stop]`?
 :::
 
@@ -57,7 +71,14 @@ The list `values[start:stop]` has up to `stop - start` elements. For example, `v
 :::
 
 
+<!-- Carpentries credits L11 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/11-lists.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
+
+
+<!-- ####################################################################### -->
 
 ### From Strings to Lists and Back
 
@@ -72,7 +93,7 @@ string to list: ['t', 'i', 'n']
 list to string: gold
 ```
 ::: {.callout-tip icon='false'}
-## Question ...
+## Question 
 1. What does list('some string') do?
 2. What does '-'.join(['x', 'y', 'z']) generate?\
 :::
@@ -85,10 +106,18 @@ list to string: gold
 
 :::
 
+<!-- Carpentries credits L11 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/11-lists.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
+
 ### Working With the End
 
 ::: {.callout-tip icon='false'}
-## Question C
+## Question 
 1. What does the following program print?
 
 ```python
@@ -111,17 +140,30 @@ print(element[-1])
 3. The last index that can safely be used with a list of N elements is element -N, which represents the first element.
 4. del values[-1] removes the last element from the list.
 5. values[:-1]
-
-
-
 :::
 
 
+<!-- Carpentries credits L11 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/11-lists.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+
+---
+
+# Additional Exercises
+
+
+<!-- ####################################################################### -->
 
 ### Stepping Through a List
 
 ::: {.callout-tip icon='false'}
-## Question D
+## Question 
 1. What does the following program print?
 
 ```python
@@ -147,17 +189,19 @@ eniroulf
 3. The slice `1::2` selects all even-numbered items from a collection: it starts with element 1 (which is the second element, since indexing starts at 0), goes on until the end (since no end is given), and uses a step size of 2 (i.e., selects every second element).
 :::
 
+<!-- Carpentries credits L11 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/11-lists.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
 
 
----
-
-# Additional Exercises
+<!-- ####################################################################### -->
 
 ### Slice Bounds
 
 ::: {.callout-tip icon='false'}
-## Question E
+## Question 
 What does the following program print?
 
 ```python
@@ -176,11 +220,18 @@ lithium
 The first statement prints the whole string, since the slice goes beyond the total length of the string. The second statement returns an empty string, because the slice goes "out of bounds" of the string.
 :::
 
+<!-- Carpentries credits L11 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/11-lists.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
 
 ### Sort and Sorted
 
 ::: {.callout-tip icon='false'}
-## Question F
+## Question 
 What do these two programs print? In simple terms, explain the difference between sorted(letters) and letters.sort().
 
 ```python
@@ -217,6 +268,13 @@ letters is ['d', 'g', 'l', 'o'] and result is None
 `sorted(letters)` returns a sorted copy of the list letters (the original list letters remains unchanged), while `letters.sort()` sorts the list letters in-place and does not return anything.
 :::
 
+<!-- Carpentries credits L11 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/11-lists.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
 
 ### Copying (or Not)
 
@@ -224,7 +282,7 @@ letters is ['d', 'g', 'l', 'o'] and result is None
 What do these two programs print? In simple terms, explain the difference between new = old and new = old[:].
 
 ::: {.callout-tip icon='false'}
-## Question G
+## Question 
 ```python
 # Program A
 old = list('gold')
@@ -258,6 +316,13 @@ new is ['D', 'o', 'l', 'd'] and old is ['g', 'o', 'l', 'd']
 `new = old[:]` however creates a new list object new containing all elements from the list `old`; `new` and `old` are different objects.
 :::
 
+<!-- Carpentries credits L11 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/11-lists.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
 
 ### Negative slicing
 
@@ -296,16 +361,21 @@ The second index `3` points to the endpoint but does not include it so the outpu
 lit
 ```
 
-
-
 :::
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
 
+
+
+<!-- ####################################################################### -->
 
 ### More list comprehensions and filtering
 
 ::: {.callout-tip icon='false'}
-## Question ...
+## Question A
 Edit the following code such that the list consists of values `2x+x^2-1` where x is the index of the list element.
 
 ```python
@@ -317,11 +387,15 @@ Edit the following code such that the list consists of values `2x+x^2-1` where x
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
+```python
+some_list = [2*x+x**2-1 for x in range(10)]
+```
+
 :::
 
 
 ::: {.callout-tip icon='false'}
-## Question ...
+## Question B
 Now from that list, select values that are > 10, by modifying the following code:
 
 ```python
@@ -333,11 +407,20 @@ Now from that list, select values that are > 10, by modifying the following code
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
+```python
+some_list_sel = [x for x in some_list if x>10]
+
+print(some_list)
+print(some_list_sel)
+```
+
+The print statements show it has worked.
+
 :::
 
 
 ::: {.callout-tip icon='false'}
-## Question ...
+## Question C
 Convert your list to a **np.array**, and do the same in a more elegant way.
 
 :::
@@ -345,11 +428,19 @@ Convert your list to a **np.array**, and do the same in a more elegant way.
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
+```python
+
+some_list_np = np.array(some_list)
+some_list_np_sel = some_list_np[some_list_np>10]
+
+print(some_list_np_sel)
+```
+
 :::
 
 
 ::: {.callout-tip icon='false'}
-## Question ...
+## Question D
 
 Given: 
 ```python
@@ -374,4 +465,47 @@ list_withtop = [1000+-10*(x-7)**2 for x in range(20)]
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
+```python
+# 1. Find the position of the maximum value in this array.
+list_withtop.argmax()
+# 2. Edit the code above such that the maximum value shifts to an index of your choice.   
+#       Check whether you succeedded by finding the maximum value.
+my_shift = 15
+list_withtop_2 = np.array([1000+-10*(x-my_shift)**2 for x in range(20)])
+list_withtop_2.argmax()
+# 3. Multiply your list with `-1`, and put the result in another list.
+#     1. Where are now the maximum and minimum values?
+#     2. Does this make sense?
+list_withtop_2_inv = list_withtop_2*-1 # inverted list (*-1)
+# The maximum and minimum positions have swapped, as we multiplied by -1.
+list_withtop_2_inv.argmin()
+list_withtop_2_inv.argmax()
+# 4. `list_line = [70*x-1000 for x in range(20)]`
+#     1. What's the biggest value, either negative or positive, in this list?
+list_line = np.array([70*x-1000 for x in range(20)])
+# That number is:
+list_line[np.argmax(np.abs(list_line))]
+#     2. And the index of that number?
+np.argmax(np.abs(list_line))
+#     3. What's the standard deviation?
+np.std(list_line)
+#     4. Can you calculate the correlation between list_withtop and list_line?
+# Using np:
+R_calculated = np.corrcoef(list_withtop, list_line)[0,1]
+# Manually:
+R_calculated2 = \
+    np.sum((list_withtop-np.mean(list_withtop)) * (list_line-np.mean(list_line))) / \
+        np.sqrt(  np.sum((np.mean(list_withtop)-list_withtop)**2) * np.sum((np.mean(list_line)-list_line)**2)  )
+print(R_calculated)
+print(R_calculated2)
+#     5. Can you make a scatter plot of  list_withtop versus list_line?
+plt.scatter(list_withtop, list_line)
+plt.xlabel('list_withtop'); plt.ylabel('list_line')
+```
+
 :::
+
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>

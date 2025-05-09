@@ -179,14 +179,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Credits &amp; copyright
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Most questions originate from the carpentry lesson <a href="http://swcarpentry.github.io/python-novice-gapminder/">“Plotting and Programming in Python”</a></p>
+<p>Many questions originate from the carpentry lesson <a href="http://swcarpentry.github.io/python-novice-gapminder/">“Plotting and Programming in Python”</a>, some were authored by the <em>bio</em>DSC. Carpentries website materials are <a href="https://software-carpentry.org/license/">licenced</a> under the <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, which also applies to the contents of this website.</p>
 </div>
 </div>
 <hr>
+<!-- ####################################################################### -->
 <section id="exercises-lesson-9-plotting" class="level1">
 <h1>Exercises Lesson 9, plotting</h1>
 <section id="minima-and-maxima" class="level3">
@@ -229,20 +230,28 @@ Answer
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data_europe <span class="op">=</span> pd.read_csv(<span class="st">'data/data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data_europe <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data_europe_transposed <span class="op">=</span> data_europe.T</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data_europe_transposed[<span class="st">'min'</span>] <span class="op">=</span> data_europe.<span class="bu">min</span>()</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>data_europe_transposed[<span class="st">'max'</span>] <span class="op">=</span> data_europe.<span class="bu">max</span>()</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>data_europe_transposed[<span class="st">'year'</span>] <span class="op">=</span> data_europe_transposed.index.<span class="bu">str</span>.replace(<span class="st">"gdpPercap_"</span>,<span class="st">""</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data_europe_transposed, x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'min'</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data_europe_transposed, x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'max'</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'best'</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data_europe_transposed, x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'min'</span>, label<span class="op">=</span><span class="st">'min'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data_europe_transposed, x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'max'</span>, label<span class="op">=</span><span class="st">'max'</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'best'</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The figure now looks like:</p>
+<p><img src="../../static/plots_pyworkshop/L9_min_max_gdp_europe.png" class="img-fluid" style="width:40.0%"></p>
 </div>
 </div>
 </div>
+<!-- Carpentries credits L9, edited -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>, edited by the </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="mean-gene-expression" class="level3">
 <h3 class="anchored" data-anchor-id="mean-gene-expression">Mean gene expression</h3>
@@ -262,17 +271,18 @@ Answer
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>df_kohela[<span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'unknown'</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>df_kohela.loc[df_kohela.index.<span class="bu">str</span>.contains(<span class="st">'WT_'</span>), <span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'WT'</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>df_kohela.loc[df_kohela.index.<span class="bu">str</span>.contains(<span class="st">'mutant_'</span>), <span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'mutant'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><em>Disclaimer: we are analyzing single cell data in this exercise. Within the constraints of this introductory course, we don’t use proper statistic or methodological approaches to analyze the data. These exercises are meant to teach you Python concepts, but also give you a flavor of biological data analysis.</em></p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question B
+Question A
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Use seaborn to create a ‘stripplot’ plot for WT1 expression per cell type. Then create a similar plot for TBX18. (Epicardial cell markers.) What information can be extracted from this plot?</p>
+<p>Use seaborn to create a ‘stripplot’ plot for WT1 expression per cell type. Then create a similar plot for TBX18 (both epicardial cell markers). What information can be extracted from this plot?</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -288,8 +298,16 @@ Answer
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sns.stripplot(df_kohela, x<span class="op">=</span><span class="st">'Celltype'</span>, y<span class="op">=</span><span class="st">'TBX18'</span>, jitter<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sns.stripplot(df_kohela, x<span class="op">=</span><span class="st">'Celltype'</span>, y<span class="op">=</span><span class="st">'WT1'</span>, jitter<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The plot shows that the expression in the epicardial and unknown types is the largest and that comparatively the fat and fibroblasts have low expression levels.</p>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.tick_params(axis<span class="op">=</span><span class="st">'x'</span>, rotation<span class="op">=</span><span class="dv">45</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sns.stripplot(df_kohela, x<span class="op">=</span><span class="st">'Celltype'</span>, y<span class="op">=</span><span class="st">'WT1'</span>, jitter<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.tick_params(axis<span class="op">=</span><span class="st">'x'</span>, rotation<span class="op">=</span><span class="dv">45</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="../../static/plots_pyworkshop/L9_stripplot_WT1_TBX18.png" class="img-fluid" style="width:50.0%"></p>
+<p>Since we classified cells with high WT1 levels as epicardial cells, we expected to see high WT1 levels in epicardial cells by construction. This is indeed the case.</p>
+<p>We see one stray fibroblast cell with a high WT1 level. This cell appears to be WT1+ <strong>and</strong> COL2A1+. Because of the order in which we executed the code, this cell got classified as fibroblast.</p>
+<p>TBX18 is expected to show high expression in epicardial cells too, and, if both WT1 and TBX18 are specific for epicardial cells, they should not occur in other cell types. This also appears to be the case.</p>
+<p>Quite some cells still have the ‘unknown’ phenotype, but otherwise these plots are supportive of our strategy of using WT1 and TBX18 as epicardial markers.</p>
+<p>For a real experiment, you might use packages like <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-017-1382-0">scanpy</a> (Python) or <a href="https://satijalab.org/seurat/">Seurat</a> (R) to analyze your data. The authors of the <a href="https://doi.org/10.1126/scitranslmed.abf2750">Kohela et al.</a> study used <a href="https://cole-trapnell-lab.github.io/monocle-release/">Monocle 2</a> (R).</p>
+<!-- The plots shows that the expression in the epicardial and unknown types is the largest and that comparatively the fat and fibroblasts have low expression levels. -->
 </div>
 </div>
 </div>
@@ -299,7 +317,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question C
+Question B
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -318,8 +336,15 @@ Answer
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(df_kohela, x<span class="op">=</span><span class="st">'WT1'</span>, y<span class="op">=</span><span class="st">'TBX18'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>From the plot it is clear that there is no correlation between the two expression levels.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(df_kohela, x<span class="op">=</span><span class="st">'WT1'</span>, y<span class="op">=</span><span class="st">'TBX18'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="../../static/plots_pyworkshop/L9_scatter_WT1_TBX18.png" class="img-fluid" style="width:25.0%"></p>
+<p>This plot highlights a few challenges with data analysis.</p>
+<p>Single cell RNA-seq data can typically show only a few reads per gene per cell, or even zero, even when the gene is expressed. This is a limitation of the RNA-seq technique.</p>
+<p>This results in many cells having only few or zero counts for the WT1 and TBX18 gene expression, and many overlapping datapoints. It is therefor hard to see any pattern in the data.</p>
+<p>Adding <code>alpha=0.1</code> as argument to the scatterplot method already helps to visualize the data better:</p>
+<pre><code>sns.scatterplot(df_kohela, x='WT1', y='TBX18', alpha=.1)</code></pre>
+<p><img src="../../static/plots_pyworkshop/L9_scatter_WT1_TBX18_alpha.png" class="img-fluid" style="width:25.0%"></p>
+<p>It appears that there is not much correlation between the TBX18 and WT1 expression. This can either be because cells do not typically express both at the same time, or because our detection is not sufficient to identify such a correlation from this plot.</p>
 </div>
 </div>
 </div>
@@ -329,7 +354,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question D, CHECK fibroblasts &amp; fatty cells. There are almost not visible
+Question C
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -348,29 +373,92 @@ Answer
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(df_kohela, x<span class="op">=</span><span class="st">'WT1'</span>, y<span class="op">=</span><span class="st">'TBX18'</span>, hue<span class="op">=</span><span class="st">'Celltype'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Most of the cells are of epicardial or unknown type. In both cases there is no clear correlation. The others cells types are too few or are obfuscated by the other points.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(df_kohela, x<span class="op">=</span><span class="st">'WT1'</span>, y<span class="op">=</span><span class="st">'TBX18'</span>, hue<span class="op">=</span><span class="st">'Celltype'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="section" class="level1">
+<h1><img src="../../static/plots_pyworkshop/L9_scatter_WT1_TBX18_Celltype.png" class="img-fluid" style="width:40.0%"></h1>
+<p>This plot is still somewhat hard to interpret. Some points are overlaying on top of each other.</p>
+<p>One way to disentangle the points, is to plot them separately:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>maxval <span class="op">=</span> np.<span class="bu">max</span>(df_kohela.loc[:,[<span class="st">'WT1'</span>,<span class="st">'TBX18'</span>]])</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Epicardial cells'</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(df_kohela.loc[df_kohela[<span class="st">'Celltype'</span>]<span class="op">==</span><span class="st">'epicardial'</span>,:], x<span class="op">=</span><span class="st">'WT1'</span>, y<span class="op">=</span><span class="st">'TBX18'</span>, alpha<span class="op">=</span><span class="fl">.1</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="dv">0</span>, maxval<span class="op">+</span><span class="dv">1</span>])</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">0</span>, maxval<span class="op">+</span><span class="dv">1</span>])</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Fibroblast cells'</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(df_kohela.loc[df_kohela[<span class="st">'Celltype'</span>]<span class="op">==</span><span class="st">'fibroblast'</span>,:], x<span class="op">=</span><span class="st">'WT1'</span>, y<span class="op">=</span><span class="st">'TBX18'</span>, alpha<span class="op">=</span><span class="fl">.1</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="dv">0</span>, maxval<span class="op">+</span><span class="dv">1</span>])</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">0</span>, maxval<span class="op">+</span><span class="dv">1</span>])</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(df_kohela.loc[df_kohela[<span class="st">'Celltype'</span>]<span class="op">==</span><span class="st">'fat'</span>,:], x<span class="op">=</span><span class="st">'WT1'</span>, y<span class="op">=</span><span class="st">'TBX18'</span>, alpha<span class="op">=</span><span class="fl">.1</span>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Fat cells'</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="dv">0</span>, maxval<span class="op">+</span><span class="dv">1</span>])</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">0</span>, maxval<span class="op">+</span><span class="dv">1</span>])</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(df_kohela.loc[df_kohela[<span class="st">'Celltype'</span>]<span class="op">==</span><span class="st">'unknown'</span>,:], x<span class="op">=</span><span class="st">'WT1'</span>, y<span class="op">=</span><span class="st">'TBX18'</span>, alpha<span class="op">=</span><span class="fl">.1</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Unknown cells'</span>)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>plt.xlim([<span class="dv">0</span>, maxval<span class="op">+</span><span class="dv">1</span>])</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>plt.ylim([<span class="dv">0</span>, maxval<span class="op">+</span><span class="dv">1</span>])</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><img src="../../static/plots_pyworkshop/L9_scatter_WT1_TBX18_Celltype-fibroblast.png" class="img-fluid" style="width:25.0%"> <img src="../../static/plots_pyworkshop/L9_scatter_WT1_TBX18_Celltype-epicardial.png" class="img-fluid" style="width:25.0%"></p>
+<p><img src="../../static/plots_pyworkshop/L9_scatter_WT1_TBX18_Celltype-fat.png" class="img-fluid" style="width:25.0%"> <img src="../../static/plots_pyworkshop/L9_scatter_WT1_TBX18_Celltype-unknown.png" class="img-fluid" style="width:25.0%"></p>
+<p>Interestingly, we now see that fibroblast (COL2A1+) and fat cells (PPARG+) typically don’t express WT1 or TBX18, whilst epicardial cells (WT1+) do also often show TBX18 expression.</p>
+<p>There are nevertheless still WT+ cells that don’t show TBX18 expression, and moreover many WT- cells (the unknown cells) that show TBX18 expression, so these plots are not conclusive, and more sophisticated single cell methods might be needed to further study these cells.</p>
+</section>
 </div>
 </div>
 </div>
+<!--
+::: {.callout-tip icon='false'}
+## Question D
+1. Calculate the total RNA-seq reads per cell, and make a violin plot per condition for these total reads.
+
+Some code to start with:
+```python
+df_kohela['Total_reads'] = df_kohela.loc[:,'A1BG':'ZZZ3']._.____
+```
+
+2. What does the violin plot tell us?
+
+:::
+
+::: {.callout-caution collapse='true' icon='false'}
+## Answer
+
+1. ```python
+df_kohela['Total_reads'] = df_kohela.loc[:,'A1BG':'ZZZ3'].sum(axis=1)
+```
+2. ```python
+sns.violinplot(df_kohela,x='Celltype',y='Total_reads')
+```
+This plot tells us that for each cell type the average total number of reads are comparable. However, there are some fibrobblast cells that show a very large read-count. Perhaps remove them or look closer which genes are responsible for this?
+:::
+-->
+<!-- bioDSC credits -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
+</section>
+<section id="more-correlations" class="level3">
+<h3 class="anchored" data-anchor-id="more-correlations">More Correlations</h3>
+<p>This short program creates a plot showing the correlation between GDP and life expectancy for 2007, scaling marker size by population:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data_all <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_all.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data_all, x<span class="op">=</span><span class="st">'gdpPercap_2007'</span>, y<span class="op">=</span><span class="st">'lifeExp_2007'</span>, size<span class="op">=</span><span class="st">'pop_2007'</span>, sizes<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">40</span><span class="op">**</span><span class="dv">2</span>), legend<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question E
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>Calculate the total RNA-seq reads per cell, and make a violin plot per condition for these total reads.</li>
-</ol>
-<p>Some code to start with:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_kohela[<span class="st">'Total_reads'</span>] <span class="op">=</span> df_kohela.loc[:,<span class="st">'A1BG'</span>:<span class="st">'ZZZ3'</span>]._.____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>What does the violin plot tell us?</li>
-</ol>
+<p>Using online help and other resources, explain what each plotting argument does.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -385,31 +473,52 @@ Answer
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_kohela[<span class="st">'Total_reads'</span>] <span class="op">=</span> df_kohela.loc[:,<span class="st">'A1BG'</span>:<span class="st">'ZZZ3'</span>].<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sns.violinplot(df_kohela,x<span class="op">=</span><span class="st">'Celltype'</span>,y<span class="op">=</span><span class="st">'Total_reads'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-This plot tells us that for each cell type the average total number of reads are comparable. However, there are some fibrobblast cells that show a very large read-count. Perhaps remove them or look closer which genes are responsible for this?</li>
-</ol>
+<p>See e.g.&nbsp;<a href="https://seaborn.pydata.org/generated/seaborn.scatterplot.html">the scatterplot documentation</a>.</p>
+<ul>
+<li><code>data_all</code>: The first argument specifies which dataframe to use as input.</li>
+<li><code>x='gdpPercap_2007'</code>: The x argument expects the name of the column that holds values to plot on the x-axis.</li>
+<li><code>y='lifeExp_2007'</code>: Same as x, but for the y axis.</li>
+<li><code>size='pop_2007'</code>: This tells seaborn to scale the point size with the values in a column, in this case the population sizes of the countries (in 2007).</li>
+<li><code>sizes=(1,40**2)</code>: This sets the range of the sizes to be used for the points, given as (min, max). These are areas, which is why it’s convenient to use the square operator <code>**2</code>, such that you can choose a radius (in this case minimally 1 and maximally 40).</li>
+<li><code>legend=False</code>: This turns off the legend.</li>
+</ul>
+<p>The result:</p>
+<p><img src="../../static/plots_pyworkshop/L9_scatter_gdp_lifeexp.png" class="img-fluid" style="width:35.0%"></p>
 </div>
 </div>
 </div>
+<!-- Carpentries credits L9, edited -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>, edited by the </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+<hr>
 </section>
-<section id="more-correlations" class="level3">
-<h3 class="anchored" data-anchor-id="more-correlations">More Correlations</h3>
-<p>This short program creates a plot showing the correlation between GDP and life expectancy for 2007, normalizing marker size by population:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data_all <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_all.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data_all, x<span class="op">=</span><span class="st">'gdpPercap_2007'</span>, y<span class="op">=</span><span class="st">'lifeExp_2007'</span>, s<span class="op">=</span>data_all[<span class="st">'pop_2007'</span>]<span class="op">/</span><span class="fl">1e6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="additional-exercises" class="level1">
+<h1>Additional Exercises</h1>
+<!-- ####################################################################### -->
+<section id="even-more-correlations" class="level3">
+<h3 class="anchored" data-anchor-id="even-more-correlations">Even more correlations</h3>
+<!-- bioDSC -->
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question F
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Using online help and other resources, explain what each argument to plot does.</p>
+<p>Use the code from the “More Correlations” exercise, and try to add the following lines to the plotting code:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plt.text(data_all.loc[<span class="st">'United States'</span>,<span class="st">'gdpPercap_2007'</span>], data_all.loc[<span class="st">'United States'</span>,<span class="st">'lifeExp_2007'</span>], <span class="st">'United States'</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.text(data_all.loc[<span class="st">'Netherlands'</span>,<span class="st">'gdpPercap_2007'</span>], data_all.loc[<span class="st">'Netherlands'</span>,<span class="st">'lifeExp_2007'</span>], <span class="st">'Netherlands'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>What’s happening here? (You might need to use Google.)</li>
+<li>Add your favorite country too.</li>
+</ul>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -424,45 +533,16 @@ Answer
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
-</div>
-</div>
-</div>
-</section>
-<section id="even-more-correlations" class="level3">
-<h3 class="anchored" data-anchor-id="even-more-correlations">Even more correlations</h3>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Question G
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Use the code from the “More Correlations” exercise, and try to add the following lines to the plotting code:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plt.text(data_all.loc[<span class="st">'United States'</span>,<span class="st">'gdpPercap_2007'</span>], data_all.loc[<span class="st">'United States'</span>,<span class="st">'lifeExp_2007'</span>], <span class="st">'United States'</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.text(data_all.loc[<span class="st">'Netherlands'</span>,<span class="st">'gdpPercap_2007'</span>], data_all.loc[<span class="st">'Netherlands'</span>,<span class="st">'lifeExp_2007'</span>], <span class="st">'Netherlands'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The function <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html">matplotlib.pyplot.text</a>,</p>
+<pre><code>matplotlib.pyplot.text(x, y, s, fontdict=None, **kwargs)</code></pre>
+<p>allows you to put text s in your plotting area at location x,y. x, y and s should be single values (not arrays or tables)</p>
 <ul>
-<li>What’s happening here? (You might need to use Google.)</li>
-<li>Add your favorite country too.</li>
+<li><code>data_all.loc['United States','gdpPercap_2007']</code> selects the x value corresponding to the united states.</li>
+<li><code>data_all.loc['United States','lifeExp_2007']</code> selects the y value corresponding to the united states.</li>
+<li><code>'United states'</code> provides the label.</li>
 </ul>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-
+<p>The result:</p>
+<p><img src="../../static/plots_pyworkshop/L9_scatter_gdp_lifeexp_label.png" class="img-fluid" style="width:40.0%"></p>
 </div>
 </div>
 </div>
@@ -480,6 +560,44 @@ Question H
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This would be very tedious with what you learned currently! In the next lessons (particularly lesson 12), we’ll learn how to automate your code. This will be very useful for this particular challenge.</p>
+</div>
+</div>
+</div>
+<!-- bioDSC credits -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
+</section>
+<section id="subselection-and-melting" class="level3">
+<h3 class="anchored" data-anchor-id="subselection-and-melting">Subselection and melting</h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Question A
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using the kohela data, first create a new dataframe <code>df_kohela_sel</code> with only a selection of a few genes, and the condition and cell type columns.</p>
+<p>Select the following genes: <code>['WT1', 'TBX18', 'TFAP2A', 'COL2A1', 'ACTA2', 'PPARG', 'CEBPA']</code>. These are epicardial markers (WT1, TBX18), a transcription factor (TFAP2A), fibroblast markers (COL2A1, ACTA2), and fat markers (PPARG, CEBPA).</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -491,29 +609,27 @@ Answer
 </div>
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>This would be very tedious with what you learned currently! In the next lessons (particularly lesson 12), we’ll learn how to automate your code. This will be very useful for this particular challenge.</p>
+<pre><code>df_kohela_sel = \
+    df_kohela.loc[:,['WT1', 'TBX18', 'TFAP2A', 'COL2A1', 'ACTA2', 'PPARG', 'CEBPA','Celltype','Condition']]</code></pre>
 </div>
 </div>
 </div>
-<hr>
-</section>
-</section>
-<section id="additional-exercises" class="level1">
-<h1>Additional Exercises</h1>
-<section id="subselection-and-melting" class="level3">
-<h3 class="anchored" data-anchor-id="subselection-and-melting">Subselection and melting</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question I
+Question B
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Using the kohela data, first create a new dataframe <code>df_kohela_sel</code> with only a selection of a few genes, and the condition and cell type columns.</p>
-<p>Select the following genes: <code>['WT1', 'TBX18', 'TFAP2A', 'COL2A1', 'ACTA2', 'PPARG', 'CEBPA']</code>. These are epicardial markers (WT1, TBX18), a transcription factor (TFAP2A), fibroblast markers (COL2A1, ACTA2), and fat markers (PPARG, CEBPA).</p>
+<p>Now melt this dataframe using <code>pd.melt()</code>, and use cell type and condition as identifier variables.</p>
+<ul>
+<li>What will happen to the gene expression values?</li>
+<li>What is sensible input for the <code>var_name</code> and <code>value_name</code> parameters?</li>
+<li>Why is this useful? (For answer, see next questions.)</li>
+</ul>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -528,7 +644,22 @@ Answer
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>df_kohela_sel = df_kohela.loc[:,[‘WT1’, ‘TBX18’, ‘TFAP2A’, ‘COL2A1’, ‘ACTA2’, ‘PPARG’, ‘CEBPA’,‘Celltype’,‘Condition’]]</p>
+<pre><code>df_kohela_melted = pd.melt(df_kohela_sel, id_vars=['Celltype','Condition'], var_name='Gene', value_name='Expression')</code></pre>
+<ul>
+<li><em>What will happen to the gene expression values?</em>
+<ul>
+<li>Expression data that were spread out over multiple columns are now re-organized in one long column. A new column is created alongside the column with all data, that specifies from which column the data originated.</li>
+</ul></li>
+<li><em>What is sensible input for the var_name and value_name parameters?</em>
+<ul>
+<li>The <code>var_name</code> is the name of the new column that specifies from which original columns the data came. In this case the original columns corresponded to different genes, and so “Gene” might be a sensible name.</li>
+<li><code>value_name</code> is the name of the new column that holds all values previously spread out over multiple columns. The values all related to expression, and so “Expression” seems a good name.</li>
+</ul></li>
+<li><em>Why is this useful? (For answer, see next questions.)</em>
+<ul>
+<li>This is useful because now this dataframe can be easily used as input for the seaborn plots.</li>
+</ul></li>
+</ul>
 </div>
 </div>
 </div>
@@ -538,11 +669,11 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question J
+Question C
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Now melt this dataframe using <code>pd.melt()</code>, and use cell type and condition as identifier variables. What will happen to the gene expression values? What is sensible input for the <code>var_name</code> and <code>value_name</code> parameters? Why is this useful? (For answer, see next questions.)</p>
+<p>Use <code>df_kohela_melted.head()</code> to check whether the output is as expected.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -557,7 +688,14 @@ Answer
 </div>
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>df_kohela_melted = pd.melt(df_kohela_sel, id_vars=[‘Celltype’,‘Condition’], var_name=‘Gene’, value_name=‘Expression’)</p>
+<p>The output was:</p>
+<pre><code>  Celltype Condition Gene  Expression
+0  unknown    mutant  WT1           0
+1  unknown    mutant  WT1           0
+2  unknown    mutant  WT1           0
+3  unknown    mutant  WT1           0
+4  unknown    mutant  WT1           1</code></pre>
+<p>and indeed, the columns Celltype and Condition were retained, and the expression data was re-organized into one column “Expression”, annotated by the new column “Gene” which lists from which original column that data originated.</p>
 </div>
 </div>
 </div>
@@ -567,11 +705,11 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question K, Is this a question?
+Question D
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Use <code>df_kohela_melted.head()</code> to check whether the output is as expected.</p>
+<p>Make a violin or stripplot, with as x-axis the genes, expression on the y-axis, and colored for condition. Is there an issue with this plot?</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -586,7 +724,24 @@ Answer
 </div>
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<p>The code:</p>
+<pre><code>sns.violinplot(df_kohela_melted, x='Gene', y='Expression', hue='Condition')
+plt.show()
+sns.stripplot(df_kohela_melted, x='Gene', y='Expression', hue='Condition', ax=ax, dodge=1)
+plt.show()
+</code></pre>
+<section id="for-the-violinplot" class="level6">
+<h6 class="anchored" data-anchor-id="for-the-violinplot"><em>For the Violinplot</em></h6>
+<p><img src="../../static/plots_pyworkshop/L9_violinplot_Gene_Expression_Condition.png" class="img-fluid" style="width:40.0%"></p>
+<p>An issue you might have identified is that it is very hard to compare gene expression levels because some of these genes have rather high expression levels, thus forcing the expression levels of other genes to the very bottom of the plot, making it hard to distinguish differences.</p>
+<p>Also some outliers appear to be affecting the scale to a large extend, making it hard to see trends.</p>
+<p>Moreover, you can probably not even see the Violins..</p>
+</section>
+<section id="for-the-stripplot" class="level6">
+<h6 class="anchored" data-anchor-id="for-the-stripplot"><em>For the stripplot</em></h6>
+<p><img src="../../static/plots_pyworkshop/L9_stripplot_Gene_Expression_Condition.png" class="img-fluid" style="width:40.0%"></p>
+<p>This looks better, but it is still hard to see differences between wild type and mutant cell gene expression.</p>
+</section>
 </div>
 </div>
 </div>
@@ -596,11 +751,33 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question L
+Question E
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Make a violin or stripplot, with as x-axis the genes, expression on the y-axis, and colored for condition. Is there an issue with this plot?</p>
+<p>Look at the following example:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># A custom function, which normalizes a series by its mean</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># We'll learn more about functions in Lesson 16</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gene_normalization(X):</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> X <span class="op">/</span> np.mean(X)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a subset of the data</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>cell_subset <span class="op">=</span> [<span class="st">'mutant_rep1_cell174'</span>, <span class="st">'WT_rep2_cell348'</span>, <span class="st">'mutant_rep1_cell160'</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>       <span class="st">'WT_rep1_cell022'</span>, <span class="st">'mutant_rep1_cell069'</span>]</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>gene_subset <span class="op">=</span> [<span class="st">'WT1'</span>, <span class="st">'TBX18'</span>, <span class="st">'TFAP2A'</span>, <span class="st">'COL2A1'</span>, <span class="st">'ACTA2'</span>, <span class="st">'PPARG'</span>, <span class="st">'CEBPA'</span>]</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize gene expression</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>df_kohela_subset2 <span class="op">=</span> df_kohela.loc[cell_subset, gene_subset]</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>df_kohela_subset2_normalized <span class="op">=</span> df_kohela_subset2.transform(gene_normalization)</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result</span></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_kohela_subset2_normalized)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>Check out what <code>gene_normalization(df_kohela_subset2['WT1'])</code> does.</li>
+<li>What does the transform method do in the above code?</li>
+</ol>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -615,7 +792,16 @@ Answer
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>sns.violinplot(df_kohela_melted, x=‘Gene’, y=‘Expression’, hue=‘Condition’)</p>
+<section id="check-out-what-gene_normalizationdf_kohela_subset2wt1-does." class="level6">
+<h6 class="anchored" data-anchor-id="check-out-what-gene_normalizationdf_kohela_subset2wt1-does."><em>1. Check out what <code>gene_normalization(df_kohela_subset2['WT1'])</code> does.</em></h6>
+<p>What <code>gene_normalization()</code> is described in the comment above the function, it normalizes a series by its mean. <code>df_kohela_subset2['WT1']</code> is the series of expression values related to WT1.</p>
+<p><code>gene_normalization(df_kohela_subset2['WT1'])</code> will thus return WT1 expression values normalized by their mean.</p>
+</section>
+<section id="what-does-the-transform-method-do-in-the-above-code" class="level6">
+<h6 class="anchored" data-anchor-id="what-does-the-transform-method-do-in-the-above-code"><em>2. What does the transform method do in the above code?</em></h6>
+<p>Transform applies a function to each of the columns in a dataframe. So in this case it will go over each column, which correspond to <code>df_kohela_subset2['WT1']</code>, <code>df_kohela_subset2['TBX18']</code>, <code>df_kohela_subset2['TFAP2A']</code> and so forth, and feed that column to the custom function, which in this case will return values that are normalized. Those normalized values are then put back in the column the function was applied to.</p>
+<p>Thus, the each column will now correspond to mean-divided expression (ie will be normalized).</p>
+</section>
 </div>
 </div>
 </div>
@@ -625,33 +811,15 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question M
+Question F
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Look at the following example:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># A custom function, which normalizes a series by its mean</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># We'll learn more about functions in Lesson 16</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gene_normalization(X):</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> X <span class="op">/</span> np.mean(X)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a subset of the data</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>cell_subset <span class="op">=</span> [<span class="st">'mutant_rep1_cell174'</span>, <span class="st">'WT_rep2_cell348'</span>, <span class="st">'mutant_rep1_cell160'</span>,</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>       <span class="st">'WT_rep1_cell022'</span>, <span class="st">'mutant_rep1_cell069'</span>]</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>gene_subset <span class="op">=</span> [<span class="st">'WT1'</span>, <span class="st">'TBX18'</span>, <span class="st">'TFAP2A'</span>, <span class="st">'COL2A1'</span>, <span class="st">'ACTA2'</span>, <span class="st">'PPARG'</span>, <span class="st">'CEBPA'</span>]</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalize gene expression</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>df_kohela_subset2 <span class="op">=</span> df_kohela.loc[cell_subset, gene_subset]</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>df_kohela_subset2_normalized <span class="op">=</span> df_kohela_subset2.transform(gene_normalization)</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Print the result</span></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_kohela_subset2_normalized)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol type="1">
-<li>Check out what <code>gene_normalization(df_kohela_subset2['WT1'])</code> does.</li>
-<li>What does the transform method do in the above code?</li>
-</ol>
+<p>Edit the following code (replacing blanks by code) to normalize the gene expression by the total expression of each gene. Hint: look at exercise E.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df_kohela_grouped <span class="op">=</span> df_kohela_melted.groupby(_______)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>df_kohela_melted[<span class="st">'Expression_normalized'</span>] <span class="op">=</span> df_kohela_grouped[<span class="st">'Expression'</span>]._______(gene_normalization)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then, similar to D, plot the normalized gene expression using both the <code>sns.barplot</code> and <code>sns.stripplot</code>. For the stripplot, use the additional parameter <code>dodge=True</code>.</p>
+<p>The barplot looks nice, but does it contain all information?</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -666,7 +834,21 @@ Answer
 </div>
 <div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<p>The normalization:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df_kohela_grouped <span class="op">=</span> df_kohela_melted.groupby(<span class="st">'Gene'</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df_kohela_melted[<span class="st">'Expression_normalized'</span>] <span class="op">=</span> df_kohela_grouped[<span class="st">'Expression'</span>].transform(gene_normalization)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The bar code hides the information about the distribution of the single data points. So perhaps it is best to combine those two plots:</p>
+<pre><code>sns.barplot(df_kohela_melted, x='Gene', y='Expression_normalized', 
+            hue='Condition', ci=None)
+sns.stripplot(df_kohela_melted, x='Gene', y='Expression_normalized', 
+              hue='Condition', dodge=True, color='black', alpha=.1, size=4, 
+              legend=False)
+plt.ylim([0,15])
+plt.show()
+plt.close('all')</code></pre>
+<p>The plot now looks like:</p>
+<p><img src="../../static/plots_pyworkshop/L9_bar_stripplot_Gene_Expression_Normalized_Condition.png" class="img-fluid" style="width:40.0%"></p>
+<p>Note that some data points are now hidden due to the choice of y limits. For a paper, one might need to think more deeply about how to display this data.</p>
 </div>
 </div>
 </div>
@@ -676,15 +858,13 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question N
+Question G
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Edit the following code (replacing blanks by code) to normalize the gene expression by the total expression of each gene. Hint: look at exercise E.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df_kohela_grouped <span class="op">=</span> df_kohela_melted.groupby(_______)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df_kohela_melted[<span class="st">'Expression_normalized'</span>] <span class="op">=</span> df_kohela_grouped[<span class="st">'Expression'</span>]._______(gene_normalization)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then, similar to D, plot the normalized gene expression using both the <code>sns.barplot</code> and <code>sns.stripplot</code>. For the stripplot, use the additional parameter <code>dodge=True</code>.</p>
-<p>The barplot looks nice, but does it contain all information?</p>
+<p>Finally, you might want to change the order in these plots. Use the following line:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df_kohela_melted[<span class="st">'Condition'</span>] <span class="op">=</span> pd.Categorical(df_kohela_melted[<span class="st">'Condition'</span>], categories<span class="op">=</span>[<span class="st">'WT'</span>, <span class="st">'mutant'</span>], ordered<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And then run your plotting code again. What has happened?</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -699,41 +879,17 @@ Answer
 </div>
 <div id="callout-29" class="callout-29-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>sns.barplot(df_kohela_melted, x=‘Gene’, y=‘Expression_normalized’, hue=‘Condition’) sns.stripplot(df_kohela_melted, x=‘Gene’, y=‘Expression_normalized’, hue=‘Condition’, dodge=True)</p>
+<p>This results in the condition becoming a categorical series, which has a specific order, that is translated to the plot. This is very useful if you want to control where the labels go on your axes. The order of ‘WT’ and ‘mutant’ on the x-axis now makes more sense.</p>
+<p>The figure now looks like:</p>
+<p><img src="../../static/plots_pyworkshop/L9_bar_stripplot_Gene_Expression_Normalized_Condition_order.png" class="img-fluid" style="width:40.0%"></p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<!-- bioDSC credits -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
 </div>
-<div class="callout-title-container flex-fill">
-Question O
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Finally, you might want to change the order in these plots. Use the following line:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df_kohela_melted[<span class="st">'Condition'</span>] <span class="op">=</span> pd.Categorical(df_kohela_melted[<span class="st">'Condition'</span>], categories<span class="op">=</span>[<span class="st">'WT'</span>, <span class="st">'mutant'</span>], ordered<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>And then run your plotting code again. What has happened?</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-31" class="callout-31-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
-</div>
+<!-- ####################################################################### -->
 </section>
 <section id="saving-your-plot" class="level3">
 <h3 class="anchored" data-anchor-id="saving-your-plot">Saving your plot</h3>
@@ -749,39 +905,44 @@ Exercise
 </div>
 <div class="callout-body-container callout-body">
 <p>Check out this code with some additional convenient options. Change <code>'/your/location/your-filename.pdf'</code> to a convenient path where you save your figure.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Bang Wong colorblind-friendly color scheme (https://www.nature.com/articles/nmeth.1618)</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>colors_bangwong <span class="op">=</span> [</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#E69F00"</span>,  <span class="co"># Orange</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#56B4E9"</span>,  <span class="co"># Sky Blue</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#009E73"</span>,  <span class="co"># Bluish Green</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#F0E442"</span>,  <span class="co"># Yellow</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#0072B2"</span>,  <span class="co"># Blue</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#D55E00"</span>,  <span class="co"># Vermillion</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#CC79A7"</span>,  <span class="co"># Reddish Purple</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#000000"</span>   <span class="co"># Black</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'default'</span>)</span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span><span class="op">/</span><span class="fl">2.54</span>,<span class="dv">10</span><span class="op">/</span><span class="fl">2.54</span>))</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>], [<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">9</span>,<span class="dv">16</span>], linestyle<span class="op">=</span><span class="st">'--'</span>, color<span class="op">=</span>colors_bangwong[<span class="dv">1</span>], label<span class="op">=</span><span class="vs">r'$x^2$'</span>)</span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>], [<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">11</span>,<span class="dv">19</span>], linestyle<span class="op">=</span><span class="st">':'</span>, color<span class="op">=</span>colors_bangwong[<span class="dv">2</span>], label<span class="op">=</span><span class="vs">r'$x^2+(x-1)$'</span>)</span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'X-axis'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Y-axis'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Sample Plot'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">'both'</span>, which<span class="op">=</span><span class="st">'major'</span>, labelsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'/your/location/your-filename.pdf'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
-<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>plt.close(fig)</span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Use this command to show the figure when not using (Jupyter) notebooks.</span></span>
-<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.show()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Bang Wong colorblind-friendly color scheme (https://www.nature.com/articles/nmeth.1618)</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>colors_bangwong <span class="op">=</span> [</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#E69F00"</span>,  <span class="co"># Orange</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#56B4E9"</span>,  <span class="co"># Sky Blue</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#009E73"</span>,  <span class="co"># Bluish Green</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#F0E442"</span>,  <span class="co"># Yellow</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#0072B2"</span>,  <span class="co"># Blue</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#D55E00"</span>,  <span class="co"># Vermillion</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#CC79A7"</span>,  <span class="co"># Reddish Purple</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"#000000"</span>   <span class="co"># Black</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'default'</span>)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span><span class="op">/</span><span class="fl">2.54</span>,<span class="dv">10</span><span class="op">/</span><span class="fl">2.54</span>))</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>], [<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">9</span>,<span class="dv">16</span>], linestyle<span class="op">=</span><span class="st">'--'</span>, color<span class="op">=</span>colors_bangwong[<span class="dv">1</span>], label<span class="op">=</span><span class="vs">r'$x^2$'</span>)</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>], [<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">11</span>,<span class="dv">19</span>], linestyle<span class="op">=</span><span class="st">':'</span>, color<span class="op">=</span>colors_bangwong[<span class="dv">2</span>], label<span class="op">=</span><span class="vs">r'$x^2+(x-1)$'</span>)</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'X-axis'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Y-axis'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Sample Plot'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>ax.tick_params(axis<span class="op">=</span><span class="st">'both'</span>, which<span class="op">=</span><span class="st">'major'</span>, labelsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'/your/location/your-filename.pdf'</span>, dpi<span class="op">=</span><span class="dv">300</span>, bbox_inches<span class="op">=</span><span class="st">'tight'</span>)</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>plt.close(fig)</span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Use this command to show the figure when not using (Jupyter) notebooks.</span></span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.show()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+<!-- bioDSC credits -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="correlations" class="level3">
 <h3 class="anchored" data-anchor-id="correlations">Correlations</h3>
@@ -791,11 +952,69 @@ Exercise
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question P
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Modify the code from “Minima and Maxima” exercise (Exercise A) to create a scatter plot showing the relationship between the minimum and maximum GDP per capita across the countries in Asia, with each point in the plot corresponding to a year. What relationship do you see (if any)?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The code:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>data_asia <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_asia.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>data_asia_transposed <span class="op">=</span> data_asia.T</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>data_asia_transposed[<span class="st">'min'</span>] <span class="op">=</span> data_asia.<span class="bu">min</span>()</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>data_asia_transposed[<span class="st">'max'</span>] <span class="op">=</span> data_asia.<span class="bu">max</span>()</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>data_asia_transposed[<span class="st">'year'</span>] <span class="op">=</span> data_asia_transposed.index.<span class="bu">str</span>.replace(<span class="st">"gdpPercap_"</span>,<span class="st">""</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data_asia_transposed, x<span class="op">=</span><span class="st">'min'</span>, y<span class="op">=</span><span class="st">'max'</span>, hue<span class="op">=</span><span class="st">'year'</span>, palette<span class="op">=</span><span class="st">'viridis'</span>, legend<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Results in the plot:</p>
+<p><img src="../../static/plots_pyworkshop/L9_scatter_min_max_gdp_asia.png" class="img-fluid" style="width:25.0%"></p>
+<p>It can be seen that there is no correlation between the minimum GDP and maximum GDP for a specific year, indicating that GDPs across asia do not tend to rise and fall together.</p>
+</div>
+</div>
+</div>
+<!-- Carpentries credits L9, edited -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>, edited by the </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
+</section>
+<section id="correlations-continued" class="level3">
+<h3 class="anchored" data-anchor-id="correlations-continued">Correlations (continued)</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You might note that the variability in the maximum is much higher than that of the minimum. Take a look at the maximum over time and the max indexes:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>data_asia <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_asia.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>df_max_GDP <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>df_max_GDP[<span class="st">'GDP_max'</span>] <span class="op">=</span> data_asia.<span class="bu">max</span>()</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>df_max_GDP[<span class="st">'Year'</span>]    <span class="op">=</span> data_asia.columns.<span class="bu">str</span>.replace(<span class="st">'gdpPercap_'</span>,<span class="st">''</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>plt.plot(df_max_GDP[<span class="st">'Year'</span>], df_max_GDP[<span class="st">'GDP_max'</span>])</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_asia.idxmax())</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_asia.idxmin())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -810,36 +1029,17 @@ Answer
 </div>
 <div id="callout-34" class="callout-34-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<p>The plot looks like:</p>
+<p><img src="../../static/plots_pyworkshop/L9_plot_max_GDP_asia.png" class="img-fluid" style="width:40.0%"></p>
+<p>Seems the variability in this value is due to a sharp drop after 1972. Some geopolitics at play perhaps? Given the dominance of oil producing countries, maybe the Brent crude index would make an interesting comparison? Whilst Myanmar consistently has the lowest GDP, the highest GDP nation has varied more notably.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="correlations-continued" class="level3">
-<h3 class="anchored" data-anchor-id="correlations-continued">Correlations (continued)</h3>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<!-- Carpentries credits L9, edited -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>, edited by the </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
 </div>
-<div class="callout-title-container flex-fill">
-Exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You might note that the variability in the maximum is much higher than that of the minimum. Take a look at the maximum and the max indexes:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>data_asia <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_asia.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>df_max_GDP <span class="op">=</span> pd.DataFrame()</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>df_max_GDP[<span class="st">'GDP_max'</span>] <span class="op">=</span> data_asia.<span class="bu">max</span>()</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>df_max_GDP[<span class="st">'Year'</span>]    <span class="op">=</span> data_asia.columns.<span class="bu">str</span>.replace(<span class="st">'gdpPercap_'</span>,<span class="st">''</span>).astype(<span class="bu">int</span>)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>plt.plot(df_max_GDP[<span class="st">'Year'</span>], df_max_GDP[<span class="st">'GDP_max'</span>])</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_asia.idxmax())</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_asia.idxmin())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+<!-- ####################################################################### -->
 </section>
 <section id="normalized-dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="normalized-dataframe">Normalized dataframe</h3>
@@ -849,7 +1049,7 @@ Exercise
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question Q
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -860,7 +1060,7 @@ Question Q
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-36-contents" aria-controls="callout-36" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -869,15 +1069,42 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div id="callout-36" class="callout-36-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
+<pre><code># Copy the df to modify it and not interfer with other code
+data_europe_relative_copy = data_europe_relative.copy()
+# Add the country as column
+data_europe_relative_copy['Country'] = data_europe_relative_copy.index
+# Melt it 
+data_europe_relative_melted = data_europe_relative_copy.melt(id_vars='Country')
+# Add the year as number
+data_europe_relative_melted['year'] = data_europe_relative_melted['variable'].str.replace('gdpPercap_','').astype(int)
 
+# And plot
+sns.lineplot(data_europe_relative_melted, x='year', y='value', hue='Country', legend=False)</code></pre>
+<p>We can now visualize the relative position of countries over time. Unfortunately, there are a little bit too many countries to clearly identify single ones. A solution to this issue is left for another time.</p>
+<p><img src="../../static/plots_pyworkshop/L9_lineplot_europe_relative.png" class="img-fluid" style="width:40.0%"></p>
 </div>
 </div>
 </div>
+<!-- bioDSC credits -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="crude" class="level3">
 <h3 class="anchored" data-anchor-id="crude">Crude</h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Crude oil prices can be found at: https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&amp;s=F000000__3&amp;f=A</p>
 <p>This gives the data below:</p>
 <pre><code>Decade  Year-0  Year-1  Year-2  Year-3  Year-4  Year-5  Year-6  Year-7  Year-8  Year-9
@@ -901,30 +1128,32 @@ Answer
   2020's    36.86   65.84   93.97   76.10                       </code></pre>
 <p>Save that data to a .tsv file, and upload it.</p>
 <p>Now try to understand the code below:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>df_crudeoil <span class="op">=</span> <span class="op">\</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    pd.read_csv(<span class="st">'data//crude_oil.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co"># reshape the data, such that it becomes a long list</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>df_crudeoil_melted <span class="op">=</span> df_crudeoil.melt(id_vars<span class="op">=</span><span class="st">'Decade'</span>, var_name<span class="op">=</span><span class="st">'lastdigit'</span>)</span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># now reformat the year information</span></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co"># search and replace first</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>df_crudeoil_melted.loc[:,<span class="st">'Decade'</span>] <span class="op">=</span> df_crudeoil_melted.loc[:,<span class="st">'Decade'</span>].<span class="bu">str</span>.replace(<span class="st">"0's"</span>,<span class="st">''</span>)</span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>df_crudeoil_melted.loc[:,<span class="st">'lastdigit'</span>] <span class="op">=</span> df_crudeoil_melted.loc[:,<span class="st">'lastdigit'</span>].<span class="bu">str</span>.replace(<span class="st">'Year-'</span>,<span class="st">''</span>)</span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="co"># now combine information to create a new column "Year"</span></span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>df_crudeoil_melted.loc[:,<span class="st">'Year'</span>] <span class="op">=</span> df_crudeoil_melted.loc[:,<span class="st">'Decade'</span>] <span class="op">+</span> df_crudeoil_melted.loc[:,<span class="st">'lastdigit'</span>]</span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the result</span></span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_crudeoil_melted.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the data</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>df_crudeoil <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    pd.read_csv(<span class="st">'data/crude_oil.tsv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co"># reshape the data, such that it becomes a long list</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>df_crudeoil_melted <span class="op">=</span> df_crudeoil.melt(id_vars<span class="op">=</span><span class="st">'Decade'</span>, var_name<span class="op">=</span><span class="st">'lastdigit'</span>)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co"># now reformat the year information</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="co"># search and replace first</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>df_crudeoil_melted.loc[:,<span class="st">'Decade'</span>] <span class="op">=</span> df_crudeoil_melted.loc[:,<span class="st">'Decade'</span>].<span class="bu">str</span>.replace(<span class="st">"0's"</span>,<span class="st">''</span>)</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>df_crudeoil_melted.loc[:,<span class="st">'lastdigit'</span>] <span class="op">=</span> df_crudeoil_melted.loc[:,<span class="st">'lastdigit'</span>].<span class="bu">str</span>.replace(<span class="st">'Year-'</span>,<span class="st">''</span>)</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="co"># now combine information to create a new column "Year"</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>df_crudeoil_melted.loc[:,<span class="st">'Year'</span>] <span class="op">=</span> (df_crudeoil_melted.loc[:,<span class="st">'Decade'</span>] <span class="op">+</span> df_crudeoil_melted.loc[:,<span class="st">'lastdigit'</span>]).astype(<span class="bu">int</span>)</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect the result</span></span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_crudeoil_melted.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question R
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -943,9 +1172,21 @@ Answer
 </div>
 <div id="callout-39" class="callout-39-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<p>We saved to a <a href="../../static/data/crude_oil.tsv">tsv file</a> and ran the code above.</p>
+<p>Then, made a plot:</p>
+<pre><code>sns.lineplot(df_crudeoil_melted, x='Year', y='value', label='price')
+plt.axvline(x=1972, color='red', linestyle='--', label='1972')
+plt.legend()
+plt.show()</code></pre>
+<p>The plot looks like:</p>
+<p><img src="../../static/plots_pyworkshop/L9_lineplot_crudeoil.png" class="img-fluid" style="width:40.0%"></p>
+<p>Probably <a href="https://en.wikipedia.org/wiki/1973_oil_crisis">quite some things happened</a> to Arabian oil countries after ’72, related to oil and aformentioned drop in GDP.</p>
 </div>
 </div>
+</div>
+<!-- bioDSC credits -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
 </div>
 
 
