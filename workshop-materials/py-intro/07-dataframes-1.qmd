@@ -1,15 +1,21 @@
 
 ::: {.callout-note}
-## Note
-Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+## Credits & copyright
+Many questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/), some were
+authored by the *bio*DSC. Carpentries website materials are [licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
+which also applies to the contents of this website.
 :::
+
+
 ---
 
 # Exercises lesson 7, dataframes (1)
 
+<!-- ####################################################################### -->
+
 ### Reading other data
 ::: {.callout-tip icon='false'}
-## Question A
+## Question
 
 Read the data in gapminder_gdp_americas.csv (which should be in the same directory as gapminder_gdp_oceania.csv) into a variable called data_americas and display its summary statistics.
 :::
@@ -24,10 +30,18 @@ data_americas.describe()
 ```
 :::
 
+<!-- Carpentries credits L7 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/07-reading-tabular.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+
+<!-- ####################################################################### -->
 
 ### Inspecting data
 ::: {.callout-tip icon='false'}
-## Question B
+## Question 
 
 After reading the data for the Americas, use help(data_americas.head) and help(data_americas.tail) to find out what DataFrame.head and DataFrame.tail do.
 
@@ -115,10 +129,18 @@ data_americas.T.tail(n=3).T
 ```
 :::
 
+<!-- Carpentries credits L7 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/07-reading-tabular.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
+
 ### Navigating directories
 
 ::: {.callout-tip icon='false'}
-## Question C
+## Question 
+
 The data for your current project is stored in a file called microbes.csv, which is located in a folder called field_data. You are doing analysis in a notebook called analysis.ipynb in a sibling folder called thesis:
 
 ```
@@ -140,6 +162,12 @@ data_microbes = pd.read_csv('../field_data/microbes.csv')
 ```
 :::
 
+<!-- Carpentries credits L7 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/07-reading-tabular.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
 
 ### Writing data
 ::: {.callout-tip icon='false'}
@@ -167,14 +195,27 @@ Note that help(to_csv) or help(pd.to_csv) throws an error! This is due to the fa
 
 :::
 
+<!-- Carpentries credits L7 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/07-reading-tabular.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+
 ##################################################
 ---
 
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+
 # Additional exercises
 
+<!-- ####################################################################### -->
+
+### Working with data
 
 ::: {.callout-tip icon='false'}
-## Question D
+## Question 
 
 1. Create some sample data
     - Create a plain text file on your computer, and give it the extension `.csv`. 
@@ -230,3 +271,8 @@ T-statistic: 15.076382102391054, P-value: 3.329703635867358e-08
 4. The code calulates the t-statistic between the two conditions (with values for cond1 in column 2, accessed by `df['cond1']`, and values for cond2 in column 3 accessed by `df['cond2']`) and its associated p-value.
 
 :::
+
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>

@@ -1,15 +1,21 @@
 
 ::: {.callout-note}
-## Note
-Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+## Credits & copyright
+Many questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/), some were
+authored by the *bio*DSC. Carpentries website materials are [licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
+which also applies to the contents of this website.
 :::
+
 ---
 
 # Exercises Lesson 2, variables
 
 
+<!-- #################################################################################################################################### -->
 
 ### 1. Order of things
+<!--<div style="margin-top: -40px;" class="text-end">-->
+
 ::: {.callout-tip icon="false"}
 ## Question A
 Fill the table showing the values of the variables in this program after each statement is executed.
@@ -52,8 +58,12 @@ initial = 'right'
 'left'
 :::
 
+<!-- #################################################################################################################################### -->
+
+### Challenge
+
 ::: {.callout-tip icon="false"}
-### Challenging question
+### Question
 If you assign a = 123, what happens if you try to get the second digit of a via a[1]?
 :::
 ::: {.callout-caution collapse="true" icon="false"}
@@ -69,6 +79,14 @@ a = str(123)
 print(a[1])
 ```
 :::
+
+<!-- Carpentries credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/02-variables.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- #################################################################################################################################### -->
+
 ### 2. Slicing
 
 <!-- REMOVED TO SAVE TIME
@@ -85,7 +103,7 @@ print('atom_name[1:3] is:', atom_name[1:3])
 -->
 
 ::: {.callout-tip icon="false"}
-## Question C
+## Question A
 
 Given the following string:
 ```Python
@@ -117,7 +135,7 @@ species_name[-5:-3] also returns the substring 'fo', from the fifth last positio
 :::
 
 ::: {.callout-tip icon="false"}
-## Question D
+## Question B
 What happens when you choose a stop value which is out of range? (i.e., try species_name[0:20] or species_name[:103])
 :::
 ::: {.callout-caution collapse="true" icon="false"}
@@ -125,14 +143,20 @@ What happens when you choose a stop value which is out of range? (i.e., try spec
 If a part of the slice is out of range, the operation does not fail. species_name[0:20] gives the same result as species_name[0:], and species_name[:103] gives the same result as species_name[:]
 :::
 
-############################################################
+<!-- Carpentries credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/02-variables.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+<!-- #################################################################################################################################### -->
 ---
 
 # Additional exercises 
 
-### Naming (Carpentries)
+### Naming
 ::: {.callout-tip icon="false"}
-### Question E
+### Question 
 Which is a better variable name, m, min, or minutes? Why? Hint: think about which code you would rather inherit from someone who is leaving the lab:
 
 ```Python
@@ -147,7 +171,14 @@ total_seconds = minutes * 60 + seconds
 minutes is better because min might mean something like “minimum” (and actually is an existing built-in function in Python that we will cover later).
 :::
 
-### Very challenging additional exercises (bioDSC)
+<!-- Carpentries credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/02-variables.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- #################################################################################################################################### -->
+
+### Very challenging additional exercises 
 
 ::: {.callout-tip icon="false"}
 ### Question A
@@ -174,6 +205,7 @@ Therefor, the answer is 'e'.
 :::
 
 ::: {.callout-tip icon="false"}
+
 ### Question B
 Using a loops will be covered latered, list comprehensions are even a bit more advanced.
 What does the following code do?
@@ -249,6 +281,12 @@ print(new_list)
 ```
 
 :::
+
+
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
 
 
 

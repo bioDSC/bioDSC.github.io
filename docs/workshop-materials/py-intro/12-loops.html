@@ -179,16 +179,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Credits &amp; copyright
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Most questions originate from the carpentry lesson <a href="http://swcarpentry.github.io/python-novice-gapminder/">“Plotting and Programming in Python”</a></p>
+<p>Many questions originate from the carpentry lesson <a href="http://swcarpentry.github.io/python-novice-gapminder/">“Plotting and Programming in Python”</a>, some were authored by the <em>bio</em>DSC. Carpentries website materials are <a href="https://software-carpentry.org/license/">licenced</a> under the <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, which also applies to the contents of this website.</p>
 </div>
 </div>
 <hr>
 <section id="exercises-lesson-12-loops" class="level1">
 <h1>Exercises Lesson 12, Loops</h1>
+<!-- ####################################################################### -->
 <section id="tracing-execution" class="level3">
 <h3 class="anchored" data-anchor-id="tracing-execution">Tracing Execution</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -197,7 +198,7 @@ Note
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question A
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -299,6 +300,11 @@ Answer
 </div>
 </div>
 </div>
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>.</font></em></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="practice-accumulating" class="level3">
 <h3 class="anchored" data-anchor-id="practice-accumulating">Practice Accumulating</h3>
@@ -308,7 +314,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question B
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -339,6 +345,11 @@ Answer
 </div>
 </div>
 </div>
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>.</font></em></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="practice-accumulating-2-continued" class="level3">
 <h3 class="anchored" data-anchor-id="practice-accumulating-2-continued">Practice Accumulating 2 (continued)</h3>
@@ -348,7 +359,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question …
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -379,6 +390,11 @@ Answer
 </div>
 </div>
 </div>
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>.</font></em></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="practice-accumulating-3-continued" class="level3">
 <h3 class="anchored" data-anchor-id="practice-accumulating-3-continued">Practice Accumulating 3 (continued)</h3>
@@ -389,7 +405,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question C
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -421,15 +437,20 @@ Answer
 </div>
 </div>
 </div>
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>.</font></em></p>
+</div>
 <hr>
 </section>
 </section>
 <section id="additional-exercises" class="level1">
 <h1>Additional Exercises</h1>
+<!-- ####################################################################### -->
 <section id="plotting-automation" class="level3">
 <h3 class="anchored" data-anchor-id="plotting-automation">Plotting automation</h3>
 <p>Remember this code from Lesson 9?</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_all <span class="op">=</span> pd.read_csv(LOCAL_PATH_GAPMINDER<span class="op">+</span><span class="st">'data/gapminder_all.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_all <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_all.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(df_all, x<span class="op">=</span><span class="st">'gdpPercap_2007'</span>, y<span class="op">=</span><span class="st">'lifeExp_2007'</span>, size<span class="op">=</span><span class="st">'pop_2007'</span>, sizes<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">40</span><span class="op">**</span><span class="dv">2</span>), legend<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>plt.text(df_all.loc[<span class="st">'United States'</span>,<span class="st">'gdpPercap_2007'</span>], df_all.loc[<span class="st">'United States'</span>,<span class="st">'lifeExp_2007'</span>], <span class="st">'United States'</span>)</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>plt.text(df_all.loc[<span class="st">'Netherlands'</span>,<span class="st">'gdpPercap_2007'</span>], df_all.loc[<span class="st">'Netherlands'</span>,<span class="st">'lifeExp_2007'</span>], <span class="st">'Netherlands'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -439,7 +460,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question D
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -479,6 +500,11 @@ plt.show()
 </div>
 </div>
 </div>
+<!-- bioDSC credits -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="reversing-a-string" class="level3">
 <h3 class="anchored" data-anchor-id="reversing-a-string">Reversing a String</h3>
@@ -489,7 +515,7 @@ plt.show()
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question E
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -521,6 +547,11 @@ Answer
 </div>
 </div>
 </div>
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>.</font></em></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="practice-accumulating-continued-from-above" class="level3">
 <h3 class="anchored" data-anchor-id="practice-accumulating-continued-from-above">Practice Accumulating (continued from above)</h3>
@@ -530,7 +561,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question F
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -560,6 +591,11 @@ Answer
 </div>
 </div>
 </div>
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>.</font></em></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="identifying-item-errors" class="level3">
 <h3 class="anchored" data-anchor-id="identifying-item-errors">Identifying Item Errors</h3>
@@ -569,7 +605,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question G
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -596,6 +632,11 @@ Answer
 </div>
 </div>
 </div>
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>.</font></em></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="cumulative-sum-code-puzzle" class="level3">
 <h3 class="anchored" data-anchor-id="cumulative-sum-code-puzzle">Cumulative Sum (code puzzle)</h3>
@@ -605,7 +646,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question H
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -641,6 +682,11 @@ Answer
 </div>
 </div>
 </div>
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>.</font></em></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="identifying-variable-name-errors" class="level3">
 <h3 class="anchored" data-anchor-id="identifying-variable-name-errors">Identifying Variable Name Errors</h3>
@@ -650,7 +696,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question I
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -697,6 +743,11 @@ Answer
 </div>
 </div>
 </div>
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>.</font></em></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="classifying-errors" class="level3">
 <h3 class="anchored" data-anchor-id="classifying-errors">Classifying Errors</h3>
@@ -706,7 +757,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question …
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -728,6 +779,10 @@ Answer
 <p>An IndentationError is a syntax error. Programs with syntax errors cannot be started. A program with a runtime error will start but an error will be thrown under certain conditions.</p>
 </div>
 </div>
+</div>
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>.</font></em></p>
 </div>
 
 

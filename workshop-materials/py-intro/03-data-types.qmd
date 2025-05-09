@@ -1,15 +1,20 @@
 ::: {.callout-note}
-## Note
-Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+## Credits & copyright
+Many questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/), some were
+authored by the *bio*DSC. Carpentries website materials are [licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
+which also applies to the contents of this website.
 :::
+
 ---
 
 # Exercises Lesson 3, types
 
-### 1. Types
+<!-- ####################################################################### -->
+
+### 1. Fractions
 
 ::: {.callout-tip icon="false"}
-### Question A
+### Question
 What type of value is 3.4? How can you find out?
 :::
 
@@ -24,10 +29,18 @@ print(type(3.4))
 ```
 :::
 
+<!-- Carpentries credits L3 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
-#### 
+
+
+<!-- ####################################################################### -->
+### 2. Automatic type conversion
+
 ::: {.callout-tip icon="false"}
-### Question B
+### Question 
 What type of value is 3.25 + 4?
 :::
 
@@ -43,9 +56,19 @@ print(result, 'is', type(result))
 ```
 :::
 
+<!-- Carpentries credits L3 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+
+<!-- ####################################################################### -->
+### 3. Choose a type
 
 ::: {.callout-tip icon="false"}
-### Question C
+### Question 
+
 What type of value (integer, floating point number, or character string) would you use to represent each of the following? Try to come up with more than one good answer for each problem. For example, in # 1, when would counting days with a floating point variable make more sense than using an integer?
 
 1. Number of days since the start of the year.
@@ -68,14 +91,42 @@ The answers to the questions are:
 6. Floating point number, since an average is likely to have a fractional part. 
 :::
 
+
+<!-- Carpentries credits L3 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
+### 4. Float or integer?
+
 ::: {.callout-tip icon="false"}
-### Question D
+### Question
 Why wouldn't you always use floats, and never use integers?
 :::
 ::: {.callout-caution collapse="true" icon="false"}
+
 ## Answer
-An integer has exact precision and a larger range, whereas float has limited precision and can represent numbers with a decimal part. 
+
+Both are designed for specific use cases. 
+
+A computer can work more efficiently with integer numbers, so if you now you only need integer numbers,
+use the integer type. 
+
+Sometimes a Python functionality also requires you to work with integers, mostly because those are 
+compatible with specific tasks the computer will perform, whilst floats are not.
+
+For many/most practical purposes, this is dealt with automatically by Python.
+
 :::
+
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
 
 ### 2. Strings to numbers
 
@@ -98,7 +149,7 @@ print("string to float:", float("Hello world!"))
 ```
 
 ::: {.callout-tip icon="false"}
-### Question E
+### Question 
 1. What do you expect the following program to do?
 2. What does it actually do?
 3. Why do you think it does that?
@@ -132,10 +183,19 @@ print(int(float("3.4")))
 ```
 :::
 
+<!-- Carpentries credits L3 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
+
+
+<!-- ####################################################################### -->
+
+## Arithmetic with Different Types
 
 ::: {.callout-tip icon="false"}
-### Question F
+### Question
 Which of the following will return the floating point number 2.0? Note: there may be more than one right answer.
 
 ```Python
@@ -166,11 +226,21 @@ third = "1.1"
 So, 1 and 4
 :::
 
+<!-- Carpentries credits L3 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
-############################################################
+
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+
+
 ---
-
 # Additional exercises
+
+
+<!-- ####################################################################### -->
 
 ### 3. Lists
 
@@ -187,9 +257,8 @@ physical_constants = ['pi', 3.14, 'c', 299_792_458, 'mole', 6.022e23]
 Elements can be accessed the same way as we saw with strings.
 
 
-
 ::: {.callout-tip icon="false"}
-#### Question G
+#### Question A
 What will `numbers[1]` return? And `physical_constants[2:4]`?
 :::
 
@@ -201,7 +270,7 @@ What will `numbers[1]` return? And `physical_constants[2:4]`?
 
 
 ::: {.callout-tip icon="false"}
-#### Question H
+#### Question B
 What is the type of 
 
 - `numbers`?
@@ -229,8 +298,10 @@ So list, integer, list, float, string, integer, list and string, respectively.
 
 :::
 
+
+
 ::: {.callout-tip icon="false"}
-#### Question I
+#### Question C
 Can the elements in a list have different types? (This can be seen from the previous answer.)
 :::
 
@@ -239,7 +310,12 @@ Can the elements in a list have different types? (This can be seen from the prev
 Yes, a single list may contain numbers, strings, and anything else.
 :::
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
 
+<!-- ####################################################################### -->
 
 ### 3. np.array
 
@@ -252,7 +328,7 @@ my_array_np = np.array([1,2,3,5])
 ```
 
 ::: {.callout-tip icon="false"}
-#### Question I
+#### Question A
 what's the difference here: 
 
 - `my_array+1`
@@ -269,7 +345,7 @@ With numpy arrays, you can work more mathematically.
 
 
 ::: {.callout-tip icon="false"}
-#### Question J
+#### Question B
 what's the difference here:
 
 - `my_array * 3`
@@ -285,7 +361,7 @@ what's the difference here:
 
 
 ::: {.callout-tip icon="false"}
-#### Question K
+#### Question C
 What will happen here?
 
 - `my_array + [1,2,3,4]`
@@ -300,7 +376,7 @@ What will happen here?
 :::
 
 ::: {.callout-tip icon="false"}
-#### Question L
+#### Question D
 numpy-specific things, what is happening?
 
 - `my_array_np[range(1,4,2)]`
@@ -320,7 +396,7 @@ numpy-specific things, what is happening?
 
 
 ::: {.callout-tip icon="false"}
-#### Question M
+#### Question E
 Can numpy arrays have different types?
 What is the type of the elements in these two arrays?
 
@@ -350,6 +426,16 @@ type(my_array[0])
 will also show it's a numpy string type (`numpy.str_`).
 :::
 
+
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
+
+
+
+<!-- ####################################################################### -->
+
 ### 4. Dict(ionary)
 
 Python has more types. A `dict` is sometimes very convenient, and is also used later, when creating tables.
@@ -360,7 +446,7 @@ print(experimental_replicate_list)
 print(experimental_replicate_list['WT'])
 ```
 ::: {.callout-tip icon="false"}
-#### Question N
+#### Question A
 Edit the following code such that we get the associated numbers for conditions involving WT
 
 ```Python
@@ -380,7 +466,7 @@ print([experimental_replicate_list[sel_key] for sel_key in my_keys_of_interest])
 :::
 
 ::: {.callout-tip icon="false"}
-#### Question O
+#### Question B
 The above code uses several lines, can you do this in one line?
 :::
 ::: {.callout-caution collapse="true" icon="false"}
@@ -388,10 +474,14 @@ The above code uses several lines, can you do this in one line?
 - `print([experimental_replicate_list[key] for key in experimental_replicate_list.keys() if 'WT' in key])`
 :::
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
 
+<!-- ####################################################################### -->
 
-
-### Special maths (Carpentries)
+### Special maths 
 
 ::: {.callout-tip icon="false"}
 ## Question
@@ -426,11 +516,18 @@ print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys)
 ```
 :::
 
-### Complex numbers (Carpentries)
+<!-- Carpentries credits L3 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
+
+### Complex numbers 
 
 
 ::: {.callout-tip icon="false"}
-## Question P
+## Question 
 
 Python provides complex numbers, which are written as 1.0+2.0j. If val is a complex number, its real and imaginary parts can be accessed using dot notation as val.real and val.imag.
 
@@ -453,3 +550,8 @@ print(a_complex_number.imag)
 3. 4j is 4 times the complex number j (4\*1j), 4 j will generate a syntax error, it's missing an operator. 4 + j will treat j as a variable and try to take the sum of both but throws an error if j is not defined or of the wrong type.
 
 :::
+
+<!-- Carpentries credits L3 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion.html){style="color: #777777" target=_blank}.</font>*
+</div>

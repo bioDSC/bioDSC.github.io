@@ -1,10 +1,16 @@
 
 
+
 ::: {.callout-note}
-## Note
-Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+## Credits & copyright
+Many questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/), some were
+authored by the *bio*DSC. Carpentries website materials are [licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
+which also applies to the contents of this website.
 :::
+
 ---
+
+<!-- ####################################################################### -->
 
 # Exercises Lesson 9, plotting
 
@@ -58,7 +64,14 @@ The figure now looks like:
 
 :::
 
+<!-- Carpentries credits L9, edited -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html){style="color: #777777" target=_blank},
+edited by the *bio*DSC.</font>*
+</div>
 
+
+<!-- ####################################################################### -->
 
 ### Mean gene expression
 
@@ -88,7 +101,7 @@ to analyze the data. These exercises are meant to teach you Python concepts, but
 give you a flavor of biological data analysis.*
 
 ::: {.callout-tip icon='false'}
-## Question B
+## Question A
 Use seaborn to create a 'stripplot' plot for WT1 expression per cell type. Then create a similar plot for TBX18 (both epicardial cell markers).
 What information can be extracted from this plot?
 :::
@@ -132,7 +145,7 @@ or [Seurat](https://satijalab.org/seurat/) (R) to analyze your data. The authors
 
 
 ::: {.callout-tip icon='false'}
-## Question C
+## Question B
 Now create a scatter plot, showing WT1 expression vs. TBX18 expression across all cells.
 What does this tell us?
 :::
@@ -170,7 +183,7 @@ because our detection is not sufficient to identify such a correlation from this
 
 
 ::: {.callout-tip icon='false'}
-## Question D
+## Question C
 Color the scatter plot per cell type.
 What does this tell us?
 :::
@@ -235,7 +248,7 @@ might be needed to further study these cells.
 
 <!--
 ::: {.callout-tip icon='false'}
-## Question E
+## Question D
 1. Calculate the total RNA-seq reads per cell, and make a violin plot per condition for these total reads.
 
 Some code to start with:
@@ -260,16 +273,24 @@ This plot tells us that for each cell type the average total number of reads are
 :::
 -->
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
+
 ### More Correlations
 
-This short program creates a plot showing the correlation between GDP and life expectancy for 2007, normalizing marker size by population:
+This short program creates a plot showing the correlation between GDP and life expectancy for 2007, scaling marker size by population:
 
 ```Python
 data_all = pd.read_csv('data/gapminder_all.csv', index_col='country')
 sns.scatterplot(data_all, x='gdpPercap_2007', y='lifeExp_2007', size='pop_2007', sizes=(1,40**2), legend=False)
 ```
 ::: {.callout-tip icon='false'}
-## Question F
+## Question 
 Using online help and other resources, explain what each plotting argument does.
 :::
 ::: {.callout-caution collapse='true' icon='false'}
@@ -290,18 +311,25 @@ The result:
 
 :::
 
+<!-- Carpentries credits L9, edited -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html){style="color: #777777" target=_blank},
+edited by the *bio*DSC.</font>*
+</div>
 
-
-
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
 
 ---
 # Additional Exercises
 
+<!-- ####################################################################### -->
 
 ### Even more correlations 
+<!-- bioDSC -->
 
 ::: {.callout-tip icon='false'}
-## Question G
+## Question 
 
 Use the code from the "More Correlations" exercise, and try to add the following lines to the plotting code:
 
@@ -350,10 +378,19 @@ This would be very tedious with what you learned currently! In the next lessons 
 :::
 
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
+
+
+
+<!-- ####################################################################### -->
+
 ### Subselection and melting
 
 ::: {.callout-tip icon='false'}
-## Question I
+## Question A
 Using the kohela data, first create a new dataframe `df_kohela_sel` with only a selection of a few genes, and the condition and cell type columns.
 
 Select the following genes: `['WT1', 'TBX18', 'TFAP2A', 'COL2A1', 'ACTA2', 'PPARG', 'CEBPA']`. These are epicardial markers (WT1, TBX18), a transcription factor (TFAP2A), fibroblast markers (COL2A1, ACTA2), and fat markers (PPARG, CEBPA).
@@ -366,7 +403,7 @@ df_kohela_sel = \
 ```
 :::
 ::: {.callout-tip icon='false'}
-## Question J
+## Question B
 
 Now melt this dataframe using `pd.melt()`, and use cell type and condition as identifier variables.
 
@@ -398,7 +435,7 @@ df_kohela_melted = pd.melt(df_kohela_sel, id_vars=['Celltype','Condition'], var_
 :::
 
 ::: {.callout-tip icon='false'}
-## Question K, Is this a question?
+## Question C
 Use `df_kohela_melted.head()` to check whether the output is as expected.
 :::
 ::: {.callout-caution collapse='true' icon='false'}
@@ -425,7 +462,7 @@ that data originated.
 
 
 ::: {.callout-tip icon='false'}
-## Question L
+## Question D
 Make a violin or stripplot, with as x-axis the genes, expression on the y-axis, and colored for condition.
 Is there an issue with this plot?
 :::
@@ -466,7 +503,7 @@ gene expression.
 :::
 
 ::: {.callout-tip icon='false'}
-## Question M
+## Question E
 
 Look at the following example:
 
@@ -524,7 +561,7 @@ be normalized).
 :::
 
 ::: {.callout-tip icon='false'}
-## Question N
+## Question F
 
 Edit the following code (replacing blanks by code) to normalize the gene expression by the total expression of each gene.
 Hint: look at exercise E.
@@ -577,7 +614,7 @@ For a paper, one might need to think more deeply about how to display this data.
 
 
 ::: {.callout-tip icon='false'}
-## Question O
+## Question G
 
 Finally, you might want to change the order in these plots. Use the following line:
 
@@ -605,6 +642,12 @@ The figure now looks like:
 
 :::
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
+
+<!-- ####################################################################### -->
 
 ### Saving your plot
 
@@ -653,14 +696,18 @@ plt.close(fig)
 ```
 :::
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
 
-
+<!-- ####################################################################### -->
 
 ### Correlations 
 
 
 ::: {.callout-tip icon='false'}
-## Question P
+## Question 
 
 Modify the code from "Minima and Maxima" exercise (Exercise A) to create a scatter plot showing the relationship between the minimum and maximum GDP per capita across the countries in Asia, with each point in the plot corresponding to a year. What relationship do you see (if any)?
 :::
@@ -692,6 +739,16 @@ for a specific year, indicating that GDPs across asia do not tend to rise and fa
 
 :::
 
+
+<!-- Carpentries credits L9, edited -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html){style="color: #777777" target=_blank},
+edited by the *bio*DSC.</font>*
+</div>
+
+
+
+<!-- ####################################################################### -->
 
 ### Correlations (continued) 
 ::: {.callout-note icon='false'}
@@ -729,14 +786,21 @@ Seems the variability in this value is due to a sharp drop after 1972. Some geop
 
 :::
 
+<!-- Carpentries credits L9, edited -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html){style="color: #777777" target=_blank},
+edited by the *bio*DSC.</font>*
+</div>
 
+
+<!-- ####################################################################### -->
 
 ### Normalized dataframe
 
 
 
 ::: {.callout-tip icon='false'}
-## Question Q
+## Question 
 1. In the previous lesson about dataframes (in the additional exercises), we normalized the GDP data against the average trend. Plot the data from this normalized dataframe.
 2.  Is this helpful in any way?
 
@@ -766,11 +830,17 @@ A solution to this issue is left for another time.
 
 :::
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
+
+<!-- ####################################################################### -->
 
 ### Crude 
 
 ::: {.callout-tip icon='false'}
-## Question 
+## Exercise 
 Crude oil prices can be found at:
 https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=F000000__3&f=A
 
@@ -851,3 +921,8 @@ Probably [quite some things happened](https://en.wikipedia.org/wiki/1973_oil_cri
 related to oil and aformentioned drop in GDP.
 
 :::
+
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>

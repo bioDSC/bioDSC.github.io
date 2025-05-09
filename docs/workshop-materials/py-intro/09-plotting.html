@@ -179,14 +179,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Credits &amp; copyright
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Most questions originate from the carpentry lesson <a href="http://swcarpentry.github.io/python-novice-gapminder/">“Plotting and Programming in Python”</a></p>
+<p>Many questions originate from the carpentry lesson <a href="http://swcarpentry.github.io/python-novice-gapminder/">“Plotting and Programming in Python”</a>, some were authored by the <em>bio</em>DSC. Carpentries website materials are <a href="https://software-carpentry.org/license/">licenced</a> under the <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, which also applies to the contents of this website.</p>
 </div>
 </div>
 <hr>
+<!-- ####################################################################### -->
 <section id="exercises-lesson-9-plotting" class="level1">
 <h1>Exercises Lesson 9, plotting</h1>
 <section id="minima-and-maxima" class="level3">
@@ -246,6 +247,11 @@ Answer
 </div>
 </div>
 </div>
+<!-- Carpentries credits L9, edited -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>, edited by the </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="mean-gene-expression" class="level3">
 <h3 class="anchored" data-anchor-id="mean-gene-expression">Mean gene expression</h3>
@@ -272,7 +278,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question B
+Question A
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -311,7 +317,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question C
+Question B
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -348,7 +354,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question D
+Question C
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -407,7 +413,7 @@ Answer
 </div>
 <!--
 ::: {.callout-tip icon='false'}
-## Question E
+## Question D
 1. Calculate the total RNA-seq reads per cell, and make a violin plot per condition for these total reads.
 
 Some code to start with:
@@ -431,10 +437,15 @@ sns.violinplot(df_kohela,x='Celltype',y='Total_reads')
 This plot tells us that for each cell type the average total number of reads are comparable. However, there are some fibrobblast cells that show a very large read-count. Perhaps remove them or look closer which genes are responsible for this?
 :::
 -->
+<!-- bioDSC credits -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="more-correlations" class="level3">
 <h3 class="anchored" data-anchor-id="more-correlations">More Correlations</h3>
-<p>This short program creates a plot showing the correlation between GDP and life expectancy for 2007, normalizing marker size by population:</p>
+<p>This short program creates a plot showing the correlation between GDP and life expectancy for 2007, scaling marker size by population:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data_all <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_all.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(data_all, x<span class="op">=</span><span class="st">'gdpPercap_2007'</span>, y<span class="op">=</span><span class="st">'lifeExp_2007'</span>, size<span class="op">=</span><span class="st">'pop_2007'</span>, sizes<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">40</span><span class="op">**</span><span class="dv">2</span>), legend<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -443,7 +454,7 @@ This plot tells us that for each cell type the average total number of reads are
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question F
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -476,20 +487,28 @@ Answer
 </div>
 </div>
 </div>
+<!-- Carpentries credits L9, edited -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>, edited by the </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
 <hr>
 </section>
 </section>
 <section id="additional-exercises" class="level1">
 <h1>Additional Exercises</h1>
+<!-- ####################################################################### -->
 <section id="even-more-correlations" class="level3">
 <h3 class="anchored" data-anchor-id="even-more-correlations">Even more correlations</h3>
+<!-- bioDSC -->
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question G
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -556,6 +575,11 @@ Answer
 </div>
 </div>
 </div>
+<!-- bioDSC credits -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="subselection-and-melting" class="level3">
 <h3 class="anchored" data-anchor-id="subselection-and-melting">Subselection and melting</h3>
@@ -565,7 +589,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question I
+Question A
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -596,7 +620,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question J
+Question B
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -645,7 +669,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question K, Is this a question?
+Question C
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -681,7 +705,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question L
+Question D
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -727,7 +751,7 @@ plt.show()
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question M
+Question E
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -787,7 +811,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question N
+Question F
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -834,7 +858,7 @@ plt.close('all')</code></pre>
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question O
+Question G
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -861,6 +885,11 @@ Answer
 </div>
 </div>
 </div>
+<!-- bioDSC credits -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="saving-your-plot" class="level3">
 <h3 class="anchored" data-anchor-id="saving-your-plot">Saving your plot</h3>
@@ -909,6 +938,11 @@ Exercise
 <span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.show()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+<!-- bioDSC credits -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="correlations" class="level3">
 <h3 class="anchored" data-anchor-id="correlations">Correlations</h3>
@@ -918,7 +952,7 @@ Exercise
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question P
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -952,6 +986,11 @@ Answer
 </div>
 </div>
 </div>
+<!-- Carpentries credits L9, edited -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>, edited by the </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="correlations-continued" class="level3">
 <h3 class="anchored" data-anchor-id="correlations-continued">Correlations (continued)</h3>
@@ -996,6 +1035,11 @@ Answer
 </div>
 </div>
 </div>
+<!-- Carpentries credits L9, edited -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>, edited by the </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="normalized-dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="normalized-dataframe">Normalized dataframe</h3>
@@ -1005,7 +1049,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question Q
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1043,6 +1087,11 @@ sns.lineplot(data_europe_relative_melted, x='year', y='value', hue='Country', le
 </div>
 </div>
 </div>
+<!-- bioDSC credits -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
+</div>
+<!-- ####################################################################### -->
 </section>
 <section id="crude" class="level3">
 <h3 class="anchored" data-anchor-id="crude">Crude</h3>
@@ -1052,7 +1101,7 @@ sns.lineplot(data_europe_relative_melted, x='year', y='value', hue='Country', le
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question
+Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1134,6 +1183,10 @@ plt.show()</code></pre>
 <p>Probably <a href="https://en.wikipedia.org/wiki/1973_oil_crisis">quite some things happened</a> to Arabian oil countries after ’72, related to oil and aformentioned drop in GDP.</p>
 </div>
 </div>
+</div>
+<!-- bioDSC credits -->
+<div class="text-end">
+<p><em><font color="#aaaaaa" size="1">Source: </font></em><font color="#aaaaaa" size="1">bio<em>DSC.</em></font></p>
 </div>
 
 

@@ -1,15 +1,22 @@
+
 ::: {.callout-note}
-## Note
-Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+## Credits & copyright
+Many questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/), some were
+authored by the *bio*DSC. Carpentries website materials are [licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
+which also applies to the contents of this website.
 :::
+
+
 ---
 
 # Exercises Lesson 14, Looping over data
 
+<!-- ####################################################################### -->
+
 ### Determining Matches
 
 ::: {.callout-tip icon='false'}
-## Question A
+## Question 
 Which of these files is *not* matched by the expression glob.glob('data/*as*.csv')?
 
 ```
@@ -24,9 +31,18 @@ Which of these files is *not* matched by the expression glob.glob('data/*as*.csv
 1 is not matched by the glob.
 :::
 
+
+<!-- Carpentries credits L14 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/14-looping-data-sets.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
+
 ### Minimum File Size
 ::: {.callout-tip icon='false'}
-## Question B
+## Question 
 
 Modify this program so that it prints the number of records in the file that has the fewest records.
 
@@ -57,15 +73,24 @@ print('smallest file has', fewest, 'records')
 ```
 :::
 
+<!-- Carpentries credits L14 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/14-looping-data-sets.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+
 
 ---
 
 # Additional Exercises
 
+<!-- ####################################################################### -->
+
 ### Comparing Data
 
 ::: {.callout-tip icon='false'}
-## Question C
+## Question 
 Write a program that reads in the regional data sets and plots the average GDP per capita for each region over time in a single chart. 
 
 *Hint*: Pandas will raise an error if it encounters non-numeric columns in a dataframe computation so you may need to either filter out those columns or tell pandas to ignore them.
@@ -114,3 +139,8 @@ fig.savefig('plots_pyworkshop/L14_meanGDP_regions.png', dpi=600)
 
 
 :::
+
+<!-- Carpentries credits L14, modified -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/14-looping-data-sets.html){style="color: #777777" target=_blank}, adapted by the *bio*DSC.</font>*
+</div>

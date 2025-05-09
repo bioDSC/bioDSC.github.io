@@ -1,8 +1,12 @@
 
 ::: {.callout-note}
-## Note
-Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+## Credits & copyright
+Many questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/), some were
+authored by the *bio*DSC. Carpentries website materials are [licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
+which also applies to the contents of this website.
 :::
+
+
 ---
 
 <!-- ################################################################################ -->
@@ -33,7 +37,12 @@ print(data_europe.loc['Serbia', 'gdpPercap_2007'])
 ```
 :::
 
+<!-- Carpentries credits L8 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/08-data-frames.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
+<!-- ####################################################################### -->
 
 ### Extent of slicing
 
@@ -74,6 +83,13 @@ What conclusion can we draw? We see that a numerical slice, 0:2, omits the final
 while a named slice, ‘gdpPercap_1952’:‘gdpPercap_1962’, includes the final element.
 :::
 
+<!-- Carpentries credits L8 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/08-data-frames.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
 
 ### Reconstructing Data
 
@@ -125,7 +141,12 @@ The final step is to write the data that we have been working on to a csv file. 
 
 :::
 
+<!-- Carpentries credits L8 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/08-data-frames.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
+<!-- ####################################################################### -->
 
 ### Selecting Indices
 
@@ -147,6 +168,12 @@ For each column in data, idxmin will return the index value corresponding to eac
 You can use these functions whenever you want to get the row index of the minimum/maximum value and not the actual minimum/maximum value.
 :::
 
+<!-- Carpentries credits L8 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/08-data-frames.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
 
 ### Practice with Selection
 
@@ -188,7 +215,12 @@ data['gdpPercap_2007']/data['gdpPercap_1952']
 ```
 :::
 
+<!-- Carpentries credits L8 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/08-data-frames.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
+<!-- ####################################################################### -->
 
 ### Epicardial cells
 
@@ -267,6 +299,10 @@ mutant     9.601550
 so this indeed appears to be the case.
 :::
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
 
 
 
@@ -277,11 +313,13 @@ so this indeed appears to be the case.
 
 
 <!-- ################################################################################ --> 
-
+<!-- ####################################################################### -->
 
 
 # Additional exercises Lesson 8
 
+
+<!-- ####################################################################### -->
 
 
 ### Many Ways of Access
@@ -446,11 +484,17 @@ data.iloc[:, col1_index:col2_index].loc["row1":"row2"]
 
 :::
 
+<!-- Carpentries credits L8 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/08-data-frames.html){style="color: #777777" target=_blank}.</font>*
+</div>
 
+
+<!-- ####################################################################### -->
 
 ### GDPs
 ::: {.callout-tip icon='false'}
-## Question E
+## Question 
 
 1. Between '87 and '92 the GDP of many countries took a hit. Are there any countries which had an *increase* between those two years? Which ones?
 2. Calculate the average GDP between all European countries per year.
@@ -489,7 +533,16 @@ the average European country.
 
 :::
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
 
+
+
+
+
+<!-- ####################################################################### -->
 
 ### Gene expression
 
@@ -680,6 +733,7 @@ print(df_log2fc_2)
 
 :::
 
+
 <!-- # Solution by Frans
 
 1. The average CRP gene expression per condion.    
@@ -711,9 +765,14 @@ dfw.loc[~CRP,'expression'] = dfw.loc[~CRP,'expression']/dfmean.loc[('ACTA1','WT'
 ```
 -->
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
 
 
 
+<!-- ####################################################################### -->
 
 ### Exploring available methods using the dir() function
 
@@ -752,3 +811,8 @@ Among many choices, dir() lists the median() function as a possibility. Thus,
 data.median()
 ```
 :::
+
+<!-- Carpentries credits L8 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/08-data-frames.html){style="color: #777777" target=_blank}.</font>*
+</div>

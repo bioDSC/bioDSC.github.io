@@ -1,14 +1,22 @@
+
 ::: {.callout-note}
-## Note
-Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+## Credits & copyright
+Many questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/), some were
+authored by the *bio*DSC. Carpentries website materials are [licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
+which also applies to the contents of this website.
 :::
+
+
 ---
+
 
 # Exercises Lesson 13, Conditionals
 
+<!-- ####################################################################### -->
+
 ### Tracing Execution
 ::: {.callout-tip icon='false'}
-## Question A
+## Question
 
 What does this program print?
 
@@ -31,10 +39,17 @@ print(pressure)
 ```
 :::
 
+<!-- Carpentries credits L13 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/13-conditionals.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
 
 ### Trimming Values
 ::: {.callout-tip icon='false'}
-## Question B
+## Question
 
 Fill in the blanks so that this program creates a new list containing zeroes where the original list’s values were negative and ones where the original list’s values were positive.
 
@@ -70,10 +85,18 @@ print(result)
 ```
 :::
 
+<!-- Carpentries credits L13 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/13-conditionals.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
+
 ### Processing Small Files
 
 ::: {.callout-tip icon='false'}
-## Question C
+## Question
 Modify this program so that it only processes files with fewer than 50 records.
 
 ```python
@@ -99,15 +122,23 @@ for filename in glob.glob('data/*.csv'):
 ```
 :::
 
+<!-- Carpentries credits L13 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/13-conditionals.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
 
 ---
 
 # Additional Exercises Lesson 13
 
+<!-- ####################################################################### -->
+
 ### List comprehension
 
 ::: {.callout-tip icon='false'}
-## Question D
+## Question A
 Adapt the following code to select only positive values:
 
 ```python
@@ -134,7 +165,7 @@ print(example_list_pos)
 :::
 
 ::: {.callout-tip icon='false'}
-## Question E
+## Question B
 
 Use the same code, but:
 
@@ -171,7 +202,7 @@ print(example_list_2)
 :::
 
 ::: {.callout-tip icon='false'}
-## Question F
+## Question C
 Use a np.array (see additional exercises Lesson 3) to do the same more elegantly.
 :::
 
@@ -202,7 +233,15 @@ Note that in this case we have to use the `|` operator because this is the **log
 
 :::
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
 
+
+
+
+<!-- ####################################################################### -->
 
 ### Enumerate, zip 
 
@@ -210,7 +249,7 @@ These exercises introduce two new concepts.
 You might need google.
 
 ::: {.callout-tip icon='false'}
-## Question G
+## Question A
 What does the following code do? What is the meaning of the output?
 
 ```python
@@ -239,7 +278,7 @@ and item gets the value of that list's element.
 
 
 ::: {.callout-tip icon='false'}
-## Question H
+## Question B
 
 Modify the following code such that it will compare each item i in apples with each item i in pears, and tell you which one is heavier.
 You need to edit the code.
@@ -304,11 +343,19 @@ the pear is heavier
 ```
 :::
 
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
+
+
+
+<!-- ####################################################################### -->
 
 ### Initializing
 
 ::: {.callout-tip icon='false'}
-## Question H
+## Question 
 Modify this program so that it finds the largest and smallest values in the list no matter what the range of values originally is.
 
 ```python
@@ -402,6 +449,11 @@ print(smallest, largest)
 ```
 
 :::
+
+<!-- Carpentries credits L13, modified -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/13-conditionals.html){style="color: #777777" target=_blank}, adapted by the *bio*DSC.</font>*
+</div>
 
 
 

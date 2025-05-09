@@ -1,13 +1,22 @@
+
+
 ::: {.callout-note}
-## Note
-Most questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/)
+## Credits & copyright
+Many questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/), some were
+authored by the *bio*DSC. Carpentries website materials are [licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/),
+which also applies to the contents of this website.
 :::
+
+
 ---
+
+
 # Exercises Lesson 4, functions (1)
 
+<!-- ####################################################################### -->
 ### Order
 ::: {.callout-tip icon="false"}
-## Question A
+## Question 
 - Explain in simple terms the order of operations in the following program: when does the addition happen, when does the subtraction happen, when is each function called, etc.
 - What is the final value of radiance?
 
@@ -32,6 +41,13 @@ Division and multiplication precede subtraction and addtition. The use of parent
 6. At the end, radiance = 2.6
 :::
 
+<!-- Carpentries credits L4 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/04-built-in.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
+
 ### Last string character
 ::: {.callout-tip icon="false"}
 ### Question B
@@ -42,7 +58,17 @@ If Python starts counting from zero, and len returns the number of characters in
 `name[len(name) - 1]`
 :::
 
+<!-- Carpentries credits L4 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/04-built-in.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
+<!-- ####################################################################### -->
+
 # Additional exercises Lesson 4
+
+<!-- ####################################################################### -->
 
 ### Why not?
 ::: {.callout-tip icon="false"}
@@ -57,6 +83,12 @@ Why is it that max and min do not return None when they are called with no argum
 max and min return TypeErrors in this case because the correct number of parameters was not supplied. If it just returned None, the error would be much harder to trace as it would likely be stored into a variable and used later in the program, only to likely throw a runtime error.
 :::
 
+<!-- Carpentries credits L4 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/04-built-in.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
 
 ### Spot the difference
 ::: {.callout-tip icon="false"}
@@ -79,3 +111,8 @@ print(max(len(rich), len(poor)))
 - ```print(max(rich, poor))```, returns **tin**, the string that contains the largest character (in Unicode values)
 - ```print(max(len(rich), len(poor)))```, returns 4, the length of the string that contains the most characters (i.e. **rich**)
 :::
+
+<!-- Carpentries credits L4 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/04-built-in.html){style="color: #777777" target=_blank}.</font>*
+</div>

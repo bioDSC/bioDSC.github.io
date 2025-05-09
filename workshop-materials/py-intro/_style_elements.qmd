@@ -1,0 +1,92 @@
+
+
+
+<!-- ####################################################################### -->
+
+
+
+<!-- Carpentries credits L2 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/02-variables.html){style="color: #777777" target=_blank}.</font>*
+</div>
+<!-- Carpentries credits L3 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion.html){style="color: #777777" target=_blank}.</font>*
+</div>
+<!-- Carpentries credits L3 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/03-types-conversion.html){style="color: #777777" target=_blank}.</font>*
+</div>
+<!-- Carpentries credits L4 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/04-built-in.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+<!-- ####################################################################### -->
+
+<!-- Carpentries credits L6 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/06-libraries.html){style="color: #777777" target=_blank}.</font>*
+</div>
+<!-- Carpentries credits L7 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/07-reading-tabular.html){style="color: #777777" target=_blank}.</font>*
+</div>
+<!-- Carpentries credits L8 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/08-data-frames.html){style="color: #777777" target=_blank}.</font>*
+</div>
+<!-- Carpentries credits L9 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html){style="color: #777777" target=_blank}.</font>*
+</div>
+<!-- Carpentries credits L9, edited -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html){style="color: #777777" target=_blank},
+edited by the *bio*DSC.</font>*
+</div>
+
+<!-- ####################################################################### -->
+
+<!-- Carpentries credits L11 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/11-lists.html){style="color: #777777" target=_blank}.</font>*
+</div>
+<!-- Carpentries credits L12 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html){style="color: #777777" target=_blank}.</font>*
+</div>
+<!-- Carpentries credits L13 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/13-conditionals.html){style="color: #777777" target=_blank}.</font>*
+</div>
+<!-- Carpentries credits L13, modified -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/13-conditionals.html){style="color: #777777" target=_blank}, adapted by the *bio*DSC.</font>*
+</div>
+<!-- Carpentries credits L14 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/14-looping-data-sets.html){style="color: #777777" target=_blank}.</font>*
+</div>
+<!-- Carpentries credits L14, modified -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/14-looping-data-sets.html){style="color: #777777" target=_blank}, adapted by the *bio*DSC.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
+
+<!-- Carpentries credits L16 -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/16-writing-functions.html){style="color: #777777" target=_blank}.</font>*
+</div>
+
+
+<!-- ####################################################################### -->
+
+
+<!-- bioDSC credits -->
+<div class="text-end">
+*<font color="#aaaaaa" size=1>Source: *bio*DSC.</font>*
+</div>
+
