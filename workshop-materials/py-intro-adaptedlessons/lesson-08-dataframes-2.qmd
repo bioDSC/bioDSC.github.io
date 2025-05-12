@@ -1,0 +1,181 @@
+
+::: {.callout-note}
+### Copyright information
+These are notes based on the [Carpentries materials](https://swcarpentry.github.io/python-novice-gapminder/08-data-frames.html) ([licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). These notes are intended to present the materials related to Dataframes (part2). The contents of the lessons were modified by Martijn Wehrens (bioDSC).
+:::
+
+# Lesson 8, Pandas dataframes
+
+```python
+# Make sure everyone has
+    # Gapminder in ./data folder
+        # https://swcarpentry.github.io/python-novice-gapminder/ (python-novice-gapminder-data.zip)
+    # Kohela in ./data folder
+        # https://www.biodsc.nl/workshop-materials/
+```
+
+```python    
+# Pandas dataframe
+    # Collection of "series"   
+        # one series is one column
+        # on which you can perform operations
+    # Built on "numpy", 
+        # a library for working with arrays and mathematical operations
+        # series very similar to numpy.array
+    # Advantages
+        # Access to individual records
+        # Convenient ways combining information multiple dataframes
+```
+
+```python        
+# how to get dataframe
+
+import pandas as pd
+
+# data = pd.read_csv('../data/gapminder_gdp_europe.csv', index_col='country')
+data = pd.read_csv('/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/data/gapminder_gdp_europe.csv', \
+    index_col='country')
+    
+print(data.head())    
+```
+
+```python
+# TWO METHODS TO ACCESS DATA
+    # iloc
+    # loc
+
+# "iloc" method
+# numerical indexing of rows and columns
+    # remember, it's a 2D table
+    # indexing similar as accessing chars in string
+
+print(data.iloc[0, 0])
+
+# "loc" method
+# acess entries by their label
+
+# Other synthax
+    # ":" means all columns, or all rows
+    
+# print(data.loc["Albania", :])
+# print(data.loc["Albania"])
+    # in loc, first entry is row
+    
+# other way around
+# print(data.loc[:, "gdpPercap_1952"])
+```
+
+```python
+# More ways to access data
+
+# print(data["gdpPercap_1952"])
+    # no "loc"!!!
+    # <--> series
+    
+# also works:
+# data.gdpPercap_1992
+    # not recommended, confusion with methods
+```
+
+```python
+# slicing works on labels as well
+print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'])
+
+# can be used to perform operations on subsets
+print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].max())
+    # note: applied per column
+```    
+
+```python
+# Selecting data
+
+# Use a subset of data to keep output readable.
+subset = data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972']
+print('Subset of data:\n', subset)
+    # notice the escape "\"; \n is signifier for nextline
+
+# Which values were greater than 10000 ?
+print('\nWhere are values large?\n', subset > 10000)
+    # comparisons are done element-wise
+    
+# a frame full of "booleans" (true/false)
+    # sometimes called mask
+    # (MW: ±filter)
+
+mask = subset > 10000
+print(mask)
+print(subset[mask])
+
+# returns value where True
+# returns NaN where False
+    # NaN = Not a number
+    # NaNs are ignored in operations
+        # e.g. min, max, etc
+
+# e.g.
+print(subset[subset > 10000].describe())
+```
+
+```python
+# Group By: split-apply-combine
+
+# Group by: split-apply-combine
+    # note to self: see related/202503_RNAseq-data.py
+
+# Goal
+    # table in which rows match condition
+    # calculate something per condition
+    # use group_by
+    # Using data from Kohela et al. 
+        # RNA-seq data (see powerpoint)
+
+import pandas as pd
+
+# Import data
+df_cells_kohela = pd.read_csv('/Users/m.wehrens/Data_UVA/example-datasets/kohela-et-al/kohela-et-al.csv', index_col=0)
+df_cells_kohela2 = df_cells_kohela.T
+df_cells_kohela2.head()
+
+# create new 'masks'
+epicardial_cells = df_cells_kohela2['WT1']>3
+fibroblast_cells = df_cells_kohela2['COL2A1']>30
+fat_cells = df_cells_kohela2['PPARG']>2
+
+# Create a new column
+df_cells_kohela2['Celltype'] = 'unknown'
+# Set values for the column
+df_cells_kohela2.loc[epicardial_cells,'Celltype'] = 'epicardial'
+df_cells_kohela2.loc[fibroblast_cells, 'Celltype'] = 'fibroblast'
+df_cells_kohela2.loc[fat_cells, 'Celltype'] = 'fat'
+
+# OPTIONAL: give an overview of the frequencies of 'Celltype' values
+df_cells_kohela2['Celltype'].value_counts()
+
+# now use group_by to calculate gene expression median values per group
+    # explain:
+        # creates grouped object (groupby object)
+        # now any aggregate function 
+            # e.g. aggregate('XX'), max(), min(), etc
+            # applied per group
+            # will paste together the dataframe
+df_cells_kohela2_groupedType = df_cells_kohela2.groupby('Celltype')
+
+# Now calculate mean expression
+df_results = df_cells_kohela2_groupedType.mean() 
+print(df_results.head())
+
+print(df_cells_kohela2.columns[0])
+print(df_cells_kohela2.columns[-2])
+
+df_means = df_cells_kohela2.loc[:,'A1BG':'ZZZ3'].mean()
+
+# And normalize
+df_results_normalized = df_results/df_means
+
+# "Check" their TFAP2A claim
+print(df_results_normalized.loc[:,'TFAP2A'])
+
+# Check some other highly differentially expressed genes
+print(df_results_normalized.loc[:,(df_results_normalized>10).any()])
+
+```
