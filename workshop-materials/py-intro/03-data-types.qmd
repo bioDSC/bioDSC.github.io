@@ -11,7 +11,7 @@ which also applies to the contents of this website.
 
 <!-- ####################################################################### -->
 
-### 1. Fractions
+### Fractions
 
 ::: {.callout-tip icon="false"}
 ### Question
@@ -37,7 +37,7 @@ print(type(3.4))
 
 
 <!-- ####################################################################### -->
-### 2. Automatic type conversion
+### Automatic type conversion
 
 ::: {.callout-tip icon="false"}
 ### Question 
@@ -64,7 +64,7 @@ print(result, 'is', type(result))
 
 
 <!-- ####################################################################### -->
-### 3. Choose a type
+### Choose a type
 
 ::: {.callout-tip icon="false"}
 ### Question 
@@ -98,7 +98,7 @@ The answers to the questions are:
 </div>
 
 <!-- ####################################################################### -->
-### 4. Float or integer?
+### Float or integer?
 
 ::: {.callout-tip icon="false"}
 ### Question
@@ -128,7 +128,7 @@ For many/most practical purposes, this is dealt with automatically by Python.
 
 <!-- ####################################################################### -->
 
-### 2. Strings to numbers
+### Strings to numbers
 
 Where reasonable, float() will convert a string to a floating point number, and int() will convert a floating point number to an integer:
 
@@ -192,7 +192,7 @@ print(int(float("3.4")))
 
 <!-- ####################################################################### -->
 
-## Arithmetic with Different Types
+### Arithmetic with Different Types
 
 ::: {.callout-tip icon="false"}
 ### Question
@@ -242,7 +242,7 @@ So, 1 and 4
 
 <!-- ####################################################################### -->
 
-### 3. Lists
+### Lists
 
 We'll cover lists later in lesson 11, but let's already take a brief look.
 
@@ -317,7 +317,7 @@ Yes, a single list may contain numbers, strings, and anything else.
 
 <!-- ####################################################################### -->
 
-### 3. np.array
+### np.array
 
 Lists can be a useful tool, but for example in image analysis, don't offer the full mathematical options one might like. `numpy` arrays introduce a new type of series, in which you can do more manipulations. See some examples below:
 
@@ -436,7 +436,7 @@ will also show it's a numpy string type (`numpy.str_`).
 
 <!-- ####################################################################### -->
 
-### 4. Dict(ionary)
+### Dict(ionary)
 
 Python has more types. A `dict` is sometimes very convenient, and is also used later, when creating tables.
 
