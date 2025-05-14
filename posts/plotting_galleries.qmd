@@ -8,8 +8,8 @@ categories: [plotting, scripting]
 
 ## Example plotting code
 
-There are many resources online where you can find examples of nice plots. Use google to find them (e.g. search for "python plotting gallery"). 
-I wrote down a couple of links below.
+There are many resources online where you can find examples of nice plots. You can use google to find them (e.g. search for "python plotting gallery"),
+or take a look at the examples below.
 
 ##### Python
 
