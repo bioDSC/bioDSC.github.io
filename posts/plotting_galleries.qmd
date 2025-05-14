@@ -1,0 +1,23 @@
+---
+title: "Example plots for R and Python"
+date: 2025-05-14
+description: ""
+author: Martijn Wehrens
+categories: [plotting, scripting]
+---
+
+## Example plotting code
+
+There are many resources online where you can find examples of nice plots. Use google to find them (e.g. search for "python plotting gallery"). 
+I wrote down a couple of links below.
+
+##### Python
+
+- [https://matplotlib.org/stable/gallery/](https://matplotlib.org/stable/gallery/), Matplotlib official gallery
+- [https://seaborn.pydata.org/examples/index.html](https://seaborn.pydata.org/examples/index.html), official Seaborn package plot gallery
+- [https://python-graph-gallery.com/](https://python-graph-gallery.com/), a collection of Python plotting examples (click on the pictures to see code).
+
+##### R
+
+- [https://r-graph-gallery.com/](https://r-graph-gallery.com/), a collection of R plotting examples (click on the pictures to see the source code)
+- [https://exts.ggplot2.tidyverse.org/gallery/](https://exts.ggplot2.tidyverse.org/gallery/), official database of ggplot2 extensions

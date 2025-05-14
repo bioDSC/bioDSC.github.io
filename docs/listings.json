@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/plotting_galleries.html",
       "/posts/installing_conda_python.html",
       "/posts/python-or-R.html",
       "/posts/Ath_synteny.html",
