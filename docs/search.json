@@ -130,14 +130,14 @@
     "href": "posts/plotting_galleries.html",
     "title": "Example plots for R and Python",
     "section": "",
-    "text": "There are many resources online where you can find examples of nice plots. Use google to find them (e.g. search for “python plotting gallery”). I wrote down a couple of links below.\n\n\n\nhttps://matplotlib.org/stable/gallery/, Matplotlib official gallery\nhttps://seaborn.pydata.org/examples/index.html, official Seaborn package plot gallery\nhttps://python-graph-gallery.com/, a collection of Python plotting examples (click on the pictures to see code).\n\n\n\n\n\nhttps://r-graph-gallery.com/, a collection of R plotting examples (click on the pictures to see the source code)\nhttps://exts.ggplot2.tidyverse.org/gallery/, official database of ggplot2 extensions"
+    "text": "There are many resources online where you can find examples of nice plots. You can use google to find them (e.g. search for “python plotting gallery”), or take a look at the examples below.\n\n\n\nhttps://matplotlib.org/stable/gallery/, Matplotlib official gallery\nhttps://seaborn.pydata.org/examples/index.html, official Seaborn package plot gallery\nhttps://python-graph-gallery.com/, a collection of Python plotting examples (click on the pictures to see code).\n\n\n\n\n\nhttps://r-graph-gallery.com/, a collection of R plotting examples (click on the pictures to see the source code)\nhttps://exts.ggplot2.tidyverse.org/gallery/, official database of ggplot2 extensions"
   },
   {
     "objectID": "posts/plotting_galleries.html#example-plotting-code",
     "href": "posts/plotting_galleries.html#example-plotting-code",
     "title": "Example plots for R and Python",
     "section": "",
-    "text": "There are many resources online where you can find examples of nice plots. Use google to find them (e.g. search for “python plotting gallery”). I wrote down a couple of links below.\n\n\n\nhttps://matplotlib.org/stable/gallery/, Matplotlib official gallery\nhttps://seaborn.pydata.org/examples/index.html, official Seaborn package plot gallery\nhttps://python-graph-gallery.com/, a collection of Python plotting examples (click on the pictures to see code).\n\n\n\n\n\nhttps://r-graph-gallery.com/, a collection of R plotting examples (click on the pictures to see the source code)\nhttps://exts.ggplot2.tidyverse.org/gallery/, official database of ggplot2 extensions"
+    "text": "There are many resources online where you can find examples of nice plots. You can use google to find them (e.g. search for “python plotting gallery”), or take a look at the examples below.\n\n\n\nhttps://matplotlib.org/stable/gallery/, Matplotlib official gallery\nhttps://seaborn.pydata.org/examples/index.html, official Seaborn package plot gallery\nhttps://python-graph-gallery.com/, a collection of Python plotting examples (click on the pictures to see code).\n\n\n\n\n\nhttps://r-graph-gallery.com/, a collection of R plotting examples (click on the pictures to see the source code)\nhttps://exts.ggplot2.tidyverse.org/gallery/, official database of ggplot2 extensions"
   },
   {
     "objectID": "workshop-materials/py-intro-adaptedlessons/lesson-08-dataframes-2.html",
