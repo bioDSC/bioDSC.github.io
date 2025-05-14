@@ -1,3 +1,7 @@
+---
+toc: true
+toc-expand: 2
+---
 
 ::: {.callout-note}
 ## Credits & copyright
@@ -8,7 +12,7 @@ which also applies to the contents of this website.
 
 ---
 
-# Exercises Lesson 2, variables
+# Exercises Lesson 2: Variables
 
 
 <!-- #################################################################################################################################### -->
@@ -123,24 +127,23 @@ What would these expressions return?
 :::
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
-```
-species_name[2:8] returns the substring 'acia b'
-species_name[11:] returns the substring 'folia', from position 11 until the end
-species_name[:4] returns the substring 'Acac', from the start up to but not including position 4
-species_name[:] returns the entire string 'Acacia buxifolia'
-species_name[11:-3] returns the substring 'fo', from the 11th position to the third last position
-species_name[-5:-3] also returns the substring 'fo', from the fifth last position to the third last
 
-```
+1. `species_name[2:8]` returns the substring 'acia b'
+2. `species_name[11:]` returns the substring 'folia', from position 11 until the end
+3. `species_name[:4]` returns the substring 'Acac', from the start up to but not including position 4
+4. `species_name[:]` returns the entire string 'Acacia buxifolia'
+5. `species_name[11:-3]` returns the substring 'fo', from the 11th position to the third last position
+6. `species_name[-5:-3]` also returns the substring 'fo', from the fifth last position to the third last
+
 :::
 
 ::: {.callout-tip icon="false"}
 ## Question B
-What happens when you choose a stop value which is out of range? (i.e., try species_name[0:20] or species_name[:103])
+What happens when you choose a stop value which is out of range? (i.e., try `species_name[0:20]` or `species_name[:103]`)
 :::
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
-If a part of the slice is out of range, the operation does not fail. species_name[0:20] gives the same result as species_name[0:], and species_name[:103] gives the same result as species_name[:]
+If a part of the slice is out of range, the operation does not fail. `species_name[0:20]` gives the same result as `species_name[0:]`, and `species_name[:103]` gives the same result as `species_name[:]`.
 :::
 
 <!-- Carpentries credits -->
@@ -209,7 +212,7 @@ Therefor, the answer is 'e'.
 ### Question B
 Using a loops will be covered latered, list comprehensions are even a bit more advanced.
 What does the following code do?
-```
+```Python
 print([greetings_strings[idx] for idx in [0, 2]])
 print([greetings_strings[0][idx] for idx in [0, 2, 4]])
 print([greetings_strings[0][idx] for idx in range(0,4,2)])
@@ -235,7 +238,7 @@ The result thus is `['h', 'l']`.
 ### Question C
 What does the following code do?
 (Types will be the topic of the next lesson.)
-```
+```Python
 square_values = [number**2 for number in range(10)]
 square_values_string = [str(number**2) for number in range(10)]
 print(square_values)
@@ -252,7 +255,7 @@ values 0..9, and so the list looks like `[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]`.
 ::: {.callout-tip icon="false"}
 ### Question D
 What do `.join()` and `.replace()` do? We will delve into this syntax later.
-```
+```Python
 species_name = "Acacia buxifolia"
 print("".join([species_name[i] for i in range(10, 2, -1)]))
 print(species_name.replace('Aca', 'Bole'))
@@ -267,17 +270,17 @@ print(species_name.replace('Aca', 'Bole'))
 ::: {.callout-tip icon="false"}
 ### Question E
 Now combine the above to create a new list, where you remove all letters 'e' from the following list:
-```
-list_of_species = ['Homo sapiens', 'Escherichia Coli', 'Pan troglodytes', 'Canis lupus', 'Felis catus']
+```Python
+list_of_species = ['Homo sapiens', 'Escherichia coli', 'Pan troglodytes', 'Canis lupus', 'Felis catus']
 ```
 :::
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
 You can combine the above commands:
-```
+```Python
 new_list = [X.replace('e','') for X in list_of_species]
 print(new_list)
-# result: ['Homo sapins', 'Eschrichia Coli', 'Pan troglodyts', 'Canis lupus', 'Flis catus']
+# result: ['Homo sapins', 'Eschrichia coli', 'Pan troglodyts', 'Canis lupus', 'Flis catus']
 ```
 
 :::

@@ -1,3 +1,8 @@
+---
+toc: true
+toc-expand: 2
+---
+
 ::: {.callout-note}
 ## Credits & copyright
 Many questions originate from the carpentry lesson ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/), some were
@@ -7,7 +12,7 @@ which also applies to the contents of this website.
 
 ---
 
-# Exercises Lesson 3, types
+# Exercises Lesson 3: Types
 
 <!-- ####################################################################### -->
 
@@ -130,7 +135,7 @@ For many/most practical purposes, this is dealt with automatically by Python.
 
 ### Strings to numbers
 
-Where reasonable, float() will convert a string to a floating point number, and int() will convert a floating point number to an integer:
+Where reasonable, `float()` will convert a string to a floating point number, and `int()` will convert a floating point number to an integer:
 
 ```Python
 print("string to float:", float("3.4"))
@@ -204,14 +209,13 @@ second = "1"
 third = "1.1"
 ```
 
-```
-1. first + float(second)
-2. float(second) + float(third)
-3. first + int(third)
-4. first + int(float(third))
-5. int(first) + int(float(third))
-6. 2.0 * second
-```
+1. `first + float(second)`
+2. `float(second) + float(third)`
+3. `first + int(third)`
+4. `first + int(float(third))`
+5. `int(first) + int(float(third))`
+6. `2.0 * second`
+
 :::
 
 ::: {.callout-caution collapse="true" icon="false"}
@@ -248,7 +252,7 @@ We'll cover lists later in lesson 11, but let's already take a brief look.
 
 A list is a series of elements bound together, where each element can have a value. They are defined as follows:
 
-```
+```Python
 numbers = [1,2,3]
 fruits = ['apples', 'pears', 'oranges']
 physical_constants = ['pi', 3.14, 'c', 299_792_458, 'mole', 6.022e23]
@@ -323,21 +327,21 @@ Lists can be a useful tool, but for example in image analysis, don't offer the f
 
 ```Python
 import numpy as np
-my_array = [1,2,3,5]
-my_array_np = np.array([1,2,3,5])
+my_array = [1,2,3,5] # This is a normal Python list
+my_array_np = np.array([1,2,3,5]) # This is a numpy array!
 ```
 
 ::: {.callout-tip icon="false"}
 #### Question A
-what's the difference here: 
+Let's perform the same `+ 1` operation, to both the Python list and the numpy array. What's the difference here? 
 
-- `my_array+1`
-- `my_array_np+1`
+- `my_array + 1`
+- `my_array_np + 1`
 :::
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
-- `my_array+1`, throws an error message because there is no operator defined that accepts a list type **and** an int type. If you want to concatenate the two, use my_array+[1] 
-- `my_array_np+1`, returns array([2, 3, 4, 6]), an np.array where every element from my_array_np has been increased by 1. 
+- `my_array+1`, throws an error message because there is no operator defined that accepts a list type **and** an int type. If you want to concatenate the two, use `my_array+[1]` 
+- `my_array_np+1`, returns `array([2, 3, 4, 6])`, an np.array where every element from my_array_np has been increased by 1. 
 
 The effect of the `+` operator thus changes with the type of the parameters it is used for.
 With numpy arrays, you can work more mathematically.
@@ -346,7 +350,7 @@ With numpy arrays, you can work more mathematically.
 
 ::: {.callout-tip icon="false"}
 #### Question B
-what's the difference here:
+Again, we perform the same operation, this time `* 3`, to the Python list and the numpy array. What's the difference here?
 
 - `my_array * 3`
 - `my_array_np * 3`
@@ -354,10 +358,9 @@ what's the difference here:
 
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
-- `my_array * 3`, returns [1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5] because the * operator repeats the list 3 times
-- `my_array_np * 3`, returns array([3, 6, 9, 15]) because in numpy, the * multplies the value of each element 3 times
+- `my_array * 3`, returns [1, 2, 3, 5, 1, 2, 3, 5, 1, 2, 3, 5] because the `*` operator repeats the list 3 times
+- `my_array_np * 3`, returns array([3, 6, 9, 15]) because in numpy, the `*` multplies the value of each element 3 times
 :::
-
 
 
 ::: {.callout-tip icon="false"}
@@ -370,14 +373,14 @@ What will happen here?
 :::
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
-- `my_array + [1,2,3,4]`, returns a concatenated list [1, 2, 3, 5, 1, 2, 3, 4]. Like in question J, the + operator concatenates two lists.
-- `my_array_np + np.array([1, 2, 3, 4])`, returns the element wise sum of both vectors, so array([2, 4 ,6 ,9])
-- `np.sin(my_array_np)`, returns the result of applying the sin function to each element in my_array_np, array([ 0.84147098,  0.90929743,  0.14112001, -0.95892427])
+- `my_array + [1,2,3,4]`, returns a concatenated list `[1, 2, 3, 5, 1, 2, 3, 4]`. Like in question B, the + operator concatenates two lists.
+- `my_array_np + np.array([1, 2, 3, 4])`, returns the element wise sum of both vectors, so `array([2, 4 ,6 ,9])`
+- `np.sin(my_array_np)`, returns the result of applying the sin function to each element in my_array_np, `array([ 0.84147098,  0.90929743,  0.14112001, -0.95892427])`
 :::
 
 ::: {.callout-tip icon="false"}
 #### Question D
-numpy-specific things, what is happening?
+What is happening in these numpy-specific operations?
 
 - `my_array_np[range(1,4,2)]`
 - `my_array_np[my_array_np>1]`
@@ -406,21 +409,20 @@ What is the type of the elements in these two arrays?
 
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
-- `np.array([1,2,3,'4'])`, returns array(['1', '2', '3', '4'], dtype='<U21')
-- `np.array([1,2,3,'hello'])`, returns array(['1', '2', '3', 'hello'], dtype='<U21')
+- `np.array([1,2,3,'4'])`, returns `array(['1', '2', '3', '4'], dtype='<U21')`
+- `np.array([1,2,3,'hello'])`, `returns array(['1', '2', '3', 'hello'], dtype='<U21')`
 
-The elements of a NumPy array must all be of the same type, whereas the elements of a Python list can be of completely different types.
-Automatic conversion occurs to convert all elements to the same type (in this case string takes presedence). 
+The elements of a NumPy array must all be of the same type, whereas the elements of a Python list can be of completely different types. Automatic conversion occurs to convert all elements to the same type (in this case string takes presedence). 
 
 You can access the type of elements in a numpy array as follows:
-```
+```Python
 my_array = np.array([1,2,3,'hello'])
 my_array.dtype
 ```
-'<U21' referst to a specific kind of string.
+`'<U21'` refers to a specific kind of string.
 
-Alternatively
-```
+Alternatively:
+```Python
 type(my_array[0])
 ```
 will also show it's a numpy string type (`numpy.str_`).
@@ -438,7 +440,7 @@ will also show it's a numpy string type (`numpy.str_`).
 
 ### Dict(ionary)
 
-Python has more types. A `dict` is sometimes very convenient, and is also used later, when creating tables.
+Python has more types. A `dict` is sometimes very convenient, and is also used later, when creating tables. We create a simple dict first:
 
 ```Python
 experimental_replicate_list = {'WT': 12, 'mut': 32, 'WT.cond1': 10, 'mut.cond1': 12}
@@ -447,12 +449,12 @@ print(experimental_replicate_list['WT'])
 ```
 ::: {.callout-tip icon="false"}
 #### Question A
-Edit the following code such that we get the associated numbers for conditions involving WT
+Edit line three of following code such that we get the associated numbers for conditions involving WT
 
 ```Python
 my_keys = experimental_replicate_list.keys()
 print(my_keys)
-my_keys_of_interest = [the_key for the_key in my_keys if 'mut' in the_key] # edit this line
+my_keys_of_interest = [the_key for the_key in my_keys if 'mut' in the_key] # Edit this line
 print(my_keys_of_interest)
 print([experimental_replicate_list[sel_key] for sel_key in my_keys_of_interest])
 ```
@@ -467,11 +469,13 @@ print([experimental_replicate_list[sel_key] for sel_key in my_keys_of_interest])
 
 ::: {.callout-tip icon="false"}
 #### Question B
-The above code uses several lines, can you do this in one line?
+The above code uses several lines, can you do the same operations in one line?
 :::
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
-- `print([experimental_replicate_list[key] for key in experimental_replicate_list.keys() if 'WT' in key])`
+```Python
+print([experimental_replicate_list[key] for key in experimental_replicate_list.keys() if 'WT' in key])
+```
 :::
 
 <!-- bioDSC credits -->
@@ -524,7 +528,6 @@ print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys)
 <!-- ####################################################################### -->
 
 ### Complex numbers 
-
 
 ::: {.callout-tip icon="false"}
 ## Question 

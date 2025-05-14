@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.33">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -166,9 +166,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#exercises-lesson-13-conditionals" id="toc-exercises-lesson-13-conditionals" class="nav-link active" data-scroll-target="#exercises-lesson-13-conditionals">Exercises Lesson 13: Conditionals</a>
+  <ul class="collapse">
+  <li><a href="#tracing-execution" id="toc-tracing-execution" class="nav-link" data-scroll-target="#tracing-execution">Tracing Execution</a></li>
+  <li><a href="#trimming-values" id="toc-trimming-values" class="nav-link" data-scroll-target="#trimming-values">Trimming Values</a></li>
+  <li><a href="#processing-small-files" id="toc-processing-small-files" class="nav-link" data-scroll-target="#processing-small-files">Processing Small Files</a></li>
+  </ul></li>
+  <li><a href="#additional-exercises-lesson-13" id="toc-additional-exercises-lesson-13" class="nav-link" data-scroll-target="#additional-exercises-lesson-13">Additional Exercises Lesson 13</a>
+  <ul class="collapse">
+  <li><a href="#list-comprehension" id="toc-list-comprehension" class="nav-link" data-scroll-target="#list-comprehension">List comprehension</a></li>
+  <li><a href="#enumerate-zip" id="toc-enumerate-zip" class="nav-link" data-scroll-target="#enumerate-zip">Enumerate, zip</a></li>
+  <li><a href="#initializing" id="toc-initializing" class="nav-link" data-scroll-target="#initializing">Initializing</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page-left" id="quarto-document-content">
 
 
 
@@ -188,7 +207,7 @@ Credits &amp; copyright
 </div>
 <hr>
 <section id="exercises-lesson-13-conditionals" class="level1">
-<h1>Exercises Lesson 13, Conditionals</h1>
+<h1>Exercises Lesson 13: Conditionals</h1>
 <!-- ####################################################################### -->
 <section id="tracing-execution" class="level3">
 <h3 class="anchored" data-anchor-id="tracing-execution">Tracing Execution</h3>
@@ -488,9 +507,8 @@ Question A
 <div class="callout-body-container callout-body">
 <p>What does the following code do? What is the meaning of the output?</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, item <span class="kw">in</span> <span class="bu">enumerate</span>([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">34</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">10</span>]):</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> item<span class="op">&gt;</span><span class="dv">5</span>:</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(idx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> item<span class="op">&gt;</span><span class="dv">5</span>:</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(idx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -522,7 +540,7 @@ Question B
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Modify the following code such that it will compare each item i in apples with each item i in pears, and tell you which one is heavier. You need to edit the code.</p>
+<p>Modify the following code such that it will compare each item <code>i</code> in <code>apples</code> with each item <code>i</code> in <code>pears</code>, and tell you which one is heavier. You need to edit the code.</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>apples <span class="op">=</span> [<span class="dv">123</span>, <span class="dv">436</span>, <span class="dv">123</span>, <span class="dv">654</span>, <span class="dv">117</span>, <span class="dv">193</span>, <span class="dv">120</span>]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>pears  <span class="op">=</span> [<span class="dv">543</span>, <span class="dv">163</span>, <span class="dv">178</span>, <span class="dv">165</span>, <span class="dv">123</span>, <span class="dv">187</span>, <span class="dv">190</span>]</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -530,7 +548,7 @@ Question B
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'='</span><span class="op">*</span><span class="dv">10</span>)</span>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'weigth apple: '</span>, apple_weight)</span>
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'weigth pear:  '</span>, pear_weight)</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    ___</span>
 <span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'the XXX is heavier'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>

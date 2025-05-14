@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.33">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -166,9 +166,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#exercises-lesson-14-looping-over-data" id="toc-exercises-lesson-14-looping-over-data" class="nav-link active" data-scroll-target="#exercises-lesson-14-looping-over-data">Exercises Lesson 14: Looping over data</a>
+  <ul class="collapse">
+  <li><a href="#determining-matches" id="toc-determining-matches" class="nav-link" data-scroll-target="#determining-matches">Determining Matches</a></li>
+  <li><a href="#minimum-file-size" id="toc-minimum-file-size" class="nav-link" data-scroll-target="#minimum-file-size">Minimum File Size</a></li>
+  </ul></li>
+  <li><a href="#additional-exercises" id="toc-additional-exercises" class="nav-link" data-scroll-target="#additional-exercises">Additional Exercises</a>
+  <ul class="collapse">
+  <li><a href="#comparing-data" id="toc-comparing-data" class="nav-link" data-scroll-target="#comparing-data">Comparing Data</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page-left" id="quarto-document-content">
 
 
 
@@ -188,7 +204,7 @@ Credits &amp; copyright
 </div>
 <hr>
 <section id="exercises-lesson-14-looping-over-data" class="level1">
-<h1>Exercises Lesson 14, Looping over data</h1>
+<h1>Exercises Lesson 14: Looping over data</h1>
 <!-- ####################################################################### -->
 <section id="determining-matches" class="level3">
 <h3 class="anchored" data-anchor-id="determining-matches">Determining Matches</h3>
@@ -202,7 +218,7 @@ Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Which of these files is <em>not</em> matched by the expression glob.glob(‘data/<em>as</em>.csv’)?</p>
+<p>Which of these files is <em>not</em> matched by the expression <code>glob.glob('data/*as.csv')</code>?</p>
 <pre><code>1. data/gapminder_gdp_africa.csv
 2. data/gapminder_gdp_americas.csv
 3. data/gapminder_gdp_asia.csv</code></pre>
@@ -250,7 +266,7 @@ Question
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    dataframe <span class="op">=</span> pd.____(filename)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    fewest <span class="op">=</span> <span class="bu">min</span>(____, dataframe.shape[<span class="dv">0</span>])</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'smallest file has'</span>, fewest, <span class="st">'records'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Note that the DataFrame.shape() method returns a tuple with the number of rows and columns of the data frame.</p>
+<p>Note that the <code>DataFrame.shape()</code> method returns a tuple with the number of rows and columns of the data frame.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -313,36 +329,35 @@ Answer
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<pre><code>import glob
-import pandas as pd
-import matplotlib.pyplot as plt
-fig, ax = plt.subplots(1,1, figsize=(10*cm_to_inch, 5*cm_to_inch))
-for filename in glob.glob(LOCAL_PATH_GAPMINDER+'data/gapminder_gdp*.csv'):
-    # filename = glob.glob(LOCAL_PATH_GAPMINDER+'data/gapminder_gdp*.csv')[0]
-    dataframe = pd.read_csv(filename)
-    # extract &lt;region&gt; from the filename, expected to be in the format 'data/gapminder_gdp_&lt;region&gt;.csv'.
-    # we will split the string using the split method and `_` as our separator,
-    # retrieve the last string in the list that split returns (`&lt;region&gt;.csv`), 
-    # and then remove the `.csv` extension from that string.
-    region = filename.split('_')[-1][:-4]
-
-    # pandas raises errors when it encounters non-numeric columns in a dataframe computation
-    # but we can tell pandas to ignore them with the `numeric_only` parameter
-    mean_values = dataframe.mean(numeric_only=True)
-    years       = pd.Series(mean_values.index.values).str.split('_').str[-1].astype(int)
-    
-    ax.plot(years, mean_values, label=region)
-    # NOTE: another way of doing this selects just the columns with gdp in their name using the filter method
-    # dataframe.filter(like="gdp").mean().plot(ax=ax, label=region)
-# set the title and labels
-ax.set_title('GDP Per Capita for Regions Over Time')
-ax.set_xlabel('Year')
-plt.tight_layout()
-plt.legend()
-
-# Save the plot
-fig.savefig('plots_pyworkshop/L14_meanGDP_regions.png', dpi=600)
-</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> glob</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span><span class="op">*</span>cm_to_inch, <span class="dv">5</span><span class="op">*</span>cm_to_inch))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> filename <span class="kw">in</span> glob.glob(LOCAL_PATH_GAPMINDER<span class="op">+</span><span class="st">'data/gapminder_gdp*.csv'</span>):</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># filename = glob.glob(LOCAL_PATH_GAPMINDER+'data/gapminder_gdp*.csv')[0]</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    dataframe <span class="op">=</span> pd.read_csv(filename)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># extract &lt;region&gt; from the filename, expected to be in the format 'data/gapminder_gdp_&lt;region&gt;.csv'.</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># we will split the string using the split method and `_` as our separator,</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># retrieve the last string in the list that split returns (`&lt;region&gt;.csv`), </span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># and then remove the `.csv` extension from that string.</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    region <span class="op">=</span> filename.split(<span class="st">'_'</span>)[<span class="op">-</span><span class="dv">1</span>][:<span class="op">-</span><span class="dv">4</span>]</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pandas raises errors when it encounters non-numeric columns in a dataframe computation</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># but we can tell pandas to ignore them with the `numeric_only` parameter</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    mean_values <span class="op">=</span> dataframe.mean(numeric_only<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    years       <span class="op">=</span> pd.Series(mean_values.index.values).<span class="bu">str</span>.split(<span class="st">'_'</span>).<span class="bu">str</span>[<span class="op">-</span><span class="dv">1</span>].astype(<span class="bu">int</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    ax.plot(years, mean_values, label<span class="op">=</span>region)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># </span><span class="al">NOTE</span><span class="co">: another way of doing this selects just the columns with gdp in their name using the filter method</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># dataframe.filter(like="gdp").mean().plot(ax=ax, label=region)</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="co"># set the title and labels</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'GDP Per Capita for Regions Over Time'</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Year'</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the plot</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">'plots_pyworkshop/L14_meanGDP_regions.png'</span>, dpi<span class="op">=</span><span class="dv">600</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><img src="../../static/plots_pyworkshop/L14_meanGDP_regions.png" class="img-fluid" style="width:50.0%"></p>
 </div>
 </div>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.33">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -166,9 +166,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#exercises-lesson-11-lists" id="toc-exercises-lesson-11-lists" class="nav-link active" data-scroll-target="#exercises-lesson-11-lists">Exercises Lesson 11: Lists</a>
+  <ul class="collapse">
+  <li><a href="#fill-in-the-blanks" id="toc-fill-in-the-blanks" class="nav-link" data-scroll-target="#fill-in-the-blanks">Fill in the blanks</a></li>
+  <li><a href="#how-large-is-a-slice" id="toc-how-large-is-a-slice" class="nav-link" data-scroll-target="#how-large-is-a-slice">How Large is a Slice?</a></li>
+  <li><a href="#from-strings-to-lists-and-back" id="toc-from-strings-to-lists-and-back" class="nav-link" data-scroll-target="#from-strings-to-lists-and-back">From Strings to Lists and Back</a></li>
+  <li><a href="#working-with-the-end" id="toc-working-with-the-end" class="nav-link" data-scroll-target="#working-with-the-end">Working With the End</a></li>
+  </ul></li>
+  <li><a href="#additional-exercises" id="toc-additional-exercises" class="nav-link" data-scroll-target="#additional-exercises">Additional Exercises</a>
+  <ul class="collapse">
+  <li><a href="#stepping-through-a-list" id="toc-stepping-through-a-list" class="nav-link" data-scroll-target="#stepping-through-a-list">Stepping Through a List</a></li>
+  <li><a href="#slice-bounds" id="toc-slice-bounds" class="nav-link" data-scroll-target="#slice-bounds">Slice Bounds</a></li>
+  <li><a href="#sort-and-sorted" id="toc-sort-and-sorted" class="nav-link" data-scroll-target="#sort-and-sorted">Sort and Sorted</a></li>
+  <li><a href="#copying-or-not" id="toc-copying-or-not" class="nav-link" data-scroll-target="#copying-or-not">Copying (or Not)</a></li>
+  <li><a href="#negative-slicing" id="toc-negative-slicing" class="nav-link" data-scroll-target="#negative-slicing">Negative slicing</a></li>
+  <li><a href="#more-list-comprehensions-and-filtering" id="toc-more-list-comprehensions-and-filtering" class="nav-link" data-scroll-target="#more-list-comprehensions-and-filtering">More list comprehensions and filtering</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page-left" id="quarto-document-content">
 
 
 
@@ -188,7 +211,7 @@ Credits &amp; copyright
 </div>
 <hr>
 <section id="exercises-lesson-11-lists" class="level1">
-<h1>Exercises Lesson 11, Lists</h1>
+<h1>Exercises Lesson 11: Lists</h1>
 <!-- ####################################################################### -->
 <section id="fill-in-the-blanks" class="level3">
 <h3 class="anchored" data-anchor-id="fill-in-the-blanks">Fill in the blanks</h3>
@@ -299,9 +322,8 @@ Question
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>What does list(‘some string’) do?</li>
-<li>What does ‘-’.join([‘x’, ‘y’, ‘z’]) generate?<br>
-</li>
+<li>What does <code>list('some string')</code> do?</li>
+<li>What does <code>'-'.join(['x', 'y', 'z'])</code> generate?</li>
 </ol>
 </div>
 </div>
@@ -319,7 +341,7 @@ Answer
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><code>list('some string')</code> converts a string into a list containing all of its characters.</li>
-<li>join returns a string that is the concatenation of each string element in the list and adds the separator between each element in the list. This results in <code>x-y-z</code>. The separator between the elements is the string that provides this method.</li>
+<li><code>.join()</code> returns a string that is the concatenation of each string element in the list and adds the separator between each element in the list. This results in <code>x-y-z</code>. The separator between the elements is the string that provides this method.</li>
 </ol>
 </div>
 </div>
@@ -350,7 +372,7 @@ Question
 <ol start="2" type="1">
 <li>How does Python interpret a negative index?</li>
 <li>If a list or string has N elements, what is the most negative index that can safely be used with it, and what location does that index represent?</li>
-<li>If values is a list, what does del values[-1] do?</li>
+<li>If <code>values</code> is a list, what does <code>del values[-1]</code> do?</li>
 <li>How can you display all elements but the last one without changing values? (Hint: you will need to combine slicing and negative indexing.)</li>
 </ol>
 </div>
@@ -368,11 +390,11 @@ Answer
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>The program prints m.</p></li>
+<li><p>The program prints ‘m’.</p></li>
 <li><p>Python interprets a negative index as starting from the end (as opposed to starting from the beginning). The last element is -1.</p></li>
 <li><p>The last index that can safely be used with a list of N elements is element -N, which represents the first element.</p></li>
-<li><p>del values[-1] removes the last element from the list.</p></li>
-<li><p>values[:-1]</p></li>
+<li><p><code>del values[-1]</code> removes the last element from the list.</p></li>
+<li><p><code>values[:-1]</code></p></li>
 </ol>
 </div>
 </div>
@@ -428,8 +450,8 @@ Answer
 <ol type="1">
 <li>The program prints</li>
 </ol>
-<pre><code>furn
-eniroulf</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>furn</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>eniroulf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li><code>stride</code> is the step size of the slice.</li>
 <li>The slice <code>1::2</code> selects all even-numbered items from a collection: it starts with element 1 (which is the second element, since indexing starts at 0), goes on until the end (since no end is given), and uses a step size of 2 (i.e., selects every second element).</li>
@@ -473,8 +495,7 @@ Answer
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<pre><code>lithium
-</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>lithium</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The first statement prints the whole string, since the slice goes beyond the total length of the string. The second statement returns an empty string, because the slice goes “out of bounds” of the string.</p>
 </div>
 </div>
@@ -521,9 +542,9 @@ Answer
 <div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Program A prints:</p>
-<pre><code>letters is ['g', 'o', 'l', 'd'] and result is ['d', 'g', 'l', 'o']</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>letters <span class="kw">is</span> [<span class="st">'g'</span>, <span class="st">'o'</span>, <span class="st">'l'</span>, <span class="st">'d'</span>] <span class="kw">and</span> result <span class="kw">is</span> [<span class="st">'d'</span>, <span class="st">'g'</span>, <span class="st">'l'</span>, <span class="st">'o'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Program B prints:</p>
-<pre><code>letters is ['d', 'g', 'l', 'o'] and result is None</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>letters <span class="kw">is</span> [<span class="st">'d'</span>, <span class="st">'g'</span>, <span class="st">'l'</span>, <span class="st">'o'</span>] <span class="kw">and</span> result <span class="kw">is</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>sorted(letters)</code> returns a sorted copy of the list letters (the original list letters remains unchanged), while <code>letters.sort()</code> sorts the list letters in-place and does not return anything.</p>
 </div>
 </div>
@@ -536,7 +557,7 @@ Answer
 </section>
 <section id="copying-or-not" class="level3">
 <h3 class="anchored" data-anchor-id="copying-or-not">Copying (or Not)</h3>
-<p>What do these two programs print? In simple terms, explain the difference between new = old and new = old[:].</p>
+<p>What do these two programs print? In simple terms, explain the difference between <code>new = old</code> and <code>new = old[:]</code>.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -572,9 +593,9 @@ Answer
 <div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Program A prints:</p>
-<pre><code>new is ['D', 'o', 'l', 'd'] and old is ['D', 'o', 'l', 'd']</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>new <span class="kw">is</span> [<span class="st">'D'</span>, <span class="st">'o'</span>, <span class="st">'l'</span>, <span class="st">'d'</span>] <span class="kw">and</span> old <span class="kw">is</span> [<span class="st">'D'</span>, <span class="st">'o'</span>, <span class="st">'l'</span>, <span class="st">'d'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Program B outputs:</p>
-<pre><code>new is ['D', 'o', 'l', 'd'] and old is ['g', 'o', 'l', 'd']</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>new <span class="kw">is</span> [<span class="st">'D'</span>, <span class="st">'o'</span>, <span class="st">'l'</span>, <span class="st">'d'</span>] <span class="kw">and</span> old <span class="kw">is</span> [<span class="st">'g'</span>, <span class="st">'o'</span>, <span class="st">'l'</span>, <span class="st">'d'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>new = old</code> makes new a reference to the list <code>old</code>; <code>new</code> and <code>old</code> point towards the same object.</p>
 <p><code>new = old[:]</code> however creates a new list object new containing all elements from the list <code>old</code>; <code>new</code> and <code>old</code> are different objects.</p>
 </div>
@@ -594,7 +615,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question …
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -614,7 +635,7 @@ Answer
 </div>
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>From <a href="https://www.geeksforgeeks.org/slicing-with-negative-numbers-in-python/">geeksforgeeks</a></p>
+<p>From <a href="https://www.geeksforgeeks.org/slicing-with-negative-numbers-in-python/">geeksforgeeks</a>:</p>
 <p>The slicing operator “:” has the following syntax</p>
 <pre><code>sequence[Start : End : Step]
 
@@ -627,7 +648,7 @@ Parameters:
 <p>If we look at the image below we can see that <code>-7</code> points to the letter ‘L’.</p>
 <p><img src="lithium.png" class="img-fluid" style="width:50.0%"></p>
 <p>The second index <code>3</code> points to the endpoint but does not include it so the output will be</p>
-<pre><code>lit</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>lit</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -649,8 +670,10 @@ Question A
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Edit the following code such that the list consists of values <code>2x+x^2-1</code> where x is the index of the list element.</p>
+<p>A very simple comprehension syntax looks like this:</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>[x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Edit the code such that we make a new list consisting of values <code>2x+x^2-1</code>, where <code>x</code> is the index of the list element.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>____ <span class="op">=</span> [____ <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -665,7 +688,7 @@ Answer
 </div>
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>some_list <span class="op">=</span> [<span class="dv">2</span><span class="op">*</span>x<span class="op">+</span>x<span class="op">**</span><span class="dv">2</span><span class="op">-</span><span class="dv">1</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>some_list <span class="op">=</span> [<span class="dv">2</span><span class="op">*</span>x<span class="op">+</span>x<span class="op">**</span><span class="dv">2</span><span class="op">-</span><span class="dv">1</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -680,7 +703,7 @@ Question B
 </div>
 <div class="callout-body-container callout-body">
 <p>Now from that list, select values that are &gt; 10, by modifying the following code:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>[x <span class="cf">for</span> x <span class="kw">in</span> your_list <span class="cf">if</span> ______]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>[x <span class="cf">for</span> x <span class="kw">in</span> your_list <span class="cf">if</span> ______]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -695,10 +718,10 @@ Answer
 </div>
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>some_list_sel <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> some_list <span class="cf">if</span> x<span class="op">&gt;</span><span class="dv">10</span>]</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(some_list)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(some_list_sel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>some_list_sel <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> some_list <span class="cf">if</span> x<span class="op">&gt;</span><span class="dv">10</span>]</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(some_list)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(some_list_sel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The print statements show it has worked.</p>
 </div>
 </div>
@@ -728,11 +751,10 @@ Answer
 </div>
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>some_list_np <span class="op">=</span> np.array(some_list)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>some_list_np_sel <span class="op">=</span> some_list_np[some_list_np<span class="op">&gt;</span><span class="dv">10</span>]</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(some_list_np_sel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>some_list_np <span class="op">=</span> np.array(some_list)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>some_list_np_sel <span class="op">=</span> some_list_np[some_list_np<span class="op">&gt;</span><span class="dv">10</span>]</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(some_list_np_sel)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -747,19 +769,25 @@ Question D
 </div>
 <div class="callout-body-container callout-body">
 <p>Given:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>list_withtop <span class="op">=</span> [<span class="dv">1000</span><span class="op">+-</span><span class="dv">10</span><span class="op">*</span>(x<span class="op">-</span><span class="dv">7</span>)<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>1. Find the position of the maximum value in this array.
-2. Edit the code above such that the maximum value shifts to an index of your choice.   
-      Check whether you succeedded by finding the maximum value.
-3. Multiply your list with `-1`, and put the result in another list.
-    1. Where are now the maximum and minimum values?
-    2. Does this make sense?
-4. `list_line = [70*x-1000 for x in range(20)]`
-    1. What's the biggest value, either negative or positive, in this list?
-    2. And the index of that number?
-    3. What's the standard deviation?
-    4. Can you calculate the correlation between list_withtop and list_line?
-    5. Can you make a scatter plot of  list_withtop versus list_line?</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>list_withtop <span class="op">=</span> [<span class="dv">1000</span><span class="op">+-</span><span class="dv">10</span><span class="op">*</span>(x<span class="op">-</span><span class="dv">7</span>)<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>Find the position of the maximum value in this array.</li>
+<li>Edit the code above such that the maximum value shifts to an index of your choice. Check whether you succeedded by finding the maximum value.<br>
+</li>
+<li>Multiply your list with <code>-1</code>, and put the result in another list.
+<ol type="1">
+<li>Where are now the maximum and minimum values?</li>
+<li>Does this make sense?</li>
+</ol></li>
+<li><code>list_line = [70*x-1000 for x in range(20)]</code>
+<ol type="1">
+<li>What’s the biggest value, either negative or positive, in this list?</li>
+<li>And the index of that number?</li>
+<li>What’s the standard deviation?</li>
+<li>Can you calculate the correlation between list_withtop and list_line?</li>
+<li>Can you make a scatter plot of list_withtop versus list_line?</li>
+</ol></li>
+</ol>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">

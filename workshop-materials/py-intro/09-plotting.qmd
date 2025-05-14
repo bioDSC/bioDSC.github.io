@@ -1,5 +1,7 @@
-
-
+---
+toc: true
+toc-expand: 2
+---
 
 ::: {.callout-note}
 ## Credits & copyright
@@ -12,11 +14,11 @@ which also applies to the contents of this website.
 
 <!-- ####################################################################### -->
 
-# Exercises Lesson 9, plotting
+# Exercises Lesson 9: Plotting
 
-### Minima and Maxima 
+### Minima and maxima 
 ::: {#question-minmax .callout-tip icon='false'}
-## Question A
+## Question
 Fill in the blanks below to plot the minimum GDP per capita over time for all the countries in Europe. 
 
 Modify it again to plot the maximum GDP per capita over time for Europe, you need to edit the code beyond the `___` for this.
@@ -75,7 +77,7 @@ edited by the *bio*DSC.</font>*
 
 ### Mean gene expression
 
-Use the kohela data again:
+Use the kohela data again, and process it as such:
 
 ```python
 # Load data, note the ".T" at the end here
@@ -142,8 +144,6 @@ or [Seurat](https://satijalab.org/seurat/) (R) to analyze your data. The authors
 :::
 
 
-
-
 ::: {.callout-tip icon='false'}
 ## Question B
 Now create a scatter plot, showing WT1 expression vs. TBX18 expression across all cells.
@@ -151,6 +151,8 @@ What does this tell us?
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
+Creating a scatterplot is straightforward:
+
 ```python
 sns.scatterplot(df_kohela, x='WT1', y='TBX18')
 ```
@@ -159,18 +161,13 @@ sns.scatterplot(df_kohela, x='WT1', y='TBX18')
 
 This plot highlights a few challenges with data analysis.
 
-Single cell RNA-seq data can typically show only a few reads per gene per cell, or even zero, even when the gene is expressed.
-This is a limitation of the RNA-seq technique.
+Single cell RNA-seq data can typically show only a few reads per gene per cell, or even zero, even when the gene is expressed. This is a limitation of the RNA-seq technique. This results in many cells having only few or zero counts for the WT1 and TBX18 gene expression. In addition, the high number number of cells results in many overlapping datapoints. It is therefore hard to see any pattern in the data.
 
-This results in many cells having only few or zero counts for the WT1 and TBX18 gene expression, and many overlapping datapoints.
-It is therefor hard to see any pattern in the data.
+We can make the individual point slightly transparent by adding `alpha=0.1` as argument to the scatterplot method. This already helps to visualize the data better:
 
-Adding `alpha=0.1` as argument to the scatterplot method already helps to visualize the data better:
-
-```
+```python
 sns.scatterplot(df_kohela, x='WT1', y='TBX18', alpha=.1)
 ```
-
 
 ![](/static/plots_pyworkshop/L9_scatter_WT1_TBX18_alpha.png){width=25%}
 
@@ -181,10 +178,9 @@ because our detection is not sufficient to identify such a correlation from this
 :::
 
 
-
 ::: {.callout-tip icon='false'}
 ## Question C
-Color the scatter plot per cell type.
+Color individual datapoints of the scatter plot per cell type.
 What does this tell us?
 :::
 ::: {.callout-caution collapse='true' icon='false'}
@@ -196,9 +192,9 @@ sns.scatterplot(df_kohela, x='WT1', y='TBX18', hue='Celltype')
 
 # ![](/static/plots_pyworkshop/L9_scatter_WT1_TBX18_Celltype.png){width=40%} 
 
-This plot is still somewhat hard to interpret. Some points are overlaying on top of each other.
+This plot is still somewhat hard to interpret, because many points are overlaying on top of each other.
 
-One way to disentangle the points, is to plot them separately:
+One way to disentangle the points, is to plot the different celltypes separately:
 
 ```python
 maxval = np.max(df_kohela.loc[:,['WT1','TBX18']])
@@ -240,9 +236,6 @@ and moreover many WT- cells (the unknown cells) that show TBX18 expression,
 so these plots are not conclusive, and more sophisticated single cell methods
 might be needed to further study these cells.
 
-
-
-
 :::
 
 
@@ -281,7 +274,7 @@ This plot tells us that for each cell type the average total number of reads are
 
 <!-- ####################################################################### -->
 
-### More Correlations
+### More correlations
 
 This short program creates a plot showing the correlation between GDP and life expectancy for 2007, scaling marker size by population:
 
@@ -329,7 +322,7 @@ edited by the *bio*DSC.</font>*
 <!-- bioDSC -->
 
 ::: {.callout-tip icon='false'}
-## Question 
+## Question A
 
 Use the code from the "More Correlations" exercise, and try to add the following lines to the plotting code:
 
@@ -366,7 +359,7 @@ The result:
 
 
 ::: {.callout-tip icon='false'}
-## Question H
+## Question B
 
 How would you add labels for the top 10 GDP countries?
 :::
@@ -397,7 +390,7 @@ Select the following genes: `['WT1', 'TBX18', 'TFAP2A', 'COL2A1', 'ACTA2', 'PPAR
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
-```
+```python
 df_kohela_sel = \
     df_kohela.loc[:,['WT1', 'TBX18', 'TFAP2A', 'COL2A1', 'ACTA2', 'PPARG', 'CEBPA','Celltype','Condition']]
 ```
@@ -415,8 +408,10 @@ Now melt this dataframe using `pd.melt()`, and use cell type and condition as id
 
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
-```
-df_kohela_melted = pd.melt(df_kohela_sel, id_vars=['Celltype','Condition'], var_name='Gene', value_name='Expression')
+```python
+df_kohela_melted = pd.melt(df_kohela_sel, \
+    id_vars=['Celltype','Condition'], \
+    var_name='Gene', value_name='Expression')
 ```
 
 - *What will happen to the gene expression values?*
@@ -472,7 +467,7 @@ Is there an issue with this plot?
 
 The code:
 
-```
+```python
 sns.violinplot(df_kohela_melted, x='Gene', y='Expression', hue='Condition')
 plt.show()
 sns.stripplot(df_kohela_melted, x='Gene', y='Expression', hue='Condition', ax=ax, dodge=1)
@@ -592,7 +587,7 @@ df_kohela_melted['Expression_normalized'] = df_kohela_grouped['Expression'].tran
 The bar code hides the information about the distribution of the single data points.
 So perhaps it is best to combine those two plots:
 
-```
+```python
 sns.barplot(df_kohela_melted, x='Gene', y='Expression_normalized', 
             hue='Condition', ci=None)
 sns.stripplot(df_kohela_melted, x='Gene', y='Expression_normalized', 
@@ -707,9 +702,9 @@ plt.close(fig)
 
 
 ::: {.callout-tip icon='false'}
-## Question 
+## Question A
 
-Modify the code from "Minima and Maxima" exercise (Exercise A) to create a scatter plot showing the relationship between the minimum and maximum GDP per capita across the countries in Asia, with each point in the plot corresponding to a year. What relationship do you see (if any)?
+Modify the code from "Minima and Maxima" exercise to create a scatter plot showing the relationship between the minimum and maximum GDP per capita across the countries in Asia, with each point in the plot corresponding to a year. What relationship do you see (if any)?
 :::
 
 
@@ -740,19 +735,8 @@ for a specific year, indicating that GDPs across asia do not tend to rise and fa
 :::
 
 
-<!-- Carpentries credits L9, edited -->
-<div class="text-end">
-*<font color="#aaaaaa" size=1>Source: [Carpentries workshop materials](https://swcarpentry.github.io/python-novice-gapminder/09-plotting.html){style="color: #777777" target=_blank},
-edited by the *bio*DSC.</font>*
-</div>
-
-
-
-<!-- ####################################################################### -->
-
-### Correlations (continued) 
-::: {.callout-note icon='false'}
-## Exercise
+::: {.callout-tip icon='false'}
+## Question B
 You might note that the variability in the maximum is much higher than that of the minimum. 
 Take a look at the maximum over time and the max indexes:
 
@@ -775,14 +759,11 @@ print(data_asia.idxmin())
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
-
 The plot looks like:
 
 ![](/static/plots_pyworkshop/L9_plot_max_GDP_asia.png){width=40%}
 
 Seems the variability in this value is due to a sharp drop after 1972. Some geopolitics at play perhaps? Given the dominance of oil producing countries, maybe the Brent crude index would make an interesting comparison? Whilst Myanmar consistently has the lowest GDP, the highest GDP nation has varied more notably.
-
-
 
 :::
 
@@ -797,8 +778,6 @@ edited by the *bio*DSC.</font>*
 
 ### Normalized dataframe
 
-
-
 ::: {.callout-tip icon='false'}
 ## Question 
 1. In the previous lesson about dataframes (in the additional exercises), we normalized the GDP data against the average trend. Plot the data from this normalized dataframe.
@@ -808,7 +787,7 @@ edited by the *bio*DSC.</font>*
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
-```
+```python
 # Copy the df to modify it and not interfer with other code
 data_europe_relative_copy = data_europe_relative.copy()
 # Add the country as column
@@ -837,15 +816,13 @@ A solution to this issue is left for another time.
 
 <!-- ####################################################################### -->
 
-### Crude 
+### Crude oil
 
 ::: {.callout-tip icon='false'}
 ## Exercise 
-Crude oil prices can be found at:
-https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=F000000__3&f=A
+Crude oil prices can be found [here](https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=F000000__3&f=A).
 
 This gives the data below:
-
 ```
 Decade	Year-0	Year-1	Year-2	Year-3	Year-4	Year-5	Year-6	Year-7	Year-8	Year-9
   1850's										16.00

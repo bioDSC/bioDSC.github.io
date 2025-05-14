@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.33">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -166,9 +166,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#exercises-lesson-7-dataframes-1" id="toc-exercises-lesson-7-dataframes-1" class="nav-link active" data-scroll-target="#exercises-lesson-7-dataframes-1">Exercises Lesson 7: Dataframes (1)</a>
+  <ul class="collapse">
+  <li><a href="#reading-other-data" id="toc-reading-other-data" class="nav-link" data-scroll-target="#reading-other-data">Reading other data</a></li>
+  <li><a href="#inspecting-data" id="toc-inspecting-data" class="nav-link" data-scroll-target="#inspecting-data">Inspecting data</a></li>
+  <li><a href="#navigating-directories" id="toc-navigating-directories" class="nav-link" data-scroll-target="#navigating-directories">Navigating directories</a></li>
+  <li><a href="#writing-data" id="toc-writing-data" class="nav-link" data-scroll-target="#writing-data">Writing data</a></li>
+  </ul></li>
+  <li><a href="#additional-exercises" id="toc-additional-exercises" class="nav-link" data-scroll-target="#additional-exercises">Additional exercises</a>
+  <ul class="collapse">
+  <li><a href="#working-with-data" id="toc-working-with-data" class="nav-link" data-scroll-target="#working-with-data">Working with data</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page-left" id="quarto-document-content">
 
 
 
@@ -188,7 +206,7 @@ Credits &amp; copyright
 </div>
 <hr>
 <section id="exercises-lesson-7-dataframes-1" class="level1">
-<h1>Exercises lesson 7, dataframes (1)</h1>
+<h1>Exercises Lesson 7: Dataframes (1)</h1>
 <!-- ####################################################################### -->
 <section id="reading-other-data" class="level3">
 <h3 class="anchored" data-anchor-id="reading-other-data">Reading other data</h3>
@@ -202,7 +220,7 @@ Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read the data in gapminder_gdp_americas.csv (which should be in the same directory as gapminder_gdp_oceania.csv) into a variable called data_americas and display its summary statistics.</p>
+<p>Read the data in <code>gapminder_gdp_americas.csv</code> (which should be in the same directory as <code>gapminder_gdp_oceania.csv</code>) into a variable called <code>data_americas</code> and display its summary statistics.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -217,7 +235,7 @@ Answer
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>To read in a CSV, we use pd.read_csv and pass the filename ‘data/gapminder_gdp_americas.csv’ to it. We also once again pass the column name ‘country’ to the parameter index_col in order to index by country. The summary statistics can be displayed with the DataFrame.describe() method.</p>
+<p>To read in a CSV, we use <code>pd.read_csv</code> and pass the filename ‘data/gapminder_gdp_americas.csv’ to it. We also once again pass the column name ‘country’ to the parameter index_col in order to index by country. The summary statistics can be displayed with the <code>DataFrame.describe()</code> method.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data_americas <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_americas.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data_americas.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -241,7 +259,7 @@ Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>After reading the data for the Americas, use help(data_americas.head) and help(data_americas.tail) to find out what DataFrame.head and DataFrame.tail do.</p>
+<p>After reading the data for the Americas, use <code>help(data_americas.head)</code> and <code>help(data_americas.tail)</code> to find out what <code>DataFrame.head</code> and <code>DataFrame.tail</code> do.</p>
 <ol type="1">
 <li>What method call will display the first three rows of this data?</li>
 <li>What method call will display the last three columns of this data? (Hint: you may need to change your view of the data.)</li>
@@ -261,7 +279,7 @@ Answer
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>We can check out the first five rows of data_americas by executing data_americas.head() which lets us view the beginning of the DataFrame. We can specify the number of rows we wish to see by specifying the parameter n in our call to data_americas.head(). To view the first three rows, execute:</li>
+<li>We can check out the first five rows of data_americas by executing d<code>ata_americas.head()</code> which lets us view the beginning of the DataFrame. We can specify the number of rows we wish to see by specifying the parameter <code>n</code> in our call to <code>data_americas.head()</code>. To view the first three rows, execute:</li>
 </ol>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data_americas.head(n<span class="op">=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>continent  gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  <span class="op">\</span></span>
@@ -338,11 +356,11 @@ Question
 </div>
 <div class="callout-body-container callout-body">
 <p>The data for your current project is stored in a file called microbes.csv, which is located in a folder called field_data. You are doing analysis in a notebook called analysis.ipynb in a sibling folder called thesis:</p>
-<pre><code>your_home_directory
-+-- field_data/
-|   +-- microbes.csv
-+-- thesis/
-    +-- analysis.ipynb</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>your_home_directory</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="op">+--</span> field_data<span class="op">/</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="op">|</span>   <span class="op">+--</span> microbes.csv</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="op">+--</span> thesis<span class="op">/</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">+--</span> analysis.ipynb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>What value(s) should you pass to read_csv to read microbes.csv in analysis.ipynb?</p>
 </div>
 </div>
@@ -358,7 +376,7 @@ Answer
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We need to specify the path to the file of interest in the call to pd.read_csv. We first need to ‘jump’ out of the folder thesis using ‘../’ and then into the folder field_data using ‘field_data/’. Then we can specify the filename `microbes.csv. The result is as follows:</p>
+<p>We need to specify the path to the file of interest in the call to <code>pd.read_csv</code>. We first need to ‘jump’ out of the folder thesis using ‘../’ and then into the folder field_data using ‘field_data/’. Then we can specify the filename `microbes.csv. The result is as follows:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data_microbes <span class="op">=</span> pd.read_csv(<span class="st">'../field_data/microbes.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -381,7 +399,7 @@ Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>As well as the read_csv function for reading data from a file, Pandas provides a to_csv function to write dataframes to files. Applying what you’ve learned about reading from files, write one of your dataframes to a file called processed.csv. You can use help to get information on how to use to_csv.</p>
+<p>As well as the <code>read_csv()</code> function for reading data from a file, Pandas provides a <code>to_csv()</code> function to write dataframes to files. Applying what you’ve learned about reading from files, write one of your dataframes to a file called processed.csv. You can use help to get information on how to use <code>to_csv()</code>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -401,7 +419,7 @@ Answer
 <p>For help on read_csv or to_csv, you could execute, for example:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(data_americas.to_csv)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(pd.read_csv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Note that help(to_csv) or help(pd.to_csv) throws an error! This is due to the fact that to_csv is not a global Pandas function, but a member function of DataFrames. This means you can only call it on an instance of a DataFrame e.g., data_americas.to_csv or data_oceania.to_csv</p>
+<p>Note that <code>help(to_csv)</code> or <code>help(pd.to_csv)</code> throws an error! This is due to the fact that to_csv is not a global Pandas function, but a member function of DataFrames. This means you can only call it on an instance of a DataFrame e.g., <code>data_americas.to_csv</code> or <code>data_oceania.to_csv</code></p>
 </div>
 </div>
 </div>

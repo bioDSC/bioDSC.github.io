@@ -1,3 +1,7 @@
+---
+toc: true
+toc-expand: 2
+---
 
 ::: {.callout-note}
 ## Credits & copyright
@@ -9,7 +13,7 @@ which also applies to the contents of this website.
 
 ---
 
-# Exercises Lesson 14, Looping over data
+# Exercises Lesson 14: Looping over data
 
 <!-- ####################################################################### -->
 
@@ -17,7 +21,7 @@ which also applies to the contents of this website.
 
 ::: {.callout-tip icon='false'}
 ## Question 
-Which of these files is *not* matched by the expression glob.glob('data/*as*.csv')?
+Which of these files is *not* matched by the expression `glob.glob('data/*as.csv')`?
 
 ```
 1. data/gapminder_gdp_africa.csv
@@ -56,7 +60,7 @@ for filename in glob.glob('data/*.csv'):
 print('smallest file has', fewest, 'records')
 ```
 
-Note that the DataFrame.shape() method returns a tuple with the number of rows and columns of the data frame.
+Note that the `DataFrame.shape()` method returns a tuple with the number of rows and columns of the data frame.
 
 :::
 
@@ -101,7 +105,7 @@ Write a program that reads in the regional data sets and plots the average GDP p
 ## Answer
 
 
-```
+```python
 import glob
 import pandas as pd
 import matplotlib.pyplot as plt

@@ -1,3 +1,7 @@
+---
+toc: true
+toc-expand: 2
+---
 
 ::: {.callout-note}
 ## Credits & copyright
@@ -9,7 +13,7 @@ which also applies to the contents of this website.
 
 ---
 
-# Exercises Lesson 16, Functions
+# Exercises Lesson 16: Functions
 
 
 <!-- ####################################################################### -->
@@ -34,9 +38,9 @@ def another_function
 ## Answer
 
 ```python
-def another_function():
+def another_function(): # the function definition was not finished
   print("Syntax errors are annoying.")
-  print("But at least Python tells us about them!")
+  print("But at least Python tells us about them!") # this line was not properly indented
   print("So they are usually not too hard to fix.")
 ```
 :::
@@ -166,11 +170,11 @@ result of call is: None
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
-1. The problem with the example is that the function print_time() is defined after the call to the function is made. Python doesn't know how to resolve the name print_time since it hasn't been defined yet and will raise a NameError e.g., NameError: name 'print_time' is not defined
+1. The problem with the example is that the function `print_time()` is defined after the call to the function is made. Python doesn't know how to resolve the name `print_time` since it hasn't been defined yet and will raise a NameError e.g., `NameError: name 'print_time' is not defined`
 
-2. The first line of output 11:37:59 is printed by the first line of code, result = print_time(11, 37, 59) that binds the value returned by invoking print_time to the variable result. The second line is from the second print call to print the contents of the result variable.
+2. The first line of output 11:37:59 is printed by the first line of code, `result = print_time(11, 37, 59)` that binds the value returned by invoking `print_time` to the variable `result`. The second line is from the second print call to print the contents of the `result` variable.
 
-3. print_time() does not explicitly return a value, so it automatically returns None.
+3. `print_time()` does not explicitly return a value, so it automatically returns None.
 
 :::
 
@@ -267,7 +271,7 @@ print_date(day=1, month=2, year=2003)
 ### Primes
 
 ::: {.callout-tip icon='false'}
-## Question ...
+## Question
 Write a function that looks as follows:
 ```python
 def calculate_primes(N):

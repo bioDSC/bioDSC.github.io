@@ -1,14 +1,14 @@
 /*-- scss:defaults --*/
 
+
 /*-- scss:rules --*/
 bs-link-color-rgb {
     color: #FF0000;   
 }
 
+
 link { color: #FF0000; } /* CSS link color */
 a { color: #10683c;}
-
-
 
 body > footer{
     margin:0px;

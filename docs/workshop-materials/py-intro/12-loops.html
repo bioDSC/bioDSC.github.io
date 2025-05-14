@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.33">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -166,9 +166,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#exercises-lesson-12-loops" id="toc-exercises-lesson-12-loops" class="nav-link active" data-scroll-target="#exercises-lesson-12-loops">Exercises Lesson 12: Loops</a>
+  <ul class="collapse">
+  <li><a href="#tracing-execution" id="toc-tracing-execution" class="nav-link" data-scroll-target="#tracing-execution">Tracing Execution</a></li>
+  <li><a href="#practice-accumulating" id="toc-practice-accumulating" class="nav-link" data-scroll-target="#practice-accumulating">Practice Accumulating</a></li>
+  </ul></li>
+  <li><a href="#additional-exercises" id="toc-additional-exercises" class="nav-link" data-scroll-target="#additional-exercises">Additional Exercises</a>
+  <ul class="collapse">
+  <li><a href="#plotting-automation" id="toc-plotting-automation" class="nav-link" data-scroll-target="#plotting-automation">Plotting automation</a></li>
+  <li><a href="#reversing-a-string" id="toc-reversing-a-string" class="nav-link" data-scroll-target="#reversing-a-string">Reversing a String</a></li>
+  <li><a href="#practice-accumulating-again" id="toc-practice-accumulating-again" class="nav-link" data-scroll-target="#practice-accumulating-again">Practice Accumulating (again)</a></li>
+  <li><a href="#identifying-item-errors" id="toc-identifying-item-errors" class="nav-link" data-scroll-target="#identifying-item-errors">Identifying Item Errors</a></li>
+  <li><a href="#cumulative-sum-code-puzzle" id="toc-cumulative-sum-code-puzzle" class="nav-link" data-scroll-target="#cumulative-sum-code-puzzle">Cumulative Sum (code puzzle)</a></li>
+  <li><a href="#identifying-variable-name-errors" id="toc-identifying-variable-name-errors" class="nav-link" data-scroll-target="#identifying-variable-name-errors">Identifying Variable Name Errors</a></li>
+  <li><a href="#classifying-errors" id="toc-classifying-errors" class="nav-link" data-scroll-target="#classifying-errors">Classifying Errors</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page-left" id="quarto-document-content">
 
 
 
@@ -188,7 +210,7 @@ Credits &amp; copyright
 </div>
 <hr>
 <section id="exercises-lesson-12-loops" class="level1">
-<h1>Exercises Lesson 12, Loops</h1>
+<h1>Exercises Lesson 12: Loops</h1>
 <!-- ####################################################################### -->
 <section id="tracing-execution" class="level3">
 <h3 class="anchored" data-anchor-id="tracing-execution">Tracing Execution</h3>
@@ -314,11 +336,11 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question
+Question A
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Fill in the blanks in each of the programs below to produce the indicated result.</p>
+<p>Fill in the blanks in the program below to produce the indicated result.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Total length of the strings in the list: ["red", "green", "blue"] =&gt; 12</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> [<span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>]:</span>
@@ -345,25 +367,17 @@ Answer
 </div>
 </div>
 </div>
-<!-- Carpentries credits L12 -->
-<div class="text-end">
-<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>.</font></em></p>
-</div>
-<!-- ####################################################################### -->
-</section>
-<section id="practice-accumulating-2-continued" class="level3">
-<h3 class="anchored" data-anchor-id="practice-accumulating-2-continued">Practice Accumulating 2 (continued)</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question
+Question B
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Fill in the blanks in each of the programs below to produce the indicated result.</p>
+<p>Fill in the blanks in the program below to produce the indicated result.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List of word lengths: ["red", "green", "blue"] =&gt; [3, 5, 4]</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>lengths <span class="op">=</span> ____</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> [<span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>]:</span>
@@ -390,25 +404,17 @@ Answer
 </div>
 </div>
 </div>
-<!-- Carpentries credits L12 -->
-<div class="text-end">
-<p><em><font color="#aaaaaa" size="1">Source: <a href="https://swcarpentry.github.io/python-novice-gapminder/12-for-loops.html" style="color: #777777" target="_blank">Carpentries workshop materials</a>.</font></em></p>
-</div>
-<!-- ####################################################################### -->
-</section>
-<section id="practice-accumulating-3-continued" class="level3">
-<h3 class="anchored" data-anchor-id="practice-accumulating-3-continued">Practice Accumulating 3 (continued)</h3>
-<p>Fill in the blanks in each of the programs below to produce the indicated result.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question
+Question C
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>Fill in the blanks in the program below to produce the indicated result.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Concatenate all words: ["red", "green", "blue"] =&gt; "redgreenblue"</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [<span class="st">"red"</span>, <span class="st">"green"</span>, <span class="st">"blue"</span>]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> ____</span>
@@ -479,21 +485,19 @@ Answer
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<pre><code>
-# Maybe get the top 3 and bottom 3, and some more
-top3_life = df_all.loc[:,'lifeExp_2007'].nlargest(3).index
-bottom3_life = df_all.loc[:,'lifeExp_2007'].nsmallest(3).index
-custom_countries = ['Netherlands','United States']
-# Merge those three lists
-my_countries_to_select = list(top3_life) + list(bottom3_life) + custom_countries
-
-# Plot
-sns.scatterplot(df_all, x='gdpPercap_2007', y='lifeExp_2007', size='pop_2007', sizes=(1,40**2), legend=False)
-# Now add text automatically
-for country in my_countries_to_select:
-    plt.text(df_all.loc[country,'gdpPercap_2007'], df_all.loc[country,'lifeExp_2007'], country, fontsize=5)
-plt.show()
-</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Maybe get the top 3 and bottom 3, and some more</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>top3_life <span class="op">=</span> df_all.loc[:,<span class="st">'lifeExp_2007'</span>].nlargest(<span class="dv">3</span>).index</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>bottom3_life <span class="op">=</span> df_all.loc[:,<span class="st">'lifeExp_2007'</span>].nsmallest(<span class="dv">3</span>).index</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>custom_countries <span class="op">=</span> [<span class="st">'Netherlands'</span>,<span class="st">'United States'</span>]</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge those three lists</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>my_countries_to_select <span class="op">=</span> <span class="bu">list</span>(top3_life) <span class="op">+</span> <span class="bu">list</span>(bottom3_life) <span class="op">+</span> custom_countries</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(df_all, x<span class="op">=</span><span class="st">'gdpPercap_2007'</span>, y<span class="op">=</span><span class="st">'lifeExp_2007'</span>, size<span class="op">=</span><span class="st">'pop_2007'</span>, sizes<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">40</span><span class="op">**</span><span class="dv">2</span>), legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Now add text automatically</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> country <span class="kw">in</span> my_countries_to_select:</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    plt.text(df_all.loc[country,<span class="st">'gdpPercap_2007'</span>], df_all.loc[country,<span class="st">'lifeExp_2007'</span>], country, fontsize<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This plot looks like:</p>
 <p><img src="../../static/plots_pyworkshop/L12_GDPscatter.png" class="img-fluid" style="width:40.0%"></p>
 <p>A bit messy with the overlapping text, but this worked great otherwise!</p>
@@ -524,7 +528,11 @@ Question
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> char <span class="kw">in</span> original:</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> ____</span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>bioDSC hint</strong> If this is challenging: - try to first reproduce the word tin in result, using this loop. - Use a similar approach as the examples we used.</p>
+<p><strong>Hint:</strong> If this is challenging:</p>
+<ul>
+<li>Try to first reproduce the word tin in result, using this loop.</li>
+<li>Use a similar approach as the examples we used.</li>
+</ul>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -553,8 +561,8 @@ Answer
 </div>
 <!-- ####################################################################### -->
 </section>
-<section id="practice-accumulating-continued-from-above" class="level3">
-<h3 class="anchored" data-anchor-id="practice-accumulating-continued-from-above">Practice Accumulating (continued from above)</h3>
+<section id="practice-accumulating-again" class="level3">
+<h3 class="anchored" data-anchor-id="practice-accumulating-again">Practice Accumulating (again)</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -567,8 +575,7 @@ Question
 <div class="callout-body-container callout-body">
 <p>Create an acronym: Starting from the list <code>["red", "green", "blue"]</code>, create the acronym “RGB” using a for loop.</p>
 <ul>
-<li><strong>bioDSC remark</strong>: Note the capitals in “RGB”!</li>
-<li><strong>Hint</strong>: You may need to use a string method to properly format the acronym.</li>
+<li><strong>Remark</strong>: Note the capitals in “RGB”! You may need to use a string method to properly format the acronym.</li>
 </ul>
 </div>
 </div>
@@ -609,7 +616,11 @@ Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Read the code below and try to identify what the errors are without running it. 2. Run the code, and read the error message. What type of error is it? 3. Fix the error.</p>
+<ol type="1">
+<li>Read the code below and try to identify what the errors are without running it.</li>
+<li>Run the code, and read the error message. What type of error is it?</li>
+<li>Fix the error.</li>
+</ol>
 <div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>seasons <span class="op">=</span> [<span class="st">'Spring'</span>, <span class="st">'Summer'</span>, <span class="st">'Fall'</span>, <span class="st">'Winter'</span>]</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'My favorite season is '</span>, seasons[<span class="dv">4</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>

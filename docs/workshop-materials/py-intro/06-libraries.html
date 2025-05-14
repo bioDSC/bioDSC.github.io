@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.33">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -166,9 +166,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#exercises-lesson-6-libraries" id="toc-exercises-lesson-6-libraries" class="nav-link active" data-scroll-target="#exercises-lesson-6-libraries">Exercises Lesson 6: Libraries</a>
+  <ul class="collapse">
+  <li><a href="#explore" id="toc-explore" class="nav-link" data-scroll-target="#explore">Explore</a></li>
+  <li><a href="#find-the-right-module" id="toc-find-the-right-module" class="nav-link" data-scroll-target="#find-the-right-module">Find the right module</a></li>
+  <li><a href="#help" id="toc-help" class="nav-link" data-scroll-target="#help">Help!</a></li>
+  <li><a href="#importing-with-aliases" id="toc-importing-with-aliases" class="nav-link" data-scroll-target="#importing-with-aliases">Importing with aliases</a></li>
+  <li><a href="#multiple-ways-of-importing" id="toc-multiple-ways-of-importing" class="nav-link" data-scroll-target="#multiple-ways-of-importing">Multiple ways of importing</a></li>
+  </ul></li>
+  <li><a href="#additional-exercises" id="toc-additional-exercises" class="nav-link" data-scroll-target="#additional-exercises">Additional exercises</a>
+  <ul class="collapse">
+  <li><a href="#jigsaw-progamming-example" id="toc-jigsaw-progamming-example" class="nav-link" data-scroll-target="#jigsaw-progamming-example">“Jigsaw”: progamming example</a></li>
+  <li><a href="#importing-specific-items" id="toc-importing-specific-items" class="nav-link" data-scroll-target="#importing-specific-items">Importing specific items</a></li>
+  <li><a href="#reading-error-messages" id="toc-reading-error-messages" class="nav-link" data-scroll-target="#reading-error-messages">Reading error messages</a></li>
+  <li><a href="#write-your-own-function" id="toc-write-your-own-function" class="nav-link" data-scroll-target="#write-your-own-function">Write your own function</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page-left" id="quarto-document-content">
 
 
 
@@ -188,7 +210,7 @@ Credits &amp; copyright
 </div>
 <hr>
 <section id="exercises-lesson-6-libraries" class="level1">
-<h1>Exercises Lesson 6, libraries</h1>
+<h1>Exercises Lesson 6: Libraries</h1>
 <!-- ####################################################################### -->
 <section id="explore" class="level3">
 <h3 class="anchored" data-anchor-id="explore">Explore</h3>
@@ -203,8 +225,8 @@ Question
 </div>
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>What function from the math module can you use to calculate a square root without using sqrt?</li>
-<li>Since the library contains this function, why does sqrt exist?</li>
+<li>What function from the math module can you use to calculate a square root without using the <code>sqrt</code> function?</li>
+<li>Since the library contains this function, why does <code>sqrt</code> exist?</li>
 </ol>
 </div>
 </div>
@@ -221,10 +243,10 @@ Answer
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li>Using help(math) we see that we’ve got pow(x,y) in addition to sqrt(x), so we could use pow(x, 0.5) to find a square root.</li>
-<li>The sqrt(x) function is arguably more readable than pow(x, 0.5) when implementing equations. Readability is a cornerstone of good programming, so it makes sense to provide a special function for this specific common case.</li>
+<li>Using <code>help(math)</code> we see that we’ve got <code>pow(x,y)</code> in addition to <code>sqrt(x)</code>, so we could use <code>pow(x, 0.5)</code> to find a square root.</li>
+<li>The <code>sqrt(x)</code> function is arguably more readable than <code>pow(x, 0.5)</code> when implementing equations. Readability is a cornerstone of good programming, so it makes sense to provide a special function for this specific common case.</li>
 </ol>
-<p>Also, the design of Python’s math library has its origin in the C standard, which includes both sqrt(x) and pow(x,y), so a little bit of the history of programming is showing in Python’s function names.</p>
+<p>Also, the design of Python’s math library has its origin in the C standard, which includes both <code>sqrt(x)</code> and <code>pow(x,y)</code>, so a little bit of the history of programming is showing in Python’s function names.</p>
 </div>
 </div>
 </div>
@@ -236,7 +258,7 @@ Answer
 </section>
 <section id="find-the-right-module" class="level3">
 <h3 class="anchored" data-anchor-id="find-the-right-module">Find the right module</h3>
-<p>You want to select a random character from a string:</p>
+<p>You want to select a random character from a string, such as the following DNA sequence:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bases <span class="op">=</span> <span class="st">'ACTTGCTTGAC'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -263,19 +285,19 @@ Answer
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>The random module seems like it could help.</p>
-<p>The string has 11 characters, each having a positional index from 0 to 10. You could use the random.randrange or random.randint functions to get a random integer between 0 and 10, and then select the bases character at that index:</p>
+<p>The <code>random</code> module seems like it could help, and there are multiple ways to reach the same goal.</p>
+<p>The string has 11 characters, each having a positional index from 0 to 10. You could use <code>random.randrange</code> or <code>random.randint</code> functions to get a random integer between 0 and 10, and then select the bases character at that index:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> randrange</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>random_index <span class="op">=</span> randrange(<span class="bu">len</span>(bases))</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bases[random_index])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>or more compactly:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> randrange</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(bases[randrange(<span class="bu">len</span>(bases))])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Perhaps you found the <strong>random.sample</strong> function? It allows for slightly less typing but might be a bit harder to understand just by reading:</p>
+<p>Perhaps you found the <code>random.sample</code> function? It allows for slightly less typing but might be a bit harder to understand just by reading:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> sample</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sample(bases, <span class="dv">1</span>)[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note that this function returns a list of values. We will learn about lists in episode 11.</p>
-<p>The simplest and shortest solution is the <strong>random.choice</strong> function that does exactly what we want:</p>
+<p>The simplest and shortest solution is the <code>random.choice</code> function that does exactly what we want:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> random <span class="im">import</span> choice</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(choice(bases))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -441,8 +463,8 @@ Answer
 <!-- ####################################################################### -->
 </section>
 </section>
-<section id="additional-exercises-lesson-6-libraries" class="level1">
-<h1>Additional Exercises Lesson 6, Libraries</h1>
+<section id="additional-exercises" class="level1">
+<h1>Additional exercises</h1>
 <!-- ####################################################################### -->
 <section id="jigsaw-progamming-example" class="level3">
 <h3 class="anchored" data-anchor-id="jigsaw-progamming-example">“Jigsaw”: progamming example</h3>
@@ -590,12 +612,9 @@ Answer
 </div>
 <!-- ####################################################################### -->
 </section>
-<section id="write-your-own-function-and-import-it" class="level3">
-<h3 class="anchored" data-anchor-id="write-your-own-function-and-import-it">Write your own function and import it</h3>
+<section id="write-your-own-function" class="level3">
+<h3 class="anchored" data-anchor-id="write-your-own-function">Write your own function</h3>
 <p>When you have a notebook file, you can also create another file, with a .py extension, and write functions in that file. The .py file can be imported like a library, and the functions in the file can be used as if they came from a library.</p>
-</section>
-<section id="writing-your-own-function" class="level3">
-<h3 class="anchored" data-anchor-id="writing-your-own-function">Writing your own function</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -623,7 +642,7 @@ Question
 <li>Save the file to <code>myfilename.py</code> (replacing myfilename with your own favorite name).</li>
 </ul></li>
 </ul></li>
-<li>*For Google colabs:
+<li><em>For Google colabs</em>:
 <ul>
 <li>To create a <code>.py</code> file, right click in the file overview (where you also put the gapminder <code>.csv</code> files), and select ‘new file’. Then create a file ‘myfilename.py’ and double click to edit it.*</li>
 </ul></li>
@@ -633,12 +652,11 @@ Question
 </ul></li>
 </ul>
 <p>You can write a function using the following template:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> myfunctionname():</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"hello world"</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> myfunctionname2(input1, input2):</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"input 1 = "</span>, input1, <span class="st">', input 2 = '</span>, input2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> myfunctionname():</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"hello world"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> myfunctionname2(input1, input2):</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"input 1 = "</span>, input1, <span class="st">', input 2 = '</span>, input2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </div>
 </div>

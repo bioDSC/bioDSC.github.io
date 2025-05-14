@@ -1,3 +1,7 @@
+---
+toc: true
+toc-expand: 2
+---
 
 ::: {.callout-note}
 ## Credits & copyright
@@ -8,7 +12,7 @@ which also applies to the contents of this website.
 
 ---
 
-# Exercises Lesson 6, libraries
+# Exercises Lesson 6: Libraries
 
 <!-- ####################################################################### -->
 
@@ -17,8 +21,8 @@ which also applies to the contents of this website.
 ::: {.callout-tip icon="false"}
 ### Question 
 
-1. What function from the math module can you use to calculate a square root without using sqrt?
-2. Since the library contains this function, why does sqrt exist?
+1. What function from the math module can you use to calculate a square root without using the `sqrt` function?
+2. Since the library contains this function, why does `sqrt` exist?
 
 
 :::
@@ -26,10 +30,10 @@ which also applies to the contents of this website.
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
 
-1. Using help(math) we see that we’ve got pow(x,y) in addition to sqrt(x), so we could use pow(x, 0.5) to find a square root.
-2. The sqrt(x) function is arguably more readable than pow(x, 0.5) when implementing equations. Readability is a cornerstone of good programming, so it makes sense to provide a special function for this specific common case.
+1. Using `help(math)` we see that we’ve got `pow(x,y)` in addition to `sqrt(x)`, so we could use `pow(x, 0.5)` to find a square root.
+2. The `sqrt(x)` function is arguably more readable than `pow(x, 0.5)` when implementing equations. Readability is a cornerstone of good programming, so it makes sense to provide a special function for this specific common case.
 
-Also, the design of Python’s math library has its origin in the C standard, which includes both sqrt(x) and pow(x,y), so a little bit of the history of programming is showing in Python’s function names.
+Also, the design of Python’s math library has its origin in the C standard, which includes both `sqrt(x)` and `pow(x,y)`, so a little bit of the history of programming is showing in Python’s function names.
 :::
 
 <!-- Carpentries credits L6 -->
@@ -41,7 +45,7 @@ Also, the design of Python’s math library has its origin in the C standard, wh
 
 ### Find the right module
 
-You want to select a random character from a string:
+You want to select a random character from a string, such as the following DNA sequence:
 
 ```Python
 bases = 'ACTTGCTTGAC'
@@ -54,9 +58,9 @@ Which standard library module could help you? Which function would you select fr
 :::
 ::: {.callout-caution collapse="true" icon="false"}
 ## Answer
-The random module seems like it could help.
+The `random` module seems like it could help, and there are multiple ways to reach the same goal.
 
-The string has 11 characters, each having a positional index from 0 to 10. You could use the random.randrange or random.randint functions to get a random integer between 0 and 10, and then select the bases character at that index:
+The string has 11 characters, each having a positional index from 0 to 10. You could use `random.randrange` or `random.randint` functions to get a random integer between 0 and 10, and then select the bases character at that index:
 
 ```Python
 from random import randrange
@@ -69,14 +73,14 @@ from random import randrange
 print(bases[randrange(len(bases))])
 ```
 
-Perhaps you found the **random.sample** function? It allows for slightly less typing but might be a bit harder to understand just by reading:
+Perhaps you found the `random.sample` function? It allows for slightly less typing but might be a bit harder to understand just by reading:
 ```Python
 from random import sample
 print(sample(bases, 1)[0])
 ```
 Note that this function returns a list of values. We will learn about lists in episode 11.
 
-The simplest and shortest solution is the **random.choice** function that does exactly what we want:
+The simplest and shortest solution is the `random.choice` function that does exactly what we want:
 ```Python
 from random import choice
 print(choice(bases))
@@ -205,7 +209,7 @@ Library calls:
 <!-- ####################################################################### -->
 <!-- ####################################################################### -->
 
-# Additional Exercises Lesson 6, Libraries
+# Additional exercises
 
 <!-- ####################################################################### -->
 
@@ -315,11 +319,10 @@ ValueError: math domain error
 
 <!-- ####################################################################### -->
 
-### Write your own function and import it
+### Write your own function 
 
 When you have a notebook file, you can also create another file, with a .py extension, and write functions in that file. The .py file can be imported like a library, and the functions in the file can be used as if they came from a library.
 
-### Writing your own function
 ::: {.callout-tip icon='false'}
 ## Question
 
@@ -336,7 +339,7 @@ Using the information below, try to
 - *For Jupyter notebooks*: 
     - You can make a .py file with `file > new > python file`.        
         - Save the file to `myfilename.py` (replacing myfilename with your own favorite name).
-- *For Google colabs: 
+- *For Google colabs*: 
     - To create a `.py` file, right click in the file overview (where you also put the gapminder `.csv` files), and select 'new file'. Then create a file 'myfilename.py' and double click to edit it.*
 - You can import your file in a python notebook using:
     - `import myfilename` where `myfilename.py` should exist and hold your code. You can also put your file in a different directory, but then you need to import it like `import mydirectoryname.myfilename`.
@@ -344,7 +347,6 @@ Using the information below, try to
 You can write a function using the following template:
 
 ```Python
-
 def myfunctionname():
     print("hello world")
     

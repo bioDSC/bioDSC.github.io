@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.33">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -166,9 +166,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#exercises-lesson-8-dataframes-2" id="toc-exercises-lesson-8-dataframes-2" class="nav-link active" data-scroll-target="#exercises-lesson-8-dataframes-2">Exercises Lesson 8, Dataframes (2)</a>
+  <ul class="collapse">
+  <li><a href="#selecting-individual-values" id="toc-selecting-individual-values" class="nav-link" data-scroll-target="#selecting-individual-values">Selecting individual values</a></li>
+  <li><a href="#extent-of-slicing" id="toc-extent-of-slicing" class="nav-link" data-scroll-target="#extent-of-slicing">Extent of slicing</a></li>
+  <li><a href="#reconstructing-data" id="toc-reconstructing-data" class="nav-link" data-scroll-target="#reconstructing-data">Reconstructing Data</a></li>
+  <li><a href="#selecting-indices" id="toc-selecting-indices" class="nav-link" data-scroll-target="#selecting-indices">Selecting Indices</a></li>
+  <li><a href="#practice-with-selection" id="toc-practice-with-selection" class="nav-link" data-scroll-target="#practice-with-selection">Practice with Selection</a></li>
+  <li><a href="#epicardial-cells" id="toc-epicardial-cells" class="nav-link" data-scroll-target="#epicardial-cells">Epicardial cells</a></li>
+  </ul></li>
+  <li><a href="#additional-exercises" id="toc-additional-exercises" class="nav-link" data-scroll-target="#additional-exercises">Additional exercises</a>
+  <ul class="collapse">
+  <li><a href="#many-ways-of-access" id="toc-many-ways-of-access" class="nav-link" data-scroll-target="#many-ways-of-access">Many ways of access</a></li>
+  <li><a href="#analyzing-gdps" id="toc-analyzing-gdps" class="nav-link" data-scroll-target="#analyzing-gdps">Analyzing GDPs</a></li>
+  <li><a href="#gene-expression" id="toc-gene-expression" class="nav-link" data-scroll-target="#gene-expression">Gene expression</a></li>
+  <li><a href="#exploring-methods-using-dir" id="toc-exploring-methods-using-dir" class="nav-link" data-scroll-target="#exploring-methods-using-dir">Exploring methods using <code>dir()</code></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page-left" id="quarto-document-content">
 
 
 
@@ -188,10 +211,10 @@ Credits &amp; copyright
 </div>
 <hr>
 <!-- ################################################################################ -->
-<section id="exercises-for-lesson-8-dataframes-2" class="level1">
-<h1>Exercises for lesson 8, dataframes (2)</h1>
-<section id="selection-individual-values" class="level3">
-<h3 class="anchored" data-anchor-id="selection-individual-values">Selection individual values</h3>
+<section id="exercises-lesson-8-dataframes-2" class="level1">
+<h1>Exercises Lesson 8, Dataframes (2)</h1>
+<section id="selecting-individual-values" class="level3">
+<h3 class="anchored" data-anchor-id="selecting-individual-values">Selecting individual values</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -202,10 +225,10 @@ Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Import data for europe:</p>
+<p>Import GDP data for Europe:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data_europe <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Find the GDP Capita of Serbia in 2007.</p>
+<p>Find the per capita GDP of Serbia in 2007.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -348,7 +371,7 @@ Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Explain in simple terms what idxmin and idxmax do in the short program below. When would you use these methods?</p>
+<p>Explain in simple terms what <code>idxmin()</code> and <code>idxmax()</code> do in the short program below. When would you use these methods?</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.idxmin())</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.idxmax())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -479,7 +502,7 @@ Answer
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2.loc[df_cells_kohela2.index.<span class="bu">str</span>.contains(<span class="st">'WT_'</span>), <span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'WT'</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2.loc[df_cells_kohela2.index.<span class="bu">str</span>.contains(<span class="st">'mutant_'</span>), <span class="st">'Condition'</span>] <span class="op">=</span> <span class="st">'mutant'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can inspect the values in the new column to check if the contents are as expected:</p>
-<pre><code>print(df_cells_kohela2['Condition'])</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_cells_kohela2[<span class="st">'Condition'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -493,7 +516,7 @@ Question B
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What is the difference between str.contains and str.match?</p>
+<p>What is the difference between <code>str.contains()</code> and <code>str.match()</code>?</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -537,13 +560,14 @@ Answer
 </div>
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<pre><code>df_cells_kohela2.loc[:,['TFAP2A','Condition']].groupby('Condition').mean()</code></pre>
-<p>Yields</p>
-<pre><code>             TFAP2A
-Condition          
-WT         1.535655
-mutant     9.601550</code></pre>
-<p>so this indeed appears to be the case.</p>
+<p>We first select TFAP2A gene expression levels, then group by condition, and then calculate the mean:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df_cells_kohela2.loc[:,[<span class="st">'TFAP2A'</span>,<span class="st">'Condition'</span>]].groupby(<span class="st">'Condition'</span>).mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This gives us:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>             TFAP2A</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>Condition          </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>WT         <span class="fl">1.535655</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>mutant     <span class="fl">9.601550</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>So this indeed appears to be the case.</p>
 </div>
 </div>
 </div>
@@ -555,11 +579,11 @@ mutant     9.601550</code></pre>
 <!-- ####################################################################### -->
 </section>
 </section>
-<section id="additional-exercises-lesson-8" class="level1">
-<h1>Additional exercises Lesson 8</h1>
+<section id="additional-exercises" class="level1">
+<h1>Additional exercises</h1>
 <!-- ####################################################################### -->
 <section id="many-ways-of-access" class="level3">
-<h3 class="anchored" data-anchor-id="many-ways-of-access">Many Ways of Access</h3>
+<h3 class="anchored" data-anchor-id="many-ways-of-access">Many ways of access</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -724,8 +748,8 @@ Answer
 </div>
 <!-- ####################################################################### -->
 </section>
-<section id="gdps" class="level3">
-<h3 class="anchored" data-anchor-id="gdps">GDPs</h3>
+<section id="analyzing-gdps" class="level3">
+<h3 class="anchored" data-anchor-id="analyzing-gdps">Analyzing GDPs</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -755,26 +779,26 @@ Answer
 </div>
 <div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<section id="are-there-any-countries-which-had-a-positive-increase-between-those-two-years-which-ones" class="level6">
-<h6 class="anchored" data-anchor-id="are-there-any-countries-which-had-a-positive-increase-between-those-two-years-which-ones">1. Are there any countries which had a positive increase between those two years? Which ones?</h6>
-<pre><code># First load the data again
-data_europe = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
-
-# We can calculate the difference between those two years
-GDP_change_87_92 = \
-    data_europe.loc[:, 'gdpPercap_1992'] - data_europe.loc[:, 'gdpPercap_1987']
-# And check which countries show a positive change
-print(GDP_change_87_92.index[GDP_change_87_92&gt;0])</code></pre>
-</section>
-<section id="calculate-the-average-gdp-between-all-european-countries-per-year." class="level6">
-<h6 class="anchored" data-anchor-id="calculate-the-average-gdp-between-all-european-countries-per-year.">2. Calculate the average GDP between all European countries per year.</h6>
-<pre><code>data_europe_avgGDPperyear = data_europe.mean()</code></pre>
-</section>
-<section id="normalize-the-dataframe-by-this-trend." class="level6">
-<h6 class="anchored" data-anchor-id="normalize-the-dataframe-by-this-trend.">3. Normalize the dataframe by this trend.</h6>
-<p>data_europe_relative = data_europe.div(data_europe_avgGDPperyear, axis=1)</p>
+<ol type="1">
+<li>Are there any countries which had a positive increase between those two years? Which ones?</li>
+</ol>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First load the data again</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>data_europe <span class="op">=</span> pd.read_csv(<span class="st">'data/gapminder_gdp_europe.csv'</span>, index_col<span class="op">=</span><span class="st">'country'</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># We can calculate the difference between those two years</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>GDP_change_87_92 <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    data_europe.loc[:, <span class="st">'gdpPercap_1992'</span>] <span class="op">-</span> data_europe.loc[:, <span class="st">'gdpPercap_1987'</span>]</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co"># And check which countries show a positive change</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(GDP_change_87_92.index[GDP_change_87_92<span class="op">&gt;</span><span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Calculate the average GDP between all European countries per year.</li>
+</ol>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>data_europe_avgGDPperyear <span class="op">=</span> data_europe.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Normalize the dataframe by this trend.</li>
+</ol>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>data_europe_relative <span class="op">=</span> data_europe.div(data_europe_avgGDPperyear, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We can now more easily see how countries compared to other countries over the years. Greece, for example, starts out its economy with a GDP of 62% of the average European country, but ends up with a GDP that’s 110% of the average European country.</p>
-</section>
 </div>
 </div>
 </div>
@@ -792,7 +816,7 @@ print(GDP_change_87_92.index[GDP_change_87_92&gt;0])</code></pre>
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question D
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -845,108 +869,93 @@ Answer
 </div>
 <div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<section id="convert-data-to-.csv-and-load-the-file" class="level4">
-<h4 class="anchored" data-anchor-id="convert-data-to-.csv-and-load-the-file">Convert data to .csv and load the file</h4>
-<p>This exercise is also meant to illustrate that it can sometimes be tedious to handle data. Many data files are however plain text, and you can open them to see what’s going on. One way to convert the exercise data to a convenient format, could be:</p>
+<p><strong>Converting data to .csv and load the file:</strong></p>
+<p>This exercise is meant to illustrate that it can sometimes be tedious to handle data. Many data files are however plain text, and you can open them to see what’s going on. You may have discovered that blindly copying this list of data into a <code>.txt</code> file gives you a file where the contents are separated by varying number of spaces! One way to convert the exercise data to a more convenient format, could be:</p>
 <ul>
 <li>Open a text editor like Notepad (Windows), TextEdit (Mac), or your own favorite.</li>
 <li>Copy the text to the text editor.</li>
 <li>Use search and replace to replace double spaces by single spaces.</li>
 <li>Repeat this until you only have single spaces.</li>
 <li>Now replace spaces by commas.</li>
-<li>You now have a comma separated file, save it e.g.&nbsp;as gene_expression.csv.</li>
+<li>You now have a comma separated file, save it e.g.&nbsp;as <code>gene_expression.csv</code>.</li>
 </ul>
 <p>See also this example <a href="../../static/data/gene_expression.csv">gene_expression.csv</a>.</p>
 <p>To load the file, use:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>df_gene_expression <span class="op">=</span> <span class="op">\</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    pd.read_csv(<span class="st">'gene_expression.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="the-average-crp-gene-expression-per-condion." class="level4">
-<h4 class="anchored" data-anchor-id="the-average-crp-gene-expression-per-condion.">The average CRP gene expression per condion.</h4>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df_gene_expression <span class="op">=</span> <span class="op">\</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    pd.read_csv(<span class="st">'gene_expression.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Calculating average CRP gene expression per condion:</strong></p>
 <p>This can be done in multiple ways. Here’s an elegant solution that gives information about the std and mean in one go:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df_gene_expression.groupby([<span class="st">'gene'</span>, <span class="st">'condition'</span>]).describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>df_gene_expression.groupby([<span class="st">'gene'</span>, <span class="st">'condition'</span>]).describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Alternatively, we can do this using group_by, the mean and std function. We can use the column names directly as argument for the group by, then apply mean, then apply “reset_index()” to convert the multi-index to columns.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>df_gene_expression_avg <span class="op">=</span> df_gene_expression.groupby(by <span class="op">=</span> [<span class="st">'gene'</span>, <span class="st">'condition'</span>]).mean().reset_index()</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># CRP expression</span></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_gene_expression_avg.loc[df_gene_expression_avg[<span class="st">'gene'</span>]<span class="op">==</span><span class="st">'CRP'</span>,:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="the-standard-deviation" class="level4">
-<h4 class="anchored" data-anchor-id="the-standard-deviation">The standard deviation</h4>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>df_gene_expression_avg <span class="op">=</span> df_gene_expression.groupby(by <span class="op">=</span> [<span class="st">'gene'</span>, <span class="st">'condition'</span>]).mean().reset_index()</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="co"># CRP expression</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_gene_expression_avg.loc[df_gene_expression_avg[<span class="st">'gene'</span>]<span class="op">==</span><span class="st">'CRP'</span>,:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Calculating the standard deviation:</strong></p>
 <p>The corresponding standard deviations can be calculated in a similar way:</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>df_gene_expression_std <span class="op">=</span> df_gene_expression.groupby(by <span class="op">=</span> [<span class="st">'gene'</span>, <span class="st">'condition'</span>]).std().reset_index()</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_gene_expression_std.loc[df_gene_expression_std[<span class="st">'gene'</span>]<span class="op">==</span><span class="st">'CRP'</span>,:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="an-alternative-strategy" class="level4">
-<h4 class="anchored" data-anchor-id="an-alternative-strategy">An alternative strategy</h4>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df_gene_expression_std <span class="op">=</span> df_gene_expression.groupby(by <span class="op">=</span> [<span class="st">'gene'</span>, <span class="st">'condition'</span>]).std().reset_index()</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_gene_expression_std.loc[df_gene_expression_std[<span class="st">'gene'</span>]<span class="op">==</span><span class="st">'CRP'</span>,:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>An alternative strategy:</strong></p>
 <p>A disadvantage of this strategy is that for large dataframes, you might be calculating many mean values that you’re not interested in in the end. You could also first select the gene of interest.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df_gene_expression_avg_CRP <span class="op">=</span> df_gene_expression.loc[df_gene_expression[<span class="st">'gene'</span>]<span class="op">==</span><span class="st">'CRP'</span>,:].groupby(by <span class="op">=</span> [<span class="st">'gene'</span>, <span class="st">'condition'</span>]).mean().reset_index()</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>df_gene_expression_std_CRP <span class="op">=</span> df_gene_expression.loc[df_gene_expression[<span class="st">'gene'</span>]<span class="op">==</span><span class="st">'CRP'</span>,:].groupby(by <span class="op">=</span> [<span class="st">'gene'</span>, <span class="st">'condition'</span>]).std().reset_index()</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_gene_expression_avg_CRP)</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_gene_expression_std_CRP)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="the-log2-fold-change-between-wt-condition-a-and-condition-b." class="level4">
-<h4 class="anchored" data-anchor-id="the-log2-fold-change-between-wt-condition-a-and-condition-b.">The log2-fold change between WT, condition A, and condition B.</h4>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>df_gene_expression_avg_CRP <span class="op">=</span> df_gene_expression.loc[df_gene_expression[<span class="st">'gene'</span>]<span class="op">==</span><span class="st">'CRP'</span>,:].groupby(by <span class="op">=</span> [<span class="st">'gene'</span>, <span class="st">'condition'</span>]).mean().reset_index()</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>df_gene_expression_std_CRP <span class="op">=</span> df_gene_expression.loc[df_gene_expression[<span class="st">'gene'</span>]<span class="op">==</span><span class="st">'CRP'</span>,:].groupby(by <span class="op">=</span> [<span class="st">'gene'</span>, <span class="st">'condition'</span>]).std().reset_index()</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_gene_expression_avg_CRP)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_gene_expression_std_CRP)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Calculating the log2-fold change between WT, condition A, and condition B:</strong></p>
 <p>Note that for a real-world analysis, you might use specialized tools for this, which take into account more statistical considerations (e.g.&nbsp;like DESeq2). But to directly calculate the log2-fold change, we need to divide mean condition X by mean WT, calculate the ratios, and take the logarithm with base 2.</p>
 <p>There are multiple ways to do this. The solution below exploits the fact that when dividing two dataframes, the indices are “aligned”. Meaning here that if the index of the numerator dataframe corresponds to ACTA1, it will be divided by a record from the denominator’s dataframe that’s also has an ACTA1 index, even if the numerator and denominator’s dataframes are of different length. This also applies to series.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate averages again: group by, selecting the grouped expression series, calculate the mean</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>gene_expression_avg <span class="op">=</span> df_gene_expression.groupby([<span class="st">'gene'</span>,<span class="st">'condition'</span>])[<span class="st">'expression'</span>].mean()</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify the WT records with a boolean array</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>WT_records <span class="op">=</span> gene_expression_avg.index.get_level_values(<span class="dv">1</span>)<span class="op">==</span><span class="st">'WT'</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Select such that we divide a non-WT series by a WT series</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="co"># We use "reset index" to set the index to gene names only, this allows for alignment</span></span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>ratios <span class="op">=</span> gene_expression_avg.loc[<span class="op">~</span>WT_records].reset_index(level<span class="op">=</span><span class="dv">1</span>,drop<span class="op">=</span><span class="va">True</span>)<span class="op">/</span>gene_expression_avg.loc[WT_records].reset_index(level<span class="op">=</span><span class="dv">1</span>,drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="co"># The parameters above were series, let's convert back to dataframe</span></span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>df_ratios <span class="op">=</span> ratios.to_frame()</span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Now we need to restore the index to identify the conditions</span></span>
-<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>df_ratios.index<span class="op">=</span>gene_expression_avg[<span class="op">~</span>WT_records].index</span>
-<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a><span class="co"># And we can take the log2</span></span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>df_log2fc <span class="op">=</span> np.log2(df_ratios)</span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="co"># search for "expression" column name and replace by "log2fc"</span></span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>df_log2fc <span class="op">=</span> df_log2fc.rename(columns<span class="op">=</span>{<span class="st">'expression'</span>:<span class="st">'log2fc'</span>})</span>
-<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_log2fc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="do-the-same-for-acta1." class="level4">
-<h4 class="anchored" data-anchor-id="do-the-same-for-acta1.">Do the same for ACTA1.</h4>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate averages again: group by, selecting the grouped expression series, calculate the mean</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>gene_expression_avg <span class="op">=</span> df_gene_expression.groupby([<span class="st">'gene'</span>,<span class="st">'condition'</span>])[<span class="st">'expression'</span>].mean()</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify the WT records with a boolean array</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>WT_records <span class="op">=</span> gene_expression_avg.index.get_level_values(<span class="dv">1</span>)<span class="op">==</span><span class="st">'WT'</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Select such that we divide a non-WT series by a WT series</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co"># We use "reset index" to set the index to gene names only, this allows for alignment</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>ratios <span class="op">=</span> gene_expression_avg.loc[<span class="op">~</span>WT_records].reset_index(level<span class="op">=</span><span class="dv">1</span>,drop<span class="op">=</span><span class="va">True</span>)<span class="op">/</span>gene_expression_avg.loc[WT_records].reset_index(level<span class="op">=</span><span class="dv">1</span>,drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="co"># The parameters above were series, let's convert back to dataframe</span></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>df_ratios <span class="op">=</span> ratios.to_frame()</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Now we need to restore the index to identify the conditions</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>df_ratios.index<span class="op">=</span>gene_expression_avg[<span class="op">~</span>WT_records].index</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="co"># And we can take the log2</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>df_log2fc <span class="op">=</span> np.log2(df_ratios)</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a><span class="co"># search for "expression" column name and replace by "log2fc"</span></span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>df_log2fc <span class="op">=</span> df_log2fc.rename(columns<span class="op">=</span>{<span class="st">'expression'</span>:<span class="st">'log2fc'</span>})</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_log2fc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Do the same for ACTA1.:</strong></p>
 <p>See above.</p>
-</section>
-<section id="normalize-all-gene-expression-levels-to-their-average-respective-wild-type-levels." class="level4">
-<h4 class="anchored" data-anchor-id="normalize-all-gene-expression-levels-to-their-average-respective-wild-type-levels.">Normalize all gene expression levels to their average respective wild type levels.</h4>
+<p><strong>Normalizing all gene expression levels to their average respective wild type levels:</strong></p>
 <p>We can use a same strategy as above.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First set the index to the gene column, then take the expression values</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>gene_expression <span class="op">=</span> df_gene_expression.set_index(<span class="st">'gene'</span>)[<span class="st">'expression'</span>]</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Take the average information from above, and also set the index to the gene value,</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co"># such that we have average values indexed in the proper way to match the gene_expression.</span></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>wt_avg_values   <span class="op">=</span> gene_expression_avg.loc[WT_records].reset_index(level<span class="op">=</span><span class="dv">1</span>,drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co"># We can now divide one by the other</span></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>gene_expression_normalized <span class="op">=</span> gene_expression<span class="op">/</span>wt_avg_values</span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="co"># We can create a new dataframe with normalized data</span></span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>df_gene_expression_norm <span class="op">=</span> df_gene_expression.copy()</span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>df_gene_expression_norm[<span class="st">'expression_normalized'</span>] <span class="op">=</span> gene_expression_normalized.values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="alternative-strategy-for-the-above-two-exercises." class="level4">
-<h4 class="anchored" data-anchor-id="alternative-strategy-for-the-above-two-exercises.">Alternative strategy for the above two exercises.</h4>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First set the index to the gene column, then take the expression values</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>gene_expression <span class="op">=</span> df_gene_expression.set_index(<span class="st">'gene'</span>)[<span class="st">'expression'</span>]</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Take the average information from above, and also set the index to the gene value,</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># such that we have average values indexed in the proper way to match the gene_expression.</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>wt_avg_values   <span class="op">=</span> gene_expression_avg.loc[WT_records].reset_index(level<span class="op">=</span><span class="dv">1</span>,drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="co"># We can now divide one by the other</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>gene_expression_normalized <span class="op">=</span> gene_expression<span class="op">/</span>wt_avg_values</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="co"># We can create a new dataframe with normalized data</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>df_gene_expression_norm <span class="op">=</span> df_gene_expression.copy()</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>df_gene_expression_norm[<span class="st">'expression_normalized'</span>] <span class="op">=</span> gene_expression_normalized.values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Alternative strategy for the above two exercises:</strong></p>
 <p>An alternative could be to pivot the dataframe. This can also be used to calculate log2fc values.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a copy of the dataframe to avoid confusion with other exercises.</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>df_gene_expression_2 <span class="op">=</span> df_gene_expression.copy()</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co"># To pivot, it is required to be able to match rows uniquely. Add an index to do this.</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>df_gene_expression_2[<span class="st">'rows'</span>] <span class="op">=</span> df_gene_expression_2.groupby([<span class="st">'gene'</span>,<span class="st">'condition'</span>]).cumcount()</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot df_gene_expression_2 such that the gene column is used to expand the 'expression', remove 'rows'</span></span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>df_gene_expression_wide <span class="op">=</span> df_gene_expression_2.pivot(index<span class="op">=</span>[<span class="st">'condition'</span>,<span class="st">'rows'</span>], columns<span class="op">=</span><span class="st">'gene'</span>, values<span class="op">=</span><span class="st">'expression'</span>).reset_index().drop(columns<span class="op">=</span><span class="st">'rows'</span>)</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Now calculate the averages</span></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>df_averages <span class="op">=</span>  df_gene_expression_wide.groupby([<span class="st">'condition'</span>]).mean()</span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Now divide df_gene_expression_wide columns by df_averages</span></span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>values_WT <span class="op">=</span> df_averages.T[<span class="st">'WT'</span>].values</span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="co"># We can use the dataframe's division method to divide all columns by the WT averages</span></span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>df_gene_expression_norm2 <span class="op">=</span> df_gene_expression_wide.loc[:,<span class="st">'ACTA1'</span>:<span class="st">'CRP'</span>].div(values_WT, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Add annotation condition</span></span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>df_gene_expression_norm2[<span class="st">'condition'</span>] <span class="op">=</span> df_gene_expression_wide[<span class="st">'condition'</span>]</span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a><span class="co"># We now have the normalized dataframe</span></span>
-<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_gene_expression_norm2)</span>
-<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate L2FC:</span></span>
-<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>df_log2fc_2 <span class="op">=</span> df_gene_expression_norm2.groupby([<span class="st">'condition'</span>]).mean().<span class="bu">apply</span>(np.log2)</span>
-<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a><span class="co"># We now have the log2-fold changes:</span></span>
-<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_log2fc_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a copy of the dataframe to avoid confusion with other exercises.</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>df_gene_expression_2 <span class="op">=</span> df_gene_expression.copy()</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="co"># To pivot, it is required to be able to match rows uniquely. Add an index to do this.</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>df_gene_expression_2[<span class="st">'rows'</span>] <span class="op">=</span> df_gene_expression_2.groupby([<span class="st">'gene'</span>,<span class="st">'condition'</span>]).cumcount()</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot df_gene_expression_2 such that the gene column is used to expand the 'expression', remove 'rows'</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>df_gene_expression_wide <span class="op">=</span> df_gene_expression_2.pivot(index<span class="op">=</span>[<span class="st">'condition'</span>,<span class="st">'rows'</span>], columns<span class="op">=</span><span class="st">'gene'</span>, values<span class="op">=</span><span class="st">'expression'</span>).reset_index().drop(columns<span class="op">=</span><span class="st">'rows'</span>)</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Now calculate the averages</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>df_averages <span class="op">=</span>  df_gene_expression_wide.groupby([<span class="st">'condition'</span>]).mean()</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Now divide df_gene_expression_wide columns by df_averages</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>values_WT <span class="op">=</span> df_averages.T[<span class="st">'WT'</span>].values</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="co"># We can use the dataframe's division method to divide all columns by the WT averages</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>df_gene_expression_norm2 <span class="op">=</span> df_gene_expression_wide.loc[:,<span class="st">'ACTA1'</span>:<span class="st">'CRP'</span>].div(values_WT, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Add annotation condition</span></span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>df_gene_expression_norm2[<span class="st">'condition'</span>] <span class="op">=</span> df_gene_expression_wide[<span class="st">'condition'</span>]</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a><span class="co"># We now have the normalized dataframe</span></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_gene_expression_norm2)</span>
+<span id="cb41-17"><a href="#cb41-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate L2FC:</span></span>
+<span id="cb41-18"><a href="#cb41-18" aria-hidden="true" tabindex="-1"></a>df_log2fc_2 <span class="op">=</span> df_gene_expression_norm2.groupby([<span class="st">'condition'</span>]).mean().<span class="bu">apply</span>(np.log2)</span>
+<span id="cb41-19"><a href="#cb41-19" aria-hidden="true" tabindex="-1"></a><span class="co"># We now have the log2-fold changes:</span></span>
+<span id="cb41-20"><a href="#cb41-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_log2fc_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>That was a lot of code! Congratulations if you made it until the end :).</p>
 </div>
 </div>
 </div>
@@ -986,21 +995,21 @@ dfw.loc[~CRP,'expression'] = dfw.loc[~CRP,'expression']/dfmean.loc[('ACTA1','WT'
 </div>
 <!-- ####################################################################### -->
 </section>
-<section id="exploring-available-methods-using-the-dir-function" class="level3">
-<h3 class="anchored" data-anchor-id="exploring-available-methods-using-the-dir-function">Exploring available methods using the dir() function</h3>
+<section id="exploring-methods-using-dir" class="level3">
+<h3 class="anchored" data-anchor-id="exploring-methods-using-dir">Exploring methods using <code>dir()</code></h3>
 <p>Python includes a dir() function that can be used to display all of the available methods (functions) that are built into a data object. In Episode 4, we used some methods with a string. But we can see many more are available by using dir():</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">'Hello world!'</span>   <span class="co"># creation of a string object </span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(my_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>my_string <span class="op">=</span> <span class="st">'Hello world!'</span>   <span class="co"># creation of a string object </span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>(my_string)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This command returns:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">'__add__'</span>,</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="st">'__subclasshook__'</span>,</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="st">'capitalize'</span>,</span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="st">'casefold'</span>,</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="st">'center'</span>,</span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>...</span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="st">'upper'</span>,</span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="st">'zfill'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>[<span class="st">'__add__'</span>,</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="st">'__subclasshook__'</span>,</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="st">'capitalize'</span>,</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="st">'casefold'</span>,</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="st">'center'</span>,</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="st">'upper'</span>,</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="st">'zfill'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can use help() or Shift+Tab to get more information about what these methods do.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1008,7 +1017,7 @@ dfw.loc[~CRP,'expression'] = dfw.loc[~CRP,'expression']/dfmean.loc[('ACTA1','WT'
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question E
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1028,7 +1037,7 @@ Answer
 <div id="callout-26" class="callout-26-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Among many choices, dir() lists the median() function as a possibility. Thus,</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>data.median()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>data.median()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>

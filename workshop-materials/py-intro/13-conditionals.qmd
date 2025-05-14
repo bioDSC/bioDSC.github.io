@@ -1,3 +1,7 @@
+---
+toc: true
+toc-expand: 2
+---
 
 ::: {.callout-note}
 ## Credits & copyright
@@ -10,7 +14,7 @@ which also applies to the contents of this website.
 ---
 
 
-# Exercises Lesson 13, Conditionals
+# Exercises Lesson 13: Conditionals
 
 <!-- ####################################################################### -->
 
@@ -254,7 +258,6 @@ What does the following code do? What is the meaning of the output?
 
 ```python
 for idx, item in enumerate([1,2,3,4,-5,1,34,6,-10]):
-    
     if item>5:
         print(idx)
 ```
@@ -280,7 +283,7 @@ and item gets the value of that list's element.
 ::: {.callout-tip icon='false'}
 ## Question B
 
-Modify the following code such that it will compare each item i in apples with each item i in pears, and tell you which one is heavier.
+Modify the following code such that it will compare each item `i` in `apples` with each item `i` in `pears`, and tell you which one is heavier.
 You need to edit the code.
 
 ```python
@@ -291,7 +294,7 @@ for apple_weight, pear_weight in zip(apples, pears):
     print('='*10)
     print('weigth apple: ', apple_weight)
     print('weigth pear:  ', pear_weight)
-    
+    ___
     print('the XXX is heavier')
 ```
 

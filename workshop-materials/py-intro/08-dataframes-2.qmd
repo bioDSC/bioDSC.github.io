@@ -1,3 +1,7 @@
+---
+toc: true
+toc-expand: 2
+---
 
 ::: {.callout-note}
 ## Credits & copyright
@@ -12,20 +16,20 @@ which also applies to the contents of this website.
 <!-- ################################################################################ -->
 
 
-# Exercises for lesson 8, dataframes (2)
+# Exercises Lesson 8, Dataframes (2)
 
-### Selection individual values
+### Selecting individual values
 
 ::: {.callout-tip icon='false'}
 ## Question 
-Import data for europe:
+Import GDP data for Europe:
 
 ```python
 import pandas as pd
 data_europe = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 ```
 
-Find the GDP Capita of Serbia in 2007.
+Find the per capita GDP of Serbia in 2007.
 :::
 
 ::: {.callout-caution collapse='true' icon='false'}
@@ -79,8 +83,7 @@ Belgium     8343.105127     9714.960623    10991.206760
 ```
 
 Clearly, the second statement produces an additional column and an additional row compared to the first statement.
-What conclusion can we draw? We see that a numerical slice, 0:2, omits the final index (i.e. index 2) in the range provided, 
-while a named slice, ‘gdpPercap_1952’:‘gdpPercap_1962’, includes the final element.
+What conclusion can we draw? We see that a numerical slice, 0:2, omits the final index (i.e. index 2) in the range provided, while a named slice, ‘gdpPercap_1952’:‘gdpPercap_1962’, includes the final element.
 :::
 
 <!-- Carpentries credits L8 -->
@@ -152,7 +155,7 @@ The final step is to write the data that we have been working on to a csv file. 
 
 ::: {.callout-tip icon='false'}
 ## Question 
-Explain in simple terms what idxmin and idxmax do in the short program below. When would you use these methods?
+Explain in simple terms what `idxmin()` and `idxmax()` do in the short program below. When would you use these methods?
 
 ```python
 data = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
@@ -261,7 +264,7 @@ df_cells_kohela2.loc[df_cells_kohela2.index.str.contains('mutant_'), 'Condition'
 ```
 
 You can inspect the values in the new column to check if the contents are as expected:
-```
+```Python
 print(df_cells_kohela2['Condition'])
 ```
 
@@ -269,7 +272,7 @@ print(df_cells_kohela2['Condition'])
 
 ::: {.callout-tip icon='false'}
 ## Question B
-What is the difference between str.contains and str.match?
+What is the difference between `str.contains()` and `str.match()`?
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
@@ -286,17 +289,20 @@ Does there appear to be more TFAP2A expression in the mutant cells?
 :::
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
-```
+We first select TFAP2A gene expression levels, then group by condition, and then calculate the mean:
+
+```Python
 df_cells_kohela2.loc[:,['TFAP2A','Condition']].groupby('Condition').mean()
 ```
-Yields
-```
+This gives us:
+
+```Python
              TFAP2A
 Condition          
 WT         1.535655
 mutant     9.601550
 ```
-so this indeed appears to be the case.
+So this indeed appears to be the case.
 :::
 
 <!-- bioDSC credits -->
@@ -305,24 +311,16 @@ so this indeed appears to be the case.
 </div>
 
 
-
-
-
-
-
-
-
 <!-- ################################################################################ --> 
 <!-- ####################################################################### -->
 
 
-# Additional exercises Lesson 8
-
+# Additional exercises
 
 <!-- ####################################################################### -->
 
 
-### Many Ways of Access
+### Many ways of access
 
 ::: {.callout-tip icon='false'}
 ## Question 
@@ -492,7 +490,7 @@ data.iloc[:, col1_index:col2_index].loc["row1":"row2"]
 
 <!-- ####################################################################### -->
 
-### GDPs
+### Analyzing GDPs
 ::: {.callout-tip icon='false'}
 ## Question 
 
@@ -505,9 +503,8 @@ data.iloc[:, col1_index:col2_index].loc["row1":"row2"]
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
-
-###### 1. Are there any countries which had a positive increase between those two years? Which ones?
-```
+1. Are there any countries which had a positive increase between those two years? Which ones?
+```Python
 # First load the data again
 data_europe = pd.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
 
@@ -518,13 +515,15 @@ GDP_change_87_92 = \
 print(GDP_change_87_92.index[GDP_change_87_92>0])
 ```
 
-###### 2. Calculate the average GDP between all European countries per year.
-```
+2. Calculate the average GDP between all European countries per year.
+```Python
 data_europe_avgGDPperyear = data_europe.mean()
 ```
 
-###### 3. Normalize the dataframe by this trend.
+3. Normalize the dataframe by this trend.
+```Python
 data_europe_relative = data_europe.div(data_europe_avgGDPperyear, axis=1)
+```
 
 We can now more easily see how countries compared to other countries over 
 the years. Greece, for example, starts out its economy with a GDP of 62%
@@ -547,7 +546,7 @@ the average European country.
 ### Gene expression
 
 ::: {.callout-tip icon='false'}
-## Question D
+## Question
 - Convert the data below to a file you can import (e.g.: csv, tsv), import it to a pandas df, and determine the following:
     1. The average CRP gene expression per condion.
     2. The corresponding standard deviations.
@@ -589,18 +588,17 @@ ACTA1	1231	B
 ::: {.callout-caution collapse='true' icon='false'}
 ## Answer
 
-#### Convert data to .csv and load the file 
+**Converting data to .csv and load the file:**
 
-This exercise is also meant to illustrate that it can sometimes be tedious to handle data.
-Many data files are however plain text, and you can open them to see what's going on.
-One way to convert the exercise data to a convenient format, could be:
+This exercise is meant to illustrate that it can sometimes be tedious to handle data.
+Many data files are however plain text, and you can open them to see what's going on. You may have discovered that blindly copying this list of data into a `.txt` file gives you a file where the contents are separated by varying number of spaces! One way to convert the exercise data to a more convenient format, could be:
 
 - Open a text editor like Notepad (Windows), TextEdit (Mac), or your own favorite.
 - Copy the text to the text editor.
 - Use search and replace to replace double spaces by single spaces.
 - Repeat this until you only have single spaces.
 - Now replace spaces by commas.
-- You now have a comma separated file, save it e.g. as gene_expression.csv.
+- You now have a comma separated file, save it e.g. as `gene_expression.csv`.
 
 See also this example [gene_expression.csv](/static/data/gene_expression.csv).
 
@@ -610,11 +608,11 @@ df_gene_expression = \
     pd.read_csv('gene_expression.csv')
 ```
 
-#### The average CRP gene expression per condion.
-
+**Calculating average CRP gene expression per condion:**
 
 This can be done in multiple ways. Here's an elegant solution that gives
 information about the std and mean in one go:
+
 ```Python
 df_gene_expression.groupby(['gene', 'condition']).describe()
 ```
@@ -629,17 +627,18 @@ df_gene_expression_avg = df_gene_expression.groupby(by = ['gene', 'condition']).
 print(df_gene_expression_avg.loc[df_gene_expression_avg['gene']=='CRP',:])
 ```
 
-#### The standard deviation
+**Calculating the standard deviation:**
+
 The corresponding standard deviations can be calculated in a similar way:
 ```Python
 df_gene_expression_std = df_gene_expression.groupby(by = ['gene', 'condition']).std().reset_index()
 print(df_gene_expression_std.loc[df_gene_expression_std['gene']=='CRP',:])
 ```
 
-#### An alternative strategy
+**An alternative strategy:**
+
 A disadvantage of this strategy is that for large dataframes, you might be calculating many mean values
-that you're not interested in in the end.
-You could also first select the gene of interest.
+that you're not interested in in the end. You could also first select the gene of interest.
 
 ```Python
 df_gene_expression_avg_CRP = df_gene_expression.loc[df_gene_expression['gene']=='CRP',:].groupby(by = ['gene', 'condition']).mean().reset_index()
@@ -648,7 +647,7 @@ print(df_gene_expression_avg_CRP)
 print(df_gene_expression_std_CRP)
 ```
 
-#### The log2-fold change between WT, condition A, and condition B.
+**Calculating the log2-fold change between WT, condition A, and condition B:**
 
 Note that for a real-world analysis, you might use specialized tools for this, which 
 take into account more statistical considerations (e.g. like DESeq2).
@@ -680,12 +679,12 @@ df_log2fc = df_log2fc.rename(columns={'expression':'log2fc'})
 print(df_log2fc)
 ```
 
-#### Do the same for ACTA1.
+**Do the same for ACTA1.:**
 
 See above.
 
 
-#### Normalize all gene expression levels to their average respective wild type levels.
+**Normalizing all gene expression levels to their average respective wild type levels:**
 
 We can use a same strategy as above.
 
@@ -702,9 +701,8 @@ df_gene_expression_norm = df_gene_expression.copy()
 df_gene_expression_norm['expression_normalized'] = gene_expression_normalized.values
 ```
 
+**Alternative strategy for the above two exercises:**
 
-
-#### Alternative strategy for the above two exercises.
 An alternative could be to pivot the dataframe.
 This can also be used to calculate log2fc values.
 
@@ -731,6 +729,7 @@ df_log2fc_2 = df_gene_expression_norm2.groupby(['condition']).mean().apply(np.lo
 print(df_log2fc_2)
 ```
 
+That was a lot of code! Congratulations if you made it until the end :).
 :::
 
 
@@ -774,7 +773,7 @@ dfw.loc[~CRP,'expression'] = dfw.loc[~CRP,'expression']/dfmean.loc[('ACTA1','WT'
 
 <!-- ####################################################################### -->
 
-### Exploring available methods using the dir() function
+### Exploring  methods using `dir()`
 
 Python includes a dir() function that can be used to display all of the available methods (functions) that are built into a data object. In Episode 4, we used some methods with a string. But we can see many more are available by using dir():
 
@@ -800,7 +799,7 @@ This command returns:
 You can use help() or Shift+Tab to get more information about what these methods do.
 
 ::: {.callout-tip icon='false'}
-## Question E
+## Question
 Assume Pandas has been imported and the Gapminder GDP data for Europe has been loaded as data. Then, use dir() to find the function that prints out the median per-capita GDP across all European countries for each year that information is available.
 :::
 

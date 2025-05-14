@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.33">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a9799be74e3671d7fbf6e5809d1128e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -166,9 +166,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#exercises-lesson-16-functions" id="toc-exercises-lesson-16-functions" class="nav-link active" data-scroll-target="#exercises-lesson-16-functions">Exercises Lesson 16: Functions</a>
+  <ul class="collapse">
+  <li><a href="#identifying-syntax-errors" id="toc-identifying-syntax-errors" class="nav-link" data-scroll-target="#identifying-syntax-errors">Identifying Syntax Errors</a></li>
+  <li><a href="#definition-and-use" id="toc-definition-and-use" class="nav-link" data-scroll-target="#definition-and-use">Definition and Use</a></li>
+  <li><a href="#encapsulation" id="toc-encapsulation" class="nav-link" data-scroll-target="#encapsulation">Encapsulation</a></li>
+  </ul></li>
+  <li><a href="#additional-exercises" id="toc-additional-exercises" class="nav-link" data-scroll-target="#additional-exercises">Additional Exercises</a>
+  <ul class="collapse">
+  <li><a href="#order-of-operations" id="toc-order-of-operations" class="nav-link" data-scroll-target="#order-of-operations">Order of Operations</a></li>
+  <li><a href="#find-the-first" id="toc-find-the-first" class="nav-link" data-scroll-target="#find-the-first">Find the First</a></li>
+  <li><a href="#calling-by-name" id="toc-calling-by-name" class="nav-link" data-scroll-target="#calling-by-name">Calling by Name</a></li>
+  <li><a href="#primes" id="toc-primes" class="nav-link" data-scroll-target="#primes">Primes</a></li>
+  <li><a href="#write-your-own-function" id="toc-write-your-own-function" class="nav-link" data-scroll-target="#write-your-own-function">Write your own function</a></li>
+  <li><a href="#even-more-exercises" id="toc-even-more-exercises" class="nav-link" data-scroll-target="#even-more-exercises">Even more exercises</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page-left" id="quarto-document-content">
 
 
 
@@ -188,7 +210,7 @@ Credits &amp; copyright
 </div>
 <hr>
 <section id="exercises-lesson-16-functions" class="level1">
-<h1>Exercises Lesson 16, Functions</h1>
+<h1>Exercises Lesson 16: Functions</h1>
 <!-- ####################################################################### -->
 <section id="identifying-syntax-errors" class="level3">
 <h3 class="anchored" data-anchor-id="identifying-syntax-errors">Identifying Syntax Errors</h3>
@@ -226,9 +248,9 @@ Answer
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> another_function():</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> another_function(): <span class="co"># the function definition was not finished</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"Syntax errors are annoying."</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"But at least Python tells us about them!"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"But at least Python tells us about them!"</span>) <span class="co"># this line was not properly indented</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">"So they are usually not too hard to fix."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
@@ -384,9 +406,9 @@ Answer
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><p>The problem with the example is that the function print_time() is defined after the call to the function is made. Python doesn’t know how to resolve the name print_time since it hasn’t been defined yet and will raise a NameError e.g., NameError: name ‘print_time’ is not defined</p></li>
-<li><p>The first line of output 11:37:59 is printed by the first line of code, result = print_time(11, 37, 59) that binds the value returned by invoking print_time to the variable result. The second line is from the second print call to print the contents of the result variable.</p></li>
-<li><p>print_time() does not explicitly return a value, so it automatically returns None.</p></li>
+<li><p>The problem with the example is that the function <code>print_time()</code> is defined after the call to the function is made. Python doesn’t know how to resolve the name <code>print_time</code> since it hasn’t been defined yet and will raise a NameError e.g., <code>NameError: name 'print_time' is not defined</code></p></li>
+<li><p>The first line of output 11:37:59 is printed by the first line of code, <code>result = print_time(11, 37, 59)</code> that binds the value returned by invoking <code>print_time</code> to the variable <code>result</code>. The second line is from the second print call to print the contents of the <code>result</code> variable.</p></li>
+<li><p><code>print_time()</code> does not explicitly return a value, so it automatically returns None.</p></li>
 </ol>
 </div>
 </div>
@@ -504,7 +526,7 @@ Answer
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question …
+Question
 </div>
 </div>
 <div class="callout-body-container callout-body">
