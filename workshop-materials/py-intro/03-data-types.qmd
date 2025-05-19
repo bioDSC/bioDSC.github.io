@@ -115,7 +115,7 @@ Why wouldn't you always use floats, and never use integers?
 
 Both are designed for specific use cases. 
 
-A computer can work more efficiently with integer numbers, so if you now you only need integer numbers,
+A computer can work more efficiently with integer numbers, so if you know you only need integer numbers,
 use the integer type. 
 
 Sometimes a Python functionality also requires you to work with integers, mostly because those are 
