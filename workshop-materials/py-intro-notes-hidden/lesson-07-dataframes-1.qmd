@@ -1,0 +1,10 @@
+
+::: {.callout-note}
+### Copyright information
+These are notes based on the [Carpentries materials](https://swcarpentry.github.io/python-novice-gapminder/08-data-frames.html) ([licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). These notes are intended to present the materials related to Dataframes (part2). The contents of the lessons were modified by Martijn Wehrens (bioDSC).
+:::
+
+# Lesson 7, Pandas dataframes (1)
+
+```python
+```
