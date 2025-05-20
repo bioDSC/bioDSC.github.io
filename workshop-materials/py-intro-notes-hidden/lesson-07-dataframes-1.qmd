@@ -1,10 +1,92 @@
 
 ::: {.callout-note}
 ### Copyright information
-These are notes based on the [Carpentries materials](https://swcarpentry.github.io/python-novice-gapminder/08-data-frames.html) ([licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). These notes are intended to present the materials related to Dataframes (part2). The contents of the lessons were modified by Martijn Wehrens (bioDSC).
+These are notes based on the [Carpentries materials](https://swcarpentry.github.io/python-novice-gapminder/07-reading-tabular.html) ([licenced](https://software-carpentry.org/license/) under the [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). 
+These notes are intended to present the materials related to Dataframes (part 1). 
+<!-- The contents of the lessons were modified by Martijn Wehrens (bioDSC). -->
 :::
 
 # Lesson 7, Pandas dataframes (1)
+  
+```python
+# Pandas is statistics library
+    # works with tabular data
+    # very similar to R's dataframes
+        # ("borrows features")
+        
+# Dataframe
+    # 2D table
+        # columns have names
+        # columns might have different types
+        
+# we will read in a datafile from .csv format
+    # check out what's in the file
+    
+import pandas as pd
+
+# data_oceania = pd.read_csv('../data/gapminder_gdp_oceania.csv')
+data_oceania = pd.read_csv('/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/data/gapminder_gdp_oceania.csv')
+print(data_oceania)
+    # Note: "\" is used when too wide for screen
+    # Note: use convenient names, 
+        # Prevent accidental mixups
+    
+# Typical for dataframe:
+    # Columns are observed variables
+    # Rows are observations
+
+```
+
 
 ```python
+
+# Currently, 1st column is country name
+    # want to make that row name
+    # set parameter "index_col" 
+    
+data_oceania_country = pd.read_csv('/Users/m.wehrens/Data_UVA/2024_teaching/2025-03-gapminder/data/gapminder_gdp_oceania.csv',\
+     index_col='country')
+     
+     # index_col should be column name as a string
+     
+print(data_oceania_country)
+
+# convenient methods:
+
+data_oceania_country.info()
+    # Gives summary of df
+        # two rows; "Australia" and "New Zealand"
+        # twelve columns, 
+            # also their types are listed
+            # (null count talked about later)
+            # memory usage also listed
+```
+
+```python
+# DataFrame.columns
+    # stores information about columns
+    # this is a PARAMETER
+        # similar to math.pi
+
+data_oceania_country.columns
+
+# don't do:
+# data_oceania_country.columns()
+
+# .columns is called "member variable" or "member"
+
+# Transpose
+    # what if we want to swap the x,y axes (columns and rows)?
+        # use:
+
+data_oceania_country.T
+    # (for all intents and purposes) member variable
+```
+
+```python
+# to get summary statistics
+
+data_oceania_country.describe()
+    # includes all columns with numerical data
+    # not useful 2 rows, but very when many
 ```
