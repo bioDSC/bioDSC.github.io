@@ -7,7 +7,7 @@ These notes are intended to present the materials related to Dataframes (part 1)
 :::
 
 # Lesson 7, Pandas dataframes (1)
-
+  
 ```python
 # Pandas is statistics library
     # works with tabular data
@@ -49,22 +49,17 @@ data_oceania_country = pd.read_csv('/Users/m.wehrens/Data_UVA/2024_teaching/2025
      
      # index_col should be column name as a string
      
-# print(data_oceania_country)
+print(data_oceania_country)
 
 # convenient methods:
 
 data_oceania_country.info()
-    # gives more info about the dataframe
-```
-
-
-```python
-# This gives summary
-    # two rows; "Australia" and "New Zealand"
-    # twelve columns, 
-        # also their types are listed
-        # (null count talked about later)
-        # memory usage also listed
+    # Gives summary of df
+        # two rows; "Australia" and "New Zealand"
+        # twelve columns, 
+            # also their types are listed
+            # (null count talked about later)
+            # memory usage also listed
 ```
 
 ```python

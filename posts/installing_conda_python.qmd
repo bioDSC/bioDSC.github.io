@@ -31,6 +31,10 @@ Plus:
 
 - **Additional libraries you need**, by using google and typing in your terminal: `conda install XXXX`
 
+Then:
+
+- Start the selected software by either typing `jupyter lab` or `spyder` in your terminal.
+
 # Background: what you need.
 
 To be able to write Python code and execute it, it is convenient to install several types of software:
