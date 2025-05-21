@@ -418,7 +418,7 @@ Answer
 <div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data_americas.to_csv(<span class="st">'processed.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For help on read_csv or to_csv, you could execute, for example:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(data_americas.to_csv)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(pd.read_csv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(pd.DataFrame.read_csv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note that <code>help(to_csv)</code> or <code>help(pd.to_csv)</code> throws an error! This is due to the fact that to_csv is not a global Pandas function, but a member function of DataFrames. This means you can only call it on an instance of a DataFrame e.g., <code>data_americas.to_csv</code> or <code>data_oceania.to_csv</code></p>
 </div>
 </div>
