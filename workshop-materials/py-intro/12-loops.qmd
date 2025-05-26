@@ -48,8 +48,8 @@ Create a table showing the numbers of the lines that are executed when this prog
 |3 | 3           | total = 1, char = 't' |
 |4 | 2           | total = 1, char = 'i' |
 |5 | 3           | total = 2, char = 'i' |
-|6 | 2           | total = 2, char = 't' |
-|7 | 3           | total = 3, char = 't' |
+|6 | 2           | total = 2, char = 'n' |
+|7 | 3           | total = 3, char = 'n' |
 
 
 
