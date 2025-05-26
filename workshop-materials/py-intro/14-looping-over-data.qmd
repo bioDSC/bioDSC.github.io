@@ -21,7 +21,7 @@ which also applies to the contents of this website.
 
 ::: {.callout-tip icon='false'}
 ## Question 
-Which of these files is *not* matched by the expression `glob.glob('data/*as.csv')`?
+Which of these files is *not* matched by the expression `glob.glob('data/*as*.csv')`?
 
 ```
 1. data/gapminder_gdp_africa.csv
