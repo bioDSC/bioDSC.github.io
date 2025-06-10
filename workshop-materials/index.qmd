@@ -2,7 +2,36 @@
 
 # Overview 
 
-<!-- - For the python workshop exercises, see here: [exercises](py-intro/exercises.qmd). -->
+
+
+### Introduction to Python
+
+*See below for links to exercises and materials used during the "introduction to Python workshop".*
+
+##### Materials & data
+
+- Online Python notebook used during the course
+    - [https://jupyter.org/try-jupyter/lab/](https://jupyter.org/try-jupyter/lab/)
+
+- The datasets used during the workshop:
+    - "Gapminder" ([more information](https://www.gapminder.org/about/)): [python-novice-gapminder-data.zip](https://swcarpentry.github.io/python-novice-gapminder/files/python-novice-gapminder-data.zip)
+    - For the RNA-seq dataset from [Kohela et al.](https://doi.org/10.1126/scitranslmed.abf2750) (GSE149331), click [this link](/static/data/kohela-et-al.csv).
+
+- Link to all teaching materials: 
+    - [https://swcarpentry.github.io/python-novice-gapminder/](https://swcarpentry.github.io/python-novice-gapminder/)
+    - Customized workshop materials (currently only raw notes):
+        - [Lesson 8 - dataframes part 2](py-intro-adaptedlessons/lesson-08-dataframes-2.qmd)
+        - [Lesson 9 - plotting](py-intro-adaptedlessons/lesson-09-plotting.qmd)
+
+- Installing Python on your local computer:
+    - [https://www.biodsc.nl/posts/installing_conda_python.html](https://www.biodsc.nl/posts/installing_conda_python.html)
+
+- Examples/overview of nice plots: 
+    - [See this blog post](http://localhost:5722/posts/plotting_galleries.html).
+
+
+##### Exercises
+        
 - Python workshop exercises:
     - [Lesson 2 - variables](py-intro/02-variables.qmd) 
     - [Lesson 3 - data-types](py-intro/03-data-types.qmd)
@@ -16,12 +45,10 @@
     - [Lesson 13 - conditionals](py-intro/13-conditionals.qmd)
     - [Lesson 14 - looping over data](py-intro/14-looping-over-data.qmd)
     - [Lesson 16 - writing functions](py-intro/16-functions.qmd)
-- Customized workshop materials (currently only raw notes):
-    - [Lesson 8 - dataframes part 2](py-intro-adaptedlessons/lesson-08-dataframes-2.qmd)
-    - [Lesson 9 - plotting](py-intro-adaptedlessons/lesson-09-plotting.qmd)
-- For the RNA-seq dataset from [Kohela et al.](https://doi.org/10.1126/scitranslmed.abf2750) (GSE149331), click [this link](/static/data/kohela-et-al.csv).
-- For the example plot, see here: [link](py-intro/plot.qmd).
+    
+##### Other
 
+- For the example plot, see here: [link](py-intro/plot.qmd).
 
 <!-- - For additional exercises, see here: [additional exercises](py-intro/additional_exercises.qmd). -->
 
