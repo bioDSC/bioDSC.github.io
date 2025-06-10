@@ -22,11 +22,11 @@ Below a list of planned workshops:
     - Plotting (matplotlib).
     - Using loops and conditionals, writing functions.
     - Good practices in programming and software engineering.
-- Image analysis with Python (planning: April/May 2025).
+- Image analysis with Python (planning: Sept 2025).
     - Basics of working with images
     - Image manipulation, cellular segmentation, and other often-used concepts.
     - (..)
-- Analysis of RNA-sequencing data (planning: April/May 2025)
+- Analysis of RNA-sequencing data (planning: Sept 2025)
     - Read quality control
     - Mapping reads to a reference genome
     - Differentially expressed gene analysis using `DEseq2` in R.
