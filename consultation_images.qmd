@@ -1,0 +1,79 @@
+---
+title: "bioDSC \"improve my image analysis\" consultation"
+toc: false
+---
+
+
+::: {.grid}
+::: {.g-col-9}
+
+### Why? 
+
+Improve your image analysis in collaboration with the bioDSC.
+
+
+### What do we offer?
+
+We offer concrete input on your image analysis problem. For example:
+
+-	A short script with a working example
+-	Suitable metrics to quantify your biological phenotypes
+-	Recommendations for analysis software and approaches
+
+As an indication, we aim to spend 1-2 afternoons to review your materials and then offer 1-2 hours of discussion. Further collaboration may be possible depending on mutual interest and feasibility.
+
+
+:::
+::: {.g-col-3}
+
+<br>
+
+![ChatGPT imagining consultation.](images/consultation/chatGPT_image_analysis_consultation.png){width=300 fig-align="right"}
+
+:::
+:::
+
+### How to join?
+
+Send us an e-mail ([info@biodsc.nl](mailto:info@biodsc.nl)) including:
+
+-	A short summary of the broader project and research question (±1-3 sentences)
+-	A brief description of what you aim to achieve with your images (±1-5 sentences)
+-	An example image (required if you have one, otherwise describe what you’ll do)
+-	If applicable, your current analysis approach (e.g. nothing, manual segmentation, basic script available)
+
+### Example questions:
+
+-	What’s the best way to extract a specific parameter from an image?
+-	I’m currently manually annotating/segmenting data, can it be automated?
+-	I want to analyze microscopy images—what tools should I use?
+-	How can I best plot / visualize my data?
+-	Can I save time by automating parts of my analysis?
+-	Could you review my current analysis approach/script?
+-	How can I design my pilot experiment to be suitable for image analysis?
+
+### Who?
+
+PhDs, Postdocs, PIs, everyone with image analysis challenges can contact us.
+
+### And then?
+
+We will study your problem and schedule an appointment to offer our input asap.
+
+
+
+
+
+
+
+
+
+
+<!--
+# bioDSC "improve my image analysis" consultation
+<a id="image_analysis"></a>
+-->
+
+
+<!--<img src="images/consultation/chatGPT_image_analysis_consultation.png" width="300" align="right"/>-->
+<!--![](images/consultation/chatGPT_image_analysis_consultation.png){width=300 fig-align="right"}-->

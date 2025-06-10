@@ -3,7 +3,7 @@ title: "May 19, 21 and 26 (2025): Introduction to Python"
 date: 2025-05-19
 author: Martijn Wehrens
 description: "Get introduced to the Python from simple basics to functions, dataframes and plotting."
-categories: [upcoming]
+categories: [past]
 ---
 
 <!--
