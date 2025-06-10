@@ -28,6 +28,12 @@ website:
         text: Workshops
       - href: people.qmd
         text: People
+      - text: Consultation hours
+        menu:          
+          - href: consultation_images.qmd
+            text: \"Improve my image analysis\"
+          - href: consultation_other.qmd
+            text: \"Improve any analysis\"
       - href: blog.qmd
         text: Blog
       - href: tutorials.qmd
