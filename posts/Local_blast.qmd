@@ -1,0 +1,152 @@
+---
+title: "Beyond NCBI: the Power of Local BLAST Searches"
+engine: knitr
+author: "Misha Paauw"
+date: 2025-06-20
+categories: [comparative genomics, BLAST, conda, tutorial]
+---
+
+The BLAST algorithm and its interface on [NCBI](https://blast.ncbi.nlm.nih.gov/Blast.cgi) are among the most widely used bioinformatics tools. A typical use case: you discover a DNA or protein sequence of interest, paste it into the BLAST webtool, and voilà: you get a list of similar sequences across the tree of life. Despite its wide taxonomic coverage, the BLAST database at NCBI (`core_nt`) does not include all genomes that were ever assembled. Due to decreasing sequencing costs and the rise of long-read sequencing techniques, it is now feasible to *de novo* assemble high-quality genomes for numerous individuals of the same species. However, not all published genomes (e.g. for tomato: [Along et al.,](https://www.cell.com/cell/fulltext/S0092-8674(20)30616-4) or *Arabidopsis*: [Alonso-Blanco et al.](https://www.biorxiv.org/content/10.1101/2024.12.23.629943v2.abstract) will become available at NCBI BLAST for us to discover. That's where local BLAST searches come in. 
+
+## Installing BLAST
+
+First, we have to install BLAST. To do this, and to run BLAST commands, we will work on the command line. On macOS you can use the Terminal application. On Windows you need to install [WSL](https://learn.microsoft.com/en-us/windows/wsl/install). The easiest way to install BLAST (and nearly all other bioinformatics tools) is to use `conda`. Follow the instructions [here](https://www.anaconda.com/docs/getting-started/miniconda/install) to install `conda`, and for more info check [our previous blog post on installing Python](https://www.biodsc.nl/posts/installing_conda_python.html) or [this tutorial](https://conmeehan.github.io/PathogenDataCourse/Worksheets/CondaInstallAndUse.html). Then, install BLAST by running:
+
+```{bash filename="bash"}
+#| eval: false
+conda install -c bioconda blast
+```
+
+## Case study: Micro-Tom tomato
+
+We will turn to tomato for a small case study. The reference genome for tomato was generated from the 'Heinz 1706' variety. Whether this has any connection to the famous ketchup brand is unclear but it would not be too surprising if it did! However, many molecular plant biologists work with a variety called 'Micro-Tom' because of its small size, fast generation time, and its amendability to genetic transformation. Recently, a *de novo* assembled high-quality Micro-Tom genome was published by [Shirasawa & Ariizumi (2024)](https://doi.org/10.5511/plantbiotechnology.24.0522a). In the data availability section of this paper we find that this assembly is indeed not deposited to NCBI, but it's available from other sources including (surprisingly) a [Google Drive folder](https://drive.google.com/drive/folders/1sIxYdA7gNozR3jN_ntGhylcILJmctk-5).
+
+Now for the case study: a colleague was genotyping CRISPR-Cas mutants in Micro-Tom, using the Heinz 1706 genome as a reference. All plants that she genotyped, regardless of whether they carried the intended CRISPR-Cas-induced mutation,
+had additional mutations in the gene of interest. This gave rise to the following question:
+
+> Are these mutations **CRISPR-Cas off-target mutations** or simply **polymorphisms** present in variety Micro-Tom with respect to Heinz 1706?
+
+To answer this question, let's create a project folder called `local_blast`, with subfolders `results/`, `data/`, and `data/genomes/`. Then, download the Micro-Tom genome (`SLM_r2.0.pmol.fasta`) from the Google Drive folder into the `data/genomes/` folder. In addition, place a fasta file with the genomic sequence of our gene of interest (in this case: `Solyc02g089160.fasta`) from the reference genome in the `data/` folder. The project should look like this now: 
+
+```bash
+local_blast
+├── data
+│   ├── genomes
+│   │   ├── SLM_r2.0.pmol.fasta
+│   └── Solyc02g089160.fasta
+└── results  
+```
+
+We first need to make a BLAST database. This is a data structure that enables BLAST to quickly find similar sequences. In the following command, we specify where the genome is stored, the `dbtype` (in this case `nucl` for nucleotides), and the name of the resulting blast database:
+
+```{bash filename="bash"}
+#| eval: false
+makeblastdb -in genomes/SLM_r2.0.pmol.fasta -dbtype nucl -out genomes/S_lyco_MT
+```
+
+We will then see three new files in our `genomes` folder, with the name we indicated (`S_lyco_MT`) and rather obscure file extensions (`.nsq`, `.nin` and `.nhr`):
+
+```bash
+local_blast
+├── data
+│   ├── genomes
+│   │   ├── SLM_r2.0.pmol.fasta
+│   │   ├── S_lyco_MT.nsq   <
+│   │   ├── S_lyco_MT.nin   <
+│   │   └── S_lyco_MT.nhr   <
+│   └── Solyc02g089160.fasta
+└── results  
+```
+
+We're now ready to run BLAST. We specify the query with the `-query` argument, and in this case, it's the fasta file that was stored in the `data` folder before:
+
+```{bash filename="bash"}
+#| eval: false
+blastn -query data/Solyc02g089160.fasta -db data/genomes/S_lyco_MT
+```
+
+The default output format is a verbose plain-text visual output designed for human readibility, but not ideal for automation by scripting. Nonetheless, it's good for a quick check. Below follows a small portion of the full BLAST output, highlighting a polymorphism betweeen Heinz and Micro-Tom:
+
+```{bash filename="partial output"}
+#| eval: false
+Query  241       TCTGTTACTAAATTGAAGTTGTATTATGGTTTATGCAGATGGGAAGAAATAGGTGGAGAT  300
+                 |||||||||||||||||||||||||||||||||||| |||||||||||||||||||||||
+Sbjct  67371277  TCTGTTACTAAATTGAAGTTGTATTATGGTTTATGCTGATGGGAAGAAATAGGTGGAGAT  67371336
+                                                     ^
+                                                    SNP    
+```
+
+The Heinz allele (query) contains an `A` base, while the Micro-Tom genome (subject) has a `T` at this position. This is an expected single-nucleotide polymorphism in Micro-Tom, and in fact is one of the three polymorphisms responsible for the dwarf phenotype of Micro-Tom ([Marti et al., 2006](https://academic.oup.com/jxb/article/57/9/2037/622929))!
+
+For many purposes it would be better to have tabular output. To get this, we add `-outfmt 6` as a parameter to the BLAST call:
+
+```{bash filename="bash"}
+#| eval: false
+blastn -query Solyc02g089160.fasta -db data/blastdbs/S_lyco_MT -outfmt 6
+S.lycopersicum	SLM_r2.0ch02	99.807	519	1	0	1	519	67371037	67371555	0.0	953
+                      ^            ^        ^ 
+                  chromosome   %identity mismatches 
+```
+
+The columns correspond to the following parameters: `qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore`, together refered to as the standard (or `std`) set of parameters. For more info see [this page](https://www.metagenomics.wiki/tools/blast/blastn-output-format-6). You can add get the actual sequence on the Micro-Tom genome (subject) to the output by adding `sseq` to the `std` list of output (you may need to scroll through the code block to see the sequence):
+
+```{bash filename="bash"}
+#| eval: false
+blastn -query Solyc02g089160.fasta -db data/blastdbs/S_lyco_MT -outfmt "6 std sseq"
+S.lycopersicum	SLM_r2.0ch02	99.807	519	1	0	1	519	67371037	67371555	0.0	953	TGCTGAATTTGATTTTTAAATCGGAGTTAACAAATAATTATGGTTCTTATTATAGGATAAGAGCCTGGAACACCAAAACTCATTTTTGGTATTTGGAGGTGGTACTAGACAATGTCCTGGAAAGGAACTTGGTGTAGCAGAAATTTCCACATTTCTTCATTACTTCGTAACAAAATACAGGTATTTAATATATAAACATATATAATAAAAAAATTATTAATTTTATCTCGTATTTGATGATCTGTTACTAAATTGAAGTTGTATTATGGTTTATGCTGATGGGAAGAAATAGGTGGAGATAAACTGATGAAATTCCCAAGAGTTGAAGCACCAAATGGTCTACGGATTAGAGTTTCAGCTCACTAACTATCAATTCATGAATGTACAGAGAAAAAAAAATTCAAAAAAAAAAGAGAAGAGATTTGTAGGATGCAAAGCTAAGAGTAACATGGGATGTACAACTTAATTATTATTCCCGCTAACATAATCACGAATTAAACACAATTTTTTGCAGAGTTA
+```
+
+Instead of printing the results to the terminal, you might want to save it in a tab-delimited file:
+
+```{bash filename="bash"}
+#| eval: false
+blastn -query Solyc02g089160.fasta -db data/blastdbs/S_lyco_MT -outfmt "6 std sseq" > results/blast_result_Solyc02g089160_MT.tsv
+```
+
+```bash
+local_blast
+├── data
+│   ├── genomes
+│   │   ├── SLM_r2.0.pmol.fasta
+│   │   ├── S_lyco_MT.nsq
+│   │   ├── S_lyco_MT.nin
+│   │   └── S_lyco_MT.nhr
+│   └── Solyc02g089160.fasta
+└── results
+    └── blast_result_Solyc02g089160_MT.tsv   <
+```
+
+## Controlling BLAST results
+
+In this example we get a quite 'clean' BLAST result: there's only one hit, and clearly, this is the genomic sequence that corresponds to the sequence we used as a query. In most real-life scenarios, BLAST results can be much more confusing. For example, here we BLAST a 3000 bp promoter region of a tomato gene to a wild tomato species genome, and get six hits.
+
+```{bash filename="bash"}
+#| eval: false
+blastn -query tomato_promoter.fasta -db data/blastdbs/S_habro_LA0407_Yu2022  -outfmt "6 std" | column -t
+tomato_promoter GWHBJTH00000009  92.685  3021  150  45  2    3000  2505440  2502469  0.0        4289
+tomato_promoter GWHBJTH00000009  83.794  759   66   25  39   757   2505702  2504961  0.0        667
+tomato_promoter GWHBJTH00000009  86.170  470   39   7   26   482   2505139  2504683  2.94e-134  484
+tomato_promoter GWHBJTH00000009  77.184  618   61   30  202  757   2505837  2505238  8.90e-75   287
+tomato_promoter GWHBJTH00000009  81.250  192   21   4   26   204   2504872  2504683  7.33e-31   141
+tomato_promoter GWHBJTH00000009  82.584  178   14   5   583  757   2505702  2505539  7.33e-31   141
+                                          ^              ^    ^
+                                        length        qstart qend 
+```
+Based on the `length` of the alignment, and the start and end coordinate on the query sequence (`qstart` and `qend`), we can see that only the top hit covers nearly the full 3000 basepairs of the query sequence, the rest of the hits are short. Let's filter out all the hits that cover less than 70% than the query sequence using the `-qcov_hsp_perc 70` argument:
+
+```{bash filename="bash"}
+#| eval: false
+blastn -query tomato_promoter.fasta -db data/blastdbs/S_habro_LA0407_Yu2022  -outfmt "6 std" -qcov_hsp_perc 70 | column -t
+tomato_promoter  GWHBJTH00000009  92.685  3021  150  45  2  3000  2505440  2502469  0.0  4289
+```
+
+Yep, the short hits are gone. Likewise, it's also possible to filter on the percentage of identity between query and subject using `-perc_identity`.
+
+## Perspectives
+
+In this blog post, we discussed only one use case of local BLAST searches by searching through a genome assembly. There's much more to discover! For example, you can use BLAST to search proteomes as well. In addition, you can search for more than one query at the same time: see [this lesson](https://dbsloan.github.io/TS2019/exercises/local_blast.html) for an example where all proteins from the bacterium *E. coli* are compared to all proteins of *Salmonella enterica*. Taken together, understanding how to use BLAST locally gives you the power to answer complex comparative genomics questions with just a few commands. Happy BLASTing!
+
+
+## Credits
+
+- ASCII art filetrees were drawn with [tree.nathanfriend.com](tree.nathanfriend.com).

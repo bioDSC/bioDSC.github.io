@@ -6,11 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Martijn Wehrens">
-<meta name="dcterms.date" content="2025-03-11">
-<meta name="description" content="Installing software that allows you to easily work with Python.">
+<meta name="author" content="Misha Paauw">
+<meta name="dcterms.date" content="2025-06-20">
 
-<title>Installing Python Software – bioDSC</title>
+<title>Beyond NCBI: the Power of Local BLAST Searches – bioDSC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -190,20 +189,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Installing Python Software</h1>
+<h1 class="title">Beyond NCBI: the Power of Local BLAST Searches</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">python</div>
-    <div class="quarto-category">software</div>
-    <div class="quarto-category">installation</div>
+    <div class="quarto-category">comparative genomics</div>
+    <div class="quarto-category">BLAST</div>
+    <div class="quarto-category">conda</div>
     <div class="quarto-category">tutorial</div>
   </div>
   </div>
 
-<div>
-  <div class="description">
-    Installing software that allows you to easily work with Python.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta column-page">
@@ -211,14 +205,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Martijn Wehrens </p>
+             <p>Misha Paauw </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 11, 2025</p>
+      <p class="date">June 20, 2025</p>
     </div>
   </div>
   
@@ -230,230 +224,159 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="about" class="level1">
-<h1>About</h1>
-<p>This tutorial explains how to install software on your computer that allows you to write and run Python scripts.</p>
+<p>The BLAST algorithm and its interface on <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">NCBI</a> are among the most widely used bioinformatics tools. A typical use case: you discover a DNA or protein sequence of interest, paste it into the BLAST webtool, and voilà: you get a list of similar sequences across the tree of life. Despite its wide taxonomic coverage, the BLAST database at NCBI (<code>core_nt</code>) does not include all genomes that were ever assembled. Due to decreasing sequencing costs and the rise of long-read sequencing techniques, it is now feasible to <em>de novo</em> assemble high-quality genomes for numerous individuals of the same species. However, not all published genomes (e.g.&nbsp;for tomato: <a href="https://www.cell.com/cell/fulltext/S0092-8674(20)30616-4">Along et al.,</a> or <em>Arabidopsis</em>: <a href="https://www.biorxiv.org/content/10.1101/2024.12.23.629943v2.abstract">Alonso-Blanco et al.</a> will become available at NCBI BLAST for us to discover. That’s where local BLAST searches come in.</p>
+<section id="installing-blast" class="level2">
+<h2 class="anchored" data-anchor-id="installing-blast">Installing BLAST</h2>
+<p>First, we have to install BLAST. To do this, and to run BLAST commands, we will work on the command line. On macOS you can use the Terminal application. On Windows you need to install <a href="https://learn.microsoft.com/en-us/windows/wsl/install">WSL</a>. The easiest way to install BLAST (and nearly all other bioinformatics tools) is to use <code>conda</code>. Follow the instructions <a href="https://www.anaconda.com/docs/getting-started/miniconda/install">here</a> to install <code>conda</code>, and for more info check <a href="https://www.biodsc.nl/posts/installing_conda_python.html">our previous blog post on installing Python</a> or <a href="https://conmeehan.github.io/PathogenDataCourse/Worksheets/CondaInstallAndUse.html">this tutorial</a>. Then, install BLAST by running:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> bioconda blast</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </section>
-<section id="summary" class="level1">
-<h1>Summary</h1>
-<!--
-::: {.callout-warning}
-## This is a summary
-
-This is a summary section. See below for detailed instructions.
-:::
--->
-<p><em>This section gives a brief summary, see below for more details.</em></p>
-<p>Install miniconda through <a href="https://www.anaconda.com/docs/getting-started/miniconda/install" target="_blank">the official website</a>, and install either:</p>
+<section id="case-study-micro-tom-tomato" class="level2">
+<h2 class="anchored" data-anchor-id="case-study-micro-tom-tomato">Case study: Micro-Tom tomato</h2>
+<p>We will turn to tomato for a small case study. The reference genome for tomato was generated from the ‘Heinz 1706’ variety. Whether this has any connection to the famous ketchup brand is unclear but it would not be too surprising if it did! However, many molecular plant biologists work with a variety called ‘Micro-Tom’ because of its small size, fast generation time, and its amendability to genetic transformation. Recently, a <em>de novo</em> assembled high-quality Micro-Tom genome was published by <a href="https://doi.org/10.5511/plantbiotechnology.24.0522a">Shirasawa &amp; Ariizumi (2024)</a>. In the data availability section of this paper we find that this assembly is indeed not deposited to NCBI, but it’s available from other sources including (surprisingly) a <a href="https://drive.google.com/drive/folders/1sIxYdA7gNozR3jN_ntGhylcILJmctk-5">Google Drive folder</a>.</p>
+<p>Now for the case study: a colleague was genotyping CRISPR-Cas mutants in Micro-Tom, using the Heinz 1706 genome as a reference. All plants that she genotyped, regardless of whether they carried the intended CRISPR-Cas-induced mutation, had additional mutations in the gene of interest. This gave rise to the following question:</p>
+<blockquote class="blockquote">
+<p>Are these mutations <strong>CRISPR-Cas off-target mutations</strong> or simply <strong>polymorphisms</strong> present in variety Micro-Tom with respect to Heinz 1706?</p>
+</blockquote>
+<p>To answer this question, let’s create a project folder called <code>local_blast</code>, with subfolders <code>results/</code>, <code>data/</code>, and <code>data/genomes/</code>. Then, download the Micro-Tom genome (<code>SLM_r2.0.pmol.fasta</code>) from the Google Drive folder into the <code>data/genomes/</code> folder. In addition, place a fasta file with the genomic sequence of our gene of interest (in this case: <code>Solyc02g089160.fasta</code>) from the reference genome in the <code>data/</code> folder. The project should look like this now:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">local_blast</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> data</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── genomes</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── SLM_r2.0.pmol.fasta</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── Solyc02g089160.fasta</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> results  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We first need to make a BLAST database. This is a data structure that enables BLAST to quickly find similar sequences. In the following command, we specify where the genome is stored, the <code>dbtype</code> (in this case <code>nucl</code> for nucleotides), and the name of the resulting blast database:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">makeblastdb</span> <span class="at">-in</span> genomes/SLM_r2.0.pmol.fasta <span class="at">-dbtype</span> nucl <span class="at">-out</span> genomes/S_lyco_MT</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>We will then see three new files in our <code>genomes</code> folder, with the name we indicated (<code>S_lyco_MT</code>) and rather obscure file extensions (<code>.nsq</code>, <code>.nin</code> and <code>.nhr</code>):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">local_blast</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> data</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── genomes</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── SLM_r2.0.pmol.fasta</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── S_lyco_MT.nsq   <span class="op">&lt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── S_lyco_MT.nin   <span class="op">&lt;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   └── S_lyco_MT.nhr   <span class="op">&lt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── Solyc02g089160.fasta</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> results  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We’re now ready to run BLAST. We specify the query with the <code>-query</code> argument, and in this case, it’s the fasta file that was stored in the <code>data</code> folder before:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastn</span> <span class="at">-query</span> data/Solyc02g089160.fasta <span class="at">-db</span> data/genomes/S_lyco_MT</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>The default output format is a verbose plain-text visual output designed for human readibility, but not ideal for automation by scripting. Nonetheless, it’s good for a quick check. Below follows a small portion of the full BLAST output, highlighting a polymorphism betweeen Heinz and Micro-Tom:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>partial output</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Query</span>  241       TCTGTTACTAAATTGAAGTTGTATTATGGTTTATGCAGATGGGAAGAAATAGGTGGAGAT  300</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                 <span class="kw">||||||||||||||||||||||||||||||||||||</span> <span class="kw">|||||||||||||||||||||||</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Sbjct</span>  67371277  TCTGTTACTAAATTGAAGTTGTATTATGGTTTATGCTGATGGGAAGAAATAGGTGGAGAT  67371336</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                                                     <span class="ex">^</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                                                    <span class="ex">SNP</span>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>The Heinz allele (query) contains an <code>A</code> base, while the Micro-Tom genome (subject) has a <code>T</code> at this position. This is an expected single-nucleotide polymorphism in Micro-Tom, and in fact is one of the three polymorphisms responsible for the dwarf phenotype of Micro-Tom (<a href="https://academic.oup.com/jxb/article/57/9/2037/622929">Marti et al., 2006</a>)!</p>
+<p>For many purposes it would be better to have tabular output. To get this, we add <code>-outfmt 6</code> as a parameter to the BLAST call:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastn</span> <span class="at">-query</span> Solyc02g089160.fasta <span class="at">-db</span> data/blastdbs/S_lyco_MT <span class="at">-outfmt</span> 6</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">S.lycopersicum</span>  SLM_r2.0ch02    99.807  519 1   0   1   519 67371037    67371555    0.0 953</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                      <span class="ex">^</span>            ^        ^ </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                  <span class="ex">chromosome</span>   %identity mismatches </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>The columns correspond to the following parameters: <code>qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore</code>, together refered to as the standard (or <code>std</code>) set of parameters. For more info see <a href="https://www.metagenomics.wiki/tools/blast/blastn-output-format-6">this page</a>. You can add get the actual sequence on the Micro-Tom genome (subject) to the output by adding <code>sseq</code> to the <code>std</code> list of output (you may need to scroll through the code block to see the sequence):</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastn</span> <span class="at">-query</span> Solyc02g089160.fasta <span class="at">-db</span> data/blastdbs/S_lyco_MT <span class="at">-outfmt</span> <span class="st">"6 std sseq"</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">S.lycopersicum</span>  SLM_r2.0ch02    99.807  519 1   0   1   519 67371037    67371555    0.0 953 TGCTGAATTTGATTTTTAAATCGGAGTTAACAAATAATTATGGTTCTTATTATAGGATAAGAGCCTGGAACACCAAAACTCATTTTTGGTATTTGGAGGTGGTACTAGACAATGTCCTGGAAAGGAACTTGGTGTAGCAGAAATTTCCACATTTCTTCATTACTTCGTAACAAAATACAGGTATTTAATATATAAACATATATAATAAAAAAATTATTAATTTTATCTCGTATTTGATGATCTGTTACTAAATTGAAGTTGTATTATGGTTTATGCTGATGGGAAGAAATAGGTGGAGATAAACTGATGAAATTCCCAAGAGTTGAAGCACCAAATGGTCTACGGATTAGAGTTTCAGCTCACTAACTATCAATTCATGAATGTACAGAGAAAAAAAAATTCAAAAAAAAAAGAGAAGAGATTTGTAGGATGCAAAGCTAAGAGTAACATGGGATGTACAACTTAATTATTATTCCCGCTAACATAATCACGAATTAAACACAATTTTTTGCAGAGTTA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Instead of printing the results to the terminal, you might want to save it in a tab-delimited file:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastn</span> <span class="at">-query</span> Solyc02g089160.fasta <span class="at">-db</span> data/blastdbs/S_lyco_MT <span class="at">-outfmt</span> <span class="st">"6 std sseq"</span> <span class="op">&gt;</span> results/blast_result_Solyc02g089160_MT.tsv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">local_blast</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> data</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── genomes</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── SLM_r2.0.pmol.fasta</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── S_lyco_MT.nsq</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── S_lyco_MT.nin</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   └── S_lyco_MT.nhr</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── Solyc02g089160.fasta</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> results</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> blast_result_Solyc02g089160_MT.tsv   <span class="op">&lt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="controlling-blast-results" class="level2">
+<h2 class="anchored" data-anchor-id="controlling-blast-results">Controlling BLAST results</h2>
+<p>In this example we get a quite ‘clean’ BLAST result: there’s only one hit, and clearly, this is the genomic sequence that corresponds to the sequence we used as a query. In most real-life scenarios, BLAST results can be much more confusing. For example, here we BLAST a 3000 bp promoter region of a tomato gene to a wild tomato species genome, and get six hits.</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastn</span> <span class="at">-query</span> tomato_promoter.fasta <span class="at">-db</span> data/blastdbs/S_habro_LA0407_Yu2022  <span class="at">-outfmt</span> <span class="st">"6 std"</span> <span class="kw">|</span> <span class="ex">column</span> <span class="at">-t</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">tomato_promoter</span> GWHBJTH00000009  92.685  3021  150  45  2    3000  2505440  2502469  0.0        4289</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">tomato_promoter</span> GWHBJTH00000009  83.794  759   66   25  39   757   2505702  2504961  0.0        667</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ex">tomato_promoter</span> GWHBJTH00000009  86.170  470   39   7   26   482   2505139  2504683  2.94e-134  484</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="ex">tomato_promoter</span> GWHBJTH00000009  77.184  618   61   30  202  757   2505837  2505238  8.90e-75   287</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="ex">tomato_promoter</span> GWHBJTH00000009  81.250  192   21   4   26   204   2504872  2504683  7.33e-31   141</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="ex">tomato_promoter</span> GWHBJTH00000009  82.584  178   14   5   583  757   2505702  2505539  7.33e-31   141</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>                                          <span class="ex">^</span>              ^    ^</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>                                        <span class="ex">length</span>        qstart qend </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Based on the <code>length</code> of the alignment, and the start and end coordinate on the query sequence (<code>qstart</code> and <code>qend</code>), we can see that only the top hit covers nearly the full 3000 basepairs of the query sequence, the rest of the hits are short. Let’s filter out all the hits that cover less than 70% than the query sequence using the <code>-qcov_hsp_perc 70</code> argument:</p>
+<div class="cell">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>bash</strong></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">blastn</span> <span class="at">-query</span> tomato_promoter.fasta <span class="at">-db</span> data/blastdbs/S_habro_LA0407_Yu2022  <span class="at">-outfmt</span> <span class="st">"6 std"</span> <span class="at">-qcov_hsp_perc</span> 70 <span class="kw">|</span> <span class="ex">column</span> <span class="at">-t</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">tomato_promoter</span>  GWHBJTH00000009  92.685  3021  150  45  2  3000  2505440  2502469  0.0  4289</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Yep, the short hits are gone. Likewise, it’s also possible to filter on the percentage of identity between query and subject using <code>-perc_identity</code>.</p>
+</section>
+<section id="perspectives" class="level2">
+<h2 class="anchored" data-anchor-id="perspectives">Perspectives</h2>
+<p>In this blog post, we discussed only one use case of local BLAST searches by searching through a genome assembly. There’s much more to discover! For example, you can use BLAST to search proteomes as well. In addition, you can search for more than one query at the same time: see <a href="https://dbsloan.github.io/TS2019/exercises/local_blast.html">this lesson</a> for an example where all proteins from the bacterium <em>E. coli</em> are compared to all proteins of <em>Salmonella enterica</em>. Taken together, understanding how to use BLAST locally gives you the power to answer complex comparative genomics questions with just a few commands. Happy BLASTing!</p>
+</section>
+<section id="credits" class="level2">
+<h2 class="anchored" data-anchor-id="credits">Credits</h2>
 <ul>
-<li><strong>Jupyter labs</strong>, by typing the following in your terminal: <code>conda install conda-forge::jupyterlab</code></li>
-<li><strong>Spyder</strong>, by typing the following in your terminal: <code>conda install -c conda-forge spyder</code></li>
+<li>ASCII art filetrees were drawn with <a href="tree.nathanfriend.com">tree.nathanfriend.com</a>.</li>
 </ul>
-<p>Plus:</p>
-<ul>
-<li><strong>Additional libraries you need</strong>, by using google and typing in your terminal: <code>conda install XXXX</code></li>
-</ul>
-<p>Then:</p>
-<ul>
-<li>Start the selected software by either typing <code>jupyter lab</code> or <code>spyder</code> in your terminal.</li>
-</ul>
-</section>
-<section id="background-what-you-need." class="level1">
-<h1>Background: what you need.</h1>
-<p>To be able to write Python code and execute it, it is convenient to install several types of software:</p>
-<section id="python-itself" class="level2">
-<h2 class="anchored" data-anchor-id="python-itself">1: Python itself</h2>
-<p>As explained during our workshops, Python itself is a software that interprets written computer code, and uses that to make the computer do things. Sometimes Python is already installed on your computer, but often you need to install it.</p>
-<p>Python makes use of “libraries” (pre-written code with functions for specific tasks), that you likely need to download/install as well.</p>
-</section>
-<section id="a-text-editor-dedicated-to-writing-python-code" class="level2">
-<h2 class="anchored" data-anchor-id="a-text-editor-dedicated-to-writing-python-code">2: A text editor dedicated to writing Python code</h2>
-<p>It is convenient to also install another piece of software, in which you can write Python code, and which also allows you to “send” the script towards the actual Python software.</p>
-<p>This way you can write Python code in a pleasant way, and also run it immediately. In practice, you’ll only interact with this editor.</p>
-</section>
-<section id="software-installing-software." class="level2">
-<h2 class="anchored" data-anchor-id="software-installing-software.">3: Software installing-software.</h2>
-<p>Installing software to manage software installation sounds perhaps a bit complicated, but it’ll make your life easier.</p>
-<p>Installing Python, its libraries, and code editors, comes challenges, such as:</p>
-<ol type="1">
-<li>It is tedious to install all these things manually.</li>
-<li>You might need a set of libraries for a specific task, which have installation requirements that exclude you from installing other libraries that you might need for another task.</li>
-</ol>
-<p>These challenges are adressed by software that manages such “dependencies” and “conflicts”.</p>
-</section>
-</section>
-<section id="so-how-to-do-it" class="level1">
-<h1>So, how to do it:</h1>
-<p>I’ll try to keep this brief, so I’ll immediately go to our recommendations on what to install and how to do it.</p>
-<section id="step-1-open-the-terminal" class="level3">
-<h3 class="anchored" data-anchor-id="step-1-open-the-terminal">Step 1: open the terminal</h3>
-<p>During this process we’ll be using the “terminal”. This is a computer program built-in in all operating systems (Windows, MacOS, Linux).</p>
-<p>You can type commands here, press enter, and they will be executed. This allows you to interact with your computer in a more “advanced” way. It is necessary for the installation process we recommend.</p>
-<p>Open the terminal window by:</p>
-<ul>
-<li><strong>MacOS</strong>: open the “terminal” app, e.g.&nbsp;by using the launchpad or spotlight search (press CMD+SPACE). See also <a href="https://support.apple.com/guide/terminal/open-or-quit-terminal-apd5265185d-f365-44cb-8b09-71a064a42125/mac" target="_blank">this link</a></li>
-<li><strong>Windows</strong>: open the “powershell”. This can be done via the menu. See also <a href="https://www.howtogeek.com/662611/9-ways-to-open-powershell-in-windows-10/" target="_blank">this link</a>.</li>
-<li><strong>Linux</strong>: open the terminal. See also <a href="https://ubuntu.com/tutorials/command-line-for-beginners#3-opening-a-terminal" target="_blank">this link</a>.</li>
-</ul>
-<p>It should look somewhat like this:</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="post_images/installing-py_screenshot-terminal.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>A screenshot of my terminal.</figcaption>
-</figure>
-</div>
-<p>Having started the terminal, we’re now good to go.</p>
-</section>
-<section id="step-2-install-software-installing-software-ie-miniconda" class="level3">
-<h3 class="anchored" data-anchor-id="step-2-install-software-installing-software-ie-miniconda">Step 2: Install software-installing software, ie “MiniConda”</h3>
-<p>The software installing-software I was talking about, is Conda. You have:</p>
-<ul>
-<li><strong>Miniconda</strong>. We’ll use this. It’s very minimal.</li>
-<li><strong>Anaconda</strong>. We won’t use this. It’s easier to install and use, but there have been licencing issues even for universities.</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Technical description of Conda
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>ChatGPT: “Conda is a package and environment manager that allows you to easily install, manage, and isolate software dependencies, making it especially useful for scientific computing and reproducible research.”</p>
-</div>
-</div>
-</section>
-<section id="how-to-install-conda" class="level3">
-<h3 class="anchored" data-anchor-id="how-to-install-conda">How to install Conda</h3>
-<p>Go to: <a href="https://www.anaconda.com/docs/getting-started/miniconda/install" target="_blank">https://www.anaconda.com/docs/getting-started/miniconda/install</a></p>
-<p>This website explains which commands you have to type in the terminal to complete the installation of miniconda.</p>
-<p>At this website, go to “Quickstart install instructions”, and using the tabs on the install instructions, go to the operating system you have on your computer. Follow the instructions there. You need to copy the lines (one by one) in the black box, which are instructions for your terminal. You can paste them (one by one) in your terminal, and press enter.</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="post_images/installing-py_screenshot-miniconda.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption><strong>Miniconda installation instructions from Anaconda.com.</strong>. <em>Choose the applicable tab and execute the commands in your terminal.</em></figcaption>
-</figure>
-</div>
-</section>
-<section id="optional-learn-to-use-environments." class="level3">
-<h3 class="anchored" data-anchor-id="optional-learn-to-use-environments.">Optional: learn to use environments.</h3>
-<p>Read more about conda environments here: <a href="https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html" target="_blank">https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html</a></p>
-<!--
-DISCARDED
-#### Installing Miniconda
-
-1. Go to: https://www.anaconda.com/download/success
-    - (Registration can be skipped.)
-2. Scroll down to "Miniconda Installers"
-3. Follow instructions for your operating system.
-
-#### 
--->
-</section>
-<section id="how-to-install-python-software-using-miniconda" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-install-python-software-using-miniconda">How to install Python software using Miniconda</h2>
-<section id="open-a-terminal-with-miniconda-activated" class="level3">
-<h3 class="anchored" data-anchor-id="open-a-terminal-with-miniconda-activated">1. Open a terminal with Miniconda activated</h3>
-<ul>
-<li>In windows, after installing Miniconda, open the “Anaconda Powershell Prompt (miniconda3)”.</li>
-<li>On a Macbook, if you have followed all the instructions, (close and re-)open the terminal. It should now display “(base)” in front of your username (see screenshot from my terminal above).</li>
-</ul>
-</section>
-<section id="sec2" class="level3">
-<h3 class="anchored" data-anchor-id="sec2">2. Install python and libraries.</h3>
-<p>Python will be automatically installed in step 3. However, libraries often need to be installed separately. You can do this at any point you like, whenever it turns out you need a library that you haven’t installed yet.</p>
-<p>This can be done easily using miniconda. To install something using Conda, simply open the terminal and type the following command in the terminal, and press enter.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install XXXX</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Where XXXX is the library you want.</p>
-<p>You sometimes need to specifiy on which online “database” (“channel”) software is found. You also need to know the very specific name of the package.</p>
-<p>To address both these questions, it is easiest to just google for “conda install XXX”, where XXX is the package you want. For example, to install pandas, after Googling, we end up at <a href="https://anaconda.org/anaconda/pandas" target="_blank">this page</a>, and see the installation command is:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install anaconda::pandas</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The part <code>anaconda::</code> specifies further where to find pandas installation files.</p>
-<p>Simply copy that code into your terminal, and press enter. You will see something like this:</p>
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="post_images/installing-py_screenshot-terminal2.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption>A 2nd screenshot of my terminal, using conda.</figcaption>
-</figure>
-</div>
-<p>Type a “y” and press enter to proceed. This means all the listed libraries will be installed. They are needed because in this case Pandas requires these other libraries to be installed in order to run. This is usually the case.</p>
-</section>
-<section id="choose-the-editor-software-you-want-and-install-it" class="level3">
-<h3 class="anchored" data-anchor-id="choose-the-editor-software-you-want-and-install-it">3. Choose the editor software you want and install it</h3>
-<p>To work with Python, there are multiple options for software to write scripts and run them using Python. I’ve listed them below.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 18%">
-<col style="width: 81%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Software</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><strong>Jupyter<br><br></strong> <img src="post_images/installing-py_logo-jupyter.png" class="quarto-figure quarto-figure-center" height="50" alt="Jupyter."></td>
-<td>(+) Write code and text in blocks, and see the output directly below in one document. <br>(-) Not suitable for large amounts of code <br>(-) Adds extra layer complexity.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>Spyder<br></strong><img src="post_images/installing-py_logo-spyder.png" height="50" alt="Spyder."></td>
-<td>(+) Easily write simply .py files, inspect parameters. <br>(+) Rstudio or MATLAB like IDE. <br>(-) Lacks some modern features. <br>(-) No co-pilot integration.</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><strong>Visual Studio Code<br></strong><img src="post_images/installing-py_logo-VScode.png" height="50" alt="Visual Studio Code."></td>
-<td>(+) ±Industry standard, has most advanced features. <br>(+) Understands different conda environments. <br>(+) Plugins for many features. <br>(-) Very counter-intuitive to use. Makes it difficult to use.</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>PyCharm<br></strong><img src="post_images/installing-py_logo-pycharm.jpg" height="50" alt="PyCharm."></td>
-<td>(We don’t have much experience with this, but it’s also good and often used.)</td>
-</tr>
-</tbody>
-</table>
-<p>For the workshop, we used Jupyter notebooks. We also recommend Spyder.</p>
-<p>The installation of both of these can be done through Conda. See below.</p>
-<section id="installing-jupyter-using-conda" class="level4">
-<h4 class="anchored" data-anchor-id="installing-jupyter-using-conda">Installing Jupyter using Conda</h4>
-<p>Jupyter can be installed using Conda. (On the official website they say use something called “pip” (<a href="https://jupyter.org/install" target="_blank">link</a>), but we recommend conda.)</p>
-<p>Install jupyter similar as to how you installed other python libraries (see <a href="#sec2">section 2</a> above):</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install conda-forge::jupyterlab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>(<a href="https://anaconda.org/conda-forge/jupyterlab" target="_blank">Source</a>.). Copy and paste this into a terminal which has conda activated, and press enter to run. (See above.)</p>
-<p>To run Jupyter, simply type the following command in your terminal and press enter:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> lab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This will start Jupyter running on your local computer.</p>
-</section>
-<section id="installing-spyder-using-conda" class="level4">
-<h4 class="anchored" data-anchor-id="installing-spyder-using-conda">Installing spyder using Conda</h4>
-<p>Spyder can be installed using Conda.</p>
-<p>Install Spyder similar as to how you installed other python libraries (see <a href="#sec2">section 2</a> above). It is also described in detail at: <a href="https://docs.spyder-ide.org/current/installation.html" target="_blank">https://docs.spyder-ide.org/current/installation.html</a></p>
-<p>Paste the following command in your terminal (and hit enter) for an extended installation:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge spyder numpy scipy pandas matplotlib sympy cython</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Paste the following command in your terminal (and hit enter) for an minimal installation:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge spyder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>(Note: the official installation instructions use “environments”, if you use the official instructions, read carefully about using environments.)</p>
-<p>To run, simply open a terminal, and type (+ hit enter afterwards):</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">spyder</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="installing-vs-code" class="level4">
-<h4 class="anchored" data-anchor-id="installing-vs-code">Installing VS Code</h4>
-<p>Follow the instructions at: <a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a></p>
-</section>
-<section id="installing-pycharm" class="level4">
-<h4 class="anchored" data-anchor-id="installing-pycharm">Installing PyCharm</h4>
-<p>Follow the instructions at: <a href="https://www.jetbrains.com/pycharm/" target="_blank">https://www.jetbrains.com/pycharm/</a></p>
-</section>
-</section>
-</section>
-<section id="a-final-note-about-this-blog" class="level2">
-<h2 class="anchored" data-anchor-id="a-final-note-about-this-blog">A final note about this blog</h2>
-<p>These installation instructions are intended for relative novices to using Python. For intermediates and experts, we recommend to use different conda environments when working with Python. However, for novices, we think it’s better to do everything in the base environment.</p>
-<p>We do recommend people reading up on how to use conda environments. And while I’m at it, I also recommend people reading up on version tracking using Git and Github. But that’s another topic.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
