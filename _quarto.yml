@@ -14,11 +14,11 @@ website:
   #   type: success
   #   position: below-navbar
   ######################
-  announcement:
-    content: "info@biodsc.nl is temporarily **not working** due to technical changes. Please send e-mails to [our personal addresses](people.qmd)."
-    type: warning    # can be 'info', 'warning', or 'success'
-    position: below-navbar
-    icon: exclamation-triangle
+  # announcement:
+  #   content: "info@biodsc.nl is temporarily **not working** due to technical changes. Please send e-mails to [our personal addresses](people.qmd)."
+  #   type: warning    # can be 'info', 'warning', or 'success'
+  #   position: below-navbar
+  #   icon: exclamation-triangle
   ######################
   favicon: "images/bioDSC-without-dots-transparent.png"
   search:
