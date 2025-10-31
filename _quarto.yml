@@ -38,9 +38,9 @@ website:
       - text: Consultation hours
         menu:          
           - href: consultation_images.qmd
-            text: \"Improve my image analysis\"
+            text: Improve my image analysis
           - href: consultation_other.qmd
-            text: \"Improve any analysis\"
+            text: Improve any analysis
       - href: blog.qmd
         text: Blog
       - href: tutorials.qmd
