@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Misha Paauw">
+<meta name="dcterms.date" content="2026-03-02">
+<meta name="description" content="Learn the basics of RNA-seq analysis: from read mapping to volcano plots">
 
-<title>Workshops &amp; events – bioDSC</title>
+<title>March 2 and 4 (2026): Introduction to RNA-seq – bioDSC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/bioDSC-without-dots-transparent.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/bioDSC-without-dots-transparent.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,123 +69,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-upcoming .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-upcoming'] = new List('listing-upcoming', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-past .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-past'] = new List('listing-past', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-TBA .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-TBA'] = new List('listing-TBA', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -194,10 +81,10 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/bioDSC-without-dots-transparent.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/bioDSC-without-dots-transparent.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title"><em>bio</em>DSC</span>
     </a>
   </div>
@@ -208,15 +95,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./workshops.html" aria-current="page"> 
+    <a class="nav-link" href="../workshops.html"> 
 <span class="menu-text">Workshops</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./people.html"> 
+    <a class="nav-link" href="../people.html"> 
 <span class="menu-text">People</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -225,32 +112,32 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-consultation-hours">    
         <li>
-    <a class="dropdown-item" href="./consultation_images.html">
+    <a class="dropdown-item" href="../consultation_images.html">
  <span class="dropdown-text">Improve my image analysis</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./consultation_other.html">
+    <a class="dropdown-item" href="../consultation_other.html">
  <span class="dropdown-text">Improve any analysis</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorials.html"> 
+    <a class="nav-link" href="../tutorials.html"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./further-reading.html"> 
+    <a class="nav-link" href="../further-reading.html"> 
 <span class="menu-text">Further reading</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="https://www.uva.nl" target="_blank"> 
-<span class="menu-text"><img src="./images/uva-logo.png" height="30"></span></a>
+<span class="menu-text"><img src="../images/uva-logo.png" height="30"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -269,14 +156,34 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Workshops &amp; events</h1>
-</div>
+<h1 class="title">March 2 and 4 (2026): Introduction to RNA-seq</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">upcoming</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Learn the basics of RNA-seq analysis: from read mapping to volcano plots
+  </div>
+</div>
 
 
 <div class="quarto-title-meta column-page">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Misha Paauw </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 2, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -286,197 +193,86 @@ window.Quarto = {
 </header>
 
 
-<section id="upcoming-workshops" class="level2">
-<h2 class="anchored" data-anchor-id="upcoming-workshops">Upcoming workshops</h2>
-<div id="listing-upcoming" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="upcoming" data-listing-date-sort="1772406000000" data-listing-file-modified-sort="1769525116858" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="437">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./workshops/2026-RNAseq-beta.html" class="no-external">March 2 and 4 (2026): Introduction to RNA-seq</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./workshops/2026-RNAseq-beta.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./workshops/2026-RNAseq-beta.html" class="no-external">Learn the basics of RNA-seq analysis: from read mapping to volcano plots</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./workshops/2026-RNAseq-beta.html" class="no-external">
-<div class="listing-date">
-Mar 2, 2026
-</div>
-<div class="listing-author">
-Misha Paauw
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
+<p>The <em>bio</em>DSC organizes an introductory workshop that will cover the basics of RNA-sequencing analysis. Note that this is a newly developed workshop. Therefore, we limit participation to <strong>5</strong> people for this workshop, and a super smooth experience is not guaranteed.</p>
+<section id="workshop-goals" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-goals">Workshop goals</h3>
+<p>After this workshop, you should be able to:</p>
+<ul>
+<li>Identify good practices when designing a RNA-Seq experiment</li>
+<li>Assess the quality of RNA-seq sequencing data (“reads”) using the command-line instructions</li>
+<li>Align RNA-seq reads to a reference genome using a splice-aware aligner (e.g.&nbsp;STAR).</li>
+<li>Generate a count matrix from the RNA-seq data alignment</li>
+<li>Perform a QC of your experiment through Principal Component Analysis (PCA) and sample clustering.</li>
+<li>Execute a differential gene expression analysis using R and the DESeq2 package.</li>
+<li>Be able to create key plots: volcano plot, heatmap and clustering of differentially expressed genes.</li>
+</ul>
 </section>
-<section id="stay-tuned" class="level2">
-<h2 class="anchored" data-anchor-id="stay-tuned">Stay tuned</h2>
-<div id="listing-TBA" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TBA" data-listing-date-sort="1740783600000" data-listing-file-modified-sort="1750423747671" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="300">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./workshops/2025-working-on.html" class="no-external">List of past and upcoming workshops</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./workshops/2025-working-on.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./workshops/2025-working-on.html" class="no-external">Workshops we are currently developing that are coming soon.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./workshops/2025-working-on.html" class="no-external">
-<div class="listing-date">
-Mar 1, 2025
-</div>
-<div class="listing-author">
-Martijn Wehrens
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
+<section id="workshop-materials" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-materials">Workshop materials</h3>
+<p>All materials required for this workshop can be found on <a href="https://mishapaauw.github.io/RNA-seq-workshop/">the workshop website</a>. Feel free to explore the workshop website to discover whether this workshop fits your needs.</p>
 </section>
-<section id="past-workshops" class="level2">
-<h2 class="anchored" data-anchor-id="past-workshops">Past workshops</h2>
-<div id="listing-past" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="past" data-listing-date-sort="1747605600000" data-listing-file-modified-sort="1750423747670" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="867">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./workshops/2025-introduction-python-3.html" class="no-external">May 19, 21 and 26 (2025): Introduction to Python</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./workshops/2025-introduction-python-3.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./workshops/2025-introduction-python-3.html" class="no-external">Get introduced to the Python from simple basics to functions, dataframes and plotting.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./workshops/2025-introduction-python-3.html" class="no-external">
-<div class="listing-date">
-May 19, 2025
-</div>
-<div class="listing-author">
-Martijn Wehrens
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="past" data-listing-date-sort="1743544800000" data-listing-file-modified-sort="1747213163400" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="765">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./workshops/2025-introduction-python-2.html" class="no-external">April 2 and 4 (2025): Introduction to Python</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./workshops/2025-introduction-python-2.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./workshops/2025-introduction-python-2.html" class="no-external">Get introduced to the Python from simple basics to functions, dataframes and plotting.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./workshops/2025-introduction-python-2.html" class="no-external">
-<div class="listing-date">
-Apr 2, 2025
-</div>
-<div class="listing-author">
-Martijn Wehrens
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="past" data-listing-date-sort="1741734000000" data-listing-file-modified-sort="1747213163400" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="733">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./workshops/2025-introduction-python.html" class="no-external">March 12 and 14 (2025): Introduction to Python</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./workshops/2025-introduction-python.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./workshops/2025-introduction-python.html" class="no-external">Get introduced to the Python from simple basics to functions, dataframes and plotting.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./workshops/2025-introduction-python.html" class="no-external">
-<div class="listing-date">
-Mar 12, 2025
-</div>
-<div class="listing-author">
-Martijn Wehrens
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="past" data-listing-date-sort="1740351600000" data-listing-file-modified-sort="1740493866818" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="336">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./workshops/2025-BYOD-1.html" class="no-external">24 February 2025: Bring Your Own Data</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./workshops/2025-BYOD-1.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./workshops/2025-BYOD-1.html" class="no-external">Bring your own dataset and make publication-quality figures.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./workshops/2025-BYOD-1.html" class="no-external">
-<div class="listing-date">
-Feb 24, 2025
-</div>
-<div class="listing-author">
-Misha Paauw
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="past" data-listing-date-sort="1736895600000" data-listing-file-modified-sort="1738745885759" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="332">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./workshops/2025-introduction-R.html" class="no-external">15 and 17 January 2025: Introduction to R</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./workshops/2025-introduction-R.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./workshops/2025-introduction-R.html" class="no-external">Learn the basics of data analysis and visualisation in R in this workshop.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./workshops/2025-introduction-R.html" class="no-external">
-<div class="listing-date">
-Jan 15, 2025
-</div>
-<div class="listing-author">
-Misha Paauw
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
+<section id="requirements" class="level3">
+<h3 class="anchored" data-anchor-id="requirements">Requirements</h3>
+<ul>
+<li>This workshop assumes <strong>some basic knowledge of R and RStudio</strong>. For example, you should know how to import data tables, and make simple figures. If you’re unsure about this, ask <a href="../people.html">a bioDSC member</a>.</li>
+<li>This workshop also assumes some basic knowledge of general molecular biology.</li>
+<li>You have to bring your own laptop.</li>
+</ul>
+</section>
+<section id="workshop-logistics" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-logistics">Workshop logistics</h3>
+<p>The course will be given by Misha Paauw and Martijn Wehrens from the <em>bio</em>DSC. You have to bring your own laptop. We will use a Google Notebook for the bioinformatics part of the workshop, for this you don’t have to install anything. For the RStudio part of the workshop, you will need a working installation of <code>R</code>, <code>RStudio</code>, and a number of packages. Please see the <a href="https://mishapaauw.github.io/RNA-seq-workshop/episodes/01-setup.html">setup</a> page of the workshop materials and make sure you complete the installation <em>before</em> the workshop starts.</p>
+</section>
+<section id="workshop-schedule" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-schedule">Workshop schedule</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Time</th>
+<th>Location</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>March 2 (Mon)</td>
+<td>13:00 - 17:00</td>
+<td>SP B0.209</td>
+<td>Experimental considarations and read mapping</td>
+</tr>
+<tr class="even">
+<td>March 4 (Wed)</td>
+<td>13:00 - 17:00</td>
+<td>SP B0.208</td>
+<td>Differential gene expression and enrichment analysis</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sign-up" class="level3">
+<h3 class="anchored" data-anchor-id="sign-up">Sign up</h3>
+<p>Because this is the first round of a newly developed workshop, we limit the number of participants to <strong>5</strong>. Sign up by sending an e-mail to Misha: <code>m.m.paauw@uva.nl</code>.</p>
+<p><strong>Sign up deadline: 16th of February. First come, first serve.</strong></p>
+<!--
+::: {.callout-important}
+## This workshop is full.
 
+12 people have registered, we do not have place for more participants. Unfortunately, you cannot register any more.
+
+Please send us an [email](mailto:info@biodsc.nl) in case you were interested in signing up, such that we know to organize more workshops soon.
+:::
+-->
+</section>
+<section id="identifier" class="level3">
+<h3 class="anchored" data-anchor-id="identifier">Identifier</h3>
+<p>This meeting’s identifier: 2026-03-02-UvA-bioDSC.</p>
 
 
 </section>
@@ -913,7 +709,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
     <div class="nav-footer-right">
 <p>
-<img src="./images/uva-logo.png" height="25px;"> an <i>initiative</i> of the <a href="https://uva.nl" target="_blank">University of Amsterdam </a>
+<img src="../images/uva-logo.png" height="25px;"> an <i>initiative</i> of the <a href="https://uva.nl" target="_blank">University of Amsterdam </a>
 </p>
 </div>
   </div>
