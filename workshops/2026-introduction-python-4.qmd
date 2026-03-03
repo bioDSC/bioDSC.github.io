@@ -1,0 +1,140 @@
+---
+title: "TBA: Introduction to Python (2026)"
+date: 2026-03-03
+author: Martijn Wehrens
+description: "Get introduced to the Python from simple basics to functions, dataframes and plotting."
+categories: [past]
+---
+
+<!--
+::: {.callout-important}
+## This workshop is full.
+
+12 people have registered (surprisingly fast), we do not have place for more participants. Unfortunately, you cannot register any more.
+
+Please send us an [email](mailto:info@biodsc.nl) in case you were interested in signing up, such that we know to organize more workshops soon.
+:::
+-->
+
+### An introduction to Python
+
+The *bio*DSC organizes an introductory workshop that will cover basic functionalities of Python.
+
+Python is a computer script language that has become a workhorse of data analysis throughout many fields and disciplines. 
+It can process and analyze big data sets, perform image analysis, and create great visualizations.
+
+See below for [small overview of what types of tasks can be done using Python](#use-cases).
+
+### Workshop goals
+
+After this workshop, you'll be familiar with Python basics. We'll discuss and let you practice on:
+
+::: {.mw-infoblock}
+- Using Python (Jupyter notebooks, VS Studio code, Spyder)
+    - Throughout the workshop, we'll use an online version of Jupyter notebook to avoid installation issues)
+- Variables, types, basic commands, functions, libraries.
+- Working with tabular data (Pandas).
+- Plotting (matplotlib and Seaborn).
+- Using loops and conditionals.
+- Writing functions.
+- Good practices in programming and software engineering.
+:::
+
+### Workshop materials
+
+##### Contents
+This workshop will largely (>80%) follow the Carpentries training material ["Plotting and programming in Python"](https://swcarpentry.github.io/python-novice-gapminder/){target="_blank"}. 
+
+The course does not address specific programming solutions for common biological challenges. Follow-up courses, e.g. about RNA-seq analysis and image analysis, will delve into more biological programming topics.
+
+For the current version of course materials, click [here](../workshop-materials/python/index.qmd).
+
+<!--
+See [this workshop page](https://swcarpentry.github.io/python-novice-gapminder/instructor/design.html#stage-2-desired-results){target="_blank"} for a summary of desired learning results.
+-->
+
+##### Datasets
+These materials use the "Gapminder" dataset (see [[1]](https://www.kaggle.com/datasets/albertovidalrod/gapminder-dataset){target="_blank"} and [[2]](https://www.gapminder.org/about/){target="_blank"}). 
+Programming examples from this dataset will not relate to biological problems, but the examples offer good insights in how Python works.
+Additionally, we included custom materials based on single cell sequencing data from [Kohela et al.](https://doi.org/10.1126/scitranslmed.abf2750) (GSE149331),
+which will highlight Python functionalities through biological examples.
+
+##### Changes compared previous workshops
+
+This workshop will follow the schedule of the latest workshop \[[3](2025-introduction-python-3.qmd)\]. 
+(Workshops \[[1](2025-introduction-python.qmd)\] and \[[2](2025-introduction-python-2.qmd)\] had a different schedule, and
+less customized materials.)
+
+##### Questions
+If you have any questions regarding whether this course is relevant for you, please send us an email ([info@biodsc.nl](mailto:info@biodsc.nl)) or walk by our [desks](../people.html).
+
+
+### Requirements
+
+- This workshop assumes **no prior knowledge** on Python or programming! 
+- You have to **bring your own laptop**.
+
+### Workshop logistics
+
+The course will be given by Misha Paauw, Martijn Wehrens and Frans van der Kloet from the *bio*DSC. There is room for 4-20 participants. 
+You have to bring your own laptop, we'll use an online version of Python, so there are no software installation requirements.
+
+### Workshop schedule
+
+| Date | Time | Location | Topic |
+| ---- | ---- | ----  | ---------- |
+| TBA (Mon) | 13:00 - 17:00 | TBA | The basics, episodes 1-6 |
+| TBA (Wed) | 13:00 - 17:00 | TBA | Dataframes and plotting, episodes 7-9 | 
+| TBA (Mon) | 13:00 - 17:00 | TBA | Programming concepts, episodes 11-16 | 
+<!--<i>*) These rooms are in the "Lab 42" building!</i>-->
+
+### Sign up
+
+Sign up using this link (TBA). <!--[using this link](){target="_blank"}-->.
+**Sign up deadline: TBA. First come, first serve.**
+
+<!--
+::: {.callout-important}
+## This workshop is full.
+
+12 people have registered, we do not have place for more participants. Unfortunately, you cannot register any more.
+
+Please send us an [email](mailto:info@biodsc.nl) in case you were interested in signing up, such that we know to organize more workshops soon.
+:::
+-->
+
+::: {#use-cases}
+### Typical use cases for Python
+
+Python is a scripting language, meaning that your write a file with commands for the computer to execute.
+This allows you to perform complicated tasks, such as: 
+
+::: {.mw-infoblock}
+- Plotting and analyzing large data sets
+    - With the pandas, matplotlib, and seaborn library, large datasets can be imported, manipulated, and visualized
+- Image analysis
+    - Python has become a great open-source tool for image analysis
+    - Multiple libraries are now available that can do pretty much any "classical" image operations to analyze images. You can:
+        - Segment your image (identify cells, or other parts of your image that are of interest)
+        - Extract summary parameters relevant for your analysis.
+        - Related libraries: scikit-image, SciPy, OpenCV, ..
+    - Multiple tools exist to allow smooth user-interaction, such as Napari
+- Machine learning, neural networks, LLM, AI
+    - Python has become the go-to tool for working with machine learning related tech
+        - Libraries: E.g. Keras and PyTorch
+- High-throughput data analysis and automation
+    - Python is often used to process large amounts of data for further processing (see bio-informatics below)
+- Bioinformatics
+    - **<u>Not</u> the tool for RNA-seq statistics and gene expression analysis, for which R is superior**.
+    - Can be used to handle, manipulate, process, quantify raw sequence data or similar.
+    - Perform single cell analysis, e.g. using the SCANPY lirbary.
+- Much more ..
+:::
+
+See also the post I wrote earlier to decide [whether you should Python or R](../posts/python-or-r.html).
+
+### Identifier
+
+This meeting's identifier: 2026-XX-XX-UvA_bioDSC.
+
+
