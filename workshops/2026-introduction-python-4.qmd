@@ -3,7 +3,7 @@ title: "TBA: Introduction to Python (2026)"
 date: 2026-03-03
 author: Martijn Wehrens
 description: "Get introduced to the Python from simple basics to functions, dataframes and plotting."
-categories: [past]
+categories: [upcoming]
 ---
 
 <!--

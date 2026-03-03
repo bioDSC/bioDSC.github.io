@@ -14,8 +14,8 @@
   {
     "listing": "/workshops.html",
     "items": [
-      "/workshops/2026-RNAseq-beta.html",
       "/workshops/2026-introduction-python-4.html",
+      "/workshops/2026-RNAseq-beta.html",
       "/workshops/2025-introduction-python-3.html",
       "/workshops/2025-introduction-python-2.html",
       "/workshops/2025-introduction-python.html",
