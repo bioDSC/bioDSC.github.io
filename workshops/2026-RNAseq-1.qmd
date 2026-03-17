@@ -1,12 +1,12 @@
 ---
-title: "March 2 and 4 (2026): Introduction to RNA-seq"
-date: 2026-03-02
+title: "April 13 and 15 (2026): Introduction to RNA-seq"
+date: 2026-03-17
 author: Misha Paauw
 description: "Learn the basics of RNA-seq analysis: from read mapping to volcano plots"
-categories: [past]
+categories: [upcoming]
 ---
 
-The *bio*DSC organizes an introductory workshop that will cover the basics of RNA-sequencing analysis. Note that this is a newly developed workshop. Therefore, we limit participation to **5** people for this workshop, and a super smooth experience is not guaranteed. 
+The *bio*DSC organizes an introductory workshop that will cover the basics of RNA-sequencing analysis. After a succesful beta-test round of this workshop, we now open a new round for up to 12 participants. 
 
 ### Workshop goals
 
@@ -22,7 +22,7 @@ After this workshop, you should be able to:
 
 ### Workshop materials
 
-All materials required for this workshop can be found on [the workshop website](https://mishapaauw.github.io/RNA-seq-workshop/). Feel free to explore the workshop website to discover whether this workshop fits your needs. 
+All materials required for this workshop can be found on [the workshop website](https://mishapaauw.github.io/RNA-seq-workshop/){target="_blank"}. Feel free to explore the workshop website to discover whether this workshop fits your needs. 
 
 ### Requirements
 
@@ -32,20 +32,20 @@ All materials required for this workshop can be found on [the workshop website](
 
 ### Workshop logistics
 
-The course will be given by Misha Paauw and Martijn Wehrens from the *bio*DSC. You have to bring your own laptop. We will use a Google Notebook for the bioinformatics part of the workshop, for this you don't have to install anything. For the RStudio part of the workshop, you will need a working installation of `R`, `RStudio`, and a number of packages. Please see the [setup](https://mishapaauw.github.io/RNA-seq-workshop/episodes/01-setup.html) page of the workshop materials and make sure you complete the installation *before* the workshop starts.
+The course will be given by Misha Paauw and Martijn Wehrens from the *bio*DSC. You have to bring your own laptop. We will use a Google Notebook for the bioinformatics part of the workshop, for this you don't have to install anything. For the RStudio part of the workshop, you will need a working installation of `R`, `RStudio`, and a number of packages. Please see the [setup](https://mishapaauw.github.io/RNA-seq-workshop/episodes/01-setup.html){target="_blank"} page of the workshop materials and make sure you complete the installation *before* the workshop starts.
 
 ### Workshop schedule
 
 | Date | Time | Location | Topic |
 | ---- | ---- | ----  | ---------- |
-| March 2 (Mon) | 13:00 - 17:00 | SP B0.209 | Experimental considarations and read mapping |
-| March 4 (Wed) | 13:00 - 17:00 | SP B0.208 | Differential gene expression and enrichment analysis | 
+| April 13 (Mon) | 13:00 - 17:00 | SP B0.202 | Experimental considarations and read mapping |
+| April 15 (wed) | 13:00 - 17:00 | SP B0.201 | Differential gene expression and enrichment analysis | 
 
 ### Sign up
 
-Because this is the first round of a newly developed workshop, we limit the number of participants to **5**. Sign up by sending an e-mail to Misha: `m.m.paauw@uva.nl`.
+Sign-up [here](https://forms.cloud.microsoft/e/Ei9V9q9WjN){target="_blank"}. The number of participants is limited to 12.
 
-**Sign up deadline: 16th of February. First come, first serve.**
+**Sign up deadline: 1st of April. First come, first serve.**
 
 <!--
 ::: {.callout-important}
@@ -59,5 +59,5 @@ Please send us an [email](mailto:info@biodsc.nl) in case you were interested in 
 
 ### Identifier
 
-This meeting's identifier: 2026-03-02-UvA-bioDSC.
+This meeting's identifier: 2026-04-13-UvA-bioDSC.
 

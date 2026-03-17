@@ -1,3 +1,5 @@
-## Tutorials
+# Tutorials
 
-Tutorial pages will be uploaded to this section of the site! Stay tuned!
+## Introduction to RNA-seq
+
+The workshop materials for our 'Introduction to RNA-seq' workshop are available in tutorial format on the [workshop website](https://mishapaauw.github.io/RNA-seq-workshop/index.html).
