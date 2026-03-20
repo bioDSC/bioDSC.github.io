@@ -1,19 +1,8 @@
 [
   {
-    "listing": "/blog.html",
-    "items": [
-      "/posts/phylogenetics.html",
-      "/posts/Local_blast.html",
-      "/posts/plotting_galleries.html",
-      "/posts/installing_conda_python.html",
-      "/posts/python-or-R.html",
-      "/posts/Ath_synteny.html",
-      "/posts/introduction.html"
-    ]
-  },
-  {
     "listing": "/workshops.html",
     "items": [
+      "/workshops/2026-ANOVA.html",
       "/workshops/2026-RNAseq-1.html",
       "/workshops/2026-introduction-python-4.html",
       "/workshops/2026-RNAseq-beta.html",
@@ -23,6 +12,18 @@
       "/workshops/2025-BYOD-1.html",
       "/workshops/2025-introduction-R.html",
       "/workshops/2025-working-on.html"
+    ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/phylogenetics.html",
+      "/posts/Local_blast.html",
+      "/posts/plotting_galleries.html",
+      "/posts/installing_conda_python.html",
+      "/posts/python-or-R.html",
+      "/posts/Ath_synteny.html",
+      "/posts/introduction.html"
     ]
   }
 ]
