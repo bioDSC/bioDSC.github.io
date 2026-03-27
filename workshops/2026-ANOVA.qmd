@@ -27,7 +27,7 @@ If you have another high dimensional dataset that has a clear underlying experim
 
 ### Workshop materials
 
-All materials required for this workshop can be found on .... [will be added later](){target="_blank"}. 
+All materials required for this workshop can be found [to be added later](){target="_blank"}. 
 
 ### Requirements
 
