@@ -37,7 +37,7 @@ All materials required for this workshop can be found here [will be added](){tar
 
 ### Workshop logistics
 
-The course will be given by Johan Westerhuis and consists of a lecture for half of the time and hands-on exercises for the other half. You have to bring your own laptop. We will use R markdown documents to go through all the necessary steps in the calculations. 
+The workshop will be given by Johan Westerhuis and consists of a lecture for half of the time and hands-on exercises for the other half. You have to bring your own laptop. We will use R markdown documents to go through all the necessary steps in the calculations. 
 
 When:  April 30 (Thursday) 13:00 - 17:00 
 Where: SP TBA
