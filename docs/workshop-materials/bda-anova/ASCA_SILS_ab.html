@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>asca_sils – *bio*DSC</title>
+<title>asca_sils_ab – *bio*DSC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -258,20 +258,21 @@ Credits &amp; copyright
 <p>ASCA will be applied using the HDANOVA package, which also needs the mixlm package.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># One-time installation</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"mixlm"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"khliland/mixlm"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"HDANOVA"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"khliland/HDANOVA"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># in newer version of R you can also use pakage manager pak to install these packages</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># pak::pak("khliland/mixlm")</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># pak::pak("khliland/HDANOVA")</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># load the libraries</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mixlm)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(HDANOVA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"mixlm"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"khliland/mixlm"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"HDANOVA"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"khliland/HDANOVA"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># in newer version of R you can also use pakage manager pak to install these packages</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># pak::pak("khliland/mixlm")</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># pak::pak("khliland/HDANOVA")</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># load the libraries</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mixlm)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(HDANOVA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-during-lecture" class="level1">
@@ -301,15 +302,30 @@ Credits &amp; copyright
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: What are the differences in interpretation?
+Question 1: What are the differences in interpretation?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>What are the estimates for <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\alpha_1\)</span>, <span class="math inline">\(\alpha_2\)</span>, <span class="math inline">\(\alpha_3\)</span> in both cases?</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="brassicaceae-study" class="level1">
@@ -318,44 +334,71 @@ Question: What are the differences in interpretation?
 <p>Plants in the Cabbage family (Brassicaceae) make very specific defense compounds, called glucosinolates, when under attack by herbivores. There are about 120 different versions of these glucosinolates, but here we measure only 11. To simulate a herbivore attack and elicit the plant to make glucosinolates, the plant hormone jasmonic acid (JA) was applied to either the roots (Root induced) or to the leaves (Shoot induced) of cabbage plants (B. oleracea). The glucosinolate levels for 11 different glucosinolates were measured at 1, 3, 7 and 14 days after treatment. This measurement was destructive so that for each time-point different plants were analyzed. For each treatment, 5 different plants were measured at each time point. Besides the two treatments there was also a control group that received no JA treatment. We would like to know how the different treatments affect the glucosinolate composition and whether the glucosinolate composition varies with time.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load data and design</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Data = read.csv("https://biodsc.nl/workshop-materials/bda-anova/Data.csv")</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Design = read.csv("https://biodsc.nl/workshop-materials/bda-anova/F.csv")</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>Data <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"Data.csv"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>Design <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"F.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Data <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"Data.csv"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>Design <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"F.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>In the Environment window (top right) click on Data and Design to see the content of these two sets. Data contains the measurements, and Design the experimental settings of the design.</p>
+<p>In the Environment window (top right) click on Data and Design to see the content of these two sets. Data contains the measurements, and Design the experimental settings of the samples.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: Is the design balanced?
+Question 2: Is the design balanced?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: What are important specifics you can observe by a quick look at the Data?
+Question 3: What are important specifics you can observe by a quick look at the Data?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 <section id="data-preprocessing" class="level2">
 <h2 class="anchored" data-anchor-id="data-preprocessing">Data Preprocessing</h2>
@@ -369,15 +412,30 @@ Question: What are important specifics you can observe by a quick look at the Da
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: Wat problematic issues do you observe for which variables?
+Question 4: What problematic issues do you observe for which variables?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 <p>In such a case a square root transform is often a good choice to preprocess the data.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -386,15 +444,30 @@ Question: Wat problematic issues do you observe for which variables?
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: Explain why a square root transform is a useful transformation for these data.
+Question 5: Explain why a square root transform is a useful transformation for these data.
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 <p>Make a data frame containing factors Time and Treatment and Data.</p>
 <div class="cell">
@@ -406,13 +479,13 @@ Question: Explain why a square root transform is a useful transformation for the
 </section>
 <section id="linear-models-and-anova" class="level2">
 <h2 class="anchored" data-anchor-id="linear-models-and-anova">Linear models and ANOVA</h2>
-<p>To explore the effect of the treatments on the glucosinolates, let’s start with an ANOVA model for a single response using the lm function. By default the lm function uses SUM coding for the treatment levels with the Control level as the one not calculated.</p>
+<p>To explore the effect of the treatments on the glucosinolates, let’s start with an ANOVA model for a single response using the lm function. By default the lm function uses SUM coding for the treatment levels.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make 1-way ANOVA model for PRO using Treatment as a factor</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mod_Treatment <span class="ot">=</span> <span class="fu">lm</span>(PRO<span class="sc">~</span>Treatment, <span class="at">data =</span> dat)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">anova</span>(mod_Treatment))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>There is clearly a difference between the treatments as the p-value is very low. Get a little more info on the treatment levels, and look at the residual plots.</p>
+<p>There is clearly a difference between the treatments as the p-value is very low. The summary command wil provide some more info on the treatment levels, and provide residual plots to check the assumptions on the residuals.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get a little bit more information</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_Treatment)</span>
@@ -424,15 +497,30 @@ Question: Explain why a square root transform is a useful transformation for the
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: Explain why the effect of one of the treatment levels is not calculated. How can you obtain information about this level?
+Question 6: Explain why the effect of one of the treatment levels is not calculated. How can you obtain information about this level?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -440,15 +528,30 @@ Question: Explain why the effect of one of the treatment levels is not calculate
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: What is your interpretation of this model? What can you say about the root, shoot and control levels?
+Question 7: What is your interpretation of this model? What can you say about the root, shoot and control levels? How can you interpret the residual plots?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 <section id="two-way-crossed-anova" class="level3">
 <h3 class="anchored" data-anchor-id="two-way-crossed-anova">Two-way crossed ANOVA</h3>
@@ -458,7 +561,7 @@ Question: What is your interpretation of this model? What can you say about the 
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(GBN <span class="sc">~</span> Time<span class="sc">*</span>Treatment, <span class="at">data =</span> dat) <span class="co"># Note the * means all main effects and interactions</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">anova</span>(mod))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>For GBN, we see that both factors (Time and Treatment) are significant as is their interaction. Also here check the significance of levels of the factors.</p>
+<p>For GBN, we see that both factors (Time and Treatment) are significant as is their interaction. Also here check the significance of the levels of each of the factors and interaction using the summary command.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mod, <span class="at">which =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -469,15 +572,30 @@ Question: What is your interpretation of this model? What can you say about the 
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: Explain your interpretation of this model.
+Question 8: Explain your interpretation of this model.
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 <p>Different codings can be used for the factors. Here you can compare sum coding and treatment (reference) coding.</p>
 <div class="cell">
@@ -496,15 +614,30 @@ Question: Explain your interpretation of this model.
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: Discuss the differences between the two types of coding. When is one preferred over the other?
+Question 9: Discuss the differences between the two types of coding. When is one preferred over the other?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -512,22 +645,37 @@ Question: Discuss the differences between the two types of coding. When is one p
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: What is the interpretation of the intercept in the models? What is the meaning of the estimated coefficients in each model?
+Question 10: What is the interpretation of the intercept in the models? What is the meaning of the estimated coefficients in each model?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 </section>
 </section>
 <section id="asca" class="level2">
 <h2 class="anchored" data-anchor-id="asca">ASCA</h2>
-<p>ASCA generalized ANOVA or the linear model to the multivariate setting. The models are applied to all response variables, and the variation due to the different factors (and their interactions) is summarized into effect matrices. Then a PCA model can be applied to each effect matrix separately of in combination to find variation that is systematic over all the variables. This variation is then summarized with PCA scores and loadings.</p>
-<p>We will use the <strong>HDANOVA</strong> package to apply asca. First make data from wide to long format for the asca function.</p>
+<p>ASCA generalizes ANOVA or the linear model to the multivariate setting. The models are applied to all response variables, and the variation due to the different factors (and their interactions) is summarized into effect matrices. Then a PCA model can be applied to each effect matrix separately of in combination to find variation that is systematic over all the variables. This variation is then summarized with PCA scores and loadings.</p>
+<p>We will use the <strong>HDANOVA</strong> package to apply asca. The HDANOVA package expects to be in the long format. The next sections transforms the data from wide to long format. Furthermore, the factors Time and Treatment have to be defined as factors.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape data from wide to long format</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>Metabolites <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Time =</span> dat<span class="sc">$</span>Time,<span class="at">Treatment =</span> dat<span class="sc">$</span>Treatment, <span class="at">Metab =</span> <span class="fu">I</span>(<span class="fu">as.matrix</span>(dat[,<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>])))</span>
@@ -543,26 +691,23 @@ Question: What is the interpretation of the intercept in the models? What is the
 <p>Open de mod_asca list and look at all the parameters that have been calculated. Click the scores section. The scores are calculated For each of the effect matrices. This is also the case for the loadings and Projected scores. The latter are the score values calculated with back projection, using the residuals and the effect matrices together, as discussed in the lecture.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple functions to use</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">legend =</span> (<span class="st">"topright"</span>), <span class="at">main=</span><span class="st">"Treatment scores"</span>)</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod_asca, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">scatter=</span><span class="cn">TRUE</span>, <span class="at">labels=</span><span class="st">"names"</span>, <span class="at">main=</span><span class="st">"Treatment loadings"</span>)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># For more control you can obtain information from the mod_asca list, e.g. when you only want to plot the top 8 loadings</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># SCoreplot</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>T_Treatment <span class="ot">=</span> mod_asca[[<span class="st">"scores"</span>]][[<span class="st">"Treatment"</span>]];</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>Var_Exp_Treatment <span class="ot">=</span> <span class="dv">100</span> <span class="sc">*</span> mod_asca[[<span class="st">"singulars"</span>]][[<span class="st">"Treatment"</span>]]<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="fu">sum</span>(mod_asca[[<span class="st">"singulars"</span>]][[<span class="st">"Treatment"</span>]]<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>Var_Exp_Treatment <span class="ot">=</span> <span class="fu">round</span>(Var_Exp_Treatment,<span class="dv">0</span>);</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>colours <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">as.factor</span>(Metabolites<span class="sc">$</span>Treatment));</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(T_Treatment[,<span class="dv">1</span>],T_Treatment[,<span class="dv">2</span>], <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col=</span><span class="fu">as.factor</span>(Metabolites<span class="sc">$</span>Treatment),<span class="at">xlab=</span><span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, Var_Exp_Treatment[<span class="dv">1</span>], <span class="st">"%)"</span>) , <span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"PC2 ("</span>, Var_Exp_Treatment[<span class="dv">2</span>], <span class="st">"%)"</span>) , <span class="at">main=</span><span class="st">"PCA of Treatment effect"</span> )</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend=</span><span class="fu">unique</span>(<span class="fu">as.factor</span>(Metabolites<span class="sc">$</span>Treatment)), <span class="at">col=</span><span class="fu">unique</span>(colours), <span class="at">cex=</span><span class="fl">0.8</span>, <span class="at">pch=</span><span class="dv">16</span>, <span class="at">title=</span><span class="st">"Treatment"</span>)</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading plot</span></span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>P_Treatment <span class="ot">=</span> mod_asca[[<span class="st">"loadings"</span>]][[<span class="st">"Treatment"</span>]];</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>Importance <span class="ot">=</span> P_Treatment[,<span class="dv">1</span>]<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> P_Treatment[,<span class="dv">2</span>]<span class="sc">^</span><span class="dv">2</span>;</span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>NIMP <span class="ot">=</span> <span class="dv">8</span>; <span class="co"># number of important variables</span></span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>sorted_Importance <span class="ot">=</span> <span class="fu">sort</span>(Importance, <span class="at">decreasing =</span> <span class="cn">TRUE</span>, <span class="at">index.return =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>Importance_Index <span class="ot">=</span> sorted_Importance<span class="sc">$</span>ix[<span class="dv">1</span><span class="sc">:</span>NIMP]</span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(P_Treatment[Importance_Index,<span class="dv">1</span>],P_Treatment[Importance_Index,<span class="dv">2</span>],<span class="at">type =</span> <span class="st">"n"</span>,<span class="at">xlab=</span><span class="fu">paste0</span>(<span class="st">"Comp 1 ("</span>, Var_Exp_Treatment[<span class="dv">1</span>], <span class="st">"%)"</span>) , <span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"Comp 2 ("</span>, Var_Exp_Treatment[<span class="dv">2</span>], <span class="st">"%)"</span>) )</span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(P_Treatment[Importance_Index,<span class="dv">1</span>],P_Treatment[Importance_Index,<span class="dv">2</span>],<span class="fu">colnames</span>(Data[,Importance_Index]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">legend =</span> (<span class="st">"topright"</span>), <span class="at">main=</span><span class="st">"Treatment scores"</span>, <span class="at">projections =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">legend =</span> (<span class="st">"topright"</span>), <span class="at">main=</span><span class="st">"Projected Treatment scores"</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">legend =</span> (<span class="st">"topright"</span>), <span class="at">main=</span><span class="st">"Treatment scores Spider plot"</span>, <span class="at">spider =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod_asca, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">scatter=</span><span class="cn">TRUE</span>, <span class="at">labels=</span><span class="st">"names"</span>, <span class="at">main=</span><span class="st">"Treatment loadings"</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co"># For more control you can obtain information from the mod_asca list, e.g. when you only want to plot the top 8 loadings</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading plot for only important loadings</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>Var_Exp_Treatment <span class="ot">=</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> mod_asca[[<span class="st">"singulars"</span>]][[<span class="st">"Treatment"</span>]]<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="fu">sum</span>(mod_asca[[<span class="st">"singulars"</span>]][[<span class="st">"Treatment"</span>]]<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>P_Treatment <span class="ot">=</span> mod_asca[[<span class="st">"loadings"</span>]][[<span class="st">"Treatment"</span>]];</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>Importance <span class="ot">=</span> P_Treatment[,<span class="dv">1</span>]<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> P_Treatment[,<span class="dv">2</span>]<span class="sc">^</span><span class="dv">2</span>;</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>NIMP <span class="ot">=</span> <span class="dv">8</span>; <span class="co"># number of important variables</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>sorted_Importance <span class="ot">=</span> <span class="fu">sort</span>(Importance, <span class="at">decreasing =</span> <span class="cn">TRUE</span>, <span class="at">index.return =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>Importance_Index <span class="ot">=</span> sorted_Importance<span class="sc">$</span>ix[<span class="dv">1</span><span class="sc">:</span>NIMP]</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(P_Treatment[Importance_Index,<span class="dv">1</span>],P_Treatment[Importance_Index,<span class="dv">2</span>],<span class="at">type =</span> <span class="st">"n"</span>,<span class="at">xlab=</span><span class="fu">paste0</span>(<span class="st">"Comp 1 ("</span>, Var_Exp_Treatment[<span class="dv">1</span>], <span class="st">"%)"</span>), <span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"Comp 2 ("</span>, Var_Exp_Treatment[<span class="dv">2</span>], <span class="st">"%)"</span>), <span class="at">main =</span> <span class="st">"Important Treatment loadings"</span>)</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(P_Treatment[Importance_Index,<span class="dv">1</span>],P_Treatment[Importance_Index,<span class="dv">2</span>],<span class="fu">colnames</span>(Data[,Importance_Index]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -570,17 +715,32 @@ Question: What is the interpretation of the intercept in the models? What is the
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: What is your interpretation of the ASCA model of the Treatment factor?
+Question 11: What is your interpretation of the ASCA model of the Treatment factor?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>It is important to check whether the grouping of the factors is significant. This can be done using permutation testing.</p>
+</div>
+</div>
+</div>
+<p>It is important to check whether the factors and interactions are significant. This can be done using permutation testing.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>mod.perm <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metab <span class="sc">~</span> Time<span class="sc">*</span>Treatment, <span class="at">data=</span>Metabolites, <span class="at">permute =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod.perm)</span>
@@ -595,19 +755,34 @@ Question: What is your interpretation of the ASCA model of the Treatment factor?
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: What conclusion can you draw from the permutation test results?
+Question 12: What conclusion can you draw from the permutation test results?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</div>
+</div>
 <section id="combining-main-and-interaction-effects" class="level4">
-<h4 class="anchored" data-anchor-id="combining-main-and-interaction-effects">Combining Main and interaction effects</h4>
-<p>Sometimes it makes sense to combine effects, e.g., a main factor and an interaction. This is especially the case when the effect of Treatments are studied over Time. Here we combined the effects of Treatment and the Time:Treatment interaction. Note the effect matrices of Treatment and Time:Treatment are estimated independently, but the PCA is applied on the sum of these two effect matrices.</p>
+<h4 class="anchored" data-anchor-id="combining-main-and-interaction-effects">Combining Main and Interaction effects</h4>
+<p>Sometimes it makes sense to combine effects, e.g., a main factor and an interaction. This is especially the case when the effect of Treatments are studied over Time. Here we combine the effects of Treatment and the Time:Treatment interaction. Note the effect matrices of Treatment and Time:Treatment are estimated independently, but the PCA is applied on the sum of these two effect matrices.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>mod.comb <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metab <span class="sc">~</span> Time <span class="sc">+</span> <span class="fu">comb</span>(Treatment <span class="sc">+</span> Time<span class="sc">:</span>Treatment), <span class="at">data=</span>Metabolites)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod.comb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -625,22 +800,37 @@ Question: What conclusion can you draw from the permutation test results?
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: Give your interpretation of this combined effect.
+Question 13: Give your interpretation of this combined effect.
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Finally, it can be useful to also explore the residual matrix.</p>
+</div>
+</div>
+</div>
+<p>Finally, it can be useful to also explore the residual matrix to see whether there are effects in the data that is not modeled for.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make score and loading plots and interpret.</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) </span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod.comb, <span class="at">factor=</span><span class="st">"Residuals"</span>, <span class="at">scatter=</span><span class="cn">TRUE</span>, <span class="at">labels=</span><span class="st">"names"</span>, <span class="at">main=</span><span class="st">"Residual loadings"</span>)</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod.comb, <span class="at">factor=</span><span class="st">"Residuals"</span>, <span class="at">scatter=</span><span class="cn">TRUE</span>, <span class="at">main=</span><span class="st">"Residual scores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod.comb, <span class="at">factor=</span><span class="st">"Residuals"</span>, <span class="at">main=</span><span class="st">"Residual scores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -648,53 +838,67 @@ Question: Give your interpretation of this combined effect.
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: Why is it useful to also explore the residuals and interpret the PCA model of the residuals.
+Question 14: Why is it useful to also explore the residuals and interpret the PCA model of the residuals.
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-29-contents" aria-controls="callout-29" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-29" class="callout-29-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 </section>
 </section>
 </section>
 <section id="additional-exercises" class="level1">
 <h1>Additional exercises</h1>
-<p>In this 2<sup>nd</sup> exercise you have to do some coding yourself.</p>
+<p>In this 2<sup>nd</sup> exercise you have to do some coding yourself. Look at the code provided above to see how to use the functions.</p>
 <section id="the-motrpac-data" class="level3">
 <h3 class="anchored" data-anchor-id="the-motrpac-data">The MoTrPAC data</h3>
-<p>The Molecular Transducers of Physical Activity Consortium (MoTrPAC) profiled the dynamic change of multiple omics layers in several organs of rats undergoing physical training. The results are presented in the Nature article “Temporal dynamics of the multi-omic response to endurance exercise training”. <a href="https://www.nature.com/articles/s41586-023-06877-w">https://www.nature.com/articles/s41586-023-06877-w</a> The data was obtained from their website MoTrPAC-data.org.</p>
+<p>The Molecular Transducers of Physical Activity Consortium (MoTrPAC) profiled the dynamic change of multiple omics layers in several organs of rats undergoing physical training. The results are presented in the Nature article “Temporal dynamics of the multi-omic response to endurance exercise training”. <a href="https://www.nature.com/articles/s41586-023-06877-w" class="uri">https://www.nature.com/articles/s41586-023-06877-w</a> The data was obtained from their website MoTrPAC-data.org.</p>
 </section>
 <section id="experimental-design" class="level3">
 <h3 class="anchored" data-anchor-id="experimental-design">Experimental design</h3>
-<p>Six-month-old male and female Fischer 344 rats were subjected to progressive treadmill endurance exercise training for 1, 2, 4 or 8 weeks. Sex-matched sedentary, untrained rats were used as controls. In this application we will focus on metabolomics data from plasma. Unfortunately these measurements do not all come from the same rats. Note that Females have Sex = 1 and Males have Sex = 2.</p>
+<p>Six-month-old male and female Fischer 344 rats were subjected to progressive treadmill endurance exercise training for 1, 2, 4 or 8 weeks. Sex-matched sedentary, untrained rats were used as controls (0). In this application we will focus on metabolomics data from plasma. Unfortunately these measurements do not all come from the same rats. Note that Females have Sex = 1 and Males have Sex = 2.</p>
 <section id="load-and-view-the-data" class="level4">
 <h4 class="anchored" data-anchor-id="load-and-view-the-data">Load and view the data</h4>
 <p>Load the metabolomics_Values (Data) and the metabolomics_Exp (Design) files. For visualization reasons we will only select the lipids subset.</p>
 <p>As preprocessing we decided to not use a transformation of the data, but only use meancentering and scaling by the standard deviation of the lipid.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load data and design</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for web-based rendering, use the following lines instead:</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>df_metabolomics_Values <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"Plasma_Metabolomics_Values_a.csv"</span>, <span class="at">row.names=</span><span class="dv">1</span>)</span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>df_metabolomics_Exp <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"Plasma_Metabolomics_Exp_a.csv"</span>, <span class="at">row.names=</span><span class="dv">1</span>)</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>df_metabolomics_Lipids <span class="ot">=</span> df_metabolomics_Values[,<span class="dv">80</span><span class="sc">:</span><span class="dv">613</span>]</span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co"># make boxplots of the data before preprocessing</span></span>
-<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)) </span>
-<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(df_metabolomics_Lipids)</span>
-<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Preprocess the data by centering and scaling </span></span>
-<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>CData <span class="ot">=</span> <span class="fu">scale</span>(df_metabolomics_Lipids, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>SData <span class="ot">=</span> <span class="fu">scale</span>(df_metabolomics_Lipids, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Make boxplots of the data after centering and scaling</span></span>
-<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(CData)</span>
-<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(SData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>df_metabolomics_Values <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"Plasma_Metabolomics_Values_ab.csv"</span>, <span class="at">row.names=</span><span class="dv">1</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>df_metabolomics_Exp <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"Plasma_Metabolomics_Exp_ab.csv"</span>, <span class="at">row.names=</span><span class="dv">1</span>)</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>df_metabolomics_Lipids <span class="ot">=</span> df_metabolomics_Values[,<span class="dv">80</span><span class="sc">:</span><span class="dv">613</span>]</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="co"># make boxplots of the data before preprocessing</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)) </span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(df_metabolomics_Lipids)</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Preprocess the data by centering and scaling </span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>CData <span class="ot">=</span> <span class="fu">scale</span>(df_metabolomics_Lipids, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>SData <span class="ot">=</span> <span class="fu">scale</span>(df_metabolomics_Lipids, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Make boxplots of the data after centering and scaling</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(CData)</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(SData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -702,15 +906,30 @@ Question: Why is it useful to also explore the residuals and interpret the PCA m
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: Why did we preprocess the lipids data this way?
+Question 15: Why did we preprocess the lipids data this way?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="data-handling" class="level4">
@@ -718,17 +937,18 @@ Question: Why did we preprocess the lipids data this way?
 <p>Just as above the data has to be made in the long format to be able to use the <strong>HDANOVA</strong> package. Make sure the factors Sex and Group are defined as factors.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make the data frame in long format</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>Data_Values_long <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Sex =</span> <span class="fu">as.factor</span>(df_metabolomics_Exp<span class="sc">$</span>Rat.Sex), <span class="at">Group =</span> <span class="fu">as.factor</span>(df_metabolomics_Exp<span class="sc">$</span>Group), <span class="at">Metabolites =</span> <span class="fu">I</span>(<span class="fu">as.matrix</span>(SData)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>Data_Values_long <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Sex =</span> <span class="fu">as.factor</span>(df_metabolomics_Exp<span class="sc">$</span>Rat.Sex), <span class="at">Training =</span> <span class="fu">as.factor</span>(df_metabolomics_Exp<span class="sc">$</span>Group), <span class="at">Metabolites =</span> <span class="fu">I</span>(<span class="fu">as.matrix</span>(SData)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="asca-model-of-main-factors" class="level4">
 <h4 class="anchored" data-anchor-id="asca-model-of-main-factors">ASCA model of main factors:</h4>
-<p>Create an ASCA model using the only the main factors Sex and Group. Do not consider interaction terms yet.</p>
+<p>Create an ASCA model using the only the main factors Sex and Training. Do not consider interaction terms yet.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ASCA model of main factors</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>mod_asca <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metabolites <span class="sc">~</span> Sex <span class="sc">+</span> Group, <span class="at">data=</span>Data_Values_long)</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at the summary of the model</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_asca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>mod_asca1 <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metabolites <span class="sc">~</span> Sex <span class="sc">+</span> Training, <span class="at">data=</span>Data_Values_long)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at the summary of the model</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_asca1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -736,56 +956,84 @@ Question: Why did we preprocess the lipids data this way?
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question:Explain the meaning of Sum.Sq and Expl.var. What is your interpretation of the ASCA model?
+Question 16: Explain the meaning of Sum.Sq and Expl.var. What is your interpretation of the ASCA model?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-33" class="callout-33-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="visualization" class="level4">
 <h4 class="anchored" data-anchor-id="visualization">Visualization</h4>
-<ol type="1">
-<li>Make score plot</li>
-<li>Show the loading plots of PC1 vs PC2 of the Group factor. Only show the 20 most important variables where <span class="math inline">\(Importance_j =\sqrt(p_{1j}^2 + p_{2j}^2)\)</span>. [1.5]</li>
-</ol>
+<p>Make score plots of the Training effect</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: Show score plot of PC1 vs PC2 of the Group factor.
+Question 17: Show a score plot of the Training effect.
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-35-contents" aria-controls="callout-35" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-35" class="callout-35-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Below the loading plots of PC1 vs PC2 of the Group factor is given. For visualization reasons we only show the 20 most important variables.</p>
+</div>
+</div>
+</div>
+<p>Below the loading plots of PC1 vs PC2 of the Training factor is given. For visualization reasons we only show the most important variables.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading plot of only 20 most important metabolites</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># determine explained variance per principal component </span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>Var_Exp_Group <span class="ot">=</span> <span class="dv">100</span><span class="sc">*</span>(mod_asca[[<span class="st">"singulars"</span>]][[<span class="st">"Group"</span>]]<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">sum</span>(mod_asca[[<span class="st">"singulars"</span>]][[<span class="st">"Group"</span>]]<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>Var_Exp_Group <span class="ot">=</span> <span class="fu">round</span>(Var_Exp_Group,<span class="dv">0</span>)</span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># extract loadings of the Group factor</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>P_group <span class="ot">=</span> mod_asca[[<span class="st">"loadings"</span>]][[<span class="st">"Group"</span>]];</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>Var_Exp_Training <span class="ot">=</span> <span class="dv">100</span><span class="sc">*</span>(mod_asca1[[<span class="st">"singulars"</span>]][[<span class="st">"Training"</span>]]<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">sum</span>(mod_asca1[[<span class="st">"singulars"</span>]][[<span class="st">"Training"</span>]]<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>Var_Exp_Training <span class="ot">=</span> <span class="fu">round</span>(Var_Exp_Training,<span class="dv">0</span>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># extract loadings of the Training factor</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>P_Training <span class="ot">=</span> mod_asca1[[<span class="st">"loadings"</span>]][[<span class="st">"Training"</span>]];</span>
 <span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="co"># combine the loadings of PC1 and PC2 into an importance value</span></span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>Importance <span class="ot">=</span> <span class="fu">sqrt</span>(P_group[,<span class="dv">1</span>]<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> P_group[,<span class="dv">2</span>]<span class="sc">^</span><span class="dv">2</span>);</span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>NIMP <span class="ot">=</span> <span class="dv">20</span>; <span class="co"># number of important variables</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>Importance <span class="ot">=</span> <span class="fu">sqrt</span>(P_Training[,<span class="dv">1</span>]<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> P_Training[,<span class="dv">2</span>]<span class="sc">^</span><span class="dv">2</span>);</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>NIMP <span class="ot">=</span> <span class="dv">7</span>; <span class="co"># number of important variables</span></span>
 <span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="co"># sort the importance values and get the index of the top 20 most important variables</span></span>
 <span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>sorted_Importance <span class="ot">=</span> <span class="fu">sort</span>(Importance, <span class="at">decreasing =</span> <span class="cn">TRUE</span>, <span class="at">index.return =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>Importance_Index <span class="ot">=</span> sorted_Importance<span class="sc">$</span>ix[<span class="dv">1</span><span class="sc">:</span>NIMP]</span>
-<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the top20 most important variables in the loading plot</span></span>
-<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(P_group[Importance_Index,<span class="dv">1</span>],P_group[Importance_Index,<span class="dv">2</span>],<span class="at">xlab=</span><span class="fu">paste0</span>(<span class="st">"Comp 1 ("</span>, Var_Exp_Group[<span class="dv">1</span>], <span class="st">"%)"</span>), <span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"Comp 2 ("</span>, Var_Exp_Group[<span class="dv">2</span>], <span class="st">"%)"</span>))</span>
-<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(P_group[Importance_Index,<span class="dv">1</span>],P_group[Importance_Index,<span class="dv">2</span>],<span class="fu">colnames</span>(df_metabolomics_Lipids[,Importance_Index]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the most important variables in the loading plot</span></span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(P_Training[Importance_Index,<span class="dv">1</span>],P_Training[Importance_Index,<span class="dv">2</span>],<span class="at">xlab=</span><span class="fu">paste0</span>(<span class="st">"Comp 1 ("</span>, Var_Exp_Training[<span class="dv">1</span>], <span class="st">"%)"</span>), <span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"Comp 2 ("</span>, Var_Exp_Training[<span class="dv">2</span>], <span class="st">"%)"</span>))</span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(P_Training[Importance_Index,<span class="dv">1</span>],P_Training[Importance_Index,<span class="dv">2</span>],<span class="fu">colnames</span>(df_metabolomics_Lipids[,Importance_Index]))</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_metabolomics_Lipids[,Importance_Index])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -793,17 +1041,31 @@ Question: Show score plot of PC1 vs PC2 of the Group factor.
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: Give your interpretation of the score and loading plots. [1]
+Question 18: Give your interpretation of the score and loading plots. [1]
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-37" class="callout-37-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>The extreme loading values are found upper left and lower right. For example, the object PC.42.8 has high values for the 1 and 2 weeks training and are low for week4 and week8 training</strong></p>
+</div>
+</div>
+</div>
 </section>
 <section id="asca-model-with-interaction" class="level4">
 <h4 class="anchored" data-anchor-id="asca-model-with-interaction">ASCA model with interaction</h4>
@@ -813,15 +1075,30 @@ Question: Give your interpretation of the score and loading plots. [1]
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: Make a new model in which the two-factor interaction Sex:Group is also included in the model.
+Question 19: Make a new model in which the two-factor interaction Sex:Training is also included in the model.
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-39" class="callout-39-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -829,15 +1106,30 @@ Question: Make a new model in which the two-factor interaction Sex:Group is also
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: What is your conclusion of this ASCA model with interaction?
+Question 20: What is your conclusion of this ASCA model with interaction?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-41" class="callout-41-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="statistical-inference" class="level4">
@@ -845,13 +1137,13 @@ Question: What is your conclusion of this ASCA model with interaction?
 <p>To conclude whether the main factors and interaction are significant, apply a permutation test and plot the permutation result using the permutation plot function for both main factors and the interaction.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Permutation test for the ASCA model with interaction</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>mod.perm <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metabolites <span class="sc">~</span> Sex <span class="sc">+</span> Group <span class="sc">+</span> Sex<span class="sc">:</span>Group, <span class="at">data=</span>Data_Values_long, <span class="at">permute =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod.perm)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>mod_asca_Int_perm <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metabolites <span class="sc">~</span> Sex <span class="sc">+</span> Training <span class="sc">+</span> Sex<span class="sc">:</span>Training, <span class="at">data=</span>Data_Values_long, <span class="at">permute =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_asca_Int_perm)</span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># make permutation plots for the main factors and the interaction</span></span>
 <span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod.perm, <span class="at">factor =</span> <span class="st">"Sex"</span>)</span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod.perm, <span class="at">factor =</span> <span class="st">"Group"</span>)</span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod.perm, <span class="at">factor =</span> <span class="st">"Sex:Group"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod_asca_Int_perm, <span class="at">factor =</span> <span class="st">"Sex"</span>)</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod_asca_Int_perm, <span class="at">factor =</span> <span class="st">"Training"</span>)</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod_asca_Int_perm, <span class="at">factor =</span> <span class="st">"Sex:Training"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -859,53 +1151,88 @@ Question: What is your conclusion of this ASCA model with interaction?
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: Explain why in ASCA a permutation test is used and not an F-test.
+Question 21: Explain why in ASCA a permutation test is used and not an F-test.
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-43-contents" aria-controls="callout-43" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-43" class="callout-43-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: What is your interpretation of the permutation test?
+Question 22: What is your interpretation of the permutation test?
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-45" class="callout-45-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>When exploring the model with interaction, it is common to combine the interaction effect with one of the main factor effects to improve interpretation.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Questions:
 </div>
 </div>
-<div class="callout-body-container callout-body">
+</div>
+<p>Finally we can make a plot of the combination Training + Sex:Training to visualize how the Females and Males deviate in their training effect. For this we:</p>
 <ol type="1">
-<li>Make ASCA model in which the Sex:Group interaction effect is combined with the main Group effect.</li>
+<li>Make ASCA model in which the Sex:Training interaction effect is combined with the main Training effect.</li>
 <li>Determine the explained variance of the components in combination effect.</li>
-<li>Make a score plot (using the timeplot function) of the combination effect. The PC1 scores of the Females and Males are plotted as a function of the training Groups.</li>
-<li>Make a loading plot for PC1.</li>
+<li>Make a score plot (using the timeplot function) of the combination effect. The PC1 scores of the Females and Males are plotted as a function of the training groups.</li>
+<li>Make a loading plot for PC1 of the combination effect.</li>
+<li>Also show a plot of only the interaction.</li>
 </ol>
-</div>
-</div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1. Make Model with main factor Sex and combination of Group and Sex:Group interaction</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>mod_comb1 <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metabolites <span class="sc">~</span> Sex <span class="sc">+</span> <span class="fu">comb</span>(Training<span class="sc">+</span>Sex<span class="sc">:</span>Training), <span class="at">data=</span>Data_Values_long)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_comb1)</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co">#2.  determine explained variance of the combination effect</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>Var_Exp_Comb1 <span class="ot">=</span> <span class="dv">100</span><span class="sc">*</span>(mod_comb1[[<span class="st">"singulars"</span>]][[<span class="st">"Training+Sex:Training"</span>]]<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">sum</span>(mod_comb1[[<span class="st">"singulars"</span>]][[<span class="st">"Training+Sex:Training"</span>]]<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>Var_Exp_Comb1<span class="ot">=</span> <span class="fu">round</span>(Var_Exp_Comb1,<span class="dv">0</span>)</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="co">#3.</span></span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a><span class="fu">timeplot</span>(mod_comb1, <span class="at">factor=</span><span class="st">"Sex"</span>, <span class="at">time=</span><span class="st">"Training"</span>, <span class="at">comb=</span><span class="dv">2</span>, <span class="at">comp=</span><span class="dv">1</span>,  <span class="at">x_time=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, Var_Exp_Comb1[<span class="dv">1</span>], <span class="st">"%)"</span>))</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>,<span class="at">col =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="at">lty=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="fu">levels</span>(Data_Values_long<span class="sc">$</span>Sex))</span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a><span class="co">#4.</span></span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod_comb1, <span class="at">factor =</span> <span class="st">"Training+Sex:Training"</span>, <span class="at">comp=</span><span class="dv">1</span>,<span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, Var_Exp_Comb1[<span class="dv">1</span>], <span class="st">"%)"</span>), <span class="at">main =</span> (<span class="st">"Loadings Combination (Training+Sex:Training)"</span>))</span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a><span class="co">#5</span></span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>Var_Exp_Int_Int<span class="ot">=</span> <span class="fu">round</span>(mod_asca_Int_perm[[<span class="st">"singulars"</span>]][[<span class="st">"Sex:Training"</span>]],<span class="dv">0</span>)</span>
+<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod_asca_Int_perm, <span class="at">factor =</span> <span class="st">"Sex:Training"</span>, <span class="at">comp=</span><span class="dv">1</span>,<span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, Var_Exp_Int_Int[<span class="dv">1</span>], <span class="st">"%)"</span>),<span class="at">main =</span> (<span class="st">"Loadings Interaction Sex:Training"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -913,15 +1240,30 @@ Questions:
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Question: What is your interpretation of the combination effect (Group + Sex:Group)
+Question 23: What is your interpretation of the combination effect (Training + Sex:Training), and of the interaction Sex:Training
 </div>
 </div>
 <div class="callout-body-container callout-body">
 
 </div>
 </div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-47-contents" aria-controls="callout-47" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-47" class="callout-47-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Placeholder</span> for your answer </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </div>
 
 
