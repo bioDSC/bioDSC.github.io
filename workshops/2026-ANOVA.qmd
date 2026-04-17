@@ -39,7 +39,7 @@ All materials required for this workshop can be found [here](/workshop-materials
 
 The workshop will be given by Johan Westerhuis and consists of a lecture for half of the time and hands-on exercises for the other half. You have to bring your own laptop. We will use R markdown documents to go through all the necessary steps in the calculations. 
 
-| When:  May 12 (Tuesday) 13:00 - 17:00  **this is a change from the original date of April 30**
+| When:  May 12 (Tuesday) 13:00 - 17:00   (**NB. this is a change from the original date of April 30**)
 Where: SP TBA
  
  
