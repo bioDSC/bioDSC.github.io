@@ -1,5 +1,5 @@
 ---
-title: "April 30 (2026): Analysis of Variance for high-dimensional data using ASCA"
+title: "May 12 (2026): Analysis of Variance for high-dimensional data using ASCA"
 date: 2026-04-17
 author: Frans van der Kloet
 description: "An introduction to Analysis of Variance for high-dimensional data using ASCA"
@@ -47,10 +47,10 @@ Where: SP TBA
 
 Sign-up [here](https://forms.office.com/e/rRi1C1Pp3q){target="_blank"}. The number of participants is limited to 24.
 
-**deadline: 20th of April. First come, first serve.**
+**deadline: 10th of May. First come, first serve.**
 
 
 ### Identifier
 
-This meeting's identifier: 2026-04-30-UvA-bioDSC-BDA.
+This meeting's identifier: 2026-05-12-UvA-bioDSC-BDA.
 
