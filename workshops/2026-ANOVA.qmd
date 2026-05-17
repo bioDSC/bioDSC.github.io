@@ -27,7 +27,8 @@ If you have another high dimensional dataset that has a clear underlying experim
 
 ### Workshop materials
 
-All materials required for this workshop can be found [here](/workshop-materials/bda-anova/ASCA_SILS_ab.qmd){target="_blank"}. 
+The code required for this workshop can be found [here](/workshop-materials/bda-anova/ASCA_SILS_ab.qmd){target="_blank"}.  
+Download the data files from [here](/workshop-materials/bda-anova/data_files.zip){target="_blank"}. 
 
 ### Requirements
 
