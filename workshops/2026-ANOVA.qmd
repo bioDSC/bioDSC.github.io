@@ -4,6 +4,7 @@ date: 2026-04-17
 author: Frans van der Kloet
 description: "An introduction to Analysis of Variance for high-dimensional data using ASCA"
 categories: [upcoming]
+resource-files: ["../workshop-materials/bda-anova/ASCA_SILS_ab.qmd"]
 ---
 
 Together with the Biosystems Data Analysis group we organize a workshop on the analysis of variance for high-dimensional data using ASCA for a group of up to 24 participants. 
@@ -27,8 +28,8 @@ If you have another high dimensional dataset that has a clear underlying experim
 
 ### Workshop materials
 
-The code required for this workshop can be found [here](/workshop-materials/bda-anova/ASCA_SILS_ab.qmd){target="_blank"}.  
-Download the data files from [here](/workshop-materials/bda-anova/data_files.zip){target="_blank"}. 
+The code required for this workshop can be found <a href="/workshop-materials/bda-anova/ASCA_SILS_ab.qmd">here</a>.  
+Download the workshop files (qmd file and data files) from [here](/workshop-materials/bda-anova/workshop_files.zip){target="_blank"}. 
 
 ### Requirements
 
@@ -41,7 +42,7 @@ Download the data files from [here](/workshop-materials/bda-anova/data_files.zip
 The workshop will be given by Johan Westerhuis and consists of a lecture for half of the time and hands-on exercises for the other half. You have to bring your own laptop. We will use R markdown documents to go through all the necessary steps in the calculations. 
 
 | When:  May 19 (Tuesday) 13:00 - 17:00   (**NB. this is a change from the original date of April 30**)
-Where: SP TBA
+Where: SP C3.161
  
  
 ### Sign up
@@ -54,4 +55,3 @@ Sign-up [here](https://forms.office.com/e/rRi1C1Pp3q){target="_blank"}. The numb
 ### Identifier
 
 This meeting's identifier: 2026-05-19-UvA-bioDSC-BDA.
-
