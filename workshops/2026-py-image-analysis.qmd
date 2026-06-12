@@ -1,0 +1,124 @@
+---
+title: "June 22, 24, 29 (2026), Pilot: Image analysis with Python"
+date: 2026-06-12
+author: Martijn Wehrens
+description: "Tools and concepts for image analysis in Python."
+categories: [upcoming]
+---
+
+<!--
+::: {.callout-important}
+## This workshop is full.
+
+12 people have registered (surprisingly fast), we do not have place for more participants. Unfortunately, you cannot register any more.
+
+Please send us an [email](mailto:info@biodsc.nl) in case you were interested in signing up, such that we know to organize more workshops soon.
+:::
+-->
+
+### Image analysis in Python
+
+In "the good old days", scientists could (often) show microscopy pictures in their papers, and directly draw scientific conclusions. 
+Today, computers allow us to 
+
+- take huge amounts of pictures, and 
+- automatically quantify scientifically relevant image features.
+
+This requires a new set of skills from researchers.
+
+In this course, we'll teach you tools and concepts to automatically process, analyze and quantify images and their features using Python.
+
+### Workshop goals
+
+The goals of this python-based workshop are to teach you:
+
+::: {.mw-infoblock}
+- How to think about images on the computer
+- Learn about tools to modify images
+- Which tools are available in Python
+- Python syntax/concepts required to apply these tools
+- How to practically build an image analysis-pipeline
+- Some fundamentals of machine learning (ML)
+:::
+
+### Entry requirements 
+
+Regarding your experience:
+
+- We require you to have followed our "introduction to python" course, OR ..
+- .. require you to be familiar with Python already.
+
+### To do before the course
+
+On your computer, we require you to have **before the workshop starts**:
+
+- A working conda environment with python installed ([link](https://www.biodsc.nl/posts/installing_conda_python.html)).
+- The software "FIJI" ([link](https://imagej.net/software/fiji/)).
+- And editor in which you can edit and run python code
+    - For this advanced workshop we require an IDE (integrated development environment)
+    - Good options are Spyder or Visual Studio Code.
+    - See also this [link](https://www.biodsc.nl/posts/installing_conda_python.html) to see how to install Spyder.
+- Install the libraries listed [here](https://jintram.github.io/Workshop_Py_image-analysis_2025/Bioimage-analysis_01_Introduction.html#libraries-to-install).
+- Download the datasets linked [here](https://jintram.github.io/Workshop_Py_image-analysis_2025/Bioimage-analysis_01_Introduction.html#datasets-to-download).
+
+If you have trouble with installing any of these, **please contact us before
+the workshop** at [info@biodsc.nl](mailto:info@biodsc.nl)!
+
+
+### Workshop materials
+
+You can find the current version of the workshop materials here:
+
+[https://jintram.github.io/Workshop_Py_image-analysis_2025/](https://jintram.github.io/Workshop_Py_image-analysis_2025/)
+
+Note that this is **not a self-explanatory tutorial** (yet). 
+During the workshop, an instructor will be writing and explaining computer code.
+The materials are only meant as a reference.
+
+### Workshop logistics
+
+The course will be given by Martijn Wehrens (*bio*DSC), supported by Misha Paauw (*bio*DSC) and Nico Schramma (Amsterdam UMC/UvA).
+
+This is a pilot version, intended to "test-run" all the materials and polish them.
+There is room for ±5 participants. 
+
+You have to bring your own laptop.
+
+### Workshop schedule
+
+| Date | Time | Location | Topic |
+| ---- | ---- | ----  | ---------- |
+| Monday June 22nd | 13:00 - 17:00 | SP A1.18 | The basics |
+| Wednesday June 24th | 13:00 - 17:00 | SP B0.201 | Image processing methods | 
+| Monday June 29th | 13:00 - 17:00 | SP B0.201 | Bringing it all together | 
+<!--<i>*) These rooms are in the "Lab 42" building!</i>-->
+
+
+### Sign up
+
+This pilot is by invitation only; a public edition will follow.
+
+Feel free to send us an email if you are interested in this workshop, [info@biodsc.nl](mailto:info@biodsc.nl).
+
+<!-- If you have any questions regarding whether this course is relevant for you, please send us an email ([info@biodsc.nl](mailto:info@biodsc.nl)) or walk by our [desks](../people.html). -->
+
+<!--
+Sign up using this link (TBA). [using this link](){target="_blank"}.
+**Sign up deadline: TBA. First come, first serve.**
+-->
+
+<!--
+::: {.callout-important}
+## This workshop is full.
+
+12 people have registered, we do not have place for more participants. Unfortunately, you cannot register any more.
+
+Please send us an [email](mailto:info@biodsc.nl) in case you were interested in signing up, such that we know to organize more workshops soon.
+:::
+-->
+
+### Identifier
+
+This workshop's identifier: 2026-06-22-UvA_bioDSC.
+
+

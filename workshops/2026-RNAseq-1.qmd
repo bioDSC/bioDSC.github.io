@@ -3,7 +3,7 @@ title: "April 13 and 15 (2026): Introduction to RNA-seq"
 date: 2026-03-17
 author: Misha Paauw
 description: "Learn the basics of RNA-seq analysis: from read mapping to volcano plots"
-categories: [upcoming]
+categories: [past]
 ---
 
 The *bio*DSC organizes an introductory workshop that will cover the basics of RNA-sequencing analysis. After a succesful beta-test round of this workshop, we now open a new round for up to 12 participants. 

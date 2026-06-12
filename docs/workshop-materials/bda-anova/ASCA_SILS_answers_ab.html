@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.32">
+<meta name="generator" content="quarto-1.6.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5bf4af7e2e95050c9a7956e2538f3941.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7e02f01fb7d34aee29950772766a5ecd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -235,7 +235,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
@@ -274,27 +274,126 @@ Credits &amp; copyright
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(mixlm)</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(HDANOVA)</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>zoo          (1.8-12    -&gt; 1.8-15   ) [CRAN]
+viridisLite  (0.4.2     -&gt; 0.4.3    ) [CRAN]
+rlang        (1.1.7     -&gt; 1.2.0    ) [CRAN]
+R6           (2.5.1     -&gt; 2.6.1    ) [CRAN]
+lifecycle    (1.0.4     -&gt; 1.0.5    ) [CRAN]
+glue         (1.6.2     -&gt; 1.8.1    ) [CRAN]
+farver       (2.1.1     -&gt; 2.1.2    ) [CRAN]
+cli          (3.6.2     -&gt; 3.6.6    ) [CRAN]
+rbibutils    (NA        -&gt; 2.4.1    ) [CRAN]
+RcppEigen    (0.3.3.9.4 -&gt; 0.3.4.0.2) [CRAN]
+Rcpp         (1.0.10    -&gt; 1.1.1-1.1) [CRAN]
+reformulas   (NA        -&gt; 0.4.4    ) [CRAN]
+nloptr       (2.0.3     -&gt; 2.2.1    ) [CRAN]
+minqa        (1.2.5     -&gt; 1.2.8    ) [CRAN]
+Rdpack       (NA        -&gt; 2.6.6    ) [CRAN]
+MatrixModels (0.5-1     -&gt; 0.5-4    ) [CRAN]
+SparseM      (1.81      -&gt; 1.84-2   ) [CRAN]
+sandwich     (3.1-0     -&gt; 3.1-1    ) [CRAN]
+TH.data      (1.1-2     -&gt; 1.1-5    ) [CRAN]
+mvtnorm      (1.1-3     -&gt; 1.4-1    ) [CRAN]
+scales       (1.2.1     -&gt; 1.4.0    ) [CRAN]
+lme4         (1.1-33    -&gt; 2.0-1    ) [CRAN]
+quantreg     (5.95      -&gt; 6.1      ) [CRAN]
+abind        (1.4-5     -&gt; 1.4-8    ) [CRAN]
+carData      (3.0-5     -&gt; 3.0-6    ) [CRAN]
+leaps        (3.1       -&gt; 3.2      ) [CRAN]
+pracma       (NA        -&gt; 2.4.6    ) [CRAN]
+multcomp     (1.4-25    -&gt; 1.4-30   ) [CRAN]
+pls          (NA        -&gt; 2.9-0    ) [CRAN]
+car          (3.1-2     -&gt; 3.1-5    ) [CRAN]
+
+  There are binary versions available but the source versions are later:
+                binary    source needs_compilation
+zoo             1.8-12    1.8-15              TRUE
+viridisLite      0.4.2     0.4.3             FALSE
+rlang            1.1.1     1.2.0              TRUE
+R6               2.5.1     2.6.1             FALSE
+lifecycle        1.0.3     1.0.5             FALSE
+glue             1.6.2     1.8.1              TRUE
+farver           2.1.1     2.1.2              TRUE
+cli              3.6.1     3.6.6              TRUE
+rbibutils       2.2.13     2.4.1              TRUE
+RcppEigen    0.3.3.9.3 0.3.4.0.2              TRUE
+Rcpp            1.0.10 1.1.1-1.1              TRUE
+nloptr           2.0.3     2.2.1              TRUE
+minqa            1.2.5     1.2.8              TRUE
+Rdpack             2.4     2.6.6             FALSE
+MatrixModels     0.5-1     0.5-4             FALSE
+SparseM           1.81    1.84-2              TRUE
+sandwich         3.0-2     3.1-1             FALSE
+TH.data          1.1-2     1.1-5             FALSE
+mvtnorm          1.1-3     1.4-1              TRUE
+scales           1.2.1     1.4.0             FALSE
+lme4            1.1-33     2.0-1              TRUE
+quantreg          5.95       6.1              TRUE
+abind            1.4-5     1.4-8             FALSE
+carData          3.0-5     3.0-6             FALSE
+leaps              3.1       3.2              TRUE
+pracma           2.4.2     2.4.6             FALSE
+multcomp        1.4-23    1.4-30             FALSE
+pls              2.8-1     2.9-0             FALSE
+car              3.1-2     3.1-5             FALSE
+
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/private/var/folders/8w/2thz_cgn3xn13rhrxb2dvb5w0000gn/T/RtmpawSG6D/remotes774524804c6c/khliland-mixlm-9619594/DESCRIPTION’ ... OK
+* preparing ‘mixlm’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘mixlm_1.4.3.tar.gz’
+
+vctrs        (0.7.1      -&gt; 0.7.3   ) [CRAN]
+MatrixModels (0.5-1      -&gt; 0.5-4   ) [CRAN]
+nloptr       (2.0.3      -&gt; 2.2.1   ) [CRAN]
+hms          (1.1.3      -&gt; 1.1.4   ) [CRAN]
+crayon       (1.5.2      -&gt; 1.5.3   ) [CRAN]
+RcppArmad... (0.12.2.0.0 -&gt; 15.2.7-1) [CRAN]
+RSpectra     (0.16-1     -&gt; 0.16-2  ) [CRAN]
+
+  There are binary versions available but the source versions are later:
+                  binary   source needs_compilation
+vctrs              0.6.2    0.7.3              TRUE
+MatrixModels       0.5-1    0.5-4             FALSE
+nloptr             2.0.3    2.2.1              TRUE
+hms                1.1.3    1.1.4             FALSE
+crayon             1.5.2    1.5.3             FALSE
+RcppArmadillo 0.12.2.0.0 15.2.7-1              TRUE
+RSpectra          0.16-1   0.16-2              TRUE
+
+── R CMD build ─────────────────────────────────────────────────────────────────
+* checking for file ‘/private/var/folders/8w/2thz_cgn3xn13rhrxb2dvb5w0000gn/T/RtmpawSG6D/remotes77457da66f40/khliland-HDANOVA-20e3ed3/DESCRIPTION’ ... OK
+* preparing ‘HDANOVA’:
+* checking DESCRIPTION meta-information ... OK
+* cleaning src
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘HDANOVA_0.8.6.tar.gz’</code></pre>
+</div>
 </div>
 </section>
 <section id="exercise-during-lecture" class="level1">
 <h1>Exercise during lecture</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a simple dataset with 3 groups and 12 samples</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># create response variable y and two different design matrices for the same grouping, one with reference coding and one with sum coding</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>X0 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>) <span class="co"># not needed in calculation; Intercept is automatically calculated in lm function</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># create design matrices for reference coding and sum coding</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>Xr1 <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">ncol =</span> <span class="dv">2</span>) <span class="co"># </span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>Xs1 <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">ncol =</span> <span class="dv">2</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># make linear models with reference coding and sum coding</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>bref <span class="ot">=</span> <span class="fu">lm</span>(y<span class="sc">~</span>Xr1)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>bsum <span class="ot">=</span> <span class="fu">lm</span>(y<span class="sc">~</span>Xs1)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># look at the summary of both models</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(bref)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a simple dataset with 3 groups and 12 samples</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># create response variable y and two different design matrices for the same grouping, one with reference coding and one with sum coding</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>y <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>X0 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>) <span class="co"># not needed in calculation; Intercept is automatically calculated in lm function</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># create design matrices for reference coding and sum coding</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>Xr1 <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">ncol =</span> <span class="dv">2</span>) <span class="co"># </span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>Xs1 <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>),<span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># make linear models with reference coding and sum coding</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>bref <span class="ot">=</span> <span class="fu">lm</span>(y<span class="sc">~</span>Xr1)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>bsum <span class="ot">=</span> <span class="fu">lm</span>(y<span class="sc">~</span>Xs1)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># look at the summary of both models</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(bref)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -317,7 +416,7 @@ Multiple R-squared: 0.8497,
 Adjusted R-squared: 0.8163 
 F-statistic: 25.44 on 2 and 9 DF,  p-value: 0.0001977 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(bsum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(bsum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -380,9 +479,9 @@ Answer
 <p>In this exercise you will use the <strong>HDANOVA</strong> and <strong>mixlm</strong> packages to explore linear models and ASCA for analysis of high dimensional data from an designed study setup.</p>
 <p>Plants in the Cabbage family (Brassicaceae) make very specific defense compounds, called glucosinolates, when under attack by herbivores. There are about 120 different versions of these glucosinolates, but here we measure only 11. To simulate a herbivore attack and elicit the plant to make glucosinolates, the plant hormone jasmonic acid (JA) was applied to either the roots (Root induced) or to the leaves (Shoot induced) of cabbage plants (B. oleracea). The glucosinolate levels for 11 different glucosinolates were measured at 1, 3, 7 and 14 days after treatment. This measurement was destructive so that for each time-point different plants were analyzed. For each treatment, 5 different plants were measured at each time point. Besides the two treatments there was also a control group that received no JA treatment. We would like to know how the different treatments affect the glucosinolate composition and whether the glucosinolate composition varies with time.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load data and design</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Data <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"Data.csv"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>Design <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"F.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load data and design</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Data <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"Data.csv"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>Design <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"F.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In the Environment window (top right) click on Data and Design to see the content of these two sets. Data contains the measurements, and Design the experimental settings of the samples.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -447,7 +546,7 @@ Answer
 <h2 class="anchored" data-anchor-id="data-preprocessing">Data Preprocessing</h2>
 <p>First make a boxplot of the data to see which preprocessing steps should be taken.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(Data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(Data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -519,19 +618,19 @@ Answer
 </div>
 <p>Make a data frame containing factors Time and Treatment and Data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a data frame containing factors Time and Treatment and Data</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="fu">sqrt</span>(Data),Design);</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>Time <span class="ot">=</span> <span class="fu">as.factor</span>(dat<span class="sc">$</span>Time)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>Treatment <span class="ot">=</span> <span class="fu">as.factor</span>(dat<span class="sc">$</span>Treatment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a data frame containing factors Time and Treatment and Data</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="fu">sqrt</span>(Data),Design);</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>Time <span class="ot">=</span> <span class="fu">as.factor</span>(dat<span class="sc">$</span>Time)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>Treatment <span class="ot">=</span> <span class="fu">as.factor</span>(dat<span class="sc">$</span>Treatment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="linear-models-and-anova" class="level2">
 <h2 class="anchored" data-anchor-id="linear-models-and-anova">Linear models and ANOVA</h2>
 <p>To explore the effect of the treatments on the glucosinolates, let’s start with an ANOVA model for a single response using the lm function. By default the lm function uses SUM coding for the treatment levels.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make 1-way ANOVA model for PRO using Treatment as a factor</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>mod_Treatment <span class="ot">=</span> <span class="fu">lm</span>(PRO<span class="sc">~</span>Treatment, <span class="at">data =</span> dat)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">anova</span>(mod_Treatment))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make 1-way ANOVA model for PRO using Treatment as a factor</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>mod_Treatment <span class="ot">=</span> <span class="fu">lm</span>(PRO<span class="sc">~</span>Treatment, <span class="at">data =</span> dat)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">anova</span>(mod_Treatment))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
@@ -545,8 +644,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <p>There is clearly a difference between the treatments as the p-value is very low. The summary command wil provide some more info on the treatment levels, and provide residual plots to check the assumptions on the residuals.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get a little bit more information</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_Treatment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get a little bit more information</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_Treatment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -569,7 +668,7 @@ Multiple R-squared: 0.3011,
 Adjusted R-squared: 0.2766 
 F-statistic: 12.28 on 2 and 57 DF,  p-value: 3.677e-05 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mod_Treatment, <span class="at">which =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mod_Treatment, <span class="at">which =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -654,9 +753,9 @@ Answer
 <h3 class="anchored" data-anchor-id="two-way-crossed-anova">Two-way crossed ANOVA</h3>
 <p>Instead of a single factor we also want to know the effect of both factors and also their interaction.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># two-way crossed ANOVA</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(GBN <span class="sc">~</span> Time<span class="sc">*</span>Treatment, <span class="at">data =</span> dat) <span class="co"># Note the * means all main effects and interactions</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">anova</span>(mod))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># two-way crossed ANOVA</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(GBN <span class="sc">~</span> Time<span class="sc">*</span>Treatment, <span class="at">data =</span> dat) <span class="co"># Note the * means all main effects and interactions</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">anova</span>(mod))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
@@ -672,7 +771,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <p>For GBN, we see that both factors (Time and Treatment) are significant as is their interaction. Also here check the significance of the levels of each of the factors and interaction using the summary command.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -704,7 +803,7 @@ Multiple R-squared: 0.7058,
 Adjusted R-squared: 0.6383 
 F-statistic: 10.47 on 11 and 48 DF,  p-value: 2.007e-09 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mod, <span class="at">which =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mod, <span class="at">which =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -755,9 +854,9 @@ Answer
 </div>
 <p>Different codings can be used for the factors. Here you can compare sum coding and treatment (reference) coding.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Different codings</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>mod_sum <span class="ot">&lt;-</span> <span class="fu">lm</span>(GBN <span class="sc">~</span> Time<span class="sc">*</span>Treatment, <span class="at">data =</span> dat, <span class="at">contrasts =</span> <span class="st">"contr.sum"</span>)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">anova</span>(mod_sum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Different codings</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>mod_sum <span class="ot">&lt;-</span> <span class="fu">lm</span>(GBN <span class="sc">~</span> Time<span class="sc">*</span>Treatment, <span class="at">data =</span> dat, <span class="at">contrasts =</span> <span class="st">"contr.sum"</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">anova</span>(mod_sum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
@@ -770,7 +869,7 @@ Residuals      48 1.89916 0.03957
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_sum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_sum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -802,8 +901,8 @@ Multiple R-squared: 0.7058,
 Adjusted R-squared: 0.6383 
 F-statistic: 10.47 on 11 and 48 DF,  p-value: 2.007e-09 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>mod_treat <span class="ot">&lt;-</span> <span class="fu">lm</span>(GBN <span class="sc">~</span> Time<span class="sc">*</span>Treatment, <span class="at">data =</span> dat, <span class="at">contrasts =</span> <span class="st">"contr.treatment"</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">anova</span>(mod_treat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>mod_treat <span class="ot">&lt;-</span> <span class="fu">lm</span>(GBN <span class="sc">~</span> Time<span class="sc">*</span>Treatment, <span class="at">data =</span> dat, <span class="at">contrasts =</span> <span class="st">"contr.treatment"</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">anova</span>(mod_treat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
@@ -816,7 +915,7 @@ Residuals      48 1.89916 0.03957
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_treat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_treat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -914,16 +1013,16 @@ Answer
 <p>ASCA generalizes ANOVA or the linear model to the multivariate setting. The models are applied to all response variables, and the variation due to the different factors (and their interactions) is summarized into effect matrices. Then a PCA model can be applied to each effect matrix separately of in combination to find variation that is systematic over all the variables. This variation is then summarized with PCA scores and loadings.</p>
 <p>We will use the <strong>HDANOVA</strong> package to apply asca. The HDANOVA package expects data to be in the long format. The next section transforms the data from wide to long format. Furthermore, the factors Time and Treatment have to be defined as factors. Take a look at the Metabolites dataframe.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape data from wide to long format</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>Metabolites <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Time =</span> dat<span class="sc">$</span>Time,<span class="at">Treatment =</span> dat<span class="sc">$</span>Treatment, <span class="at">Metab =</span> <span class="fu">I</span>(<span class="fu">as.matrix</span>(dat[,<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>])))</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>Metabolites<span class="sc">$</span>Time <span class="ot">=</span> <span class="fu">as.factor</span>(Metabolites<span class="sc">$</span>Time)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>Metabolites<span class="sc">$</span>Treatment <span class="ot">=</span> <span class="fu">as.factor</span>(Metabolites<span class="sc">$</span>Treatment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reshape data from wide to long format</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>Metabolites <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Time =</span> dat<span class="sc">$</span>Time,<span class="at">Treatment =</span> dat<span class="sc">$</span>Treatment, <span class="at">Metab =</span> <span class="fu">I</span>(<span class="fu">as.matrix</span>(dat[,<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>])))</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>Metabolites<span class="sc">$</span>Time <span class="ot">=</span> <span class="fu">as.factor</span>(Metabolites<span class="sc">$</span>Time)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>Metabolites<span class="sc">$</span>Treatment <span class="ot">=</span> <span class="fu">as.factor</span>(Metabolites<span class="sc">$</span>Treatment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then make an ASCA model of the metabolite data using both Time and Treatment as factors together with their interaction.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ASCA model of all variables simultaneously</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>mod_asca <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metab <span class="sc">~</span> Time<span class="sc">*</span>Treatment, <span class="at">data=</span>Metabolites)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_asca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ASCA model of all variables simultaneously</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>mod_asca <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metab <span class="sc">~</span> Time<span class="sc">*</span>Treatment, <span class="at">data=</span>Metabolites)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_asca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Anova Simultaneous Component Analysis fitted using 'lm' (Linear Model) 
 - SS type II, sum coding, restricted model, least squares estimation, SSQ method: qr_regression 
@@ -936,8 +1035,8 @@ Residuals        26.72        33.24</code></pre>
 </div>
 <p>Open de mod_asca list and look at all the parameters that have been calculated. Click the scores section. The scores are calculated for each of the effect matrices. This is also the case for the loadings and Projected scores. The latter are the score values calculated with back projection, using the residuals and the effect matrices together, as discussed in the lecture.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple functions to use</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">legend =</span> (<span class="st">"topright"</span>), <span class="at">main=</span><span class="st">"Treatment scores"</span>, <span class="at">projections =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simple functions to use</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">legend =</span> (<span class="st">"topright"</span>), <span class="at">main=</span><span class="st">"Treatment scores"</span>, <span class="at">projections =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -945,7 +1044,7 @@ Residuals        26.72        33.24</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">legend =</span> (<span class="st">"topright"</span>), <span class="at">main=</span><span class="st">"Projected Treatment scores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">legend =</span> (<span class="st">"topright"</span>), <span class="at">main=</span><span class="st">"Projected Treatment scores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -953,7 +1052,7 @@ Residuals        26.72        33.24</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">legend =</span> (<span class="st">"topright"</span>), <span class="at">main=</span><span class="st">"Treatment scores Spider plot"</span>, <span class="at">spider =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">legend =</span> (<span class="st">"topright"</span>), <span class="at">main=</span><span class="st">"Treatment scores Spider plot"</span>, <span class="at">spider =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -961,7 +1060,7 @@ Residuals        26.72        33.24</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca, <span class="at">ellipsoid =</span> <span class="st">"confidence"</span>, <span class="at">factor=</span><span class="st">"Time"</span>, <span class="at">legend =</span> (<span class="st">"topright"</span>), <span class="at">main=</span><span class="st">"Projected Time scores with model Confidence Ellipses"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca, <span class="at">ellipsoid =</span> <span class="st">"confidence"</span>, <span class="at">factor=</span><span class="st">"Time"</span>, <span class="at">legend =</span> (<span class="st">"topright"</span>), <span class="at">main=</span><span class="st">"Projected Time scores with model Confidence Ellipses"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -969,7 +1068,7 @@ Residuals        26.72        33.24</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca, <span class="at">ellipsoid =</span> <span class="st">"data"</span>, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">legend =</span> (<span class="st">"topright"</span>), <span class="at">main=</span><span class="st">"Projected Treatment scores with data Ellipses"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca, <span class="at">ellipsoid =</span> <span class="st">"data"</span>, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">legend =</span> (<span class="st">"topright"</span>), <span class="at">main=</span><span class="st">"Projected Treatment scores with data Ellipses"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -977,7 +1076,7 @@ Residuals        26.72        33.24</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod_asca, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">scatter=</span><span class="cn">TRUE</span>, <span class="at">labels=</span><span class="st">"names"</span>, <span class="at">main=</span><span class="st">"Treatment loadings"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod_asca, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">scatter=</span><span class="cn">TRUE</span>, <span class="at">labels=</span><span class="st">"names"</span>, <span class="at">main=</span><span class="st">"Treatment loadings"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -985,14 +1084,14 @@ Residuals        26.72        33.24</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>Var_Exp_Treatment <span class="ot">=</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> mod_asca[[<span class="st">"singulars"</span>]][[<span class="st">"Treatment"</span>]]<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="fu">sum</span>(mod_asca[[<span class="st">"singulars"</span>]][[<span class="st">"Treatment"</span>]]<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>P_Treatment <span class="ot">=</span> mod_asca[[<span class="st">"loadings"</span>]][[<span class="st">"Treatment"</span>]];</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>Importance <span class="ot">=</span> P_Treatment[,<span class="dv">1</span>]<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> P_Treatment[,<span class="dv">2</span>]<span class="sc">^</span><span class="dv">2</span>;</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>NIMP <span class="ot">=</span> <span class="dv">8</span>; <span class="co"># number of important variables</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>sorted_Importance <span class="ot">=</span> <span class="fu">sort</span>(Importance, <span class="at">decreasing =</span> <span class="cn">TRUE</span>, <span class="at">index.return =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>Importance_Index <span class="ot">=</span> sorted_Importance<span class="sc">$</span>ix[<span class="dv">1</span><span class="sc">:</span>NIMP]</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(P_Treatment[Importance_Index,<span class="dv">1</span>],P_Treatment[Importance_Index,<span class="dv">2</span>],<span class="at">type =</span> <span class="st">"n"</span>,<span class="at">xlab=</span><span class="fu">paste0</span>(<span class="st">"Comp 1 ("</span>, Var_Exp_Treatment[<span class="dv">1</span>], <span class="st">"%)"</span>), <span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"Comp 2 ("</span>, Var_Exp_Treatment[<span class="dv">2</span>], <span class="st">"%)"</span>), <span class="at">main =</span> <span class="st">"Important Treatment loadings"</span>)</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(P_Treatment[Importance_Index,<span class="dv">1</span>],P_Treatment[Importance_Index,<span class="dv">2</span>],<span class="fu">colnames</span>(Data[,Importance_Index]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>Var_Exp_Treatment <span class="ot">=</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> mod_asca[[<span class="st">"singulars"</span>]][[<span class="st">"Treatment"</span>]]<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="fu">sum</span>(mod_asca[[<span class="st">"singulars"</span>]][[<span class="st">"Treatment"</span>]]<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>P_Treatment <span class="ot">=</span> mod_asca[[<span class="st">"loadings"</span>]][[<span class="st">"Treatment"</span>]];</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>Importance <span class="ot">=</span> P_Treatment[,<span class="dv">1</span>]<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> P_Treatment[,<span class="dv">2</span>]<span class="sc">^</span><span class="dv">2</span>;</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>NIMP <span class="ot">=</span> <span class="dv">8</span>; <span class="co"># number of important variables</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>sorted_Importance <span class="ot">=</span> <span class="fu">sort</span>(Importance, <span class="at">decreasing =</span> <span class="cn">TRUE</span>, <span class="at">index.return =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>Importance_Index <span class="ot">=</span> sorted_Importance<span class="sc">$</span>ix[<span class="dv">1</span><span class="sc">:</span>NIMP]</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(P_Treatment[Importance_Index,<span class="dv">1</span>],P_Treatment[Importance_Index,<span class="dv">2</span>],<span class="at">type =</span> <span class="st">"n"</span>,<span class="at">xlab=</span><span class="fu">paste0</span>(<span class="st">"Comp 1 ("</span>, Var_Exp_Treatment[<span class="dv">1</span>], <span class="st">"%)"</span>), <span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"Comp 2 ("</span>, Var_Exp_Treatment[<span class="dv">2</span>], <span class="st">"%)"</span>), <span class="at">main =</span> <span class="st">"Important Treatment loadings"</span>)</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(P_Treatment[Importance_Index,<span class="dv">1</span>],P_Treatment[Importance_Index,<span class="dv">2</span>],<span class="fu">colnames</span>(Data[,Importance_Index]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1035,8 +1134,8 @@ Answer
 </div>
 <p>It is important to check whether the factors and interactions are significant. This can be done using permutation testing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>mod.perm <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metab <span class="sc">~</span> Time<span class="sc">*</span>Treatment, <span class="at">data=</span>Metabolites, <span class="at">permute =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod.perm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>mod.perm <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metab <span class="sc">~</span> Time<span class="sc">*</span>Treatment, <span class="at">data=</span>Metabolites, <span class="at">permute =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod.perm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Anova Simultaneous Component Analysis fitted using 'lm' (Linear Model) 
 - SS type II, sum coding, restricted model, least squares estimation, SSQ method: qr_regression, 1000 permutations 
@@ -1046,10 +1145,10 @@ Treatment        39.74        49.42    0.00
 Time:Treatment    5.72         7.12    0.01
 Residuals        26.72        33.24      NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod.perm, <span class="at">factor =</span> <span class="st">"Time"</span>)</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod.perm, <span class="at">factor =</span> <span class="st">"Treatment"</span>)</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod.perm, <span class="at">factor =</span> <span class="st">"Time:Treatment"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod.perm, <span class="at">factor =</span> <span class="st">"Time"</span>)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod.perm, <span class="at">factor =</span> <span class="st">"Treatment"</span>)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod.perm, <span class="at">factor =</span> <span class="st">"Time:Treatment"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1091,8 +1190,8 @@ Answer
 <h4 class="anchored" data-anchor-id="combining-main-and-interaction-effects">Combining Main and Interaction effects</h4>
 <p>Sometimes it makes sense to combine effects, e.g., a main factor and an interaction. This is especially the case when the effect of Treatments are studied over Time. Here we combine the effects of Treatment and the Time:Treatment interaction. Note the effect matrices of Treatment and Time:Treatment are estimated independently, but the PCA is applied on the sum of these two effect matrices.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>mod.comb <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metab <span class="sc">~</span> Time <span class="sc">+</span> <span class="fu">comb</span>(Treatment <span class="sc">+</span> Time<span class="sc">:</span>Treatment), <span class="at">data=</span>Metabolites)</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod.comb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>mod.comb <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metab <span class="sc">~</span> Time <span class="sc">+</span> <span class="fu">comb</span>(Treatment <span class="sc">+</span> Time<span class="sc">:</span>Treatment), <span class="at">data=</span>Metabolites)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod.comb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Anova Simultaneous Component Analysis fitted using 'lm' (Linear Model) 
 - SS type II, sum coding, restricted model, least squares estimation, SSQ method: qr_regression 
@@ -1104,14 +1203,14 @@ Residuals                  26.72        33.24</code></pre>
 </div>
 <p>If combined effects have a Time factor, the scores can be plotted against the time using the timeplot function. For this plot the legend command has to be called separately.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">timeplot</span>(mod.comb, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">time=</span><span class="st">"Time"</span>, <span class="at">comb=</span><span class="dv">2</span>, <span class="at">comp=</span><span class="dv">1</span>,  <span class="at">x_time=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">timeplot</span>(mod.comb, <span class="at">factor=</span><span class="st">"Treatment"</span>, <span class="at">time=</span><span class="st">"Time"</span>, <span class="at">comb=</span><span class="dv">2</span>, <span class="at">comp=</span><span class="dv">1</span>,  <span class="at">x_time=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in timeplot(mod.comb, factor = "Treatment", time = "Time", comb = 2, :
 NAs introduced by coercion</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>,<span class="at">col =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="at">lty=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="fu">levels</span>(Metabolites<span class="sc">$</span>Treatment))</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod.comb, <span class="at">factor =</span> <span class="st">"Treatment+Time:Treatment"</span>, <span class="at">comp=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>,<span class="at">col =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="at">lty=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="fu">levels</span>(Metabolites<span class="sc">$</span>Treatment))</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod.comb, <span class="at">factor =</span> <span class="st">"Treatment+Time:Treatment"</span>, <span class="at">comp=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1151,10 +1250,10 @@ Answer
 </div>
 <p>Finally, it can be useful to also explore the residual matrix to see whether there are effects in the data that is not modeled for.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make score and loading plots and interpret.</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) </span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod.comb, <span class="at">factor=</span><span class="st">"Residuals"</span>, <span class="at">scatter=</span><span class="cn">TRUE</span>, <span class="at">labels=</span><span class="st">"names"</span>, <span class="at">main=</span><span class="st">"Residual loadings"</span>)</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod.comb, <span class="at">factor=</span><span class="st">"Residuals"</span>, <span class="at">main=</span><span class="st">"Residual scores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make score and loading plots and interpret.</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) </span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod.comb, <span class="at">factor=</span><span class="st">"Residuals"</span>, <span class="at">scatter=</span><span class="cn">TRUE</span>, <span class="at">labels=</span><span class="st">"names"</span>, <span class="at">main=</span><span class="st">"Residual loadings"</span>)</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod.comb, <span class="at">factor=</span><span class="st">"Residuals"</span>, <span class="at">main=</span><span class="st">"Residual scores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1210,23 +1309,23 @@ Answer
 <p>Load the metabolomics_Values (Data) and the metabolomics_Exp (Design) files. For visualization reasons we will only select the lipids subset.</p>
 <p>As preprocessing we decided to not use a transformation of the data, but only use meancentering and scaling by the standard deviation of the lipid.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load data and design</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>df_metabolomics_Values <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"Plasma_Metabolomics_Values_ab.csv"</span>, <span class="at">row.names=</span><span class="dv">1</span>)</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>df_metabolomics_Exp <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"Plasma_Metabolomics_Exp_ab.csv"</span>, <span class="at">row.names=</span><span class="dv">1</span>)</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>df_metabolomics_Lipids <span class="ot">=</span> df_metabolomics_Values[,<span class="dv">80</span><span class="sc">:</span><span class="dv">613</span>]</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="co"># make boxplots of the data before preprocessing</span></span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)) </span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(df_metabolomics_Lipids)</span>
-<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Preprocess the data by centering and scaling </span></span>
-<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>CData <span class="ot">=</span> <span class="fu">scale</span>(df_metabolomics_Lipids, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>SData <span class="ot">=</span> <span class="fu">scale</span>(df_metabolomics_Lipids, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Make boxplots of the data after centering and scaling</span></span>
-<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(CData)</span>
-<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(SData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load data and design</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>df_metabolomics_Values <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"Plasma_Metabolomics_Values_ab.csv"</span>, <span class="at">row.names=</span><span class="dv">1</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>df_metabolomics_Exp <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">"Plasma_Metabolomics_Exp_ab.csv"</span>, <span class="at">row.names=</span><span class="dv">1</span>)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>df_metabolomics_Lipids <span class="ot">=</span> df_metabolomics_Values[,<span class="dv">80</span><span class="sc">:</span><span class="dv">613</span>]</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="co"># make boxplots of the data before preprocessing</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)) </span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(df_metabolomics_Lipids)</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Preprocess the data by centering and scaling </span></span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>CData <span class="ot">=</span> <span class="fu">scale</span>(df_metabolomics_Lipids, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>SData <span class="ot">=</span> <span class="fu">scale</span>(df_metabolomics_Lipids, <span class="at">center =</span> <span class="cn">TRUE</span>, <span class="at">scale =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Make boxplots of the data after centering and scaling</span></span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(CData)</span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(SData)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1273,19 +1372,19 @@ Answer
 <h4 class="anchored" data-anchor-id="data-handling">Data handling</h4>
 <p>Just as above the data has to be made in the long format to be able to use the <strong>HDANOVA</strong> package. Make sure the factors Sex and Group are defined as factors.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make the data frame in long format</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>Data_Values_long <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Sex =</span> <span class="fu">as.factor</span>(df_metabolomics_Exp<span class="sc">$</span>Rat.Sex), <span class="at">Training =</span> <span class="fu">as.factor</span>(df_metabolomics_Exp<span class="sc">$</span>Group), <span class="at">Metabolites =</span> <span class="fu">I</span>(<span class="fu">as.matrix</span>(SData)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make the data frame in long format</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>Data_Values_long <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">Sex =</span> <span class="fu">as.factor</span>(df_metabolomics_Exp<span class="sc">$</span>Rat.Sex), <span class="at">Training =</span> <span class="fu">as.factor</span>(df_metabolomics_Exp<span class="sc">$</span>Group), <span class="at">Metabolites =</span> <span class="fu">I</span>(<span class="fu">as.matrix</span>(SData)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="asca-model-of-main-factors" class="level4">
 <h4 class="anchored" data-anchor-id="asca-model-of-main-factors">ASCA model of main factors:</h4>
 <p>Create an ASCA model using the only the main factors Sex and Training. Do not consider interaction terms yet.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ASCA model of main factors</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>mod_asca1 <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metabolites <span class="sc">~</span> Sex <span class="sc">+</span> Training, <span class="at">data=</span>Data_Values_long)</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at the summary of the model</span></span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_asca1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ASCA model of main factors</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>mod_asca1 <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metabolites <span class="sc">~</span> Sex <span class="sc">+</span> Training, <span class="at">data=</span>Data_Values_long)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at the summary of the model</span></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_asca1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Anova Simultaneous Component Analysis fitted using 'lm' (Linear Model) 
 - SS type II, sum coding, restricted model, least squares estimation, SSQ method: qr_regression 
@@ -1358,8 +1457,8 @@ Answer
 <div id="callout-35" class="callout-35-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code for a score plots of the Training effect.</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca1, <span class="at">factor=</span><span class="st">"Training"</span>, <span class="at">legend =</span> (<span class="st">"bottomleft"</span>), <span class="at">main=</span><span class="st">"Projected Treatment scores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code for a score plots of the Training effect.</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scoreplot</span>(mod_asca1, <span class="at">factor=</span><span class="st">"Training"</span>, <span class="at">legend =</span> (<span class="st">"bottomleft"</span>), <span class="at">main=</span><span class="st">"Projected Treatment scores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1373,21 +1472,21 @@ Answer
 </div>
 <p>Below the loading plots of PC1 vs PC2 of the Training factor is given. For visualization reasons we only show the most important variables.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading plot of only 20 most important metabolites</span></span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># determine explained variance per principal component </span></span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>Var_Exp_Training <span class="ot">=</span> <span class="dv">100</span><span class="sc">*</span>(mod_asca1[[<span class="st">"singulars"</span>]][[<span class="st">"Training"</span>]]<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">sum</span>(mod_asca1[[<span class="st">"singulars"</span>]][[<span class="st">"Training"</span>]]<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>Var_Exp_Training <span class="ot">=</span> <span class="fu">round</span>(Var_Exp_Training,<span class="dv">0</span>)</span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="co"># extract loadings of the Training factor</span></span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>P_Training <span class="ot">=</span> mod_asca1[[<span class="st">"loadings"</span>]][[<span class="st">"Training"</span>]];</span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a><span class="co"># combine the loadings of PC1 and PC2 into an importance value</span></span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>Importance <span class="ot">=</span> <span class="fu">sqrt</span>(P_Training[,<span class="dv">1</span>]<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> P_Training[,<span class="dv">2</span>]<span class="sc">^</span><span class="dv">2</span>);</span>
-<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>NIMP <span class="ot">=</span> <span class="dv">7</span>; <span class="co"># number of important variables</span></span>
-<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a><span class="co"># sort the importance values and get the index of the top 20 most important variables</span></span>
-<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>sorted_Importance <span class="ot">=</span> <span class="fu">sort</span>(Importance, <span class="at">decreasing =</span> <span class="cn">TRUE</span>, <span class="at">index.return =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>Importance_Index <span class="ot">=</span> sorted_Importance<span class="sc">$</span>ix[<span class="dv">1</span><span class="sc">:</span>NIMP]</span>
-<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the most important variables in the loading plot</span></span>
-<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(P_Training[Importance_Index,<span class="dv">1</span>],P_Training[Importance_Index,<span class="dv">2</span>],<span class="at">xlab=</span><span class="fu">paste0</span>(<span class="st">"Comp 1 ("</span>, Var_Exp_Training[<span class="dv">1</span>], <span class="st">"%)"</span>), <span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"Comp 2 ("</span>, Var_Exp_Training[<span class="dv">2</span>], <span class="st">"%)"</span>))</span>
-<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(P_Training[Importance_Index,<span class="dv">1</span>],P_Training[Importance_Index,<span class="dv">2</span>],<span class="fu">colnames</span>(df_metabolomics_Lipids[,Importance_Index]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading plot of only 20 most important metabolites</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="co"># determine explained variance per principal component </span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>Var_Exp_Training <span class="ot">=</span> <span class="dv">100</span><span class="sc">*</span>(mod_asca1[[<span class="st">"singulars"</span>]][[<span class="st">"Training"</span>]]<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">sum</span>(mod_asca1[[<span class="st">"singulars"</span>]][[<span class="st">"Training"</span>]]<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>Var_Exp_Training <span class="ot">=</span> <span class="fu">round</span>(Var_Exp_Training,<span class="dv">0</span>)</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="co"># extract loadings of the Training factor</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>P_Training <span class="ot">=</span> mod_asca1[[<span class="st">"loadings"</span>]][[<span class="st">"Training"</span>]];</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a><span class="co"># combine the loadings of PC1 and PC2 into an importance value</span></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>Importance <span class="ot">=</span> <span class="fu">sqrt</span>(P_Training[,<span class="dv">1</span>]<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> P_Training[,<span class="dv">2</span>]<span class="sc">^</span><span class="dv">2</span>);</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>NIMP <span class="ot">=</span> <span class="dv">7</span>; <span class="co"># number of important variables</span></span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a><span class="co"># sort the importance values and get the index of the top 20 most important variables</span></span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>sorted_Importance <span class="ot">=</span> <span class="fu">sort</span>(Importance, <span class="at">decreasing =</span> <span class="cn">TRUE</span>, <span class="at">index.return =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>Importance_Index <span class="ot">=</span> sorted_Importance<span class="sc">$</span>ix[<span class="dv">1</span><span class="sc">:</span>NIMP]</span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a><span class="co"># plot the most important variables in the loading plot</span></span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(P_Training[Importance_Index,<span class="dv">1</span>],P_Training[Importance_Index,<span class="dv">2</span>],<span class="at">xlab=</span><span class="fu">paste0</span>(<span class="st">"Comp 1 ("</span>, Var_Exp_Training[<span class="dv">1</span>], <span class="st">"%)"</span>), <span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"Comp 2 ("</span>, Var_Exp_Training[<span class="dv">2</span>], <span class="st">"%)"</span>))</span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(P_Training[Importance_Index,<span class="dv">1</span>],P_Training[Importance_Index,<span class="dv">2</span>],<span class="fu">colnames</span>(df_metabolomics_Lipids[,Importance_Index]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1395,7 +1494,7 @@ Answer
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_metabolomics_Lipids[,Importance_Index])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_metabolomics_Lipids[,Importance_Index])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "LPC.17.1.0.0._feature2"                      
 [2] "LPC.14.0.0.0._and_LPC.0.0.14.0._feature1and2"
@@ -1465,10 +1564,10 @@ Answer
 <div id="callout-39" class="callout-39-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the code for an ASCA model including main factors and interaction</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>mod_asca_Int <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metabolites <span class="sc">~</span> Sex<span class="sc">*</span>Training, <span class="at">data=</span>Data_Values_long)</span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide the summary of the model</span></span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_asca_Int)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the code for an ASCA model including main factors and interaction</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>mod_asca_Int <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metabolites <span class="sc">~</span> Sex<span class="sc">*</span>Training, <span class="at">data=</span>Data_Values_long)</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Provide the summary of the model</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_asca_Int)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Anova Simultaneous Component Analysis fitted using 'lm' (Linear Model) 
 - SS type II, sum coding, restricted model, least squares estimation, SSQ method: qr_regression 
@@ -1517,9 +1616,9 @@ Answer
 <h4 class="anchored" data-anchor-id="statistical-inference">Statistical Inference</h4>
 <p>To conclude whether the main factors and interaction are significant, apply a permutation test and plot the permutation result using the permutation plot function for both main factors and the interaction.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Permutation test for the ASCA model with interaction</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>mod_asca_Int_perm <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metabolites <span class="sc">~</span> Sex <span class="sc">+</span> Training <span class="sc">+</span> Sex<span class="sc">:</span>Training, <span class="at">data=</span>Data_Values_long, <span class="at">permute =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_asca_Int_perm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Permutation test for the ASCA model with interaction</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>mod_asca_Int_perm <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metabolites <span class="sc">~</span> Sex <span class="sc">+</span> Training <span class="sc">+</span> Sex<span class="sc">:</span>Training, <span class="at">data=</span>Data_Values_long, <span class="at">permute =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_asca_Int_perm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Anova Simultaneous Component Analysis fitted using 'lm' (Linear Model) 
 - SS type II, sum coding, restricted model, least squares estimation, SSQ method: qr_regression, 1000 permutations 
@@ -1529,11 +1628,11 @@ Training      3348.41        12.80       0
 Sex:Training  2019.41         7.72       0
 Residuals     8964.95        34.26      NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make permutation plots for the main factors and the interaction</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod_asca_Int_perm, <span class="at">factor =</span> <span class="st">"Sex"</span>)</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod_asca_Int_perm, <span class="at">factor =</span> <span class="st">"Training"</span>)</span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod_asca_Int_perm, <span class="at">factor =</span> <span class="st">"Sex:Training"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make permutation plots for the main factors and the interaction</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod_asca_Int_perm, <span class="at">factor =</span> <span class="st">"Sex"</span>)</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod_asca_Int_perm, <span class="at">factor =</span> <span class="st">"Training"</span>)</span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="fu">permutationplot</span>(mod_asca_Int_perm, <span class="at">factor =</span> <span class="st">"Sex:Training"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1609,9 +1708,9 @@ Answer
 <li>Also show a plot of only the interaction.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1. Make Model with main factor Sex and combination of Group and Sex:Group interaction</span></span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>mod_comb1 <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metabolites <span class="sc">~</span> Sex <span class="sc">+</span> <span class="fu">comb</span>(Training<span class="sc">+</span>Sex<span class="sc">:</span>Training), <span class="at">data=</span>Data_Values_long)</span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_comb1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co">#1. Make Model with main factor Sex and combination of Group and Sex:Group interaction</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>mod_comb1 <span class="ot">&lt;-</span> <span class="fu">asca</span>(Metabolites <span class="sc">~</span> Sex <span class="sc">+</span> <span class="fu">comb</span>(Training<span class="sc">+</span>Sex<span class="sc">:</span>Training), <span class="at">data=</span>Data_Values_long)</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod_comb1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Anova Simultaneous Component Analysis fitted using 'lm' (Linear Model) 
 - SS type II, sum coding, restricted model, least squares estimation, SSQ method: qr_regression 
@@ -1620,13 +1719,13 @@ Sex                   11833.23        45.22
 Training+Sex:Training  5367.82        20.51
 Residuals              8964.95        34.26</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co">#2.  determine explained variance of the combination effect</span></span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>Var_Exp_Comb1 <span class="ot">=</span> <span class="dv">100</span><span class="sc">*</span>(mod_comb1[[<span class="st">"singulars"</span>]][[<span class="st">"Training+Sex:Training"</span>]]<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">sum</span>(mod_comb1[[<span class="st">"singulars"</span>]][[<span class="st">"Training+Sex:Training"</span>]]<span class="sc">^</span><span class="dv">2</span>))</span>
-<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>Var_Exp_Comb1<span class="ot">=</span> <span class="fu">round</span>(Var_Exp_Comb1,<span class="dv">0</span>)</span>
-<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="co">#3.</span></span>
-<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="fu">timeplot</span>(mod_comb1, <span class="at">factor=</span><span class="st">"Sex"</span>, <span class="at">time=</span><span class="st">"Training"</span>, <span class="at">comb=</span><span class="dv">2</span>, <span class="at">comp=</span><span class="dv">1</span>,  <span class="at">x_time=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, Var_Exp_Comb1[<span class="dv">1</span>], <span class="st">"%)"</span>))</span>
-<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>,<span class="at">col =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="at">lty=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="fu">levels</span>(Data_Values_long<span class="sc">$</span>Sex))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co">#2.  determine explained variance of the combination effect</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>Var_Exp_Comb1 <span class="ot">=</span> <span class="dv">100</span><span class="sc">*</span>(mod_comb1[[<span class="st">"singulars"</span>]][[<span class="st">"Training+Sex:Training"</span>]]<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="fu">sum</span>(mod_comb1[[<span class="st">"singulars"</span>]][[<span class="st">"Training+Sex:Training"</span>]]<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>Var_Exp_Comb1<span class="ot">=</span> <span class="fu">round</span>(Var_Exp_Comb1,<span class="dv">0</span>)</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="co">#3.</span></span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="fu">timeplot</span>(mod_comb1, <span class="at">factor=</span><span class="st">"Sex"</span>, <span class="at">time=</span><span class="st">"Training"</span>, <span class="at">comb=</span><span class="dv">2</span>, <span class="at">comp=</span><span class="dv">1</span>,  <span class="at">x_time=</span><span class="cn">TRUE</span>, <span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, Var_Exp_Comb1[<span class="dv">1</span>], <span class="st">"%)"</span>))</span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>,<span class="at">col =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="at">lty=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="fu">levels</span>(Data_Values_long<span class="sc">$</span>Sex))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1634,8 +1733,8 @@ Residuals              8964.95        34.26</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co">#4.</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod_comb1, <span class="at">factor =</span> <span class="st">"Training+Sex:Training"</span>, <span class="at">comp=</span><span class="dv">1</span>,<span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, Var_Exp_Comb1[<span class="dv">1</span>], <span class="st">"%)"</span>), <span class="at">main =</span> (<span class="st">"Loadings Combination (Training+Sex:Training)"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co">#4.</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod_comb1, <span class="at">factor =</span> <span class="st">"Training+Sex:Training"</span>, <span class="at">comp=</span><span class="dv">1</span>,<span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, Var_Exp_Comb1[<span class="dv">1</span>], <span class="st">"%)"</span>), <span class="at">main =</span> (<span class="st">"Loadings Combination (Training+Sex:Training)"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1643,9 +1742,9 @@ Residuals              8964.95        34.26</code></pre>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co">#5</span></span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>Var_Exp_Int_Int<span class="ot">=</span> <span class="fu">round</span>(mod_asca_Int_perm[[<span class="st">"singulars"</span>]][[<span class="st">"Sex:Training"</span>]],<span class="dv">0</span>)</span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod_asca_Int_perm, <span class="at">factor =</span> <span class="st">"Sex:Training"</span>, <span class="at">comp=</span><span class="dv">1</span>,<span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, Var_Exp_Int_Int[<span class="dv">1</span>], <span class="st">"%)"</span>),<span class="at">main =</span> (<span class="st">"Loadings Interaction Sex:Training"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co">#5</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>Var_Exp_Int_Int<span class="ot">=</span> <span class="fu">round</span>(mod_asca_Int_perm[[<span class="st">"singulars"</span>]][[<span class="st">"Sex:Training"</span>]],<span class="dv">0</span>)</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="fu">loadingplot</span>(mod_asca_Int_perm, <span class="at">factor =</span> <span class="st">"Sex:Training"</span>, <span class="at">comp=</span><span class="dv">1</span>,<span class="at">ylab=</span><span class="fu">paste0</span>(<span class="st">"PC1 ("</span>, Var_Exp_Int_Int[<span class="dv">1</span>], <span class="st">"%)"</span>),<span class="at">main =</span> (<span class="st">"Loadings Interaction Sex:Training"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
