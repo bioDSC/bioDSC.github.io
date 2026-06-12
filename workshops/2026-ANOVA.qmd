@@ -3,7 +3,7 @@ title: "May 19 (2026): Analysis of Variance for high-dimensional data using ASCA
 date: 2026-04-17
 author: Frans van der Kloet
 description: "An introduction to Analysis of Variance for high-dimensional data using ASCA"
-categories: [upcoming]
+categories: [past]
 resource-files: ["../workshop-materials/bda-anova/ASCA_SILS_ab.qmd"]
 ---
 

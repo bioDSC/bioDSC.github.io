@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Martijn Wehrens">
+<meta name="dcterms.date" content="2026-06-12">
+<meta name="description" content="Tools and concepts for image analysis in Python.">
 
-<title>tutorials – *bio*DSC</title>
+<title>June 22, 24, 29 (2026), Pilot: Image analysis with Python – bioDSC</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./images/bioDSC-without-dots-transparent.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7e02f01fb7d34aee29950772766a5ecd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/bioDSC-without-dots-transparent.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7e02f01fb7d34aee29950772766a5ecd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,10 +81,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/bioDSC-without-dots-transparent.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/bioDSC-without-dots-transparent.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title"><em>bio</em>DSC</span>
     </a>
   </div>
@@ -92,15 +95,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./workshops.html"> 
+    <a class="nav-link" href="../workshops.html"> 
 <span class="menu-text">Workshops</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./people.html"> 
+    <a class="nav-link" href="../people.html"> 
 <span class="menu-text">People</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -109,32 +112,32 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-consultation-hours">    
         <li>
-    <a class="dropdown-item" href="./consultation_images.html">
+    <a class="dropdown-item" href="../consultation_images.html">
  <span class="dropdown-text">Improve my image analysis</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./consultation_other.html">
+    <a class="dropdown-item" href="../consultation_other.html">
  <span class="dropdown-text">Improve any analysis</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./tutorials.html" aria-current="page"> 
+    <a class="nav-link" href="../tutorials.html"> 
 <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./further-reading.html"> 
+    <a class="nav-link" href="../further-reading.html"> 
 <span class="menu-text">Further reading</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="https://www.uva.nl" target="_blank"> 
-<span class="menu-text"><img src="./images/uva-logo.png" height="30"></span></a>
+<span class="menu-text"><img src="../images/uva-logo.png" height="30"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -149,19 +152,181 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">June 22, 24, 29 (2026), Pilot: Image analysis with Python</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">upcoming</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Tools and concepts for image analysis in Python.
+  </div>
+</div>
 
 
+<div class="quarto-title-meta column-page">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Martijn Wehrens </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 12, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
-<section id="tutorials" class="level1">
-<h1>Tutorials</h1>
-<section id="introduction-to-rna-seq" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-rna-seq">Introduction to RNA-seq</h2>
-<p>The workshop materials for our ‘Introduction to RNA-seq’ workshop are available in tutorial format on the <a href="https://mishapaauw.github.io/RNA-seq-workshop/index.html">workshop website</a>.</p>
+</header>
 
 
+<!--
+::: {.callout-important}
+## This workshop is full.
+
+12 people have registered (surprisingly fast), we do not have place for more participants. Unfortunately, you cannot register any more.
+
+Please send us an [email](mailto:info@biodsc.nl) in case you were interested in signing up, such that we know to organize more workshops soon.
+:::
+-->
+<section id="image-analysis-in-python" class="level3">
+<h3 class="anchored" data-anchor-id="image-analysis-in-python">Image analysis in Python</h3>
+<p>In “the good old days”, scientists could (often) show microscopy pictures in their papers, and directly draw scientific conclusions. Today, computers allow us to</p>
+<ul>
+<li>take huge amounts of pictures, and</li>
+<li>automatically quantify scientifically relevant image features.</li>
+</ul>
+<p>This requires a new set of skills from researchers.</p>
+<p>In this course, we’ll teach you tools and concepts to automatically process, analyze and quantify images and their features using Python.</p>
 </section>
+<section id="workshop-goals" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-goals">Workshop goals</h3>
+<p>The goals of this python-based workshop are to teach you:</p>
+<div class="mw-infoblock">
+<ul>
+<li>How to think about images on the computer</li>
+<li>Learn about tools to modify images</li>
+<li>Which tools are available in Python</li>
+<li>Python syntax/concepts required to apply these tools</li>
+<li>How to practically build an image analysis-pipeline</li>
+<li>Some fundamentals of machine learning (ML)</li>
+</ul>
+</div>
+</section>
+<section id="entry-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="entry-requirements">Entry requirements</h3>
+<p>Regarding your experience:</p>
+<ul>
+<li>We require you to have followed our “introduction to python” course, OR ..</li>
+<li>.. require you to be familiar with Python already.</li>
+</ul>
+</section>
+<section id="to-do-before-the-course" class="level3">
+<h3 class="anchored" data-anchor-id="to-do-before-the-course">To do before the course</h3>
+<p>On your computer, we require you to have <strong>before the workshop starts</strong>:</p>
+<ul>
+<li>A working conda environment with python installed (<a href="https://www.biodsc.nl/posts/installing_conda_python.html">link</a>).</li>
+<li>The software “FIJI” (<a href="https://imagej.net/software/fiji/">link</a>).</li>
+<li>And editor in which you can edit and run python code
+<ul>
+<li>For this advanced workshop we require an IDE (integrated development environment)</li>
+<li>Good options are Spyder or Visual Studio Code.</li>
+<li>See also this <a href="https://www.biodsc.nl/posts/installing_conda_python.html">link</a> to see how to install Spyder.</li>
+</ul></li>
+<li>Install the libraries listed <a href="https://jintram.github.io/Workshop_Py_image-analysis_2025/Bioimage-analysis_01_Introduction.html#libraries-to-install">here</a>.</li>
+<li>Download the datasets linked <a href="https://jintram.github.io/Workshop_Py_image-analysis_2025/Bioimage-analysis_01_Introduction.html#datasets-to-download">here</a>.</li>
+</ul>
+<p>If you have trouble with installing any of these, <strong>please contact us before the workshop</strong> at <a href="mailto:info@biodsc.nl">info@biodsc.nl</a>!</p>
+</section>
+<section id="workshop-materials" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-materials">Workshop materials</h3>
+<p>You can find the current version of the workshop materials here:</p>
+<p><a href="https://jintram.github.io/Workshop_Py_image-analysis_2025/">https://jintram.github.io/Workshop_Py_image-analysis_2025/</a></p>
+<p>Note that this is <strong>not a self-explanatory tutorial</strong> (yet). During the workshop, an instructor will be writing and explaining computer code. The materials are only meant as a reference.</p>
+</section>
+<section id="workshop-logistics" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-logistics">Workshop logistics</h3>
+<p>The course will be given by Martijn Wehrens (<em>bio</em>DSC), supported by Misha Paauw (<em>bio</em>DSC) and Nico Schramma (Amsterdam UMC/UvA).</p>
+<p>This is a pilot version, intended to “test-run” all the materials and polish them. There is room for ±5 participants.</p>
+<p>You have to bring your own laptop.</p>
+</section>
+<section id="workshop-schedule" class="level3">
+<h3 class="anchored" data-anchor-id="workshop-schedule">Workshop schedule</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Time</th>
+<th>Location</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday June 22nd</td>
+<td>13:00 - 17:00</td>
+<td>SP A1.18</td>
+<td>The basics</td>
+</tr>
+<tr class="even">
+<td>Wednesday June 24th</td>
+<td>13:00 - 17:00</td>
+<td>SP B0.201</td>
+<td>Image processing methods</td>
+</tr>
+<tr class="odd">
+<td>Monday June 29th</td>
+<td>13:00 - 17:00</td>
+<td>SP B0.201</td>
+<td>Bringing it all together</td>
+</tr>
+</tbody>
+</table>
+<!--<i>*) These rooms are in the "Lab 42" building!</i>-->
+</section>
+<section id="sign-up" class="level3">
+<h3 class="anchored" data-anchor-id="sign-up">Sign up</h3>
+<p>This pilot is by invitation only; a public edition will follow.</p>
+<p>Feel free to send us an email if you are interested in this workshop, <a href="mailto:info@biodsc.nl">info@biodsc.nl</a>.</p>
+<!-- If you have any questions regarding whether this course is relevant for you, please send us an email ([info@biodsc.nl](mailto:info@biodsc.nl)) or walk by our [desks](../people.html). -->
+<!--
+Sign up using this link (TBA). [using this link](){target="_blank"}.
+**Sign up deadline: TBA. First come, first serve.**
+-->
+<!--
+::: {.callout-important}
+## This workshop is full.
+
+12 people have registered, we do not have place for more participants. Unfortunately, you cannot register any more.
+
+Please send us an [email](mailto:info@biodsc.nl) in case you were interested in signing up, such that we know to organize more workshops soon.
+:::
+-->
+</section>
+<section id="identifier" class="level3">
+<h3 class="anchored" data-anchor-id="identifier">Identifier</h3>
+<p>This workshop’s identifier: 2026-06-22-UvA_bioDSC.</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -596,7 +761,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
     <div class="nav-footer-right">
 <p>
-<img src="./images/uva-logo.png" height="25px;"> an <i>initiative</i> of the <a href="https://uva.nl" target="_blank">University of Amsterdam </a>
+<img src="../images/uva-logo.png" height="25px;"> an <i>initiative</i> of the <a href="https://uva.nl" target="_blank">University of Amsterdam </a>
 </p>
 </div>
   </div>
