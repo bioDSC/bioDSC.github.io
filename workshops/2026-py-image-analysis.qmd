@@ -48,6 +48,10 @@ Regarding your experience:
 - We require you to have followed our "introduction to python" course, OR ..
 - .. require you to be familiar with Python already.
 
+Furthermore:
+
+- You have to bring your own laptop.
+
 ### To do before the course
 
 On your computer, we require you to have **before the workshop starts**:
@@ -56,14 +60,15 @@ On your computer, we require you to have **before the workshop starts**:
 - The software "FIJI" ([link](https://imagej.net/software/fiji/)).
 - And editor in which you can edit and run python code
     - For this advanced workshop we require an IDE (integrated development environment)
-    - Good options are Spyder or Visual Studio Code.
+    - Good options are 
+        - Spyder (I'll be using this during the workshop)
+        - Visual Studio Code (choose this if you already know/use this)
     - See also this [link](https://www.biodsc.nl/posts/installing_conda_python.html) to see how to install Spyder.
 - Install the libraries listed [here](https://jintram.github.io/Workshop_Py_image-analysis_2025/Bioimage-analysis_01_Introduction.html#libraries-to-install).
 - Download the datasets linked [here](https://jintram.github.io/Workshop_Py_image-analysis_2025/Bioimage-analysis_01_Introduction.html#datasets-to-download).
 
 If you have trouble with installing any of these, **please contact us before
 the workshop** at [info@biodsc.nl](mailto:info@biodsc.nl)!
-
 
 ### Workshop materials
 
@@ -81,8 +86,6 @@ The course will be given by Martijn Wehrens (*bio*DSC), supported by Misha Paauw
 
 This is a pilot version, intended to "test-run" all the materials and polish them.
 There is room for ±5 participants. 
-
-You have to bring your own laptop.
 
 ### Workshop schedule
 
