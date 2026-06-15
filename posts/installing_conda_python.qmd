@@ -56,7 +56,7 @@ This way you can write Python code in a pleasant way, and also run it immediatel
 
 Installing software to manage software installation sounds perhaps a bit complicated, but it'll make your life easier.
 
-Installing Python, its libraries, and code editors, comes challenges, such as:
+Installing Python, its libraries, and code editors, comes with challenges, such as:
 
 1. It is tedious to install all these things manually.
 2. You might need a set of libraries for a specific task, which have installation requirements that exclude you from installing other libraries that you might need for another task.
@@ -108,12 +108,16 @@ Go to: [https://www.anaconda.com/docs/getting-started/miniconda/install](https:/
 
 This website explains which commands you have to type in the terminal to complete the installation of miniconda.
 
-At this website, go to "Quickstart install instructions", and using the tabs on the install instructions, go to the operating system you have on your computer.
-Follow the instructions there.
-You need to copy the lines (one by one) in the black box, which are instructions for your terminal.
-You can paste them (one by one) in your terminal, and press enter.
+At this website, choose either "Shell installer" (Windows) or "Terminal installer" (macOS).
+<!--go to "Quickstart install instructions", and using the tabs on the install instructions, go to the operating system you have on your computer.
+Follow the instructions there.-->
+Follow the instructions there. Often, you'll need to copy and paste commands in your terminal/shell (and press enter to execute).
+<!--You need to copy the lines (one by one) in the black box, which are instructions for your terminal.-->
 
-![**Miniconda installation instructions from Anaconda.com.**. *Choose the applicable tab and execute the commands in your terminal.*](post_images/installing-py_screenshot-miniconda.png){ width=50% fig-align="left" }
+<!--![**Miniconda installation instructions from Anaconda.com.**. *Choose the applicable tab and execute the commands in your terminal.*](post_images/installing-py_screenshot-miniconda.png){ width=50% fig-align="left" }-->
+
+![**Miniconda installation instructions from Anaconda.com.**. *In this step, the command needs to be copied and pasted to your terminal.*](post_images/installing-py_screenshow-miniconda-2026.png){ width=50% fig-align="left" }
+
 
 ### Optional: learn to use environments.
 
@@ -184,7 +188,7 @@ To work with Python, there are multiple options for software to write scripts an
 | **PyCharm<br>**![PyCharm.](post_images/installing-py_logo-pycharm.jpg){ height=50px }        | (We don't have much experience with this, but it's also good and often used.) |
 
 
-For the workshop, we used Jupyter notebooks. We also recommend Spyder.
+For our workshops, depending on the topic, we either use Jupyter notebooks or Spyder.
 
 The installation of both of these can be done through Conda. See below.
 

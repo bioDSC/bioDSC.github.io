@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.32">
+<meta name="generator" content="quarto-1.6.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,10 +73,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5bf4af7e2e95050c9a7956e2538f3941.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7e02f01fb7d34aee29950772766a5ecd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -274,7 +274,7 @@ This is a summary section. See below for detailed instructions.
 <section id="software-installing-software." class="level2">
 <h2 class="anchored" data-anchor-id="software-installing-software.">3: Software installing-software.</h2>
 <p>Installing software to manage software installation sounds perhaps a bit complicated, but it’ll make your life easier.</p>
-<p>Installing Python, its libraries, and code editors, comes challenges, such as:</p>
+<p>Installing Python, its libraries, and code editors, comes with challenges, such as:</p>
 <ol type="1">
 <li>It is tedious to install all these things manually.</li>
 <li>You might need a set of libraries for a specific task, which have installation requirements that exclude you from installing other libraries that you might need for another task.</li>
@@ -329,11 +329,13 @@ Technical description of Conda
 <h3 class="anchored" data-anchor-id="how-to-install-conda">How to install Conda</h3>
 <p>Go to: <a href="https://www.anaconda.com/docs/getting-started/miniconda/install" target="_blank">https://www.anaconda.com/docs/getting-started/miniconda/install</a></p>
 <p>This website explains which commands you have to type in the terminal to complete the installation of miniconda.</p>
-<p>At this website, go to “Quickstart install instructions”, and using the tabs on the install instructions, go to the operating system you have on your computer. Follow the instructions there. You need to copy the lines (one by one) in the black box, which are instructions for your terminal. You can paste them (one by one) in your terminal, and press enter.</p>
+<p>At this website, choose either “Shell installer” (Windows) or “Terminal installer” (macOS). <!--go to "Quickstart install instructions", and using the tabs on the install instructions, go to the operating system you have on your computer.
+Follow the instructions there.--> Follow the instructions there. Often, you’ll need to copy and paste commands in your terminal/shell (and press enter to execute). <!--You need to copy the lines (one by one) in the black box, which are instructions for your terminal.--></p>
+<!--![**Miniconda installation instructions from Anaconda.com.**. *Choose the applicable tab and execute the commands in your terminal.*](post_images/installing-py_screenshot-miniconda.png){ width=50% fig-align="left" }-->
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><img src="post_images/installing-py_screenshot-miniconda.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<figcaption><strong>Miniconda installation instructions from Anaconda.com.</strong>. <em>Choose the applicable tab and execute the commands in your terminal.</em></figcaption>
+<p><img src="post_images/installing-py_screenshow-miniconda-2026.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption><strong>Miniconda installation instructions from Anaconda.com.</strong>. <em>In this step, the command needs to be copied and pasted to your terminal.</em></figcaption>
 </figure>
 </div>
 </section>
@@ -413,7 +415,7 @@ DISCARDED
 </tr>
 </tbody>
 </table>
-<p>For the workshop, we used Jupyter notebooks. We also recommend Spyder.</p>
+<p>For our workshops, depending on the topic, we either use Jupyter notebooks or Spyder.</p>
 <p>The installation of both of these can be done through Conda. See below.</p>
 <section id="installing-jupyter-using-conda" class="level4">
 <h4 class="anchored" data-anchor-id="installing-jupyter-using-conda">Installing Jupyter using Conda</h4>
