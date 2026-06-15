@@ -59,9 +59,9 @@ On your computer, we require you to have **before the workshop starts**:
 <!-- THIS IS COPIED AND UPDATED FROM THE WORKSHOP WEBSITE -->
 - The software "FIJI" ([link](https://imagej.net/software/fiji/)).
 - Conda software:
-    - See this [link](https://www.biodsc.nl/posts/installing_conda_python.html).
+    - See this [link](https://www.biodsc.nl/posts/installing_conda_python.html#how-to-install-conda).
         - You can stop once you've installed 'conda'.
-        - The rest of the text provides some background.
+        - The rest of the linked website provides some background.
 - A 'conda environment' with specific libraries installed, see [this link](https://jintram.github.io/Workshop_Py_image-analysis_2025/Bioimage-analysis_01_Introduction.html#libraries-to-install).
 - And editor in which you can edit and run python code
     - For this advanced workshop we require an IDE (integrated development environment)
